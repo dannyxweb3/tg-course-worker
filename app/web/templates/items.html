@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}素材库{% endblock %}
+{% block body %}
+
+<div class="row" style="margin-bottom:16px">
+  <h1 style="margin:0">素材库 <span class="muted small">{{ total }} 条</span></h1>
+</div>
+
+<form class="card row" method="get" action="/items" style="margin-bottom:16px">
+  <input type="text" name="q" value="{{ q }}" placeholder="搜标题或原文…" style="flex:1;min-width:180px">
+  <select name="status" style="width:auto">
+    <option value="">全部状态</option>
+    {% for s in ALL_STATUS %}
+      <option value="{{ s }}" {{ 'selected' if status == s }}>{{ STATUS_LABEL.get(s, s) }}</option>
+    {% endfor %}
+  </select>
+  <select name="vertical" style="width:auto">
+    <option value="0">全部方向</option>
+    {% for v in verticals %}
+      <option value="{{ v.id }}" {{ 'selected' if vertical == v.id }}>{{ v.name }}</option>
+    {% endfor %}
+  </select>
+  <button class="primary" type="submit">筛选</button>
+  <a class="btn" href="/items">重置</a>
+</form>
+
+{% if not rows %}
+  <div class="empty">没有匹配的素材。</div>
+{% else %}
+<div class="card" style="padding:0">
+  <table>
+    <thead>
+      <tr>
+        <th style="width:56px">#</th>
+        <th>标题 / 来源</th>
+        <th style="width:110px">方向</th>
+        <th style="width:80px">状态</th>
+        <th style="width:60px">相关性</th>
+        <th style="width:70px">版本</th>
+        <th style="width:110px">入库</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for r in rows %}
+      <tr>
+        <td class="num">{{ r.id }}</td>
+        <td>
+          <a href="/items/{{ r.id }}">{{ r.draft_title or (r.source_title or '(未生成文案)') }}</a>
+          <div class="small muted">
+            <span class="badge">{{ r.source_type }}</span>
+            {% if r.source_title and r.draft_title %}{{ r.source_title }}{% endif %}
+            {% if r.queue_count %}<span class="badge accent">在 {{ r.queue_count }} 个队列</span>{% endif %}
+          </div>
+        </td>
+        <td class="small">{{ r.vertical_name or '—' }}</td>
+        <td><span class="badge {{ 'err' if r.status == 'failed' else ('ok' if r.status == 'published' else '') }}">{{ STATUS_LABEL.get(r.status, r.status) }}</span></td>
+        <td class="num">{{ r.relevance if r.relevance >= 0 else '—' }}</td>
+        <td class="num">{{ r.draft_count }}</td>
+        <td class="small muted">{{ r.created_at|dt }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% if pages > 1 %}
+<div class="row" style="margin-top:14px;justify-content:center">
+  {% set base = '/items?status=' ~ status ~ '&vertical=' ~ vertical ~ '&q=' ~ q %}
+  {% if page_no > 1 %}<a class="btn" href="{{ base }}&p={{ page_no - 1 }}">← 上一页</a>{% endif %}
+  <span class="muted small">{{ page_no }} / {{ pages }}</span>
+  {% if page_no < pages %}<a class="btn" href="{{ base }}&p={{ page_no + 1 }}">下一页 →</a>{% endif %}
+</div>
+{% endif %}
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}内容方向{% endblock %}
+{% block body %}
+
+<h1>内容方向</h1>
+<p class="small muted">
+  素材进来时，分类器会拿下面每个方向的「说明」去打分，选分最高的一个。
+  说明写得越具体，路由越准。
+</p>
+
+{% for v in rows %}
+<div class="card" style="margin-bottom:14px">
+  <form method="post" action="/verticals/{{ v.id }}/save">
+    <div class="row" style="margin-bottom:12px">
+      <b>{{ v.name }}</b>
+      <span class="badge mono">{{ v.slug }}</span>
+      {% for c in v.channels %}<span class="badge accent">{{ c.name }}</span>{% endfor %}
+      {% if not v.channels %}<span class="badge warn">没有频道承接</span>{% endif %}
+      <span class="right row">
+        <label class="inline small"><input type="checkbox" name="is_active" {{ 'checked' if v.is_active }}> 启用</label>
+        <button class="primary mini">保存</button>
+      </span>
+    </div>
+
+    <div class="grid" style="grid-template-columns:2fr 1fr">
+      <label><span>名称</span><input type="text" name="name" value="{{ v.name }}"></label>
+      <label><span>相关性阈值（低于此分判为丢弃）</span>
+        <input type="number" name="relevance_threshold" value="{{ v.relevance_threshold }}" min="0" max="10"></label>
+    </div>
+    <label><span>说明 —— 喂给分类器，决定什么素材归到这个方向</span>
+      <textarea name="description" rows="2">{{ v.description }}</textarea></label>
+    <label><span>调性 prompt（留空则用 config/prompts/system_style.md 的全局调性）</span>
+      <textarea name="style_prompt" rows="6" placeholder="留空 = 继承全局">{{ v.style_prompt }}</textarea></label>
+  </form>
+  <form class="inline" method="post" action="/verticals/{{ v.id }}/delete"
+        onsubmit="return confirm('删除方向「{{ v.name }}」？')">
+    <button class="mini danger">删除</button>
+  </form>
+</div>
+{% endfor %}
+
+{% if not rows %}
+  <div class="empty">还没有内容方向。没有方向的话，素材进来分类器无处可归，流水线会停在第一步。</div>
+{% endif %}
+
+<h2>新增方向</h2>
+<div class="card">
+  <form method="post" action="/verticals/new">
+    <div class="grid" style="grid-template-columns:1fr 1fr 1fr">
+      <label><span>名称 *</span><input type="text" name="name" placeholder="AI 自动化 / 工作流"></label>
+      <label><span>slug *（英文，分类器用）</span>
+        <input type="text" name="slug" class="mono" placeholder="ai-automation"></label>
+      <label><span>相关性阈值</span>
+        <input type="number" name="relevance_threshold" value="5" min="0" max="10"></label>
+    </div>
+    <label><span>说明 *</span>
+      <textarea name="description" rows="2" placeholder="n8n / Dify / Coze 等工作流工具、Agent 搭建、API 编排、自动化脚本方向的教程"></textarea></label>
+    <button class="primary">创建</button>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}后台{% endblock %} · tg-course-worker</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+{% if not hide_nav %}
+<header class="top">
+  <span class="brand">tg-course-worker</span>
+  <nav>
+    {% set p = request.url.path %}
+    <a href="/"           class="{{ 'active' if p == '/' }}">总览</a>
+    <a href="/queue"      class="{{ 'active' if p.startswith('/queue') }}">待发队列</a>
+    <a href="/items"      class="{{ 'active' if p.startswith('/items') }}">素材库</a>
+    <a href="/published"  class="{{ 'active' if p.startswith('/published') }}">已发布</a>
+    <a href="/channels"   class="{{ 'active' if p.startswith('/channels') }}">频道</a>
+    <a href="/verticals"  class="{{ 'active' if p.startswith('/verticals') }}">内容方向</a>
+    <a href="/bots"       class="{{ 'active' if p.startswith('/bots') }}">Bot</a>
+    <a href="/topology"   class="{{ 'active' if p.startswith('/topology') }}">关系图</a>
+  </nav>
+  <span class="spacer"></span>
+  <a href="/logout" class="muted small">退出</a>
+</header>
+{% endif %}
+
+<main>
+  {% if msg %}<div class="flash ok">{{ msg }}</div>{% endif %}
+  {% if err %}<div class="flash err">{{ err }}</div>{% endif %}
+  {% block body %}{% endblock %}
+</main>
+{% block scripts %}{% endblock %}
+</body>
+</html>

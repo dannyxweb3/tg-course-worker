@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Bot{% endblock %}
+{% block body %}
+
+<h1>Bot</h1>
+<div class="flash ok" style="background:transparent;border-color:var(--border)">
+  <b>token 不存数据库</b>，这里只记环境变量名。加新 bot 的顺序是：
+  先在 <span class="mono">.env</span> 里加一行 <span class="mono">BOT_XXX=123:AAA...</span>，
+  重启进程，再回这里用变量名 <span class="mono">BOT_XXX</span> 建记录。
+</div>
+
+<div class="card" style="padding:0;margin-bottom:20px">
+  <table>
+    <thead>
+      <tr><th>名称</th><th style="width:110px">角色</th><th style="width:190px">token 变量</th>
+          <th style="width:130px">username</th><th style="width:90px">状态</th><th style="width:150px"></th></tr>
+    </thead>
+    <tbody>
+    {% for b in rows %}
+      <tr>
+        <form method="post" action="/bots/{{ b.id }}/save" id="bot-{{ b.id }}"></form>
+        <td><input form="bot-{{ b.id }}" type="text" name="name" value="{{ b.name }}"></td>
+        <td>
+          <select form="bot-{{ b.id }}" name="role">
+            <option value="producer" {{ 'selected' if b.role == 'producer' }}>生产</option>
+            <option value="publisher" {{ 'selected' if b.role == 'publisher' }}>发布</option>
+            <option value="sale" {{ 'selected' if b.role == 'sale' }}>售卖</option>
+          </select>
+        </td>
+        <td><input form="bot-{{ b.id }}" type="text" name="token_env_key" value="{{ b.token_env_key }}" class="mono"></td>
+        <td class="small">{% if b.username %}@{{ b.username }}{% else %}<span class="muted">—</span>{% endif %}</td>
+        <td>
+          {% if b.has_token %}<span class="badge ok">token ✓</span>
+          {% else %}<span class="badge err">缺 token</span>{% endif %}
+        </td>
+        <td class="row" style="justify-content:flex-end">
+          <label class="inline small"><input form="bot-{{ b.id }}" type="checkbox" name="is_active" {{ 'checked' if b.is_active }}> 启用</label>
+          <button form="bot-{{ b.id }}" class="mini primary">保存</button>
+          <form class="inline" method="post" action="/bots/{{ b.id }}/delete"
+                onsubmit="return confirm('删除 bot「{{ b.name }}」？')">
+            <button class="mini danger">删</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+    {% if not rows %}
+      <tr><td colspan="6" class="muted" style="text-align:center;padding:26px">还没有 bot 记录</td></tr>
+    {% endif %}
+    </tbody>
+  </table>
+</div>
+
+<h2>新增 bot</h2>
+<div class="card">
+  <form class="row" method="post" action="/bots/new">
+    <label style="flex:1;margin:0"><span>名称</span>
+      <input type="text" name="name" placeholder="主号发布"></label>
+    <label style="width:130px;margin:0"><span>角色</span>
+      <select name="role">
+        <option value="publisher">发布</option>
+        <option value="sale">售卖</option>
+        <option value="producer">生产</option>
+      </select></label>
+    <label style="flex:1;margin:0"><span>token 环境变量名</span>
+      <input type="text" name="token_env_key" class="mono" placeholder="BOT_MAIN"></label>
+    <button class="primary" style="align-self:flex-end">添加并校验</button>
+  </form>
+
+  {% if candidates %}
+  <p class="small muted" style="margin-bottom:0">
+    .env 里已有但还没建记录的变量：
+    {% for c in candidates %}<span class="badge mono">{{ c }}</span>{% endfor %}
+  </p>
+  {% endif %}
+</div>
+
+{% endblock %}

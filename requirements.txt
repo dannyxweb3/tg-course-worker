@@ -1,0 +1,28 @@
+# --- Telegram ---
+aiogram==3.15.0
+
+# --- 存储 ---
+aiosqlite==0.20.0
+
+# --- 调度 ---
+APScheduler==3.10.4
+tzdata==2024.2
+
+# --- HTTP / 抓取 ---
+httpx==0.27.2
+trafilatura==1.12.2
+
+# --- 文档解析 ---
+pymupdf==1.24.14
+
+# --- 配置 ---
+pydantic==2.9.2
+pydantic-settings==2.6.1
+python-dotenv==1.0.1
+
+# --- 管理后台（服务端渲染，无前端构建步骤）---
+fastapi==0.115.5
+uvicorn==0.32.1
+jinja2==3.1.4
+python-multipart==0.0.19
+itsdangerous==2.2.0

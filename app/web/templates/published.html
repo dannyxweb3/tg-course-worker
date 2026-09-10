@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}已发布{% endblock %}
+{% block body %}
+
+<div class="row" style="margin-bottom:16px">
+  <h1 style="margin:0">已发布</h1>
+  <form class="right row" method="get" action="/published">
+    <select name="channel" onchange="this.form.submit()">
+      <option value="0">全部频道</option>
+      {% for c in channels %}
+        <option value="{{ c.id }}" {{ 'selected' if current == c.id }}>{{ c.name }}</option>
+      {% endfor %}
+    </select>
+    <noscript><button type="submit">筛选</button></noscript>
+  </form>
+</div>
+
+{% if not rows %}
+  <div class="empty">还没有发布记录。</div>
+{% else %}
+<div class="card" style="padding:0">
+  <table>
+    <thead>
+      <tr><th style="width:130px">时间</th><th style="width:150px">频道</th><th>标题</th>
+          <th style="width:70px">档位</th><th style="width:80px">消息</th></tr>
+    </thead>
+    <tbody>
+    {% for r in rows %}
+      <tr>
+        <td class="small muted">{{ r.published_at|dt('%Y-%m-%d %H:%M') }}</td>
+        <td>{{ r.channel_name }}</td>
+        <td><a href="/items/{{ r.item_id }}">{{ r.title }}</a></td>
+        <td><span class="badge">{{ r.level }}</span></td>
+        <td class="small">
+          {% if r.channel_username %}
+            <a href="https://t.me/{{ r.channel_username }}/{{ r.channel_msg_id }}" target="_blank" rel="noopener">看原帖 ↗</a>
+          {% else %}
+            <span class="muted mono">{{ r.channel_msg_id }}</span>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+{% endblock %}

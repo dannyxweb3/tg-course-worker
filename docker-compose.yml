@@ -1,0 +1,26 @@
+services:
+  worker:
+    build: .
+    image: tg-course-worker
+    container_name: tg-course-worker
+    restart: unless-stopped
+    env_file: .env
+    # 后台只映射到宿主机 127.0.0.1，不对公网开放。
+    # 远程访问用 SSH 隧道：ssh -L 8080:127.0.0.1:8080 user@server
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      # 容器内必须绑 0.0.0.0 才能被端口映射转进来，
+      # 对外的暴露面由上面的 127.0.0.1 绑定控制
+      WEB_HOST: "0.0.0.0"
+    volumes:
+      # 数据和日志挂出来，重建镜像不丢
+      - ./data:/app/data
+      - ./logs:/app/logs
+      # prompt 挂出来，改文案风格不用重新 build
+      - ./config/prompts:/app/config/prompts:ro
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

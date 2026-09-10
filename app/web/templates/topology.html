@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %}关系图{% endblock %}
+{% block body %}
+
+{# 三列布局的几何参数，改这里就能整体缩放 #}
+{% set BW = 190 %}{% set CW = 210 %}{% set VW = 190 %}
+{% set X1 = 10 %}{% set X2 = 300 %}{% set X3 = 610 %}
+{% set NH = 46 %}{% set GAP = 16 %}{% set TOP = 34 %}
+{% set rows = [bots|length, channels|length, verticals|length]|max %}
+{% set H = TOP + (rows if rows > 0 else 1) * (NH + GAP) + 10 %}
+
+<div class="row" style="margin-bottom:14px">
+  <h1 style="margin:0">关系图</h1>
+  <form class="right inline" method="post" action="/topology/check">
+    <button class="primary">立即做健康检查</button>
+  </form>
+</div>
+
+{% if orphans %}
+<div class="flash err">
+  <b>发现 {{ orphans|length }} 处断点</b>
+  <ul style="margin:6px 0 0;padding-left:20px">
+    {% for o in orphans %}<li>{{ o }}</li>{% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<div class="card topo">
+  <svg viewBox="0 0 {{ X3 + VW + 10 }} {{ H }}" width="100%" height="{{ H }}">
+    <text class="col-title" x="{{ X1 }}" y="16">BOT</text>
+    <text class="col-title" x="{{ X2 }}" y="16">频道</text>
+    <text class="col-title" x="{{ X3 }}" y="16">内容方向</text>
+
+    {# 先画连线，让节点盖在上面 #}
+    {% for kind, a, b in links %}
+      {% if kind == 'ver' %}
+        {% set x1 = X2 + CW %}{% set y1 = TOP + a * (NH + GAP) + NH / 2 %}
+        {% set x2 = X3 %}{% set y2 = TOP + b * (NH + GAP) + NH / 2 %}
+      {% else %}
+        {# 同一个 bot 常常兼任发布和售卖，两条线会完全重合，给售卖线错开 7px #}
+        {% set off = 7 if kind == 'sale' else 0 %}
+        {% set x1 = X1 + BW %}{% set y1 = TOP + a * (NH + GAP) + NH / 2 + off %}
+        {% set x2 = X2 %}{% set y2 = TOP + b * (NH + GAP) + NH / 2 + off %}
+      {% endif %}
+      {% set mid = (x1 + x2) / 2 %}
+      <path class="link {{ kind }}"
+            d="M {{ x1 }} {{ y1 }} C {{ mid }} {{ y1 }}, {{ mid }} {{ y2 }}, {{ x2 }} {{ y2 }}"/>
+    {% endfor %}
+
+    {% for b in bots %}
+      {% set y = TOP + loop.index0 * (NH + GAP) %}
+      <g class="node">
+        <rect x="{{ X1 }}" y="{{ y }}" width="{{ BW }}" height="{{ NH }}" rx="7"
+              {% if not b.is_active %}stroke-dasharray="4 3"{% endif %}/>
+        <text x="{{ X1 + 11 }}" y="{{ y + 19 }}">{{ b.name[:16] }}</text>
+        <text class="sub" x="{{ X1 + 11 }}" y="{{ y + 34 }}">{{ b.role }}{% if b.username %} · @{{ b.username[:14] }}{% endif %}</text>
+      </g>
+    {% endfor %}
+
+    {% for c in channels %}
+      {% set y = TOP + loop.index0 * (NH + GAP) %}
+      <g class="node">
+        <rect x="{{ X2 }}" y="{{ y }}" width="{{ CW }}" height="{{ NH }}" rx="7"
+              {% if not c.is_active %}stroke-dasharray="4 3"{% endif %}
+              {% if c.health_status == 'error' %}stroke="var(--err)"{% elif c.health_status == 'ok' %}stroke="var(--ok)"{% endif %}/>
+        <text x="{{ X2 + 11 }}" y="{{ y + 19 }}">{{ c.name[:18] }}</text>
+        <text class="sub" x="{{ X2 + 11 }}" y="{{ y + 34 }}">队列 {{ c.queue_size }} · {{ c.publish_cron }}</text>
+      </g>
+    {% endfor %}
+
+    {% for v in verticals %}
+      {% set y = TOP + loop.index0 * (NH + GAP) %}
+      <g class="node">
+        <rect x="{{ X3 }}" y="{{ y }}" width="{{ VW }}" height="{{ NH }}" rx="7"
+              {% if not v.is_active %}stroke-dasharray="4 3"{% endif %}/>
+        <text x="{{ X3 + 11 }}" y="{{ y + 19 }}">{{ v.name[:16] }}</text>
+        <text class="sub" x="{{ X3 + 11 }}" y="{{ y + 34 }}">{{ v.slug }}</text>
+      </g>
+    {% endfor %}
+  </svg>
+
+  <div class="legend">
+    <span><i style="border-color:var(--accent)"></i>发布身份</span>
+    <span><i style="border-color:var(--warn);border-top-style:dashed"></i>售卖按钮</span>
+    <span><i style="border-color:var(--ok)"></i>内容方向</span>
+    <span>虚线框 = 已停用</span>
+  </div>
+</div>
+
+<div class="grid two" style="margin-top:16px">
+  <div class="card">
+    <h3>频道健康</h3>
+    <table>
+      <tbody>
+      {% for c in channels %}
+        <tr>
+          <td>
+            {% if c.health_status == 'ok' %}<span style="color:var(--ok)">●</span>
+            {% elif c.health_status == 'error' %}<span style="color:var(--err)">●</span>
+            {% else %}<span class="muted">●</span>{% endif %}
+            {{ c.name }}
+          </td>
+          <td class="small muted">{{ c.health_detail or '未检查' }}</td>
+          <td class="small muted">{{ c.health_checked_at|ago }}</td>
+        </tr>
+      {% endfor %}
+      {% if not channels %}<tr><td class="muted">还没有频道</td></tr>{% endif %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>这张图在看什么</h3>
+    <p class="small muted" style="margin:0">
+      多频道之后最容易出的事，是某一环悄悄断了而你毫无察觉：bot 被踢出频道、
+      被降权、方向没有频道承接导致素材积压、频道没绑发布 bot。
+      上面的断点列表和健康检查每天自动跑一次，异常会私聊告警。
+    </p>
+  </div>
+</div>
+
+{% endblock %}

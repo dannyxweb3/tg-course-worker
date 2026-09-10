@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}总览{% endblock %}
+{% block body %}
+
+<div class="stats">
+  <div class="stat"><b>{{ total_queue }}</b><span>待发总数</span></div>
+  <div class="stat"><b>{{ counts.get('review', 0) }}</b><span>待审核</span></div>
+  <div class="stat"><b>{{ counts.get('new', 0) + counts.get('classified', 0) }}</b><span>处理中</span></div>
+  <div class="stat"><b>{{ counts.get('published', 0) }}</b><span>已发布</span></div>
+  <div class="stat"><b>{{ counts.get('failed', 0) }}</b><span>出错</span></div>
+  <div class="stat"><b>{{ user_total }}</b><span>读者</span></div>
+</div>
+
+<h1>频道</h1>
+{% if not cards %}
+  <div class="empty">
+    还没有频道。先去 <a href="/bots">Bot</a> 添加发布身份，再到
+    <a href="/channels">频道</a> 建一个。
+  </div>
+{% else %}
+<div class="grid cards">
+  {% for c in cards %}
+  <div class="card chan-card">
+    <h3>
+      {% if c.health_status == 'ok' %}<span class="dot" style="color:var(--ok)">●</span>
+      {% elif c.health_status == 'error' %}<span class="dot" style="color:var(--err)">●</span>
+      {% else %}<span class="dot muted">●</span>{% endif %}
+      {{ c.name }}
+      {% if not c.is_active %}<span class="badge">已停用</span>{% endif %}
+    </h3>
+    <div class="small muted mono">
+      {{ c.chat_id }}{% if c.username %} · @{{ c.username }}{% endif %}
+    </div>
+
+    <dl>
+      <dt>方向</dt><dd>{{ c.vertical_name or '—' }}</dd>
+      <dt>发布</dt><dd>{% if c.publisher_username %}@{{ c.publisher_username }}{% else %}<span class="badge err">未绑定</span>{% endif %}</dd>
+      <dt>售卖</dt><dd>{% if c.sale_username %}@{{ c.sale_username }}{% else %}—{% endif %}</dd>
+      <dt>排期</dt><dd class="mono">{{ c.publish_cron }} <span class="muted">{{ c.timezone }}</span></dd>
+    </dl>
+
+    {% if c.health_status == 'error' %}
+      <p class="small" style="color:var(--err);margin:10px 0 0">⚠️ {{ c.health_detail }}</p>
+    {% endif %}
+
+    <div class="next">
+      <div class="row">
+        <span class="badge accent">队列 {{ c.queue_size }}</span>
+        <span class="muted small">累计发布 {{ c.published_total }} · 最近 {{ c.last_published_at|ago }}</span>
+      </div>
+      {% if c.next_title %}
+        <div class="small" style="margin-top:6px">
+          下一条：{{ c.next_title }}
+          {% if c.next_run %}<span class="muted">· {{ c.next_run|dt('%m-%d %H:%M') }}</span>{% endif %}
+        </div>
+      {% else %}
+        <div class="small" style="margin-top:6px;color:var(--warn)">队列已空，明天没内容可发</div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<h2>最近发布</h2>
+{% if not recent %}
+  <div class="empty">还没有发布记录。</div>
+{% else %}
+<div class="card" style="padding:0">
+  <table>
+    <thead><tr><th>时间</th><th>频道</th><th>标题</th><th>档位</th><th></th></tr></thead>
+    <tbody>
+    {% for r in recent %}
+      <tr>
+        <td class="small muted">{{ r.published_at|dt }}</td>
+        <td>{{ r.channel_name }}</td>
+        <td><a href="/items/{{ r.item_id }}">{{ r.title }}</a></td>
+        <td><span class="badge">{{ r.level }}</span></td>
+        <td>
+          {% if r.channel_username %}
+            <a class="small" href="https://t.me/{{ r.channel_username }}/{{ r.channel_msg_id }}" target="_blank" rel="noopener">看原帖 ↗</a>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+{% endblock %}

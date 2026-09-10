@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}频道{% endblock %}
+{% block body %}
+
+<h1>频道</h1>
+
+{% for c in channels %}
+<div class="card" style="margin-bottom:14px">
+  <form method="post" action="/channels/{{ c.id }}/save">
+    <div class="row" style="margin-bottom:12px">
+      {% if c.health_status == 'ok' %}<span class="dot" style="color:var(--ok)">●</span>
+      {% elif c.health_status == 'error' %}<span class="dot" style="color:var(--err)">●</span>
+      {% else %}<span class="dot muted">●</span>{% endif %}
+      <b>{{ c.name }}</b>
+      <span class="mono muted small">{{ c.chat_id }}</span>
+      <span class="right row">
+        <label class="inline small"><input type="checkbox" name="is_active" {{ 'checked' if c.is_active }}> 启用</label>
+        <button class="primary mini">保存</button>
+      </span>
+    </div>
+
+    {% if c.health_status == 'error' %}
+      <p class="small" style="color:var(--err)">⚠️ {{ c.health_detail }}（{{ c.health_checked_at|ago }}检查）</p>
+    {% endif %}
+
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+      <label><span>频道名</span><input type="text" name="name" value="{{ c.name }}"></label>
+      <label><span>username（不带 @，用于生成帖子链接）</span>
+        <input type="text" name="username" value="{{ c.username }}"></label>
+      <label><span>内容方向</span>
+        <select name="vertical_id">
+          <option value="0">未设置</option>
+          {% for v in verticals %}
+            <option value="{{ v.id }}" {{ 'selected' if v.id == c.vertical_id }}>{{ v.name }}</option>
+          {% endfor %}
+        </select></label>
+      <label><span>发布 bot（必须是本频道管理员）</span>
+        <select name="publisher_bot_id">
+          <option value="0">未绑定</option>
+          {% for b in bots %}{% if b.role != 'producer' %}
+            <option value="{{ b.id }}" {{ 'selected' if b.id == c.publisher_bot_id }}>{{ b.name }}{% if b.username %} @{{ b.username }}{% endif %}</option>
+          {% endif %}{% endfor %}
+        </select></label>
+      <label><span>售卖 bot（帖子底部按钮指向）</span>
+        <select name="sale_bot_id">
+          <option value="0">不挂按钮</option>
+          {% for b in bots %}{% if b.role == 'sale' %}
+            <option value="{{ b.id }}" {{ 'selected' if b.id == c.sale_bot_id }}>{{ b.name }}{% if b.username %} @{{ b.username }}{% endif %}</option>
+          {% endif %}{% endfor %}
+        </select></label>
+      <label><span>讨论组 id（可空）</span>
+        <input type="text" name="linked_group_id" value="{{ c.linked_group_id }}"></label>
+      <label><span>排期 cron（分 时 日 月 周）</span>
+        <input type="text" name="publish_cron" value="{{ c.publish_cron }}" class="mono"></label>
+      <label><span>时区</span>
+        <input type="text" name="timezone_name" value="{{ c.timezone }}"></label>
+    </div>
+  </form>
+
+  <div class="row small muted" style="margin-top:8px">
+    队列 {{ c.queue_size }} 条 · 累计发布 {{ c.published_total }} · 最近 {{ c.last_published_at|ago }}
+    <form class="inline right" method="post" action="/channels/{{ c.id }}/delete"
+          onsubmit="return confirm('删除频道「{{ c.name }}」？已发布记录会保留。')">
+      <button class="mini danger">删除</button>
+    </form>
+  </div>
+</div>
+{% endfor %}
+
+<h2>新增频道</h2>
+<div class="card">
+  <form method="post" action="/channels/new">
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+      <label><span>频道名 *</span><input type="text" name="name" placeholder="AI 自动化主号"></label>
+      <label><span>chat_id *（形如 -1001234567890）</span>
+        <input type="text" name="chat_id" class="mono"></label>
+      <label><span>username（不带 @）</span><input type="text" name="username"></label>
+      <label><span>内容方向</span>
+        <select name="vertical_id">
+          <option value="0">未设置</option>
+          {% for v in verticals %}<option value="{{ v.id }}">{{ v.name }}</option>{% endfor %}
+        </select></label>
+      <label><span>发布 bot</span>
+        <select name="publisher_bot_id">
+          <option value="0">未绑定</option>
+          {% for b in bots %}{% if b.role != 'producer' %}
+            <option value="{{ b.id }}">{{ b.name }}</option>{% endif %}{% endfor %}
+        </select></label>
+      <label><span>售卖 bot</span>
+        <select name="sale_bot_id">
+          <option value="0">不挂按钮</option>
+          {% for b in bots %}{% if b.role == 'sale' %}
+            <option value="{{ b.id }}">{{ b.name }}</option>{% endif %}{% endfor %}
+        </select></label>
+      <label><span>排期 cron</span>
+        <input type="text" name="publish_cron" value="0 9 * * *" class="mono"></label>
+      <label><span>时区</span>
+        <input type="text" name="timezone_name" value="Asia/Shanghai"></label>
+    </div>
+    <button class="primary">创建</button>
+  </form>
+  <p class="small muted">
+    chat_id 拿法：把发布 bot 设为频道管理员并勾选「发布消息」，
+    然后在频道发条消息转发给 <span class="mono">@userinfobot</span>。
+  </p>
+</div>
+
+{% endblock %}

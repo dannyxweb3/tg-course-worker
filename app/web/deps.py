@@ -1,0 +1,84 @@
+"""模板环境和几个共用的小工具。"""
+from __future__ import annotations
+
+from datetime import datetime
+from pathlib import Path
+from urllib.parse import urlencode
+
+from fastapi.responses import RedirectResponse
+from fastapi.templating import Jinja2Templates
+
+from app.models import ItemStatus, Level
+from config.settings import settings
+
+WEB_ROOT = Path(__file__).resolve().parent
+templates = Jinja2Templates(directory=WEB_ROOT / "templates")
+
+
+def _fmt_dt(value: str | None, fmt: str = "%m-%d %H:%M") -> str:
+    """库里存的是 UTC ISO，展示时转成本地时区。"""
+    if not value:
+        return "—"
+    try:
+        dt = datetime.fromisoformat(value)
+    except ValueError:
+        return value
+    if dt.tzinfo is not None:
+        dt = dt.astimezone(settings.tz)
+    return dt.strftime(fmt)
+
+
+def _ago(value: str | None) -> str:
+    if not value:
+        return "从未"
+    try:
+        dt = datetime.fromisoformat(value)
+    except ValueError:
+        return value
+    if dt.tzinfo is None:
+        return value
+    delta = datetime.now(settings.tz) - dt.astimezone(settings.tz)
+    secs = int(delta.total_seconds())
+    if secs < 60:
+        return "刚刚"
+    if secs < 3600:
+        return f"{secs // 60} 分钟前"
+    if secs < 86400:
+        return f"{secs // 3600} 小时前"
+    return f"{secs // 86400} 天前"
+
+
+STATUS_LABEL = {
+    "new": "待分类",
+    "classified": "已分类",
+    "review": "待审核",
+    "approved": "待发布",
+    "published": "已发布",
+    "discarded": "已丢弃",
+    "failed": "出错",
+}
+
+templates.env.filters["dt"] = _fmt_dt
+templates.env.filters["ago"] = _ago
+templates.env.globals["STATUS_LABEL"] = STATUS_LABEL
+templates.env.globals["ALL_STATUS"] = [str(s) for s in ItemStatus]
+templates.env.globals["ALL_LEVELS"] = [(str(l), l.label) for l in Level]
+
+
+def redirect(path: str, msg: str = "", err: str = "") -> RedirectResponse:
+    """POST-Redirect-GET，顺带把提示信息带回页面。
+
+    path 本身可能已经带查询串（如 /items/3?draft=7），所以分隔符要看情况选，
+    不能一律用 "?"。
+    """
+    params = {k: v for k, v in (("msg", msg), ("err", err)) if v}
+    if params:
+        sep = "&" if "?" in path else "?"
+        path = f"{path}{sep}{urlencode(params)}"
+    return RedirectResponse(path, status_code=303)
+
+
+def page(request, name: str, **ctx):
+    ctx.setdefault("msg", request.query_params.get("msg", ""))
+    ctx.setdefault("err", request.query_params.get("err", ""))
+    return templates.TemplateResponse(request, name, ctx)

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% set hide_nav = true %}
+{% block title %}登录{% endblock %}
+{% block body %}
+<div class="login-wrap">
+  <div class="card">
+    <h1>tg-course-worker</h1>
+    <form method="post" action="/login">
+      <label>
+        <span>后台密码</span>
+        <input type="password" name="password" autofocus autocomplete="current-password">
+      </label>
+      <button class="primary" type="submit" style="width:100%">登录</button>
+    </form>
+    <p class="small muted" style="margin-bottom:0">
+      密码在 <span class="mono">.env</span> 的 <span class="mono">WEB_PASSWORD</span>。
+    </p>
+  </div>
+</div>
+{% endblock %}

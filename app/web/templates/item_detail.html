@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+{% block title %}#{{ item.id }} {{ current.title if current else '素材' }}{% endblock %}
+{% block body %}
+
+<div class="row" style="margin-bottom:6px">
+  <h1 style="margin:0">#{{ item.id }}</h1>
+  <span class="badge {{ 'err' if item.status == 'failed' else ('ok' if item.status == 'published' else '') }}">
+    {{ STATUS_LABEL.get(item.status, item.status) }}
+  </span>
+  <span class="badge">{{ item.source_type }}</span>
+  {% if item.relevance >= 0 %}<span class="badge">相关性 {{ item.relevance }}/10</span>{% endif %}
+  {% for t in tags %}<span class="badge">#{{ t }}</span>{% endfor %}
+  <a class="right small" href="/items">← 回列表</a>
+</div>
+
+<div class="small muted" style="margin-bottom:16px">
+  {% if item.source_title %}{{ item.source_title }} · {% endif %}
+  {% if item.source_url %}<a href="{{ item.source_url }}" target="_blank" rel="noopener">原文 ↗</a> · {% endif %}
+  {% if item.source_link %}<a href="{{ item.source_link }}" target="_blank" rel="noopener">原消息 ↗</a> · {% endif %}
+  入库 {{ item.created_at|dt('%Y-%m-%d %H:%M') }}
+  {% if item.classify_reason %}<br>判定：{{ item.classify_reason }}
+    {% if scores %}<span class="mono">（{% for k, v in scores.items() %}{{ k }} {{ v }}{% if not loop.last %} · {% endif %}{% endfor %}）</span>{% endif %}
+  {% endif %}
+</div>
+
+{% if not current %}
+  <div class="empty">
+    这条素材还没有生成过文案。
+    <form method="post" action="/items/{{ item.id }}/regenerate" style="margin-top:12px">
+      <select name="level" style="width:auto">
+        {% for val, label in ALL_LEVELS %}{% if val != 'P3' %}
+          <option value="{{ val }}" {{ 'selected' if val == 'P1' }}>{{ label }}</option>
+        {% endif %}{% endfor %}
+      </select>
+      <button class="primary">生成文案</button>
+    </form>
+  </div>
+{% else %}
+
+<div class="row" style="margin-bottom:12px">
+  <span class="small muted">版本</span>
+  <span class="version-list">
+    {% for d in drafts %}
+      <a class="btn mini {{ 'cur' if d.id == current.id }}" href="/items/{{ item.id }}?draft={{ d.id }}"
+         title="{{ d.edited_by }}{% if d.revise_note %} · {{ d.revise_note }}{% endif %}">
+        v{{ d.version }}{% if d.edited_by == 'human' %} ✎{% endif %}
+      </a>
+    {% endfor %}
+  </span>
+  <span class="badge">{{ current.level }} {{ current.level.label }}</span>
+  {% if chunk_count > 1 %}<span class="badge warn">发布时拆 {{ chunk_count }} 条</span>{% endif %}
+</div>
+
+<form method="post" action="/items/{{ item.id }}/draft/{{ current.id }}/save" id="edit-form">
+<div class="editor-grid">
+
+  <div class="card">
+    <h3>编辑</h3>
+    <label><span>标题</span>
+      <input type="text" name="title" value="{{ current.title }}"></label>
+    <label><span>TL;DR</span>
+      <input type="text" name="tldr" value="{{ current.tldr }}"></label>
+    <label><span>正文（Telegram HTML：只支持 b / i / u / s / code / pre / a / blockquote，保存时会自动清洗）</span>
+      <textarea name="body_html" rows="22">{{ current.body_html }}</textarea></label>
+    <label><span>标签（逗号分隔）</span>
+      <input type="text" name="tags" value="{{ current.tags|join(', ') }}"></label>
+    <label><span>来源标注</span>
+      <input type="text" name="attribution" value="{{ current.attribution }}"></label>
+
+    <div class="row">
+      <button class="primary" name="mode" value="inplace">保存</button>
+      <button name="mode" value="fork" title="保留当前版本，另开一版">另存为新版本</button>
+      <span class="right small muted">保存会覆盖 v{{ current.version }}</span>
+    </div>
+  </div>
+
+  <div class="preview-pane">
+    <div class="card">
+      <div class="row" style="margin-bottom:10px">
+        <h3 style="margin:0">预览</h3>
+        <span class="right small muted">和频道里最终效果一致</span>
+      </div>
+      <div id="preview">
+        {% if chunk_count > 1 %}<p class="warn">⚠️ 超过 4096 字符，发布时会拆成 {{ chunk_count }} 条</p>{% endif %}
+        <div class="tg-bubble">{{ preview|safe }}</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</form>
+
+<div class="grid two" style="margin-top:16px">
+
+  <div class="card">
+    <h3>让 AI 再改一版</h3>
+    <form method="post" action="/items/{{ item.id }}/revise">
+      <input type="hidden" name="draft_id" value="{{ current.id }}">
+      <label><span>修改意见（会带上原素材和当前版本一起重跑，产出新版本）</span>
+        <textarea name="note" rows="3" placeholder="例：开头砍掉，加一个 n8n 的对比表"></textarea></label>
+      <button class="primary">按意见重写</button>
+    </form>
+
+    <hr style="border:0;border-top:1px solid var(--border);margin:16px 0">
+
+    <form class="row" method="post" action="/items/{{ item.id }}/regenerate">
+      <span class="small muted">或换档位整篇重来</span>
+      <select name="level" style="width:auto">
+        {% for val, label in ALL_LEVELS %}{% if val != 'P3' %}
+          <option value="{{ val }}" {{ 'selected' if val == current.level|string }}>{{ label }}</option>
+        {% endif %}{% endfor %}
+      </select>
+      <button>重新生成</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h3>发布</h3>
+    {% if queue_entries %}
+      <p class="small">已在队列：
+        {% for q in queue_entries %}<span class="badge accent">{{ q.channel_name }}</span>{% endfor %}
+      </p>
+    {% endif %}
+    {% if published %}
+      <p class="small">已发布：
+        {% for p in published %}
+          <span class="badge ok">{{ p.channel_name }}</span>
+          {% if p.channel_username %}<a class="small" href="https://t.me/{{ p.channel_username }}/{{ p.channel_msg_id }}" target="_blank" rel="noopener">↗</a>{% endif %}
+        {% endfor %}
+      </p>
+    {% endif %}
+
+    <form class="row" method="post" action="/items/{{ item.id }}/approve">
+      <input type="hidden" name="draft_id" value="{{ current.id }}">
+      <select name="channel_id" style="width:auto;flex:1">
+        <option value="0">选择频道…</option>
+        {% for c in channels %}<option value="{{ c.id }}">{{ c.name }}</option>{% endfor %}
+      </select>
+      <button class="primary">加入待发</button>
+    </form>
+    <p class="small muted">同一条可以加进多个频道，各自独立排队。</p>
+
+    <hr style="border:0;border-top:1px solid var(--border);margin:16px 0">
+
+    <form class="row" method="post" action="/items/{{ item.id }}/reroute">
+      <span class="small muted">内容方向</span>
+      <select name="vertical_id" style="width:auto;flex:1">
+        <option value="0">未设置</option>
+        {% for v in verticals %}
+          <option value="{{ v.id }}" {{ 'selected' if vertical and v.id == vertical.id }}>{{ v.name }}</option>
+        {% endfor %}
+      </select>
+      <button>改</button>
+    </form>
+
+    <div class="row" style="margin-top:14px">
+      {% if item.status == 'discarded' %}
+        <form class="inline" method="post" action="/items/{{ item.id }}/restore">
+          <button>恢复为待审核</button></form>
+      {% else %}
+        <form class="inline" method="post" action="/items/{{ item.id }}/discard"
+              onsubmit="return confirm('丢弃这条？原文仍会保留在库里。')">
+          <button class="danger">丢弃</button></form>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+{% endif %}
+
+<h2>素材原文 <span class="muted small">{{ item.raw_text|length }} 字符 · 永久保留，可随时重跑</span></h2>
+<div class="raw-source">{{ item.raw_text }}</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+// 实时预览：走的是发布时同一套 compose + sanitize + split，所见即所发
+(function () {
+  const form = document.getElementById('edit-form');
+  if (!form) return;
+  const out = document.getElementById('preview');
+  let timer = null;
+
+  async function refresh() {
+    const fd = new FormData(form);
+    fd.delete('mode');
+    try {
+      const r = await fetch('/api/preview', { method: 'POST', body: fd });
+      out.innerHTML = await r.text();
+    } catch (e) {
+      out.innerHTML = '<p class="warn">预览请求失败</p>';
+    }
+  }
+
+  form.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(refresh, 400);
+  });
+
+  // Ctrl/Cmd+S 直接保存，改长文时很省事
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+      e.preventDefault();
+      form.querySelector('button[value=inplace]').click();
+    }
+  });
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}待发队列{% endblock %}
+{% block body %}
+
+<div class="row" style="margin-bottom:16px">
+  <h1 style="margin:0">待发队列</h1>
+  <form class="right row" method="get" action="/queue">
+    <select name="channel" onchange="this.form.submit()">
+      <option value="0">全部频道</option>
+      {% for c in channels %}
+        <option value="{{ c.id }}" {{ 'selected' if current == c.id }}>{{ c.name }}</option>
+      {% endfor %}
+    </select>
+    <noscript><button type="submit">筛选</button></noscript>
+  </form>
+</div>
+
+{% if not grouped %}
+  <div class="empty">队列是空的。去 <a href="/items?status=review">素材库</a> 审核几条。</div>
+{% endif %}
+
+{% for chan_name, rows in grouped.items() %}
+  <h2>{{ chan_name }} <span class="badge accent">{{ rows|length }}</span></h2>
+  <div class="card" style="padding:0">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:52px">顺序</th>
+          <th>标题</th>
+          <th style="width:70px">档位</th>
+          <th style="width:70px">字符</th>
+          <th style="width:150px">指定日期</th>
+          <th style="width:210px"></th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for r in rows %}
+        <tr>
+          <td>
+            <form class="inline" method="post" action="/queue/{{ r.item_id }}/{{ r.channel_id }}/move">
+              <input type="hidden" name="delta" value="1">
+              <button class="mini" title="提前">▲</button>
+            </form>
+            <form class="inline" method="post" action="/queue/{{ r.item_id }}/{{ r.channel_id }}/move">
+              <input type="hidden" name="delta" value="-1">
+              <button class="mini" title="推后">▼</button>
+            </form>
+          </td>
+          <td>
+            <a href="/items/{{ r.item_id }}">{{ r.title }}</a>
+            <span class="muted small">#{{ r.item_id }} v{{ r.version }}</span>
+          </td>
+          <td><span class="badge">{{ r.level }}</span></td>
+          <td class="num">{{ r.chars }}</td>
+          <td>
+            <form class="row" method="post" action="/queue/{{ r.item_id }}/{{ r.channel_id }}/pin">
+              <input type="date" name="pin_date" value="{{ r.pin_date }}" style="width:130px">
+              <button class="mini" title="保存日期">✓</button>
+            </form>
+          </td>
+          <td class="row" style="justify-content:flex-end">
+            <form class="inline" method="post" action="/queue/{{ r.item_id }}/{{ r.channel_id }}/publish"
+                  onsubmit="return confirm('立即发布到「{{ chan_name }}」？这会真的推送到频道。')">
+              <button class="mini primary">立即发布</button>
+            </form>
+            <form class="inline" method="post" action="/queue/{{ r.item_id }}/{{ r.channel_id }}/remove">
+              <button class="mini danger">移出</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endfor %}
+
+<p class="small muted">
+  顺序按优先级排，▲▼ 调整优先级；指定日期的条目只在那一天发，且优先于普通排队。
+</p>
+
+{% endblock %}
