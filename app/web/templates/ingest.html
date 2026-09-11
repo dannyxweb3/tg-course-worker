@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}录入素材{% endblock %}
+{% block body %}
+
+<div class="row" style="margin-bottom:6px">
+  <h1 style="margin:0">录入素材</h1>
+  {% if pending %}
+    <span class="badge accent">后台处理中 {{ pending }} 条</span>
+  {% endif %}
+</div>
+<p class="muted small" style="margin:0 0 18px">
+  转发给生产 bot 之外的第二个入口。提交后立刻返回，抓取和文案生成在后台跑，
+  完成后进「<a href="/items?status=review">待审核</a>」。
+</p>
+
+<div class="grid two">
+
+  <form class="card" method="post" action="/ingest/url">
+    <h3>🔗 链接</h3>
+    <p class="muted small" style="margin:-4px 0 10px">
+      一行一个，最多 {{ max_urls }} 条。纯 JS 渲染的页面抓不到正文。
+    </p>
+    <label>
+      <textarea name="urls" rows="8" required
+                placeholder="https://example.com/tutorial-1&#10;https://example.com/tutorial-2"></textarea>
+    </label>
+    {% include "_ingest_opts.html" %}
+    <button class="primary" type="submit">提交抓取</button>
+  </form>
+
+  <form class="card" method="post" action="/ingest/text">
+    <h3>📝 粘贴正文</h3>
+    <p class="muted small" style="margin:-4px 0 10px">
+      Markdown 或纯文本都行。适合抓不到的页面——自己复制过来。
+    </p>
+    <label>
+      <textarea name="text" rows="8" required
+                placeholder="把教程正文贴在这里…"></textarea>
+    </label>
+    <div class="row">
+      <label style="flex:1;min-width:140px">
+        <span>标题（选填）</span>
+        <input type="text" name="title" placeholder="留空则由文案生成时自拟">
+      </label>
+      <label style="flex:1;min-width:140px">
+        <span>来源链接（选填）</span>
+        <input type="text" name="source_url" placeholder="https://…">
+      </label>
+    </div>
+    {% include "_ingest_opts.html" %}
+    <button class="primary" type="submit">提交生成</button>
+  </form>
+
+  <form class="card" method="post" action="/ingest/file"
+        enctype="multipart/form-data">
+    <h3>📄 上传文件</h3>
+    <p class="muted small" style="margin:-4px 0 10px">
+      支持 {{ exts }}，可多选。扫描版 PDF 提取不出文字。
+    </p>
+    <label>
+      <input type="file" name="files" multiple required
+             accept=".md,.markdown,.txt,.text,.rst,.pdf">
+    </label>
+    {% include "_ingest_opts.html" %}
+    <button class="primary" type="submit">上传并生成</button>
+  </form>
+
+  <div class="card">
+    <h3>最近录入</h3>
+    {% if not recent %}
+      <div class="empty" style="margin:0">还没有在处理的素材。</div>
+    {% else %}
+      <table>
+        <tbody>
+        {% for r in recent %}
+          <tr>
+            <td class="num" style="width:46px">{{ r.id }}</td>
+            <td>
+              <a href="/items/{{ r.id }}">{{ r.draft_title or (r.source_title or '(未生成文案)') }}</a>
+              <div class="small muted">{{ r.vertical_name or '—' }}</div>
+            </td>
+            <td style="width:78px">
+              <span class="badge {{ 'err' if r.status == 'failed' }}">
+                {{ STATUS_LABEL.get(r.status, r.status) }}
+              </span>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <p class="small muted" style="margin:10px 0 0">
+        状态不会自动刷新，<a href="/ingest">刷新页面</a>看进度。
+      </p>
+    {% endif %}
+  </div>
+
+</div>
+
+{% endblock %}

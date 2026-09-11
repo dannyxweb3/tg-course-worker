@@ -37,6 +37,36 @@ class Level(StrEnum):
             return default
 
 
+class AssetKind(StrEnum):
+    """配套资料的类型。
+
+    link / source / fulltext 都是 URL，直接发链接；
+    vault 存的是「资料仓库频道」里的消息 id，发货时用 copyMessage 转给用户
+    ——file_id 是绑定 bot 的，生产 bot 拿到的 file_id 售卖 bot 用不了，
+    所以文件类资料必须走仓库频道中转。
+    """
+
+    LINK = "link"          # 网盘 / GitHub / 任意外链
+    SOURCE = "source"      # 原文出处
+    FULLTEXT = "fulltext"  # 全文页（Telegraph）
+    VAULT = "vault"        # 资料仓库频道里的一条消息
+
+    @property
+    def label(self) -> str:
+        return {
+            "link": "外链 / 网盘",
+            "source": "原文出处",
+            "fulltext": "全文页",
+            "vault": "仓库文件",
+        }[self.value]
+
+    @property
+    def icon(self) -> str:
+        return {"link": "🔗", "source": "📄", "fulltext": "📰", "vault": "📎"}[
+            self.value
+        ]
+
+
 class BotRole(StrEnum):
     PRODUCER = "producer"    # 收素材、审核（私聊，仅 OWNER）
     PUBLISHER = "publisher"  # 频道发布身份，必须是频道管理员

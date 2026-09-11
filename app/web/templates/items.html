@@ -4,14 +4,14 @@
 
 <div class="row" style="margin-bottom:16px">
   <h1 style="margin:0">素材库 <span class="muted small">{{ total }} 条</span></h1>
+  <a class="btn right" href="/ingest">＋ 录入素材</a>
 </div>
 
 <form class="card row" method="get" action="/items" style="margin-bottom:16px">
   <input type="text" name="q" value="{{ q }}" placeholder="搜标题或原文…" style="flex:1;min-width:180px">
   <select name="status" style="width:auto">
-    <option value="">全部状态</option>
-    {% for s in ALL_STATUS %}
-      <option value="{{ s }}" {{ 'selected' if status == s }}>{{ STATUS_LABEL.get(s, s) }}</option>
+    {% for val, label in STATUS_FILTERS %}
+      <option value="{{ val }}" {{ 'selected' if status == val }}>{{ label }}</option>
     {% endfor %}
   </select>
   <select name="vertical" style="width:auto">
@@ -50,6 +50,8 @@
             <span class="badge">{{ r.source_type }}</span>
             {% if r.source_title and r.draft_title %}{{ r.source_title }}{% endif %}
             {% if r.queue_count %}<span class="badge accent">在 {{ r.queue_count }} 个队列</span>{% endif %}
+            {% set na = assets.get(r.id, 0) %}
+            {% if na %}<span class="badge">📚 {{ na }}</span>{% endif %}
           </div>
         </td>
         <td class="small">{{ r.vertical_name or '—' }}</td>

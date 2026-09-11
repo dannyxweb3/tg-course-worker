@@ -1,0 +1,53 @@
+# systemd unit 模板。install.sh 会把 @占位符@ 换掉后装到
+# /etc/systemd/system/ 下，不要直接拿这份文件用。
+[Unit]
+Description=tg-course-worker — Telegram 内容生产与分发
+Documentation=file://@APP_DIR@/README.md
+# 用 network-online 而不是 network：后者只保证网卡起来了，
+# 不保证路由可用。long polling 一启动就要连 api.telegram.org。
+After=network-online.target
+Wants=network-online.target
+# StartLimit* 必须放 [Unit]：systemd 229 之后它们就从 [Service] 挪过来了，
+# 写在 [Service] 里会被当成未知键忽略掉，限流等于没配。
+# 5 分钟内重启超过 10 次就不再尝试，免得配置写错时无限重启刷爆日志。
+StartLimitIntervalSec=300
+StartLimitBurst=10
+
+[Service]
+Type=simple
+User=@APP_USER@
+Group=@APP_USER@
+WorkingDirectory=@APP_DIR@
+ExecStart=@APP_DIR@/.venv/bin/python -m app.main
+
+# 崩了自己爬起来。RestartSec 必须给，否则启动即崩会变成忙循环把 CPU 打满。
+Restart=always
+RestartSec=5
+
+# 停机时先收 SIGTERM 让它把 polling 和数据库收干净
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+
+# ---- 收权限 ----
+# 整个文件系统只读，只有 data/ 和 logs/ 开写。
+# 这样即使代码被注入也改不了自己的源码。
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+ReadWritePaths=@APP_DIR@/data @APP_DIR@/logs
+
+# stdout/stderr 进 journal（用 journalctl 看）；
+# 应用自己还会往 logs/worker.log 写一份，按天轮转留 14 天。
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=@SERVICE_NAME@
+
+[Install]
+WantedBy=multi-user.target

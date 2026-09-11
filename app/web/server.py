@@ -28,9 +28,10 @@ def create_app() -> FastAPI:
         "/static", StaticFiles(directory=WEB_ROOT / "static"), name="static"
     )
 
-    from app.web import routes, routes_admin
+    from app.web import routes, routes_admin, routes_ingest
 
     app.include_router(routes.router)
+    app.include_router(routes_ingest.router)
     app.include_router(routes_admin.router)
     return app
 

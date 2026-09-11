@@ -8,7 +8,7 @@ from urllib.parse import urlencode
 from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 
-from app.models import ItemStatus, Level
+from app.models import AssetKind, ItemStatus, Level
 from config.settings import settings
 
 WEB_ROOT = Path(__file__).resolve().parent
@@ -58,11 +58,31 @@ STATUS_LABEL = {
     "failed": "出错",
 }
 
+# 素材库筛选下拉的选项。值可以是逗号分隔的多状态——"处理中" 就是把
+# 待分类和已分类合成一格，和总览页那块统计对齐。
+STATUS_FILTERS = [
+    ("", "全部状态"),
+    ("new,classified", "处理中"),
+    ("review", "待审核"),
+    ("approved", "待发布"),
+    ("published", "已发布"),
+    ("discarded", "已丢弃"),
+    ("failed", "出错"),
+]
+
 templates.env.filters["dt"] = _fmt_dt
 templates.env.filters["ago"] = _ago
 templates.env.globals["STATUS_LABEL"] = STATUS_LABEL
 templates.env.globals["ALL_STATUS"] = [str(s) for s in ItemStatus]
+templates.env.globals["STATUS_FILTERS"] = STATUS_FILTERS
 templates.env.globals["ALL_LEVELS"] = [(str(l), l.label) for l in Level]
+# 仓库文件（vault）要等资料仓库频道接进来才能用，先不放进表单
+templates.env.globals["ASSET_KINDS"] = [
+    (str(k), k.label, k.icon)
+    for k in (AssetKind.LINK, AssetKind.SOURCE, AssetKind.FULLTEXT)
+]
+templates.env.globals["ASSET_ICON"] = {str(k): k.icon for k in AssetKind}
+templates.env.globals["ASSET_LABEL"] = {str(k): k.label for k in AssetKind}
 
 
 def redirect(path: str, msg: str = "", err: str = "") -> RedirectResponse:

@@ -24,9 +24,14 @@ log = logging.getLogger(__name__)
 async def _cta(channel_row, item_id: int) -> InlineKeyboardMarkup | None:
     """深链带参数：用户点进来时售卖 bot 会收到 /start item_<id>_c<channel>，
     归因和内容定位都靠它。payload 上限 64 字符。
+
+    没有配套资料就不挂按钮——挂了按钮点进去发现空的，比不挂伤害更大。
     """
     sale_id = channel_row["sale_bot_id"]
     if not sale_id:
+        return None
+    if not await db.asset_count(item_id):
+        log.info("item#%s 没有配套资料，本次发布不挂按钮", item_id)
         return None
     sale = await db.get_bot(int(sale_id))
     if sale is None or not sale["username"]:
@@ -75,6 +80,45 @@ async def publish_item(channel_row, item_id: int, draft_id: int) -> int:
         "已发布 item#%s → 频道「%s」msg %s", item_id, channel_row["name"], first_id
     )
     return first_id
+
+
+async def attach_button(item_id: int) -> tuple[int, list[str]]:
+    """给已经发出去的帖子补挂按钮。
+
+    按钮是发布那一刻决定的，发布后才加的资料不会自己长出按钮。
+    这里用 editMessageReplyMarkup 补一次，返回 (成功数, 失败说明)。
+
+    注意：拆成多条的长帖，原本按钮挂在最后一条，而 published 表只记了首条 id，
+    补挂会落在第一条上。位置不同，但读者一样点得到。
+    """
+    rows = await db.published_for_item(item_id)
+    if not rows:
+        return 0, ["这条还没发布过"]
+
+    ok, errs = 0, []
+    for r in rows:
+        channel = await db.get_channel(int(r["channel_id"]))
+        if channel is None:
+            continue
+        cta = await _cta(channel, item_id)
+        if cta is None:
+            errs.append(f"「{r['channel_name']}」没有资料或没绑售卖 bot")
+            continue
+        try:
+            bot = await botpool.get_for_channel(channel)
+            await bot.edit_message_reply_markup(
+                chat_id=int(channel["chat_id"]),
+                message_id=int(r["channel_msg_id"]),
+                reply_markup=cta,
+            )
+            ok += 1
+        except Exception as e:
+            # 按钮本来就对，Telegram 会拒绝这次编辑。这是成功不是失败。
+            if "message is not modified" in str(e):
+                ok += 1
+                continue
+            errs.append(f"「{r['channel_name']}」{type(e).__name__}: {str(e)[:100]}")
+    return ok, errs
 
 
 async def publish_next(channel_id: int) -> bool:

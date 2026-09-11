@@ -7,9 +7,9 @@ import logging
 from fastapi import APIRouter, Form, Request
 from fastapi.responses import HTMLResponse, PlainTextResponse, RedirectResponse
 
-from app import db, publisher, scheduler
+from app import db, publisher, scheduler, telegraph
 from app.llm import pipeline
-from app.models import Draft, ItemStatus, Level
+from app.models import AssetKind, Draft, ItemStatus, Level
 from app.render import compose_post, sanitize, split_html
 from app.web import auth
 from app.web.deps import page, redirect
@@ -138,9 +138,11 @@ async def items_page(
     rows, total = await db.browse_items(
         status=status, vertical_id=vertical, q=q, limit=per, offset=(p - 1) * per
     )
+    # 批量取资料数，别在模板里逐行查
+    assets = await db.asset_counts([int(r["id"]) for r in rows])
     return page(
         request, "items.html",
-        rows=rows, total=total, page_no=p, per=per,
+        rows=rows, total=total, page_no=p, per=per, assets=assets,
         pages=max(1, (total + per - 1) // per),
         status=status, vertical=vertical, q=q,
         verticals=await db.list_verticals(),
@@ -183,6 +185,7 @@ async def _detail_ctx(request: Request, item_id: int, draft_id: int = 0):
         "published": await db.published_for_item(item_id),
         "channels": await db.list_channels(active_only=True),
         "verticals": await db.list_verticals(),
+        "assets": await db.list_assets(item_id),
     }
 
 
@@ -298,6 +301,164 @@ async def discard(item_id: int):
 async def restore(item_id: int):
     await db.update_item(item_id, status=str(ItemStatus.REVIEW))
     return redirect(f"/items/{item_id}", msg="已恢复为待审核")
+
+
+# ---------------------------------------------------------------- 配套资料
+
+@router.post("/items/{item_id}/assets/new")
+async def asset_new(
+    item_id: int,
+    kind: str = Form("link"),
+    title: str = Form(""),
+    url: str = Form(""),
+    passcode: str = Form(""),
+    note: str = Form(""),
+):
+    if not title.strip():
+        return redirect(f"/items/{item_id}", err="资料名称必填")
+    url = url.strip()
+    if not url:
+        return redirect(f"/items/{item_id}", err="链接必填")
+    if not url.startswith(("http://", "https://", "tg://")):
+        return redirect(f"/items/{item_id}", err="链接要以 http(s):// 开头")
+    try:
+        AssetKind(kind)
+    except ValueError:
+        return redirect(f"/items/{item_id}", err="资料类型不对")
+
+    await db.create_asset(
+        item_id, kind=kind, title=title.strip(), url=url,
+        passcode=passcode.strip(), note=note.strip(),
+    )
+    return redirect(f"/items/{item_id}", msg="资料已添加，发布时会挂上按钮")
+
+
+@router.post("/items/{item_id}/assets/{asset_id}/save")
+async def asset_save(
+    item_id: int,
+    asset_id: int,
+    kind: str = Form("link"),
+    title: str = Form(""),
+    url: str = Form(""),
+    passcode: str = Form(""),
+    note: str = Form(""),
+    sort: int = Form(0),
+):
+    if kind == AssetKind.VAULT:
+        # 仓库行的表单里没有 url / passcode / note 字段，
+        # 一并写回去会把它们抹成空串
+        await db.update_asset(asset_id, title=title.strip(), sort=sort)
+    else:
+        await db.update_asset(
+            asset_id, kind=kind, title=title.strip(), url=url.strip(),
+            passcode=passcode.strip(), note=note.strip(), sort=sort,
+        )
+    return redirect(f"/items/{item_id}", msg="资料已保存")
+
+
+async def _byline(item_id: int):
+    """全文页的署名：优先用这条素材实际投递的频道，否则拿第一个活跃频道。"""
+    rows = await db.published_for_item(item_id) or await db.queue_entries_for_item(item_id)
+    channel = None
+    if rows:
+        channel = await db.get_channel(int(rows[0]["channel_id"]))
+    if channel is None:
+        actives = await db.list_channels(active_only=True)
+        channel = actives[0] if actives else None
+    if channel is None:
+        return "", ""
+    url = f"https://t.me/{channel['username']}" if channel["username"] else ""
+    return channel["name"], url
+
+
+@router.post("/items/{item_id}/fulltext")
+async def make_fulltext(item_id: int, source: str = Form("raw"), draft_id: int = Form(0)):
+    """把完整内容推成 Telegraph 页，存成 fulltext 资料。
+
+    已经有全文页就改那一页，不新建——链接可能已经发给读者了。
+    """
+    item = await db.get_item(item_id)
+    if item is None:
+        return redirect("/items", err="素材不存在")
+
+    author_name, author_url = await _byline(item_id)
+    src_url = item["source_url"] or item["source_link"]
+
+    if source == "draft":
+        draft = await db.get_draft(draft_id) or await db.latest_draft(item_id)
+        if draft is None:
+            return redirect(f"/items/{item_id}", err="还没有草稿可发")
+        title = draft.title
+        body = telegraph.html_to_nodes(draft.body_html)
+    else:
+        draft = await db.latest_draft(item_id)
+        title = (draft.title if draft else "") or item["source_title"] or f"素材 #{item_id}"
+        body = telegraph.text_to_nodes(item["raw_text"])
+
+    if not body:
+        return redirect(f"/items/{item_id}", err="内容是空的，没什么可发")
+
+    # 页首交代出处。转载他人内容做全文页，这一条不能省。
+    head: list = []
+    if item["source_title"] or src_url:
+        bits: list = ["原文："]
+        if src_url:
+            bits.append({"tag": "a", "attrs": {"href": src_url},
+                         "children": [item["source_title"] or src_url]})
+        else:
+            bits.append(item["source_title"])
+        head.append({"tag": "aside", "children": bits})
+
+    existing = next(
+        (a for a in await db.list_assets(item_id) if a["kind"] == AssetKind.FULLTEXT),
+        None,
+    )
+    try:
+        url, truncated = await telegraph.publish(
+            title=title, nodes=head + body,
+            author_name=author_name, author_url=author_url,
+            source_url=src_url,
+            edit_path=telegraph.path_of(existing["url"]) if existing else "",
+        )
+    except Exception as e:
+        log.exception("Telegraph 发布失败")
+        return redirect(f"/items/{item_id}", err=f"全文页生成失败：{e}")
+
+    label = "全文（素材原文）" if source == "raw" else "全文（本频道版本）"
+    if existing:
+        await db.update_asset(int(existing["id"]), url=url, title=label)
+        tip = "全文页已更新（链接不变）"
+    else:
+        await db.create_asset(
+            item_id, kind=str(AssetKind.FULLTEXT), title=label, url=url,
+            note="Instant View 全文", sort=-10,
+        )
+        tip = "全文页已生成，并挂成配套资料"
+    if truncated:
+        tip += "　⚠️ 内容超出 Telegraph 上限，页尾已标注为节选"
+    return redirect(f"/items/{item_id}", msg=tip)
+
+
+@router.post("/items/{item_id}/repin")
+async def repin(item_id: int):
+    """给已发布的帖子补挂「获取完整资料」按钮。"""
+    ok, errs = await publisher.attach_button(item_id)
+    if ok and not errs:
+        return redirect(f"/items/{item_id}", msg=f"已给 {ok} 条帖子补挂按钮")
+    if ok:
+        return redirect(f"/items/{item_id}",
+                        msg=f"{ok} 条成功；失败：{'；'.join(errs)}")
+    return redirect(f"/items/{item_id}", err="；".join(errs) or "没有可补挂的帖子")
+
+
+@router.post("/items/{item_id}/assets/{asset_id}/delete")
+async def asset_delete(item_id: int, asset_id: int):
+    await db.delete_asset(asset_id)
+    left = await db.asset_count(item_id)
+    tip = "资料已删除"
+    if not left:
+        tip += "——这条已经没有配套资料了，再发布不会挂按钮"
+    return redirect(f"/items/{item_id}", msg=tip)
 
 
 # ---------------------------------------------------------------- 预览接口

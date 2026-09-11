@@ -20,6 +20,9 @@ from config.settings import settings
 SCHEMA = """
 PRAGMA journal_mode=WAL;
 PRAGMA foreign_keys=ON;
+-- 批处理脚本和常驻服务会同时连这个库。没有 busy_timeout 的话，
+-- 拿不到写锁就是无限干等（表现为脚本卡死），有它就会重试 10 秒再报错。
+PRAGMA busy_timeout=10000;
 
 -- ---------- 配置层：bot / 方向 / 频道 ----------
 
@@ -130,6 +133,24 @@ CREATE TABLE IF NOT EXISTS published (
     views           INTEGER DEFAULT 0
 );
 CREATE INDEX IF NOT EXISTS idx_pub_channel ON published(channel_id);
+
+-- 配套资料。一条素材可以挂多份，频道帖底部的按钮是否出现取决于这里有没有货。
+CREATE TABLE IF NOT EXISTS assets (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id         INTEGER NOT NULL REFERENCES items(id),
+    kind            TEXT NOT NULL,            -- link | source | fulltext | vault
+    title           TEXT NOT NULL,
+    url             TEXT DEFAULT '',
+    vault_msg_id    INTEGER DEFAULT 0,        -- vault：资料仓库频道里的消息 id
+    passcode        TEXT DEFAULT '',          -- 网盘提取码，必须和链接存一起
+    note            TEXT DEFAULT '',
+    is_paid         INTEGER DEFAULT 0,        -- 预留：单份资料的付费门槛
+    sort            INTEGER DEFAULT 0,
+    check_status    TEXT DEFAULT 'unknown',   -- unknown | ok | dead | manual
+    last_checked_at TEXT DEFAULT '',
+    created_at      TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_assets_item ON assets(item_id);
 
 CREATE TABLE IF NOT EXISTS users (
     tg_id         INTEGER PRIMARY KEY,
@@ -397,6 +418,14 @@ async def get_item(item_id: int) -> aiosqlite.Row | None:
     return await _fetchone("SELECT * FROM items WHERE id=?", (item_id,))
 
 
+async def item_by_dedup_key(key: str) -> aiosqlite.Row | None:
+    """按去重键找已有素材。录入前先查一次，好当场告诉人"这条收过了"，
+    而不是等后台跑到一半才静悄悄地丢掉。"""
+    if not key:
+        return None
+    return await _fetchone("SELECT * FROM items WHERE dedup_key=?", (key,))
+
+
 async def update_item(item_id: int, **fields: Any) -> None:
     if not fields:
         return
@@ -418,17 +447,24 @@ async def set_classification(
     level: str,
     reason: str,
     scores: dict[str, int] | None = None,
+    keep_status: bool = False,
 ) -> None:
-    await update_item(
-        item_id,
+    """写入路由结果。
+
+    keep_status=True 用于回补历史素材的分类：那些素材早就有草稿、甚至已经
+    进了队列，把状态推回"已分类"等于把人工审核的进度抹掉。
+    """
+    fields: dict[str, Any] = dict(
         vertical_id=vertical_id,
         relevance=relevance,
         topic_tags=json.dumps(tags, ensure_ascii=False),
         suggested_level=level,
         classify_reason=reason,
         route_scores=json.dumps(scores or {}, ensure_ascii=False),
-        status=str(ItemStatus.CLASSIFIED),
     )
+    if not keep_status:
+        fields["status"] = str(ItemStatus.CLASSIFIED)
+    await update_item(item_id, **fields)
 
 
 async def list_items(status: str, limit: int = 50) -> list[aiosqlite.Row]:
@@ -451,8 +487,14 @@ async def browse_items(
     where: list[str] = []
     args: list[Any] = []
     if status:
-        where.append("i.status = ?")
-        args.append(status)
+        # 支持逗号分隔的多状态，"处理中" 这类聚合筛选靠它（new,classified）
+        parts = [s for s in status.split(",") if s]
+        if len(parts) == 1:
+            where.append("i.status = ?")
+            args.append(parts[0])
+        elif parts:
+            where.append(f"i.status IN ({','.join('?' * len(parts))})")
+            args.extend(parts)
     if vertical_id:
         where.append("i.vertical_id = ?")
         args.append(vertical_id)
@@ -726,6 +768,76 @@ async def published_for_item(item_id: int) -> list[aiosqlite.Row]:
            WHERE p.item_id=? ORDER BY p.published_at DESC""",
         (item_id,),
     )
+
+
+# ============================================================ assets
+
+ASSET_FIELDS = {
+    "kind", "title", "url", "vault_msg_id", "passcode", "note",
+    "is_paid", "sort", "check_status", "last_checked_at",
+}
+update_asset = _update("assets", ASSET_FIELDS)
+
+
+async def create_asset(
+    item_id: int, *, kind: str, title: str, url: str = "",
+    passcode: str = "", note: str = "", vault_msg_id: int = 0,
+    is_paid: int = 0, sort: int | None = None,
+) -> int:
+    db = await connect()
+    if sort is None:
+        row = await _fetchone(
+            "SELECT COALESCE(MAX(sort), 0) + 10 AS s FROM assets WHERE item_id=?",
+            (item_id,),
+        )
+        sort = int(row["s"])  # type: ignore[index]
+    cur = await db.execute(
+        """INSERT INTO assets
+           (item_id, kind, title, url, vault_msg_id, passcode, note,
+            is_paid, sort, created_at)
+           VALUES (?,?,?,?,?,?,?,?,?,?)""",
+        (item_id, kind, title, url, vault_msg_id, passcode, note,
+         is_paid, sort, _now()),
+    )
+    await db.commit()
+    return int(cur.lastrowid)  # type: ignore[arg-type]
+
+
+async def get_asset(asset_id: int) -> aiosqlite.Row | None:
+    return await _fetchone("SELECT * FROM assets WHERE id=?", (asset_id,))
+
+
+async def list_assets(item_id: int) -> list[aiosqlite.Row]:
+    return await _fetchall(
+        "SELECT * FROM assets WHERE item_id=? ORDER BY sort, id", (item_id,)
+    )
+
+
+async def asset_count(item_id: int) -> int:
+    """频道帖要不要挂「获取完整资料」按钮，就看这个数。"""
+    row = await _fetchone(
+        "SELECT COUNT(*) AS c FROM assets WHERE item_id=?", (item_id,)
+    )
+    return int(row["c"]) if row else 0
+
+
+async def asset_counts(item_ids: list[int]) -> dict[int, int]:
+    """列表页批量取，避免 N+1。"""
+    if not item_ids:
+        return {}
+    marks = ",".join("?" * len(item_ids))
+    rows = await _fetchall(
+        f"SELECT item_id, COUNT(*) AS c FROM assets "
+        f"WHERE item_id IN ({marks}) GROUP BY item_id",
+        tuple(item_ids),
+    )
+    return {int(r["item_id"]): int(r["c"]) for r in rows}
+
+
+async def delete_asset(asset_id: int) -> None:
+    db = await connect()
+    await db.execute("DELETE FROM assets WHERE id=?", (asset_id,))
+    await db.commit()
 
 
 # ============================================================ users

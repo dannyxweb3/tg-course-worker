@@ -225,6 +225,25 @@ td.num { text-align: right; font-family: var(--mono); font-size: 12px; }
 .stat b { display: block; font-size: 22px; line-height: 1.2; }
 .stat span { font-size: 12px; color: var(--muted); }
 
+/* 可点击的统计块。箭头默认淡出，hover 才显形，静止时不喧宾夺主 */
+a.stat {
+  color: inherit;
+  display: block;
+  transition: border-color .12s, transform .12s;
+}
+a.stat:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+a.stat span { transition: color .12s; }
+a.stat:hover span { color: var(--accent); }
+a.stat.alert b { color: var(--err); }
+@media (prefers-reduced-motion: reduce) {
+  a.stat { transition: none; }
+  a.stat:hover { transform: none; }
+}
+
 /* ---------- 编辑器 ---------- */
 
 .editor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
@@ -273,6 +292,38 @@ td.num { text-align: right; font-family: var(--mono); font-size: 12px; }
   white-space: pre-wrap;
   word-break: break-word;
   font-size: 13px;
+}
+
+/* ---------- 配套资料 ---------- */
+
+.asset-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+}
+.asset-row:hover { background: var(--surface-2); }
+.asset-row.new {
+  border-bottom: 0;
+  border-top: 1px dashed var(--border);
+  margin-top: 4px;
+  padding-top: 12px;
+}
+.asset-row.gen {
+  border-bottom: 0;
+  border-top: 1px dashed var(--border);
+  margin-top: 4px;
+  padding-top: 12px;
+}
+.asset-row.gen:hover { background: transparent; }
+.asset-row input, .asset-row select { padding: 5px 8px; }
+.asset-icon {
+  width: 22px;
+  text-align: center;
+  flex: none;
+  color: var(--muted);
 }
 
 .version-list { display: flex; gap: 6px; flex-wrap: wrap; }

@@ -8,18 +8,18 @@ import html
 import logging
 
 from aiogram import Bot, F, Router
-from aiogram.filters import Command, CommandStart
+from aiogram.filters import Command, CommandObject, CommandStart
 from aiogram.filters.callback_data import CallbackData
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import CallbackQuery, InlineKeyboardMarkup, Message
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-from app import db, scheduler
+from app import db, scheduler, vault
 from app.ingest.mediagroup import MediaGroupCollector
 from app.ingest.router import IngestError, build_item
 from app.llm import pipeline
-from app.models import Draft, ItemStatus, Level
+from app.models import AssetKind, Draft, ItemStatus, Level
 from app.render import compose_post, split_html
 from app.utils import alerts
 from config.settings import settings
@@ -38,6 +38,7 @@ HELP = (
     "• 从别的群或频道转发的消息\n\n"
     "我会判断它属于哪个内容方向、选处理档位、生成文案，再发审核卡片给你。\n\n"
     "命令：\n"
+    "/attach 12 给 12 号素材加配套资料（直接发文件）\n"
     "/queue 看各频道待发队列\n"
     "/channels 看频道和绑定关系\n"
     "/status 看各状态计数\n"
@@ -58,6 +59,12 @@ class Revising(StatesGroup):
     waiting_note = State()
 
 
+class Attaching(StatesGroup):
+    """收配套资料的状态。进来之后发的文件都会存进仓库频道并挂到这条素材上。"""
+
+    waiting_files = State()
+
+
 # ---------------------------------------------------------------- 审核卡片
 
 def _keyboard(item_id: int, draft: Draft, versions: list[int]) -> InlineKeyboardMarkup:
@@ -65,6 +72,7 @@ def _keyboard(item_id: int, draft: Draft, versions: list[int]) -> InlineKeyboard
     did = draft.id or 0
     kb.button(text="✅ 通过", callback_data=RV(action="ok", item=item_id, draft=did))
     kb.button(text="✏️ 提建议", callback_data=RV(action="rev", item=item_id, draft=did))
+    kb.button(text="📎 加资料", callback_data=RV(action="att", item=item_id, draft=did))
     kb.button(text="🗑️ 丢弃", callback_data=RV(action="del", item=item_id, draft=did))
 
     for lv in (Level.P0, Level.P1, Level.P2):
@@ -81,7 +89,7 @@ def _keyboard(item_id: int, draft: Draft, versions: list[int]) -> InlineKeyboard
             callback_data=RV(action="ver", item=item_id, draft=did, arg=str(vid)),
         )
 
-    kb.adjust(3, 3, 4)
+    kb.adjust(4, 3, 4)
     return kb.as_markup()
 
 
@@ -110,6 +118,16 @@ async def send_review(bot: Bot, item_id: int, draft: Draft) -> None:
     meta = [head]
     if len(chunks) > 1:
         meta.append(f"⚠️ 超长，发布时会拆成 {len(chunks)} 条")
+
+    n_assets = await db.asset_count(item_id)
+    if n_assets:
+        meta.append(f"📚 配套资料 {n_assets} 份，会挂按钮")
+    else:
+        meta.append(
+            f"📭 没有配套资料，发布时不挂按钮 · "
+            f"要加就去 {settings.web_url}/items/{item_id}"
+        )
+
     if draft.note:
         meta.append(f"📝 模型备注：{html.escape(draft.note)}")
 
@@ -314,6 +332,96 @@ async def on_revise_note(message: Message, state: FSMContext, bot: Bot) -> None:
         await alerts.report(f"revise item#{item_id}", e)
 
 
+# ---------------------------------------------------------------- 收配套资料
+
+ATTACH_TIP = (
+    "📎 现在发文件给我，每个都会存进资料仓库并挂到 <b>#{item}</b> 上。\n"
+    "文件的 caption 会用作资料名称，不写就用文件名。\n\n"
+    "发完点 /done 结束，或 /cancel 放弃。"
+)
+
+
+async def _enter_attach(target: Message, state: FSMContext, item_id: int) -> None:
+    if not vault.configured():
+        await target.answer(
+            "⚠️ 资料仓库频道还没配置，收不了文件。\n\n"
+            "建一个私有频道 → 把生产 bot 和售卖 bot 都设为管理员 → "
+            "在频道发条消息转发给 @userinfobot 拿 id → "
+            "填进 .env 的 <code>VAULT_CHANNEL_ID</code> 然后重启。\n\n"
+            f"外链类资料不受影响，可以去 {settings.web_url}/items/{item_id} 添加。",
+            parse_mode="HTML",
+        )
+        return
+    await state.set_state(Attaching.waiting_files)
+    await state.update_data(item_id=item_id)
+    await target.answer(ATTACH_TIP.format(item=item_id), parse_mode="HTML")
+
+
+@router.message(Command("attach"))
+async def cmd_attach(message: Message, command: CommandObject, state: FSMContext) -> None:
+    arg = (command.args or "").strip().lstrip("#")
+    if not arg.isdigit():
+        await message.answer("用法：/attach 12　（12 是素材编号）")
+        return
+    item_id = int(arg)
+    if await db.get_item(item_id) is None:
+        await message.answer(f"素材 #{item_id} 不存在。")
+        return
+    await _enter_attach(message, state, item_id)
+
+
+@router.message(Attaching.waiting_files, Command("done"))
+async def cmd_attach_done(message: Message, state: FSMContext) -> None:
+    item_id = (await state.get_data()).get("item_id", 0)
+    await state.clear()
+    n = await db.asset_count(item_id) if item_id else 0
+    await message.answer(
+        f"收工。#{item_id} 现在有 <b>{n}</b> 份配套资料"
+        + ("，发布时会挂按钮。" if n else "。"),
+        parse_mode="HTML",
+    )
+
+
+@router.message(
+    Attaching.waiting_files,
+    F.document | F.photo | F.video | F.audio | F.animation | F.voice,
+)
+async def on_attach_file(message: Message, state: FSMContext, bot: Bot) -> None:
+    item_id = (await state.get_data()).get("item_id", 0)
+    if not item_id:
+        await state.clear()
+        await message.answer("状态丢了，重新点一次「📎 加资料」。")
+        return
+
+    try:
+        vault_msg_id = await vault.store(bot, message)
+    except vault.VaultError as e:
+        await message.answer(f"⚠️ {html.escape(str(e))}")
+        return
+    except Exception as e:
+        await alerts.report(f"vault.store item#{item_id}", e)
+        return
+
+    filename, kindname = vault.describe(message)
+    # caption 优先当资料名，它比文件名更像人话
+    title = (message.caption or "").strip() or filename
+    await db.create_asset(
+        item_id, kind=str(AssetKind.VAULT), title=title[:120],
+        vault_msg_id=vault_msg_id, note=kindname,
+    )
+    n = await db.asset_count(item_id)
+    await message.answer(
+        f"📎 已收《{html.escape(title[:60])}》· {kindname}\n"
+        f"#{item_id} 现有 <b>{n}</b> 份资料　继续发，或 /done 结束",
+        parse_mode="HTML",
+    )
+
+
+@router.message(Attaching.waiting_files, F.text)
+async def on_attach_stray_text(message: Message) -> None:
+    await message.answer("现在只收文件。发完点 /done 结束，或 /cancel 放弃。")
+
+
 # ---------------------------------------------------------------- 通过 / 选频道
 
 async def _approve(query: CallbackQuery, item_id: int, draft_id: int) -> None:
@@ -397,6 +505,10 @@ async def on_review_action(
 
     elif action == "pick":
         await _enqueue_to(query, item_id, draft_id, int(callback_data.arg))
+
+    elif action == "att":
+        await query.answer()
+        await _enter_attach(query.message, state, item_id)
 
     elif action == "rev":
         await state.set_state(Revising.waiting_note)

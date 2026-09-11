@@ -111,17 +111,22 @@ bots ──┬──(publisher)──▶ channels ──▶ verticals（内容�
 
 ```bash
 git clone <repo> && cd tg-course-worker
-cp .env.example .env && vim .env
-docker compose up -d
-docker compose exec worker python scripts/bootstrap.py
-docker compose logs -f
+sudo deploy/install.sh
 ```
+
+装成 systemd 服务，跟着提示填 `.env`、跑 bootstrap、启动。
+升级就是 `git pull && sudo deploy/install.sh`，`.env` 和 `data/` 不会被动。
+重启用 `tg-course-worker-restart`，看日志用 `journalctl -u tg-course-worker -f`。
+
+要让后台脱离 SSH 隧道访问，`deploy/nginx/` 下有现成的反向代理配置（HTTPS + 登录限流）。
+细节、Docker 方式、nginx 配置说明都在 [deploy/README.md](deploy/README.md)。
 
 用 long polling 而不是 webhook，所以**不需要域名、证书、公网入口和反向代理**。
 后台端口只映射到宿主机 `127.0.0.1`，走 SSH 隧道访问。
 
-`data/`、`logs/`、`config/prompts/` 都挂了卷：数据不随镜像重建丢失，
-改 prompt 调整文案风格也不用重新 build。
+`data/`、`logs/`、`.env` 跨升级保留：systemd 方式下 `install.sh` 只同步代码目录，
+Docker 方式下这几个都挂了卷。改 `config/prompts/` 调整文案风格不用重装，
+重启一下就生效。
 
 备份（cron 每天一次）：
 

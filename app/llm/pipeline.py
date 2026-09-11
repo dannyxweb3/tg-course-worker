@@ -39,7 +39,12 @@ def _style_for(vertical_row) -> str:
 
 
 def _task(name: str) -> str:
-    """任务模板 + 统一的输出格式说明。"""
+    """生成类任务：任务模板 + 统一的输出格式说明。
+
+    只给产出文案的任务用（P0/P1/P2/修订）。分类任务自带 JSON schema，
+    再追加这一段就是两段互相矛盾的"严格输出 JSON"，模型会照着后一段答——
+    分类调用返回的是一篇文案，路由结果整个丢掉。
+    """
     return f"{_prompt(name)}\n\n{_prompt('_output_format')}"
 
 
@@ -89,13 +94,23 @@ async def classify(item) -> Routing:
         for v in verticals
     )
     user = (
-        f"{_task('task_classify').replace('{VERTICALS}', listing)}\n\n"
+        # 用 _prompt 不用 _task：task_classify.md 自带输出 schema
+        f"{_prompt('task_classify').replace('{VERTICALS}', listing)}\n\n"
         f"--- 素材出处 ---\n{_source_block(item)}\n\n"
         f"--- 素材正文 ---\n{_clip(item['raw_text'])}"
     )
     data = await get_provider().complete_json(
         system=_base_style(), user=user, model=settings.model_classify
     )
+
+    # 分类结果必须带 scores 或 vertical。两个都没有说明模型根本没在做分类
+    # （历史上就踩过：prompt 拼错，它照着生成任务的 schema 回了一篇文案），
+    # 这时候宁可报错重试，也不要静默当成"哪个方向都不沾边"——
+    # 那会让整批素材悄悄地没有内容方向，事后很难发现。
+    if "scores" not in data and "vertical" not in data:
+        raise LLMError(
+            f"分类返回里没有 scores/vertical，拿到的键是 {sorted(data)[:6]}"
+        )
 
     raw_scores = data.get("scores") or {}
     scores = {

@@ -13,8 +13,9 @@
   <nav>
     {% set p = request.url.path %}
     <a href="/"           class="{{ 'active' if p == '/' }}">总览</a>
-    <a href="/queue"      class="{{ 'active' if p.startswith('/queue') }}">待发队列</a>
+    <a href="/ingest"     class="{{ 'active' if p.startswith('/ingest') }}">录入</a>
     <a href="/items"      class="{{ 'active' if p.startswith('/items') }}">素材库</a>
+    <a href="/queue"      class="{{ 'active' if p.startswith('/queue') }}">待发队列</a>
     <a href="/published"  class="{{ 'active' if p.startswith('/published') }}">已发布</a>
     <a href="/channels"   class="{{ 'active' if p.startswith('/channels') }}">频道</a>
     <a href="/verticals"  class="{{ 'active' if p.startswith('/verticals') }}">内容方向</a>

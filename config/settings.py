@@ -51,6 +51,12 @@ class Settings(BaseSettings):
     queue_low_watermark: int = 3
     health_check_hour: int = 8
 
+    # ---- 资料仓库频道 ----
+    # 一个私有频道，生产 bot 和所有售卖 bot 都要是它的管理员。
+    # 文件先 copy 进这里，发货时再从这里 copy 给读者——file_id 是绑 bot 的，
+    # 生产 bot 拿到的 file_id 售卖 bot 用不了，只能靠这个频道中转。
+    vault_channel_id: int = 0
+
     # ---- 管理后台 ----
     web_enabled: bool = True
     # 默认只绑本机：通过 SSH 隧道访问，不需要域名/证书/反代，

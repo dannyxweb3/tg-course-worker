@@ -2,12 +2,14 @@
 {% block title %}总览{% endblock %}
 {% block body %}
 
+{# 每格都是一个入口：点数字直接落到对应页面并带好筛选条件 #}
 <div class="stats">
-  <div class="stat"><b>{{ total_queue }}</b><span>待发总数</span></div>
-  <div class="stat"><b>{{ counts.get('review', 0) }}</b><span>待审核</span></div>
-  <div class="stat"><b>{{ counts.get('new', 0) + counts.get('classified', 0) }}</b><span>处理中</span></div>
-  <div class="stat"><b>{{ counts.get('published', 0) }}</b><span>已发布</span></div>
-  <div class="stat"><b>{{ counts.get('failed', 0) }}</b><span>出错</span></div>
+  <a class="stat" href="/queue"><b>{{ total_queue }}</b><span>待发总数 →</span></a>
+  <a class="stat" href="/items?status=review"><b>{{ counts.get('review', 0) }}</b><span>待审核 →</span></a>
+  <a class="stat" href="/items?status=new,classified"><b>{{ counts.get('new', 0) + counts.get('classified', 0) }}</b><span>处理中 →</span></a>
+  <a class="stat" href="/published"><b>{{ counts.get('published', 0) }}</b><span>已发布 →</span></a>
+  <a class="stat {{ 'alert' if counts.get('failed', 0) }}" href="/items?status=failed"><b>{{ counts.get('failed', 0) }}</b><span>出错 →</span></a>
+  {# 读者没有独立页面，保持静态 #}
   <div class="stat"><b>{{ user_total }}</b><span>读者</span></div>
 </div>
 

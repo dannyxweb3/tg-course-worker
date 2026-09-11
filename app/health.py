@@ -9,7 +9,8 @@ from __future__ import annotations
 import logging
 from datetime import datetime, timezone
 
-from app import botpool, db
+from app import botpool, db, vault
+from app.models import BotRole
 from app.utils import alerts
 
 log = logging.getLogger(__name__)
@@ -52,6 +53,28 @@ async def check_channel(channel_row) -> tuple[str, str]:
     return OK, f"@{me.username} 管理员，发布权限正常"
 
 
+async def check_vault() -> list[tuple[str, str, str]]:
+    """仓库频道要求生产 bot 和每个售卖 bot 都在里面且是管理员。
+    少一个，对应方向的资料就发不出去，而且只有读者点了按钮才会暴露。
+    """
+    if not vault.configured():
+        return [("资料仓库", UNKNOWN, "未配置 VAULT_CHANNEL_ID，文件类资料不可用")]
+
+    out: list[tuple[str, str, str]] = []
+    for row in await db.list_bots(active_only=True):
+        if row["role"] not in (BotRole.PRODUCER, BotRole.SALE):
+            continue
+        label = f"{BotRole(row['role']).label} bot「{row['name']}」"
+        try:
+            bot = await botpool.get(int(row["id"]))
+        except botpool.BotUnavailable as e:
+            out.append(("资料仓库", ERROR, f"{label}：{e}"))
+            continue
+        ok, detail = await vault.check_access(bot, label)
+        out.append(("资料仓库", OK if ok else ERROR, detail))
+    return out
+
+
 async def check_all(notify_on_error: bool = True) -> list[tuple[str, str, str]]:
     """检查全部频道，写回状态。返回 [(频道名, 状态, 说明)]。"""
     results: list[tuple[str, str, str]] = []
@@ -68,6 +91,11 @@ async def check_all(notify_on_error: bool = True) -> list[tuple[str, str, str]]:
         results.append((ch["name"], status, detail))
         if status == ERROR:
             broken.append(f"• 「{ch['name']}」{detail}")
+
+    for name, status, detail in await check_vault():
+        results.append((name, status, detail))
+        if status == ERROR:
+            broken.append(f"• {detail}")
 
     if broken and notify_on_error:
         await alerts.notify(

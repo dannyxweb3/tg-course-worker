@@ -116,6 +116,12 @@
 
   <div class="card">
     <h3>发布</h3>
+    {% if not assets %}
+      <p class="small" style="color:var(--warn);margin-top:0">
+        ⚠️ 没有配套资料，发布时<b>不会</b>挂「获取完整资料」按钮
+        —— 那也是把订阅者转成读者的唯一入口。
+      </p>
+    {% endif %}
     {% if queue_entries %}
       <p class="small">已在队列：
         {% for q in queue_entries %}<span class="badge accent">{{ q.channel_name }}</span>{% endfor %}
@@ -128,6 +134,12 @@
           {% if p.channel_username %}<a class="small" href="https://t.me/{{ p.channel_username }}/{{ p.channel_msg_id }}" target="_blank" rel="noopener">↗</a>{% endif %}
         {% endfor %}
       </p>
+      {% if assets %}
+      <form class="inline" method="post" action="/items/{{ item.id }}/repin">
+        <button class="mini">给已发布的帖子补挂按钮</button>
+      </form>
+      <p class="small muted">按钮是发布那一刻定的，发布后才加的资料要点这个补一次。</p>
+      {% endif %}
     {% endif %}
 
     <form class="row" method="post" action="/items/{{ item.id }}/approve">
@@ -167,6 +179,79 @@
 
 </div>
 {% endif %}
+
+<div class="card" style="margin-top:16px">
+  <div class="row" style="margin-bottom:10px">
+    <h3 style="margin:0">配套资料</h3>
+    {% if assets %}
+      <span class="badge accent">{{ assets|length }} 份</span>
+      <span class="right small muted">发布时底部会挂「📚 获取完整资料」按钮</span>
+    {% else %}
+      <span class="badge warn">空</span>
+      <span class="right small muted">一份都没有时，帖子底部不挂按钮</span>
+    {% endif %}
+  </div>
+
+  {% for a in assets %}
+  <form class="asset-row" method="post" action="/items/{{ item.id }}/assets/{{ a.id }}/save">
+    <span class="asset-icon" title="{{ ASSET_LABEL.get(a.kind, a.kind) }}">{{ ASSET_ICON.get(a.kind, '🔗') }}</span>
+    {% if a.kind == 'vault' %}
+      {# 仓库文件在 Telegram 里，网页改不了内容，只能改名/排序/删除 #}
+      <input type="hidden" name="kind" value="vault">
+      <input type="text" name="title" value="{{ a.title }}" placeholder="资料名称" style="flex:3;min-width:160px">
+      <span class="badge">{{ a.note or '文件' }}</span>
+      <span class="badge mono" title="资料仓库频道里的消息 id">#{{ a.vault_msg_id }}</span>
+      <span class="small muted" style="flex:1">发货时由售卖 bot 直接转给读者</span>
+    {% else %}
+      <select name="kind" style="width:110px">
+        {% for val, label, icon in ASSET_KINDS %}
+          <option value="{{ val }}" {{ 'selected' if a.kind == val }}>{{ label }}</option>
+        {% endfor %}
+      </select>
+      <input type="text" name="title" value="{{ a.title }}" placeholder="资料名称" style="flex:2;min-width:130px">
+      <input type="text" name="url" value="{{ a.url }}" placeholder="https://…" style="flex:3;min-width:170px" class="mono">
+      <input type="text" name="passcode" value="{{ a.passcode }}" placeholder="提取码" style="width:88px">
+      <input type="text" name="note" value="{{ a.note }}" placeholder="备注" style="flex:1;min-width:90px">
+    {% endif %}
+    <input type="number" name="sort" value="{{ a.sort }}" title="排序，小的在前" style="width:64px">
+    <button class="mini primary">保存</button>
+    <button class="mini danger" formaction="/items/{{ item.id }}/assets/{{ a.id }}/delete"
+            formnovalidate onclick="return confirm('删除「{{ a.title }}」？')">删</button>
+  </form>
+  {% endfor %}
+
+  <form class="asset-row gen" method="post" action="/items/{{ item.id }}/fulltext">
+    <span class="asset-icon">📰</span>
+    <input type="hidden" name="draft_id" value="{{ current.id if current else 0 }}">
+    <select name="source" style="width:auto">
+      <option value="raw">素材原文（{{ item.raw_text|length }} 字符）</option>
+      <option value="draft">本频道版本{% if current %}（v{{ current.version }}，{{ current.char_count }} 字符）{% endif %}</option>
+    </select>
+    <button class="mini primary">
+      {% if assets|selectattr('kind', 'equalto', 'fulltext')|list %}重新生成全文页{% else %}生成全文页{% endif %}
+    </button>
+    <span class="small muted">
+      推到 Telegraph，Instant View 阅读。已有全文页会原地更新，链接不变。
+    </span>
+  </form>
+
+  <form class="asset-row new" method="post" action="/items/{{ item.id }}/assets/new">
+    <span class="asset-icon">＋</span>
+    <select name="kind" style="width:110px">
+      {% for val, label, icon in ASSET_KINDS %}<option value="{{ val }}">{{ label }}</option>{% endfor %}
+    </select>
+    <input type="text" name="title" placeholder="资料名称，如「n8n workflow 导入文件」" style="flex:2;min-width:130px">
+    <input type="text" name="url" placeholder="https://…" style="flex:3;min-width:170px" class="mono">
+    <input type="text" name="passcode" placeholder="提取码" style="width:88px">
+    <input type="text" name="note" placeholder="备注" style="flex:1;min-width:90px">
+    <button class="mini primary">添加</button>
+  </form>
+
+  <p class="small muted" style="margin-bottom:0">
+    网盘的<b>提取码务必和链接填在一起</b>，分两处发用户一定会漏。
+    资料按「排序」升序发给用户。
+  </p>
+</div>
 
 <h2>素材原文 <span class="muted small">{{ item.raw_text|length }} 字符 · 永久保留，可随时重跑</span></h2>
 <div class="raw-source">{{ item.raw_text }}</div>

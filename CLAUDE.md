@@ -37,10 +37,18 @@ conda run -n tg-course-worker python -m app.tools.dryrun --render-only   # 不�
 conda run -n tg-course-worker python -m app.tools.dryrun x.md --level P1 # 跑真实流水线
 ```
 
+服务器上（Ubuntu，systemd）：
+
+```bash
+sudo deploy/install.sh          # 安装 / 升级，幂等
+tg-course-worker-restart        # 重启
+journalctl -u tg-course-worker -f
+```
+
 ## 架构
 
 ```
-生产 Bot（私聊，仅 OWNER_ID）
+生产 Bot（私聊，仅 OWNER_ID）        后台 /ingest（链接 / 文本 / 文件）
   ingest → classify(路由到方向) → generate → 审核卡片 ⇄ 修订 → 选频道入队
                                                               │
 管理后台 (FastAPI, 127.0.0.1:8080) ──── 同一进程，共用 db 和 pipeline
@@ -60,7 +68,8 @@ conda run -n tg-course-worker python -m app.tools.dryrun x.md --level P1 # 跑�
 - `app/bots/producer.py` 生产 bot；`app/bots/sale.py` 售卖 bot
 - `app/publisher.py` 频道发布；`app/scheduler.py` 每频道一个 job + 热重载
 - `app/health.py` 频道健康检查（bot 还在不在、有没有发布权限）
-- `app/web/` 管理后台：`routes.py` 内容侧、`routes_admin.py` 配置侧
+- `app/web/` 管理后台：`routes.py` 内容侧、`routes_ingest.py` 录入、`routes_admin.py` 配置侧
+- `app/intake.py` 后台摄入队列。Web 录入不在请求里跑流水线（两次 LLM 调用要二三十秒），建完条目就返回，剩下的扔进这里
 - `config/prompts/` prompt 模板，**核心资产**，改这里不用改代码
 
 ## 约定
@@ -86,5 +95,6 @@ conda run -n tg-course-worker python -m app.tools.dryrun x.md --level P1 # 跑�
 - `.env`、`data/`、`*.session` 已在 `.gitignore` 中，任何情况下不要提交
 - 生产 bot 的所有 handler 必须校验 `OWNER_ID`
 - 后台默认绑 `127.0.0.1`，用 SSH 隧道访问；不要为了图方便改成 `0.0.0.0`
-  暴露到公网（没有 HTTPS，密码会明文过网）
+  暴露到公网（没有 HTTPS，密码会明文过网）。真要对外开，
+  用 `deploy/nginx/` 那套反代 + HTTPS，`WEB_HOST` 仍然保持 `127.0.0.1`
 - `WEB_PASSWORD` 为空时后台不启动，这是刻意的——不给无密码入口留口子

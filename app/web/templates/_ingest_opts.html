@@ -1,0 +1,16 @@
+{# 三个录入表单共用的选项行 #}
+<div class="row" style="margin:4px 0 12px">
+  <label style="margin:0;width:auto">
+    <span>处理档位</span>
+    <select name="level" style="width:auto">
+      <option value="">自动（按分类结果）</option>
+      {% for val, label in ALL_LEVELS if val != 'P3' %}
+        <option value="{{ val }}">{{ label }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label class="inline" style="margin:0;align-self:flex-end;padding-bottom:8px">
+    <input type="checkbox" name="make_pdf" value="1">
+    <span style="margin:0">同时生成 PDF 资料</span>
+  </label>
+</div>
