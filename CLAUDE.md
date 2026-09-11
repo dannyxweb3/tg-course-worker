@@ -28,6 +28,12 @@ conda run -n tg-course-worker python -m app.main
 路径统一用 `pathlib`，不要硬编码 `\` 或盘符，不要调用 `os.startfile`、
 `win32api` 之类。
 
+**所有文件一律 LF 换行**，`.gitattributes` 已经强制。在 Windows 上改文件时注意：
+Python 的 `open(p, "w")` 默认会把换行翻译成 CRLF，写文件要带上
+`newline="\n"`，或者直接用二进制模式。带 CRLF 的 shell 脚本在 Linux 上会报
+`/usr/bin/env: 'bash\r': No such file or directory`——内核真的在找一个叫
+`bash\r` 的程序，报错完全不指向换行符本身。
+
 ## 常用命令
 
 ```bash
