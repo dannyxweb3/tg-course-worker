@@ -1,0 +1,240 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "cheapairport_channel",
+  "username": "cheapairport_channel",
+  "url": "https://t.me/cheapairport_channel",
+  "title": "便宜机场",
+  "category": "机场自营（VPN 服务商自有公告频道）",
+  "growth_short": "白嫖码引流+站外导入",
+  "one_liner": "四个里唯一的服务商本体：3 年只发 59 条，每月扔一个免费兑换码当获客钩子，阅读量是订阅数的 2.5 倍——流量主要来自站外。",
+  "analysis_scope": "按要求只分析实现技术思路、成本、收益、法律风险；不含可迁移/可复制方法。",
+  "analyzed_at": "2026-09-12T16:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/cheapairport_channel.jsonl",
+    "sample_size": 59,
+    "sample_range": [
+      "2023-09-10",
+      "2026-09-09"
+    ],
+    "note": "请求 limit=300，实得 59 条即全量（消息 id 只到 73）"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 24708,
+    "members": null,
+    "online": null,
+    "online_pct": null,
+    "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 61766,
+    "mean_views": 59197,
+    "p10_views": 31166,
+    "p90_views": 92351,
+    "err_pct": 250.0,
+    "err_note": "ERR 超过 100% 不能当互动率读。频道的 views 计入非订阅者，250% 说明中位阅读是订阅数的 2.5 倍——内容主要在站外被消费（自有网站 + GitHub 导航 + 转发）。tg_recon.py 的 ERR 公式在这种号上失效，要改读『触达倍数』。",
+    "mature_posts": 57,
+    "total_posts": 59,
+    "reactions_total": 6222,
+    "reactions_median": 59,
+    "reaction_cv_median": 1.538,
+    "reaction_verdict": "自然。变异系数中位 1.538，服从幂律，与刷量号（CV 0.02-0.13）形成鲜明对比",
+    "forwards_total": 1464,
+    "forwards_per_post": 24.8,
+    "posts_per_day": 0.1,
+    "max_message_id": 73,
+    "surviving_messages": 59,
+    "giveaway_posts": 37,
+    "redemption_codes_issued": 11,
+    "recent_view_trend": [
+      {
+        "id": 71,
+        "date": "2026-07-03",
+        "views": 51765
+      },
+      {
+        "id": 72,
+        "date": "2026-08-05",
+        "views": 30287
+      },
+      {
+        "id": 73,
+        "date": "2026-09-09",
+        "views": 4022,
+        "note": "抓取时仅发布 3 天，未成熟"
+      }
+    ]
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "role_in_ecosystem": "服务商本体。首帖即自我介绍技术栈（『便宜机场是全新的 Hysteria2 协议，它进行了诸多的优化，请看使用文档下载软件进行使用』），不是第三方测评或联盟号",
+    "post_structure": "极简。近期帖格式完全固定：月份 + 兑换码 + 有效期 + 官网 + 防失联 GitHub 地址",
+    "acquisition_mechanic": {
+      "name": "每月白嫖码",
+      "detail": "每月发放一个形如 GC7945E346C374 的兑换码，有效期正好一个月。37/59 条含『白嫖』，样本内共 11 个码",
+      "purpose": "免费试用转付费的漏斗入口，同时给频道一个可预期的回访节奏——用户为了拿码必须每月回来"
+    },
+    "anti_blocking": {
+      "primary_domain": "便宜机场.co（punycode: xn--wtq35pfyd55o.co）",
+      "fallback": "github.com/jichangtuijian1/dizhi —— 用 GitHub 仓库做域名导航与防失联，建议用户 star 收藏",
+      "rationale": "主域名被墙或被注册商处置后，GitHub 作为不易被整体屏蔽的兜底索引。中文域名 + punycode 也增加了关键词屏蔽的难度"
+    },
+    "traffic_source": "阅读量 2.5 倍于订阅数，而单帖转发仅 24.8 次——说明大头不是 TG 内部扩散，而是自有网站与 GitHub 仓库反向导入频道",
+    "cadence": "3 年 59 条，约 0.1 条/天。TG 频道只承担公告与发码，不是主战场；网站才是"
+  },
+  "growth": {
+    "strategy": "站外资产反向导入 TG + 每月白嫖码制造强制回访。全样本唯一不靠 TG 内部增长的号",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "每月兑换码",
+        "evidence": "37/59 条含「白嫖」，样本内 11 个码，有效期均为一个月",
+        "note": "用户为拿码必须每月回访，是留存机制也是获客钩子"
+      },
+      {
+        "name": "站外反哺",
+        "evidence": "中位阅读 61,766 是订阅数的 2.5 倍，而转发仅 24.8 次/帖",
+        "note": "官网 便宜机场.co 与 GitHub 域名导航把站外用户导进频道"
+      },
+      {
+        "name": "GitHub 防失联导航",
+        "evidence": "github.com/jichangtuijian1/dizhi，引导 star 收藏",
+        "note": "兼做抗封与二次触达"
+      }
+    ],
+    "signals": {
+      "reach_multiple": 2.5,
+      "forwards_per_post": 24.8,
+      "reaction_cv_median": 1.538,
+      "recent_trend": "51,765（07-03）→ 30,287（08-05），走低"
+    },
+    "assessment": "反应 CV 1.538 服从幂律，未发现任何买量。增长天花板在于它只把 TG 当公告板——3 年 59 条，主战场是网站。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      3000,
+      20000
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "上游带宽与节点",
+        "cny_month": [
+          3000,
+          18000
+        ],
+        "note": "唯一大成本。走 Hysteria2 协议，主打低价，低价意味着用户基数大、带宽支出高而单价薄"
+      },
+      {
+        "name": "域名与防封（中文域名 + 备用域名轮换）",
+        "cny_month": [
+          100,
+          600
+        ]
+      },
+      {
+        "name": "GitHub 导航仓库",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "免费"
+      },
+      {
+        "name": "面板与客户端文档",
+        "cny_month": [
+          0,
+          100
+        ],
+        "note": "开源面板"
+      },
+      {
+        "name": "内容生产",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "3 年 59 条固定模板，无成本"
+      },
+      {
+        "name": "买量",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "反应分布检验为自然，未发现刷量痕迹"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      10000,
+      60000
+    ],
+    "est_basis": "净利估算。锚点：24,708 订阅、单帖 3-9 万次触达、连续运营 3 年、低价定位（量大单价薄）",
+    "model": "机场自营订阅",
+    "streams": [
+      {
+        "name": "订阅费",
+        "evidence": "自有官网收款，频道只发码导流；低价机场典型定价 ¥5-15/月档",
+        "cny_month": [
+          10000,
+          60000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "转化与收款全在站外，TG 侧完全观测不到订单量。这是四个号里估算最不确定的一个——只能从触达规模与存续时长倒推。"
+  },
+  "risk": {
+    "level": "criminal",
+    "summary": "它是服务商本体，因此承担的是经营者责任，四个号里法律风险最重的一个。",
+    "legal": [
+      {
+        "issue": "未经许可经营国际联网业务",
+        "statutes": [
+          "《计算机信息网络国际联网管理暂行规定》第六条、第十四条",
+          "《电信条例》第七条",
+          "《刑法》第二百二十五条 非法经营罪"
+        ],
+        "analysis": "作为直接向用户收费提供跨境信道的经营者，这是最直接的入罪路径，已有大量生效判例。与测评号、分享号不同，它无法主张自己只是信息中介。",
+        "severity": "critical"
+      },
+      {
+        "issue": "提供侵入、非法控制计算机信息系统的程序、工具",
+        "statutes": [
+          "《刑法》第二百八十五条第三款"
+        ],
+        "analysis": "分发 Hysteria2 客户端与订阅配置，部分同类案件按此条定罪。",
+        "severity": "medium"
+      },
+      {
+        "issue": "规避监管的技术安排本身构成从重情节",
+        "statutes": [
+          "司法实践中的主观明知认定"
+        ],
+        "analysis": "中文域名 punycode、GitHub 防失联导航、备用域名轮换，客观上都是为规避封禁而设。这类安排在量刑时常被作为主观明知与情节严重的证据，而非中立技术选择。",
+        "severity": "high"
+      },
+      {
+        "issue": "用户侧行政处罚风险",
+        "statutes": [
+          "《计算机信息网络国际联网安全保护管理办法》第六条"
+        ],
+        "analysis": "付费使用者面临警告或罚款，已有公开处罚案例。",
+        "severity": "low"
+      }
+    ],
+    "notes": [
+      "服务商本体，承担经营者责任，风险重于同生态的测评号与分享号",
+      "防失联与域名规避安排可能被认定为主观明知的证据",
+      "未发现刷量、虚假宣传或资金链违规痕迹——这一点上比 xiaohuojianvpnvpn 干净",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
+  }
+}

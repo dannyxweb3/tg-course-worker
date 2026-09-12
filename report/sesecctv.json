@@ -1,0 +1,246 @@
+{
+  "schema_version": 3,
+  "kind": "group",
+  "slug": "sesecctv",
+  "username": "sesecctv",
+  "url": "https://t.me/sesecctv",
+  "title": "中文搜索|中文导航🌈中文群组|电报搜索|资源搜索",
+  "category": "色情资源搜索 bot 群 / SOSO 网络加盟节点",
+  "growth_short": "SOSO 网络导流",
+  "one_liner": "群本身只是 SOSO 搜索网络里一个挂机分成的展位（12k 成员却仅 200 在线、69% 消息是 bot）；但支撑它的是一整套要真金白银搭建的搜索服务——爬取账号池 + 亿级全文索引服务器 + 搜索 bot，这套成本由平台方承担，不落在群主头上。",
+  "analyzed_at": "2026-09-12T22:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": null,
+    "sample_size": 600,
+    "sample_range": [
+      "2026-09-11T12:57:00Z",
+      "2026-09-12T22:04:00Z"
+    ],
+    "note": "指标为元数据 + 发言人身份统计，未落地存储群内消息正文（内容涉刑事及疑似未成年，见 risk）。implementation.search_engine 与 cost 的搜索服务层为架构与成本推断：本群自身不拥有搜索引擎，这套是支撑它的 SOSO 平台搜索服务，依据是交互行为 + 同生态 jisou771 的可观测证据（ad slot id、爬取式结果块）"
+  },
+  "metrics": {
+    "confidence": "high",
+    "members": 12182,
+    "online": 200,
+    "online_pct": 1.6,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群（megagroup）没有 per-message 阅读量，ERR 不适用。替代指标是 online_pct 与 bot_share_pct",
+    "messages_per_day": 435,
+    "sample_hours": 33.1,
+    "bot_messages": 413,
+    "human_messages": 187,
+    "bot_share_pct": 68.8,
+    "distinct_humans_sampled": 111,
+    "distinct_bots_sampled": 4,
+    "id_span_sampled": [
+      572383,
+      573244
+    ],
+    "surviving_messages": 600,
+    "deleted_ratio_pct": 30.4,
+    "pinned_msg_id": 435664,
+    "slowmode_seconds": null,
+    "linked_chat_id": null,
+    "forwards_per_post": 0.0,
+    "reactions_total": 0,
+    "activity_note": "在线率仅 1.6%（对照 jisou771 6.9%）、bot 消息占 68.8%（对照 jisou771 51.5%）。一个 12k 群只有约 200 人在线、七成消息由机器人产生，说明真实活跃极低，靠 bot 自答自播撑场面"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "chat_type": "megagroup",
+    "post_structure": "用户发关键词（搜索词短消息）→ SOSO 搜索 bot 回结果块并夹带广告。近 600 条中 SOSO bot 一个即占约 1/3，真人仅 111 个",
+    "network_role": "SOSO 网络加盟节点，而非自建。置顶消息末尾字面写明「此为 @SOSO 付费轮播广告」——SOSO 提供搜索 bot、群管理与广告位销售一整套，群主只需开群挂 bot、分广告钱",
+    "network_relation": "与 syrjfx_sl（soso 互推）、xph_fx（SOSO autopromo 换量）是同一张 SOSO 网络的不同产品；与 jisou771（极搜，自建搜索+广告平台）是同类模式的两种身份：极搜是平台方，本群是末端展位",
+    "moderation_stack": "管理层几乎全是现成 bot：MissRose、Policr Mini（入群验证码）、禁言机器人、引用广告终结者、Group Help、WeGroup 等 10 个 bot + 唯一真人管理员 @wangjinge（林黛玉）",
+    "search_engine": {
+      "note": "本群不拥有搜索引擎；以下是支撑它的 SOSO 平台搜索服务的架构推断，基于交互行为 + 同生态 jisou771 的可观测证据",
+      "crawl": "用 MTProto user 账号池批量加入并驻留大量公开群/频道，持续增量拉取历史与新消息。抓的主要是文本 + 链接，带宽压力小；账号是易耗品（被封/限流），必须轮换 + 挂代理",
+      "extract": "从每条消息抽取正文、内嵌 t.me 链接、文件名；关键词正规化，按内容 hash 去重，落地为「关键词 → 命中的 t.me 消息链接」倒排结构",
+      "index": "倒排全文索引，工程上通常是 Elasticsearch / Manticore / Meilisearch / Sphinx / PostgreSQL FTS 之一。亿级消息量级下索引体积可达数百 GB，是大内存需求的根源——搜索服务器成本主要花在这里",
+      "query_flow": "用户在群里发关键词 → 搜索 bot（群管理员，通过 bot API 收群消息）→ 查索引 → 按时效+匹配度排序 → 回一个结果块",
+      "result_block": "顶部若干行付费广告（带 slot id，参见 jisou771 观测到的 ad=kw###### / ad=link#### 参数）+ 中间约 18-19 条 t.me 结果链接 + 底部一行热搜关键词",
+      "ad_layer": "广告注入是独立一层，叠在搜索结果顶部；关键词位可按用户搜索词竞价——用户搜什么就注入对应广告主",
+      "not_hosting_resources": "搜索结果是 t.me 外链指路，服务本身不存任何资源，只存「词 → 链接」的索引",
+      "anti_ban": "爬取账号轮换、代理 IP、限速与 FloodWait 退避；群侧管理 bot 清垃圾消息（本群 33 小时内约 30% 消息被删）",
+      "sizing_bottleneck": "支撑数千个群 / 亿级消息的检索，瓶颈在索引服务器的内存与 IOPS，不在带宽或算力"
+    },
+    "delivery": "搜索结果为外链指路，群本身不存资源",
+    "schedule": "无排期，全天候；约 435 条/天",
+    "retention": "33 小时内 id 跨度 862、存活 600，约 30% 已删除，与管理 bot 清垃圾消息一致",
+    "growth": "依附 SOSO 网络导流；未见自建互推 bot（区别于 jisou771 的 @hutui1bot）",
+    "pinned_ad_category": "置顶是 SOSO 付费轮播广告，投放的是「社工库/开盒」类目（宣称可提供个人隐私数据查询、住宿记录、实时定位等）。原始文案与联系方式刻意未收录"
+  },
+  "growth": {
+    "strategy": "依附 SOSO 网络导流，不自建互推。是同一模式的末端展位",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "SOSO 网络导流",
+        "evidence": "implementation.growth 记载：依附 SOSO 网络导流；未见自建互推 bot（区别于 jisou771 的 @hutui1bot）",
+        "note": "不掌握流量分配权，只接上游派来的量"
+      }
+    ],
+    "signals": {
+      "members": 12182,
+      "forwards_total": 0
+    },
+    "assessment": "与 jisou771 同模式但处在末端：不自建索引、不自建互推，只作为 SOSO 网络的一个展位接量并分成。增长完全取决于上游给多少，自身没有增长杠杆。",
+    "derived_from": "本条非本会话原始分析；growth 结论由该文件已有的 implementation.growth 与 metrics 推导"
+  },
+  "cost": {
+    "cost_scope": "recurring_cny_month 覆盖支撑该搜索 bot 的整套搜索服务（爬取账号池 / 采集入库 / 全文索引服务器 / bot 托管 / 运维），这是平台方（SOSO）承担的成本；本群作为展位节点自身经常性支出仅 ¥0–300/月（node_layer_cny_month）。注意此成本为「整套搜索服务」口径，与 revenue 的「单群可归因」口径不同，两者不可相减",
+    "recurring_cny_month": [
+      3000,
+      20000
+    ],
+    "onetime_cny": [
+      2000,
+      15000
+    ],
+    "node_layer_cny_month": [
+      0,
+      300
+    ],
+    "items": [
+      {
+        "name": "全文索引服务器（大内存独服/VPS，64–256GB RAM，NVMe；亿级消息倒排索引）",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "note": "搜索服务器的主成本，钱花在内存与磁盘 IOPS"
+      },
+      {
+        "name": "爬取账号池（数十–数百个 MTProto user 账号，易耗需轮换）",
+        "cny_month": [
+          300,
+          2000
+        ]
+      },
+      {
+        "name": "代理 / 住宅或移动 IP（爬取账号防封）",
+        "cny_month": [
+          200,
+          2000
+        ]
+      },
+      {
+        "name": "采集/入库 worker（2–4 台中等 VPS，持续增量抓取与写索引）",
+        "cny_month": [
+          200,
+          800
+        ]
+      },
+      {
+        "name": "bot 托管（搜索 bot + 管理 bot 多个）",
+        "cny_month": [
+          100,
+          500
+        ]
+      },
+      {
+        "name": "运维人力（兼职，账号养护 + 索引维护 + 反封对抗）",
+        "cny_month": [
+          1000,
+          5000
+        ]
+      },
+      {
+        "name": "展位节点层（本群自身：几乎全自动，无自建索引）",
+        "cny_month": [
+          0,
+          300
+        ],
+        "note": "群主实际承担的仅此一项"
+      },
+      {
+        "name": "LLM",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "纯关键词匹配，无生成环节——不需要 LLM"
+      }
+    ],
+    "onetime_items": [
+      {
+        "name": "爬取账号铺底采购",
+        "cny_onetime": [
+          500,
+          5000
+        ]
+      },
+      {
+        "name": "初始全量爬取与建索引（算力 + 时间）",
+        "cny_onetime": [
+          1500,
+          10000
+        ]
+      }
+    ],
+    "scope": "上游 SOSO 网络的整体搜索服务成本，非本群群主自担",
+    "owner_recurring_cny_month": [
+      0,
+      300
+    ],
+    "owner_scope_note": "群主自担成本仅为 items 里的「展位节点层」一项。recurring_cny_month 记的是上游网络成本，与 revenue.est_cny_month（群主分成）口径不同，横向对比表请用 owner_recurring_cny_month。"
+  },
+  "revenue": {
+    "est_cny_month": [
+      500,
+      3000
+    ],
+    "est_scope": "仅本群作为 SOSO 网络单个展位的可归因部分（与 cost 的整套搜索服务口径不同，不可相减）",
+    "model": "SOSO 付费轮播广告分成",
+    "streams": [
+      {
+        "name": "SOSO 轮播广告位分成",
+        "evidence": "置顶自述「此为 @SOSO 付费轮播广告」，广告由 SOSO 平台统一销售投放",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "note": "对群主而言是零边际成本的挂机分成（自身成本≈¥0–300/月，收入 ¥500–3,000/月）。真正扛搜索服务器成本、也真正赚大头的是上游 SOSO 平台——它把一套 ¥3,000–20,000/月 的搜索服务摊到成百上千个像本群这样的展位上，靠广告位规模化回本。单群数据推不出网络整体"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "置顶 SOSO 广告投放「社工库/开盒」类目服务，属侵犯公民个人信息罪 / 非法获取计算机信息系统数据罪范畴，直接危害具体自然人",
+      "群主业为色情资源搜索分发，属传播淫秽物品牟利罪范畴",
+      "群内用户消息出现疑似涉未成年人性交易 / 性剥削的招揽话术——这已超出竞品分析范畴，属应向执法机关举报的对象，本报告未收录、未深入抓取相关内容",
+      "搜索服务的爬取层用账号池大规模抓取公开群/频道消息，本身处于 Telegram ToS 灰区；用于索引违法内容则叠加前述刑责",
+      "作为 SOSO 引流/广告网络一环，为上述违法服务导流，存在帮信罪敞口",
+      "本群的广告文案与落地域名均不适合在任何界面原样展示"
+    ]
+  },
+  "takeaways": [
+    {
+      "title": "群没有阅读量，判活指标要换",
+      "detail": "群看 online/members（本群 1.6%，极低）和 bot 消息占比（本群 68.8%）。1.6% 在线 + 69% bot 消息说明这是个被机器人撑着的近死群。做群调研别拿 ERR 套。",
+      "applicable": true
+    },
+    {
+      "title": "搜索业务的成本重心在索引服务器",
+      "detail": "观察性结论：这类搜索 bot 的钱不是花在 bot 或带宽，而是花在支撑亿级消息全文检索的大内存索引服务器 + 易耗的爬取账号池。不含可复制方法。",
+      "applicable": false
+    },
+    {
+      "title": "SOSO 网络的末端形态",
+      "detail": "本群是理解 SOSO 生态的一块拼图：平台方（极搜/SOSO）建搜索+广告并扛服务器成本，末端展位群挂机分成。属观察性结论。",
+      "applicable": false
+    },
+    {
+      "title": "全部广告类目在刑事范畴",
+      "detail": "社工库、色情、疑似未成年剥削，无一可借鉴，不在本项目可选集内。",
+      "applicable": false
+    }
+  ]
+}

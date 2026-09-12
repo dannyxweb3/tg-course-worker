@@ -15,6 +15,8 @@ MEDIA_DIR = DATA_DIR / "media"
 LOG_DIR = ROOT / "logs"
 PROMPT_DIR = ROOT / "config" / "prompts"
 WEB_DIR = ROOT / "app" / "web"
+# 竞品分析报告。静态只读，随代码进版本库，不像 data/ 那样被 gitignore
+REPORT_DIR = ROOT / "report"
 
 for _d in (DATA_DIR, MEDIA_DIR, LOG_DIR):
     _d.mkdir(parents=True, exist_ok=True)
@@ -65,6 +67,13 @@ class Settings(BaseSettings):
     web_port: int = 8080
     web_password: str = ""
     web_secret: str = ""
+
+    # ---- 竞品调研（只有 scripts/tg_recon.py 读，正式服务用不到）----
+    # my.telegram.org 申请的 user API 凭据。抓竞品频道要用自己的账号读，
+    # bot 读不了没被拉进去的频道，也读不了开了内容保护的频道正文。
+    # 和发布用的 bot token 是两套东西，别混。
+    tg_api_id: int = 0
+    tg_api_hash: str = ""
 
     # ---- 引导用（scripts/bootstrap.py 读，之后就不再用了）----
     producer_bot_token: str = ""

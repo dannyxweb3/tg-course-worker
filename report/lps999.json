@@ -1,0 +1,236 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "lps999",
+  "username": "lps999",
+  "url": "https://t.me/lps999",
+  "title": "安卓黄油",
+  "category": "成人向 Android 游戏（汉化 APK）",
+  "growth_short": "内容自然转发",
+  "one_liner": "三个样本里唯一有真实受众的号：ERR 4.5%，靠内容自然转发增长，用 Telegram 当免费 CDN 托 100GB APK。",
+  "analyzed_at": "2026-09-12T11:34:06Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/lps999.jsonl",
+    "sample_size": 390,
+    "sample_range": [
+      "2023-01-25",
+      "2026-09-10"
+    ],
+    "note": "limit=500 但只取到 390 条——频道现存消息总数就是 390"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 237505,
+    "median_views": 10755,
+    "mean_views": 19767,
+    "p10_views": 7669,
+    "p90_views": 52211,
+    "err_pct": 4.5,
+    "mature_posts": 321,
+    "reactions_total": 2385,
+    "forwards_total": 19537,
+    "forwards_per_post": 50.1,
+    "posts_per_day": null,
+    "releases_per_month": 80,
+    "batches_per_month": 4,
+    "max_message_id": 12990,
+    "surviving_messages": 390,
+    "deleted_ratio_pct": 97.0,
+    "hosted_files": 82,
+    "hosted_bytes_gb": 102.76,
+    "median_file_mb": 1200,
+    "max_file_mb": 2742,
+    "views_available": true,
+    "members": null,
+    "online": null,
+    "online_pct": null,
+    "bot_share_pct": null
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "每款游戏 5 条消息：4 张截图 album（承载标题/简介/更新日志）+ 1 个 APK document（caption 只放引流 footer）",
+    "delivery": "APK 以 document 直传 Telegram，用户在频道内直接下载",
+    "schedule": "每月约 4 批，每批 17-21 款；发布时刻固定在 01/06/14/15/18 点（Asia/Shanghai）",
+    "retention": "滚动删除，只保留最近约 3 周。id 已到 12990，现存 390 条，id 1547→12642 一次性抹掉 11095 条（覆盖 2024-11 到 2026-08）",
+    "growth": "内容自然转发（APK 帖中位 40 次转发）+ 自有群矩阵导流",
+    "owned_groups": [
+      {
+        "title": "黄油导航",
+        "members": 29953,
+        "online": 599
+      },
+      {
+        "title": "安卓黄油【搜索福利资源】",
+        "members": 19990,
+        "online": 358
+      }
+    ],
+    "history_note": "存活的 2024-02/03 老帖内容是 AI 工具推荐（Effidit / IOPaint / github / 4399），与现在完全无关——该号疑似买来或自行转型"
+  },
+  "growth": {
+    "strategy": "内容自然转发驱动 + 滚动删除制造稀缺 + 自有群矩阵承接。全样本增长质量最高的之一",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "内容自然转发",
+        "evidence": "APK 帖中位 40 次转发，全频道合计 19,537 次",
+        "note": "用户主动扩散，这是它增长的主引擎"
+      },
+      {
+        "name": "滚动删除制造稀缺",
+        "evidence": "id 已到 12,990 而现存 390 条，只保留最近约 3 周",
+        "note": "错过这批就没了，逼用户常驻频道并进群补档"
+      },
+      {
+        "name": "自有群矩阵承接",
+        "evidence": "黄油导航 29,953 人/599 在线；安卓黄油【搜索福利资源】19,990 人/358 在线",
+        "note": "2% 并发在线率，是真实活跃"
+      },
+      {
+        "name": "疑似继承转型前的粉丝基数",
+        "evidence": "存活的 2024-02/03 老帖内容是 AI 工具推荐（Effidit、IOPaint、github、4399），与现在完全无关",
+        "note": "该号疑似买来或自行转型，现有订阅可能含转型前继承的部分"
+      }
+    ],
+    "signals": {
+      "err_pct": 4.5,
+      "forwards_per_post": 50.1,
+      "forwards_total": 19537,
+      "group_online_pct": 2.0
+    },
+    "assessment": "转发 50.1 次/帖 + ERR 4.5% 是真实受众的双重印证。唯一的保留意见在起点：2024 年老帖显示它原本是另一个品类的号，订阅基数不完全是当前内容赚来的。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      700,
+      2500
+    ],
+    "onetime_cny": [
+      10000,
+      40000
+    ],
+    "items": [
+      {
+        "name": "Telegram 存储与分发（102.76 GB）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "全部经济性的基础，零成本"
+      },
+      {
+        "name": "VPS + 带宽（上传约 150GB/月，抓源另算）",
+        "cny_month": [
+          50,
+          150
+        ]
+      },
+      {
+        "name": "汉化 + 安卓打包（买现成或汉化组分成）",
+        "cny_month": [
+          500,
+          2000
+        ]
+      },
+      {
+        "name": "文案 LLM",
+        "cny_month": [
+          10,
+          30
+        ]
+      },
+      {
+        "name": "代理 / 小号",
+        "cny_month": [
+          100,
+          300
+        ]
+      },
+      {
+        "name": "一次性：买下该频道",
+        "cny_onetime": [
+          10000,
+          40000
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      10000,
+      40000
+    ],
+    "model": "常驻联盟（非零散卖位）",
+    "streams": [
+      {
+        "name": "成人 AI 角色扮演产品联盟",
+        "evidence": "t.me/JiuguanWBot/dzmm?startapp=f_9cdd9154 与 ?start=inv_c9cdd9154，带推广码",
+        "cny_month": [
+          5000,
+          25000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "姬游社 g-station.app 联盟",
+        "evidence": "t.jopeki.com/?pid=20，pid 为联盟位号",
+        "cny_month": [
+          2000,
+          8000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "自有群矩阵二次变现（5 万人）",
+        "evidence": "两个私有群 29953 + 19990 人",
+        "cny_month": [
+          2000,
+          8000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "卖频道置顶位",
+        "evidence": "目前未见在售",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "两条广告 2024-11-11 版本累计 243772 / 90001 阅读（超过订阅总数），说明是长期置顶常驻；同一对广告 2026-09-10 再投一次。区间宽是因为联盟分成率从外部不可见。"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "成人内容传播在中国大陆属刑法 363-367 条传播淫秽物品牟利罪，刑事范畴",
+      "APK 为重打包件，存在夹带恶意代码的连带责任",
+      "已有一次 11095 条的历史清空记录，与遭遇举报压力的模式吻合"
+    ]
+  },
+  "takeaways": [
+    {
+      "title": "Telegram 当免费无限 CDN",
+      "detail": "102.76 GB、单包最大 2.69 GB 全部托在 Telegram，零成本。本项目仓库频道发 PDF 已是同一思路，可以放心扩到大文件，不必租对象存储。",
+      "applicable": true
+    },
+    {
+      "title": "常驻联盟优于零散卖广告",
+      "detail": "两个广告位挂了两年，置顶累计 24 万曝光，边际成本为零。",
+      "applicable": true
+    },
+    {
+      "title": "album + document 双消息结构",
+      "detail": "截图帖承载文案与检索命中，文件帖 caption 专放引流 footer，职责分离。",
+      "applicable": true
+    },
+    {
+      "title": "滚动删除",
+      "detail": "价值全在降低被举报面。正规内容不需要，可检索的历史存量反而是资产。",
+      "applicable": false
+    }
+  ]
+}

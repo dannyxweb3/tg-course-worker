@@ -1,0 +1,267 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "syrjfx_sl",
+  "username": "syrjfx_sl",
+  "url": "https://t.me/syrjfx_sl",
+  "title": "破解软件分享",
+  "category": "破解 / 去广告 Android 与 PC 软件",
+  "growth_short": "soso 互推",
+  "one_liner": "inline 按钮矩阵 + 先发后补的工程做得最好，但靠 soso 互推堆出来的 10 万粉 ERR 只有 0.5%，最后只能靠境外博彩引流回本。",
+  "analyzed_at": "2026-09-12T12:10:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/syrjfx_sl.jsonl",
+    "sample_size": 500,
+    "sample_range": [
+      "2026-08-28",
+      "2026-09-12"
+    ],
+    "note": "另用 GetFullChannelRequest 取了简介/置顶，并单独探查了 300 条的 inline 按钮"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 102988,
+    "median_views": 553,
+    "mean_views": 571,
+    "p10_views": 420,
+    "p90_views": 779,
+    "err_pct": 0.5,
+    "mature_posts": 273,
+    "reactions_total": 2530,
+    "forwards_total": 344,
+    "forwards_per_post": 0.7,
+    "posts_per_day": 33.5,
+    "releases_per_month": 1000,
+    "batches_per_month": null,
+    "id_span_sampled": [
+      125328,
+      126892
+    ],
+    "surviving_messages": 500,
+    "deleted_ratio_pct": 68.0,
+    "hosted_files": 4,
+    "hosted_bytes_gb": null,
+    "buttons_total": 1341,
+    "posts_with_buttons_pct": 98.0,
+    "linked_chat_id": 2336318135,
+    "views_available": true,
+    "members": null,
+    "online": null,
+    "online_pct": null,
+    "bot_share_pct": null
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "单条图文 + inline 按钮矩阵。正文用固定字段 schema（【软件名称】【软件版本】【软件大小】【适用平台】【软件介绍】【核心特色】【亮点/说明】），LLM 只填值",
+    "delivery": "下载链接全部放在 inline URL 按钮上，正文里【下载地址】一栏留空。正文不含侵权 URL，按钮可随时批量替换或失效",
+    "button_matrix": [
+      {
+        "label": "夸克网盘",
+        "count": 312,
+        "role": "主投递"
+      },
+      {
+        "label": "百度网盘",
+        "count": 154,
+        "role": "备选投递"
+      },
+      {
+        "label": "蓝奏云",
+        "count": 4,
+        "role": "备选投递"
+      },
+      {
+        "label": "点击搜索更多实用软件",
+        "count": 286,
+        "role": "留存"
+      },
+      {
+        "label": "进群搜索想要内容",
+        "count": 286,
+        "role": "导流私域"
+      },
+      {
+        "label": "防走丢频道",
+        "count": 286,
+        "role": "备份频道，预设被封"
+      }
+    ],
+    "edit_after_publish": "全部帖子的 edit_date 比发布晚 20-60 秒，说明流水线是先发消息占位、网盘转存完成后再 edit 补按钮",
+    "schedule": "每日 33.5 条，集中在 09 / 13 / 21 点三档（Asia/Shanghai），13 点与 21 点各约 195 条",
+    "retention": "15 天内 id 跨度 1564 但只存活 500 条，68% 已消失。每日存量稳定在 23-40 条，不是单纯时间窗滚动，更可能是广告下架加失效链接清理",
+    "growth": "soso 互推网络。互推帖里每个频道名是超链接，指向 t.me/SosoCnBot?start=hutui_<自身ID>_<伙伴ID>_<hash>，带归因追踪",
+    "growth_note": "与 xuendj1 用到的 soso 收录是同一生态的两个产品：一个负责被搜到，一个负责换量"
+  },
+  "growth": {
+    "strategy": "soso 互推换量。把订阅堆到 10 万，但换来的是死粉",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "soso 互推网络",
+        "evidence": "互推帖每个频道名超链接指向 t.me/SosoCnBot?start=hutui_-1001471121078_<伙伴ID>_<hash>，带归因追踪",
+        "note": "伙伴列表含转账模拟器、网络钱包修改等灰黑产工具号"
+      },
+      {
+        "name": "防走丢频道按钮",
+        "evidence": "286 个「📢防走丢频道」按钮",
+        "note": "流失挽回，预设被封"
+      },
+      {
+        "name": "进群按钮导私域",
+        "evidence": "286 个「👥进群搜索想要内容」按钮",
+        "note": ""
+      },
+      {
+        "name": "高频发布冲检索",
+        "evidence": "33.5 条/天，集中在 09/13/21 三档",
+        "note": ""
+      }
+    ],
+    "signals": {
+      "err_pct": 0.5,
+      "forwards_per_post": 0.7,
+      "subscribers": 102988,
+      "median_views": 553
+    },
+    "assessment": "互推是有效的涨粉手段但无效的增长手段：10 万订阅只有 553 中位阅读。ERR 塌到 0.5% 之后广告位卖不出价，最终只能靠境外博彩引流变现——这是本样本集里「互推毒药」最清楚的一例。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      150,
+      300
+    ],
+    "onetime_cny": [
+      2500,
+      5000
+    ],
+    "items": [
+      {
+        "name": "破解件来源（搬运论坛与同行，不自己破解）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "纯人力"
+      },
+      {
+        "name": "LLM 写文案（结构化模板，输出短）",
+        "cny_month": [
+          20,
+          50
+        ]
+      },
+      {
+        "name": "网盘 SVIP（夸克 + 百度）",
+        "cny_month": [
+          25,
+          45
+        ]
+      },
+      {
+        "name": "VPS + 发布 bot",
+        "cny_month": [
+          50,
+          100
+        ]
+      },
+      {
+        "name": "soso 互推涨粉",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "以推换推，基本免费"
+      },
+      {
+        "name": "一次性：买粉铺底 10 万",
+        "cny_onetime": [
+          2500,
+          5000
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3500,
+      10000
+    ],
+    "model": "流量饵 + 灰产引流",
+    "streams": [
+      {
+        "name": "境外博彩置顶位",
+        "evidence": "置顶消息为 182体育 / 8K国际 引流文案，附落地域名与专属客服 TG 账号",
+        "cny_month": [
+          2000,
+          6000
+        ],
+        "confidence": "high"
+      },
+      {
+        "name": "博彩按钮位与软广",
+        "evidence": "按钮里出现 凯旋娱乐城、U99.com、N9国际、0审核0风控包出款；外链域名含 kxusdt.com、22010943.vip",
+        "cny_month": [
+          1000,
+          3000
+        ],
+        "confidence": "high"
+      },
+      {
+        "name": "夸克网盘拉新 CPA",
+        "evidence": "312 个夸克按钮",
+        "cny_month": [
+          300,
+          1000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "soso 互推邀请奖励",
+        "evidence": "互推帖尾部「加入互推 · 获得曝光，赚邀请奖励」按钮",
+        "cny_month": [
+          200,
+          800
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "天花板被真实流量卡死：1000 帖/月 × 553 阅读约 55 万次曝光，但集中在约 1000 个真人身上。破解软件只是流量饵，真正的生意是给赌博平台引流。"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "置顶为境外赌博平台引流，在中国大陆属开设赌场罪 / 帮信罪的引流环节，刑事范畴，比盗版软件本身严重得多",
+      "所发 APK 为二手搬运的他人破解件，夹带木马是常态，不要在有数据的机器上安装",
+      "互推网络里的伙伴频道含转账模拟器、网络钱包修改等诈骗工具号"
+    ]
+  },
+  "takeaways": [
+    {
+      "title": "inline 按钮矩阵",
+      "detail": "每帖固定四件套：主资源 + 搜索更多 + 进群 + 防走丢频道。本项目目前只有单个「获取完整资料」深链按钮，补齐是零成本的留存与抗风险设计。注意这些是 URL 按钮，不吃 callback_data 的 64 字节上限。",
+      "applicable": true
+    },
+    {
+      "title": "发布异步化：先发占位，再 edit 补按钮",
+      "detail": "本项目 app/intake.py 已把 LLM 流水线异步化，发布侧可对齐——app/publisher.py 不必阻塞等待资源就绪。",
+      "applicable": true
+    },
+    {
+      "title": "防走丢备份频道",
+      "detail": "长期运营就该建一个，成本接近零。",
+      "applicable": true
+    },
+    {
+      "title": "prompt 输出改固定字段 schema",
+      "detail": "结构化字段比自由文案好入库、好检索、好去重。config/prompts/_output_format.md 可往这个方向收紧。",
+      "applicable": true
+    },
+    {
+      "title": "互推涨粉",
+      "detail": "反面教材。能把数字堆到 10 万，堆的是 0.5% ERR 的死粉，然后只能接博彩广告才能回本。",
+      "applicable": false
+    }
+  ]
+}

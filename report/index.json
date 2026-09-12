@@ -1,0 +1,812 @@
+{
+  "schema_version": 3,
+  "generated_by": "report/build_index.py",
+  "generated_at": "2026-09-12T15:03:15+00:00",
+  "title": "TG 频道分析",
+  "description": "竞品 Telegram 频道与群的只读调研。每条记录对应 report/<slug>.json 与 <slug>.md。",
+  "headline": "十三个样本，三类生意：内容号看 ERR，ERR 塌了就只剩灰产广告一条路；搜索平台不生产内容、只卖结果页里的广告位，毛利结构最好；机场生态则是一条完整产业链——服务商本体担经营者责任，测评号靠隐藏返利关系赚导流费，免费分享号把带宽成本转嫁给被扒节点的所有者。",
+  "schema_notes": {
+    "v2": "新增 kind 字段（channel | group）。群没有 per-message 阅读量，median_views / err_pct 对群为 null，改看 online_pct 与 bot_share_pct。UI 渲染前先判 kind。",
+    "v3": "新增顶层 growth 维度（增长策略），结构为 strategy / paid_acquisition / mechanisms[] / signals{} / assessment，部分记录带 derived_from。paid_acquisition 取值 none | subs | engagement | exchange | mixed | unknown，已提到 index.channels[] 与对比表，适合做筛选和配色。"
+  },
+  "channels": [
+    {
+      "slug": "xiaohuojianvpnvpn",
+      "kind": "channel",
+      "username": "xiaohuojianvpnvpn",
+      "url": "https://t.me/xiaohuojianvpnvpn",
+      "title": "小火箭节点-VPN软件-Shadowrocket-高速代理-V2Ray",
+      "category": "机场 / VPN 代理服务销售（付费订阅）",
+      "one_liner": "67 条帖子撑起 20 万订阅的机场销售号：正文是把长尾搜索词直接码成文章，全渠道零外链、只留三个客服账号，反应量在每一条上都是刷的。",
+      "subscribers": 200272,
+      "members": null,
+      "median_views": 6860,
+      "err_pct": 3.4,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": 0.1,
+      "est_revenue_cny_month": [
+        10000,
+        60000
+      ],
+      "recurring_cost_cny_month": [
+        3000,
+        15000
+      ],
+      "monetization": "付费订阅（机场会员）",
+      "paid_acquisition": "mixed",
+      "growth_strategy": "长尾搜索词 SEO + 全量刷反应 + 疑似刷阅读 + 买粉铺底。四条全是买来的量",
+      "risk_level": "criminal",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T15:00:00Z",
+      "markdown": "xiaohuojianvpnvpn.md",
+      "json": "xiaohuojianvpnvpn.json",
+      "dump": "data/recon/xiaohuojianvpnvpn.jsonl"
+    },
+    {
+      "slug": "cheapairport_channel",
+      "kind": "channel",
+      "username": "cheapairport_channel",
+      "url": "https://t.me/cheapairport_channel",
+      "title": "便宜机场",
+      "category": "机场自营（VPN 服务商自有公告频道）",
+      "one_liner": "四个里唯一的服务商本体：3 年只发 59 条，每月扔一个免费兑换码当获客钩子，阅读量是订阅数的 2.5 倍——流量主要来自站外。",
+      "subscribers": 24708,
+      "members": null,
+      "median_views": 61766,
+      "err_pct": 250.0,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": 24.8,
+      "est_revenue_cny_month": [
+        10000,
+        60000
+      ],
+      "recurring_cost_cny_month": [
+        3000,
+        20000
+      ],
+      "monetization": "机场自营订阅",
+      "paid_acquisition": "none",
+      "growth_strategy": "站外资产反向导入 TG + 每月白嫖码制造强制回访。全样本唯一不靠 TG 内部增长的号",
+      "risk_level": "criminal",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T16:00:00Z",
+      "markdown": "cheapairport_channel.md",
+      "json": "cheapairport_channel.json",
+      "dump": "data/recon/cheapairport_channel.jsonl"
+    },
+    {
+      "slug": "ffqchannel",
+      "kind": "channel",
+      "username": "ffqchannel",
+      "url": "https://t.me/ffqchannel",
+      "title": "翻翻墙 | 机场评测",
+      "category": "机场评测量产（收费收录 + 伪装联盟链接）",
+      "one_liner": "机场评测流水线：32 天出 47 篇带星级评分的测评，每篇配 5-7 张截图，落地链接一律经 302verify.com 跳转以隐藏返利关系；转发 21.7 次/帖，是四个号里扩散最强的。",
+      "subscribers": 61643,
+      "members": null,
+      "median_views": 6836,
+      "err_pct": 11.1,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": 21.7,
+      "est_revenue_cny_month": [
+        8000,
+        40000
+      ],
+      "recurring_cost_cny_month": [
+        200,
+        1500
+      ],
+      "monetization": "收费收录测评 + 伪装联盟链接",
+      "paid_acquisition": "none",
+      "growth_strategy": "测评量产 + 高自然转发。四个机场号里增长质量最好的",
+      "risk_level": "criminal",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T16:30:00Z",
+      "markdown": "ffqchannel.md",
+      "json": "ffqchannel.json",
+      "dump": "data/recon/ffqchannel.jsonl"
+    },
+    {
+      "slug": "jcplnanmin",
+      "kind": "channel",
+      "username": "jcplnanmin",
+      "url": "https://t.me/jcplnanmin",
+      "title": "跑路机场难民收容所",
+      "category": "机场行业资讯 / 避雷曝光（已转向赞助变现）",
+      "one_liner": "靠曝光机场跑路建立信任的看门狗号，2025 年几乎停更，2026 年带着 #金主 赞助帖回来——曝光内容从 2024 年 66 条掉到 6 条，广告帖 7 条全在 2026 年。",
+      "subscribers": 26385,
+      "members": null,
+      "median_views": 14084,
+      "err_pct": 53.4,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": 1.5,
+      "est_revenue_cny_month": [
+        500,
+        3000
+      ],
+      "recurring_cost_cny_month": [
+        0,
+        300
+      ],
+      "monetization": "#金主 赞助位 + 联盟返利",
+      "paid_acquisition": "none",
+      "growth_strategy": "早期口碑存量，增长引擎已停。2026 年的复活由赞助内容驱动，是在消耗存量信任",
+      "risk_level": "high",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T16:10:00Z",
+      "markdown": "jcplnanmin.md",
+      "json": "jcplnanmin.json",
+      "dump": "data/recon/jcplnanmin.jsonl"
+    },
+    {
+      "slug": "go4sharing",
+      "kind": "channel",
+      "username": "go4sharing",
+      "url": "https://t.me/go4sharing",
+      "title": "公益 机场 免费 节点 订阅 分享",
+      "category": "免费节点聚合（全自动爬取 + 筛选 + 发布）",
+      "one_liner": "全自动的免费节点流水线：每天扫几千个公开节点、筛出十几个能用的、推到 GitHub 再发频道；良率 0.77%，全套基建跑在免费额度上，几乎不变现。",
+      "subscribers": 55425,
+      "members": null,
+      "median_views": 9790,
+      "err_pct": 17.7,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": 9.5,
+      "est_revenue_cny_month": [
+        200,
+        2000
+      ],
+      "recurring_cost_cny_month": [
+        50,
+        300
+      ],
+      "monetization": "几乎无（导流自有群）",
+      "paid_acquisition": "none",
+      "growth_strategy": "「免费」本身就是最强获客点，零成本获客但零留存价值",
+      "risk_level": "criminal",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T16:20:00Z",
+      "markdown": "go4sharing.md",
+      "json": "go4sharing.json",
+      "dump": "data/recon/go4sharing.jsonl"
+    },
+    {
+      "slug": "lps999",
+      "kind": "channel",
+      "username": "lps999",
+      "url": "https://t.me/lps999",
+      "title": "安卓黄油",
+      "category": "成人向 Android 游戏（汉化 APK）",
+      "one_liner": "三个样本里唯一有真实受众的号：ERR 4.5%，靠内容自然转发增长，用 Telegram 当免费 CDN 托 100GB APK。",
+      "subscribers": 237505,
+      "members": null,
+      "median_views": 10755,
+      "err_pct": 4.5,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": 50.1,
+      "est_revenue_cny_month": [
+        10000,
+        40000
+      ],
+      "recurring_cost_cny_month": [
+        700,
+        2500
+      ],
+      "monetization": "常驻联盟（非零散卖位）",
+      "paid_acquisition": "none",
+      "growth_strategy": "内容自然转发驱动 + 滚动删除制造稀缺 + 自有群矩阵承接。全样本增长质量最高的之一",
+      "risk_level": "criminal",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T11:34:06Z",
+      "markdown": "lps999.md",
+      "json": "lps999.json",
+      "dump": "data/recon/lps999.jsonl"
+    },
+    {
+      "slug": "xiaoshuwu",
+      "kind": "channel",
+      "username": "xiaoshuwu",
+      "url": "https://t.me/xiaoshuwu",
+      "title": "TG小树屋｜资源分享&公益代理",
+      "category": "AI 工具 / 破解软件 / 机场订阅（内容媒体号）",
+      "one_liner": "四个样本里变现最强的号：把广告完全隔离在一个 24 小时后自毁的坑位里，内容区保持零返利，于是撑住 9% ERR，每天满载 4 条付费广告（含博彩）包月投放。",
+      "subscribers": 84441,
+      "members": null,
+      "median_views": 7562,
+      "err_pct": 9.0,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": 49.7,
+      "est_revenue_cny_month": [
+        11000,
+        35000
+      ],
+      "recurring_cost_cny_month": [
+        500,
+        2500
+      ],
+      "monetization": "满载广告位包月（含灰产）+ 机场分销",
+      "paid_acquisition": "none",
+      "growth_strategy": "内容驱动（真人点评 + 固定栏目养日活），未观测到买粉或互推痕迹",
+      "risk_level": "criminal",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T19:20:00Z",
+      "markdown": "xiaoshuwu.md",
+      "json": "xiaoshuwu.json",
+      "dump": "data/recon/xiaoshuwu.jsonl"
+    },
+    {
+      "slug": "syrjfx_sl",
+      "kind": "channel",
+      "username": "syrjfx_sl",
+      "url": "https://t.me/syrjfx_sl",
+      "title": "破解软件分享",
+      "category": "破解 / 去广告 Android 与 PC 软件",
+      "one_liner": "inline 按钮矩阵 + 先发后补的工程做得最好，但靠 soso 互推堆出来的 10 万粉 ERR 只有 0.5%，最后只能靠境外博彩引流回本。",
+      "subscribers": 102988,
+      "members": null,
+      "median_views": 553,
+      "err_pct": 0.5,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": 0.7,
+      "est_revenue_cny_month": [
+        3500,
+        10000
+      ],
+      "recurring_cost_cny_month": [
+        150,
+        300
+      ],
+      "monetization": "流量饵 + 灰产引流",
+      "paid_acquisition": "exchange",
+      "growth_strategy": "soso 互推换量。把订阅堆到 10 万，但换来的是死粉",
+      "risk_level": "criminal",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T12:10:00Z",
+      "markdown": "syrjfx_sl.md",
+      "json": "syrjfx_sl.json",
+      "dump": "data/recon/syrjfx_sl.jsonl"
+    },
+    {
+      "slug": "BYFXZ",
+      "kind": "channel",
+      "username": "BYFXZ",
+      "url": "https://t.me/BYFXZ",
+      "title": "安卓/iOS软件资源分享",
+      "category": "盗版 App 分发（iOS 砸壳 IPA / 安卓破解 APK）",
+      "one_liner": "学生个人号，9 天堆 500 条、74.8 GB 安装包直挂 Telegram，几乎零变现，最近三天正从盗版分发转向刷量 bot + 短信轰炸的黑产工具。",
+      "subscribers": 8823,
+      "members": null,
+      "median_views": 272,
+      "err_pct": 3.1,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": 0.5,
+      "est_revenue_cny_month": [
+        0,
+        3000
+      ],
+      "recurring_cost_cny_month": [
+        30,
+        100
+      ],
+      "monetization": "目前几乎无，正转向刷量 bot 积分制",
+      "paid_acquisition": "none",
+      "growth_strategy": "手动运营 + 自有交流群与搜索群导流，无付费获客",
+      "risk_level": "criminal",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T19:20:00Z",
+      "markdown": "BYFXZ.md",
+      "json": "BYFXZ.json",
+      "dump": "data/recon/BYFXZ.jsonl"
+    },
+    {
+      "slug": "xph_fx",
+      "kind": "channel",
+      "username": "xph_fx",
+      "url": "https://t.me/xph_fx",
+      "title": "徐胖虎资源社",
+      "category": "AI 工具 / 资源推荐（内容媒体号）",
+      "one_liner": "一个勉强糊口的个人号：买粉/换量把订阅堆到 28K，但 ERR 只有 1.6% 且还在恶化，广告卖不动（telega 终身 6 单、近月 0），只能自己挂招租位。",
+      "subscribers": 28100,
+      "members": null,
+      "median_views": 444,
+      "err_pct": 1.6,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": null,
+      "est_revenue_cny_month": [
+        400,
+        1800
+      ],
+      "recurring_cost_cny_month": [
+        70,
+        430
+      ],
+      "monetization": "广告（滞销）+ 低客单信息产品",
+      "paid_acquisition": "mixed",
+      "growth_strategy": "买粉 + SOSO autopromo 换量。全样本里「涨的粉基本不读」最清楚的一个",
+      "risk_level": "high",
+      "confidence": "medium",
+      "analyzed_at": "2026-09-12T18:10:00Z",
+      "markdown": "xph_fx.md",
+      "json": "xph_fx.json",
+      "dump": null
+    },
+    {
+      "slug": "xuendj1",
+      "kind": "channel",
+      "username": "xuendj1",
+      "url": "https://t.me/xuendj1",
+      "title": "学习资料分享",
+      "category": "盗版付费课程 / 学习资料",
+      "one_liner": "日更 350 条的火力全开流水线，但 9.4 万粉丝的 ERR 只有 0.07%，日总曝光两年内跌了 80%——加量纯亏的活样本。",
+      "subscribers": 94159,
+      "members": null,
+      "median_views": 68,
+      "err_pct": 0.07,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": 0.0,
+      "est_revenue_cny_month": [
+        1000,
+        4000
+      ],
+      "recurring_cost_cny_month": [
+        100,
+        300
+      ],
+      "monetization": "CPA 拉新 + 号本身当商品",
+      "paid_acquisition": "subs",
+      "growth_strategy": "买粉铺底 + 日更 350 条冲检索。加量不产生增长，只稀释曝光",
+      "risk_level": "high",
+      "confidence": "medium",
+      "analyzed_at": "2026-09-12T10:40:00Z",
+      "markdown": "xuendj1.md",
+      "json": "xuendj1.json",
+      "dump": null
+    },
+    {
+      "slug": "jisou771",
+      "kind": "group",
+      "username": "jisou771",
+      "url": "https://t.me/jisou771",
+      "title": "极搜 资源搜索、超级引索",
+      "category": "资源搜索 bot 群 / 广告投放平台",
+      "one_liner": "四个样本里唯一不生产内容的：搜索 bot 在每条结果顶部注入广告，按固定位与关键词位卖，落地链接带 ad slot id。群本身只是展位。",
+      "subscribers": null,
+      "members": 10515,
+      "median_views": null,
+      "err_pct": null,
+      "online_pct": 6.9,
+      "bot_share_pct": 51.5,
+      "forwards_per_post": 0.0,
+      "est_revenue_cny_month": [
+        3000,
+        15000
+      ],
+      "recurring_cost_cny_month": [
+        800,
+        4000
+      ],
+      "monetization": "广告位售卖（固定位 + 关键词竞价位）",
+      "paid_acquisition": "exchange",
+      "growth_strategy": "自建互推 bot + 搜索功能本身是刚需入口。群的增长不看订阅数，看在线率",
+      "risk_level": "criminal",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T14:10:00Z",
+      "markdown": "jisou771.md",
+      "json": "jisou771.json",
+      "dump": "data/recon/jisou771.jsonl"
+    },
+    {
+      "slug": "sesecctv",
+      "kind": "group",
+      "username": "sesecctv",
+      "url": "https://t.me/sesecctv",
+      "title": "中文搜索|中文导航🌈中文群组|电报搜索|资源搜索",
+      "category": "色情资源搜索 bot 群 / SOSO 网络加盟节点",
+      "one_liner": "群本身只是 SOSO 搜索网络里一个挂机分成的展位（12k 成员却仅 200 在线、69% 消息是 bot）；但支撑它的是一整套要真金白银搭建的搜索服务——爬取账号池 + 亿级全文索引服务器 + 搜索 bot，这套成本由平台方承担，不落在群主头上。",
+      "subscribers": null,
+      "members": 12182,
+      "median_views": null,
+      "err_pct": null,
+      "online_pct": 1.6,
+      "bot_share_pct": 68.8,
+      "forwards_per_post": 0.0,
+      "est_revenue_cny_month": [
+        500,
+        3000
+      ],
+      "recurring_cost_cny_month": [
+        3000,
+        20000
+      ],
+      "monetization": "SOSO 付费轮播广告分成",
+      "paid_acquisition": "exchange",
+      "growth_strategy": "依附 SOSO 网络导流，不自建互推。是同一模式的末端展位",
+      "risk_level": "criminal",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T22:45:00Z",
+      "markdown": "sesecctv.md",
+      "json": "sesecctv.json",
+      "dump": null
+    },
+    {
+      "slug": "Czenb6",
+      "kind": "channel",
+      "username": "Czenb6",
+      "url": "https://t.me/Czenb6",
+      "title": "全资源最全公益辅助破解软件分享",
+      "category": "游戏外挂分发（破解他人付费外挂后免费再分发）",
+      "one_liner": "不是普通破解号——它是游戏外挂市场的上游盗版层：把别人收费的外挂破掉卡密验证再免费发，自称公益、明确反对收费，因此几乎没有可观测收入。",
+      "subscribers": 10263,
+      "members": null,
+      "median_views": 1797,
+      "err_pct": 17.5,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": 1.0,
+      "est_revenue_cny_month": [
+        0,
+        2000
+      ],
+      "recurring_cost_cny_month": [
+        100,
+        800
+      ],
+      "monetization": "无可观测收入（自称公益并明确反对收费）",
+      "paid_acquisition": "none",
+      "growth_strategy": "垂类刚需驱动的自然增长，未发现买粉、刷量、互推的任何痕迹",
+      "risk_level": "criminal",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T17:00:00Z",
+      "markdown": "Czenb6.md",
+      "json": "Czenb6.json",
+      "dump": "data/recon/Czenb6.jsonl"
+    },
+    {
+      "slug": "bookMiao",
+      "kind": "channel",
+      "username": "bookMiao",
+      "url": "https://t.me/bookMiao",
+      "title": "喵读",
+      "category": "电子书批量分发（以色情小说为主，混盗版正规书与报刊）",
+      "one_liner": "「读书频道」是伪装：标签普查里色情向 84 次对正经向 32 次，且含乱伦题材。27,805 订阅但中位阅读只有 57——0.2% 的 ERR，是全部样本里最低的之一。",
+      "subscribers": 27805,
+      "members": null,
+      "median_views": 57,
+      "err_pct": 0.2,
+      "online_pct": null,
+      "bot_share_pct": null,
+      "forwards_per_post": 0.09,
+      "est_revenue_cny_month": [
+        1000,
+        6000
+      ],
+      "recurring_cost_cny_month": [
+        50,
+        300
+      ],
+      "monetization": "收费广告位（含违禁药品广告）",
+      "paid_acquisition": "mixed",
+      "growth_strategy": "批量灌库 + soso 互推。两条都是量的逻辑而非留存的逻辑，结果是 0.2% 的 ERR",
+      "risk_level": "criminal",
+      "confidence": "high",
+      "analyzed_at": "2026-09-12T17:10:00Z",
+      "markdown": "bookMiao.md",
+      "json": "bookMiao.json",
+      "dump": "data/recon/bookMiao.jsonl"
+    }
+  ],
+  "comparison": {
+    "note": "一行一个频道，可直接当表格渲染。群没有阅读量，相关列为 —。带 * 的单元格表示口径受限：成本列的 * 是「仅本号自担，上游平台成本另计」，收入列的 * 是「仅本号可归因部分，不代表所属网络整体」——详见该记录 json 的 cost.owner_scope_note 与 revenue.est_scope。",
+    "columns": [
+      "频道 / 群",
+      "类型",
+      "成员/订阅",
+      "中位阅读",
+      "ERR",
+      "转发/帖",
+      "主变现",
+      "涨粉方式",
+      "付费获客",
+      "经常性成本",
+      "估计月收入",
+      "风险"
+    ],
+    "rows": [
+      [
+        "xiaohuojianvpnvpn 小火箭节点-VPN软件-Shadowrocket-高速代理-V2Ray",
+        "频道",
+        "200,272",
+        "6,860",
+        "3.4%",
+        "0.1",
+        "付费订阅（机场会员）",
+        "买粉+刷量+搜索词SEO",
+        "买粉+刷量",
+        "¥3,000–15,000/月",
+        "¥10,000–60,000/月",
+        "criminal"
+      ],
+      [
+        "cheapairport_channel 便宜机场",
+        "频道",
+        "24,708",
+        "61,766",
+        "250.0%",
+        "24.8",
+        "机场自营订阅",
+        "白嫖码引流+站外导入",
+        "无",
+        "¥3,000–20,000/月",
+        "¥10,000–60,000/月",
+        "criminal"
+      ],
+      [
+        "ffqchannel 翻翻墙 | 机场评测",
+        "频道",
+        "61,643",
+        "6,836",
+        "11.1%",
+        "21.7",
+        "收费收录测评 + 伪装联盟链接",
+        "测评量产+高转发",
+        "无",
+        "¥200–1,500/月",
+        "¥8,000–40,000/月",
+        "criminal"
+      ],
+      [
+        "jcplnanmin 跑路机场难民收容所",
+        "频道",
+        "26,385",
+        "14,084",
+        "53.4%",
+        "1.5",
+        "#金主 赞助位 + 联盟返利",
+        "早期口碑存量",
+        "无",
+        "¥0–300/月",
+        "¥500–3,000/月",
+        "high"
+      ],
+      [
+        "go4sharing 公益 机场 免费 节点 订阅 分享",
+        "频道",
+        "55,425",
+        "9,790",
+        "17.7%",
+        "9.5",
+        "几乎无（导流自有群）",
+        "免费节点吸粉",
+        "无",
+        "¥50–300/月",
+        "¥200–2,000/月",
+        "criminal"
+      ],
+      [
+        "lps999 安卓黄油",
+        "频道",
+        "237,505",
+        "10,755",
+        "4.5%",
+        "50.1",
+        "常驻联盟（非零散卖位）",
+        "内容自然转发",
+        "无",
+        "¥700–2,500/月",
+        "¥10,000–40,000/月",
+        "criminal"
+      ],
+      [
+        "xiaoshuwu TG小树屋｜资源分享&公益代理",
+        "频道",
+        "84,441",
+        "7,562",
+        "9.0%",
+        "49.7",
+        "满载广告位包月（含灰产）+ 机场分销",
+        "内容驱动，无买粉痕迹",
+        "无",
+        "¥500–2,500/月",
+        "¥11,000–35,000/月",
+        "criminal"
+      ],
+      [
+        "syrjfx_sl 破解软件分享",
+        "频道",
+        "102,988",
+        "553",
+        "0.5%",
+        "0.7",
+        "流量饵 + 灰产引流",
+        "soso 互推",
+        "互推换量",
+        "¥150–300/月",
+        "¥3,500–10,000/月",
+        "criminal"
+      ],
+      [
+        "BYFXZ 安卓/iOS软件资源分享",
+        "频道",
+        "8,823",
+        "272",
+        "3.1%",
+        "0.5",
+        "目前几乎无，正转向刷量 bot 积分制",
+        "手动 + 自有群导流",
+        "无",
+        "¥30–100/月",
+        "¥0–3,000/月",
+        "criminal"
+      ],
+      [
+        "xph_fx 徐胖虎资源社",
+        "频道",
+        "28,100",
+        "444",
+        "1.6%",
+        "—",
+        "广告（滞销）+ 低客单信息产品",
+        "买粉 + SOSO 换量",
+        "买粉+刷量",
+        "¥70–430/月",
+        "¥400–1,800/月",
+        "high"
+      ],
+      [
+        "xuendj1 学习资料分享",
+        "频道",
+        "94,159",
+        "68",
+        "0.07%",
+        "0.0",
+        "CPA 拉新 + 号本身当商品",
+        "买粉",
+        "买粉",
+        "¥100–300/月",
+        "¥1,000–4,000/月",
+        "high"
+      ],
+      [
+        "jisou771 极搜 资源搜索、超级引索",
+        "群",
+        "10,515",
+        "—",
+        "—",
+        "0.0",
+        "广告位售卖（固定位 + 关键词竞价位）",
+        "自建互推 bot",
+        "互推换量",
+        "¥800–4,000/月",
+        "¥3,000–15,000/月*",
+        "criminal"
+      ],
+      [
+        "sesecctv 中文搜索|中文导航🌈中文群组|电报搜索|资源搜索",
+        "群",
+        "12,182",
+        "—",
+        "—",
+        "0.0",
+        "SOSO 付费轮播广告分成",
+        "SOSO 网络导流",
+        "互推换量",
+        "¥0–300/月*",
+        "¥500–3,000/月*",
+        "criminal"
+      ],
+      [
+        "Czenb6 全资源最全公益辅助破解软件分享",
+        "频道",
+        "10,263",
+        "1,797",
+        "17.5%",
+        "1.0",
+        "无可观测收入（自称公益并明确反对收费）",
+        "垂类刚需自然增长",
+        "无",
+        "¥100–800/月",
+        "¥0–2,000/月",
+        "criminal"
+      ],
+      [
+        "bookMiao 喵读",
+        "频道",
+        "27,805",
+        "57",
+        "0.2%",
+        "0.09",
+        "收费广告位（含违禁药品广告）",
+        "批量灌库+soso互推",
+        "买粉+刷量",
+        "¥50–300/月",
+        "¥1,000–6,000/月",
+        "criminal"
+      ]
+    ]
+  },
+  "conclusions": [
+    "内容号里 ERR（中位阅读/订阅）是唯一重要的单一指标。用外部手段堆粉丝数（买粉、互推）的号，ERR 掉到 1% 以下，之后只能靠给灰产引流凑收入。",
+    "LLM 成本在这类生意里可以忽略——日更 350 条一年不到 300 元。瓶颈永远在内容质量与投递链路。极搜甚至完全不用 LLM。",
+    "验证成立的正向循环长这样：内容好到用户愿意转发（lps999 50 次/帖、xiaoshuwu 49.7 次/帖），流量自己长，于是能接单价高的常驻联盟或包月广告位。这两个号的 ERR 是 4.5% 和 9%，收入也是全样本最高的两个。",
+    "极搜是另一条路：不生产内容、不存资源、不买粉，把「帮用户找东西」做成产品，广告注在搜索结果顶部。毛利结构最好，技术门槛在索引。",
+    "互推在这个生态里是标准件：soso 有互推产品，极搜自建了 @hutui1bot。但 syrjfx_sl 的 0.5% ERR 说明互推换来的是死粉。"
+  ],
+  "applicable_to_project": [
+    {
+      "title": "inline 按钮矩阵",
+      "from": "syrjfx_sl",
+      "detail": "每帖固定四件套：主资源 + 搜索更多 + 进群 + 防走丢频道。本项目目前只有单个「获取完整资料」深链按钮。URL 按钮不吃 callback_data 的 64 字节上限。"
+    },
+    {
+      "title": "发布异步化",
+      "from": "syrjfx_sl",
+      "detail": "先发消息占位，资源就绪后 edit 补按钮。app/intake.py 已是异步，app/publisher.py 可对齐。"
+    },
+    {
+      "title": "prompt 输出改固定字段 schema",
+      "from": "syrjfx_sl",
+      "detail": "结构化字段好入库、好检索、好去重。可收紧 config/prompts/_output_format.md。"
+    },
+    {
+      "title": "Telegram 当免费 CDN",
+      "from": "lps999",
+      "detail": "102.76 GB、单包最大 2.69 GB 零成本托管。仓库频道可放心扩到大文件。"
+    },
+    {
+      "title": "常驻联盟优于零散卖位",
+      "from": "lps999",
+      "detail": "广告位挂两年，置顶累计 24 万曝光，边际成本为零。"
+    },
+    {
+      "title": "备份频道",
+      "from": "syrjfx_sl",
+      "detail": "「防走丢频道」按钮，长期运营该建一个。"
+    },
+    {
+      "title": "搜索即广告位",
+      "from": "jisou771",
+      "detail": "本项目有素材库和多方向分类，搜索结果页天然是自家资源的推荐位，不需要外部广告主也成立。"
+    },
+    {
+      "title": "关键词位的数据结构",
+      "from": "jisou771",
+      "detail": "ad=kw###### 把广告位绑到搜索词上，本质是「用户意图 → 匹配内容」，是站内推荐可直接复用的模型。"
+    },
+    {
+      "title": "给 tg_recon.py 补 sender_id",
+      "from": "jisou771",
+      "detail": "_row() 按频道设计，不抓发言人。分析群必须知道 bot 与人的比例，建议补 sender_id 与 sender_is_bot。"
+    }
+  ],
+  "not_applicable": [
+    {
+      "title": "滚动删除历史",
+      "reason": "价值全在降低被举报面。正规内容不需要，可检索的历史存量反而是资产。"
+    },
+    {
+      "title": "互推 / 买粉涨粉",
+      "reason": "堆出来的是死粉，ERR 塌掉之后只剩灰产广告一条变现路。"
+    },
+    {
+      "title": "灰产变现（博彩、成人、社工库、诈骗工具）",
+      "reason": "在中国大陆属刑事范畴，不在本项目的可选集内。"
+    },
+    {
+      "title": "把群简介卖成广告位",
+      "reason": "技术可行，但对正规项目是信任自杀。"
+    }
+  ],
+  "disclaimer": "所有收益数字均为基于公开可观测信号（成员数、在线数、阅读量、转发数、广告 slot id、联盟链接与推广码）的外部估算，非实际财务数据。联盟分成率与广告位报价不可见，是估算区间宽的主要原因。jisou771 的数字仅为本群可归因部分，不代表极搜网络整体。sesecctv 的经常性成本按「整套搜索服务」（平台方承担）口径计，而其收入是「单个展位」（节点）口径，两者不同口径、不可相减；对比表里它的成本列因此高于收入列，属正常。",
+  "content_warning": "jisou771 与 sesecctv 承载的广告类目包含社工库开盒、线下性交易招揽、境外博彩与成人 AI 换脸，sesecctv 群内更出现疑似涉未成年人性剥削的用户消息（属应向执法机关举报的对象，未收录）。这些原始文案与落地域名不适合在任何界面原样展示。UI 不要显示 data/recon/*.jsonl 的原始群消息内容。"
+}

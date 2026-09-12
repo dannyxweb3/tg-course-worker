@@ -1,0 +1,242 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "xph_fx",
+  "username": "xph_fx",
+  "url": "https://t.me/xph_fx",
+  "title": "徐胖虎资源社",
+  "category": "AI 工具 / 资源推荐（内容媒体号）",
+  "growth_short": "买粉 + SOSO 换量",
+  "one_liner": "一个勉强糊口的个人号：买粉/换量把订阅堆到 28K，但 ERR 只有 1.6% 且还在恶化，广告卖不动（telega 终身 6 单、近月 0），只能自己挂招租位。",
+  "analyzed_at": "2026-09-12T18:10:00Z",
+  "source": {
+    "method": "web_preview",
+    "script": null,
+    "dump": null,
+    "sample_size": 170,
+    "sample_range": [
+      "2026-06-07",
+      "2026-09-11"
+    ],
+    "note": "内容全公开、可 t.me/s/ 抓取，未开内容保护，故用 web 预览页 + telega.io 公开统计，未拉 telethon dump。指标 confidence=medium"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "subscribers": 28100,
+    "median_views": 444,
+    "mean_views": null,
+    "p10_views": null,
+    "p90_views": null,
+    "err_pct": 1.6,
+    "mature_posts": null,
+    "reactions_total": null,
+    "forwards_total": null,
+    "forwards_per_post": null,
+    "posts_per_day": 3.0,
+    "er_pct": 0.45,
+    "subs_growth_month": 2068,
+    "views_trend": "6 月上旬单条 3.4K-4.4K → 7 月中 1.9K-2.6K → 9 月 48-72h 内仅 350-1.0K；telega 30 天独立统计给出交叉验证：平均阅读 444，同期 +2068 订阅/月，即涨的粉基本不读",
+    "note": "median_views 取 telega.io 平均阅读 444；ERR/ER 均来自 telega 公开统计",
+    "views_available": true,
+    "members": null,
+    "online": null,
+    "online_pct": null,
+    "bot_share_pct": null
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "纯模板化：一张 800x450 固定卡图（左暗色标题区 + 右 AI 插画）+ emoji + 产品名 + 恰好 14 字一句话描述 + 👉点击获取 / 👉项目地址",
+    "delivery": "正文放外链，跳独立站产品页或 GitHub",
+    "selection": "GitHub trending / Product Hunt / 同类频道搬运（外链 github.com 出现最多）",
+    "schedule": "日更 3 条（telega 3.0/天），单条人工成本估 5-8 分钟",
+    "hook": "每 3-5 天一条「✈️永久订阅已更新，评论区发送订阅获取」免费机场订阅；节点名本身就是广告位（前几行写频道名/置顶广告投放联系），节点为抓来的公开 HY2/VLESS",
+    "growth": "买粉 / 换量：9-10 起发 SOSO 的 autopromo 专属邀请链换低质粉；6-30「频道正式回归更新」说明曾断更过，人肉工作流停更即死",
+    "asset_matrix": [
+      {
+        "name": "@xph_fx 频道",
+        "role": "主分发位",
+        "size": 28100
+      },
+      {
+        "name": "@xph_ql 群",
+        "role": "评论区 + 领取动作",
+        "size": 3001
+      },
+      {
+        "name": "@xph_zybot 资源发放 bot",
+        "role": "深链发货"
+      },
+      {
+        "name": "@XPH_Search_Bot",
+        "role": "频道历史搜索，长尾复活"
+      },
+      {
+        "name": "@XphyBot 小助理",
+        "role": "转发式客服 / 广告咨询"
+      },
+      {
+        "name": "@xph_me",
+        "role": "真人号，成交/投稿/合作"
+      }
+    ]
+  },
+  "growth": {
+    "strategy": "买粉 + SOSO autopromo 换量。全样本里「涨的粉基本不读」最清楚的一个",
+    "paid_acquisition": "mixed",
+    "mechanisms": [
+      {
+        "name": "SOSO autopromo 换量",
+        "evidence": "implementation.growth 记载：9-10 起发 SOSO 的 autopromo 专属邀请链换低质粉",
+        "note": "与 syrjfx_sl、bookMiao 同属 SOSO 换量体系"
+      },
+      {
+        "name": "买粉",
+        "evidence": "月增 2,068 订阅而阅读同期下跌",
+        "note": ""
+      }
+    ],
+    "signals": {
+      "err_pct": 1.6,
+      "er_pct": 0.45,
+      "subs_growth_month": 2068,
+      "views_trend": "6 月上旬单条 3.4K-4.4K → 7 月中 1.9K-2.6K → 9 月 48-72h 内仅 350-1.0K",
+      "cross_check": "telega.io 30 天统计：平均阅读 444，同期 +2,068 订阅/月"
+    },
+    "assessment": "月增 2,068 粉，同期单条阅读从 3.4-4.4K 跌到 350-1.0K，跌幅超 80%。订阅数与真实触达完全脱钩。另有「频道正式回归更新」的记录，说明人肉工作流停更即死——买粉买不来内容产能。",
+    "derived_from": "本条非本会话原始分析；growth 结论由该文件已有的 implementation.growth 与 metrics 推导（含 telega.io 交叉验证数据）"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      70,
+      430
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "VPS（3 bot + 搜索索引，2C2G）",
+        "cny_month": [
+          35,
+          85
+        ]
+      },
+      {
+        "name": "域名 / 图床 / AI 出图",
+        "cny_month": [
+          0,
+          140
+        ]
+      },
+      {
+        "name": "机场节点（抓公开节点=0；自建落地另算）",
+        "cny_month": [
+          0,
+          210
+        ]
+      },
+      {
+        "name": "涨粉（买粉 2000 × 低价；纯互推=0）",
+        "cny_month": [
+          0,
+          700
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      400,
+      1800
+    ],
+    "est_net_cny_month": [
+      300,
+      1400
+    ],
+    "model": "广告（滞销）+ 低客单信息产品",
+    "streams": [
+      {
+        "name": "直营广告（@XphyBot）+ 自投招租位",
+        "evidence": "频道自投「好位置抢先入驻」招商图；按粉丝数报价 ¥150-400/条，估月成交 1-3 条",
+        "cny_month": [
+          150,
+          1200
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "机场订阅节点名置顶广告位",
+        "evidence": "免费节点列表前几行写「置顶广告投放联系 @XphyBot」",
+        "cny_month": [
+          100,
+          500
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "《AI工具图鉴 Vol.1》PDF",
+        "evidence": "755 页 PDF+DOCX，¥29.9-39.9，私聊 @xph_me 发「图鉴」成交；8 月中后基本停推，说明没跑通",
+        "cny_month": [
+          0,
+          600
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "telega.io 广告",
+        "evidence": "报价 1/24 $36 起，但终身 6 单、近 30 天 0 单；CPM $81 是同类($17-37)的 2-4 倍，定价过高卖不动",
+        "cny_month": [
+          0,
+          40
+        ],
+        "confidence": "high"
+      },
+      {
+        "name": "联盟 / 换量（Manus 邀请、SOSO autopromo）",
+        "evidence": "多为积分/换粉，现金≈0",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现效率被 1.6% ERR 锁死，ERR 还在恶化。6 月峰值期（阅读 3.5-4K）估计能到 ¥1,500-3,500/月。折时薪 ¥12-55"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "分发破解软件与部分 🔞 成人内容链接（Explore Fans / 韩漫基地 / 爱推图），盗版侵权",
+      "免费机场为抓来的公开节点，稳定性与合规性均无保障",
+      "未见境外博彩引流，故未标 criminal；但成人内容传播在中国大陆有刑事风险敞口"
+    ]
+  },
+  "takeaways": [
+    {
+      "title": "固定卡图模板 + 14 字一句话",
+      "detail": "产能和辨识度都靠它，值得抄。",
+      "applicable": true
+    },
+    {
+      "title": "频道历史搜索 bot",
+      "detail": "3000 条老内容长尾复活，本项目 items 表天然能做。",
+      "applicable": true
+    },
+    {
+      "title": "免费钩子里塞自有广告位",
+      "detail": "机场节点名当广告位，零边际成本。",
+      "applicable": true
+    },
+    {
+      "title": "按粉丝数给广告定价",
+      "detail": "反面：CPM 定到同类 2-4 倍，卖不动。定价该锚 ERR/真实阅读，不是订阅数。",
+      "applicable": false
+    },
+    {
+      "title": "买粉 / 换量涨粉",
+      "detail": "反面：SOSO autopromo 换来的低质粉不读内容，把 ERR 一路拉到 1.6%，饮鸩止渴。",
+      "applicable": false
+    }
+  ]
+}

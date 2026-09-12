@@ -1,0 +1,233 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "xiaoshuwu",
+  "username": "xiaoshuwu",
+  "url": "https://t.me/xiaoshuwu",
+  "title": "TG小树屋｜资源分享&公益代理",
+  "category": "AI 工具 / 破解软件 / 机场订阅（内容媒体号）",
+  "growth_short": "内容驱动，无买粉痕迹",
+  "one_liner": "四个样本里变现最强的号：把广告完全隔离在一个 24 小时后自毁的坑位里，内容区保持零返利，于是撑住 9% ERR，每天满载 4 条付费广告（含博彩）包月投放。",
+  "analyzed_at": "2026-09-12T19:20:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/xiaoshuwu.jsonl",
+    "sample_size": 600,
+    "sample_range": [
+      "2026-04-19",
+      "2026-09-12"
+    ],
+    "note": "开了内容保护 + 禁 web 预览，t.me/s/ 抓不到正文，必须走 user 账号。抓取时点卡在 09-11 那批广告被删之前，才拿到 4 条广告全文"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 84441,
+    "median_views": 7562,
+    "mean_views": 7701,
+    "p10_views": 6381,
+    "p90_views": 9248,
+    "err_pct": 9.0,
+    "mature_posts": 569,
+    "reactions_total": 4648,
+    "forwards_total": 29795,
+    "forwards_per_post": 49.7,
+    "posts_per_day": 8.0,
+    "posts_per_day_surviving": 4.1,
+    "id_span_sampled": [
+      7314,
+      8470
+    ],
+    "surviving_messages": 600,
+    "deleted_ratio_pct": 48.0,
+    "hosted_files": 139,
+    "hosted_bytes_gb": null,
+    "photos": 451,
+    "note_mature_days": "该号阅读要 10+ 天才收敛，默认 mature_days=7 会把 9 月未长熟的帖压低；4-8 月稳定在 7,200-8,000 才是真实水位",
+    "views_available": true,
+    "members": null,
+    "online": null,
+    "online_pct": null,
+    "bot_share_pct": null
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "自有内容用固定模板：✅标题 + 🏷标签(#ai #记忆) + 🟢项目名 + 150-250 字手写点评 + 裸 GitHub/官网链接 + 署名 @xiaoshuwu。点评是真人写的，有判断有吐槽",
+    "daily_layout": "每天约 8 条：4 条付费广告（当天发布块最开头，同一分钟批量发出）+ 4 条自有内容（✅资源卡 / 每日音乐 / 真人碎念）",
+    "ad_auto_delete": "广告发出约 24 小时后删除。144 天里每天固定缺 4 条消息 id，94% 缺口落在当天发布块最开头；唯一不缺的 09-11 正是那批广告尚未被删的当天。历史里因此看不到任何一条广告",
+    "content_categories": [
+      {
+        "label": "✅ 资源卡",
+        "count_mature": 398,
+        "median_views": 7704,
+        "median_forwards": 60,
+        "mean_reactions": 8.1
+      },
+      {
+        "label": "每日音乐（audio）",
+        "count_mature": 123,
+        "median_views": 7226,
+        "median_forwards": 5,
+        "mean_reactions": 3.0
+      },
+      {
+        "label": "真人碎念",
+        "count_mature": 44,
+        "median_views": 7620,
+        "median_forwards": 7,
+        "mean_reactions": 16.8
+      }
+    ],
+    "monetization_isolation": "自有内容零 aff、零返利：600 条里唯一带邀请码的链接是那条 kitty 机场广告。变现被物理隔离进自毁广告位，内容区干净，这是 9% ERR 的直接来源",
+    "schedule": "定时队列，集中在 21:00 / 22:00 两档（Asia/Shanghai），11 天零漂移",
+    "growth": "内容驱动（真人点评 + 固定栏目养日活），未观测到买粉/互推痕迹；9% ERR 与 60 次/帖的资源卡转发中位互相印证是真实受众",
+    "external_links_top": [
+      [
+        "github.com",
+        294
+      ],
+      [
+        "apps.apple.com",
+        14
+      ],
+      [
+        "bilibili.com",
+        13
+      ]
+    ],
+    "persona": "运营者以人格化口吻出现（真人碎念 44 条，反应均值是资源卡的 2 倍），不是冷冰冰的资源号"
+  },
+  "growth": {
+    "strategy": "内容驱动（真人点评 + 固定栏目养日活），未观测到买粉或互推痕迹",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "真人点评 + 固定栏目",
+        "evidence": "implementation.growth 记载：真人点评加固定栏目养日活",
+        "note": "人写的内容，非模板生成"
+      },
+      {
+        "name": "资源卡自然转发",
+        "evidence": "资源卡转发中位 60 次/帖，全频道 49.7 次/帖",
+        "note": ""
+      }
+    ],
+    "signals": {
+      "err_pct": 9.0,
+      "forwards_per_post": 49.7,
+      "posts_per_day": 8.0
+    },
+    "assessment": "ERR 9.0% 是全部 15 个样本里最高的，与 49.7 次/帖转发互相印证是真实受众。它和 lps999 是唯一两个「内容好到用户愿意转发」的正向循环样本，收入也是最高的两个。",
+    "derived_from": "本条非本会话原始分析；growth 结论由该文件已有的 implementation.growth 与 metrics 推导"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      500,
+      2500
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "Telegram 存储与分发",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "音乐/图片托在 Telegram，零成本"
+      },
+      {
+        "name": "内容人力（3 条精写卡 + 配图 + 选曲，2-3 小时/天）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "纯人力，60-90 小时/月"
+      },
+      {
+        "name": "公益代理服务器 + bot（若自建 MTProto 代理）",
+        "cny_month": [
+          400,
+          2400
+        ]
+      },
+      {
+        "name": "文案 LLM（若用）",
+        "cny_month": [
+          10,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      11000,
+      35000
+    ],
+    "est_net_cny_month": [
+      9000,
+      27000
+    ],
+    "model": "满载广告位包月（含灰产）+ 机场分销",
+    "streams": [
+      {
+        "name": "每日 4 广告位包月（1 坑固定是博彩）",
+        "evidence": "09-11 20:59 同分钟发出 4 条：kitty机场(带邀请码)、南宫/C7/28圈等 6 家博彩(首充500送500)、趣连VPN、飞鸟加速；144 天每天满 4 条从未空过",
+        "cny_month": [
+          10000,
+          30000
+        ],
+        "confidence": "high"
+      },
+      {
+        "name": "机场分销 / 公益代理置顶位外租",
+        "evidence": "频道名含「公益代理」，简介列 TG代理；机场广告带邀请码 ?code=N3LeqPAf",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "note": "广告只吃得到阅读爬升的前段：单条广告 24h 内累计约 1,700 阅读（同时段内容帖 2,184 的 78%）。4 坑 × 30 天 × 1,700 ≈ 20 万次/月广告曝光，灰产 CPM ¥50-150。区间宽因分成率与包月单价不可见"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "固定广告位每天有一条是境外博彩（棋牌/彩票/捕鱼，首充返利），在中国大陆属开设赌场罪 / 帮信罪的引流环节，刑事范畴",
+      "自有内容含破解软件与「破甲」越狱类提示词，盗版侵权",
+      "每天分发受版权保护的音乐文件，是最直接的封号面",
+      "24h 自毁广告位专为降低被举报面设计"
+    ]
+  },
+  "takeaways": [
+    {
+      "title": "发布后 N 小时自动删除（仅对广告位）",
+      "detail": "这是它整个模式的技术支点：广告卖出去了，但历史干净、ERR 不被拖垮。本项目 queue/published 表加一个 auto_delete_after 字段即可支持，app/scheduler.py 起一个删除 job。",
+      "applicable": true
+    },
+    {
+      "title": "变现与内容物理隔离",
+      "detail": "内容区一条返利链接都没有，这才是 9% ERR 的来源（对照 xph_fx 到处塞 aff、ERR 1.6%）。本项目应把「配套资料深链」和「广告位」建成两类不同的 item，别混在一条发布流里。",
+      "applicable": true
+    },
+    {
+      "title": "留一个人工位做人格化",
+      "detail": "真人碎念帖反应率是 LLM 资源卡的 2 倍。本项目全是 LLM 生成的工具卡，缺「人」——每周几条真人碎念成本极低，却是 ERR 的锚。",
+      "applicable": true
+    },
+    {
+      "title": "固定字段模板 + 手写点评",
+      "detail": "✅标题 + 🏷标签 + 🟢项目 + 一段点评 的结构既好检索又有辨识度，比纯 LLM 罗列高一档。",
+      "applicable": true
+    },
+    {
+      "title": "接博彩变现",
+      "detail": "反面：单坑位收入高，但这是它风险等级 criminal 的根源，不在本项目可选集内。",
+      "applicable": false
+    }
+  ]
+}

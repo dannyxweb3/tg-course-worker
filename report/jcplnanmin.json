@@ -1,0 +1,277 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "jcplnanmin",
+  "username": "jcplnanmin",
+  "url": "https://t.me/jcplnanmin",
+  "title": "跑路机场难民收容所",
+  "category": "机场行业资讯 / 避雷曝光（已转向赞助变现）",
+  "growth_short": "早期口碑存量",
+  "one_liner": "靠曝光机场跑路建立信任的看门狗号，2025 年几乎停更，2026 年带着 #金主 赞助帖回来——曝光内容从 2024 年 66 条掉到 6 条，广告帖 7 条全在 2026 年。",
+  "analysis_scope": "按要求只分析实现技术思路、成本、收益、法律风险；不含可迁移/可复制方法。",
+  "analyzed_at": "2026-09-12T16:10:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/jcplnanmin.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2022-07-23",
+      "2026-09-12"
+    ],
+    "note": "300 条覆盖 1512 天，即该频道近乎全部历史"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 26385,
+    "members": null,
+    "online": null,
+    "online_pct": null,
+    "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 14084,
+    "mean_views": 18503,
+    "p10_views": 4816,
+    "p90_views": 41379,
+    "err_pct": 53.4,
+    "err_note": "53.4% 同样含大量非订阅者阅读，属高触达号",
+    "mature_posts": 286,
+    "total_posts": 300,
+    "reactions_total": 0,
+    "reaction_verdict": "反应功能已关闭（全样本 0）。一个刻意的选择——避免被刷、也避免评分被操纵",
+    "forwards_total": 444,
+    "forwards_per_post": 1.5,
+    "posts_per_day": 0.2,
+    "id_span_sampled": [
+      43,
+      582
+    ],
+    "surviving_messages": 300,
+    "posts_per_year": {
+      "2022": 78,
+      "2023": 97,
+      "2024": 85,
+      "2025": 13,
+      "2026": 27
+    },
+    "watchdog_posts_per_year": {
+      "2022": 33,
+      "2023": 50,
+      "2024": 66,
+      "2025": 8,
+      "2026": 6
+    },
+    "sponsored_posts_per_year": {
+      "2024": 1,
+      "2025": 1,
+      "2026": 7
+    },
+    "sponsored_ratio_pct": 3.0
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "role_in_ecosystem": "行业资讯与避雷号。频道名『跑路机场难民收容所』直指定位：收容被机场跑路坑过的用户",
+    "content_taxonomy": {
+      "慢讯": 182,
+      "频道推荐": 7,
+      "金主": 7,
+      "快讯": 6,
+      "技术前沿": 4,
+      "段子": 3,
+      "福利": 3,
+      "重磅推荐": 3,
+      "教程": 2,
+      "年终总结": 2,
+      "跑路预警": 1
+    },
+    "content_note": "#慢讯 占 182/300，是长评式行业观察，不是速报。配 #技术前沿、#教程、#年终总结，内容形态是人写的评论而非模板生成——四个号里唯一看不出 LLM 批量生产痕迹的",
+    "network_position": "与同生态测评号互相转发：『前女友们用过的机场』8 次、『科学上网观察与机场测速』5 次、『海豚机场测评』2 次。自有配套群『跑路机场难民交流群』",
+    "monetization_pivot": {
+      "summary": "信任资产变现，且时间线很清楚",
+      "timeline": "发帖量 2022:78 → 2023:97 → 2024:85 → 2025:13（近乎停更）→ 2026:27（回归）；曝光类内容 2024:66 → 2025:8 → 2026:6；而 #金主 广告 9 条中有 7 条在 2026 年",
+      "reading": "原有的看门狗产出基本停止，2026 年的复活主要由赞助内容驱动。靠『帮你避开跑路机场』攒下的信任，现在被用来向同一批机场收钱推广"
+    },
+    "ad_format": "#频道推荐 #金主 双标签开头，正文是机场的线路拓扑、测速数字、协议与解锁能力，末尾给注册链接和自有站点的评测文章",
+    "affiliate_links": {
+      "count": 9,
+      "examples": [
+        "vip.ytjcok.org/#/register?code=DswVqyXo",
+        "ly888.liydl.com:8888/#/register?code=ZQAMOx34",
+        "fxvpn.app/zh/register?inviteCode=z5Q64k",
+        "bandwagonhost.com/aff.php?aff=74854",
+        "sms-activate.org/?ref=2539950"
+      ],
+      "note": "除机场注册返利外，还挂了 VPS 服务商（搬瓦工）与接码平台（sms-activate）的联盟链接"
+    },
+    "review_site": "baobaoap.com —— 自有评测站，广告帖里同时给『评测文章』链接，把 TG 流量导到站上"
+  },
+  "growth": {
+    "strategy": "早期口碑存量，增长引擎已停。2026 年的复活由赞助内容驱动，是在消耗存量信任",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "曝光内容建立公信力",
+        "evidence": "避雷/曝光类内容 2022:33 → 2023:50 → 2024:66 条",
+        "note": "这是它全部订阅的来源"
+      },
+      {
+        "name": "同生态测评号互相转发",
+        "evidence": "『前女友们用过的机场』8 次、『科学上网观察与机场测速』5 次、『海豚机场测评』2 次",
+        "note": "圈内换量，非付费"
+      },
+      {
+        "name": "自有群与评测站",
+        "evidence": "跑路机场难民交流群、baobaoap.com",
+        "note": ""
+      }
+    ],
+    "signals": {
+      "err_pct": 53.4,
+      "forwards_per_post": 1.5,
+      "posts_per_year": {
+        "2022": 78,
+        "2023": 97,
+        "2024": 85,
+        "2025": 13,
+        "2026": 27
+      },
+      "watchdog_per_year": {
+        "2024": 66,
+        "2025": 8,
+        "2026": 6
+      }
+    },
+    "assessment": "2025 年近乎停更（13 条）说明靠人工写作的增长模式不可持续。曝光内容从 66 条掉到 6 条而广告帖集中在 2026 年——它已经不在创造增长，只在变现存量。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "评测站 baobaoap.com 托管",
+        "cny_month": [
+          0,
+          200
+        ]
+      },
+      {
+        "name": "频道运营",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "无带宽成本——它不卖服务，只写评论"
+      },
+      {
+        "name": "内容生产",
+        "cny_month": [
+          0,
+          100
+        ],
+        "note": "人工写作，不是模板。成本是时间而非现金，这也解释了 2025 年的停更"
+      },
+      {
+        "name": "买量",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "反应已关闭；转发 1.5 次/帖，未见买量痕迹"
+      }
+    ],
+    "structure_note": "现金成本接近零。这类号的真实成本是作者的时间和信誉——而 2025 年的产出崩塌说明时间成本没被覆盖住。"
+  },
+  "revenue": {
+    "est_cny_month": [
+      500,
+      3000
+    ],
+    "est_basis": "2026 年 9 个月出 7 条 #金主 约 0.8 条/月，该垂类赞助位典型报价 ¥500-3,000/条，加少量联盟返利",
+    "model": "#金主 赞助位 + 联盟返利",
+    "streams": [
+      {
+        "name": "#金主 赞助帖",
+        "evidence": "9 条带 #金主 标签的机场推广，7 条集中在 2026 年",
+        "cny_month": [
+          400,
+          2400
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "机场注册返利",
+        "evidence": "vip.ytjcok.org、ly888.liydl.com、fxvpn.app 均带 register?code/inviteCode",
+        "cny_month": [
+          100,
+          600
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "VPS 与接码平台联盟",
+        "evidence": "bandwagonhost.com/aff.php?aff=74854、sms-activate.org/?ref=2539950",
+        "cny_month": [
+          0,
+          200
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现量级远低于同生态的测评号（ffqchannel 估 ¥8,000-40,000）。原因是投放频次太低——0.8 条/月的赞助密度撑不起收入，而这恰恰是它还保留了一部分内容洁癖的代价。"
+  },
+  "risk": {
+    "level": "high",
+    "summary": "它不经营跨境信道，所以不承担经营者责任；主要风险在为无证服务推广收费（帮信）与利益冲突未充分披露（虚假宣传）。",
+    "legal": [
+      {
+        "issue": "为未经许可的国际联网服务有偿推广",
+        "statutes": [
+          "《刑法》第二百八十七条之二 帮助信息网络犯罪活动罪",
+          "《广告法》第五十六条（广告发布者责任）"
+        ],
+        "analysis": "收费为无证机场导流并提供注册返利链接，在明知对方无经营许可的情况下，可能构成帮信罪的『提供广告推广』帮助行为。作为行业资讯号，其对该行业无证经营状况的明知程度高于一般发布者，这一点对其不利。",
+        "severity": "high"
+      },
+      {
+        "issue": "利益冲突与误导性商业宣传",
+        "statutes": [
+          "《反不正当竞争法》第八条",
+          "《广告法》第十四条（广告可识别性）",
+          "《消费者权益保护法》第二十条"
+        ],
+        "analysis": "核心问题是：以『帮用户避开跑路机场』建立的公信力，被用于向机场收费推广。曝光内容从 2024 年 66 条降至 2026 年 6 条，而广告帖同期集中出现——用户按看门狗的可信度去理解一条赞助内容，就构成误导。",
+        "severity": "high",
+        "mitigation": "它确实用 #金主 标签标注了付费内容，这在广告可识别性上是加分项，实质优于 ffqchannel 用 302verify 伪装落地链接的做法。"
+      },
+      {
+        "issue": "接码平台联盟推广",
+        "statutes": [
+          "《反电信网络诈骗法》第二十一条、第三十八条",
+          "《刑法》第二百八十七条之二"
+        ],
+        "analysis": "sms-activate 一类接码平台提供境外手机号用于注册验证，是电诈与批量养号产业链的上游工具。为其导流的风险显著高于机场推广本身。",
+        "severity": "high"
+      },
+      {
+        "issue": "所载测速与解锁数据无法验证",
+        "statutes": [
+          "《广告法》第十一条、第二十八条（虚假广告）"
+        ],
+        "analysis": "赞助帖复述机场自报的峰值速率（如 3.1Gbps）与流媒体解锁率（100%），无独立测试依据。若数据来自金主提供且未核实，发布者可能承担连带责任。",
+        "severity": "medium"
+      }
+    ],
+    "notes": [
+      "不承担经营者责任，风险等级低于 cheapairport_channel 与 xiaohuojianvpnvpn",
+      "用 #金主 标注付费内容，是四个号里披露做得最好的",
+      "为接码平台导流是被低估的一项，风险高于机场推广本身",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
+  }
+}

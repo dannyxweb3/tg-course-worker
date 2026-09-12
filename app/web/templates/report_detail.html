@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block title %}{{ data.title if data else '报告' }} · 竞品分析{% endblock %}
+{% block body %}
+
+<div class="small muted" style="margin-bottom:10px">
+  <a href="/reports">← 竞品分析</a>
+</div>
+
+{% if not data %}
+  <div class="empty">这份报告不存在。<a href="/reports">回到列表</a></div>
+{% else %}
+
+<div class="row" style="margin-bottom:2px">
+  <h1 style="margin:0">{{ data.title or data.slug }}</h1>
+  {% if data.risk and data.risk.level %}
+    <span class="badge {{ 'err' if data.risk.level in ('criminal','high') else 'warn' }}">
+      {{ RISK_LABEL.get(data.risk.level, data.risk.level) }}
+    </span>
+  {% endif %}
+  {% set conf = (data.metrics.confidence if data.metrics else none) or data.confidence %}
+  {% if conf %}<span class="badge">{{ CONF_LABEL.get(conf, conf) }}</span>{% endif %}
+</div>
+<div class="small muted" style="margin-bottom:16px">
+  {% if data.url %}<a href="{{ data.url }}" target="_blank" rel="noopener nofollow">@{{ data.username }} ↗</a>{% else %}@{{ data.username }}{% endif %}
+  · {{ data.category|dash }} · 抓取于 {{ data.analyzed_at|dt('%Y-%m-%d %H:%M') }}
+</div>
+
+{% if data.one_liner %}<div class="card headline">{{ data.one_liner }}</div>{% endif %}
+
+{% set m = data.metrics or {} %}
+{% if m %}
+<div class="stats" style="margin-bottom:24px">
+  <div class="stat"><b>{{ m.subscribers|num }}</b><span>订阅数</span></div>
+  <div class="stat"><b>{{ m.median_views|num }}</b><span>中位阅读</span></div>
+  <div class="stat"><b class="{{ 'good' if m.err_pct and m.err_pct >= 2 else ('bad' if m.err_pct is not none else '') }}">{{ m.err_pct|pct }}</b><span>ERR</span></div>
+  <div class="stat"><b>{{ m.forwards_per_post|dash }}</b><span>转发 / 帖</span></div>
+  {% if m.hosted_bytes_gb %}<div class="stat"><b>{{ m.hosted_bytes_gb }} GB</b><span>托管文件</span></div>{% endif %}
+  {% if m.deleted_ratio_pct %}<div class="stat"><b>{{ m.deleted_ratio_pct }}%</b><span>历史删除率</span></div>{% endif %}
+</div>
+{% endif %}
+
+<div class="grid two" style="margin-bottom:24px">
+  {% if data.revenue %}
+  <div class="card">
+    <h3>变现 · {{ data.revenue.est_cny_month|cny }} / 月</h3>
+    {% if data.revenue.model %}<p class="small muted">{{ data.revenue.model }}</p>{% endif %}
+    {% if data.revenue.streams %}
+    <table class="small">
+      <thead><tr><th>路径</th><th style="width:110px">月收入</th><th style="width:70px">强度</th></tr></thead>
+      <tbody>
+      {% for s in data.revenue.streams %}
+        <tr>
+          <td>{{ s.name }}{% if s.evidence %}<div class="muted mono">{{ s.evidence }}</div>{% endif %}</td>
+          <td class="num">{{ s.cny_month|cny }}</td>
+          <td><span class="badge">{{ CONF_LABEL.get(s.confidence, s.confidence) }}</span></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+    {% if data.revenue.note %}<p class="small muted" style="margin-bottom:0">{{ data.revenue.note }}</p>{% endif %}
+  </div>
+  {% endif %}
+
+  {% if data.cost %}
+  <div class="card">
+    <h3>成本 · {{ data.cost.recurring_cny_month|cny }} / 月</h3>
+    {% if data.cost.onetime_cny %}
+      <p class="small muted">一次性投入 {{ data.cost.onetime_cny|cny }}</p>
+    {% endif %}
+    {% if data.cost['items'] %}
+    <table class="small">
+      <thead><tr><th>项目</th><th style="width:110px">月成本</th></tr></thead>
+      <tbody>
+      {% for i in data.cost['items'] %}
+        <tr>
+          <td>{{ i.name }}{% if i.note %}<div class="muted">{{ i.note }}</div>{% endif %}</td>
+          <td class="num">{{ (i.cny_month or i.cny_onetime)|cny }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
+
+{% if data.implementation %}
+<h2>实现方式</h2>
+<div class="card" style="margin-bottom:24px">
+  <dl class="kv">
+    {% for k, v in data.implementation.items() %}
+      <dt>{{ REPORT_LABEL.get(k, k) }}</dt>
+      <dd>
+        {% if v is string %}{{ v }}
+        {% elif v is mapping %}{{ v|tojson }}
+        {% elif v is iterable %}
+          {% for row in v %}
+            {% if row is mapping %}
+              <div>{{ row.title or row.name or '' }}
+                {%- if row.members %} · {{ row.members|num }} 人{% endif %}
+                {%- if row.online %} / {{ row.online|num }} 在线{% endif %}</div>
+            {% else %}<div>{{ row }}</div>{% endif %}
+          {% endfor %}
+        {% else %}{{ v }}{% endif %}
+      </dd>
+    {% endfor %}
+  </dl>
+</div>
+{% endif %}
+
+{% if data.risk and data.risk.notes %}
+<h2>风险</h2>
+<div class="card risk-card" style="margin-bottom:24px">
+  <ul class="spaced">{% for n in data.risk.notes %}<li>{{ n }}</li>{% endfor %}</ul>
+</div>
+{% endif %}
+
+{% if data.takeaways %}
+<h2>可带走的东西</h2>
+<div class="card" style="margin-bottom:24px">
+  {% for t in data.takeaways %}
+    <div class="tk">
+      <b>{{ t.title }}</b>
+      <span class="badge {{ 'ok' if t.applicable else 'err' }}">{{ '可借鉴' if t.applicable else '不采用' }}</span>
+      <div class="small">{{ t.detail }}</div>
+    </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if body %}
+<h2>完整分析</h2>
+<div class="card md-body">{{ body|safe }}</div>
+{% endif %}
+
+{% if data.source %}
+<p class="small muted" style="margin-top:16px">
+  数据来源：{{ data.source.method }}
+  {%- if data.source.script %} · <code class="mono">{{ data.source.script }}</code>{% endif %}
+  {%- if data.source.sample_size %} · 样本 {{ data.source.sample_size|num }} 条{% endif %}
+  {%- if data.source.note %}<br>{{ data.source.note }}{% endif %}
+</p>
+{% endif %}
+
+{% endif %}
+{% endblock %}

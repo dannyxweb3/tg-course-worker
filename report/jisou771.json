@@ -1,0 +1,306 @@
+{
+  "schema_version": 3,
+  "kind": "group",
+  "slug": "jisou771",
+  "username": "jisou771",
+  "url": "https://t.me/jisou771",
+  "title": "极搜 资源搜索、超级引索",
+  "category": "资源搜索 bot 群 / 广告投放平台",
+  "growth_short": "自建互推 bot",
+  "one_liner": "四个样本里唯一不生产内容的：搜索 bot 在每条结果顶部注入广告，按固定位与关键词位卖，落地链接带 ad slot id。群本身只是展位。",
+  "analyzed_at": "2026-09-12T14:10:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/jisou771.jsonl",
+    "sample_size": 600,
+    "sample_range": [
+      "2026-09-12T00:08:55Z",
+      "2026-09-12T14:03:55Z"
+    ],
+    "note": "600 条只覆盖 13.9 小时——群的消息密度远高于频道。另用 GetFullChannelRequest 取了简介与在线数，并单独探查了发言人身份与管理员列表（tg_recon.py 的 _row() 不抓 sender_id）"
+  },
+  "metrics": {
+    "confidence": "high",
+    "members": 10515,
+    "online": 730,
+    "online_pct": 6.9,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群（megagroup）没有 per-message 阅读量，ERR 指标对群不适用。替代指标是 online_pct 与 bot_share_pct",
+    "messages_per_day": 1036,
+    "sample_hours": 13.9,
+    "bot_messages": 309,
+    "human_messages": 291,
+    "bot_share_pct": 51.5,
+    "bot_replies_with_links": 295,
+    "links_per_message_mean": 7.6,
+    "links_per_message_max": 19,
+    "tme_links_total": 4508,
+    "ad_prefixed_messages": 234,
+    "ad_head_lines_median": 1,
+    "ad_head_lines_mean": 2.4,
+    "ad_head_lines_max": 12,
+    "ad_lines_total": 701,
+    "ad_lines_distinct": 383,
+    "hotsearch_footer_count": 240,
+    "reactions_total": 2,
+    "forwards_total": 0,
+    "id_span_sampled": [
+      180074,
+      180930
+    ],
+    "surviving_messages": 600,
+    "deleted_ratio_pct": 29.9,
+    "slowmode_seconds": null,
+    "linked_chat_id": null,
+    "forwards_per_post": 0.0
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "chat_type": "megagroup",
+    "post_structure": "用户发关键词（301 条短消息，中位长度 21 字符，p10 仅 2 字符）→ 搜索 bot 回复一个结果块：顶部若干行付费广告 → 中间 18-19 条搜索结果链接 → 底部一行「热搜」关键词",
+    "ad_injection": "广告注入在结果块顶部，中位 1 行、均值 2.4 行、最多 12 行。234 条消息字面以「广告」开头。一天内出现 383 条去重广告行，说明广告主库存很大",
+    "ad_slot_tracking": {
+      "note": "落地链接带 slot id，这是判定它是广告平台而非内容号的关键证据",
+      "patterns": [
+        {
+          "param": "ad=link####",
+          "meaning": "固定链接广告位"
+        },
+        {
+          "param": "ad=kw######",
+          "meaning": "关键词广告位——广告主按搜索词竞价，用户搜什么就注入对应广告主"
+        },
+        {
+          "param": "cid=#######",
+          "meaning": "渠道/客户 id"
+        },
+        {
+          "param": "channel=###",
+          "meaning": "渠道 id"
+        }
+      ],
+      "examples": [
+        "?cid=1376657&ad=link4204",
+        "?channel=107&ad=link2277",
+        "?ad=kw111829",
+        "?ad=kw116448"
+      ]
+    },
+    "delivery": "搜索结果是 t.me 链接列表，指向别的频道/群/消息。它自己不存任何资源——4,508 个 t.me 链接全是指路",
+    "schedule": "无排期。全天候，8 点和 16-21 点是人流高峰",
+    "retention": "14 小时内 id 跨度 856 但只存活 600 条，约 30% 已删除，推测是管理 bot 清垃圾消息",
+    "growth": "@hutui1bot「极搜互推」——和 syrjfx_sl 用的 soso 互推是同一类产品，自家做了一个",
+    "operating_team": [
+      {
+        "handle": "@shijiu_01",
+        "role": "群主 拾玖",
+        "is_bot": false
+      },
+      {
+        "handle": "@jisuo111",
+        "role": "商务对接（广告位销售），简介自称「极搜商务大富（注意骗子模仿）」",
+        "is_bot": false
+      },
+      {
+        "handle": "@5762373625",
+        "role": "搜索 bot 主（169 条）",
+        "is_bot": true
+      },
+      {
+        "handle": "@6175265625",
+        "role": "搜索 bot 副（140 条）",
+        "is_bot": true
+      },
+      {
+        "handle": "@hutui1bot",
+        "role": "互推 bot，负责换量涨粉",
+        "is_bot": true
+      },
+      {
+        "handle": "joinhide17-21_bot",
+        "role": "五个同族 bot，管入群/隐藏服务消息",
+        "is_bot": true
+      }
+    ],
+    "bio_rented_out": "群简介本身也是广告位——挂的是社交账号批发商（精养号、死号封号包赔，联系人 @yiyi68）。连 about 字段都卖"
+  },
+  "growth": {
+    "strategy": "自建互推 bot + 搜索功能本身是刚需入口。群的增长不看订阅数，看在线率",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "自建互推 bot",
+        "evidence": "管理员列表里的 @hutui1bot「极搜互推」",
+        "note": "与依附 SOSO 的 syrjfx_sl/xph_fx/sesecctv 不同——它自己就是网络的一极"
+      },
+      {
+        "name": "搜索刚需",
+        "evidence": "301 条用户关键词（中位 21 字符），bot 回复 295 条",
+        "note": "人来办事，不需要被推广"
+      },
+      {
+        "name": "五个 joinhide bot 管入群",
+        "evidence": "joinhide17-21_bot 均为管理员",
+        "note": ""
+      },
+      {
+        "name": "群简介出租",
+        "evidence": "about 字段挂号商 @yiyi68 的批发广告",
+        "note": "变现手段，也间接带来曝光"
+      }
+    ],
+    "signals": {
+      "online_pct": 6.9,
+      "bot_share_pct": 51.5,
+      "messages_per_day": 1036,
+      "reactions_total": 2,
+      "forwards_total": 0
+    },
+    "assessment": "6.9% 并发在线（730/10,515）是真实活跃。反应 2、转发 0 说明它不是社区而是工具——用户来查东西，不社交。群的判活指标必须换成 online_pct 与 bot_share_pct，拿 ERR 套群会得出完全错误的结论。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      800,
+      4000
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "搜索索引（MTProto 爬公开群组/频道，存储+检索）",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "note": "唯一的真资产，也是唯一的技术门槛"
+      },
+      {
+        "name": "VPS / bot 托管（8+ 个 bot）",
+        "cny_month": [
+          200,
+          700
+        ]
+      },
+      {
+        "name": "群管理人力",
+        "cny_month": [
+          100,
+          300
+        ]
+      },
+      {
+        "name": "LLM",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "不需要。纯关键词匹配，无生成环节——四个样本里唯一不用 LLM 的"
+      },
+      {
+        "name": "内容生产",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "不生产任何内容，也不存任何资源"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "est_scope": "仅本群作为展位的可归因部分",
+    "model": "广告位售卖（固定位 + 关键词竞价位）",
+    "streams": [
+      {
+        "name": "关键词广告位（ad=kw######）",
+        "evidence": "落地链接带 kw slot id，六位数编号",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "confidence": "high"
+      },
+      {
+        "name": "固定链接广告位（ad=link####）",
+        "evidence": "落地链接带 link slot id",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "high"
+      },
+      {
+        "name": "群简介广告位",
+        "evidence": "about 字段挂着号商 @yiyi68 的批发广告",
+        "cny_month": [
+          200,
+          1000
+        ],
+        "confidence": "high"
+      },
+      {
+        "name": "自家第二个搜索 bot 的分销",
+        "evidence": "t.me/jisou2?start=a_6835427667",
+        "cny_month": [
+          300,
+          1000
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "note": "重要的归因问题：383 条去重广告行是整个极搜网络的库存，不是这一个群的。本群 10,515 成员只是众多展位之一，所以上面的区间只算本群可归因部分。极搜网络整体的收入远高于此，但从单个群的数据推不出来——要估网络规模得把它的 bot、其他群和收录的频道一起拉。",
+    "why_margin_is_highest": "不生产内容、不存资源、不用 LLM、不买粉。成本只有索引和 bot 托管，收入是广告位。四个样本里毛利结构最好的一个"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "广告类目里有社工库 / 开盒服务（宣称可查户籍与全家档案），属侵犯公民个人信息罪范畴，且直接危害具体自然人",
+      "有线下性交易招揽（外围兼职、选妃入口），属组织卖淫 / 介绍卖淫范畴",
+      "有境外博彩引流，与 syrjfx_sl 同类，属开设赌场罪 / 帮信罪的引流环节",
+      "成人 AI 换脸脱衣类广告的文案含非自愿情节与未成年暗示，这一条比前三个号的任何内容都严重，报告正文未引用原文",
+      "群简介在卖批发社交账号（精养号），是账号盗用与黑产上游",
+      "本频道的广告文案与落地域名均不适合在任何界面上原样展示"
+    ]
+  },
+  "takeaways": [
+    {
+      "title": "搜索即广告位：不生产内容也能变现",
+      "detail": "它把「帮用户找东西」本身做成了产品，广告注在结果顶部。本项目有素材库和多方向分类，具备做站内搜索的基础——搜索结果页天然是自家资源的推荐位。",
+      "applicable": true
+    },
+    {
+      "title": "关键词竞价位的数据结构",
+      "detail": "ad=kw###### 这种把广告位绑到搜索词上的做法，是本项目未来做站内推荐时可直接复用的模型：用户意图（搜索词）→ 匹配内容（自家资源）。不需要外部广告主也成立。",
+      "applicable": true
+    },
+    {
+      "title": "群没有阅读量，判活指标要换",
+      "detail": "群要看 online/members（本群 6.9%）和 bot 消息占比（本群 51.5%）。做竞品调研时别拿 ERR 套群。",
+      "applicable": true
+    },
+    {
+      "title": "tg_recon.py 缺 sender_id",
+      "detail": "_row() 是按频道设计的，不抓发言人。分析群必须知道 bot 与人的比例，建议补上 sender_id 与 sender_is_bot 两个字段。",
+      "applicable": true
+    },
+    {
+      "title": "把 about 字段也卖成广告位",
+      "detail": "技术上可行，但对正规项目是信任自杀。",
+      "applicable": false
+    },
+    {
+      "title": "接外部广告主",
+      "detail": "这个群的全部广告类目都在刑事范畴，不在本项目可选集内。",
+      "applicable": false
+    }
+  ]
+}

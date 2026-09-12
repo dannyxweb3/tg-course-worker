@@ -1,0 +1,274 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "xuendj1",
+  "username": "xuendj1",
+  "url": "https://t.me/xuendj1",
+  "title": "学习资料分享",
+  "category": "盗版付费课程 / 学习资料",
+  "growth_short": "买粉",
+  "one_liner": "日更 350 条的火力全开流水线，但 9.4 万粉丝的 ERR 只有 0.07%，日总曝光两年内跌了 80%——加量纯亏的活样本。",
+  "analyzed_at": "2026-09-12T10:40:00Z",
+  "source": {
+    "method": "web_preview",
+    "script": null,
+    "dump": null,
+    "sample_size": 260,
+    "sample_range": [
+      "2024-08-15",
+      "2026-09-12"
+    ],
+    "note": "通过 t.me/s/xuendj1?before=<id> 抓公开预览页，取 13 个 id 断面 × 每页 20 条。未做 Telethon 全量拉取，故指标置信度低于另外两个号；若要提高精度，跑 scripts/tg_recon.py dump xuendj1"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "subscribers": 94159,
+    "median_views": 68,
+    "mean_views": null,
+    "p10_views": null,
+    "p90_views": null,
+    "err_pct": 0.07,
+    "mature_posts": null,
+    "reactions_total": null,
+    "forwards_total": null,
+    "forwards_per_post": 0.0,
+    "posts_per_day": 348,
+    "releases_per_month": 10500,
+    "batches_per_month": null,
+    "max_message_id": 390559,
+    "surviving_messages": null,
+    "deleted_ratio_pct": null,
+    "daily_impressions": 23700,
+    "peak_daily_impressions": 118000,
+    "views_available": true,
+    "members": null,
+    "online": null,
+    "online_pct": null,
+    "bot_share_pct": null
+  },
+  "metrics_timeline": [
+    {
+      "date": "2024-08",
+      "message_id": 2000,
+      "median_views": 126,
+      "posts_per_day": 200
+    },
+    {
+      "date": "2025-02",
+      "message_id": 50000,
+      "median_views": 177,
+      "posts_per_day": 205
+    },
+    {
+      "date": "2025-04",
+      "message_id": 100000,
+      "median_views": 577,
+      "posts_per_day": 205
+    },
+    {
+      "date": "2025-12",
+      "message_id": 200000,
+      "median_views": 241,
+      "posts_per_day": 350
+    },
+    {
+      "date": "2026-05",
+      "message_id": 300000,
+      "median_views": 156,
+      "posts_per_day": 350
+    },
+    {
+      "date": "2026-07",
+      "message_id": 370000,
+      "median_views": 90,
+      "posts_per_day": 350
+    },
+    {
+      "date": "2026-08",
+      "message_id": 385000,
+      "median_views": 75,
+      "posts_per_day": 348
+    },
+    {
+      "date": "2026-09",
+      "message_id": 389000,
+      "median_views": 68,
+      "posts_per_day": 348
+    }
+  ],
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "单条图文，无 inline 按钮。正文为《标题》+ 60-80 字营销体简介 + 3-5 个话题标签 + 固定 CTA「评论区获取资源」",
+    "delivery": "真实下载链接放在关联讨论组的评论区，由机器人自动补。频道正文永远不含侵权链接",
+    "delivery_rationale": "被举报时正文无侵权链接可指；同时强制把用户拽进关联群",
+    "schedule": "连续帖间隔 45-90 秒，20 条压在 17 分钟内，批量定时喷",
+    "retention": "不删除，历史全留",
+    "growth": "买粉。ERR 0.07% 且转发接近零，自然扩散为零",
+    "template_evolution": "2025-04 版模板为「简介：/ 亮点：（4 条 bullet）/ 标签：」长版，2026 年砍成短版——改过一次 prompt",
+    "third_party": "每条正文后跟一条 @soso 的「消息已收录，本消息30秒后自动删除」，发完自删；唯一外链是 t.me/soso?start=a_7070129243，a_ 后为分销码"
+  },
+  "growth": {
+    "strategy": "买粉铺底 + 日更 350 条冲检索。加量不产生增长，只稀释曝光",
+    "paid_acquisition": "subs",
+    "mechanisms": [
+      {
+        "name": "买粉铺底",
+        "evidence": "9.4 万订阅对中位 68 阅读；按中文粉约 ¥25/千估一次性约 ¥2,350",
+        "note": ""
+      },
+      {
+        "name": "超高频发布冲检索",
+        "evidence": "约 348 条/天，连续帖间隔 45-90 秒",
+        "note": ""
+      },
+      {
+        "name": "soso 收录",
+        "evidence": "每条正文后跟一条 @soso 的「消息已收录」并自删；唯一外链 t.me/soso?start=a_7070129243 带分销码",
+        "note": "被搜到是主要曝光来源"
+      },
+      {
+        "name": "评论区交付逼进关联群",
+        "evidence": "正文固定「👇 评论区获取资源」",
+        "note": "把频道流量压进关联讨论组"
+      }
+    ],
+    "signals": {
+      "err_pct": 0.07,
+      "forwards_per_post": 0.0,
+      "daily_impressions": "11.8 万（2025-04 峰值）→ 2.4 万（2026-09），跌 80%",
+      "dilution": "2025 年底发帖量从约 205 加到约 350 条/天，单帖曝光从 577 砍到 241，日总曝光未增长"
+    },
+    "assessment": "ERR 0.07% 是全样本最低。它提供了一个干净的反面证据：把发帖量翻倍，单帖曝光对半砍，总曝光原地不动——在买来的死粉基数上加量，纯属自我稀释。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      300
+    ],
+    "onetime_cny": [
+      2350,
+      3000
+    ],
+    "items": [
+      {
+        "name": "VPS",
+        "cny_month": [
+          40,
+          80
+        ]
+      },
+      {
+        "name": "LLM（约 350 帖/天，单帖输入约 400 token、输出约 150 token）",
+        "cny_month": [
+          20,
+          50
+        ],
+        "note": "折合约 0.19M token/天，一年不到 300 元。LLM 从来不是这门生意的瓶颈"
+      },
+      {
+        "name": "网盘会员（转存与扩容）",
+        "cny_month": [
+          17,
+          34
+        ]
+      },
+      {
+        "name": "采集源 / 资源站会员",
+        "cny_month": [
+          8,
+          42
+        ]
+      },
+      {
+        "name": "掉粉补量",
+        "cny_month": [
+          100,
+          300
+        ]
+      },
+      {
+        "name": "一次性：买粉 9.4 万（按中文粉约 25 元/千）",
+        "cny_onetime": [
+          2350,
+          3000
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      1000,
+      4000
+    ],
+    "model": "CPA 拉新 + 号本身当商品",
+    "streams": [
+      {
+        "name": "soso 分销码",
+        "evidence": "t.me/soso?start=a_7070129243",
+        "cny_month": [
+          100,
+          500
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "网盘拉新 CPA（约 1-3 元/有效新用户）",
+        "evidence": "评论区落地为网盘链接",
+        "cny_month": [
+          500,
+          2000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "卖软广",
+        "evidence": "抽样窗口内未见广告帖；名义 9.4 万粉可报价，实际曝光撑不住",
+        "cny_month": [
+          300,
+          1500
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "导私域卖资源库会员",
+        "evidence": "推测",
+        "cny_month": [
+          200,
+          1000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "真正值钱的是「9.4 万粉」这个数字本身——按买粉成本价约 2350 元堆出来，转手卖号可能要到 3000-8000 元。这门生意的商品不是内容，是订阅数。"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "内容压倒性是盗版付费课程（淘宝付费 PPT、知乎盐选付费合集、少年得到等），以民事侵权为主",
+      "抽样中出现一条点名某高校副院长私德的帖子，涉侵犯隐私与名誉权",
+      "此类号的终局通常是被批量举报掉号，而非慢慢做大"
+    ]
+  },
+  "takeaways": [
+    {
+      "title": "加量会稀释曝光，数据已证明",
+      "detail": "2025 年底从约 205 帖/天加到约 350 帖/天，单帖曝光从 577 砍到 241，日总曝光没涨。到 2026-09 日总曝光已从峰值 11.8 万跌到 2.4 万，跌 80%。",
+      "applicable": true
+    },
+    {
+      "title": "评论区放链接可抄一半",
+      "detail": "频道正文只留钩子、真资源在下一跳，对抗举报有效。但本项目有售卖 bot 深链，转化路径更短，建议保留按钮，只是正文别直接贴网盘链接。",
+      "applicable": true
+    },
+    {
+      "title": "LLM 成本不是瓶颈",
+      "detail": "一年不到 300 元。本项目 HANDOFF 里卡住的仓库频道配置与空着的内容方向，才是卡住收入的东西。",
+      "applicable": true
+    },
+    {
+      "title": "日更 350 条的火力",
+      "detail": "反面教材。ERR 0.07%，做的是规模不是内容。",
+      "applicable": false
+    }
+  ]
+}

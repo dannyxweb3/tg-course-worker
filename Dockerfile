@@ -17,6 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app ./app
 COPY config ./config
 COPY scripts ./scripts
+COPY report ./report
 
 RUN mkdir -p data/media logs
 

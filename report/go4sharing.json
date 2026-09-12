@@ -1,0 +1,246 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "go4sharing",
+  "username": "go4sharing",
+  "url": "https://t.me/go4sharing",
+  "title": "公益 机场 免费 节点 订阅 分享",
+  "category": "免费节点聚合（全自动爬取 + 筛选 + 发布）",
+  "growth_short": "免费节点吸粉",
+  "one_liner": "全自动的免费节点流水线：每天扫几千个公开节点、筛出十几个能用的、推到 GitHub 再发频道；良率 0.77%，全套基建跑在免费额度上，几乎不变现。",
+  "analysis_scope": "按要求只分析实现技术思路、成本、收益、法律风险；不含可迁移/可复制方法。",
+  "analyzed_at": "2026-09-12T16:20:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/go4sharing.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2024-05-14",
+      "2026-09-10"
+    ],
+    "note": "300 条覆盖 849 天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 55425,
+    "members": null,
+    "online": null,
+    "online_pct": null,
+    "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 9790,
+    "mean_views": 13926,
+    "p10_views": 5442,
+    "p90_views": 27364,
+    "err_pct": 17.7,
+    "mature_posts": 295,
+    "total_posts": 300,
+    "reactions_total": 4116,
+    "reactions_median": 8,
+    "reaction_verdict": "自然但极低。中位 8 个反应对 9,790 阅读——用户来拿订阅链接就走，不互动",
+    "forwards_total": 2839,
+    "forwards_per_post": 9.5,
+    "posts_per_day": 0.4,
+    "id_span_sampled": [
+      2032,
+      3225
+    ],
+    "surviving_messages": 300,
+    "posts_with_links_pct": 99.3,
+    "scrape_yield": {
+      "samples": 3,
+      "nodes_scanned": 7012,
+      "nodes_usable": 54,
+      "yield_pct": 0.77,
+      "note": "单次扫 1,064-4,478 个节点，筛出 11-24 个可用。耗时 9-23 分钟"
+    }
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "role_in_ecosystem": "免费节点聚合器。定位『公益』，不卖订阅",
+    "pipeline": {
+      "summary": "全自动，无人工环节。帖子本身就是任务日志",
+      "evidence": "『更新时间: 2026-09-08 22:28:05 / 本次耗时11分13秒, 从1470个节点中筛选出24个可用节点, 7个地区』——这是程序输出，不是人写的文案",
+      "steps": [
+        "从公开来源抓取节点（其他免费分享频道、公开订阅、Cloudflare Worker 代理）",
+        "批量连通性与可用性测试（耗时 9-23 分钟）",
+        "按地区去重筛选，产出 sub.yaml / clash.yaml / worker.yaml 三种格式",
+        "推到 GitHub 仓库 go4sharing/sub",
+        "发频道，附 raw.githubusercontent.com 订阅地址 + subsub.surge.sh 一键导入链接"
+      ]
+    },
+    "infrastructure_all_free_tier": {
+      "订阅托管": "raw.githubusercontent.com（GitHub 免费）",
+      "一键导入": "subsub.surge.sh（Surge 免费）",
+      "备用站": "node-share.web.app（Firebase Hosting 免费）",
+      "note": "整条投递链路零托管成本。唯一要付钱的是跑爬虫和测速的那台机器"
+    },
+    "node_source_problem": "良率 0.77% 说明节点来源质量极差。这些节点并非自建，而是从公开渠道扒来的——其中相当部分是他人付费机场泄露的订阅、或部署在他人主机上的 Cloudflare Worker 代理",
+    "cadence": "0.4 条/天，日更为主。发布时刻集中在 10/14/15/17 点，程序化定时",
+    "conversion": "几乎不变现。固定尾部『加群不定时发放福利: @go2sharing』（样本中仅 4 条提及）+『转发请注明出处』。偶有机场域名出现在链接里（jisovpn.site、moluo.cloud、user.tf06.com 等各 1 次），属零散夹带"
+  },
+  "growth": {
+    "strategy": "「免费」本身就是最强获客点，零成本获客但零留存价值",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "日更免费订阅",
+        "evidence": "0.4 条/天，帖子即任务日志",
+        "note": "刚需驱动，不需要任何推广"
+      },
+      {
+        "name": "GitHub 订阅地址可被外部检索",
+        "evidence": "raw.githubusercontent.com/go4sharing/sub",
+        "note": "GitHub 内部检索与搜索引擎都能收录，带来 TG 以外的入口"
+      },
+      {
+        "name": "一键导入降低门槛",
+        "evidence": "subsub.surge.sh 三种格式一键导入",
+        "note": ""
+      },
+      {
+        "name": "转发请注明出处 + 加群引导",
+        "evidence": "固定尾部；@go2sharing 仅 4 条提及",
+        "note": "引导很弱"
+      }
+    ],
+    "signals": {
+      "err_pct": 17.7,
+      "forwards_per_post": 9.5,
+      "reactions_median": 8
+    },
+    "assessment": "55,425 订阅全靠刚需，获客成本接近零。但中位 8 个反应对 9,790 阅读——用户拿完订阅就走，无社群沉淀。增长有效而留存无价值，这也解释了它为什么几乎变不了现。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      50,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "爬取与测速机器",
+        "cny_month": [
+          50,
+          200
+        ],
+        "note": "唯一真成本。单次任务 9-23 分钟，日更，一台小 VPS 够用"
+      },
+      {
+        "name": "订阅托管（GitHub / Surge / Firebase）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "全部免费额度"
+      },
+      {
+        "name": "节点带宽",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "关键点：它不承担带宽成本——流量走的是被扒来的第三方节点"
+      },
+      {
+        "name": "内容生产",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "帖子是程序日志，零成本"
+      },
+      {
+        "name": "买量",
+        "cny_month": [
+          0,
+          0
+        ]
+      }
+    ],
+    "structure_note": "四个号里现金成本最低的。原因不体面：它把最贵的那一项（带宽）转嫁给了被扒节点的实际所有者。"
+  },
+  "revenue": {
+    "est_cny_month": [
+      200,
+      2000
+    ],
+    "est_basis": "无明确变现路径。5.5 万订阅 + 9.5 次/帖转发是有价值的流量资产，但目前未见系统性兑现",
+    "model": "几乎无（导流自有群）",
+    "streams": [
+      {
+        "name": "导流到自有群 @go2sharing 后的后续变现",
+        "evidence": "固定尾部提及，但样本中仅 4 条",
+        "cny_month": [
+          100,
+          1000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "零散夹带机场链接",
+        "evidence": "jisovpn.site、moluo.cloud、user.t1i.top、1.mutouyun.top 等各出现 1 次",
+        "cny_month": [
+          100,
+          1000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "这是四个号里唯一看不出明确盈利意图的。可能确实是兴趣项目，也可能是在攒粉待变现——5.5 万订阅按这个垂类的行情，转手或转型接广告都有价值。"
+  },
+  "risk": {
+    "level": "criminal",
+    "summary": "表面『公益』掩盖了两个实质问题：分发的节点来源不合法，且对下游用户存在未告知的严重安全风险。",
+    "legal": [
+      {
+        "issue": "提供侵入、非法控制计算机信息系统的程序、工具",
+        "statutes": [
+          "《刑法》第二百八十五条第三款"
+        ],
+        "analysis": "批量分发跨境代理配置，是该罪名在同类案件中的典型情形。免费不收费会影响非法经营罪的认定（无经营行为），但不影响本罪——本罪不以营利为要件。",
+        "severity": "high"
+      },
+      {
+        "issue": "节点来源不合法——扒取他人付费订阅与他人主机资源",
+        "statutes": [
+          "《刑法》第二百八十五条（非法获取计算机信息系统数据）",
+          "《刑法》第二百八十六条（破坏计算机信息系统）",
+          "《反不正当竞争法》第十二条"
+        ],
+        "analysis": "良率 0.77%（扫 7,012 个筛出 54 个）说明节点是从公开渠道大规模扒取的，并非自建。这类节点主要来自两处：他人付费机场泄露的订阅链接，以及部署在第三方主机上的 Cloudflare Worker 代理。未经授权使用并向数万人再分发他人的付费服务与计算资源，对原权利人构成侵权，规模化之后可能触及刑事。",
+        "severity": "high"
+      },
+      {
+        "issue": "对下游用户的未告知安全风险",
+        "statutes": [
+          "《网络安全法》第二十二条、第四十一条",
+          "《消费者权益保护法》第十八条（安全保障义务）",
+          "《个人信息保护法》"
+        ],
+        "analysis": "这是实质危害最大的一项。代理节点的运营者可以看到经过其节点的全部未加密流量，并可实施中间人攻击。该频道向 5.5 万订阅者分发来源不明、运营方完全不可知的节点，且未作任何风险提示。『公益』『免费』的定位反而降低了用户的警惕。被扒来的节点里混入蜜罐或恶意节点的概率不低，而这条链路上没有任何一方对用户负责。",
+        "severity": "critical"
+      },
+      {
+        "issue": "第三方平台服务条款违规",
+        "statutes": [
+          "GitHub Acceptable Use Policies",
+          "Surge / Firebase ToS"
+        ],
+        "analysis": "用 GitHub、Surge、Firebase 的免费额度托管代理订阅分发，违反相应使用政策，面临仓库与站点被封。这不是法律风险但是业务连续性风险——整条投递链路都建在别人的免费额度上。",
+        "severity": "medium"
+      }
+    ],
+    "notes": [
+      "不收费，因此非法经营罪的适用弱于 cheapairport_channel；但刑法 285 条三款不以营利为要件",
+      "节点是扒来的，带宽成本转嫁给了原权利人",
+      "对 5.5 万用户分发来源不可知的代理节点且无风险提示，是本号实质危害最大的一点——用户的全部明文流量都暴露给未知第三方",
+      "『公益』的定位在法律上不构成任何免责，在伦理上反而加重了误导",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
+  }
+}

@@ -20,6 +20,10 @@ pydantic==2.9.2
 pydantic-settings==2.6.1
 python-dotenv==1.0.1
 
+# --- 报告渲染 ---
+# 纯 Python 无编译。竞品分析的 report/*.md 要在后台里渲染
+markdown==3.10.3
+
 # --- 管理后台（服务端渲染，无前端构建步骤）---
 fastapi==0.115.5
 uvicorn==0.32.1

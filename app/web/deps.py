@@ -48,6 +48,36 @@ def _ago(value: str | None) -> str:
     return f"{secs // 86400} 天前"
 
 
+
+def _num(value) -> str:
+    """12345 → 12,345。报告里的订阅数、阅读量都不小，不分节读不出量级。"""
+    try:
+        return f"{int(value):,}"
+    except (TypeError, ValueError):
+        return "—"
+
+
+def _cny(value) -> str:
+    """报告里的钱一律是 [下限, 上限] 两元数组，上下限相等时不重复写。"""
+    if not isinstance(value, (list, tuple)) or len(value) != 2:
+        return "—"
+    lo, hi = value
+    try:
+        lo, hi = int(lo), int(hi)
+    except (TypeError, ValueError):
+        return "—"
+    return f"¥{lo:,}" if lo == hi else f"¥{lo:,}–{hi:,}"
+
+def _dash(value):
+    """None 统一显示成破折号。报告里不是每个频道都测得到每个指标
+    （比如 t.me/s 预览页看不到转发数），别把 Python 的 None 漏到页面上。"""
+    return "—" if value is None or value == "" else value
+
+
+def _pct(value) -> str:
+    return "—" if value is None else f"{value}%"
+
+
 STATUS_LABEL = {
     "new": "待分类",
     "classified": "已分类",
@@ -72,6 +102,10 @@ STATUS_FILTERS = [
 
 templates.env.filters["dt"] = _fmt_dt
 templates.env.filters["ago"] = _ago
+templates.env.filters["num"] = _num
+templates.env.filters["cny"] = _cny
+templates.env.filters["dash"] = _dash
+templates.env.filters["pct"] = _pct
 templates.env.globals["STATUS_LABEL"] = STATUS_LABEL
 templates.env.globals["ALL_STATUS"] = [str(s) for s in ItemStatus]
 templates.env.globals["STATUS_FILTERS"] = STATUS_FILTERS
@@ -83,6 +117,32 @@ templates.env.globals["ASSET_KINDS"] = [
 ]
 templates.env.globals["ASSET_ICON"] = {str(k): k.icon for k in AssetKind}
 templates.env.globals["ASSET_LABEL"] = {str(k): k.label for k in AssetKind}
+
+
+# 报告 JSON 里 implementation 段的字段各频道不尽相同（有的有 button_matrix，
+# 有的有 template_evolution），所以模板按 key 循环渲染，这里只管翻译认识的
+templates.env.globals["REPORT_LABEL"] = {
+    "publish_identity": "发布身份",
+    "post_structure": "帖子结构",
+    "delivery": "投递方式",
+    "delivery_rationale": "投递理由",
+    "button_matrix": "按钮矩阵",
+    "edit_after_publish": "发后编辑",
+    "schedule": "排期",
+    "retention": "历史留存",
+    "growth": "涨粉方式",
+    "growth_note": "涨粉备注",
+    "template_evolution": "模板演进",
+    "third_party": "第三方依赖",
+    "owned_groups": "自有群",
+    "history_note": "历史沿革",
+}
+templates.env.globals["RISK_LABEL"] = {
+    "low": "低风险", "medium": "中风险", "high": "高风险", "criminal": "刑事",
+}
+templates.env.globals["CONF_LABEL"] = {
+    "high": "证据充分", "medium": "抽样推断", "low": "推测",
+}
 
 
 def redirect(path: str, msg: str = "", err: str = "") -> RedirectResponse:

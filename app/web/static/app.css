@@ -347,3 +347,89 @@ a.stat.alert b { color: var(--err); }
 /* ---------- 登录 ---------- */
 
 .login-wrap { max-width: 320px; margin: 12vh auto; }
+
+/* ---------- 竞品分析 ---------- */
+
+.headline {
+  border-left: 3px solid var(--accent);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.rep-card h3 { display: flex; align-items: center; gap: 7px; margin-bottom: 2px; }
+
+/* 四个核心指标横排。ERR 是判断粉丝真假的唯一指标，单独上色 */
+.rep-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.rep-metrics span { display: block; font-size: 11px; color: var(--muted); }
+.rep-metrics b { font-size: 15px; font-family: var(--mono); }
+.rep-metrics b.good, .stat b.good { color: var(--ok); }
+.rep-metrics b.bad, .stat b.bad { color: var(--err); }
+
+.rep-card dl, dl.kv { margin: 12px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 5px 12px; }
+.rep-card dt, dl.kv dt { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.rep-card dd, dl.kv dd { margin: 0; }
+dl.kv dd { line-height: 1.6; }
+
+/* 横向对比表：第一列是指标名，滚动时钉住 */
+table.cmp th[scope=row] {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+}
+table.cmp td { font-family: var(--mono); font-size: 12px; }
+.scroll-x { overflow-x: auto; }
+
+.tk { padding: 9px 0; border-bottom: 1px solid var(--border); }
+.tk:last-child { border-bottom: none; }
+.tk .small { color: var(--muted); margin-top: 3px; }
+
+.risk-card { border-left: 3px solid var(--err); }
+
+ol.spaced, ul.spaced { margin: 0; padding-left: 20px; }
+ol.spaced li, ul.spaced li { margin-bottom: 8px; }
+ol.spaced li:last-child, ul.spaced li:last-child { margin-bottom: 0; }
+
+/* ---------- Markdown 正文 ---------- */
+
+.md-body { line-height: 1.75; }
+.md-body > :first-child { margin-top: 0; }
+.md-body > :last-child { margin-bottom: 0; }
+.md-body h2 { font-size: 17px; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+.md-body h3 { font-size: 15px; margin: 20px 0 8px; }
+.md-body h4 { font-size: 14px; margin: 16px 0 6px; color: var(--muted); }
+.md-body blockquote {
+  margin: 12px 0;
+  padding: 8px 14px;
+  border-left: 3px solid var(--border);
+  background: var(--surface-2);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--muted);
+}
+.md-body blockquote p { margin: 4px 0; }
+.md-body code {
+  font-family: var(--mono);
+  font-size: 12px;
+  background: var(--surface-2);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.md-body pre {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  overflow-x: auto;
+}
+.md-body pre code { background: none; padding: 0; font-size: 12px; line-height: 1.55; }
+.md-body table { margin: 14px 0; font-size: 13px; }
+.md-body table td, .md-body table th { padding: 7px 9px; }
+.md-body li { margin-bottom: 5px; }
+.md-body hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }

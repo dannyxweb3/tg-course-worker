@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block title %}竞品分析{% endblock %}
+{% block body %}
+
+<div class="row" style="margin-bottom:4px">
+  <h1 style="margin:0">竞品分析</h1>
+  {% if idx.generated_at %}
+    <span class="small muted">更新于 {{ idx.generated_at|dt('%Y-%m-%d %H:%M') }}</span>
+  {% endif %}
+  <span class="small muted right">数据只读，来自 report/ 目录</span>
+</div>
+
+{% if not idx.channels %}
+  <div class="empty">
+    还没有分析报告。<br>
+    <span class="small">用 <code class="mono">scripts/tg_recon.py</code> 抓一个频道，产出放进 <code class="mono">report/</code>。</span>
+  </div>
+{% else %}
+
+{% if idx.headline %}
+  <div class="card headline">{{ idx.headline }}</div>
+{% endif %}
+
+<div class="grid cards" style="margin-bottom:24px">
+  {% for c in idx.channels %}
+  <div class="card rep-card">
+    <h3>
+      <a href="/reports/{{ c.slug }}">{{ c.title or c.slug }}</a>
+      {% if c.risk_level %}
+        <span class="badge {{ 'err' if c.risk_level in ('criminal','high') else 'warn' }}">
+          {{ RISK_LABEL.get(c.risk_level, c.risk_level) }}
+        </span>
+      {% endif %}
+    </h3>
+    <div class="small muted" style="margin-bottom:10px">
+      {% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener nofollow">@{{ c.username }} ↗</a>{% else %}@{{ c.username }}{% endif %}
+      · {{ c.category|dash }}
+    </div>
+
+    <div class="rep-metrics">
+      <div><span>订阅</span><b>{{ c.subscribers|num }}</b></div>
+      <div><span>中位阅读</span><b>{{ c.median_views|num }}</b></div>
+      <div><span>ERR</span><b class="{{ 'good' if c.err_pct and c.err_pct >= 2 else ('bad' if c.err_pct is not none else '') }}">{{ c.err_pct|pct }}</b></div>
+      <div><span>转发/帖</span><b>{{ c.forwards_per_post|dash }}</b></div>
+    </div>
+
+    <dl>
+      <dt>月收入估算</dt><dd>{{ c.est_revenue_cny_month|cny }}</dd>
+      <dt>经常性成本</dt><dd>{{ c.recurring_cost_cny_month|cny }}</dd>
+      <dt>主变现</dt><dd>{{ c.monetization|dash }}</dd>
+      <dt>涨粉</dt><dd>{{ c.growth|dash }}</dd>
+    </dl>
+
+    <div class="row small muted" style="margin-top:12px">
+      <span class="badge">{{ CONF_LABEL.get(c.confidence, c.confidence) }}</span>
+      <span>{{ c.analyzed_at|dt('%m-%d') }} 抓取</span>
+      <a class="right" href="/reports/{{ c.slug }}">查看详情 →</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% if idx.comparison and idx.comparison.rows %}
+<h2>横向对比</h2>
+<div class="card" style="padding:0; margin-bottom:24px">
+  <div class="scroll-x">
+    <table class="cmp">
+      <thead>
+        <tr>{% for col in idx.comparison.columns %}<th>{{ col }}</th>{% endfor %}</tr>
+      </thead>
+      <tbody>
+        {% for row in idx.comparison.rows %}
+          <tr>
+            {% for cell in row %}
+              {% if loop.first %}<th scope="row">{{ cell }}</th>{% else %}<td>{{ cell }}</td>{% endif %}
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+
+{% if idx.conclusions %}
+<h2>结论</h2>
+<div class="card" style="margin-bottom:24px">
+  <ol class="spaced">{% for c in idx.conclusions %}<li>{{ c }}</li>{% endfor %}</ol>
+</div>
+{% endif %}
+
+{% if idx.applicable_to_project or idx.not_applicable %}
+<h2>对本项目</h2>
+<div class="grid two" style="margin-bottom:24px">
+  <div class="card">
+    <h3><span class="badge ok">可借鉴</span></h3>
+    {% for t in idx.applicable_to_project %}
+      <div class="tk">
+        <b>{{ t.title }}</b> <span class="small muted">来自 {{ t["from"] }}</span>
+        <div class="small">{{ t.detail }}</div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="card">
+    <h3><span class="badge err">不采用</span></h3>
+    {% for t in idx.not_applicable %}
+      <div class="tk">
+        <b>{{ t.title }}</b>
+        <div class="small">{{ t.reason }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if idx.disclaimer %}
+  <p class="small muted">{{ idx.disclaimer }}</p>
+{% endif %}
+
+{% endif %}
+{% endblock %}

@@ -1,0 +1,188 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "BYFXZ",
+  "username": "BYFXZ",
+  "url": "https://t.me/BYFXZ",
+  "title": "安卓/iOS软件资源分享",
+  "category": "盗版 App 分发（iOS 砸壳 IPA / 安卓破解 APK）",
+  "growth_short": "手动 + 自有群导流",
+  "one_liner": "学生个人号，9 天堆 500 条、74.8 GB 安装包直挂 Telegram，几乎零变现，最近三天正从盗版分发转向刷量 bot + 短信轰炸的黑产工具。",
+  "analyzed_at": "2026-09-12T19:20:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/BYFXZ.jsonl",
+    "sample_size": 500,
+    "sample_range": [
+      "2026-09-03",
+      "2026-09-12"
+    ],
+    "note": "首轮 dump 后发现内容全是直挂安装包，给 tg_recon.py 增加了附件文件名/体积采集再重拉"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 8823,
+    "median_views": 272,
+    "mean_views": 338,
+    "p10_views": 195,
+    "p90_views": 608,
+    "err_pct": 3.1,
+    "mature_posts": 331,
+    "reactions_total": 804,
+    "forwards_total": 272,
+    "forwards_per_post": 0.5,
+    "posts_per_day": 62.5,
+    "id_span_sampled": [
+      5012,
+      6013
+    ],
+    "surviving_messages": 500,
+    "deleted_ratio_pct": 50.0,
+    "deleted_note": "相邻 id 间隔 90% 恰好为 2，抽查缺失 id(5013/5015)返回 None（确已不存在），机制不明——疑似每条曾配一条附属消息后被删，或重发清理",
+    "hosted_files": 478,
+    "hosted_bytes_gb": 74.8,
+    "median_file_mb": 89,
+    "max_file_mb": 3134,
+    "file_ext": {
+      "ipa": 323,
+      "apk": 139,
+      "zip": 5,
+      "exe": 3,
+      "tipa": 2
+    },
+    "platform_split": {
+      "iOS": 319,
+      "Android": 143,
+      "Windows": 4
+    },
+    "views_available": true,
+    "members": null,
+    "online": null,
+    "online_pct": null,
+    "bot_share_pct": null
+  },
+  "implementation": {
+    "publish_identity": "user_or_bot",
+    "post_structure": "模板化：App名_版本_iOS付费版｜一句卖点 + 系统/类型/特点 三栏 + 简介 + 「资源来源于 @BYFXZ」 + 标签(#砸壳软件 #IPA)。机器批量生成",
+    "delivery": "安装包直接以 document 挂在消息上，用户在频道内直接下载——不导流外站、不放链接。9 天累计 74.8 GB，单包最大 3.1 GB",
+    "core_tech": "iOS「砸壳」：买下付费 App 脱 FairPlay 加密重打包成 IPA，「购买后取消解锁全部内容」利用 App Store 退款窗口；安卓侧为常规破解/去广告/内购解锁",
+    "schedule": "手动发布，集中在放学后 16:00-19:00（Asia/Shanghai）；09-03/04/05 三天各 100+ 条批量导入存货，之后掉到 20-30 条/天",
+    "growth": "手动 + 自有交流群/搜索群导流（@zypdfx、一个 TG 中文搜索群邀请链），并求用户点 bot 拉活跃",
+    "operator": "在校学生。非附件帖自曝：「9/17-9/30 军训」「明天准备去学校了」「有谁能帮忙验证注册微信，给个飞机号」——连能收码的账号都没有",
+    "pivot_to_blackhat": "09-09 起上线自研 @fxbynbbot「快手刷分享机器人」，积分制变现（积分不够找管理员 @qinmian 买），并预告「短信轰炸」——盗版 App 沦为聚流量的诱饵"
+  },
+  "growth": {
+    "strategy": "手动运营 + 自有交流群与搜索群导流，无付费获客",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "自有交流群/搜索群导流",
+        "evidence": "implementation.growth 记载：@zypdfx 与一个 TG 中文搜索群邀请链",
+        "note": ""
+      },
+      {
+        "name": "引导点 bot 拉活跃",
+        "evidence": "同上：求用户点 bot 拉活跃；并正转向刷量 bot 积分制",
+        "note": "这条正在从自然增长转向人工拉量"
+      }
+    ],
+    "signals": {
+      "err_pct": 3.1,
+      "forwards_per_post": 0.5,
+      "subscribers": 8823,
+      "posts_per_day": 62.5
+    },
+    "assessment": "规模最小（8,823）但 ERR 3.1% 尚可，说明粉丝是真的。问题在转发仅 0.5 次/帖——无扩散能力，62.5 条/天的产量换不来增长。正转向刷量 bot 积分制，是准备走 syrjfx_sl 那条路的信号。",
+    "derived_from": "本条非本会话原始分析；growth 结论由该文件已有的 implementation.growth 与 metrics 推导"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      500
+    ],
+    "items": [
+      {
+        "name": "Telegram 存储与分发（74.8 GB/9 天）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "文件与下载全走 Telegram CDN，运营者只在上传时付一次自己带宽"
+      },
+      {
+        "name": "跑 bot 的小 VPS",
+        "cny_month": [
+          30,
+          100
+        ]
+      },
+      {
+        "name": "砸壳所需越狱设备 / 开发者账号",
+        "cny_onetime": [
+          0,
+          500
+        ],
+        "note": "一次性"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      3000
+    ],
+    "model": "目前几乎无，正转向刷量 bot 积分制",
+    "streams": [
+      {
+        "name": "盗版 App 分发本身",
+        "evidence": "无 aff、无付费墙、无外链变现",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "high"
+      },
+      {
+        "name": "快手刷分享 bot 积分（@fxbynbbot）",
+        "evidence": "09-11「可开启内测模式加积分…积分不够找管理员」；bot 09-11 才上线，仍在修 bug",
+        "cny_month": [
+          0,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "盗版侧现金收入≈0，纯靠爱好在撑。真正的变现企图是最近三天才出现的刷量 bot，尚未跑通。个人号规模即便跑通，月流水撑死几百到几千元"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "预告并测试「短信轰炸」，在中国大陆属破坏计算机信息系统 / 寻衅滋事，明确违法",
+      "快手刷量属黑产，破坏平台数据",
+      "IPA 砸壳 + APK 破解为盗版分发，且重打包件有夹带恶意代码的连带责任",
+      "运营者身份已大面积自曝（学生、行程），个人法律暴露高"
+    ]
+  },
+  "takeaways": [
+    {
+      "title": "Telegram 当大文件 CDN 的极致验证",
+      "detail": "9 天 74.8 GB、单包 3.1 GB 全托 Telegram 零带宽成本，正是本项目 VAULT_CHANNEL_ID 资料仓库频道设计的极限版。配套资料若有大文件，这条路走得通。",
+      "applicable": true
+    },
+    {
+      "title": "产能不是护城河",
+      "detail": "反面：57 条/天证明手动都能堆量，但它 8.8K 订阅、零收入、ERR 3.1%。缺定位、缺变现设计、缺节奏、缺筛选。本项目自动化产能容易，难的是垂直定位 + 变现隔离 + 稳定节奏（见 xiaoshuwu）。",
+      "applicable": false
+    },
+    {
+      "title": "刷量 bot / 短信轰炸变现",
+      "detail": "反面：黑产，刑事红线，不在本项目可选集内。",
+      "applicable": false
+    }
+  ]
+}

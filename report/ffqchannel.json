@@ -1,0 +1,276 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "ffqchannel",
+  "username": "ffqchannel",
+  "url": "https://t.me/ffqchannel",
+  "title": "翻翻墙 | 机场评测",
+  "category": "机场评测量产（收费收录 + 伪装联盟链接）",
+  "growth_short": "测评量产+高转发",
+  "one_liner": "机场评测流水线：32 天出 47 篇带星级评分的测评，每篇配 5-7 张截图，落地链接一律经 302verify.com 跳转以隐藏返利关系；转发 21.7 次/帖，是四个号里扩散最强的。",
+  "analysis_scope": "按要求只分析实现技术思路、成本、收益、法律风险；不含可迁移/可复制方法。",
+  "analyzed_at": "2026-09-12T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/ffqchannel.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-11",
+      "2026-09-12"
+    ],
+    "note": "300 条只覆盖 32 天——发布密度是四个号里最高的。注意 300 条里大部分是相册成员，实际测评篇数约 47"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 61643,
+    "members": null,
+    "online": null,
+    "online_pct": null,
+    "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 6836,
+    "mean_views": 6744,
+    "p10_views": 5334,
+    "p90_views": 8007,
+    "err_pct": 11.1,
+    "err_note": "阅读分布极紧（p10 5,334 / 中位 6,836 / p90 8,007），是稳定的订阅者滚动曝光，不是买量的尖峰",
+    "mature_posts": 219,
+    "total_posts": 300,
+    "reviews_in_sample": 47,
+    "messages_per_review": "6 条为主（37 组），另有 8 条 4 组、7 条 3 组",
+    "reactions_total": 1589,
+    "reactions_median": 21,
+    "forwards_total": 6505,
+    "forwards_per_post": 21.7,
+    "forward_note": "四个号里扩散最强。6,505 次转发说明测评内容真的被用户拿去转发引用",
+    "posts_per_day": 9.4,
+    "id_span_sampled": [
+      15370,
+      15761
+    ],
+    "surviving_messages": 300,
+    "max_message_id": 15761
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "role_in_ecosystem": "第三方评测号 + 自有论坛。不经营机场，卖的是评测位与收录位",
+    "post_structure": {
+      "format": "相册。每篇测评 6 条消息为主（5-7 张测速截图作为 document + 1 条带 caption 的正文）",
+      "caption_template": "#机场名 #协议标签 #推荐 → 主观评分（稳定/速度/延迟/性价比 四项星级，附『以上评分仅供参考』免责）→ 机场自介 → 链接导航（开业时间/官网/频道/群组/套餐/评测原文）",
+      "evidence": "285/300 条是 MessageMediaDocument，即截图；47 条含『主观评分』"
+    },
+    "tag_taxonomy": {
+      "协议标签": {
+        "vless": 35,
+        "anytls": 15,
+        "hy2": 8,
+        "ss": 4,
+        "Trojan": 3,
+        "vmess": 2
+      },
+      "性质标签": {
+        "AD": 12,
+        "用户投稿": 6,
+        "推荐": 4,
+        "家宽": 4
+      },
+      "note": "协议标签是给检索用的；#AD 12 条是明确标注的付费内容，#用户投稿 6 条标注来源"
+    },
+    "link_cloaking": {
+      "gateway": "302verify.com",
+      "count": 40,
+      "mechanism": "机场官网链接一律写成『官网：点击进入』，超链接指向 302verify.com/<短码>，由该网关 302 跳转到真实注册地址",
+      "effect": "用户看不到真实落地域名，也看不到 URL 里的返利码。同时网关掌握了点击归因数据",
+      "assessment": "这是四个号里最值得注意的技术细节，也是法律风险上最不利的一点——它把返利关系从用户视野里抹掉了"
+    },
+    "own_property": {
+      "forum": "ffqla.net（出现 40 次，与 302verify 一一对应）",
+      "pattern": "每篇测评都给一条 ffqla.net/thread-XXXX-1-1.html 的原文链接，把 TG 流量导到自有论坛",
+      "images_channel": "t.me/ffqimages —— 单独的图床频道"
+    },
+    "copy_source": "『机场自介』段落是机场自己提供的文案（措辞与机场官网宣传一致），评测号只加星级评分与截图。所以内容生产成本极低而产量极高",
+    "cadence": "9.4 条/天，约 1.5 篇测评/天。发布时刻高度集中在 21-22 点（186/300 条）"
+  },
+  "growth": {
+    "strategy": "测评量产 + 高自然转发。四个机场号里增长质量最好的",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "测评量产",
+        "evidence": "32 天 47 篇，约 1.5 篇/天",
+        "note": "文案由被评测机场提供，产量不受写作速度限制"
+      },
+      {
+        "name": "协议标签做检索入口",
+        "evidence": "#vless 35、#anytls 15、#hy2 8、#ss 4、#Trojan 3、#vmess 2",
+        "note": "用户按协议找机场时能命中"
+      },
+      {
+        "name": "自有论坛双向导流",
+        "evidence": "每篇测评给一条 ffqla.net/thread-XXXX 原文链接，40 次",
+        "note": "TG 与论坛互相喂流量"
+      },
+      {
+        "name": "用户投稿补充供给",
+        "evidence": "#用户投稿 6 条",
+        "note": ""
+      }
+    ],
+    "signals": {
+      "err_pct": 11.1,
+      "forwards_per_post": 21.7,
+      "forwards_total": 6505,
+      "view_tightness": "p10 5,334 / 中位 6,836 / p90 8,007"
+    },
+    "assessment": "转发 21.7 次/帖（合计 6,505）是真实引用；阅读分布极紧、无买量尖峰。这是同生态里唯一靠内容质量把量做起来的评测号。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      200,
+      1500
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "自有论坛 ffqla.net 托管",
+        "cny_month": [
+          50,
+          300
+        ]
+      },
+      {
+        "name": "302verify 跳转网关",
+        "cny_month": [
+          0,
+          200
+        ],
+        "note": "自建或用现成短链服务，成本极低"
+      },
+      {
+        "name": "测速机器（多地区节点实测）",
+        "cny_month": [
+          100,
+          800
+        ],
+        "note": "要出截图就得真跑测速，这是唯一有点实质的成本"
+      },
+      {
+        "name": "人力（1.5 篇/天，文案来自机场自介）",
+        "cny_month": [
+          0,
+          500
+        ]
+      },
+      {
+        "name": "节点带宽",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "不经营机场，无带宽成本"
+      },
+      {
+        "name": "买量",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "阅读分布极紧、转发 21.7 次/帖，是自然流量特征"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      8000,
+      40000
+    ],
+    "est_basis": "32 天内 12 条 #AD 标注的付费内容，该垂类测评/收录位典型报价 ¥300-2,000/篇；另有 40 条经 302verify 的返利链接",
+    "model": "收费收录测评 + 伪装联盟链接",
+    "streams": [
+      {
+        "name": "付费测评 / 收录位",
+        "evidence": "#AD 标签 12 条",
+        "cny_month": [
+          4000,
+          24000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "注册返利（经 302verify 隐藏）",
+        "evidence": "40 条测评的官网链接全部经网关跳转，返利码不可见",
+        "cny_month": [
+          3000,
+          15000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "自有论坛 ffqla.net 的广告与会员",
+        "evidence": "每篇测评导流至论坛原文",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "四个号里变现效率最高的：不承担带宽成本，内容文案由被评测方提供，产量 1.5 篇/天，同时收前端的测评费和后端的返利。与 jcplnanmin 的对比很说明问题——同样是测评号，一个 0.8 条赞助/月，一个 12 条/月。"
+  },
+  "risk": {
+    "level": "criminal",
+    "summary": "不经营信道，但用隐藏返利关系的方式为无证服务规模化导流。链接伪装是其法律风险上最不利的事实。",
+    "legal": [
+      {
+        "issue": "为未经许可的国际联网服务规模化有偿推广",
+        "statutes": [
+          "《刑法》第二百八十七条之二 帮助信息网络犯罪活动罪",
+          "《广告法》第五十六条"
+        ],
+        "analysis": "32 天内为 47 家机场导流、其中 12 条明确付费。作为专业评测号，对该行业普遍无证经营的明知程度高。规模与持续性都远超 jcplnanmin，帮信罪的『情节严重』认定空间更大。",
+        "severity": "high"
+      },
+      {
+        "issue": "通过跳转网关隐藏返利关系",
+        "statutes": [
+          "《广告法》第十四条（广告应当具有可识别性，能够使消费者辨明其为广告）",
+          "《反不正当竞争法》第八条",
+          "《电子商务法》第三十九条",
+          "《消费者权益保护法》第二十条"
+        ],
+        "analysis": "全部 40 条官网链接写作『点击进入』并经 302verify.com 跳转，用户既看不到真实落地域名，也看不到 URL 中的返利参数。这使得『中立第三方测评』与『获取返利的推广方』两种身份无法被用户区分，是典型的广告可识别性问题。虽然有 12 条打了 #AD，但另外 35 条未标注的测评同样挂着返利链接——标注与实际利益关系并不对应。",
+        "severity": "high",
+        "aggravating": "对比 jcplnanmin 明确使用 #金主 标签、链接直出可见注册码，本号的伪装是主动为之的技术安排，而非疏忽。"
+      },
+      {
+        "issue": "星级评分与测速数据的客观性",
+        "statutes": [
+          "《广告法》第十一条、第二十八条（虚假广告）",
+          "《反不正当竞争法》第八条"
+        ],
+        "analysis": "四项星级评分标注『仅供参考』，但『机场自介』段落直接采用被评测方提供的宣传文案（措辞与机场官网一致）。在收取测评费且隐藏返利的前提下，评分的独立性无法成立。『仅供参考』的免责声明对商业宣传责任的排除效力有限。",
+        "severity": "medium"
+      },
+      {
+        "issue": "用户投稿内容的审核责任",
+        "statutes": [
+          "《网络安全法》第四十七条",
+          "《广告法》第五十六条"
+        ],
+        "analysis": "#用户投稿 6 条，来源为第三方。若投稿内容含虚假宣传或指向诈骗性机场（该垂类跑路频发），发布者仍需承担审核义务与连带责任。",
+        "severity": "medium"
+      }
+    ],
+    "notes": [
+      "不承担经营者责任，但为无证服务规模化导流，帮信罪风险高于 jcplnanmin",
+      "302verify 链接伪装是核心不利事实：它使返利关系对用户不可见，且是主动技术安排",
+      "12 条 #AD 与 40 条返利链接数量不匹配——标注覆盖不到实际的利益关系",
+      "未发现买量痕迹，阅读与转发数据是自然的",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
+  }
+}
