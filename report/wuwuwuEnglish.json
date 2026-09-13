@@ -1,0 +1,148 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "wuwuwuEnglish",
+  "username": "wuwuwuEnglish",
+  "url": "https://t.me/wuwuwuEnglish",
+  "title": "英语&学习资源宝库|EnglishVault",
+  "category": "英语学习资源推荐（优质策展 + 盗版商业教材分发）",
+  "growth_short": "内容质量驱动",
+  "one_liner": "全样本转发之王：中位 112 次转发/帖、ERR 66%，靠的是真正有用的策展。但 58 个附件合计 28 GB，是 Oxford、DK 等整套盗版商业教材——这是它唯一的问题，也是致命的那个。",
+  "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。",
+  "analyzed_at": "2026-09-13T09:20:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/wuwuwuEnglish.jsonl",
+    "sample_size": 193,
+    "sample_range": ["2022-04-10", "2025-07-25"],
+    "note": "请求 300 条实得 193 条，即频道现存全量。另单独枚举了附件文件名与体积"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 16286,
+    "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 10748,
+    "mean_views": 13665,
+    "p10_views": 8710,
+    "p90_views": 23147,
+    "max_views": 44717,
+    "err_pct": 66.0,
+    "err_note": "66% 远超 100% 以下的常态区间，说明大量非订阅者阅读——由 24,913 次转发带来",
+    "mature_posts": 192,
+    "total_posts": 193,
+    "posts_per_day": 0.2,
+    "reactions_total": 2868,
+    "forwards_total": 24913,
+    "forwards_per_post": 129.1,
+    "forwards_median": 112,
+    "forwards_max": 442,
+    "forward_note": "中位 112 次转发/帖，是全部 20 个样本里最高的，比第二名 lps999（50.1 次/帖）高一倍以上",
+    "id_span_sampled": [1, 515],
+    "surviving_messages": 193,
+    "deleted_ratio_pct": 62.5,
+    "hosted_files": 58,
+    "hosted_bytes_gb": 28.04,
+    "dormant_since": "2025-07-25",
+    "dormant_days": 415,
+    "linked_chat_id": 1892079427
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "positioning": "简介：「安利分享有趣和精致的英语学习资源，愿与大家透过英语学习的窗户，一同欣赏风景」。投稿/商务：@EnglishVaultBot",
+    "post_structure": "单条图文，结构为：资源名 + 标签 → 📌Description（中文详述，说明内容形式、时长、难度与适合人群）→ 🔗Website（官方链接）。写法是人工策展，不是模板填空",
+    "content_taxonomy": {"工具": 40, "阅读": 18, "教材": 13, "方法论": 5, "教程": 5, "中英双语": 4, "词汇": 4, "口语": 4, "网站": 4, "发音": 3, "单词": 3, "外刊": 3},
+    "两条内容线": {
+      "合法策展线": {
+        "description": "推荐公开可访问的优质资源，给官方链接，不做二次分发",
+        "evidence": "外链域名：bilibili 21、youtu.be 10、youtube 3、readu.io 2、immersivetranslate 2、github 2、telegra.ph 2、tastedive、youglish、tophonetics、snipd 各 1；正文示例为 BBC Learning English 的 Classic Stories 播客介绍并给 bbc.co.uk 官方链接",
+        "assessment": "这部分做得相当好，是真正的编辑劳动"
+      },
+      "盗版分发线": {
+        "description": "58 个附件直传 Telegram，合计 28.04 GB，是整套商业 ELT 教材",
+        "evidence": [
+          "Oxford Picture_英汉_3rd.pdf（1,742 MB）与 Oxford Picture_english_3rd.pdf（168 MB）",
+          "Outcomes 2e 全套五册：Elementary / Pre-Intermediate / Intermediate / Upper-intermediate / Advanced（合计约 8.8 GB）",
+          "Speak now.zip（851 MB）",
+          "DK百科全书英文560本.zip（2,321 MB）"
+        ],
+        "assessment": "这些是 Oxford University Press、National Geographic Learning、DK 等出版社的在售商业产品，权利人明确、易于取证。#教材 标签 13 次对应的就是这条线"
+      }
+    },
+    "conflict_note": "两条线的性质完全不同：策展线给的是官方链接、对权利人有利；分发线是整套商业教材的未授权再分发。前者的可信度被后者用来引流，这是它最矛盾的地方",
+    "infrastructure": "28 GB 附件全部直传 Telegram，零托管成本。配有关联讨论组（linked_chat_id 1892079427）与投稿/商务 bot",
+    "status": "自 2025-07-25 起停更，至抓取日已休眠 415 天"
+  },
+  "growth": {
+    "strategy": "内容质量驱动的自然转发。全样本唯一一个把转发做成主引擎的号，也是唯一停更后仍靠存量维持高触达的号",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {"name": "高质量策展引发主动转发", "evidence": "转发中位 112 次/帖、合计 24,913 次、单帖最高 442 次", "note": "用户把它当资源清单转给别人，这是最健康的增长形式"},
+      {"name": "免费大件教材做钩子", "evidence": "58 个附件 28 GB，单个最大 3.1 GB", "note": "整套 Outcomes、DK 560 本这类大件是强转发诱因——也正是侵权最重的部分"},
+      {"name": "标签体系支撑检索复用", "evidence": "#工具 40、#阅读 18、#教材 13、#口语 #发音 #外刊 等", "note": "按需求维度而非按资源名分类，便于用户回查"},
+      {"name": "关联讨论组与投稿 bot", "evidence": "linked_chat_id 1892079427；@EnglishVaultBot 收投稿", "note": "供给侧补充，但规模未知"}
+    ],
+    "signals": {"err_pct": 66.0, "forwards_per_post": 129.1, "forwards_median": 112, "reactions_total": 2868, "posts_per_day": 0.2, "dormant_days": 415},
+    "assessment": "ERR 66% 配 129 次/帖转发，是全样本质量最高的增长数据——而且是在 0.2 条/天的极低频率下做到的。它证明了内容质量可以完全替代发布量：193 条帖子换来 16,286 订阅和 2.5 万次转发，而 xuendj1 用 35 万条换来 0.07% 的 ERR。**但它也展示了这种模式的脆弱**：靠人工策展，作者一停，整个引擎就停了——已休眠 415 天。"
+  },
+  "cost": {
+    "recurring_cny_month": [0, 100],
+    "onetime_cny": [0, 0],
+    "items": [
+      {"name": "Telegram 文件托管（58 个文件 28.04 GB）", "cny_month": [0, 0], "note": "免费。单个附件最大 3.1 GB"},
+      {"name": "策展人力", "cny_month": [0, 0], "note": "真实成本项但以时间计。每条都要试用资源并写中文详述，这是它停更的根本原因"},
+      {"name": "投稿/商务 bot 托管", "cny_month": [0, 50]},
+      {"name": "内容采购", "cny_month": [0, 0], "note": "策展线用公开资源，分发线用盗版，两边都不花钱"},
+      {"name": "买量", "cny_month": [0, 0], "note": "未发现任何痕迹"}
+    ],
+    "structure_note": "现金成本几乎为零，真实投入全部是编辑时间。这也解释了它为什么会停更——单位内容的时间成本远高于其他号，而它没有把这份投入变现。"
+  },
+  "revenue": {
+    "est_cny_month": [0, 500],
+    "est_basis": "简介里挂了「投稿/商务: @EnglishVaultBot」，具备接广告的通道，但样本 193 条内未见一条付费推广内容",
+    "model": "基本未变现（有商务通道但未使用）",
+    "streams": [
+      {"name": "商务合作", "evidence": "@EnglishVaultBot 标注了商务用途，但样本内零广告帖", "cny_month": [0, 500], "confidence": "low"},
+      {"name": "工具类联盟返利", "evidence": "外链中有 immersivetranslate、readu.io 等付费工具，但链接未带任何推广参数", "cny_month": [0, 0], "confidence": "high", "note": "已核对：链接是干净的官方地址，没有 ref/aff 参数"}
+    ],
+    "note": "这是 20 个样本里变现最少的号之一（另一个是 Czenb6）。它手握全样本最好的流量质量（ERR 66%、129 次/帖转发）却几乎没有兑现——而正是这种不变现，让它在 415 天前因为作者投入无以为继而停更。流量质量与变现能力之间没有自动的桥。"
+  },
+  "risk": {
+    "level": "high",
+    "summary": "它的策展部分完全合法且对权利人有利；问题全部集中在 28 GB 的盗版商业教材上。风险类型单一但权利人明确、取证容易。",
+    "legal": [
+      {
+        "issue": "未授权分发商业出版物",
+        "statutes": ["《著作权法》第十条、第五十三条", "《刑法》第二百一十七条 侵犯著作权罪", "《信息网络传播权保护条例》"],
+        "analysis": "Oxford Picture Dictionary、Outcomes 2e 全套五册、Speak Now、DK 百科 560 本均为在售商业产品，权利人为 Oxford University Press、National Geographic Learning、Dorling Kindersley 等。向 16,286 名订阅者提供下载，构成信息网络传播权侵权。刑法 217 条的「以营利为目的」在 2020 年修正后已扩展，且司法解释对「发行」数量有明确入罪标准——28 GB、58 个文件、单件传播量以万计，在数量要件上处境不利。",
+        "severity": "high"
+      },
+      {
+        "issue": "权利人明确且跨境维权能力强",
+        "statutes": ["《伯尔尼公约》", "《著作权法》第五十四条（惩罚性赔偿）"],
+        "analysis": "与匿名网文、盗版软件不同，这些是国际教育出版巨头的旗舰产品。这类权利人有成熟的反盗版部门与跨境维权经验，主动追诉意愿强、取证成本低（文件名即证据）。相比本样本集中的其他侵权号，它被追诉的现实概率更高而非更低。",
+        "severity": "high"
+      },
+      {
+        "issue": "策展部分不构成侵权",
+        "statutes": ["《著作权法》第二十四条（合理使用）"],
+        "analysis": "推荐 BBC Learning English、YouTube 频道、开源工具并给出官方链接的部分，属于评论与介绍，不构成侵权，反而为权利人导流。这部分应当与分发部分区分评价——本号的法律问题不是「做资源推荐」，而是「顺带把整套教材传了」。",
+        "severity": "none"
+      },
+      {
+        "issue": "休眠不消除既有侵权",
+        "statutes": ["《民法典》第一百八十八条（诉讼时效）", "《著作权法》第五十三条"],
+        "analysis": "已停更 415 天，但 58 个附件仍在频道内可被 16,286 名订阅者随时下载——侵权状态持续存在，不因停止更新而中断。持续性侵权的诉讼时效起算点也随之延后。",
+        "severity": "medium"
+      }
+    ],
+    "notes": [
+      "这是 20 个样本里唯一一个风险不是 criminal 的内容号，也是唯一一个大部分内容完全合法的号",
+      "问题高度集中：28 GB 盗版商业教材，其余部分是干净的",
+      "权利人是国际教育出版巨头，反盗版能力强于本样本集中的其他权利人",
+      "停更不消除侵权——文件仍在频道内持续可下载",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
+  }
+}

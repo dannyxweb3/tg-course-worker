@@ -1,0 +1,76 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "guonrsgc",
+  "username": "guonrsgc",
+  "url": "https://t.me/guonrsgc",
+  "title": "站街丨修车丨按摩",
+  "category": "招嫖『探店点评』UGC 聚合（跨城市第一人称嫖娼报告）",
+  "growth_short": "UGC点评+极高转发",
+  "one_liner": "与列表型招嫖号不同，它做的是嫖娼『探店报告』——第一人称跨城市点位点评，UGC 属性带来全样本最高的互动：88 次转发/帖、ER 2.71%。",
+  "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。本报告不记录任何人物信息、照片、点位、价格、联系方式或具体条目。",
+  "analyzed_at": "2026-09-13T13:45:00Z",
+  "source": {"method": "telethon", "script": "scripts/tg_recon.py", "dump": "data/recon/guonrsgc.jsonl", "sample_size": 300, "sample_range": ["2026-08-15", "2026-09-13"], "note": "300 条覆盖 29 天。『修车/站街/快餐』为招嫖黑话"},
+  "metrics": {
+    "confidence": "high", "subscribers": 15565, "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
+    "views_available": true, "median_views": 3022, "mean_views": 3110, "p10_views": 2310, "p90_views": 4850, "max_views": 8804,
+    "err_pct": 19.4, "mature_posts": 216, "total_posts": 300, "posts_per_day": 10.3,
+    "reactions_total": 26874, "forwards_total": 31486, "forwards_per_post": 104.9, "forwards_max": 489,
+    "engagement_note": "ER 2.71%、88 次转发/帖中位，是全部样本里互动最高的——UGC 嫖娼报告的强分享属性",
+    "posts_without_text": 33, "photos": 285,
+    "id_span_sampled": [1028, 1345], "surviving_messages": 300
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "content_format": {
+      "note": "核心区别：这是 UGC 点评内容，不是列表目录",
+      "description": "第一人称嫖娼『探店报告』——出差/走访某城某区，记录点位见闻与主观评价，配图。行文口语化、带叙事，与 CDdhyzck1 那种条目卡片完全不同",
+      "black_slang": "站街=街头拉客、修车=嫖娼、快餐=短时交易、扫街=沿街寻找——全套黑话既做SEO又规避封禁"
+    },
+    "geo_taxonomy": "跨城市覆盖：无锡 24、南京 20、天津 12、镇江 8、上海 8、郑州 7、广州 7 等；类型标签修车 228、快餐 152、站街 151、按摩/洗浴/足疗",
+    "ugc_engine": "转发源『站街丨修车丨按摩』自身 + 多点位投稿，说明有嫖客投稿汇入。UGC 属性是它高互动的根源——读者既是消费者也是内容贡献者",
+    "conversion": "SOSO 生态深链 start=a_（34 次）；私聊/导航承接",
+    "cadence": "10.3 条/天"
+  },
+  "growth": {
+    "strategy": "UGC 点评 + 极高自然转发 + 跨城市SEO。互动是全样本最高的",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {"name": "第一人称点评的强分享性", "evidence": "转发 31,486 次（104.9 次/帖）、反应 26,874、ER 2.71%", "note": "『探店报告』比列表更有可读性和传播性，读者主动转给同好"},
+      {"name": "跨城市黑话标签SEO", "evidence": "十余城市 × 修车/站街/快餐/按摩 标签矩阵", "note": "覆盖面远超单城市号，任何城市的买家都能命中"},
+      {"name": "嫖客投稿的UGC飞轮", "evidence": "多点位投稿汇入", "note": "供给侧自我扩张，运营成本低而内容量大"}
+    ],
+    "signals": {"err_pct": 19.4, "forwards_per_post": 104.9, "forwards_total": 31486, "reactions_total": 26874, "subscribers": 15565},
+    "assessment": "104.9 次转发/帖是全部 30 个样本里最高的，ER 2.71% 也是最高。原因是内容形态：UGC 第一人称点评天然比列表目录更有传播性。它证明了在招嫖这个品类里，『点评社区』模式的增长效率远高于『列表目录』模式——15,565 订阅做出了比 71K 订阅的 CDdhyzck1 更高的绝对互动量。"
+  },
+  "cost": {
+    "recurring_cny_month": [50, 500], "onetime_cny": [0, 0],
+    "items": [
+      {"name": "频道与图床运维", "cny_month": [50, 300]},
+      {"name": "投稿审核", "cny_month": [0, 200], "note": "UGC 需简单审核"},
+      {"name": "内容生产", "cny_month": [0, 0], "note": "内容由嫖客投稿，运营方几乎不生产"},
+      {"name": "文件托管", "cny_month": [0, 0]}
+    ],
+    "structure_note": "UGC 模式成本极低——内容白嫖用户，运营方只做聚合与分发。"
+  },
+  "revenue": {
+    "est_cny_month": [5000, 30000], "model": "广告位 + 导流分成",
+    "streams": [
+      {"name": "招嫖/本地服务广告", "evidence": "样本内少量广告帖；高互动流量对本地灰色服务是优质投放位", "cny_month": [3000, 20000], "confidence": "low"},
+      {"name": "SOSO 生态分销", "evidence": "start=a_ 深链", "cny_month": [1000, 5000], "confidence": "low"},
+      {"name": "导流至交易环节抽成", "evidence": "点评末端常接联系/预约入口", "cny_month": [1000, 5000], "confidence": "low"}
+    ],
+    "note": "高互动使广告位比列表号更值钱。但它本身是点评聚合而非直接撮合，变现更依赖广告而非上榜费。"
+  },
+  "risk": {
+    "level": "criminal",
+    "summary": "传播嫖娼信息与经验的UGC平台，实质是引诱、介绍卖淫并传播淫秽信息，UGC 属性还牵连投稿者。",
+    "legal": [
+      {"issue": "引诱、介绍卖淫 / 传播卖淫信息", "statutes": ["《刑法》第三百五十九条 引诱、容留、介绍卖淫罪", "《治安管理处罚法》第六十七条、第六十八条"], "analysis": "系统性发布各城市嫖娼点位、评价与经验，实质是为卖淫嫖娼牵线搭桥并降低嫖客门槛，构成介绍卖淫的传播形态。跨城市规模化经营是加重情节。", "severity": "critical"},
+      {"issue": "传播淫秽物品/信息", "statutes": ["《刑法》第三百六十三条、第三百六十四条"], "analysis": "配图与露骨点评涉传播淫秽信息。", "severity": "high"},
+      {"issue": "UGC 投稿者的连带责任", "statutes": ["《刑法》第三百五十九条", "《治安管理处罚法》第六十六条（卖淫嫖娼）"], "analysis": "投稿的嫖客在描述其嫖娼经历，本身即违法记录；平台组织并传播这些内容，与投稿者构成关联责任。这是UGC模式独有的风险扩散。", "severity": "high"},
+      {"issue": "被点评人员的个人信息与潜在胁迫/拐卖", "statutes": ["《刑法》第二百五十三条之一", "《刑法》第三百五十八条第一款", "《刑法》第二百四十条"], "analysis": "点评中的照片与信息若涉真实人员且非自愿即侵权；此类内容普遍关联的卖淫网络存在胁迫、拐卖情形。", "severity": "critical"}
+    ],
+    "notes": ["UGC 嫖娼点评平台，介绍卖淫 + 传播淫秽信息", "投稿嫖客自陈违法经历，平台传播牵连双方", "被点评人员可能非自愿或为受害者", "本报告不记录任何人物信息、照片、点位、价格或联系方式", "本报告为外部法律风险识别，不构成法律意见"]
+  }
+}

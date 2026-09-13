@@ -1,0 +1,103 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "Aichengrenyulan",
+  "username": "Aichengrenyulan",
+  "url": "https://t.me/Aichengrenyulan",
+  "title": "Ai短剧Ai成人短剧【镇长回忆录】",
+  "category": "AI 生成成人短剧（freemium 引流 → 会员/私人定制）",
+  "growth_short": "免费剧集引流",
+  "one_liner": "AI 成人短剧号：把 AI 生成的色情短剧当免费试看（前 7 集免费）批量直传 Telegram 当免费 CDN，用「连载会员群 + 私人定制换脸」变现，购买走 bot + 支付宝/微信/USDT。Telegram 已按色情内容封其 iOS 端。",
+  "analyzed_at": "2026-09-13T11:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": null,
+    "sample_size": 300,
+    "sample_range": ["2026-09-12T16:10:10Z", "2026-09-12T16:23:12Z"],
+    "note": "仅保留聚合指标；内容为 AI 生成色情视频、且含『私人定制换脸』（可能涉真人肖像），原始 dump 已删除、不收录任何剧情文案、视频、价目与联系方式。样本 300 条集中在 13 分钟内批量发出"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 22681,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": true,
+    "views_note": "样本 300 条全部在 13 分钟内批量发出（当天），阅读量尚未累积（同期中位仅 45、最高 273），无法计算成熟 ERR。低阅读/订阅比也与 restricted=色情导致 Telegram 抑制分发一致",
+    "raw_sample_median_views": 45,
+    "raw_sample_max_views": 273,
+    "reactions_total": 0,
+    "forwards_total": 0,
+    "forwards_per_post": 0.0,
+    "restricted": true,
+    "restriction_reason": "ios / porn — Telegram 官方：『This channel can't be displayed because it was used to spread pornographic content.』",
+    "bulk_post_window_min": 13,
+    "id_span_sampled": [10823, 11251],
+    "surviving_messages": 300,
+    "deleted_ratio_pct": 30.1,
+    "hosted_files": 234,
+    "hosted_bytes_gb": 25.41,
+    "median_file_mb": 87,
+    "max_file_mb": 690,
+    "file_ext": {"mp4": 153, "mov": 74},
+    "media_mix": {"document_video": 234, "photo": 65, "webpage": 1}
+  },
+  "implementation": {
+    "publish_identity": "bot_or_user",
+    "post_structure": "视频文件（mp4/mov）+ 剧情简介 caption。以连载短剧形式组织（第N集），带『原创水印』",
+    "content_gen": "AI 生成成人短剧，caption 自述『推特玩家原创作品，接私人定制』——核心生产是 AI 视频生成，并承接『私人定制』（大概率含 AI 换脸）",
+    "delivery": "免费试看库直传 Telegram（234 个视频、25.41 GB，中位 87MB、最大 690MB），把 Telegram 当免费 CDN；付费内容不在公开频道",
+    "funnel": "『前七集免费引流，后面连载剧情会员群同步』——freemium 连载：免费剧集当钩子 → 会员群（私有邀请链 t.me/+…）+ 私人定制 → 购买入口 bot @lineraibot",
+    "payment": "支付宝 / 微信 / USDT（caption 提示微信风控严重、优先支付宝、否则联系客服走 USDT）",
+    "bulk_post": "300 条集中在 13 分钟内批量灌入，id 跨度 429、约 30% 已删——疑似库存批量重发 + 滚动删除以降低被举报/下架面",
+    "note": "剧情文案、价目、邀请链与客服联系方式一律不收录"
+  },
+  "growth": {
+    "strategy": "freemium 引流：用免费剧集当钩子把人导进付费会员群与定制 bot。restricted=色情使其无法被 Telegram 搜索/iOS 展示，故靠成人号互推/导流 + 免费内容口碑扩散",
+    "paid_acquisition": "unknown",
+    "mechanisms": [
+      {"name": "免费剧集引流", "evidence": "caption『前七集免费』『首部引流作品』", "note": "freemium 钩子"},
+      {"name": "私人定制拉高客单", "evidence": "『主要是接私人定制的』", "note": "从会员费升级到高客单定制"},
+      {"name": "被封抑制下的替代触达", "evidence": "restricted=ios/porn；median_views 45 远低于 22.7k 订阅", "note": "Telegram 抑制分发，只能靠互推与外部导流，订阅数与真实触达严重背离"}
+    ],
+    "signals": {"subscribers": 22681, "raw_sample_median_views": 45, "forwards_total": 0, "restricted": true},
+    "assessment": "22.7k 订阅但同日中位阅读仅 45，比值极低——restricted 状态下 Telegram 大幅抑制分发，订阅数含金量存疑（不排除买粉/互推堆量）。增长本质靠免费剧集钩子 + 成人号互推，天花板被封禁压制。"
+  },
+  "cost": {
+    "recurring_cny_month": [1000, 8000],
+    "onetime_cny": [0, 0],
+    "items": [
+      {"name": "AI 视频生成（GPU/算力或换脸/生成工具订阅）", "cny_month": [500, 5000], "note": "核心且区别于纯搬运号的成本——内容是生成出来的"},
+      {"name": "剪辑/加水印/连载编排 人力", "cny_month": [300, 2000]},
+      {"name": "购买/发货 bot + VPS", "cny_month": [100, 500]},
+      {"name": "收款通道（支付宝/微信/USDT，含风控损耗与手续费）", "cny_month": [100, 500]},
+      {"name": "Telegram 存储与分发（25.41 GB 视频）", "cny_month": [0, 0], "note": "免费 CDN"}
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [5000, 30000],
+    "model": "会员订阅（连载会员群）+ 私人定制 + 卡密",
+    "streams": [
+      {"name": "会员群订阅（永久/套餐）", "evidence": "『后面连载剧情会员群同步』『活动首发价！永久更为划算！』", "cny_month": [3000, 15000], "confidence": "medium"},
+      {"name": "私人定制（高客单，疑似换脸定制）", "evidence": "『原创主要是接私人定制的』", "cny_month": [2000, 15000], "confidence": "low"},
+      {"name": "bot 卖卡密/单剧解锁", "evidence": "购买入口 @lineraibot", "cny_month": [500, 3000], "confidence": "low"}
+    ],
+    "note": "变现全部走会员群 + bot + 私聊客服，公开频道不留成交痕迹。区间基于 22.7k 订阅的 freemium 转化行业惯例估算，非实测；私人定制单价高但频次不可见"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "制作、复制、贩卖、传播 AI 生成色情视频并牟利，属制作、贩卖、传播淫秽物品牟利罪，是本批中『制作+贩卖』一体、性质较重的一类",
+      "『私人定制』大概率涉 AI 换脸——若使用真人肖像，叠加侵犯公民个人信息、侮辱/诽谤、以及未经同意的深度伪造侵权",
+      "AI 生成成人内容存在生成未成年形象的固有红线风险；本报告未深入抓取、未核验，如涉未成年应属执法机关举报对象",
+      "以支付宝/微信/USDT 收取淫秽物品对价，涉非法经营与支付通道违规、洗钱敞口",
+      "Telegram 官方已因色情内容封禁其 iOS 端展示（restricted=porn）",
+      "剧情文案、价目、邀请链、客服联系方式与视频内容一律不收录/不展示"
+    ]
+  },
+  "takeaways": [
+    {"title": "AI 生成号的成本重心在算力而非搬运", "detail": "观察性：与搬运号不同，它的核心成本是 AI 视频生成（GPU/工具），Telegram 仍当免费 CDN 托 25GB 成片。属生态认知，不含可迁移方法。", "applicable": false},
+    {"title": "freemium 连载 + 私人定制的客单结构", "detail": "免费剧集引流 → 会员费 → 高客单定制，是成人内容号的通用漏斗。观察性，内容本身违法，不适用本项目。", "applicable": false},
+    {"title": "restricted 状态下订阅数严重虚高", "detail": "被 Telegram 判色情后分发被抑制，22.7k 订阅对同日中位 45 阅读——订阅数几乎不反映真实触达。方法论提醒。", "applicable": false}
+  ]
+}

@@ -27,7 +27,7 @@
     <h3>
       <a href="/reports/{{ c.slug }}">{{ c.title or c.slug }}</a>
       {% if c.risk_level %}
-        <span class="badge {{ 'err' if c.risk_level in ('criminal','high') else 'warn' }}">
+        <span class="badge {{ 'err' if c.risk_level in ('criminal','high') else ('ok' if c.risk_level == 'low' else 'warn') }}">
           {{ RISK_LABEL.get(c.risk_level, c.risk_level) }}
         </span>
       {% endif %}
@@ -38,17 +38,24 @@
     </div>
 
     <div class="rep-metrics">
-      <div><span>订阅</span><b>{{ c.subscribers|num }}</b></div>
-      <div><span>中位阅读</span><b>{{ c.median_views|num }}</b></div>
-      <div><span>ERR</span><b class="{{ 'good' if c.err_pct and c.err_pct >= 2 else ('bad' if c.err_pct is not none else '') }}">{{ c.err_pct|pct }}</b></div>
-      <div><span>转发/帖</span><b>{{ c.forwards_per_post|dash }}</b></div>
+      {% if c.kind == 'group' %}
+        <div><span>成员</span><b>{{ c.members|num }}</b></div>
+        <div><span>在线率</span><b>{{ c.online_pct|pct }}</b></div>
+        <div><span>机器人占比</span><b>{{ c.bot_share_pct|pct }}</b></div>
+        <div><span>中位阅读</span><b>{{ c.median_views|num if c.median_views else '—' }}</b></div>
+      {% else %}
+        <div><span>订阅</span><b>{{ c.subscribers|num }}</b></div>
+        <div><span>中位阅读</span><b>{{ c.median_views|num if c.median_views else '—' }}</b></div>
+        <div><span>ERR</span><b class="{{ 'good' if c.err_pct and c.err_pct >= 2 else ('bad' if c.err_pct is not none else '') }}">{{ c.err_pct|pct }}</b></div>
+        <div><span>转发/帖</span><b>{{ c.forwards_per_post|dash }}</b></div>
+      {% endif %}
     </div>
 
     <dl>
       <dt>月收入估算</dt><dd>{{ c.est_revenue_cny_month|cny }}</dd>
       <dt>经常性成本</dt><dd>{{ c.recurring_cost_cny_month|cny }}</dd>
       <dt>主变现</dt><dd>{{ c.monetization|dash }}</dd>
-      <dt>涨粉</dt><dd>{{ c.growth|dash }}</dd>
+      <dt>涨粉</dt><dd>{{ (c.growth_strategy or c.growth)|dash }}</dd>
     </dl>
 
     <div class="row small muted" style="margin-top:12px">

@@ -1,0 +1,165 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "pixiv_top50_r18",
+  "username": "pixiv_top50_r18",
+  "url": "https://t.me/pixiv_top50_r18",
+  "title": "PIXIV站每日r18图片 Top50搬运",
+  "category": "成人向插画自动搬运（Pixiv R18 每日排行榜）",
+  "growth_short": "自动搬运+互推",
+  "one_liner": "全自动爬 Pixiv R18 日榜前 50 并原样转贴，16 万订阅、零文案、零编辑；变现只有机场联盟一条线，ERR 2.4% 说明订阅数远大于真实受众。",
+  "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。",
+  "analyzed_at": "2026-09-13T10:05:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/pixiv_top50_r18.jsonl",
+    "sample_size": 300,
+    "sample_range": ["2026-08-31", "2026-09-12"],
+    "note": "300 条覆盖 12 天。本报告不描述、不引用任何图像内容"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 160753,
+    "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 3828,
+    "mean_views": 4002,
+    "p10_views": 3205,
+    "p90_views": 5138,
+    "err_pct": 2.4,
+    "err_note": "16 万订阅对中位 3,828 阅读。阅读分布极紧（p10 3,205 / p90 5,138），说明是稳定的小规模真实受众，而非买量尖峰——即订阅数虚高但阅读是真的",
+    "mature_posts": 126,
+    "total_posts": 300,
+    "posts_per_day": 24.8,
+    "reactions_total": 159,
+    "forwards_total": 3951,
+    "forwards_per_post": 13.2,
+    "forwards_median": 11,
+    "forwards_max": 40,
+    "id_span_sampled": [55194, 55505],
+    "surviving_messages": 300,
+    "photos": 282,
+    "documents": 14,
+    "posts_without_text": 259,
+    "archive_files_sampled": 4,
+    "archive_bytes_gb": 0.27,
+    "linked_chat_id": 2632895615
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "pipeline": {
+      "summary": "全自动，无人工环节。频道名本身就是产品说明：每日抓 Pixiv 综合 R-18 排行榜前 50 并转贴",
+      "steps": [
+        "每日抓取 Pixiv 综合 R-18 每日排行榜",
+        "取前 50 位作品图像",
+        "按 24.8 条/天的节奏推送到频道（282/300 条为 photo）",
+        "另打包当日全量为 zip 附件，命名为「[pixiv] 综合R-18每日排行榜 YYYY年M月D日.zip」，单包 48-96 MB"
+      ]
+    },
+    "editorial_content": "几乎为零。259/300 条完全无正文；有正文的绝大多数只有一行署名「By：PIXIV每日R18 Top50 搬运」并链回本频道",
+    "attribution": {
+      "note": "这是一个值得记录的细节：它给自己署名，但不给原作者署名",
+      "evidence": "39 个 telegram.me 链接全部指向本频道自身；样本内未见任何指向 Pixiv 原作品页或原作者的链接",
+      "assessment": "原作者信息在搬运过程中被完全剥离，这直接影响著作权项下的署名权认定"
+    },
+    "archive_format": "14 条 document 为当日打包 zip，抽样 4 个合计 0.27 GB。zip 让用户一次取走全天内容，也便于二次分发",
+    "hosting": "全部直传 Telegram，零托管成本",
+    "cadence": "24.8 条/天，稳定日更"
+  },
+  "growth": {
+    "strategy": "自动化供给 + 互推换量。内容本身有自然转发力，但 16 万订阅与 2.4% 的 ERR 之间的落差需要用互推解释",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {"name": "内容自带转发力", "evidence": "转发中位 11 次/帖、合计 3,951 次，且 259 条无任何文案", "note": "纯图无文案还能有 13.2 次/帖转发，说明扩散完全由内容本身驱动"},
+      {"name": "互推换量", "evidence": "#互推 标签 4 次；互推帖列出同类伙伴频道（涩图、3D 动漫、本子、黄油等品类），附 t.me 链接", "note": "同品类换量，比 bookMiao 那种跨品类互推精准，但仍是用量换量"},
+      {"name": "日更 + 打包 zip 提高回访", "evidence": "24.8 条/天；每日一个 zip 附件", "note": "排行榜是天然的日更题材，用户为看「今天的」而回访"},
+      {"name": "频道自署名回链", "evidence": "39 个指向自身的 telegram.me 链接", "note": "内容被二次分发到站外时仍带回链"}
+    ],
+    "signals": {"err_pct": 2.4, "forwards_per_post": 13.2, "forwards_total": 3951, "reactions_total": 159, "posts_per_day": 24.8, "subscribers": 160753},
+    "assessment": "阅读分布极紧（p10 3,205 / p90 5,138）说明这 3,800 左右的阅读是真实的；但 16 万订阅对应 2.4% 的 ERR，意味着绝大多数订阅者早已不看。转发 13.2 次/帖证明内容本身有扩散力——这一点强于 syrjfx_sl（0.7）和 bookMiao（0.09）。所以它的问题不是「买了死粉」，而是「靠互推堆了订阅数之后真实活跃没跟上」。反应仅 159 个也印证：用户来看图就走，不互动。"
+  },
+  "cost": {
+    "recurring_cny_month": [100, 600],
+    "onetime_cny": [0, 0],
+    "items": [
+      {"name": "爬虫与打包机器", "cny_month": [50, 300], "note": "唯一真成本。日抓排行榜、下载图像、打包上传，一台小 VPS 够用"},
+      {"name": "代理/绕过 Pixiv 访问限制", "cny_month": [50, 300], "note": "Pixiv 对批量抓取有频率与地区限制，需代理池"},
+      {"name": "Telegram 文件托管", "cny_month": [0, 0], "note": "免费。日包 48-96 MB，全年不足 30 GB，毫无压力"},
+      {"name": "内容生产", "cny_month": [0, 0], "note": "259/300 条无正文，零编辑成本"},
+      {"name": "LLM", "cny_month": [0, 0], "note": "不需要"},
+      {"name": "互推", "cny_month": [0, 0], "note": "以推换推"}
+    ],
+    "structure_note": "成本结构与 go4sharing 同型：全自动、零内容成本、零托管成本，唯一支出是抓取机器。区别在于它抓的是受版权保护的作品而非节点。"
+  },
+  "revenue": {
+    "est_cny_month": [2000, 12000],
+    "model": "机场联盟返利 + 互推",
+    "streams": [
+      {"name": "机场联盟返利", "evidence": "mofacga.com/register?code=omi4gb9j（魔法喵机场，宣称月付低至 9.9、1T 流量），带推广码", "cny_month": [1500, 8000], "confidence": "medium", "note": "16 万订阅的成人向频道，受众与翻墙需求高度重合，是机场投放的优质位"},
+      {"name": "同品类互推邀请奖励", "evidence": "#互推 4 条", "cny_month": [200, 1500], "confidence": "low"},
+      {"name": "关联讨论组导流", "evidence": "linked_chat_id 2632895615", "cny_month": [300, 2500], "confidence": "low"}
+    ],
+    "note": "变现密度很低——300 条里只有 2 条机场广告。以 16 万订阅的体量，这个广告负载远低于同量级的号（对比 xiaoshuwu 的「满载广告位包月」）。可能是刻意压低广告以保内容体验，也可能是尚未系统性招商。"
+  },
+  "risk": {
+    "level": "criminal",
+    "summary": "两条线叠加：成人内容的批量传播，以及对大量在世插画师作品的系统性侵权。后者的权利人数量以千计。",
+    "legal": [
+      {
+        "issue": "传播淫秽物品",
+        "statutes": [
+          "《刑法》第三百六十三条 传播淫秽物品牟利罪",
+          "《刑法》第三百六十四条 传播淫秽物品罪",
+          "《关于办理利用互联网、移动通讯终端、声音台制作、复制、出版、贩卖、传播淫秽电子信息刑事案件具体应用法律若干问题的解释》"
+        ],
+        "analysis": "R-18 定级的成人向插画在中国法下属淫秽物品范畴（司法解释对淫秽电子信息设有数量与点击量入罪标准）。日更 24.8 条、160,753 订阅、单条中位 3,828 次阅读——数量与实际点击两项标准均被大幅超出。因挂有带推广码的机场广告，属「牟利」情形，适用第三百六十三条。",
+        "severity": "critical"
+      },
+      {
+        "issue": "系统性侵犯插画师著作权（权利人以千计）",
+        "statutes": [
+          "《著作权法》第十条（复制权、信息网络传播权、署名权）",
+          "《著作权法》第五十三条",
+          "《刑法》第二百一十七条 侵犯著作权罪",
+          "《伯尔尼公约》"
+        ],
+        "analysis": "每日搬运排行榜前 50，意味着每天未经授权复制并传播约 50 位不同作者的作品，一年涉及的权利人以千计。且样本内未见任何指向原作品页或原作者的链接——原作者信息被完全剥离，同时侵犯署名权。Pixiv 的用户条款明确禁止未经授权的转载与再分发，而多数 R-18 作者对转载的态度更为严格。",
+        "severity": "critical"
+      },
+      {
+        "issue": "打包 zip 加重传播情节",
+        "statutes": ["上述司法解释关于「复制品数量」的认定"],
+        "analysis": "除逐条推送外，另打包当日全量为 zip 供整包下载。这使单次传播行为覆盖的作品数量从 1 件变为 50 件，在复制品数量的认定上是显著的加重因素，也便利了下游的二次分发。",
+        "severity": "high"
+      },
+      {
+        "issue": "违反平台服务条款与绕过访问限制",
+        "statutes": ["Pixiv 利用規約", "《反不正当竞争法》第十二条", "《著作权法》第四十九条（规避技术措施）"],
+        "analysis": "Pixiv 对 R-18 内容设有年龄门与登录限制，对批量抓取设有频率与地区限制。系统性绕过这些限制进行日更规模的抓取，既违反平台条款，也可能触及规避技术措施的规定。",
+        "severity": "medium"
+      },
+      {
+        "issue": "未成年人准入无任何限制",
+        "statutes": ["《未成年人保护法》第八十条", "《网络安全法》第十三条"],
+        "analysis": "频道对未成年人没有任何准入门槛，简介为空、无任何年龄提示。Pixiv 原站至少设有年龄门，搬运后这道门被完全移除——这是搬运行为独立造成的额外危害，不能以「原站也有」抗辩。",
+        "severity": "high"
+      },
+      {
+        "issue": "为无证跨境代理服务导流",
+        "statutes": ["《刑法》第二百八十七条之二 帮助信息网络犯罪活动罪"],
+        "analysis": "挂带推广码的机场注册链接，与 ffqchannel、jcplnanmin 同类风险，但规模较小（样本内仅 2 条）。",
+        "severity": "medium"
+      }
+    ],
+    "notes": [
+      "成人内容传播与著作权侵权两条线并存，且因挂广告属「牟利」情形",
+      "每日 50 位作者、全年权利人以千计，是本样本集中权利人数量最多的侵权形态",
+      "原作者署名被完全剥离，署名权侵权独立成立",
+      "打包 zip 使单次传播覆盖 50 件作品，是复制品数量认定上的加重因素",
+      "搬运移除了原站的年龄门，是独立造成的额外危害",
+      "本报告不描述、不引用任何图像内容",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
+  }
+}

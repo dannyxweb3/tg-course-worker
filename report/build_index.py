@@ -23,19 +23,33 @@ SCHEMA_VERSION = 3
 
 # 展示顺序。没列到的 slug 按 slug 名排在后面，不会被丢掉。
 ORDER = [
+    # 正规机构（对照组）
+    "cdtchinesefeed",
     # 机场 / VPN 生态（服务商本体 → 测评号 → 免费分享号）
     "xiaohuojianvpnvpn", "cheapairport_channel", "ffqchannel", "jcplnanmin", "go4sharing",
-    # 资源内容号
-    "lps999", "xiaoshuwu", "syrjfx_sl", "BYFXZ", "xph_fx", "xuendj1",
+    "jichangdl",
+    # 资源内容号（按 ERR 与内容质量降序）
+    "wuwuwuEnglish", "lps999", "xiaoshuwu", "Czenb6", "bookusefor4",
+    "pixiv_top50_r18", "Aichengrenyulan", "KaiPanshare", "FLAC_HR", "yingshi12345", "BYFXZ",
+    "syrjfx_sl", "xph_fx", "bookMiao", "xuendj1", "vomfx",
+    # 个人 / 无害小号（对照组）
+    "hayami_kiraa", "qzxx_comment",
     # 搜索 / 广告平台
-    "jisou771", "sesecctv",
+    "jisou771", "sousuohp", "sesecctv",
+    # 直接犯罪服务（恶意软件 / 公民信息交易 / 招嫖 / 犯罪软件外包）
+    "dajian910", "syfhhbd", "yuankong238", "mytdpaqj77777",
+    "chengdu_normal_university", "CDdhyzck1", "szflwbd", "gansu8821", "guonrsgc",
+    # AI 生成违禁内容（制作方，非搬运）
+    "bcuhz",
 ]
 
 HEADLINE = (
-    "十三个样本，三类生意：内容号看 ERR，ERR 塌了就只剩灰产广告一条路；"
-    "搜索平台不生产内容、只卖结果页里的广告位，毛利结构最好；"
-    "机场生态则是一条完整产业链——服务商本体担经营者责任，"
-    "测评号靠隐藏返利关系赚导流费，免费分享号把带宽成本转嫁给被扒节点的所有者。"
+    "三十个样本，谱系两端都有：一端是 cdtchinesefeed（正规新闻媒体）与 qzxx_comment（无害个人号）做对照，"
+    "另一端是 dajian910（犯罪软件外包）、syfhhbd（招嫖）等直接犯罪服务；中间是内容/机场/搜索三类灰产。"
+    "内容号看 ERR，ERR 塌了就只剩灰产广告一条路；搜索平台不生产内容、只卖结果页广告位，毛利最好；"
+    "机场生态是完整产业链；而犯罪服务类已非灰色地带，是刑事犯罪本身。"
+    "一个反直觉的点：扩散力最强的是刚需内容——免费翻墙节点号 jichangdl 历史单帖转发上千（均值约 790/帖），"
+    "招嫖『探店点评』号 guonrsgc（约 105 次/帖）、syfhhbd（约 95 次/帖）次之，都与内容合法性无关。"
 )
 
 SCHEMA_NOTES = {
@@ -112,8 +126,14 @@ DISCLAIMER = (
 CONTENT_WARNING = (
     "jisou771 与 sesecctv 承载的广告类目包含社工库开盒、线下性交易招揽、境外博彩与成人 AI 换脸，"
     "sesecctv 群内更出现疑似涉未成年人性剥削的用户消息（属应向执法机关举报的对象，未收录）。"
-    "这些原始文案与落地域名不适合在任何界面原样展示。"
-    "UI 不要显示 data/recon/*.jsonl 的原始群消息内容。"
+    "syfhhbd 为线下性交易招嫖引流号，含从业者照片/化名/价位等人身识别信息，其原始 dump 已删除、报告只留聚合指标。"
+    "dajian910 明列 CVV 钓鱼/远控等犯罪软件承接项目。"
+    "Aichengrenyulan 为 AI 生成成人短剧并承接『私人定制换脸』（可能涉真人肖像、且有生成未成年形象的固有红线风险），"
+    "已被 Telegram 官方按色情封禁 iOS 端，原始 dump 已删除、只留聚合指标。"
+    "这些原始文案、人身信息与落地域名不适合在任何界面原样展示。"
+    "UI 不要显示 data/recon/*.jsonl 的原始消息内容。"
+    "注意 cdtchinesefeed 是正规新闻媒体、qzxx_comment 是无害个人号，二者为对照组，"
+    "风险性质与上述灰产/犯罪样本根本不同，UI 上不应同框标红。"
 )
 
 COMPARISON_COLUMNS = [

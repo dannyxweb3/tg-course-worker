@@ -1,0 +1,96 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "KaiPanshare",
+  "username": "KaiPanshare",
+  "url": "https://t.me/KaiPanshare",
+  "title": "电子书资源分享 📚",
+  "category": "电子书盗版分享（网盘 + 直传 + 搜索 bot）",
+  "growth_short": "搜索 bot + 互推",
+  "one_liner": "电子书盗版号：每天清晨批量发几十本电子书，既直传 epub/pdf 到 Telegram、又给网盘链接（夸克/百度/阿里云盘各占三分之一），配自家搜索 bot 检索存量。16.7k 订阅、ERR 5.5%，变现主要靠网盘拉新 CPA。",
+  "analyzed_at": "2026-09-13T10:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/KaiPanshare.jsonl",
+    "sample_size": 300,
+    "sample_range": ["2026-08-11", "2026-09-13"],
+    "note": "另抓了 inline 按钮（仅『🔍 资源搜索』一枚，指向自家搜索 bot）"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 16715,
+    "median_views": 922,
+    "mean_views": 969,
+    "p10_views": 787,
+    "p90_views": 1206,
+    "err_pct": 5.5,
+    "mature_posts": 247,
+    "reactions_total": 78,
+    "forwards_total": 837,
+    "forwards_per_post": 2.8,
+    "er_pct": 0.03,
+    "posts_per_day": 9.1,
+    "views_available": true,
+    "media_mix": {"photo": 206, "text": 65, "document": 29},
+    "hosted_files_sampled": 29,
+    "file_ext_sampled": {"epub": 23, "pdf": 6},
+    "linked_chat_id": 2680277376,
+    "external_hosts": {"pan.baidu.com": 218, "pan.quark.cn": 218, "alipan.com": 205, "t.me": 365}
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "两类：①单本/合集帖 = 封面图 + 书名/作者/简介 + 三网盘链接（夸克/百度/阿里）；②直传帖 = epub/pdf 文件直接挂在消息上。带 #个人成长 #心理学 #历史 等分类标签，每日一条 #今日分享总结",
+    "delivery": "双通道：Telegram 直传（epub/pdf，样本中位 1.36GB/29 文件）+ 网盘转存链接。网盘三家并列是为对冲失效与覆盖不同用户习惯",
+    "search_bot": "自家 @pindaoyun_bot『搜本频道』——把历史存量做成可检索资产，消息挂『🔍 资源搜索』按钮",
+    "cooperation": "合作/商务走 @Kai_xiaoer_bot",
+    "schedule": "高度集中在清晨：06:00 一档就发 198 条、05:00 发 59 条——典型定时批量队列（前夜备好，凌晨一次性喷）",
+    "note": "内容偏知识类（成长/心理/历史/杂志/期刊），选品比纯爽文号『体面』，利于长期留存"
+  },
+  "growth": {
+    "strategy": "搜索 bot 把存量变可检索入口 + 互推换量 + 每日稳定更新养习惯",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {"name": "自家搜索 bot", "evidence": "@pindaoyun_bot + 『🔍 资源搜索』按钮", "note": "老书长尾复活，用户为搜书而留下"},
+      {"name": "互推换量", "evidence": "样本中 #互推 标签出现 10 次", "note": "与同类电子书/资源号互相导流"},
+      {"name": "每日清晨定时批量", "evidence": "06:00 单档 198 条", "note": "稳定更新养成打开习惯"}
+    ],
+    "signals": {"subscribers": 16715, "err_pct": 5.5, "forwards_per_post": 2.8, "er_pct": 0.03},
+    "assessment": "5.5% ERR 对搬运号算中上，说明选品（知识类）比爽文号更能留真实读者。但 ER 仅 0.03%、转发 2.8/帖，扩散主要靠互推而非自然传播——增长有天花板。"
+  },
+  "cost": {
+    "recurring_cny_month": [150, 600],
+    "onetime_cny": [0, 0],
+    "items": [
+      {"name": "网盘 SVIP（夸克/百度/阿里，转存+高速）", "cny_month": [50, 150]},
+      {"name": "搜索 bot + 索引（存量电子书检索）", "cny_month": [50, 300], "note": "唯一技术资产"},
+      {"name": "VPS / 发布 bot", "cny_month": [50, 150]},
+      {"name": "电子书来源", "cny_month": [0, 0], "note": "搬运自各盗版书站/同行，纯人力"},
+      {"name": "Telegram 直传", "cny_month": [0, 0], "note": "文件托 Telegram，零带宽成本"}
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [1500, 8000],
+    "model": "网盘拉新 CPA + 合作软广 + 互推邀请",
+    "streams": [
+      {"name": "网盘拉新/会员 CPA（夸克为主）", "evidence": "夸克 218 + 百度 218 + 阿里 205 个链接；夸克拉新分成是电子书号标配变现", "cny_month": [800, 5000], "confidence": "medium"},
+      {"name": "合作软广 / 荐书位", "evidence": "商务 bot @Kai_xiaoer_bot", "cny_month": [500, 2000], "confidence": "low"},
+      {"name": "互推邀请奖励 / 卖号", "evidence": "#互推 标签", "cny_month": [200, 1000], "confidence": "low"}
+    ],
+    "note": "天花板受真实流量限制：日更约 9 条 × 中位 922 阅读。夸克 CPA 单价低，靠量堆；知识类选品的用户质量略高于爽文号"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "系统性分发盗版电子书，侵犯著作权；以拉新/广告牟利的，可能触及侵犯著作权罪（营利目的 + 传播数量）",
+      "重打包/转存网盘链接存在挂马与失效风险（对用户）",
+      "较前述招嫖/黑产/社工库样本，本号无直接受害人，属侵犯知识产权类，风险等级低于 criminal 但仍是明确违法",
+      "选品为知识类、无成人/博彩/诈骗要素，是盗版号里相对『干净』的一类"
+    ]
+  },
+  "takeaways": [
+    {"title": "双投递（直传 + 多网盘）对冲失效", "detail": "观察性：epub 直传 + 夸克/百度/阿里三网盘并列，是为对冲链接失效和覆盖不同用户。属机制观察，不含可迁移建议。", "applicable": false},
+    {"title": "搜索 bot 复活存量", "detail": "把历史电子书做成可检索入口以提升留存，是这类号的通用做法。观察性，不适用本项目。", "applicable": false},
+    {"title": "知识类选品留存更好", "detail": "5.5% ERR 高于爽文搬运号，选品质量影响真实读者留存。观察结论。", "applicable": false}
+  ]
+}

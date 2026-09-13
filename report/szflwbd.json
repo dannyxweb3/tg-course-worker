@@ -1,0 +1,77 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "szflwbd",
+  "username": "szflwbd",
+  "url": "https://t.me/szflwbd",
+  "title": "深圳枫林榜",
+  "category": "线下性交易招嫖聚合（城市分区目录 + 验证/查找 bot）",
+  "growth_short": "分区SEO+自转发+bot",
+  "one_liner": "深圳区域的招嫖目录频道：按行政区打标签、用「查找老师」bot 检索、以「已验证」做信任背书；236/300 条是纯图片条目，转发靠自频道回流。",
+  "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。本报告不记录任何人物信息、照片、价格、预约方式、联系方式或具体条目。",
+  "analyzed_at": "2026-09-13T11:30:00Z",
+  "source": {"method": "telethon", "script": "scripts/tg_recon.py", "dump": "data/recon/szflwbd.jsonl", "sample_size": 300, "sample_range": ["2026-09-07", "2026-09-12"], "note": "300 条覆盖 5 天（58.5 条/天）"},
+  "metrics": {
+    "confidence": "high", "subscribers": 35567, "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
+    "views_available": true, "median_views": 634, "mean_views": null, "p90_views": 1289, "max_views": 1638,
+    "err_pct": 1.8, "err_note": "58.5 条/天的高频批量投放稀释了单条阅读；ERR 约 634/35,567 ≈ 1.8%",
+    "mature_posts": 0, "total_posts": 300, "posts_per_day": 58.5,
+    "reactions_total": 22, "forwards_total": 656, "forwards_per_post": 2.2, "self_forward": 32,
+    "posts_without_text": 236, "photos": 258, "documents": 34,
+    "id_span_sampled": [13795, 14110], "surviving_messages": 300, "linked_chat_id": 2196322046
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "structure": "目录式。236/300 条为纯图片条目（无正文），配行政区标签检索。少量文本条目承载导航与规则说明",
+    "geo_taxonomy": "按深圳行政区打标签（南山/龙华/福田/宝安/龙岗/罗湖/光明等），外加服务类型标签。买家按区检索",
+    "listing_bot": {
+      "note": "深链参数指向 bot 化的条目系统",
+      "evidence_desensitized": "深链 start=ls-<编号> 形态（listing id），简介载有『查找老师』检索入口与『枫林晚』暗号优惠机制",
+      "reading": "ls- 前缀是条目 ID，说明有一个后端把每个条目编号、可被 bot 按区/按号调取——把招嫖做成了可检索数据库"
+    },
+    "trust_signaling": "以『已验证』『首发』作信任背书；简介含防骗提示（『报预约号一律按正规按摩处理』一类免责话术）",
+    "content_protection": "noforwards=False，但主要靠自频道转发回流（32 次自转发）扩散",
+    "cadence": "58.5 条/天，批量投放"
+  },
+  "growth": {
+    "strategy": "行政区 SEO + 自频道转发 + 验证 bot 提升信任。未见买粉痕迹，但阅读被高频投放稀释",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {"name": "行政区标签做本地检索入口", "evidence": "南山 23、龙华 8、福田 7、宝安 5 等区域标签", "note": "买家按『城市+区』搜索时命中，是最精准的本地流量"},
+      {"name": "验证/查找 bot 降低决策门槛", "evidence": "start=ls- 条目深链、『查找老师』入口、『已验证』标记", "note": "把浏览-筛选-联系做成流程"},
+      {"name": "自频道转发扩散", "evidence": "自转发 32 次、总转发 656", "note": "靠内部回流而非外部引荐"},
+      {"name": "暗号优惠拉私聊", "evidence": "简介『私聊发送\"枫林晚\"，优惠福利』", "note": "把公开流量导入私聊转化"}
+    ],
+    "signals": {"err_pct": 1.8, "forwards_per_post": 2.2, "self_forward": 32, "posts_per_day": 58.5, "subscribers": 35567},
+    "assessment": "增长靠本地检索命中和验证信任，不靠买量。58.5 条/天的高频保证在检索里持续占位，但也把单条阅读压到 634。这是本地服务类目录的标准形态：广而浅，靠数量覆盖检索面。"
+  },
+  "cost": {
+    "recurring_cny_month": [200, 1500], "onetime_cny": [0, 0],
+    "items": [
+      {"name": "条目系统与 bot 后端", "cny_month": [100, 800], "note": "listing id + 检索 bot 需要后端"},
+      {"name": "频道与图床运维", "cny_month": [50, 400]},
+      {"name": "内容采集/审核人力", "cny_month": [50, 300], "note": "『已验证』意味着有人做核验环节"},
+      {"name": "文件托管", "cny_month": [0, 0], "note": "图片直传 Telegram"}
+    ],
+    "structure_note": "平台方自身成本低——它不提供服务，只做撮合目录。真实成本在核验与后端。"
+  },
+  "revenue": {
+    "est_cny_month": [10000, 60000], "model": "上榜/置顶/验证费（向服务提供方收费）",
+    "streams": [
+      {"name": "上榜与置顶费", "evidence": "『首发』『已验证』『榜』结构；上榜合作是这类目录的标准变现", "cny_month": [8000, 40000], "confidence": "low", "note": "向被列出的服务方收费，非向浏览者收费"},
+      {"name": "私聊导流与抽成", "evidence": "『枫林晚』暗号 + 私聊优惠", "cny_month": [2000, 20000], "confidence": "low"}
+    ],
+    "note": "收费对象是提供性服务的一方（上榜费/验证费/置顶费），平台不直接经手交易。所有金额私下结算，外部不可观测。"
+  },
+  "risk": {
+    "level": "criminal",
+    "summary": "以『按摩/榜单』为壳的招嫖平台，核心风险是组织、介绍、传播卖淫信息，并叠加对被列出人员的个人信息处理。",
+    "legal": [
+      {"issue": "组织、介绍、协助卖淫", "statutes": ["《刑法》第三百五十八条 组织卖淫罪、协助组织卖淫罪", "《刑法》第三百五十九条 引诱、容留、介绍卖淫罪", "《治安管理处罚法》第六十七条"], "analysis": "运营一个按区索引、可检索、带验证背书、把嫖客与卖淫者对接的平台，属介绍卖淫的规模化形态；若对被列出人员有组织、管理、抽成，则触及组织卖淫罪，量刑显著加重。", "severity": "critical"},
+      {"issue": "传播淫秽物品 / 传播淫秽信息", "statutes": ["《刑法》第三百六十三条、第三百六十四条", "《治安管理处罚法》第六十八条"], "analysis": "以图片形式公开展示招嫖内容，涉传播淫秽信息。", "severity": "high"},
+      {"issue": "对被列出人员的个人信息处理与潜在胁迫/拐卖", "statutes": ["《刑法》第二百五十三条之一", "《刑法》第二百四十条 拐卖妇女罪", "《刑法》第三百五十八条第一款（强迫卖淫）"], "analysis": "平台展示被列出人员的照片与信息，若未经本人同意即属侵犯个人信息；此类招嫖网络普遍存在胁迫、控制、拐卖情形——一旦查实存在强迫或人口贩运，性质升级为最严重罪名。", "severity": "critical"},
+      {"issue": "可能涉及未成年人（业务侧标签风险）", "statutes": ["《刑法》第三百五十九条第二款 引诱幼女卖淫罪", "《刑法》第三百六十条之一 猥亵儿童/相关规定"], "analysis": "此类频道普遍以『嫩妹』『首发』等话术营销年轻化对象。一旦涉及未成年人，无论是否知情均从重，且构成独立重罪。这是必须单列的红线风险。", "severity": "critical"}
+    ],
+    "notes": ["核心是介绍/组织卖淫的平台化经营", "被列出人员的信息可能非自愿，且可能是胁迫或拐卖的受害者", "『嫩妹/首发』营销叠加未成年人红线风险", "本报告不记录任何人物信息、照片、价格、预约方式或联系方式", "本报告为外部法律风险识别，不构成法律意见"]
+  }
+}

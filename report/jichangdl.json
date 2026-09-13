@@ -1,0 +1,191 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "jichangdl",
+  "username": "jichangdl",
+  "url": "https://t.me/jichangdl",
+  "title": "高速节点/代理/加速器/机场/VPN/免费分享",
+  "category": "免费翻墙节点分享号（机场生态·免费分享层）",
+  "growth_short": "节点刚需转发 + 互推",
+  "one_liner": "78.9k 订阅的免费翻墙节点号：每天 08:00 发一条模板消息「评论区回复订阅获取」，节点不进正文、走评论区分发；节点是抓来的「白嫖」公共节点（带宽成本转嫁给被扒的节点所有者），免费当钩子导流付费「月付机场」。自然转发全样本最猛（历史单帖 1000–5000 次）。",
+  "analyzed_at": "2026-09-13T11:40:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/jichangdl.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-11-19",
+      "2026-09-13"
+    ],
+    "note": "公开可抓；节点本体不在频道正文（走评论区/自动回复），dump 主要是每日模板文案与互推/autopromo 帖"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 78865,
+    "median_views": 6499,
+    "mean_views": 9313,
+    "p10_views": 3584,
+    "p90_views": 18490,
+    "err_pct": 8.2,
+    "mature_posts": 289,
+    "reactions_total": 14272,
+    "forwards_total": 237484,
+    "forwards_per_post": 791.6,
+    "forwards_per_post_median": 4.5,
+    "er_pct": 0.53,
+    "posts_per_day": 1.0,
+    "views_available": true,
+    "media_mix": {
+      "text": 297,
+      "photo": 3
+    },
+    "linked_chat_id": 2453491962,
+    "forwards_note": "双峰分布：约 108 条历史节点帖有 1,000–5,060 次转发，近期与 autopromo/互推帖接近 0。均值 791.6 反映节点刚需的极强扩散，中位 4.5 反映大量低转发帖，两者都要看",
+    "views_trend": "中位阅读从 2025-11 的 22,846 一路衰减到 2026-09 的 3,040（10 个月 -87%），典型免费节点号的生命周期衰减"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "每天一条几乎逐字重复的模板文案：「今日订阅链接已更新，评论区回复『订阅』即可获取；使用人多故每天更新；白嫖节点失效快不稳定，建议上月付机场」。297/300 为纯文本，无媒体",
+    "delivery": "engagement-gated：节点订阅链接不进频道正文，靠评论区回复『订阅』触发（自动回复/评论区群 linked_chat 2453491962）分发。好处是节点链接不留在频道、降低下架面，并把互动逼进评论区",
+    "node_source": "「白嫖节点」——抓取的免费公共节点，admin 自述『失效快且不稳定』。带宽/服务器成本转嫁给被扒节点的所有者，自己零托管成本",
+    "upsell": "同一条文案里引导『月付频道里的机场 直接添加进代理软件』——免费节点当钩子，导流到付费月付机场（自营或返利）。支持 Clash Meta/V2ray/Shadowrocket/Nekobox/Clash Verge 客户端",
+    "schedule": "每日 08:00 定时一条（288/300 在 08 点），机器人定时发布",
+    "growth_hooks": "夹带 #频道互推 #相似推荐 列表 + SOSO autopromo 邀请链（t.me/sososo?start=autopromo_-1001084025353_…）+ @SosoCnBot",
+    "note": "内容生产近乎为零，一条模板复用，真实价值在评论区的订阅链接"
+  },
+  "growth": {
+    "strategy": "免费翻墙节点是 GFW 下的极致刚需 → 疯狂转发自然扩散为主，叠加频道互推 + SOSO 网络导流续命",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "节点刚需转发",
+        "evidence": "历史节点帖单帖转发 1,000–5,060，forwards_total 237,484",
+        "note": "免费 VPN 节点是全样本扩散力最强的内容，用户主动转给亲友/群"
+      },
+      {
+        "name": "频道互推",
+        "evidence": "样本中 #频道互推 #相似推荐 列出一批同类免费 VPN 号",
+        "note": "以推换推"
+      },
+      {
+        "name": "SOSO autopromo 网络",
+        "evidence": "t.me/sososo?start=autopromo_-1001084025353_… 与 @SosoCnBot",
+        "note": "与 xph_fx/syrjfx_sl/sesecctv 同属 SOSO 网络"
+      }
+    ],
+    "signals": {
+      "subscribers": 78865,
+      "err_pct": 8.2,
+      "forwards_per_post": 791.6,
+      "forwards_total": 237484
+    },
+    "assessment": "转发扩散是所有品类里最强的（刚需驱动），把号做到了 78.9k。但阅读 10 个月衰减 87%——免费节点号生命周期短：节点失效快、同质号泛滥、只能靠不断互推与 autopromo 续命。ERR 8.2% 仍算健康，但趋势向下。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      600
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "节点带宽/服务器",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "白嫖抓取的公共节点，成本转嫁给被扒的节点所有者，自己零托管"
+      },
+      {
+        "name": "评论区自动回复 bot + 订阅聚合更新脚本 + VPS",
+        "cny_month": [
+          100,
+          500
+        ]
+      },
+      {
+        "name": "互推 / SOSO autopromo",
+        "cny_month": [
+          0,
+          100
+        ],
+        "note": "以推换推，基本免费"
+      },
+      {
+        "name": "内容生产 / LLM",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "一条模板复用，不需要"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "model": "付费广告位 + 月付机场导流（返利/自营）",
+    "streams": [
+      {
+        "name": "付费广告位",
+        "evidence": "简介『付费广告联系 @wzcec』",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "月付机场导流（返利或自营）",
+        "evidence": "文案引导『月付频道里的机场』，免费节点为其引流钩子",
+        "cny_month": [
+          1000,
+          6000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "互推 / autopromo 奖励",
+        "evidence": "SOSO autopromo + #频道互推",
+        "cny_month": [
+          200,
+          1000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "受众是『白嫖』免费用户，付费意愿低，变现效率不如同规模内容号；广告主多为其它机场与灰产。区间基于 78.9k 订阅 / 中位 6.5k 阅读的行业惯例估算，非实测。阅读衰减会持续拉低广告价值"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "分发翻墙节点并导流付费机场，在中国大陆属未经许可经营国际联网接入/VPN，涉非法经营罪（实务中有翻墙服务被以非法经营定罪的判例）；本号以免费分享+导流为主、未直接售卖，故列 high 而非顶格 criminal，但法律敞口明确",
+      "「白嫖节点」抓取并转发他人节点，盗用他人服务器资源；且节点来源不可控，存在被用于中间人监听/窃取用户流量的安全风险（对使用者）",
+      "付费广告位（@wzcec）广告主不可控，机场生态常混入博彩/成人/诈骗灰产，一旦承载则风险升级",
+      "评论区/自动回复分发节点，是规避频道正文审查与下架的手段"
+    ]
+  },
+  "takeaways": [
+    {
+      "title": "免费刚需内容的转发扩散最猛",
+      "detail": "观察性：免费翻墙节点在 GFW 语境下是极致刚需，单帖转发上千，是全样本扩散力最强的品类——但也生命周期最短（节点失效+同质竞争）。生态认知，不含可迁移方法。",
+      "applicable": false
+    },
+    {
+      "title": "把 payload 移出正文以降下架面",
+      "detail": "节点走评论区/自动回复而非频道正文，是这类违规号的规避手段。观察性，不适用本项目。",
+      "applicable": false
+    },
+    {
+      "title": "白嫖模式把带宽成本外部化",
+      "detail": "抓取他人免费节点转发，自己零托管成本，把带宽转嫁给被扒的节点所有者。观察结论。",
+      "applicable": false
+    }
+  ]
+}

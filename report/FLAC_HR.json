@@ -1,0 +1,77 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "FLAC_HR",
+  "username": "FLAC_HR",
+  "url": "https://t.me/FLAC_HR",
+  "title": "音乐热歌榜 Hit Music",
+  "category": "盗版无损音乐分发（FLAC/HR）+ 独立音乐人付费打榜",
+  "growth_short": "热歌检索+榜单回访",
+  "one_liner": "盗版无损音乐直传频道，287/300 条是音频文件；靠热歌与综艺曲目做检索钩子，同时接独立音乐人的付费推广（打榜）变现。",
+  "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。",
+  "analyzed_at": "2026-09-13T13:15:00Z",
+  "source": {"method": "telethon", "script": "scripts/tg_recon.py", "dump": "data/recon/FLAC_HR.jsonl", "sample_size": 300, "sample_range": ["2026-07-17", "2026-09-12"], "note": "300 条覆盖 57 天"},
+  "metrics": {
+    "confidence": "high", "subscribers": 35478, "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
+    "views_available": true, "median_views": 1881, "mean_views": 1969, "p10_views": 1225, "p90_views": 2817, "max_views": 3600,
+    "err_pct": 5.3, "mature_posts": 265, "total_posts": 300, "posts_per_day": 5.3,
+    "reactions_total": 265, "forwards_total": 1, "forwards_per_post": 0.0, "forward_note": "转发几乎为 0（疑似内容保护或功能关闭），扩散靠检索不靠转发",
+    "documents_uploaded": 287, "ad_posts_pct": 1,
+    "id_span_sampled": [26306, 26679], "surviving_messages": 300, "deleted_ratio_pct": 19.6
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "structure": "287/300 条为音频 document 直传（单曲 FLAC/无损）。正文为曲目元数据（曲名/歌手/作词作曲）+ 标签",
+    "content_hooks": "标签是检索钩子：热门曲风（Rap 47、DJ 43、纯音乐 14、喊麦）、AI 翻唱（AI 41）、综艺热曲（天赐的声音 10、歌手2026 5）、当红歌手名（万妮达、黄霄雲）",
+    "chart_structure": {
+      "note": "自建榜单体系，是它区别于纯搬运号的地方",
+      "evidence": "频道导航含『飙升榜｜晋级榜｜意见反馈』『音乐晋级榜｜飙升新歌』『投放广告』",
+      "reading": "把『榜单』做成产品外壳，既给用户回访理由，也为付费打榜提供位置"
+    },
+    "paid_promotion": {
+      "note": "接独立音乐人的推广投放",
+      "evidence_desensitized": "样本内出现带完整制作署名（作词/作曲/制作人/推广企划/出品人）的单曲推广帖，是独立音乐人/厂牌的付费打榜内容，非普通搬运",
+      "assessment": "这类帖把无名新歌塞进『热歌榜』语境，借频道流量做冷启动"
+    },
+    "hosting": "音频全部直传 Telegram，零托管成本。SOSO 生态深链 start=a_ 出现少量",
+    "cadence": "5.3 条/天"
+  },
+  "growth": {
+    "strategy": "热歌/综艺曲目检索命中 + 榜单回访。未见买粉，转发近乎为零说明不靠社交扩散",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {"name": "当红曲目做检索钩子", "evidence": "标签命中当红歌手、综艺曲目、热门曲风", "note": "用户搜歌名/歌手时命中，是无损音乐号的主要入口"},
+      {"name": "榜单制造回访", "evidence": "飙升榜/晋级榜导航", "note": "『今天飙升了什么』是回访理由"},
+      {"name": "AI 翻唱蹭热点", "evidence": "#AI 41 次", "note": "AI 翻唱是当前流量热点，补充检索面"}
+    ],
+    "signals": {"err_pct": 5.3, "forwards_per_post": 0.0, "reactions_total": 265, "posts_per_day": 5.3, "subscribers": 35478},
+    "assessment": "ERR 5.3% 中规中矩，转发近乎为零意味着增长完全靠『被搜到』而非『被转发』——无损音乐是明确的搜索型需求，用户找特定歌曲而非浏览。榜单结构是它比纯搬运号多做的一层，既提留存也开辟了打榜变现。"
+  },
+  "cost": {
+    "recurring_cny_month": [50, 300], "onetime_cny": [0, 0],
+    "items": [
+      {"name": "音源采集与转码", "cny_month": [0, 100], "note": "从各音乐平台扒无损源，脚本化"},
+      {"name": "Telegram 托管", "cny_month": [0, 0], "note": "音频直传，免费"},
+      {"name": "VPS / 发布自动化", "cny_month": [50, 200]},
+      {"name": "榜单/导航维护", "cny_month": [0, 0]}
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [1000, 8000], "model": "独立音乐人付费打榜 + 少量广告",
+    "streams": [
+      {"name": "付费打榜/推广", "evidence": "带完整制作署名的单曲推广帖；导航含『投放广告』", "cny_month": [800, 6000], "confidence": "medium", "note": "独立音乐人/厂牌为新歌冷启动付费，是这类榜单号的主要变现"},
+      {"name": "其他广告位", "evidence": "样本内 4 条疑似广告（含非音乐类）", "cny_month": [200, 2000], "confidence": "low"}
+    ],
+    "note": "3.5 万订阅、ERR 5.3%，广告位价值有限，主力是打榜。变现密度不高（广告帖仅 1%）。"
+  },
+  "risk": {
+    "level": "criminal",
+    "summary": "大规模盗版音乐分发，且因接受付费打榜属『牟利』情形，著作权刑事风险成立。",
+    "legal": [
+      {"issue": "未授权分发录音制品（侵犯著作权/邻接权）", "statutes": ["《著作权法》第十条、第四十四条（录音制作者权）、第五十三条", "《刑法》第二百一十七条 侵犯著作权罪", "《信息网络传播权保护条例》"], "analysis": "无损音乐文件涉及词曲著作权与录音制作者邻接权双重权利。向 3.5 万订阅者提供下载构成信息网络传播权侵权；因接受付费打榜（『以营利为目的』要件成立），刑事风险高于纯分享号。287 个文件、单曲传播量以千计，满足数量要件。", "severity": "high"},
+      {"issue": "为付费推广提供服务（牟利环节）", "statutes": ["《著作权法》第五十三条", "《广告法》"], "analysis": "付费打榜把侵权分发与商业获利直接绑定，是刑法 217 条『以营利为目的』的直接证据，也使打榜方（音乐人/厂牌）卷入。", "severity": "high"},
+      {"issue": "权利人集中、维权能力强", "statutes": ["《著作权法》第五十四条"], "analysis": "热门曲目的录音制作者多为主流唱片公司与流媒体平台，反盗版能力强、取证容易（曲目元数据即证据）。", "severity": "medium"}
+    ],
+    "notes": ["盗版音乐分发 + 付费打榜使『牟利』要件成立，刑事风险高于无变现的分享号", "词曲 + 录音双重权利，权利人集中且维权能力强", "本报告为外部法律风险识别，不构成法律意见"]
+  }
+}

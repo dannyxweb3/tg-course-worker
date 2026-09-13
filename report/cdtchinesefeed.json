@@ -1,0 +1,151 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "cdtchinesefeed",
+  "username": "cdtchinesefeed",
+  "url": "https://t.me/cdtchinesefeed",
+  "title": "中国数字时代（China Digital Times）",
+  "category": "独立新闻媒体 / 审查监测（正规机构，本批唯一非灰产样本）",
+  "growth_short": "内容驱动 + 姊妹频道互链",
+  "one_liner": "本批唯一的正规机构：独立中文新闻媒体 CDT 的 Telegram 分发频道，把官网文章同步到墙外读者。44k 订阅、ERR 4.3% 稳定，是新闻编辑部而非灰产运营，变现模型也完全不同（赠款/捐赠，非广告）。",
+  "analyzed_at": "2026-09-13T10:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/cdtchinesefeed.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-08",
+      "2026-09-13"
+    ],
+    "note": "公开可抓；本条为正规媒体，分析口径与其它灰产样本不同，见 risk"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 44208,
+    "median_views": 1886,
+    "mean_views": 1879,
+    "p10_views": 1529,
+    "p90_views": 2221,
+    "err_pct": 4.3,
+    "mature_posts": 253,
+    "reactions_total": 2333,
+    "forwards_total": 1928,
+    "forwards_per_post": 6.4,
+    "er_pct": 0.41,
+    "posts_per_day": 8.3,
+    "views_available": true,
+    "media_mix": {
+      "photo": 300
+    },
+    "linked_chat_id": 1146329382,
+    "activity_note": "阅读分布极紧（p10 1,529 / p90 2,221），是稳定订阅曝光而非爆款驱动。ERR 4.3% 对一个墙外政治类媒体属健康"
+  },
+  "implementation": {
+    "publish_identity": "bot_or_user",
+    "post_structure": "单条 = 配图 + 文章导语/摘要 + 官网深链。每条都指向 chinadigitaltimes.net（样本内 336 次），频道是官网内容的 Telegram 分发层",
+    "delivery": "内容托管在自有站点 chinadigitaltimes.net，Telegram 只做导流与墙外触达；不依赖网盘/外链资源站",
+    "sister_channels": [
+      "@cdt404notfound（404文库，存档被删文章）",
+      "@cdt404tv（视频频道）"
+    ],
+    "submission": "匿名投稿 bot @cdtmedia_bot（『404投给CDT』），众包线索与被删内容",
+    "schedule": "8.3 条/天，发布时刻覆盖全天 24 小时（含深夜档），符合跨时区/海外编辑部或排程分发",
+    "note": "标准新闻编辑流程：采编—配图—摘要—多渠道分发，与灰产的模板化搬运不是一回事"
+  },
+  "growth": {
+    "strategy": "内容驱动的机构增长：靠报道价值 + 姊妹频道互相导流 + 匿名投稿众包，不做付费获客",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "姊妹频道矩阵互链",
+        "evidence": "简介互链 @cdt404notfound / @cdt404tv 及官网、推特",
+        "note": "把主频道、404文库、视频频道织成一张网"
+      },
+      {
+        "name": "匿名投稿众包",
+        "evidence": "@cdtmedia_bot",
+        "note": "读者供稿既是内容源也是参与式增长"
+      },
+      {
+        "name": "被封删催生的口碑传播",
+        "evidence": "转发/帖 6.4，报道审查本身具传播性",
+        "note": "议题稀缺性带来自然扩散"
+      }
+    ],
+    "signals": {
+      "subscribers": 44208,
+      "err_pct": 4.3,
+      "forwards_per_post": 6.4,
+      "er_pct": 0.41
+    },
+    "assessment": "44k 订阅、稳定 4.3% ERR，是靠内容长期积累的真实读者盘。作为墙外中文政治类媒体，增长受限于 GFW 封锁与平台可达性，但盘子真实、粘性稳定。"
+  },
+  "cost": {
+    "recurring_cny_month": null,
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "采编团队（记者/编辑，真人内容生产）",
+        "cny_month": [
+          null,
+          null
+        ],
+        "note": "机构主成本，非本报告可估"
+      },
+      {
+        "name": "官网托管 + 分发基础设施",
+        "cny_month": [
+          null,
+          null
+        ]
+      },
+      {
+        "name": "TG 分发",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ],
+    "note": "作为非营利机构媒体，其成本结构是编辑部运营，不是灰产的服务器/账号成本，无法也不宜用同一口径估算"
+  },
+  "revenue": {
+    "est_cny_month": null,
+    "model": "非营利：赠款 / 捐赠资助，无商业变现（无广告、无带货、无付费墙）",
+    "streams": [
+      {
+        "name": "机构赠款 / 读者捐赠",
+        "evidence": "CDT 为独立非营利媒体，历来靠新闻自由类基金资助与捐赠，样本内无任何广告/联盟/带货信号",
+        "cny_month": null,
+        "confidence": "high"
+      }
+    ],
+    "note": "样本 300 条外链 336 个全部指向自家官网，0 广告位、0 网盘 CPA、0 联盟码——与其它样本的变现逻辑根本不同。本频道不以盈利为目的，收入不做数字估算"
+  },
+  "risk": {
+    "level": "medium",
+    "risk_kind": "political_censorship",
+    "notes": [
+      "重要区分：本频道是合法运营的独立新闻媒体，不是诈骗/灰产/犯罪企业，其行为是受保护的新闻报道，与本批其它样本性质完全不同",
+      "机构本体在中国大陆境外合法运营；风险来自国家审查：官网与频道被 GFW 屏蔽",
+      "对中国大陆的读者/传播者/投稿人而言存在政治与法律风险——传播被官方视为敏感的内容，可能触及寻衅滋事、非法经营或国家安全类宽泛条款，翻墙访问本身亦被处罚",
+      "此处 risk.level=medium 指向的是参与者的个人政治风险，而非频道自身有任何刑事不法——请勿与 criminal 档的诈骗/招嫖/黑产混为一谈"
+    ]
+  },
+  "takeaways": [
+    {
+      "title": "对照组：正规媒体长什么样",
+      "detail": "观察性：外链 100% 指向自家官网、0 广告位、稳定紧凑的阅读分布、真人采编——这些正是它区别于灰产搬运号的结构特征。作为样本对照有价值，不含可迁移方法。",
+      "applicable": false
+    },
+    {
+      "title": "风险分类要区分犯罪与审查",
+      "detail": "同为『在中国大陆有法律风险』，本频道是政治审查风险（针对参与者），与诈骗/招嫖的刑事犯罪风险性质不同，UI/分析都不应混为一类。",
+      "applicable": false
+    }
+  ]
+}

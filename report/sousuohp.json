@@ -1,0 +1,152 @@
+{
+  "schema_version": 3,
+  "kind": "group",
+  "slug": "sousuohp",
+  "username": "sousuohp",
+  "url": "https://t.me/sousuohp",
+  "title": "haisou搜索资源群 TG最全资源搜索群",
+  "category": "资源搜索 bot 群（兼灰产招募广场）",
+  "growth_short": "搜索刚需+机器人矩阵",
+  "one_liner": "又一个搜索 bot 群，但它与 jisou771 的差别在于广告形态：24/300 条用零宽字符拆字规避关键词过滤，藏的是假钞项目与跑分招募。",
+  "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。",
+  "analyzed_at": "2026-09-13T09:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/sousuohp.jsonl",
+    "sample_size": 300,
+    "sample_range": ["2026-09-12", "2026-09-13"],
+    "note": "300 条只覆盖 1 天。另用 GetFullChannelRequest 取了实体标志位、在线数与管理员列表"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": null, "members": 4362, "online": 65, "online_pct": 1.5,
+    "views_available": false,
+    "views_note": "megagroup 无 per-message 阅读量。判活用 online_pct 与 bot_share_pct",
+    "median_views": null, "mean_views": null, "p10_views": null, "p90_views": null, "err_pct": null,
+    "mature_posts": 0, "total_posts": 300,
+    "messages_per_day": 300,
+    "bot_messages": 103, "human_messages": 97, "bot_share_pct": 51.5,
+    "bot_share_note": "按 200 条抽样：主搜索 bot @8906114869 发 90 条、@GroupHelpBot 13 条",
+    "bot_search_replies": 125,
+    "tme_links_total": 1969,
+    "links_per_message_mean": 6.6,
+    "reactions_total": 0, "forwards_total": 0, "forwards_per_post": 0.0,
+    "contact_cards": 8,
+    "zero_width_obfuscated_posts": 24,
+    "id_span_sampled": [168032, 168367],
+    "surviving_messages": 300,
+    "deleted_ratio_pct": 10.4,
+    "noforwards": true
+  },
+  "implementation": {
+    "publish_identity": "bot + 人",
+    "chat_type": "megagroup",
+    "content_protection": true,
+    "core_loop": "简介即说明书：「发送关键字自动回复资源地址，不信你试试」。用户发关键词 → 搜索 bot 回一个结果块 → 底部一行「热搜」。125/300 条是含 5 个以上链接的 bot 回复，全群 1,969 个 t.me 链接、均值 6.6 个/条",
+    "bot_matrix": {
+      "note": "管理员里有 11 个 bot、仅 1 个人类账号 @wangjinge。这是全部样本里 bot 密度最高的一个",
+      "roles": [
+        {"handle": "@8906114869", "role": "主搜索 bot，抽样 200 条中发 90 条"},
+        {"handle": "@trxsosobot", "role": "名称同时含 TRX 与 soso，疑似与 SOSO 搜索生态及 TRX 支付相关"},
+        {"handle": "@MissRose_bot / @GroupHelpBot", "role": "通用群管理（第三方成熟 bot）"},
+        {"handle": "@xiunvjinyanbot / @xiunvanniu1bot / @xnmmbot / @nmnmfunbot", "role": "同族命名的自有 bot，「秀女」类命名指向色情向业务"},
+        {"handle": "@yinyongzhuanshabot / @haowufenxiangbot", "role": "自有功能 bot"},
+        {"handle": "@wangjinge", "role": "唯一人类管理员"}
+      ]
+    },
+    "keyword_filter_evasion": {
+      "summary": "24/300 条在正文里插入零宽字符（U+200B/200C/200D/2060/FEFF）拆开敏感词，规避关键词检测",
+      "mechanism": "把「验正品保真」写成 可。验\\u200d.正.品\\u2060.保.真 —— 肉眼读得通，字符串匹配读不到",
+      "what_it_hides": [
+        "跑分/洗钱类招募（宣称日入两万至五万、以豪车为诱饵）",
+        "「假钞项目」相关内容",
+        "「验正品保真」一类违禁品交易暗语"
+      ],
+      "assessment": "这是本群与 jisou771、sesecctv 最实质的区别：同样是搜索 bot 群，那两个的广告是博彩与成人 AI，这个直接挂着假钞与跑分招募，且用技术手段主动规避检测"
+    },
+    "other_signals": {
+      "contact_cards": "8 条 MessageMediaContact —— 直接分发联系人名片，绕过文本链接检测",
+      "hidden_channel": "「隐藏频道限时开放！仅通过中文名用户的申请！」——以审核门槛制造稀缺并筛选用户",
+      "content_mix": "标签里混着 #乱伦 8、#按摩 6、#SPA 5、#网红 4 与 #泰国新闻 6、#新加坡资讯 4、#国际资讯 4，色情擦边与资讯内容并行"
+    },
+    "content_protection_note": "noforwards=True。转发合计 0、反应合计 0——不是没人互动，是功能被关闭"
+  },
+  "growth": {
+    "strategy": "搜索刚需 + 11 个 bot 组成的功能矩阵。未观测到买粉或互推的直接证据，但在线率只有 1.5%",
+    "paid_acquisition": "unknown",
+    "mechanisms": [
+      {"name": "搜索功能即入口", "evidence": "简介「发送关键字自动回复资源地址，不信你试试」；125/300 条是 bot 搜索回复", "note": "人来办事，不需要推广"},
+      {"name": "bot 功能矩阵扩大留存面", "evidence": "11 个管理员 bot，涵盖搜索、群管、禁言、分享等", "note": "功能越多越像工具，用户越不退群"},
+      {"name": "「隐藏频道限时开放」制造稀缺", "evidence": "正文明示「仅通过中文名用户的申请」", "note": "审核门槛同时起筛选与拉新作用"},
+      {"name": "热搜榜引导二次搜索", "evidence": "bot 回复底部固定一行热搜关键词", "note": "把长尾搜索引向高频词，提高命中率"}
+    ],
+    "signals": {"online_pct": 1.5, "members": 4362, "bot_share_pct": 51.5, "messages_per_day": 300, "forwards_total": 0},
+    "assessment": "1.5% 的并发在线（65/4,362）远低于同类的 jisou771（6.9%）。同样是搜索群，它的规模只有 jisou771 的 40%、活跃度只有 1/4。增长手段上看不出付费痕迹，但也看不出有效引擎——它更像是 SOSO/haisou 生态里一个规模不大的次级站点。"
+  },
+  "cost": {
+    "recurring_cny_month": [500, 3000],
+    "onetime_cny": [0, 0],
+    "items": [
+      {"name": "搜索索引与后端", "cny_month": [300, 2000], "note": "若为自建则是主成本；若接上游 haisou/SOSO 的索引则大幅下降。从单群数据无法区分"},
+      {"name": "bot 托管（11 个）", "cny_month": [100, 500], "note": "其中 MissRose_bot、GroupHelpBot 是第三方免费 bot，自有 bot 约 7 个"},
+      {"name": "群管理人力", "cny_month": [100, 500]},
+      {"name": "LLM", "cny_month": [0, 0], "note": "纯关键词匹配，无生成环节"},
+      {"name": "内容生产", "cny_month": [0, 0], "note": "不生产内容，只做检索与广告承载"}
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [2000, 10000],
+    "est_scope": "仅本群可归因部分",
+    "model": "广告位售卖（含灰产招募位）",
+    "streams": [
+      {"name": "灰产招募广告位", "evidence": "24 条零宽字符混淆内容，包括跑分类招募与假钞项目", "cny_month": [1000, 6000], "confidence": "medium", "note": "这类广告主出价显著高于普通广告，因为正规渠道完全不接"},
+      {"name": "色情擦边与本地服务广告", "evidence": "#按摩 6、#SPA 5、#网红 4 等标签；8 张联系人名片", "cny_month": [500, 2500], "confidence": "low"},
+      {"name": "搜索结果广告位", "evidence": "bot 回复结构与 jisou771 同类，但本次样本未捕获到 ad slot 参数", "cny_month": [500, 1500], "confidence": "low"}
+    ],
+    "note": "规模明显小于 jisou771（10,515 成员 / 6.9% 在线）。4,362 成员、1.5% 在线意味着可售广告库存有限，估算区间相应压低。"
+  },
+  "risk": {
+    "level": "criminal",
+    "summary": "搜索功能本身只是外壳。真正的风险在它承载的招募内容，以及为规避检测而主动采用的技术手段。",
+    "legal": [
+      {
+        "issue": "为假钞相关内容提供传播渠道",
+        "statutes": ["《刑法》第一百五十一条 走私假币罪", "《刑法》第一百七十条 伪造货币罪", "《刑法》第一百七十一条 出售、购买、运输假币罪", "《刑法》第二百八十七条之二 帮助信息网络犯罪活动罪"],
+        "analysis": "样本内出现「假钞项目」相关内容。伪造货币与出售假币在中国是重罪，法定刑起点高。为此类内容提供发布渠道，构成帮信罪的帮助行为；若明知而积极参与，可能被认定为共犯。",
+        "severity": "critical"
+      },
+      {
+        "issue": "疑似跑分与洗钱招募",
+        "statutes": ["《刑法》第一百九十一条 洗钱罪", "《刑法》第三百一十二条 掩饰、隐瞒犯罪所得罪", "《刑法》第二百八十七条之二", "《反电信网络诈骗法》第三十一条、第三十八条"],
+        "analysis": "多条混淆内容以「日入两万至五万」「保底三万」「豪车到位」招募「兄弟」，是跑分（代收转账洗钱）与电诈团伙招募的典型话术。为其提供曝光渠道属帮助行为。",
+        "severity": "critical"
+      },
+      {
+        "issue": "主动规避检测构成主观明知的证据",
+        "statutes": ["司法实践中的主观明知认定", "《网络安全法》第四十七条"],
+        "analysis": "24 条正文插入零宽字符拆分敏感词，配合 8 张联系人名片与 noforwards=True。这些都不是中立的技术选择——规避关键词过滤的行为本身，直接证明发布方知道内容不能被检测到。在认定「明知」时，这类证据的分量很重。",
+        "severity": "high"
+      },
+      {
+        "issue": "未履行信息网络安全管理义务",
+        "statutes": ["《刑法》第二百八十六条之一 拒不履行信息网络安全管理义务罪", "《网络安全法》第四十七条、第四十八条"],
+        "analysis": "群主与 11 个管理 bot 的配置说明该群具备完整的内容管理能力（已在用 MissRose_bot、GroupHelpBot 做管控），却未对上述违法内容作任何处置。具备能力而不作为，是本罪的核心要件。",
+        "severity": "high"
+      },
+      {
+        "issue": "色情擦边与本地性服务招揽",
+        "statutes": ["《刑法》第三百六十三条、第三百六十四条", "《治安管理处罚法》第六十七条（引诱、容留、介绍卖淫）"],
+        "analysis": "标签中出现 #乱伦、#按摩、#SPA 等；自有 bot 采用「秀女」类命名。结合 8 张联系人名片，存在为线下性服务招揽提供渠道的可能。",
+        "severity": "high"
+      }
+    ],
+    "notes": [
+      "假钞与跑分招募是本群最严重的两项，性质重于 jisou771 承载的博彩与成人 AI 广告",
+      "零宽字符规避是主观明知的强证据，不能主张不知情",
+      "11 个管理 bot 证明有管控能力，未处置违法内容触及拒不履行信息网络安全管理义务罪",
+      "本报告刻意未完整引用混淆内容的原文",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
+  }
+}

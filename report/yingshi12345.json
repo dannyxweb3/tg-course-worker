@@ -1,0 +1,73 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "yingshi12345",
+  "username": "yingshi12345",
+  "url": "https://t.me/yingshi12345",
+  "title": "影视点播直播软件",
+  "category": "盗版影视 App 分发（点播/直播/『空壳』软件）",
+  "growth_short": "软件刚需检索",
+  "one_liner": "盗版影视 App 的聚合分发号：直播软件、点播软件、以及指向外部盗版源的『空壳软件』，标签即软件货架，落地在自建站点与 .vip 端口域名。",
+  "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。本报告不记录任何软件下载地址、接口或落地域名细节。",
+  "analyzed_at": "2026-09-13T13:30:00Z",
+  "source": {"method": "telethon", "script": "scripts/tg_recon.py", "dump": "data/recon/yingshi12345.jsonl", "sample_size": 300, "sample_range": ["2025-11-10", "2026-09-12"], "note": "300 条覆盖 306 天"},
+  "metrics": {
+    "confidence": "high", "subscribers": 14804, "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
+    "views_available": true, "median_views": 4686, "mean_views": 4806, "p10_views": 3626, "p90_views": 6216, "max_views": 7962,
+    "err_pct": 31.7, "mature_posts": 286, "total_posts": 300, "posts_per_day": 1.0,
+    "reactions_total": 492, "forwards_total": 1087, "forwards_per_post": 3.6, "forwards_max": 20,
+    "photos": 269, "documents": 28,
+    "id_span_sampled": [493, 1177], "surviving_messages": 300, "deleted_ratio_pct": 56.1
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "product_taxonomy": {
+      "note": "标签即软件货架",
+      "shelf": {"直播软件": 187, "点播软件": 179, "空壳软件": 99, "内置软件": 18, "本地包": 3, "K歌软件": 2, "TVBox接口": 1},
+      "shell_app_explained": "『空壳软件』= 本身不含内容、启动后从外部源加载盗版影视的壳程序。这种设计把侵权内容与 App 本体分离，App 商店/静态扫描看不到内容，也便于内容源被封后换源"
+    },
+    "structure": "269/300 条为图文（软件截图 + 介绍 + 下载入口），28 个直接上传的安装包。落地在自建站点与一组 .vip:<端口> 域名",
+    "landing": "外链指向自有站点与 .vip 端口域名（点播/直播后端）。少量 kdocs 文档做使用说明，github 放部分开源壳",
+    "delivery": "混合投递：Telegram 直传安装包 + 站点下载 + TVBox 接口订阅",
+    "cadence": "1.0 条/天。约 56% 消息已删除（失效版本/被封源清理）"
+  },
+  "growth": {
+    "strategy": "软件刚需检索命中。免费盗版影视 App 是强需求，靠被搜到增长",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {"name": "软件类型标签做货架检索", "evidence": "直播软件 187、点播软件 179 等标签", "note": "用户搜『XX直播软件』时命中"},
+      {"name": "免费即获客点", "evidence": "全部免费提供", "note": "盗版影视 App 的核心吸引力就是免费看付费内容"},
+      {"name": "换源韧性维持存量", "evidence": "56% 删除率 + 空壳换源设计", "note": "源被封就换，频道存量不断，用户留存"}
+    ],
+    "signals": {"err_pct": 31.7, "forwards_per_post": 3.6, "reactions_total": 492, "posts_per_day": 1.0, "subscribers": 14804},
+    "assessment": "ERR 31.7% 说明是真实的免费影视用户群。增长不靠推广靠刚需——免费看剧的需求足够强，被搜到就能涨。空壳换源设计让它在源频繁失效的情况下仍能维持存量，这是这类号的生存关键。"
+  },
+  "cost": {
+    "recurring_cny_month": [200, 1500], "onetime_cny": [0, 0],
+    "items": [
+      {"name": "点播/直播后端与内容源", "cny_month": [100, 1000], "note": "空壳背后仍需内容源服务器或采集聚合，是主成本"},
+      {"name": "站点与 .vip 域名（需频繁更换）", "cny_month": [50, 300], "note": "被封即弃，轮换成本"},
+      {"name": "App 打包与维护", "cny_month": [50, 200]},
+      {"name": "Telegram 托管", "cny_month": [0, 0]}
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [2000, 15000], "model": "App 内广告/会员 + 导流（含疑似博彩）",
+    "streams": [
+      {"name": "App 内广告与会员解锁", "evidence": "点播/直播软件常见的贴片广告与去广告会员", "cny_month": [1000, 8000], "confidence": "low"},
+      {"name": "疑似博彩/灰产导流", "evidence": ".vip:<端口> 域名与『分兑』类字样，是博彩/资金盘落地页的常见特征", "cny_month": [1000, 7000], "confidence": "low", "note": "免费影视 App 是博彩投放的经典载体——用免费内容换广告曝光"}
+    ],
+    "note": "免费盗版影视 App 的典型变现是把海量免费用户卖给广告主，其中博彩是出价最高的一类。.vip 端口域名的出现符合这一模式，但本次未深入验证落地内容。"
+  },
+  "risk": {
+    "level": "criminal",
+    "summary": "盗版影视传播 + 分发规避审查的『空壳』App，若叠加博彩导流则风险进一步升级。",
+    "legal": [
+      {"issue": "未授权传播影视作品（侵犯著作权）", "statutes": ["《著作权法》第十条、第五十三条", "《刑法》第二百一十七条 侵犯著作权罪", "《信息网络传播权保护条例》"], "analysis": "提供盗版影视点播/直播，是信息网络传播权侵权的典型。规模化 + 广告变现使『以营利为目的』成立，刑事风险高。影视权利人（平台、制片方）维权积极。", "severity": "critical"},
+      {"issue": "提供规避审查的『空壳』分发工具", "statutes": ["《刑法》第二百八十五条第三款", "《网络安全法》", "《网络音视频信息服务管理规定》"], "analysis": "『空壳软件』刻意把内容与 App 分离以规避应用商店审查与静态检测，是主动的规避设计。同时无证提供网络视听服务，违反视听节目许可制度。", "severity": "high"},
+      {"issue": "疑似为博彩等灰产导流", "statutes": ["《刑法》第三百零三条（赌博/开设赌场）", "《刑法》第二百八十七条之二 帮信罪"], "analysis": ".vip 端口域名与『分兑』字样指向博彩/资金盘落地。若免费 App 承载博彩投放，运营方构成帮信甚至共犯。此项为存疑判断，需落地内容验证。", "severity": "high"},
+      {"issue": "换源与频繁删除的反侦查特征", "statutes": ["司法实践中的主观明知认定"], "analysis": "56% 删除率 + 空壳换源 + 短命域名轮换，是规避封禁与取证的成体系安排，强化主观明知。", "severity": "medium"}
+    ],
+    "notes": ["盗版影视 + 广告变现，刑事著作权风险成立", "『空壳』是主动规避审查的分发设计", ".vip 域名指向的博彩导流为存疑项，若属实风险升级", "本报告不记录任何软件下载地址、接口或落地域名细节", "本报告为外部法律风险识别，不构成法律意见"]
+  }
+}

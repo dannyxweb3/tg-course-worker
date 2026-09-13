@@ -13,7 +13,7 @@
 <div class="row" style="margin-bottom:2px">
   <h1 style="margin:0">{{ data.title or data.slug }}</h1>
   {% if data.risk and data.risk.level %}
-    <span class="badge {{ 'err' if data.risk.level in ('criminal','high') else 'warn' }}">
+    <span class="badge {{ 'err' if data.risk.level in ('criminal','high') else ('ok' if data.risk.level == 'low' else 'warn') }}">
       {{ RISK_LABEL.get(data.risk.level, data.risk.level) }}
     </span>
   {% endif %}
