@@ -14,7 +14,10 @@
     "script": "scripts/tg_recon.py",
     "dump": "data/recon/qzxx_comment.jsonl",
     "sample_size": 300,
-    "sample_range": ["2024-11-20", "2026-09-10"],
+    "sample_range": [
+      "2024-11-20",
+      "2026-09-10"
+    ],
     "note": "跨度 659 天、0.5 条/天，是个长期低频的个人号"
   },
   "metrics": {
@@ -31,7 +34,12 @@
     "forwards_per_post": 0.95,
     "posts_per_day": 0.5,
     "views_available": true,
-    "media_mix": {"webpage": 279, "text": 14, "photo": 6, "poll": 1},
+    "media_mix": {
+      "webpage": 279,
+      "text": 14,
+      "photo": 6,
+      "poll": 1
+    },
     "linked_chat_id": 1498577566,
     "activity_note": "ERR 64% 极高但要谨慎解读：小号 + 长期忠实读者 + link preview 卡片易被点开，中位阅读 1,046 可能超过部分僵尸订阅数。反应功能关闭（reactions=0），互动只看转发"
   },
@@ -47,24 +55,64 @@
     "strategy": "不做增长。纯个人兴趣输出，靠内容偶然被转发（0.95 次/帖）自然沉淀",
     "paid_acquisition": "none",
     "mechanisms": [
-      {"name": "小众刚需（关注该卖家的人）", "evidence": "296 条 qzxx.com 链接 + 个人点评", "note": "服务一个很窄但很粘的圈子"}
+      {
+        "name": "小众刚需（关注该卖家的人）",
+        "evidence": "296 条 qzxx.com 链接 + 个人点评",
+        "note": "服务一个很窄但很粘的圈子"
+      }
     ],
-    "signals": {"subscribers": 1626, "err_pct": 64.3, "forwards_per_post": 0.95, "reactions_total": 0},
+    "signals": {
+      "subscribers": 1626,
+      "err_pct": 64.3,
+      "forwards_per_post": 0.95,
+      "reactions_total": 0
+    },
     "assessment": "没有任何增长杠杆，也不追求。64% ERR 是『极小盘 + 极忠实』的产物，不可与大号的 ERR 直接类比。它证明了另一端：一个真人做一件很窄的事，也能有高粘性的小受众。"
   },
   "cost": {
-    "recurring_cny_month": [0, 30],
-    "onetime_cny": [0, 0],
+    "recurring_cny_month": [
+      0,
+      30
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
     "items": [
-      {"name": "个人时间（手动搬运 + 点评）", "cny_month": [0, 0], "note": "唯一投入是作者的业余时间"},
-      {"name": "服务器/工具", "cny_month": [0, 30], "note": "基本为零，可能纯手发"}
+      {
+        "name": "个人时间（手动搬运 + 点评）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "唯一投入是作者的业余时间"
+      },
+      {
+        "name": "服务器/工具",
+        "cny_month": [
+          0,
+          30
+        ],
+        "note": "基本为零，可能纯手发"
+      }
     ]
   },
   "revenue": {
-    "est_cny_month": [0, 0],
+    "est_cny_month": [
+      0,
+      0
+    ],
     "model": "无变现（个人兴趣号）",
     "streams": [
-      {"name": "无", "evidence": "样本内无广告位、无联盟码、无带货、无付费墙；主动披露与卖家仅为普通客户关系", "cny_month": [0, 0], "confidence": "high"}
+      {
+        "name": "无",
+        "evidence": "样本内无广告位、无联盟码、无带货、无付费墙；主动披露与卖家仅为普通客户关系",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "high"
+      }
     ],
     "note": "既不接广告也不导流变现，是本批里少有的纯非商业号"
   },
@@ -75,9 +123,5 @@
       "潜在小瑕疵：未经授权镜像 qzxx.com 内容有轻微版权/ToS 争议；『人肉 RSS』为自嘲式命名，实际是手动搬运而非侵犯个人信息",
       "已主动披露利益相关，透明度高"
     ]
-  },
-  "takeaways": [
-    {"title": "对照组：无害个人号的样子", "detail": "观察性：主动披露利益相关、指向来源站、零变现、零增长动作——与灰产号的每一项都相反。作为风险光谱的另一端有参照价值。", "applicable": false},
-    {"title": "极小盘的高 ERR 不可类比", "detail": "1,626 粉 / 64% ERR 是小盘+忠实读者的特例，不能和大号 ERR 放一起比。方法论提醒，非可复制手段。", "applicable": false}
-  ]
+  }
 }

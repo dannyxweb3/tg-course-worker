@@ -236,32 +236,5 @@
       "所发 APK 为二手搬运的他人破解件，夹带木马是常态，不要在有数据的机器上安装",
       "互推网络里的伙伴频道含转账模拟器、网络钱包修改等诈骗工具号"
     ]
-  },
-  "takeaways": [
-    {
-      "title": "inline 按钮矩阵",
-      "detail": "每帖固定四件套：主资源 + 搜索更多 + 进群 + 防走丢频道。本项目目前只有单个「获取完整资料」深链按钮，补齐是零成本的留存与抗风险设计。注意这些是 URL 按钮，不吃 callback_data 的 64 字节上限。",
-      "applicable": true
-    },
-    {
-      "title": "发布异步化：先发占位，再 edit 补按钮",
-      "detail": "本项目 app/intake.py 已把 LLM 流水线异步化，发布侧可对齐——app/publisher.py 不必阻塞等待资源就绪。",
-      "applicable": true
-    },
-    {
-      "title": "防走丢备份频道",
-      "detail": "长期运营就该建一个，成本接近零。",
-      "applicable": true
-    },
-    {
-      "title": "prompt 输出改固定字段 schema",
-      "detail": "结构化字段比自由文案好入库、好检索、好去重。config/prompts/_output_format.md 可往这个方向收紧。",
-      "applicable": true
-    },
-    {
-      "title": "互推涨粉",
-      "detail": "反面教材。能把数字堆到 10 万，堆的是 0.5% ERR 的死粉，然后只能接博彩广告才能回本。",
-      "applicable": false
-    }
-  ]
+  }
 }

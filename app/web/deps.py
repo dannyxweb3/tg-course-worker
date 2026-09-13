@@ -119,24 +119,6 @@ templates.env.globals["ASSET_ICON"] = {str(k): k.icon for k in AssetKind}
 templates.env.globals["ASSET_LABEL"] = {str(k): k.label for k in AssetKind}
 
 
-# 报告 JSON 里 implementation 段的字段各频道不尽相同（有的有 button_matrix，
-# 有的有 template_evolution），所以模板按 key 循环渲染，这里只管翻译认识的
-templates.env.globals["REPORT_LABEL"] = {
-    "publish_identity": "发布身份",
-    "post_structure": "帖子结构",
-    "delivery": "投递方式",
-    "delivery_rationale": "投递理由",
-    "button_matrix": "按钮矩阵",
-    "edit_after_publish": "发后编辑",
-    "schedule": "排期",
-    "retention": "历史留存",
-    "growth": "涨粉方式",
-    "growth_note": "涨粉备注",
-    "template_evolution": "模板演进",
-    "third_party": "第三方依赖",
-    "owned_groups": "自有群",
-    "history_note": "历史沿革",
-}
 templates.env.globals["RISK_LABEL"] = {
     "low": "低风险", "medium": "中风险", "high": "高风险", "criminal": "刑事",
 }

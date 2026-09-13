@@ -372,10 +372,9 @@ a.stat.alert b { color: var(--err); }
 .rep-metrics b.good, .stat b.good { color: var(--ok); }
 .rep-metrics b.bad, .stat b.bad { color: var(--err); }
 
-.rep-card dl, dl.kv { margin: 12px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 5px 12px; }
-.rep-card dt, dl.kv dt { font-size: 12px; color: var(--muted); white-space: nowrap; }
-.rep-card dd, dl.kv dd { margin: 0; }
-dl.kv dd { line-height: 1.6; }
+.rep-card dl { margin: 12px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 5px 12px; }
+.rep-card dt { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.rep-card dd { margin: 0; }
 
 /* 横向对比表：第一列是指标名，滚动时钉住 */
 table.cmp th[scope=row] {

@@ -9,9 +9,13 @@
 这么做是因为多个会话会并发往 report/ 里写分析。手工重排 channels 列表
 曾经把别的会话刚写进来的记录挤掉过一次——扫目录生成就不会再有这个问题。
 
-叙事性字段（headline / conclusions / applicable_to_project / not_applicable /
-disclaimer / content_warning / schema_notes）由本脚本里的常量维护，
-改文案改这里；每个频道的数字一律从 `<slug>.json` 读，不在这里重复。
+叙事性字段（headline / conclusions / disclaimer / content_warning /
+schema_notes）由本脚本里的常量维护，改文案改这里；每个频道的数字一律从
+`<slug>.json` 读，不在这里重复。
+
+**报告只做分析，不产出「可借鉴 / 可迁移到本项目」这类结论。**
+曾经有过 applicable_to_project / not_applicable 两个字段和每个频道的
+takeaways，已全部移除，不要再加回来。
 """
 from __future__ import annotations
 
@@ -74,43 +78,6 @@ CONCLUSIONS = [
     "广告注在搜索结果顶部。毛利结构最好，技术门槛在索引。",
     "互推在这个生态里是标准件：soso 有互推产品，极搜自建了 @hutui1bot。"
     "但 syrjfx_sl 的 0.5% ERR 说明互推换来的是死粉。",
-]
-
-APPLICABLE = [
-    {"title": "inline 按钮矩阵", "from": "syrjfx_sl",
-     "detail": "每帖固定四件套：主资源 + 搜索更多 + 进群 + 防走丢频道。本项目目前只有"
-               "单个「获取完整资料」深链按钮。URL 按钮不吃 callback_data 的 64 字节上限。"},
-    {"title": "发布异步化", "from": "syrjfx_sl",
-     "detail": "先发消息占位，资源就绪后 edit 补按钮。app/intake.py 已是异步，"
-               "app/publisher.py 可对齐。"},
-    {"title": "prompt 输出改固定字段 schema", "from": "syrjfx_sl",
-     "detail": "结构化字段好入库、好检索、好去重。可收紧 config/prompts/_output_format.md。"},
-    {"title": "Telegram 当免费 CDN", "from": "lps999",
-     "detail": "102.76 GB、单包最大 2.69 GB 零成本托管。仓库频道可放心扩到大文件。"},
-    {"title": "常驻联盟优于零散卖位", "from": "lps999",
-     "detail": "广告位挂两年，置顶累计 24 万曝光，边际成本为零。"},
-    {"title": "备份频道", "from": "syrjfx_sl",
-     "detail": "「防走丢频道」按钮，长期运营该建一个。"},
-    {"title": "搜索即广告位", "from": "jisou771",
-     "detail": "本项目有素材库和多方向分类，搜索结果页天然是自家资源的推荐位，"
-               "不需要外部广告主也成立。"},
-    {"title": "关键词位的数据结构", "from": "jisou771",
-     "detail": "ad=kw###### 把广告位绑到搜索词上，本质是「用户意图 → 匹配内容」，"
-               "是站内推荐可直接复用的模型。"},
-    {"title": "给 tg_recon.py 补 sender_id", "from": "jisou771",
-     "detail": "_row() 按频道设计，不抓发言人。分析群必须知道 bot 与人的比例，"
-               "建议补 sender_id 与 sender_is_bot。"},
-]
-
-NOT_APPLICABLE = [
-    {"title": "滚动删除历史",
-     "reason": "价值全在降低被举报面。正规内容不需要，可检索的历史存量反而是资产。"},
-    {"title": "互推 / 买粉涨粉",
-     "reason": "堆出来的是死粉，ERR 塌掉之后只剩灰产广告一条变现路。"},
-    {"title": "灰产变现（博彩、成人、社工库、诈骗工具）",
-     "reason": "在中国大陆属刑事范畴，不在本项目的可选集内。"},
-    {"title": "把群简介卖成广告位",
-     "reason": "技术可行，但对正规项目是信任自杀。"},
 ]
 
 DISCLAIMER = (
@@ -244,8 +211,6 @@ def main() -> None:
             "rows": rows,
         },
         "conclusions": CONCLUSIONS,
-        "applicable_to_project": APPLICABLE,
-        "not_applicable": NOT_APPLICABLE,
         "disclaimer": DISCLAIMER,
         "content_warning": CONTENT_WARNING,
     }

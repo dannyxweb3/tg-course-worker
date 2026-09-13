@@ -96,30 +96,6 @@
 </div>
 {% endif %}
 
-{% if idx.applicable_to_project or idx.not_applicable %}
-<h2>对本项目</h2>
-<div class="grid two" style="margin-bottom:24px">
-  <div class="card">
-    <h3><span class="badge ok">可借鉴</span></h3>
-    {% for t in idx.applicable_to_project %}
-      <div class="tk">
-        <b>{{ t.title }}</b> <span class="small muted">来自 {{ t["from"] }}</span>
-        <div class="small">{{ t.detail }}</div>
-      </div>
-    {% endfor %}
-  </div>
-  <div class="card">
-    <h3><span class="badge err">不采用</span></h3>
-    {% for t in idx.not_applicable %}
-      <div class="tk">
-        <b>{{ t.title }}</b>
-        <div class="small">{{ t.reason }}</div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
-{% endif %}
-
 {% if idx.disclaimer %}
   <p class="small muted">{{ idx.disclaimer }}</p>
 {% endif %}

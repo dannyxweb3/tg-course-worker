@@ -210,27 +210,5 @@
       "APK 为重打包件，存在夹带恶意代码的连带责任",
       "已有一次 11095 条的历史清空记录，与遭遇举报压力的模式吻合"
     ]
-  },
-  "takeaways": [
-    {
-      "title": "Telegram 当免费无限 CDN",
-      "detail": "102.76 GB、单包最大 2.69 GB 全部托在 Telegram，零成本。本项目仓库频道发 PDF 已是同一思路，可以放心扩到大文件，不必租对象存储。",
-      "applicable": true
-    },
-    {
-      "title": "常驻联盟优于零散卖广告",
-      "detail": "两个广告位挂了两年，置顶累计 24 万曝光，边际成本为零。",
-      "applicable": true
-    },
-    {
-      "title": "album + document 双消息结构",
-      "detail": "截图帖承载文案与检索命中，文件帖 caption 专放引流 footer，职责分离。",
-      "applicable": true
-    },
-    {
-      "title": "滚动删除",
-      "detail": "价值全在降低被举报面。正规内容不需要，可检索的历史存量反而是资产。",
-      "applicable": false
-    }
-  ]
+  }
 }

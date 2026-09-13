@@ -211,32 +211,5 @@
       "免费机场为抓来的公开节点，稳定性与合规性均无保障",
       "未见境外博彩引流，故未标 criminal；但成人内容传播在中国大陆有刑事风险敞口"
     ]
-  },
-  "takeaways": [
-    {
-      "title": "固定卡图模板 + 14 字一句话",
-      "detail": "产能和辨识度都靠它，值得抄。",
-      "applicable": true
-    },
-    {
-      "title": "频道历史搜索 bot",
-      "detail": "3000 条老内容长尾复活，本项目 items 表天然能做。",
-      "applicable": true
-    },
-    {
-      "title": "免费钩子里塞自有广告位",
-      "detail": "机场节点名当广告位，零边际成本。",
-      "applicable": true
-    },
-    {
-      "title": "按粉丝数给广告定价",
-      "detail": "反面：CPM 定到同类 2-4 倍，卖不动。定价该锚 ERR/真实阅读，不是订阅数。",
-      "applicable": false
-    },
-    {
-      "title": "买粉 / 换量涨粉",
-      "detail": "反面：SOSO autopromo 换来的低质粉不读内容，把 ERR 一路拉到 1.6%，饮鸩止渴。",
-      "applicable": false
-    }
-  ]
+  }
 }

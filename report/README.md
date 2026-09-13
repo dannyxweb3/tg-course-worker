@@ -24,9 +24,12 @@ conda run -n tg-course-worker python report/build_index.py
 ```
 
 它扫目录重建 `channels` 和 `comparison`，每个频道的数字全部从
-`<slug>.json` 读。叙事性字段（headline / conclusions /
-applicable_to_project / not_applicable / disclaimer / content_warning）
-是脚本里的常量，改文案改脚本。
+`<slug>.json` 读。叙事性字段（headline / conclusions / disclaimer /
+content_warning / schema_notes）是脚本里的常量，改文案改脚本。
+
+**报告只做分析，不产出「可借鉴 / 可迁移到本项目」这类结论。**
+曾经有过 `applicable_to_project` / `not_applicable` 两个索引字段和每条
+记录的 `takeaways`，已全部移除，写新报告时不要再加。
 
 **为什么非要有这个脚本**：多个会话会并发往 `report/` 里写分析。
 手工重排 `channels` 列表曾经把别的会话刚写进来的三条记录挤掉过一次。

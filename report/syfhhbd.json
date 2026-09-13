@@ -14,7 +14,10 @@
     "script": "scripts/tg_recon.py",
     "dump": null,
     "sample_size": 262,
-    "sample_range": ["2026-05-18", "2026-09-12"],
+    "sample_range": [
+      "2026-05-18",
+      "2026-09-12"
+    ],
     "note": "仅保留聚合指标；原始内容含性交易招揽与从业者人身识别信息（照片/化名/价位），未长期落地存储，dump 已删。正文、化名、价位、联系方式一律不收录"
   },
   "metrics": {
@@ -32,7 +35,11 @@
     "er_pct": 2.86,
     "posts_per_day": 2.2,
     "views_available": true,
-    "media_mix": {"photo": 209, "document": 51, "text": 2},
+    "media_mix": {
+      "photo": 209,
+      "document": 51,
+      "text": 2
+    },
     "linked_chat_id": 3959644988,
     "activity_note": "ER 2.86%、转发/帖约 95 是全样本最高的自然扩散。招嫖对目标用户是高价值刚需信息，愿意转发与收藏"
   },
@@ -49,30 +56,106 @@
     "strategy": "内容即刚需，靠自然转发扩散 + 讨论群沉淀 + 极搜网络收录被搜到",
     "paid_acquisition": "none",
     "mechanisms": [
-      {"name": "自然转发", "evidence": "转发总数 24,993、单帖最高 1,443、ER 2.86%", "note": "目标用户主动转发收藏，是最强增长源"},
-      {"name": "讨论群沉淀", "evidence": "linked group @syfhh666", "note": "把看客转成可成交的私域"},
-      {"name": "极搜网络收录", "evidence": "消息挂「极搜🔍资源搜索」按钮", "note": "被搜「沈阳」等词的人找到"}
+      {
+        "name": "自然转发",
+        "evidence": "转发总数 24,993、单帖最高 1,443、ER 2.86%",
+        "note": "目标用户主动转发收藏，是最强增长源"
+      },
+      {
+        "name": "讨论群沉淀",
+        "evidence": "linked group @syfhh666",
+        "note": "把看客转成可成交的私域"
+      },
+      {
+        "name": "极搜网络收录",
+        "evidence": "消息挂「极搜🔍资源搜索」按钮",
+        "note": "被搜「沈阳」等词的人找到"
+      }
     ],
-    "signals": {"subscribers": 8250, "err_pct": 21.2, "er_pct": 2.86, "forwards_per_post": 95.4},
+    "signals": {
+      "subscribers": 8250,
+      "err_pct": 21.2,
+      "er_pct": 2.86,
+      "forwards_per_post": 95.4
+    },
     "assessment": "21% ERR + 2.86% ER + 95 次/帖转发，是真实且高粘性的受众——不需要买粉。增长健康度在全样本里最好，但这份「健康」建立在一门刑事犯罪上。"
   },
   "cost": {
-    "recurring_cny_month": [200, 1500],
-    "onetime_cny": [0, 0],
+    "recurring_cny_month": [
+      200,
+      1500
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
     "items": [
-      {"name": "内容采集/探店（人力或从下游收集）", "cny_month": [0, 1000], "note": "主要是人力/关系成本"},
-      {"name": "频道 + 讨论群管理 bot / VPS", "cny_month": [100, 300]},
-      {"name": "极搜收录 / 导流", "cny_month": [0, 200]},
-      {"name": "LLM / 内容生产", "cny_month": [0, 0], "note": "不需要"}
+      {
+        "name": "内容采集/探店（人力或从下游收集）",
+        "cny_month": [
+          0,
+          1000
+        ],
+        "note": "主要是人力/关系成本"
+      },
+      {
+        "name": "频道 + 讨论群管理 bot / VPS",
+        "cny_month": [
+          100,
+          300
+        ]
+      },
+      {
+        "name": "极搜收录 / 导流",
+        "cny_month": [
+          0,
+          200
+        ]
+      },
+      {
+        "name": "LLM / 内容生产",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "不需要"
+      }
     ]
   },
   "revenue": {
-    "est_cny_month": [8000, 40000],
+    "est_cny_month": [
+      8000,
+      40000
+    ],
     "model": "招嫖引流佣金 + 榜单/置顶位收费 + 会员",
     "streams": [
-      {"name": "上榜/置顶费（从业者或场所付费上「已探」榜）", "evidence": "简介强调「只上榜优质资源」，本质是付费排序", "cny_month": [4000, 20000], "confidence": "medium"},
-      {"name": "预约成交佣金", "evidence": "讨论群+私聊承接预约", "cny_month": [3000, 15000], "confidence": "low"},
-      {"name": "会员/内部群", "evidence": "常见于此类号的付费深度内容", "cny_month": [1000, 5000], "confidence": "low"}
+      {
+        "name": "上榜/置顶费（从业者或场所付费上「已探」榜）",
+        "evidence": "简介强调「只上榜优质资源」，本质是付费排序",
+        "cny_month": [
+          4000,
+          20000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "预约成交佣金",
+        "evidence": "讨论群+私聊承接预约",
+        "cny_month": [
+          3000,
+          15000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "会员/内部群",
+        "evidence": "常见于此类号的付费深度内容",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      }
     ],
     "note": "变现全部走群与私聊，频道不留痕。区间基于 8k 高粘性本地受众的行业惯例估算，非实测"
   },
@@ -85,9 +168,5 @@
       "接入极搜网络扩大触达，构成引流协作",
       "报告刻意不收录任何照片、化名、价位、联系方式与成交入口"
     ]
-  },
-  "takeaways": [
-    {"title": "刚需内容的自然转发天花板最高", "detail": "观察性结论：对目标用户是刚需的信息（此处是招嫖测评），ER/转发远超任何搬运号。这解释了为何它不用买粉。纯观察，内容本身是犯罪，不含可迁移方法。", "applicable": false},
-    {"title": "「测评可信度」作差异化", "detail": "同类号泛滥时，以「真实已探/打假」立信任是其增长点。观察性，不适用于本项目。", "applicable": false}
-  ]
+  }
 }

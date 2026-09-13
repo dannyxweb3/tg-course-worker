@@ -130,6 +130,40 @@ def render_markdown(text: str) -> str:
     return sanitize(markdown.markdown(text, extensions=MD_EXTENSIONS))
 
 
+# ---------------------------------------------------------------- 正文过滤
+
+_MD_HEADING = re.compile(r"^(#{1,6})\s+(.*)$")
+
+
+def strip_project_sections(text: str) -> str:
+    """去掉正文里「可迁移到本项目的」这类小节。
+
+    报告是竞品的调研记录，怎么套用到自己身上是另一件事，不在这里展示。
+    按标题层级裁剪：命中的标题到下一个同级或更高级标题之间整段丢掉。
+
+    围栏代码块里 `# 注释` 这种行长得和标题一模一样，所以要跟着 ``` 记状态，
+    否则会把代码块从中间劈开。
+    """
+    out: list[str] = []
+    skip_level = 0
+    in_fence = False
+    for line in text.splitlines(keepends=True):
+        if line.lstrip().startswith("```"):
+            in_fence = not in_fence
+        elif not in_fence:
+            m = _MD_HEADING.match(line)
+            if m:
+                level = len(m.group(1))
+                if skip_level and level <= skip_level:
+                    skip_level = 0
+                if not skip_level and "本项目" in m.group(2):
+                    skip_level = level
+                    continue
+        if not skip_level:
+            out.append(line)
+    return "".join(out)
+
+
 # ---------------------------------------------------------------- 读盘
 
 # 文件是静态的，但开发时会改。按 mtime 做缓存，改完刷新页面就生效，不用重启。
@@ -186,5 +220,8 @@ def detail(slug: str) -> tuple[dict[str, Any], str] | None:
         # JSON 没了还能看正文，反过来也一样，不要一起垮
         data = {}
 
-    body = _read(REPORT_DIR / f"{slug}.md", render_markdown) or ""
+    body = _read(
+        REPORT_DIR / f"{slug}.md",
+        lambda t: render_markdown(strip_project_sections(t)),
+    ) or ""
     return {**entry, **data}, body

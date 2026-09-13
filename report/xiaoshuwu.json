@@ -202,32 +202,5 @@
       "每天分发受版权保护的音乐文件，是最直接的封号面",
       "24h 自毁广告位专为降低被举报面设计"
     ]
-  },
-  "takeaways": [
-    {
-      "title": "发布后 N 小时自动删除（仅对广告位）",
-      "detail": "这是它整个模式的技术支点：广告卖出去了，但历史干净、ERR 不被拖垮。本项目 queue/published 表加一个 auto_delete_after 字段即可支持，app/scheduler.py 起一个删除 job。",
-      "applicable": true
-    },
-    {
-      "title": "变现与内容物理隔离",
-      "detail": "内容区一条返利链接都没有，这才是 9% ERR 的来源（对照 xph_fx 到处塞 aff、ERR 1.6%）。本项目应把「配套资料深链」和「广告位」建成两类不同的 item，别混在一条发布流里。",
-      "applicable": true
-    },
-    {
-      "title": "留一个人工位做人格化",
-      "detail": "真人碎念帖反应率是 LLM 资源卡的 2 倍。本项目全是 LLM 生成的工具卡，缺「人」——每周几条真人碎念成本极低，却是 ERR 的锚。",
-      "applicable": true
-    },
-    {
-      "title": "固定字段模板 + 手写点评",
-      "detail": "✅标题 + 🏷标签 + 🟢项目 + 一段点评 的结构既好检索又有辨识度，比纯 LLM 罗列高一档。",
-      "applicable": true
-    },
-    {
-      "title": "接博彩变现",
-      "detail": "反面：单坑位收入高，但这是它风险等级 criminal 的根源，不在本项目可选集内。",
-      "applicable": false
-    }
-  ]
+  }
 }

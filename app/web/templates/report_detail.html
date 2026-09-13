@@ -85,47 +85,10 @@
   {% endif %}
 </div>
 
-{% if data.implementation %}
-<h2>实现方式</h2>
-<div class="card" style="margin-bottom:24px">
-  <dl class="kv">
-    {% for k, v in data.implementation.items() %}
-      <dt>{{ REPORT_LABEL.get(k, k) }}</dt>
-      <dd>
-        {% if v is string %}{{ v }}
-        {% elif v is mapping %}{{ v|tojson }}
-        {% elif v is iterable %}
-          {% for row in v %}
-            {% if row is mapping %}
-              <div>{{ row.title or row.name or '' }}
-                {%- if row.members %} · {{ row.members|num }} 人{% endif %}
-                {%- if row.online %} / {{ row.online|num }} 在线{% endif %}</div>
-            {% else %}<div>{{ row }}</div>{% endif %}
-          {% endfor %}
-        {% else %}{{ v }}{% endif %}
-      </dd>
-    {% endfor %}
-  </dl>
-</div>
-{% endif %}
-
 {% if data.risk and data.risk.notes %}
 <h2>风险</h2>
 <div class="card risk-card" style="margin-bottom:24px">
   <ul class="spaced">{% for n in data.risk.notes %}<li>{{ n }}</li>{% endfor %}</ul>
-</div>
-{% endif %}
-
-{% if data.takeaways %}
-<h2>可带走的东西</h2>
-<div class="card" style="margin-bottom:24px">
-  {% for t in data.takeaways %}
-    <div class="tk">
-      <b>{{ t.title }}</b>
-      <span class="badge {{ 'ok' if t.applicable else 'err' }}">{{ '可借鉴' if t.applicable else '不采用' }}</span>
-      <div class="small">{{ t.detail }}</div>
-    </div>
-  {% endfor %}
 </div>
 {% endif %}
 

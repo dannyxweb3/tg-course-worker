@@ -14,7 +14,10 @@
     "script": "scripts/tg_recon.py",
     "dump": "data/recon/dajian910.jsonl",
     "sample_size": 56,
-    "sample_range": ["2024-11-30", "2025-06-22"],
+    "sample_range": [
+      "2024-11-30",
+      "2025-06-22"
+    ],
     "note": "频道现存消息总数就是 56 条，全部抓到；最后更新停在 2025-06，可能已转到私聊/换号经营"
   },
   "metrics": {
@@ -31,16 +34,30 @@
     "forwards_per_post": 0.4,
     "posts_per_day": 0.3,
     "views_available": true,
-    "id_span_sampled": [1, 80],
+    "id_span_sampled": [
+      1,
+      80
+    ],
     "surviving_messages": 56,
-    "media_mix": {"photo": 55, "text": 1}
+    "media_mix": {
+      "photo": 55,
+      "text": 1
+    }
   },
   "implementation": {
     "publish_identity": "bot_or_user",
     "post_structure": "图片海报 + 服务清单文案：业务（定制/部署/搭建/二开/仿站/源码出售/包网代理/商店上架）× 项目（交易所/资金盘/刷单/贷款/博彩/CVV钓鱼/远控/外汇）× 可租人员（前后端/美工/运维/架构师）",
     "delivery": "不在频道成交，频道只是橱窗；成交走私聊 @dajan91 与自有站点 91daj.com / chat.91daj.com（即时通讯五端合一源码演示）",
     "escrow": "标题挂「支持担保」——用第三方担保人做黑产交易背书，是这类服务商拉信任的标准做法",
-    "product_lines": ["资金盘/投资理财盘（带分红/团队/签到）", "博彩包网与代理", "交易所/商城仿站", "刷单系统", "CVV 钓鱼 / 远控（明列于业务清单）", "AI 数字人直播卖货系统", "谷歌/苹果商店马甲包上架"],
+    "product_lines": [
+      "资金盘/投资理财盘（带分红/团队/签到）",
+      "博彩包网与代理",
+      "交易所/商城仿站",
+      "刷单系统",
+      "CVV 钓鱼 / 远控（明列于业务清单）",
+      "AI 数字人直播卖货系统",
+      "谷歌/苹果商店马甲包上架"
+    ],
     "schedule": "低频，0.3 条/天；发布时刻散在 14 点与 23 点两簇，人工手发",
     "note": "本质是接单式软件外包，只不过承接的是犯罪基础设施"
   },
@@ -48,28 +65,92 @@
     "strategy": "B2B 定向获客，不追粉丝规模。标题堆满关键词（91程序/SEO搜索排名/交易所/商城/机器人开发）本身就是获客手段——靠 TG 内搜索与 SEO 被找犯罪工具的同行搜到",
     "paid_acquisition": "none",
     "mechanisms": [
-      {"name": "关键词 SEO", "evidence": "频道名与简介堆满业务关键词；自称提供「SEO搜索排名」服务", "note": "既是卖点也是自我获客方式"},
-      {"name": "担保背书", "evidence": "标题「支持担保」", "note": "降低黑产交易的信任门槛"}
+      {
+        "name": "关键词 SEO",
+        "evidence": "频道名与简介堆满业务关键词；自称提供「SEO搜索排名」服务",
+        "note": "既是卖点也是自我获客方式"
+      },
+      {
+        "name": "担保背书",
+        "evidence": "标题「支持担保」",
+        "note": "降低黑产交易的信任门槛"
+      }
     ],
-    "signals": {"subscribers": 1434, "err_pct": 24.1, "forwards_per_post": 0.4},
+    "signals": {
+      "subscribers": 1434,
+      "err_pct": 24.1,
+      "forwards_per_post": 0.4
+    },
     "assessment": "1,434 订阅极小，但 24% ERR 说明关注者是精准的 B2B 买家（同行/下游诈骗团伙），不是路人。这类号不需要大流量，成交一单定制可能就是数千到数万元。"
   },
   "cost": {
-    "recurring_cny_month": [3000, 30000],
-    "onetime_cny": [0, 0],
+    "recurring_cny_month": [
+      3000,
+      30000
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
     "items": [
-      {"name": "开发团队人力（前后端/美工/运维，接单式）", "cny_month": [3000, 30000], "note": "唯一实质成本，随接单量浮动"},
-      {"name": "演示站点 + 服务器（91daj.com 等）", "cny_month": [100, 500]},
-      {"name": "TG 频道/私聊获客", "cny_month": [0, 0]}
+      {
+        "name": "开发团队人力（前后端/美工/运维，接单式）",
+        "cny_month": [
+          3000,
+          30000
+        ],
+        "note": "唯一实质成本，随接单量浮动"
+      },
+      {
+        "name": "演示站点 + 服务器（91daj.com 等）",
+        "cny_month": [
+          100,
+          500
+        ]
+      },
+      {
+        "name": "TG 频道/私聊获客",
+        "cny_month": [
+          0,
+          0
+        ]
+      }
     ]
   },
   "revenue": {
-    "est_cny_month": [5000, 50000],
+    "est_cny_month": [
+      5000,
+      50000
+    ],
     "model": "犯罪软件定制开发/部署接单 + 源码出售 + 代理分成",
     "streams": [
-      {"name": "资金盘/博彩/交易所系统定制与部署", "evidence": "服务清单明列，附私有部署/源码出售/仿站二开", "cny_month": [3000, 30000], "confidence": "medium"},
-      {"name": "源码出售 / 马甲包上架 / AI 数字人系统", "evidence": "文案列出成品项目", "cny_month": [1000, 10000], "confidence": "low"},
-      {"name": "包网代理分成", "evidence": "「包网代理/合作」", "cny_month": [1000, 10000], "confidence": "low"}
+      {
+        "name": "资金盘/博彩/交易所系统定制与部署",
+        "evidence": "服务清单明列，附私有部署/源码出售/仿站二开",
+        "cny_month": [
+          3000,
+          30000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "源码出售 / 马甲包上架 / AI 数字人系统",
+        "evidence": "文案列出成品项目",
+        "cny_month": [
+          1000,
+          10000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "包网代理分成",
+        "evidence": "「包网代理/合作」",
+        "cny_month": [
+          1000,
+          10000
+        ],
+        "confidence": "low"
+      }
     ],
     "note": "区间极宽：单个定制项目报价从几千到几万不等，成交完全不可见。频道只是获客橱窗，真实流水在私聊与担保交易里"
   },
@@ -82,9 +163,5 @@
       "刷单系统、马甲包上架 = 诈骗与平台欺诈的配套工具",
       "整体属为电信网络诈骗与网络赌博提供技术支持，帮信罪乃至各上游罪名共犯，是本批样本里主动提供犯罪工具的一类，性质最主动"
     ]
-  },
-  "takeaways": [
-    {"title": "黑产也有 B2B 外包层", "detail": "观察性结论：诈骗/赌博/传销的技术设施由这种明码标价的接单服务商供应，橱窗在 TG、成交在私聊+担保。属生态认知，不含任何可复制方法。", "applicable": false},
-    {"title": "小号高 ERR 也可以是精准 B2B", "detail": "1,434 粉 / 24% ERR 说明受众极精准。这是观察，不建议也不可用于本项目。", "applicable": false}
-  ]
+  }
 }
