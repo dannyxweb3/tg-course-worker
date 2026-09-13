@@ -1,0 +1,109 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "EmbyPublic",
+  "username": "EmbyPublic",
+  "url": "https://t.me/EmbyPublic",
+  "title": "Emby 公益服交流",
+  "category": "Emby 影视服务器(公益服)分享群",
+  "growth_short": "影视服刚需",
+  "one_liner": "5.5万成员的Emby公益服交流群:围绕私有Emby影视服务器的注册/分享/互助(230条/天),本质是盗版影视流媒体服务的用户社区,属侵权灰产。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/EmbyPublic.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "群无per-message阅读;online未取"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 54511,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读",
+    "messages_per_day": 230.2,
+    "deleted_ratio_pct": 52.9,
+    "activity_note": "230条/天高活跃;围绕Emby影视服的注册/求码/互助"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "Emby 影视服务器的注册/开抢/求码/问答,配 embywiki;成员讨论各家公益服",
+    "ad_injection": "少量机场/付费服广告",
+    "delivery": "影视服信息交流,不直接分发影片(影片在Emby服上)",
+    "schedule": "全天候高活跃"
+  },
+  "growth": {
+    "strategy": "免费/公益影视服刚需",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "影视服刚需",
+        "evidence": "230条/天、embywiki",
+        "note": "白嫖高清影视库的强需求"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 230.2
+    },
+    "assessment": "围绕私有Emby影视服务器(存海量盗版影视)的用户社区。公益服免费、付费服收费。本质是盗版流媒体服务的分发/互助层。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理/wiki/bot",
+        "cny_month": [
+          0,
+          200
+        ],
+        "note": "影视服本身成本在服主,不在本群"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      5000
+    ],
+    "est_scope": "群本体(不含各Emby服)",
+    "model": "付费服导流/群广告",
+    "streams": [
+      {
+        "name": "付费Emby服导流/广告",
+        "evidence": "付费4、机场1",
+        "cny_month": [
+          0,
+          5000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "群本体变现有限,盗版影视的钱在各Emby服主手里"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "Emby公益/付费服存储分发海量盗版影视,侵犯著作权;本群是其用户社区/导流层",
+      "付费Emby服属盗版流媒体收费;未见博彩/成人,取其盗版性质标 high"
+    ]
+  }
+}

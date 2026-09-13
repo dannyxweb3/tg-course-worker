@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "TG_book_data",
   "username": "TG_book_data",
@@ -7,7 +8,7 @@
   "title": "Telegram数字图书馆",
   "category": "电子书直传库（epub/mobi/azw3 三格式）",
   "growth_short": "电子书刚需自然转发",
-  "one_liner": "3 万订阅的电子书库：每本书直传 Telegram 且三格式齐全（epub+mobi+azw3），不导外链、Telegram 当免费 CDN，深夜批量发布，ERR 13.7%。",
+  "one_liner": "深夜批量投放的盗版电子书库:94% 的消息在 10 秒内连发、间隔中位 1 秒,集中在 22 点到凌晨 1 点。每本书同时提供 epub/mobi/azw3 三格式(74/73/73 几乎一一对应),给不同阅读器全覆盖。反应总数仅 195(ER 0.01%),几乎无人互动。",
   "analyzed_at": "2026-09-13T13:45:00Z",
   "source": {
     "method": "telethon",
@@ -27,13 +28,13 @@
     "mean_views": 6153,
     "p10_views": 3219,
     "p90_views": 11919,
-    "err_pct": 13.7,
+    "err_pct": 13.69,
     "mature_posts": 299,
     "reactions_total": 195,
     "forwards_total": 2101,
     "forwards_per_post": 7.0,
     "er_pct": 0.01,
-    "posts_per_day": 0.8,
+    "posts_per_day": 0.83,
     "views_available": true,
     "media_mix": {
       "document": 220,
@@ -47,65 +48,97 @@
       "mobi": 73,
       "azw3": 73
     },
-    "activity_note": "ERR 13.7%；三格式齐全是它的差异点，覆盖不同阅读器用户"
+    "activity_note": "p90 阅读 11,919 是中位的 2.9 倍,套装书(如西方学术经典译丛 69 册)能爆到 4 万以上而普通单本三四千。ER 0.01% 是本轮最低区间——电子书是『下载完就走』的极致,比工具类更冷(对照 xyxyspace 0.18%、AWAvenue 0.34%)。",
+    "forwards_median": 6,
+    "files": 220,
+    "files_gb": 1.81
   },
   "implementation": {
     "publish_identity": "bot",
-    "post_structure": "书封 + 书名/简介 + 直接附电子书文件(epub/mobi/azw3 三格式);标签 #小说 #历史 #计算机 #编程 #科普",
-    "delivery": "电子书文件直传 Telegram(免费 CDN)，不导外链、不走网盘;三格式覆盖 Kindle/多阅读器",
-    "schedule": "约 0.8 条/天，深夜 22-00 点批量",
+    "post_structure": "正文中位 0 字(书名与简介在图片里或由文件名承载),220 条带文件 + 80 条带图。本报告对具体书目的判断因此受限。",
+    "delivery": "文件直接托管在 Telegram(1.81GB),不走网盘——这意味着没有网盘拉新返利这条常见变现路径。t.me 链接仅 4 次,全部指向 jisou2(极搜 bot,带 ?start=)。无自有站、无网盘、无自有 bot、无矩阵。",
+    "schedule": "深夜批量:23 点 136 条、22 点 67、0 点 45、1 点 24,间隔中位 1 秒、<10 秒占 94%(本轮批量程度最高之一)。分钟聚集在 :51/:03/:07,是同一批次三个格式连发形成的。深夜投放既避开白天举报高峰,也符合『整理好一批一次推完』的习惯。",
     "retention": "约 25% 滚动删除",
-    "growth": "电子书刚需 + 三格式差异化"
+    "growth": "电子书刚需 + 三格式差异化",
+    "ad_injection": "几乎没有:变现词频合计仅 7 次(投放 2、激活 2、广告 1、合作 1、联系 1),0 条招商帖。",
+    "curation": "三格式全覆盖:epub 74 / mobi 73 / azw3 73 几乎一一对应,同一本书同时打包成三种格式(epub 通用、mobi 老 Kindle、azw3 新 Kindle),把格式适配替用户做完。选品偏严肃阅读:#小说 31、#历史 9、#计算机 8、#编程 8、#思想 4、#理想国 3,可见《西方学术经典译丛 69 册》《C++ Primer Plus》等——与 KaiPanshare(主打成功学/心理自助)形成选品档次的明显对照。"
   },
   "growth": {
-    "strategy": "电子书刚需 + 三格式齐全的差异化，自然转发",
+    "strategy": "三格式差异化 + 严肃书目选品的自然沉淀",
     "paid_acquisition": "none",
     "mechanisms": [
       {
-        "name": "三格式齐全",
-        "evidence": "epub/mobi/azw3 各约 73",
-        "note": "覆盖 Kindle 等不同阅读器，差异化留存"
+        "name": "三格式全覆盖",
+        "evidence": "epub/mobi/azw3 各 73-74",
+        "note": "省去用户自己转格式的麻烦,是差异化"
       },
       {
-        "name": "刚需转发",
-        "evidence": "转发 7/帖",
-        "note": "电子书刚需"
+        "name": "严肃书目选品",
+        "evidence": "#历史/#计算机/#思想/#理想国",
+        "note": "吸引真正读书的受众而非网文党"
+      },
+      {
+        "name": "套装书爆款",
+        "evidence": "西方学术经典译丛 69 册等,p90 阅读 11,919",
+        "note": "大部头合集是转发点"
+      },
+      {
+        "name": "无外部手段",
+        "evidence": "无互推、无买粉、无 bot 矩阵",
+        "note": "完全自然"
       }
     ],
     "signals": {
       "subscribers": 30460,
-      "err_pct": 13.7,
+      "err_pct": 13.69,
       "forwards_per_post": 7.0
     },
-    "assessment": "3 万订阅的电子书直传库。差异点是三格式齐全 + 直传(不折腾网盘)。变现信号弱，更像资源积累型号。"
+    "assessment": "阅读按帖龄分桶显示 56-63 天龄的 296 条中位 4,185,与整体一致,无明显衰减。"
   },
   "cost": {
     "recurring_cny_month": [
-      30,
-      200
+      0,
+      50
     ],
     "onetime_cny": [
       0,
-      0
+      1000
     ],
     "items": [
       {
-        "name": "发布 bot + VPS",
-        "cny_month": [
-          30,
-          150
-        ]
+        "name": "【启动】电子书库来源",
+        "cny_onetime": [
+          0,
+          500
+        ],
+        "note": "从现成盗版书库批量获取"
       },
       {
-        "name": "电子书文件",
+        "name": "【启动】格式转换与批量上传脚本",
+        "cny_onetime": [
+          0,
+          500
+        ],
+        "note": "Calibre 可批量转 epub/mobi/azw3"
+      },
+      {
+        "name": "选书 + 三格式转换 + 上传",
         "cny_month": [
           0,
           0
         ],
-        "note": "搬运各书站，Telegram 直传零带宽"
+        "note": "10-25 小时/月,高度可批处理"
       },
       {
-        "name": "运营时间（找书+转格式+发布，约 15-30 小时/月）",
+        "name": "存储与分发",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "1.81GB 全部由 TG 托管"
+      },
+      {
+        "name": "VPS",
         "cny_month": [
           0,
           50
@@ -116,28 +149,53 @@
   "revenue": {
     "est_cny_month": [
       0,
-      3000
+      2500
     ],
-    "model": "变现信号弱（可能搜索 bot/会员/软广）",
+    "model": "几乎不变现",
     "streams": [
       {
-        "name": "搜索 bot/会员 或 软广",
-        "evidence": "公开频道无联盟/网盘链接，变现不明",
+        "name": "极搜 bot 推广分成",
+        "evidence": "t.me/jisou2?start= 4 次",
         "cny_month": [
           0,
-          3000
+          500
         ],
         "confidence": "low"
+      },
+      {
+        "name": "广告位",
+        "evidence": "广告 1、投放 2;0 条招商帖",
+        "cny_month": [
+          0,
+          2000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "网盘拉新",
+        "evidence": "无网盘链接",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "high"
       }
     ],
-    "note": "样本内无外链、无广告位，变现意图弱;可能靠未观测到的搜索 bot 或会员，或纯积累"
+    "note": "3 万订阅、4,171 中位阅读,按 CPM ¥30-80 折算潜在广告价值 ¥3,100-8,300/月,基本未兑现。与 KaiPanshare 的对照:同为盗版电子书号,KaiPanshare 三网盘并行主推夸克拉新(估 ¥1,000-6,000/月),而它直接把文件挂 TG、几乎不接变现——前者是生意,后者更像爱好。",
+    "est_scope": "本频道",
+    "potential_ad_value_cny_month": [
+      3100,
+      8300
+    ]
   },
   "risk": {
     "level": "high",
     "notes": [
-      "系统性分发盗版电子书(直传文件)，侵犯著作权",
-      "三格式重打包无恶意但仍属侵权",
-      "无成人/博彩/诈骗要素，属侵犯知识产权类"
+      "未经授权分发商业出版物电子版是全部主业,220 个文件覆盖人文社科、技术书与套装丛书,涉《刑法》217 条与《著作权法》53 条",
+      "套装丛书的批量分发情节较重——单条即涉及数十本书的权利人(如《西方学术经典译丛》69 册)",
+      "文件直接托管在 Telegram 而非网盘,绕开网盘投诉下架机制,但也使 Telegram 成为唯一追责入口",
+      "【减轻情节】几乎不变现,缺少『以营利为目的』这一要件的直接证据(但侵犯著作权罪并非全部情形都以营利为要件)",
+      "【无】样本内无成人、无博彩、无诈骗、无翻墙分销,故不判 criminal"
     ]
   }
 }

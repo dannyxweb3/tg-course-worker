@@ -1,0 +1,174 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "gitbig",
+  "username": "gitbig",
+  "url": "https://t.me/gitbig",
+  "title": "胖虎の收藏夹",
+  "category": "盗版软件/破解应用分发（IPA/APK/PC）",
+  "growth_short": "刚需破解资源自然扩散",
+  "one_liner": "8.76万订阅的破解软件大号：直接把 apk/ipa/rar 挂在消息上（样本 29GB），靠『解锁/会员/破解』刚需驱动，转发中位 17、ERR 10.9%，变现走机场分销+抽奖+置顶广告。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/gitbig.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-10-14",
+      "2026-09-12"
+    ],
+    "note": "跨度 333 天、0.9 条/天；id 缺口 85.2%，疑似广告/附属消息定期清理"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 87600,
+    "median_views": 9562,
+    "mean_views": 11172,
+    "p10_views": 7810,
+    "p90_views": 14884,
+    "err_pct": 10.9,
+    "mature_posts": 287,
+    "reactions_total": 802,
+    "forwards_total": 8286,
+    "forwards_per_post": 27.6,
+    "forwards_median": 17.0,
+    "er_pct": 0.02,
+    "posts_per_day": 0.9,
+    "views_available": true,
+    "media_mix": {
+      "document": 255,
+      "photo": 44
+    },
+    "files": 252,
+    "files_gb": 29.01,
+    "file_ext": {
+      "rar": 104,
+      "apk": 94,
+      "ipa": 44,
+      "flac": 7,
+      "mp4": 2
+    },
+    "deleted_pct": 85.2,
+    "activity_note": "转发/帖 27.6 高，因为破解资源是刚需、值得存转；但 ER(反应/阅读)仅 0.02%，是搬运号典型——用户拿了就走，不社交"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "模板：`App名_版本_平台破解版｜一句卖点` + 系统/类型/特点三栏 + 简介 + 标签(#Android #ipa #Windows*) + 附件。附件直接是安装包，不外链网盘",
+    "delivery": "文件挂在 Telegram 消息上，走 TG CDN 分发；少量指向 apps.apple.com(原价页)、github、nikeios.cc(iOS 签名)",
+    "curation": "批量搬运破解站/砸壳源，非原创；穿插 Instagram/YT 下载 bot 汇总、Ventoy 等开源工具做泛用钩子",
+    "schedule": "0.9 条/天，集中在 10-15 点(工作时段)，非精确定时",
+    "note": "标题含『胖虎』品牌，与 xph_fx(徐胖虎资源社) 疑同源或同名蹭牌，样本内未见直接互链，存疑"
+  },
+  "growth": {
+    "strategy": "破解/解锁刚需内容自然扩散 + 转发裂变",
+    "paid_acquisition": "unknown",
+    "mechanisms": [
+      {
+        "name": "刚需破解资源",
+        "evidence": "解锁 133 次、会员 32 次、破解出现在标题",
+        "note": "付费 App 破解是最强搜索需求"
+      },
+      {
+        "name": "转发裂变",
+        "evidence": "转发中位 17、总 8286",
+        "note": "资源值得存转，自然带新"
+      },
+      {
+        "name": "抽奖活动",
+        "evidence": "抽奖标签 20 次",
+        "note": "用抽奖拉互动/涨粉"
+      }
+    ],
+    "signals": {
+      "subscribers": 87600,
+      "err_pct": 10.9,
+      "forwards_per_post": 27.6
+    },
+    "assessment": "10.9% ERR 对 8.76万大盘算健康，靠的是破解资源刚需而非买粉。ER 极低说明是工具型受众。id 缺口 85% 指向广告位定期自毁(与 xiaoshuwu 同套路)。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间投入(搬运/打包/上传，日更约1-2h)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约 30-60 小时/月，主要是人力"
+      },
+      {
+        "name": "存储与分发",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "文件与 CDN 由 Telegram 承担，上传时付一次自己带宽"
+      },
+      {
+        "name": "iOS 签名/证书(若自签 ipa)",
+        "cny_month": [
+          30,
+          300
+        ],
+        "note": "企业证书或个人签名服务"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "机场分销 + 置顶广告位 + 抽奖导流",
+    "streams": [
+      {
+        "name": "机场/VPN 分销(带邀请码)",
+        "evidence": "机场/节点各 6 次、优惠码/aff 出现",
+        "cny_month": [
+          1000,
+          6000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "置顶/常驻广告位(疑似自毁广告解释 85% id 缺口)",
+        "evidence": "广告 50 次、投放/推广/商务",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "抽奖/引流分成",
+        "evidence": "抽奖 20 次",
+        "cny_month": [
+          200,
+          1000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "8.76万大盘 + 破解刚需，广告价值不低；但变现被广告自毁隐藏，区间偏估算"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "盗版分发为主业：iOS 砸壳 ipa + 安卓破解 apk，直接侵犯著作权",
+      "重打包的破解件有夹带恶意代码的连带风险",
+      "分发 flac 音乐文件涉音乐版权",
+      "机场/节点分销合规性无保障；未见境外博彩，故未标 criminal"
+    ]
+  }
+}

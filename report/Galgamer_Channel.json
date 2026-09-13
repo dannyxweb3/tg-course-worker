@@ -1,0 +1,143 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "Galgamer_Channel",
+  "username": "Galgamer_Channel",
+  "url": "https://t.me/Galgamer_Channel",
+  "title": "Galgame 频道",
+  "category": "Galgame 汉化补丁/资讯（自有汉化组+盗版分发）",
+  "growth_short": "汉化组口碑+粉丝转发",
+  "one_liner": "5.5万订阅的 Galgame 汉化与资讯号：自组大学生汉化团队做补丁、配 galgamer.moe 站点，ERR 42.7%、reactions 1.27万，是硬核粉丝社群，但补丁/资源触碰游戏版权红线。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/Galgamer_Channel.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2021-07-15",
+      "2026-07-27"
+    ],
+    "note": "跨度 1838 天、0.2 条/天，低频高质；id 缺口 14.8%"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 54730,
+    "median_views": 23371,
+    "mean_views": 31320,
+    "p10_views": 12907,
+    "p90_views": 65012,
+    "err_pct": 42.7,
+    "mature_posts": 283,
+    "reactions_total": 12710,
+    "forwards_total": 8635,
+    "forwards_per_post": 28.8,
+    "forwards_median": 22.0,
+    "er_pct": 0.14,
+    "posts_per_day": 0.2,
+    "views_available": true,
+    "media_mix": {
+      "webpage": 146,
+      "photo": 72,
+      "empty": 50,
+      "document": 31
+    },
+    "deleted_pct": 14.8,
+    "activity_note": "42.7% ERR + 1.27万 reactions 是硬核粉丝社群的标志；爆款 p90 阅读 6.5万"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "游戏介绍(标签 #拔作 #纯爱 #剧情 等) + 指向 galgamer.moe/galgamer.eu.org 的下载/介绍 + 汉化补丁发布公告",
+    "delivery": "资源与补丁托管在自有站点(galgamer.moe/eu.org 135 次)，TG 做分发与公告；少量 apk/zip/torrent 附件",
+    "curation": "自有汉化团队(自述几位自学日语的大学生)产出汉化补丁，属半原创；同时收录/介绍 galgame",
+    "schedule": "0.2 条/天，集中 18-20 点"
+  },
+  "growth": {
+    "strategy": "汉化组口碑 + 粉丝高转发自然增长",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "自有汉化补丁",
+        "evidence": "『创作彼女补丁 Awaken 版』等发布公告、玩家致谢",
+        "note": "独占内容制造强粘性"
+      },
+      {
+        "name": "粉丝转发",
+        "evidence": "转发中位 22、reactions 1.27万",
+        "note": "硬核受众自发传播"
+      }
+    ],
+    "signals": {
+      "subscribers": 54730,
+      "err_pct": 42.7,
+      "forwards_per_post": 28.8
+    },
+    "assessment": "42.7% ERR 在 5.5万盘上极高，是自有汉化补丁+垂直硬核受众的产物。无买粉/互推痕迹，纯口碑增长，属『小而美』的放大版。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      600
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营+汉化时间投入",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "汉化是重人力(团队暑期协作)，但为兴趣无偿"
+      },
+      {
+        "name": "自有站点(galgamer.moe/eu.org)服务器+域名",
+        "cny_month": [
+          100,
+          600
+        ],
+        "note": "资源托管与站点"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      500,
+      5000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "赞助/爱发电 + 站点广告(推测)",
+    "streams": [
+      {
+        "name": "读者赞助/爱发电",
+        "evidence": "汉化组模式常见,样本内变现动作少(广告仅3)",
+        "cny_month": [
+          300,
+          3000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "站点广告/联盟",
+        "evidence": "自有站点可挂广告",
+        "cny_month": [
+          200,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "以兴趣与口碑驱动为主,变现克制;高 ERR 说明若商业化潜力不低"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "分发 Galgame 本体与汉化补丁,涉游戏著作权(即便是爱好者汉化)",
+      "部分标签涉成人向 galgame(拔作等),成人内容传播在大陆有风险",
+      "自有站点托管资源,侵权主体更明确;未见博彩/诈骗,未标 criminal"
+    ]
+  }
+}

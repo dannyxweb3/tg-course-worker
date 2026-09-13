@@ -1,0 +1,109 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "google_drive",
+  "username": "google_drive",
+  "url": "https://t.me/google_drive",
+  "title": "Google Drive 无限容量",
+  "category": "无限容量GDrive/教育号 交易群(低活跃)",
+  "growth_short": "无限网盘刚需",
+  "one_liner": "2.15万成员的『无限容量Google Drive』群:围绕无限GDrive/教育版账号的分享与买卖,群本身活跃很低(存活消息0.8条/天、99%被删),多为封号通知与零星问答。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/google_drive.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-09-20",
+      "2026-09-12"
+    ],
+    "note": "群无per-message阅读;99.4% id缺口(CAS封禁/清理);批量抓取时会话占用,未取online"
+  },
+  "metrics": {
+    "confidence": "low",
+    "kind_note": "group",
+    "members": 21514,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读,ERR不适用;online未取(会话占用)",
+    "messages_per_day": 0.8,
+    "deleted_ratio_pct": 99.4,
+    "activity_note": "存活0.8条/天+99%删除:真实活跃极低,多为CAS封禁通知与零星问答,属低活跃群"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "围绕无限容量GDrive/教育版(edu)账号的分享、求助、买卖;短消息为主,大量CAS封禁服务通知",
+    "ad_injection": "零星账号买卖,无系统广告注入",
+    "delivery": "社区问答/交易,不分发内容",
+    "schedule": "全天候但极低频"
+  },
+  "growth": {
+    "strategy": "无限网盘刚需聚人",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "无限GDrive刚需",
+        "evidence": "群名『无限容量』",
+        "note": "存储刚需聚集用户"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 0.8
+    },
+    "assessment": "围绕无限GDrive(教育版账号)的低活跃交易/问答群。google对edu无限容量的收紧使这类账号成灰色商品。群活跃已很低,价值主要是历史沉淀的2万成员。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理/反spam bot",
+        "cny_month": [
+          0,
+          100
+        ],
+        "note": "99%删除需管理bot"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      3000
+    ],
+    "est_scope": "群本体",
+    "model": "edu/无限GDrive账号买卖(推测)",
+    "streams": [
+      {
+        "name": "账号买卖抽成/无",
+        "evidence": "群内零星账号交易",
+        "cny_month": [
+          0,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "低活跃群变现有限,置信度低"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "买卖教育版/无限GDrive账号违反Google服务条款,涉账号盗用/欺诈灰区",
+      "群活跃低、无系统性灰产广告;整体中等偏低"
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "hayami_kiraa",
   "username": "hayami_kiraa",
@@ -10,15 +11,48 @@
   "one_liner": "全部 30 个样本里第一个合法的号：一个真实创作者的个人博客，写原创随笔、导流到自己的公众号/播客/会员，ERR 35%、零违规内容。",
   "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。",
   "analyzed_at": "2026-09-13T13:00:00Z",
-  "source": {"method": "telethon", "script": "scripts/tg_recon.py", "dump": "data/recon/hayami_kiraa.jsonl", "sample_size": 300, "sample_range": ["2024-09-26", "2026-05-02"], "note": "300 条覆盖 583 天"},
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/hayami_kiraa.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2024-09-26",
+      "2026-05-02"
+    ],
+    "note": "300 条覆盖 583 天"
+  },
   "metrics": {
-    "confidence": "high", "subscribers": 15689, "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
-    "views_available": true, "median_views": 5540, "mean_views": 5642, "p10_views": 3946, "p90_views": 7368, "max_views": 13448,
-    "err_pct": 35.3, "err_note": "35.3% 属健康偏高区间，靠 4,460 次转发带来非订阅者阅读",
-    "mature_posts": 300, "total_posts": 300, "posts_per_day": 0.5,
-    "reactions_total": 0, "reaction_note": "反应关闭；靠转发而非表情互动", "forwards_total": 4460, "forwards_per_post": 14.9, "forwards_max": 96,
-    "posts_without_text": 91, "photos": 142,
-    "id_span_sampled": [1106, 1421], "surviving_messages": 300, "dormant_since": "2026-05-02"
+    "confidence": "high",
+    "subscribers": 15689,
+    "members": null,
+    "online": 0,
+    "online_pct": null,
+    "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 5540,
+    "mean_views": 5642,
+    "p10_views": 3946,
+    "p90_views": 7368,
+    "max_views": 13448,
+    "err_pct": 35.3,
+    "err_note": "35.3% 属健康偏高区间，靠 4,460 次转发带来非订阅者阅读",
+    "mature_posts": 300,
+    "total_posts": 300,
+    "posts_per_day": 0.5,
+    "reactions_total": 0,
+    "reaction_note": "反应关闭；靠转发而非表情互动",
+    "forwards_total": 4460,
+    "forwards_per_post": 14.9,
+    "forwards_max": 96,
+    "posts_without_text": 91,
+    "photos": 142,
+    "id_span_sampled": [
+      1106,
+      1421
+    ],
+    "surviving_messages": 300,
+    "dormant_since": "2026-05-02"
   },
   "implementation": {
     "publish_identity": "channel",
@@ -26,7 +60,12 @@
     "format": "长文 + 配图（142 张 photo，多为作者自拍生活图）。0.5 条/天，慢工细写，不是流水线",
     "cross_platform_hub": {
       "note": "Telegram 频道是作者多平台矩阵的一个节点",
-      "destinations": ["mp.weixin.qq.com（自有微信公众号，12 次）", "小宇宙 xiaoyuzhoufm（自有播客）", "小红书 / 豆瓣 / Instagram / YouTube（自有账号）", "Patreon / 爱发电 afdian（会员付费）"],
+      "destinations": [
+        "mp.weixin.qq.com（自有微信公众号，12 次）",
+        "小宇宙 xiaoyuzhoufm（自有播客）",
+        "小红书 / 豆瓣 / Instagram / YouTube（自有账号）",
+        "Patreon / 爱发电 afdian（会员付费）"
+      ],
       "reading": "TG 用作不受审查的自留地与聚合入口，把读者导向各平台与付费会员"
     },
     "authenticity": "所有信号都指向一个真实的个体创作者：原创长文、自拍配图、跨平台同名账号、自有付费会员。无搬运、无广告投放、无违规内容",
@@ -36,26 +75,85 @@
     "strategy": "内容口碑驱动的自然转发。全样本最干净的增长——没有任何人工手段",
     "paid_acquisition": "none",
     "mechanisms": [
-      {"name": "原创内容引发转发", "evidence": "转发 4,460 次、14.9 次/帖、单帖最高 96", "note": "读者把随笔转给朋友，是最健康的增长"},
-      {"name": "跨平台互相导流", "evidence": "公众号/播客/小红书/YouTube 同名矩阵", "note": "各平台受众互相汇入，TG 是其中一环"},
-      {"name": "付费会员沉淀核心读者", "evidence": "Patreon / 爱发电", "note": "把泛读者转化为付费支持者"}
+      {
+        "name": "原创内容引发转发",
+        "evidence": "转发 4,460 次、14.9 次/帖、单帖最高 96",
+        "note": "读者把随笔转给朋友，是最健康的增长"
+      },
+      {
+        "name": "跨平台互相导流",
+        "evidence": "公众号/播客/小红书/YouTube 同名矩阵",
+        "note": "各平台受众互相汇入，TG 是其中一环"
+      },
+      {
+        "name": "付费会员沉淀核心读者",
+        "evidence": "Patreon / 爱发电",
+        "note": "把泛读者转化为付费支持者"
+      }
     ],
-    "signals": {"err_pct": 35.3, "forwards_per_post": 14.9, "reactions_total": 0, "posts_per_day": 0.5, "subscribers": 15689},
+    "signals": {
+      "err_pct": 35.3,
+      "forwards_per_post": 14.9,
+      "reactions_total": 0,
+      "posts_per_day": 0.5,
+      "subscribers": 15689
+    },
     "assessment": "ERR 35.3% + 14.9 次/帖转发，在 0.5 条/天的极低频率下达成，是真实受众的标志。它与 wuwuwuEnglish 属同一类——内容质量替代发布量——但更彻底：连那 28 GB 盗版教材的问题都没有，是纯粹的原创创作者。增长天花板取决于作者的产出意愿，样本末尾已见放缓。"
   },
   "cost": {
-    "recurring_cny_month": [0, 50], "onetime_cny": [0, 0],
+    "recurring_cny_month": [
+      0,
+      50
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
     "items": [
-      {"name": "创作时间", "cny_month": [0, 0], "note": "唯一成本，以作者的时间与经历计"},
-      {"name": "Telegram 托管", "cny_month": [0, 0], "note": "文字图片，免费"},
-      {"name": "各平台账号", "cny_month": [0, 50], "note": "播客托管等零星支出"}
+      {
+        "name": "创作时间",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "唯一成本，以作者的时间与经历计"
+      },
+      {
+        "name": "Telegram 托管",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "文字图片，免费"
+      },
+      {
+        "name": "各平台账号",
+        "cny_month": [
+          0,
+          50
+        ],
+        "note": "播客托管等零星支出"
+      }
     ]
   },
   "revenue": {
-    "est_cny_month": [500, 8000], "est_scope": "含跨平台会员，非仅 TG",
+    "est_cny_month": [
+      500,
+      8000
+    ],
+    "est_scope": "含跨平台会员，非仅 TG",
     "model": "读者付费会员（Patreon / 爱发电）",
     "streams": [
-      {"name": "付费会员订阅", "evidence": "Patreon 与爱发电链接", "cny_month": [500, 8000], "confidence": "low", "note": "1.5 万泛读者按 1-5% 付费转化、人均月付十几到几十元估算，区间宽"}
+      {
+        "name": "付费会员订阅",
+        "evidence": "Patreon 与爱发电链接",
+        "cny_month": [
+          500,
+          8000
+        ],
+        "confidence": "low",
+        "note": "1.5 万泛读者按 1-5% 付费转化、人均月付十几到几十元估算，区间宽"
+      }
     ],
     "note": "变现来自读者自愿付费，不是广告也不是灰产。这是本样本集里唯一一个变现方式本身完全正当的号。TG 侧不直接收款，只导流。"
   },
@@ -63,10 +161,36 @@
     "level": "low",
     "summary": "全部 30 个样本里法律风险最低的一个，也是唯一一个没有任何刑事或明显民事违法要素的号。",
     "legal": [
-      {"issue": "原创内容基本无侵权", "statutes": ["《著作权法》"], "analysis": "第一人称原创随笔与自拍配图，著作权归作者自己。跨平台导流的是本人账号。样本内未见搬运他人作品。", "severity": "none"},
-      {"issue": "翻墙平台使用（作者侧）", "statutes": ["《计算机信息网络国际联网安全保护管理办法》"], "analysis": "在 Telegram 发布内容本身需要翻墙，作者个人使用面临的仅是理论上的行政层面风险，与经营性翻墙服务（如机场号）性质完全不同，实践中几乎不针对个人内容创作者。", "severity": "low"},
-      {"issue": "内容合规的一般义务", "statutes": ["《网络安全法》"], "analysis": "作为个人观点表达，只要不涉及违法信息即无特别风险。样本内容为生活、旅行、技术学习，未见敏感或违规内容。", "severity": "none"}
+      {
+        "issue": "原创内容基本无侵权",
+        "statutes": [
+          "《著作权法》"
+        ],
+        "analysis": "第一人称原创随笔与自拍配图，著作权归作者自己。跨平台导流的是本人账号。样本内未见搬运他人作品。",
+        "severity": "none"
+      },
+      {
+        "issue": "翻墙平台使用（作者侧）",
+        "statutes": [
+          "《计算机信息网络国际联网安全保护管理办法》"
+        ],
+        "analysis": "在 Telegram 发布内容本身需要翻墙，作者个人使用面临的仅是理论上的行政层面风险，与经营性翻墙服务（如机场号）性质完全不同，实践中几乎不针对个人内容创作者。",
+        "severity": "low"
+      },
+      {
+        "issue": "内容合规的一般义务",
+        "statutes": [
+          "《网络安全法》"
+        ],
+        "analysis": "作为个人观点表达，只要不涉及违法信息即无特别风险。样本内容为生活、旅行、技术学习，未见敏感或违规内容。",
+        "severity": "none"
+      }
     ],
-    "notes": ["这是本样本集里唯一一个合法且正当的号", "内容原创、变现正当（读者付费）、无广告无灰产", "作为对照组，它说明 Telegram 中文生态里并非全是灰黑产，只是灰黑产占了绝大多数", "本报告为外部法律风险识别，不构成法律意见"]
+    "notes": [
+      "这是本样本集里唯一一个合法且正当的号",
+      "内容原创、变现正当（读者付费）、无广告无灰产",
+      "作为对照组，它说明 Telegram 中文生态里并非全是灰黑产，只是灰黑产占了绝大多数",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
   }
 }

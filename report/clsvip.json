@@ -1,0 +1,149 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "clsvip",
+  "username": "clsvip",
+  "url": "https://t.me/clsvip",
+  "title": "财联社VIP文章分享",
+  "category": "付费财经内容盗版 + 荐股社群导流",
+  "growth_short": "盗版付费内容引流",
+  "one_liner": "4.07万订阅：盗版搬运财联社/华尔街见闻 VIP 付费内容(百度网盘为主),用免费付费内容做钩子,导流到收费荐股『圈子』(@cn50etf 23次),ERR仅2.8%。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/clsvip.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-01",
+      "2026-09-13"
+    ],
+    "note": "跨度 11.7 天、25.7 条/天,高频;id 缺口 8.5%"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 40710,
+    "median_views": 1126,
+    "mean_views": 1155,
+    "p10_views": 856,
+    "p90_views": 1448,
+    "err_pct": 2.8,
+    "mature_posts": 117,
+    "reactions_total": 110,
+    "forwards_total": 106,
+    "forwards_per_post": 0.4,
+    "forwards_median": 0.0,
+    "er_pct": 0.03,
+    "posts_per_day": 25.7,
+    "views_available": true,
+    "media_mix": {
+      "document": 181,
+      "photo": 70,
+      "empty": 47
+    },
+    "deleted_pct": 8.5,
+    "activity_note": "ERR 仅 2.8%、转发 0.4/帖:4万订阅但阅读只有千级,是买粉/换量堆出的大盘,真实互动塌陷"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "财联社VIP文章/研报截图(png 181)、盘中解读、百度网盘打包链接(pan.baidu.com 95次)",
+    "delivery": "付费内容盗版分发:截图直发 + 网盘打包(baidu/quark);穿插 @cn50etf 荐股圈子导流",
+    "curation": "搬运财联社/华尔街见闻付费内容,零原创;每日『圈子总结』做T/建仓话术是自产钩子",
+    "schedule": "25.7 条/天,集中 9-13 点与 22-23 点(盘中+盘后)"
+  },
+  "growth": {
+    "strategy": "用盗版付费内容做免费钩子,导流付费荐股社群",
+    "paid_acquisition": "mixed",
+    "mechanisms": [
+      {
+        "name": "盗版VIP内容钩子",
+        "evidence": "财联社VIP、pan.baidu.com 95次",
+        "note": "免费给付费内容吸引散户"
+      },
+      {
+        "name": "荐股圈子导流",
+        "evidence": "@cn50etf 23次、联系 24次、会员 10次",
+        "note": "真正变现在收费社群"
+      }
+    ],
+    "signals": {
+      "subscribers": 40710,
+      "err_pct": 2.8,
+      "forwards_per_post": 0.4
+    },
+    "assessment": "2.8% ERR + 转发 0.4:4万大盘但阅读千级,典型买粉/换量+盗版钩子堆量。真实价值在把散户导进收费荐股圈子。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      600
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "财联社/华尔街见闻VIP订阅费(取材源)",
+        "cny_month": [
+          50,
+          300
+        ],
+        "note": "买一份付费源再盗播"
+      },
+      {
+        "name": "运营时间(截图/网盘打包/写解读)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约 40-80 小时/月"
+      },
+      {
+        "name": "网盘/服务器",
+        "cny_month": [
+          50,
+          300
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      5000,
+      30000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "付费荐股圈子/知识星球会员 + 广告",
+    "streams": [
+      {
+        "name": "收费荐股社群(圈子/星球)",
+        "evidence": "@cn50etf 荐股、会员/联系密集",
+        "cny_month": [
+          4000,
+          25000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "广告/互推",
+        "evidence": "合作 7、互推 2",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "荐股社群客单价高,4万散户导流盘变现力强;区间宽因入圈率不可见"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "盗版分发财联社/华尔街见闻付费内容,侵犯著作权、可能构成不正当竞争",
+      "导流收费荐股圈子:未持牌荐股属非法证券投资咨询,监管红线",
+      "面向大陆散户的荐股话术有诱导交易风险;接近 criminal 边界,取其非直接犯罪暂标 high"
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "chengdu_normal_university",
   "username": "chengdu_normal_university",
@@ -10,15 +11,48 @@
   "one_liner": "用『师范大学/老师/车库』做伪装与暗语的成都招嫖目录：本质是成都楼凤/修车信息，靠 3,749 次转发和验证车库→主群→广告群的多层漏斗运转。",
   "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。本报告不记录任何人物信息、照片、价格、预约方式、联系方式或具体条目。",
   "analyzed_at": "2026-09-13T11:40:00Z",
-  "source": {"method": "telethon", "script": "scripts/tg_recon.py", "dump": "data/recon/chengdu_normal_university.jsonl", "sample_size": 300, "sample_range": ["2026-08-16", "2026-09-12"], "note": "300 条覆盖 27 天。频道名的『大学/老师』是行业暗语与SEO，不是教育内容"},
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/chengdu_normal_university.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-16",
+      "2026-09-12"
+    ],
+    "note": "300 条覆盖 27 天。频道名的『大学/老师』是行业暗语与SEO，不是教育内容"
+  },
   "metrics": {
-    "confidence": "high", "subscribers": 58053, "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
-    "views_available": true, "median_views": 9004, "mean_views": 8787, "p10_views": 7201, "p90_views": 10065, "max_views": 10781,
-    "err_pct": 15.5, "err_note": "阅读分布极紧（p10 7,201 / p90 10,065），是稳定真实受众，非买量",
-    "mature_posts": 216, "total_posts": 300, "posts_per_day": 10.9,
-    "reactions_total": 26, "forwards_total": 3749, "forwards_per_post": 12.5, "forwards_max": 31,
-    "posts_without_text": 247, "photos": 260, "documents": 38,
-    "id_span_sampled": [5893, 6217], "surviving_messages": 300, "linked_chat_id": 2219823755
+    "confidence": "high",
+    "subscribers": 58053,
+    "members": null,
+    "online": 0,
+    "online_pct": null,
+    "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 9004,
+    "mean_views": 8787,
+    "p10_views": 7201,
+    "p90_views": 10065,
+    "max_views": 10781,
+    "err_pct": 15.5,
+    "err_note": "阅读分布极紧（p10 7,201 / p90 10,065），是稳定真实受众，非买量",
+    "mature_posts": 216,
+    "total_posts": 300,
+    "posts_per_day": 10.9,
+    "reactions_total": 26,
+    "forwards_total": 3749,
+    "forwards_per_post": 12.5,
+    "forwards_max": 31,
+    "posts_without_text": 247,
+    "photos": 260,
+    "documents": 38,
+    "id_span_sampled": [
+      5893,
+      6217
+    ],
+    "surviving_messages": 300,
+    "linked_chat_id": 2219823755
   },
   "implementation": {
     "publish_identity": "channel",
@@ -30,7 +64,12 @@
     "structure": "247/300 条为纯图片条目。标签以黑话组织：成都修车 47、成都楼凤 47、颜值车/身材车/服务车/态度车/御姐车（『X车』= 条目分类）等",
     "multi_channel_funnel": {
       "note": "简介公开了一套多层频道结构",
-      "layers_desensitized": ["验证车库（已核验条目）", "主群（可搜索附近对象）", "广告群（默认有『色情限制』，需在主群解除后访问）", "报告频道"],
+      "layers_desensitized": [
+        "验证车库（已核验条目）",
+        "主群（可搜索附近对象）",
+        "广告群（默认有『色情限制』，需在主群解除后访问）",
+        "报告频道"
+      ],
       "reading": "『色情限制』分层是规避机制：公开层做展示与SEO，敏感内容藏在需要额外步骤解锁的层级"
     },
     "cadence": "10.9 条/天，稳定投放"
@@ -39,28 +78,104 @@
     "strategy": "教育院校名SEO伪装 + 高自然转发 + 多频道漏斗。全部三个招嫖号里增长最强的",
     "paid_acquisition": "none",
     "mechanisms": [
-      {"name": "院校/老师名做SEO与规避", "evidence": "频道名『成都师范大学老师车库』；黑话标签体系", "note": "一词两用：被搜到 + 规避关键词封禁"},
-      {"name": "高自然转发", "evidence": "转发 3,749 次、12.5 次/帖", "note": "本地招嫖是强需求，用户主动转给同好，是三个招嫖号里扩散最强的"},
-      {"name": "多频道漏斗承接", "evidence": "验证车库→主群→广告群→报告频道", "note": "把展示、检索、交易、申诉分层，降低单频道被封的整体损失"},
-      {"name": "验证信任背书", "evidence": "『已验证车库』", "note": "降低嫖客对跑路/照骗的顾虑"}
+      {
+        "name": "院校/老师名做SEO与规避",
+        "evidence": "频道名『成都师范大学老师车库』；黑话标签体系",
+        "note": "一词两用：被搜到 + 规避关键词封禁"
+      },
+      {
+        "name": "高自然转发",
+        "evidence": "转发 3,749 次、12.5 次/帖",
+        "note": "本地招嫖是强需求，用户主动转给同好，是三个招嫖号里扩散最强的"
+      },
+      {
+        "name": "多频道漏斗承接",
+        "evidence": "验证车库→主群→广告群→报告频道",
+        "note": "把展示、检索、交易、申诉分层，降低单频道被封的整体损失"
+      },
+      {
+        "name": "验证信任背书",
+        "evidence": "『已验证车库』",
+        "note": "降低嫖客对跑路/照骗的顾虑"
+      }
     ],
-    "signals": {"err_pct": 15.5, "forwards_per_post": 12.5, "forwards_total": 3749, "posts_per_day": 10.9, "subscribers": 58053},
+    "signals": {
+      "err_pct": 15.5,
+      "forwards_per_post": 12.5,
+      "forwards_total": 3749,
+      "posts_per_day": 10.9,
+      "subscribers": 58053
+    },
     "assessment": "ERR 15.5% + 12.5 次/帖转发是真实且活跃的受众，这在招嫖类里质量很高。增长引擎是『强本地需求 + 院校名SEO规避 + 多频道抗封』的组合。院校伪装既扩大检索面又对抗封禁，是它比另外两个招嫖号做得更大的原因。"
   },
   "cost": {
-    "recurring_cny_month": [300, 2000], "onetime_cny": [0, 0],
+    "recurring_cny_month": [
+      300,
+      2000
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
     "items": [
-      {"name": "多频道 + 验证系统运维", "cny_month": [200, 1200], "note": "四层频道结构 + 核验环节"},
-      {"name": "采集与核验人力", "cny_month": [100, 600], "note": "『已验证』意味着人工核验"},
-      {"name": "图床与备份频道", "cny_month": [0, 200]},
-      {"name": "文件托管", "cny_month": [0, 0]}
+      {
+        "name": "多频道 + 验证系统运维",
+        "cny_month": [
+          200,
+          1200
+        ],
+        "note": "四层频道结构 + 核验环节"
+      },
+      {
+        "name": "采集与核验人力",
+        "cny_month": [
+          100,
+          600
+        ],
+        "note": "『已验证』意味着人工核验"
+      },
+      {
+        "name": "图床与备份频道",
+        "cny_month": [
+          0,
+          200
+        ]
+      },
+      {
+        "name": "文件托管",
+        "cny_month": [
+          0,
+          0
+        ]
+      }
     ]
   },
   "revenue": {
-    "est_cny_month": [20000, 100000], "model": "上榜/验证/置顶费 + 广告群准入",
+    "est_cny_month": [
+      20000,
+      100000
+    ],
+    "model": "上榜/验证/置顶费 + 广告群准入",
     "streams": [
-      {"name": "上榜与验证费", "evidence": "『已验证车库』分层；上榜是这类目录标准变现", "cny_month": [15000, 70000], "confidence": "low", "note": "58K 活跃受众 + 高转发使上榜位更值钱"},
-      {"name": "广告群准入/解锁", "evidence": "『广告群有色情限制，主群解除后访问』的分层准入", "cny_month": [5000, 30000], "confidence": "low"}
+      {
+        "name": "上榜与验证费",
+        "evidence": "『已验证车库』分层；上榜是这类目录标准变现",
+        "cny_month": [
+          15000,
+          70000
+        ],
+        "confidence": "low",
+        "note": "58K 活跃受众 + 高转发使上榜位更值钱"
+      },
+      {
+        "name": "广告群准入/解锁",
+        "evidence": "『广告群有色情限制，主群解除后访问』的分层准入",
+        "cny_month": [
+          5000,
+          30000
+        ],
+        "confidence": "low"
+      }
     ],
     "note": "规模大于 szflwbd（活跃受众约 4 倍），变现相应更高。所有金额私下结算，外部不可观测。"
   },
@@ -68,11 +183,52 @@
     "level": "criminal",
     "summary": "介绍/组织卖淫的平台化经营，叠加院校名伪装与『老师/学生』框架带来的未成年人红线风险，性质在三个招嫖号里最重。",
     "legal": [
-      {"issue": "组织、介绍、协助卖淫", "statutes": ["《刑法》第三百五十八条", "《刑法》第三百五十九条", "《治安管理处罚法》第六十七条"], "analysis": "多层频道 + 验证 + 检索 + 撮合，是介绍卖淫的高度组织化形态；分层管理与准入控制指向组织卖淫罪。", "severity": "critical"},
-      {"issue": "使用院校/『老师学生』框架带来的未成年人红线", "statutes": ["《刑法》第三百五十九条第二款 引诱幼女卖淫罪", "《未成年人保护法》", "《刑法》第三百六十条之一及相关规定"], "analysis": "以『师范大学』『老师』『嫩妹车』组织内容，是本样本集里最触目的未成年人风险信号。无论运营者是否知情，一旦涉及未成年人即构成独立重罪并从重。院校伪装本身也可能被认定为主观恶性的体现。", "severity": "critical"},
-      {"issue": "被列出人员的个人信息与潜在胁迫/拐卖", "statutes": ["《刑法》第二百五十三条之一", "《刑法》第三百五十八条第一款 强迫卖淫罪", "《刑法》第二百四十条 拐卖妇女罪"], "analysis": "展示照片与信息若非自愿即侵犯个人信息；此类网络的强迫、控制、拐卖情形一旦查实，性质升级为最严重罪名。", "severity": "critical"},
-      {"issue": "传播淫秽信息与规避封禁", "statutes": ["《刑法》第三百六十三条、第三百六十四条", "司法实践中的主观明知认定"], "analysis": "公开图片展示涉传播淫秽信息；黑话+院校名规避封禁、『色情限制』分层解锁，均为主观明知与规避监管的证据。", "severity": "high"}
+      {
+        "issue": "组织、介绍、协助卖淫",
+        "statutes": [
+          "《刑法》第三百五十八条",
+          "《刑法》第三百五十九条",
+          "《治安管理处罚法》第六十七条"
+        ],
+        "analysis": "多层频道 + 验证 + 检索 + 撮合，是介绍卖淫的高度组织化形态；分层管理与准入控制指向组织卖淫罪。",
+        "severity": "critical"
+      },
+      {
+        "issue": "使用院校/『老师学生』框架带来的未成年人红线",
+        "statutes": [
+          "《刑法》第三百五十九条第二款 引诱幼女卖淫罪",
+          "《未成年人保护法》",
+          "《刑法》第三百六十条之一及相关规定"
+        ],
+        "analysis": "以『师范大学』『老师』『嫩妹车』组织内容，是本样本集里最触目的未成年人风险信号。无论运营者是否知情，一旦涉及未成年人即构成独立重罪并从重。院校伪装本身也可能被认定为主观恶性的体现。",
+        "severity": "critical"
+      },
+      {
+        "issue": "被列出人员的个人信息与潜在胁迫/拐卖",
+        "statutes": [
+          "《刑法》第二百五十三条之一",
+          "《刑法》第三百五十八条第一款 强迫卖淫罪",
+          "《刑法》第二百四十条 拐卖妇女罪"
+        ],
+        "analysis": "展示照片与信息若非自愿即侵犯个人信息；此类网络的强迫、控制、拐卖情形一旦查实，性质升级为最严重罪名。",
+        "severity": "critical"
+      },
+      {
+        "issue": "传播淫秽信息与规避封禁",
+        "statutes": [
+          "《刑法》第三百六十三条、第三百六十四条",
+          "司法实践中的主观明知认定"
+        ],
+        "analysis": "公开图片展示涉传播淫秽信息；黑话+院校名规避封禁、『色情限制』分层解锁，均为主观明知与规避监管的证据。",
+        "severity": "high"
+      }
     ],
-    "notes": ["介绍/组织卖淫的平台化经营，三个招嫖号里组织化程度最高", "院校名 + 『老师/嫩妹』框架使未成年人红线风险最突出", "被列出人员可能是非自愿、胁迫或拐卖受害者", "本报告不记录任何人物信息、照片、价格或联系方式", "本报告为外部法律风险识别，不构成法律意见"]
+    "notes": [
+      "介绍/组织卖淫的平台化经营，三个招嫖号里组织化程度最高",
+      "院校名 + 『老师/嫩妹』框架使未成年人红线风险最突出",
+      "被列出人员可能是非自愿、胁迫或拐卖受害者",
+      "本报告不记录任何人物信息、照片、价格或联系方式",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
   }
 }

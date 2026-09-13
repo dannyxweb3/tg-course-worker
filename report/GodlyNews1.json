@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "GodlyNews1",
   "username": "GodlyNews1",
@@ -7,7 +8,7 @@
   "title": "Yummy 😋（科技新闻）",
   "category": "AI/科技新闻聚合（英媒+社媒转译）",
   "growth_short": "科技新闻时效 + 高互动",
-  "one_liner": "6.87 万订阅的 AI/科技新闻聚合号：转译 theverge/9to5mac/ithome/twitter 的 AI 与苹果资讯，ER 0.68%（reactions 1.7 万）为本批最高互动之一。",
+  "one_liner": "6.9 万订阅的中文科技新闻编译号,reactions 17,058、ER 0.68% 在本轮新闻类最高。24 小时跟英文源发稿(theverge/9to5mac/reuters),每条带 @GodlyNews1 @GodlyNewsBot 双署名(236/300 条一次不落),是一套防搬运水印。",
   "analyzed_at": "2026-09-13T17:15:00Z",
   "source": {
     "method": "telethon",
@@ -27,13 +28,13 @@
     "mean_views": 8878,
     "p10_views": 6626,
     "p90_views": 10880,
-    "err_pct": 13.0,
+    "err_pct": 13.01,
     "mature_posts": 243,
     "reactions_total": 17058,
     "forwards_total": 6587,
     "forwards_per_post": 22.0,
     "er_pct": 0.68,
-    "posts_per_day": 5.2,
+    "posts_per_day": 5.22,
     "views_available": true,
     "media_mix": {
       "photo": 220,
@@ -42,90 +43,128 @@
       "webpage": 4
     },
     "deleted_pct": 1.0,
-    "activity_note": "ER 0.68%、reactions 1.7 万，本批互动率最高之一;科技新闻刚需"
+    "activity_note": "ER 0.68% 为本轮新闻类最高(对照 cnbeta_com 0.27%、tnews365 0)。新闻类通常看完就走,高反应率说明选题在读者情绪上有落点。刷量检验:反应≥50 的帖 n=134、CV 中位 1.379(如 [89,52,10,1]),标准幂律,无刷量痕迹。趋势:阅读 07 月 7,794 → 08 月 9,796 → 09 月 6,773(未长熟需打折),转发稳定 15-17,短期平稳无衰减。",
+    "forwards_median": 16
   },
   "implementation": {
     "publish_identity": "user",
-    "post_structure": "配图 + AI/科技新闻摘要(中文转译) + 来源链接(theverge/9to5mac/ithome/reuters/x);标签 #AI #Apple #OpenAI #Anthropic #ChatGPT #Claude #DeepSeek",
-    "delivery": "聚合英文科技媒体 + 社媒，中文转译摘要;来源链接指向原媒体",
-    "schedule": "约 5.2 条/天，覆盖全天(含深夜，追海外时效)",
-    "growth": "AI/科技新闻时效 + 高互动"
+    "post_structure": "图文 220 条、纯文本 53 条、视频 23 个(3.37GB,mp4 22)。正文中位 250 字/9 行,是有编译加工的摘要而非标题党。",
+    "delivery": "以英文源为主的中文编译:theverge 41、x.com 39、ithome 15、9to5mac 9、reuters 6、Google/Anthropic 官方博客 6。选题集中 AI 与苹果(#AI 49、#Apple 39、#OpenAI 33、#Anthropic 16,AI 相关标签合计超 120 次)。",
+    "schedule": "24 小时跟源、非定时:小时分布铺满全天,凌晨 1 点 25 条为高峰(欧美时区新闻在中国深夜爆发),分钟与秒无固定聚集,<10 秒间隔占 21% 是同一事件多条连发。自动化程度中等——抓取提醒可能自动,编译需人工。",
+    "growth": "AI/科技新闻时效 + 高互动",
+    "ad_injection": "样本内 0 条可确认的广告帖。『合作』25、『广告』14、『代理』14 回上下文核对后绝大多数出现在新闻正文中(如『苹果与美国司法部达成合作』),不是招商语境。",
+    "curation": "双署名水印:@GodlyNews1 与 @GodlyNewsBot 各 236 次,几乎每条末尾都挂。中文科技编译极易被整段搬运,署名嵌在正文里会被一起带走,搬运方需逐条手工删改;bot 同时承接投稿/私信。",
+    "note": "什么会爆:转发榜首(131)是『甲骨文将对超出永久免费限制的租户停机』,阅读榜首是『YouTube Premium 限制同时播放设备』与『Apple TV 四年内第四次涨价』——影响读者自己账单/白嫖资源的消息,扩散力远超普通行业新闻。"
   },
   "growth": {
-    "strategy": "AI/科技新闻的时效性 + 中文转译价值",
+    "strategy": "时效性 + 高情绪落点选题驱动的自然增长",
     "paid_acquisition": "none",
     "mechanisms": [
       {
-        "name": "新闻时效",
-        "evidence": "5.2 条/天覆盖全天，追海外发布",
-        "note": "AI/苹果资讯刚需"
+        "name": "时效性",
+        "evidence": "24 小时跟英文源,凌晨为高峰",
+        "note": "比中文同行更早拿到消息"
       },
       {
-        "name": "高互动",
-        "evidence": "ER 0.68%、reactions 1.7 万",
-        "note": "话题性内容互动强"
+        "name": "高情绪落点选题",
+        "evidence": "ER 0.68%,转发榜首是钱包相关新闻",
+        "note": "选题贴近读者切身利益"
+      },
+      {
+        "name": "双署名水印",
+        "evidence": "236 次",
+        "note": "被搬运时反而成为免费曝光"
+      },
+      {
+        "name": "bot 沉淀",
+        "evidence": "@GodlyNewsBot",
+        "note": "投稿/私信入口"
       }
     ],
     "signals": {
       "subscribers": 68692,
-      "err_pct": 13.0,
+      "err_pct": 13.01,
       "forwards_per_post": 22.0,
       "er_pct": 0.68
     },
-    "assessment": "AI/科技新闻聚合号，靠时效 + 中文转译 + 话题性维持高互动。正规资讯聚合，受众为科技爱好者。"
+    "assessment": "矩阵极简:t.me 仅自引用 14 次,另有 OneMillion_AI/durov/tginfo 各 1 次属引用性质。不参与任何互推网络,无买粉痕迹。"
   },
   "cost": {
     "recurring_cny_month": [
       50,
-      400
+      250
     ],
     "onetime_cny": [
       0,
-      0
+      800
     ],
     "items": [
       {
-        "name": "新闻聚合/转译(bot + 可能 LLM)",
-        "cny_month": [
-          30,
-          250
+        "name": "【启动】频道 + bot 创建",
+        "cny_onetime": [
+          0,
+          300
         ]
       },
       {
-        "name": "运营时间(筛选+转译+发布，约 30-60 小时/月)",
+        "name": "【启动】源监控/抓取脚本",
+        "cny_onetime": [
+          0,
+          500
+        ]
+      },
+      {
+        "name": "编译人力(核心)",
         "cny_month": [
           0,
           0
+        ],
+        "note": "60-120 小时/月:5.22 条/天 × 每条需读英文原文+编译 250 字,24 小时覆盖意味着可能不止一人"
+      },
+      {
+        "name": "VPS / bot 托管",
+        "cny_month": [
+          30,
+          100
         ]
       },
       {
-        "name": "VPS/GodlyNewsBot",
+        "name": "视频处理与上传",
+        "cny_month": [
+          0,
+          50
+        ],
+        "note": "3.37GB/57 天,TG 免费托管"
+      },
+      {
+        "name": "翻译/摘要 LLM",
         "cny_month": [
           20,
-          150
-        ]
+          100
+        ],
+        "note": "若用 LLM 辅助编译"
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
-      500,
-      5000
+      0,
+      16000
     ],
-    "model": "科技软广 + 联盟（变现克制）",
+    "model": "当前可观测变现接近零;估算为潜在商务广告价值",
     "streams": [
       {
-        "name": "科技/App/AI 软广",
-        "evidence": "6.87 万科技受众广告位",
+        "name": "商务广告(潜在)",
+        "evidence": "0 条可确认招商帖;按 6.9 万订阅+ERR 13%+ER 0.68% 的优质科技盘推算",
         "cny_month": [
-          500,
-          4000
+          0,
+          15000
         ],
         "confidence": "low"
       },
       {
-        "name": "AI 工具联盟",
-        "evidence": "AI 资讯常带工具推荐",
+        "name": "联盟/aff",
+        "evidence": "aff 7 次",
         "cny_month": [
           0,
           1000
@@ -133,14 +172,19 @@
         "confidence": "low"
       }
     ],
-    "note": "以新闻聚合为主，变现克制;科技受众广告单价较高"
+    "note": "证据强度需说明:合作/广告/代理等词虽命中,但回上下文核对后绝大多数在新闻正文里,不是招商语境,样本内没有一条可确认的广告帖。因此当前可观测变现接近零,上述为潜在价值推算(CPM ¥50-150、每周 2 条广告 ≈ ¥4,300-13,000/月)。",
+    "est_scope": "本频道(bot 侧不可观测)",
+    "potential_ad_value_cny_month": [
+      4300,
+      13000
+    ]
   },
   "risk": {
     "level": "low",
     "notes": [
-      "AI/科技新闻聚合与中文转译，属正常资讯业务",
-      "转译英媒有轻微版权争议(民事范畴)",
-      "无灰产、无盗版资源、无成人/博彩要素"
+      "科技新闻的中文编译与聚合,来源为 The Verge、Reuters、9to5Mac、Google/Anthropic 官方博客等公开媒体,内容中立,无盗版分发、无成人、无博彩、无诈骗、无侵权文件",
+      "常规合规项:对英文报道作中文编译并配原文链接属新闻聚合通行做法,严格说仍需权利人授权;另有一条提及『字幕组从 Netflix 扒下来传到 B 站』的视频转发,属边缘情形",
+      "UI 上不应与灰产样本同框标红"
     ]
   }
 }

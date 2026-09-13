@@ -1,0 +1,130 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "inside1024",
+  "username": "inside1024",
+  "url": "https://t.me/inside1024",
+  "title": "你不知道的内幕消息🅥",
+  "category": "博彩导流(内幕消息内容外壳)——1024矩阵成员",
+  "growth_short": "内容外壳泛粉",
+  "one_liner": "10.8万订阅:以『内幕消息/冷知识/鸡汤』为内容外壳、夹带体育与彩票博彩广告(球速体育/8K国际/铂莱/贵宾会),与 wenan888/aigc1024 等共享 meiriyishu 互链与 8G/182体育 品牌,是同一博彩导流矩阵成员。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/inside1024.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-09",
+      "2026-09-13"
+    ],
+    "note": "跨度4.3天、70条/天;博彩落地域名与联系方式不收录"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 107856,
+    "median_views": null,
+    "mean_views": null,
+    "err_pct": null,
+    "mature_posts": 0,
+    "reactions_total": 375,
+    "forwards_total": 1809,
+    "forwards_per_post": 6.0,
+    "er_pct": 0.12,
+    "posts_per_day": 70.2,
+    "views_available": true,
+    "views_note": "样本4天帖未成熟;真实互动极低(ER 0.12%),泛粉外壳典型",
+    "media_mix": {
+      "photo": 193,
+      "empty": 63,
+      "document": 43
+    },
+    "deleted_pct": 1.0
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "『内幕消息/行业内幕/冷知识/鸡汤』短图文(标签#内幕消息) 夹带 #球速体育 #182体育 博彩广告块;短视频钩子",
+    "ad_injection": "高频博彩广告(彩金52次、博彩4):球速体育(qs1736.cc)、8K国际(8k2517.com)、铂莱娱乐、贵宾会等,首充/大额出款话术",
+    "delivery": "内容做泛粉钩子,博彩广告是核心;夸克网盘零星",
+    "curation": "内容外壳(内幕/冷知识)拼凑,非原创;博彩广告为主业",
+    "schedule": "70条/天高频铺量"
+  },
+  "growth": {
+    "strategy": "内容外壳泛粉 + 矩阵互链",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "内幕/冷知识外壳",
+        "evidence": "标签#内幕消息 30次",
+        "note": "泛话题钩子拉不设防人群"
+      },
+      {
+        "name": "矩阵互链",
+        "evidence": "@meiriyishu 8、@taobao1024/@web2star/@KF8G/TG8G/GF8G",
+        "note": "与 wenan888/aigc1024/https1024 同网,共享 8G/球速/8K/182体育 品牌"
+      }
+    ],
+    "signals": {
+      "subscribers": 107856,
+      "err_pct": null,
+      "forwards_per_post": 6.0
+    },
+    "assessment": "与2026-09-13批次的博彩导流矩阵完全同构:内容外壳+博彩内核+meiriyishu互链+8G/球速品牌。ER 0.12%说明泛粉无真实互动,价值全在博彩导流。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      600
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "内容拼凑/发帖(可脚本化)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约20-40小时/月"
+      },
+      {
+        "name": "服务器/多号矩阵托管",
+        "cny_month": [
+          100,
+          600
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      10000,
+      50000
+    ],
+    "est_scope": "本号可归因(矩阵整体更高)",
+    "model": "博彩导流分成(CPA/流水抽成)",
+    "streams": [
+      {
+        "name": "博彩导流分成",
+        "evidence": "球速/8K/铂莱/贵宾会等多博彩品牌广告",
+        "cny_month": [
+          10000,
+          50000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "10万泛粉盘的博彩导流,按引流开户/流水抽成;矩阵整体收入远高于单号"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "以内容外壳夹带境外体育/彩票博彩广告,属开设赌场罪/帮信罪的引流环节",
+      "与 wenan888/aigc1024/https1024/knowledge1024/qing_03/AI_Pintura 同属 1024 博彩导流矩阵(meiriyishu 互链、8G/球速/8K/182体育 共享品牌)",
+      "博彩落地域名与联系方式不收录、不展示"
+    ]
+  }
+}

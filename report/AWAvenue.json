@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "AWAvenue",
   "username": "AWAvenue",
@@ -7,7 +8,7 @@
   "title": "秋风のとおり道",
   "category": "PC 软件/游戏分享 + 个人吐槽（自有站 awavenue.top）",
   "growth_short": "高质量分享自然转发",
-  "one_liner": "2.6 万订阅的 PC 软件/游戏分享号：直传 30GB 软件/游戏（apk/exe/zip），配个人吐槽与观点，ERR 59.9%、转发 153/帖（本批内容号最高之一）。",
+  "one_liner": "本轮转发力冠军:中位 97/帖、均值 153、最高 920。托管 30GB 破解软件(apk+exe+zip),转发榜首是『从 Windows XP 到 11 24H2 全系统激活工具』。同时它还运营知名开源广告过滤规则项目 AWAvenueAdsRule——一个既做去广告公益、又分发破解软件的双面号。",
   "analyzed_at": "2026-09-13T16:45:00Z",
   "source": {
     "method": "telethon",
@@ -27,13 +28,13 @@
     "mean_views": 16240,
     "p10_views": 10746,
     "p90_views": 21828,
-    "err_pct": 59.9,
+    "err_pct": 59.89,
     "mature_posts": 296,
     "reactions_total": 16162,
     "forwards_total": 45937,
     "forwards_per_post": 153.1,
     "er_pct": 0.34,
-    "posts_per_day": 0.4,
+    "posts_per_day": 0.45,
     "views_available": true,
     "media_mix": {
       "document": 152,
@@ -51,106 +52,173 @@
       "7z": 13,
       "rar": 7
     },
-    "activity_note": "ERR 59.9% + 转发 153/帖 是本批内容号最高之一——高质量 + 强粘性"
+    "activity_note": "转发 153/帖 是本轮唯一破百的(对照 aboutrss 24.7、geekshare 76.3、xyxyspace 74.6)——跨 PC 与安卓双平台的破解软件是转发意愿最强的内容类型。阅读从 33,066 跌到 10,068(-70%)。转发中位月度剧烈震荡(8→325→9→319→15→176→34),反映爆款驱动的内容结构:某月出个 920 转发的激活工具中位数就被拉高。CV 检验(n=124、中位 1.431)已排除刷量,是内容方差极大。",
+    "forwards_median": 97,
+    "files": 142,
+    "files_gb": 30.13,
+    "views_trend_by_month": {
+      "2024-11": 33066,
+      "2025-02": 18796,
+      "2025-08": 19860,
+      "2026-02": 16562,
+      "2026-05": 12323,
+      "2026-08": 10068
+    }
   },
   "implementation": {
     "publish_identity": "user",
-    "post_structure": "软件/游戏介绍 + 个人吐槽/观点 + 文件直传(apk/exe/zip)或 Steam/Epic/自有站链接;标签 #PC #Windows #下载工具 #乐子 #吐槽 #观点",
-    "delivery": "PC 软件/游戏文件直传 Telegram(30GB 免费 CDN) + 部分导 Steam/Epic 免费游戏/自有站 awavenue.top",
-    "schedule": "约 0.4 条/天，白天分散",
-    "curation": "人工策展 + 个人吐槽风格，选品含实用工具/游戏/乐子小玩意",
-    "growth": "高质量分享 + 个人风格"
+    "post_structure": "正文中位 130 字/10 行,文件 142 个共 30.13GB(apk 38/exe 32/zip 26/7z 13/rar 7),跨 PC 与安卓。标签 #PC 22、#Windows 17、#下载工具 12、#系统激活 7、#喜加一 7,另有 #乐子 13、#吐槽 8、#观点 8 的人格化内容。",
+    "delivery": "矩阵:AWAvenue 自引用 191、配套群 AWAvenueChat 24、AWAvenueAdsRule 2(开源广告过滤规则项目)、idm_up 7、TalkArchive 6。自有服务 xtyun.co/asia.xtyun.co 13 次(XTCloud)、awads.cc 3 次。",
+    "schedule": "人工批量:小时分散无定时,<10 秒间隔占 32%(一个软件配多个文件/截图成组连发),分钟与秒无聚集。",
+    "curation": "熟练的破解者:Clip Studio Paint EX 的修改说明写得像 release note(『破解 EX 版永久无限制;彻底取消联网验证;移除注册相关代码』)。词频 激活 91、解锁 11、破解 8。",
+    "growth": "高质量分享 + 个人风格",
+    "ad_injection": "0 条明确报价帖,但『频道主』出现 21 次(本轮较高),指向较频繁的广告洽谈语境。",
+    "note": "最长帖是一千多字的纠纷自述(回应『软件植入病毒』『剽窃者』的指控),这类人格化内容把频道从资源仓库变成『某个人的地盘』,是粘性来源。"
   },
   "growth": {
-    "strategy": "高质量软件/游戏分享 + 强个人风格(吐槽/观点)的口碑增长",
+    "strategy": "破解软件的极致转发力 + 开源公益项目背书",
     "paid_acquisition": "none",
     "mechanisms": [
       {
-        "name": "高质量+人格化",
-        "evidence": "ERR 59.9%、转发 153/帖、reactions 16162",
-        "note": "内容好+有个人观点，值得转发"
+        "name": "破解软件的极致转发力",
+        "evidence": "中位 97、最高 920(Windows 全系激活工具)",
+        "note": "让付费软件免费用是转发意愿最强的内容"
       },
       {
-        "name": "刚需软件/游戏",
-        "evidence": "30GB 软件游戏直传",
-        "note": "下载刚需"
+        "name": "开源公益项目背书",
+        "evidence": "AWAvenueAdsRule(秋风广告规则)",
+        "note": "技术信誉转化为对破解内容的信任——区别于普通破解号的护城河"
+      },
+      {
+        "name": "人格化叙事",
+        "evidence": "#乐子/#吐槽/#观点 + 纠纷自述长帖",
+        "note": "从资源仓库变成某个人的地盘"
+      },
+      {
+        "name": "配套群",
+        "evidence": "AWAvenueChat 24 次",
+        "note": "沉淀讨论"
       }
     ],
     "signals": {
       "subscribers": 25980,
-      "err_pct": 59.9,
+      "err_pct": 59.89,
       "forwards_per_post": 153.1
     },
-    "assessment": "高质量 PC 软件/游戏分享号，ERR 59.9%、转发 153/帖——个人风格 + 刚需资源带来极强粘性与扩散。是内容类里粘性最高的一档。"
+    "assessment": "同一运营者一边维护被广泛使用的开源公益项目、一边分发 30GB 破解软件,这个组合在本轮独一无二。转发冠军是 Windows 全系激活工具(920),说明在所有『技术内容』里,让付费软件免费用的工具永远排第一。"
   },
   "cost": {
     "recurring_cny_month": [
-      30,
-      300
+      200,
+      2100
     ],
     "onetime_cny": [
-      0,
-      0
+      1500,
+      8000
     ],
     "items": [
       {
-        "name": "自有站 awavenue.top + VPS",
-        "cny_month": [
-          30,
-          200
-        ]
+        "name": "【启动】自有云服务 xtyun.co 搭建",
+        "cny_onetime": [
+          1000,
+          5000
+        ],
+        "note": "域名 + 服务器"
       },
       {
-        "name": "运营时间(找软件+测试+写吐槽，约 20-40 小时/月)",
-        "cny_month": [
+        "name": "【启动】逆向/打包工具链",
+        "cny_onetime": [
           0,
           0
+        ],
+        "note": "开源"
+      },
+      {
+        "name": "【启动】测试环境(多版本 Windows + 安卓)",
+        "cny_onetime": [
+          500,
+          3000
         ]
       },
       {
-        "name": "文件存储",
+        "name": "破解/修改与测试人力",
         "cny_month": [
           0,
           0
         ],
-        "note": "Telegram 直传"
+        "note": "60-120 小时/月:0.45 条/天但每条需实测;广告规则项目还需持续维护"
+      },
+      {
+        "name": "自有云服务运营",
+        "cny_month": [
+          200,
+          2000
+        ],
+        "note": "若真提供加速服务则含带宽"
+      },
+      {
+        "name": "存储与分发",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "30.13GB 全部由 TG 托管"
+      },
+      {
+        "name": "群管理",
+        "cny_month": [
+          0,
+          100
+        ]
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
-      2000,
-      10000
+      4000,
+      26000
     ],
-    "model": "自有站/网盘 + 软广 + 联盟",
+    "model": "自营云/加速服务 + 广告位",
     "streams": [
       {
-        "name": "自有站广告/网盘(xtyun)",
-        "evidence": "awavenue.top + xtyun.co 链接",
+        "name": "自营云/加速服务(XTCloud)",
+        "evidence": "xtyun.co 13 次、awads.cc 3 次",
         "cny_month": [
-          1000,
-          5000
+          2000,
+          15000
         ],
         "confidence": "low"
       },
       {
-        "name": "软广/游戏联盟",
-        "evidence": "高粘性受众广告位",
+        "name": "广告位",
+        "evidence": "频道主 21 次、广告 39、合作 3、赞助 2;0 条明确报价帖",
         "cny_month": [
-          1000,
-          5000
+          2000,
+          10000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "打赏/赞助",
+        "evidence": "赞助 2",
+        "cny_month": [
+          0,
+          1000
         ],
         "confidence": "low"
       }
     ],
-    "note": "高 ERR + 强粘性使广告/联盟价值高于同规模号;变现相对克制"
+    "note": "锚点:2.6 万订阅、15,560 中位阅读、153 转发/帖,按 CPM ¥50-150 折算每周 2 条约 ¥4,700-14,000/月,与估算吻合。趋势预警:阅读 -70% 意味着广告位价值同步缩水,自营云服务可能是流量下滑期更稳的收入来源。",
+    "est_scope": "本频道 + 自营云服务"
   },
   "risk": {
-    "level": "medium",
+    "level": "high",
     "notes": [
-      "分发 PC 软件/游戏(apk/exe/zip)，部分可能为破解/盗版，涉侵犯著作权",
-      "但也含 Steam/Epic 免费游戏等合规链接 + 个人原创吐槽，非纯盗版工厂",
-      "整体风险中等，介于原创号与盗版搬运号之间"
+      "系统激活与商业软件破解是主业:转发冠军为 Windows XP→11 24H2 全系激活工具(含 Office),另有 Clip Studio Paint EX 深度破解(彻底取消联网验证、移除注册相关代码)、游戏修改器管理器(含 WeMod 专业版解锁)。涉《刑法》217 条、《著作权法》53 条第 6 项",
+      "微软、Adobe、CELSYS 等权利人维权能力强,系统激活工具在司法实践中是重点打击对象",
+      "30.13GB 的 exe/apk/zip 由第三方重打包分发,存在夹带恶意代码的连带责任——样本内的纠纷自述正是在回应『软件植入病毒』的指控,说明该质疑在其受众中已出现过",
+      "【应分列】AWAvenueAdsRule(秋风广告规则)作为开源广告过滤规则项目本身完全合法,属正当技术贡献;同一运营者的合法项目不能抵销破解分发的责任,但评价其性质时应当分列",
+      "自营云服务若涉及跨境代理则另有合规问题,样本内证据不足以判定"
     ]
   }
 }

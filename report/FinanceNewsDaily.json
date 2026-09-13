@@ -1,0 +1,137 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "FinanceNewsDaily",
+  "username": "FinanceNewsDaily",
+  "url": "https://t.me/FinanceNewsDaily",
+  "title": "【华尔街见闻】- 财经时讯 | AI 实时互动",
+  "category": "财经快讯聚合(蹭华尔街见闻品牌)",
+  "growth_short": "高频快讯铺量",
+  "one_liner": "5.7万订阅的财经快讯聚合号:高频(51条/天)搬运金十/财联社/mktnews快讯,并用『华尔街见闻早餐』品牌名做栏目,靠商务合作广告变现。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/FinanceNewsDaily.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-07",
+      "2026-09-13"
+    ],
+    "note": "跨度 5.9 天、50.9 条/天,帖未成熟无法算 ERR"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "subscribers": 57459,
+    "median_views": null,
+    "mean_views": null,
+    "err_pct": null,
+    "mature_posts": 0,
+    "reactions_total": 373,
+    "forwards_total": 660,
+    "forwards_per_post": 2.2,
+    "er_pct": 0.07,
+    "posts_per_day": 50.9,
+    "views_available": true,
+    "views_note": "样本仅6天,帖未成熟,ERR待复抓;转发2.2/帖对快讯号尚可",
+    "media_mix": {
+      "empty": 290,
+      "photo": 7,
+      "document": 3
+    },
+    "deleted_pct": 1.0
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "快讯短条(标签#美股#原油#日元等) + 每日『华尔街见闻早餐』长摘要;来源 flash.jin10.com/mktnews/cls.cn",
+    "delivery": "聚合金十数据(flash.jin10)、mktnews、财联社快讯转发;基本纯文本",
+    "curation": "机器聚合财经快讯,零原创;蹭『华尔街见闻』品牌名做栏目(非官方)",
+    "schedule": "50.9 条/天,盘中高频,覆盖美/日/欧盘"
+  },
+  "growth": {
+    "strategy": "高频财经快讯铺量",
+    "paid_acquisition": "unknown",
+    "mechanisms": [
+      {
+        "name": "快讯刚需铺量",
+        "evidence": "51条/天全盘覆盖",
+        "note": "交易者需要实时快讯"
+      },
+      {
+        "name": "品牌蹭牌",
+        "evidence": "『华尔街见闻早餐』栏目名",
+        "note": "借知名财媒品牌建立信任"
+      }
+    ],
+    "signals": {
+      "subscribers": 57459,
+      "forwards_per_post": 2.2
+    },
+    "assessment": "高频快讯是交易者刚需,5.7万盘不小;蹭华尔街见闻品牌提升可信度。变现靠商务广告。ERR待复抓。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "聚合脚本/服务器",
+        "cny_month": [
+          30,
+          200
+        ]
+      },
+      {
+        "name": "运营(维护+接商务)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "高度自动化"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "商务合作广告(券商/交易平台/课程)",
+    "streams": [
+      {
+        "name": "商务广告位",
+        "evidence": "合作27、商务14",
+        "cny_month": [
+          2500,
+          12000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "导流(交易平台/付费)",
+        "evidence": "付费2、节点1",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "财经受众商业价值高,券商/交易/课程广告单价可观"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "冒用/蹭『华尔街见闻』品牌名,涉商标与不正当竞争风险",
+      "财经快讯聚合转发有来源合规灰区",
+      "若接交易平台/荐股广告则风险上升(样本内以正常财经广告为主),暂标 medium"
+    ]
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "cosplaysharegroup",
+  "username": "cosplaysharegroup",
+  "url": "https://t.me/cosplaysharegroup",
+  "title": "動漫遊戲Cosplay群組",
+  "category": "Cosplay/ACG交流群(已滑向成人/男娘擦边)",
+  "growth_short": "ACG搜索bot导流",
+  "one_liner": "8681成员的Cosplay/ACG群:名义coser交流,实际大量成人向『男娘』色情文字与擦边内容,配soutubot等搜索bot;删除率72.4%,属成人擦边社区。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/cosplaysharegroup.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-08",
+      "2026-09-13"
+    ],
+    "note": "跨度 4.6 天、65.5 条/天;群无 per-message 阅读;含成人露骨文本,正文不引用原文"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 8681,
+    "online": 122,
+    "online_pct": 1.41,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无 per-message 阅读,ERR不适用,替代指标 online_pct",
+    "messages_per_day": 66,
+    "reactions_total": 39,
+    "forwards_total": 0,
+    "deleted_ratio_pct": 72.4,
+    "activity_note": "1.41%在线;72.4%删除;内容混合cosplay讨论与成人男娘露骨文字"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "名义Cosplay/摄影交流,实际大量成人向『男娘』色情roleplay文字、擦边图与找图请求;配soutubot等ACG搜索bot",
+    "ad_injection": "以成人擦边UGC为主,商业广告少(客服6);搜索bot(@soutubot)导流",
+    "delivery": "图/文为主,找图靠搜索bot;x.com/fixupx等外链",
+    "schedule": "全天候,0点与23点高峰(深夜成人向活跃)"
+  },
+  "growth": {
+    "strategy": "ACG/成人擦边刚需 + 搜索bot导流",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "成人擦边刚需",
+        "evidence": "男娘色情文本、深夜活跃",
+        "note": "擦边内容拉活跃"
+      },
+      {
+        "name": "ACG搜索bot",
+        "evidence": "@soutubot",
+        "note": "找图刚需导流"
+      }
+    ],
+    "signals": {
+      "online_pct": 1.41,
+      "messages_per_day": 66
+    },
+    "assessment": "名义cosplay交流,实际已滑向成人向男娘擦边社区。1.41%在线、深夜高峰印证成人属性。变现不显,靠搜索bot与擦边内容维持活跃。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "搜索bot/管理bot + 服务器",
+        "cny_month": [
+          0,
+          150
+        ]
+      },
+      {
+        "name": "群管理人力",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      3000
+    ],
+    "est_scope": "本群可归因",
+    "model": "搜索bot广告/成人资源导流(推测)",
+    "streams": [
+      {
+        "name": "搜索bot/成人资源导流",
+        "evidence": "@soutubot、擦边找图",
+        "cny_month": [
+          0,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "直接变现不显,擦边社区通常靠搜索bot广告或成人资源付费导流"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "群内大量成人向『男娘』色情露骨文字与擦边图,成人内容传播在大陆有刑事风险敞口",
+      "配ACG搜索bot,存在导向成人/盗版ACG资源的风险",
+      "本报告不引用群内露骨原文;若出现涉未成年形象内容则升级为criminal(样本内以成人向为主,暂标high)"
+    ]
+  }
+}

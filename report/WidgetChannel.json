@@ -1,0 +1,135 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "WidgetChannel",
+  "username": "WidgetChannel",
+  "url": "https://t.me/WidgetChannel",
+  "title": "Widget🏂软件工具资源分享",
+  "category": "软件/开源/限免 资源号",
+  "growth_short": "开源资源高转发",
+  "one_liner": "9.9万订阅的软件工具资源号:开源项目/限免/EPIC/AI工具,github外链189次、转发55/帖,ERR 9.4%,含少量apk破解,是偏开源向的资源策展号。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/WidgetChannel.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-05-11",
+      "2026-09-12"
+    ],
+    "note": "跨度124天、2.4条/天;id缺口58%"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 99420,
+    "median_views": 9361,
+    "mean_views": 9416,
+    "p10_views": 6551,
+    "p90_views": 11516,
+    "err_pct": 9.4,
+    "mature_posts": 276,
+    "reactions_total": 2229,
+    "forwards_total": 16635,
+    "forwards_per_post": 55.5,
+    "forwards_median": 46.5,
+    "er_pct": 0.08,
+    "posts_per_day": 2.4,
+    "views_available": true,
+    "media_mix": {
+      "photo": 275,
+      "document": 20,
+      "empty": 5
+    },
+    "deleted_pct": 58.4,
+    "activity_note": "9.4% ERR + 转发55/帖:开源/限免内容真被存转;58%删除疑广告/资源自毁"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "配图 + 软件/开源/限免介绍 + 标签(#开源 #游戏 #限免 #EPIC #AI) + 链接(github 189/EPIC/chrome商店/gitee)",
+    "delivery": "指路为主:github/gitee 开源、EPIC 限免、Chrome 商店;少量apk附件",
+    "curation": "半原创短评式资源策展,偏开源与正规限免,含少量apk破解",
+    "schedule": "2.4条/天,集中20点(209条,定时批量)"
+  },
+  "growth": {
+    "strategy": "开源/限免刚需 + 高转发",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "开源/限免刚需",
+        "evidence": "github 189、转发55/帖",
+        "note": "开源与免费游戏值得存转"
+      }
+    ],
+    "signals": {
+      "subscribers": 99420,
+      "err_pct": 9.4,
+      "forwards_per_post": 55.5
+    },
+    "assessment": "偏开源向的资源策展号,9.4%ERR+高转发说明内容真实。比纯破解号干净(以开源/正规限免为主),但仍有少量apk破解与广告。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(选题/短评)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约30-50小时/月"
+      },
+      {
+        "name": "服务器/图床",
+        "cny_month": [
+          30,
+          300
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      10000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "广告位 + 网盘/aff",
+    "streams": [
+      {
+        "name": "广告位(疑自毁)",
+        "evidence": "广告26、58%id缺口",
+        "cny_month": [
+          1500,
+          7000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "代理/aff",
+        "evidence": "代理8、aff1",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "资源号常规变现,10万盘广告有价"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "以开源/正规限免为主,相对干净,但含少量apk破解分发涉侵权",
+      "广告合规性不可控;未见博彩/成人,取其含破解暂标 high(偏低)"
+    ]
+  }
+}

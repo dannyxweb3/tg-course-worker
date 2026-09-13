@@ -19,6 +19,11 @@
   {% endif %}
   {% set conf = (data.metrics.confidence if data.metrics else none) or data.confidence %}
   {% if conf %}<span class="badge">{{ CONF_LABEL.get(conf, conf) }}</span>{% endif %}
+  {% set depth = data.get('depth', 'brief') %}
+  <span class="badge {{ 'ok' if depth == 'deep' else '' }}"
+        title="deep=已做数据推断/异常挖掘/黑话解码/成本拆解/收益锚点/逐罪名分析；brief=五维骨架待重做">
+    {{ '深度分析' if depth == 'deep' else '简版·待重做' }}
+  </span>
 </div>
 <div class="small muted" style="margin-bottom:16px">
   {% if data.url %}<a href="{{ data.url }}" target="_blank" rel="noopener nofollow">@{{ data.username }} ↗</a>{% else %}@{{ data.username }}{% endif %}
@@ -34,24 +39,54 @@
    改看规模（成员）、活跃（在线、日消息）、构成（bot 占比）这几维。 #}
 <div class="stats" style="margin-bottom:24px">
   <div class="stat"><b>{{ m.members|num }}</b><span>成员数</span></div>
-  {% if m.online is not none %}
-    <div class="stat"><b>{{ m.online|num }}</b><span>在线数{% if m.online_pct is not none %} · {{ m.online_pct }}%{% endif %}</span></div>
+  {# 缺失的指标在 metrics 里根本没有这个键，m.foo 会取到 Jinja 的 Undefined，
+     而 `Undefined is not none` 为真，后面一比较（>= 50）就抛 UndefinedError→500。
+     统一用 m.get('foo')，缺键返回 None，判空才成立。 #}
+  {% set online = m.get('online') %}
+  {% if online is not none %}
+    <div class="stat"><b>{{ online|num }}</b><span>在线数{% if m.get('online_pct') is not none %} · {{ m.online_pct }}%{% endif %}</span></div>
   {% endif %}
-  {% if m.messages_per_day is not none %}<div class="stat"><b>{{ m.messages_per_day|num }}</b><span>每日消息数</span></div>{% endif %}
-  {% if m.bot_share_pct is not none %}<div class="stat"><b class="{{ 'bad' if m.bot_share_pct >= 50 else '' }}">{{ m.bot_share_pct }}%</b><span>bot 消息占比</span></div>{% endif %}
-  {% if m.links_per_message_mean is not none %}<div class="stat"><b>{{ m.links_per_message_mean }}</b><span>链接 / 条</span></div>{% endif %}
+  {% if m.get('messages_per_day') is not none %}<div class="stat"><b>{{ m.messages_per_day|num }}</b><span>每日消息数</span></div>{% endif %}
+  {% set bsp = m.get('bot_share_pct') %}
+  {% if bsp is not none %}<div class="stat"><b class="{{ 'bad' if bsp >= 50 else '' }}">{{ bsp }}%</b><span>bot 消息占比</span></div>{% endif %}
+  {% if m.get('links_per_message_mean') is not none %}<div class="stat"><b>{{ m.links_per_message_mean }}</b><span>链接 / 条</span></div>{% endif %}
   {% if m.deleted_ratio_pct %}<div class="stat"><b>{{ m.deleted_ratio_pct }}%</b><span>历史删除率</span></div>{% endif %}
 </div>
 {% else %}
 <div class="stats" style="margin-bottom:24px">
   <div class="stat"><b>{{ m.subscribers|num }}</b><span>订阅数</span></div>
   <div class="stat"><b>{{ m.median_views|num }}</b><span>中位阅读</span></div>
-  <div class="stat"><b class="{{ 'good' if m.err_pct and m.err_pct >= 2 else ('bad' if m.err_pct is not none else '') }}">{{ m.err_pct|pct }}</b><span>ERR 互动率</span></div>
+  {% set err = m.get('err_pct') %}
+  <div class="stat"><b class="{{ 'good' if err and err >= 2 else ('bad' if err is not none else '') }}">{{ err|pct }}</b><span>ERR 互动率</span></div>
   <div class="stat"><b>{{ m.forwards_per_post|dash }}</b><span>转发 / 帖</span></div>
   {% if m.hosted_bytes_gb %}<div class="stat"><b>{{ m.hosted_bytes_gb }} GB</b><span>托管文件</span></div>{% endif %}
   {% if m.deleted_ratio_pct %}<div class="stat"><b>{{ m.deleted_ratio_pct }}%</b><span>历史删除率</span></div>{% endif %}
 </div>
 {% endif %}
+{% endif %}
+
+{# 实现技术思路：结构化字段逐条展示。值可能缺失或是 dict/list，只渲染存在的字符串字段。 #}
+{% if data.implementation %}
+{% set impl = data.implementation %}
+<div class="card" style="margin-bottom:24px">
+  <h3>实现技术思路</h3>
+  <dl class="kv small">
+    {% for key, label in [
+        ('post_structure','内容结构'), ('ad_injection','广告注入'),
+        ('delivery','投递 / 分发'), ('curation','内容策展'),
+        ('schedule','发布节奏'), ('retention','留存机制'),
+        ('operating_team_note','运营团队'), ('note','备注')] %}
+      {% set val = impl.get(key) %}
+      {% if val and val is string %}<dt>{{ label }}</dt><dd>{{ val }}</dd>{% endif %}
+    {% endfor %}
+  </dl>
+  {% if impl.get('operating_team') %}
+  <table class="small" style="margin-top:8px">
+    <thead><tr><th>运营账号</th><th>角色</th></tr></thead>
+    <tbody>{% for t in impl.operating_team %}<tr><td class="mono">{{ t.handle }}</td><td>{{ t.role }}</td></tr>{% endfor %}</tbody>
+  </table>
+  {% endif %}
+</div>
 {% endif %}
 
 <div class="grid two" style="margin-bottom:24px">
@@ -99,6 +134,26 @@
   </div>
   {% endif %}
 </div>
+
+{# 增长（涨粉）策略 #}
+{% if data.growth %}
+{% set g = data.growth %}
+<div class="card" style="margin-bottom:24px">
+  <h3>增长策略{% if g.paid_acquisition %} · <span class="badge">付费获客：{{ PAID_LABEL.get(g.paid_acquisition, g.paid_acquisition) }}</span>{% endif %}</h3>
+  {% if g.strategy %}<p class="small">{{ g.strategy }}</p>{% endif %}
+  {% if g.mechanisms %}
+  <table class="small">
+    <thead><tr><th>机制</th><th>证据</th></tr></thead>
+    <tbody>
+    {% for x in g.mechanisms %}
+      <tr><td>{{ x.name }}{% if x.note %}<div class="muted">{{ x.note }}</div>{% endif %}</td><td class="muted mono">{{ x.evidence|dash }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+  {% if g.assessment %}<p class="small muted" style="margin-bottom:0">{{ g.assessment }}</p>{% endif %}
+</div>
+{% endif %}
 
 {% if data.risk and data.risk.notes %}
 <h2>风险</h2>

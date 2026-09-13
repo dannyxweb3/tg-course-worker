@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "meizitu3",
   "username": "meizitu3",
@@ -7,7 +8,7 @@
   "title": "朱颜别镜 | 妹子图 | 美女图",
   "category": "妹子图/软色情写真（抖音/微博扒图，每日批量）",
   "growth_short": "软色情刚需转发",
-  "one_liner": "4.95 万订阅的妹子图号：每天 07:00 批量喷抖音/微博网红写真，ERR 6.4%、转发 8.7/帖，软色情擦边 + 未授权扒图，夹带少量导流域名。",
+  "one_liner": "每天早上 7 点把当日全部内容一次性倾倒:300 条里 294 条发在 7 点、间隔中位 1 秒。内容是从抖音、微博搬运的网红写真(#抖音 48、#微博 17),正文中位 0 字、反应总数仅 58。夹带机场推广,并接入了本轮反复出现的那张互推网(@Summer_Clear_Sky_Bot)。",
   "analyzed_at": "2026-09-13T15:15:00Z",
   "source": {
     "method": "telethon",
@@ -23,17 +24,17 @@
   "metrics": {
     "confidence": "high",
     "subscribers": 49523,
-    "median_views": 3181,
-    "mean_views": 3223,
+    "median_views": 3089,
+    "mean_views": 2993,
     "p10_views": 2814,
     "p90_views": 3672,
-    "err_pct": 6.4,
+    "err_pct": 6.24,
     "mature_posts": 248,
     "reactions_total": 58,
     "forwards_total": 2618,
     "forwards_per_post": 8.7,
     "er_pct": 0.01,
-    "posts_per_day": 8.6,
+    "posts_per_day": 8.57,
     "views_available": true,
     "media_mix": {
       "photo": 271,
@@ -41,83 +42,103 @@
       "text": 6
     },
     "deleted_pct": 4.5,
-    "activity_note": "reactions 极低、转发 8.7/帖，与 botmzt 同类软色情图号"
+    "activity_note": "与同品类 baisi 的对照鲜明:baisi 订阅是它的 3.3 倍,实际阅读却是 10.9 倍(33,526 vs 3,089),ERR 20.38% vs 6.24%,转发中位 63 vs 9——同为擦边图集,二次元 cos 向的受众粘性明显高于国内网红写真搬运。反应总数 58 说明这类内容的消费完全私密:不点赞、不评论,转发也远低于 baisi。",
+    "forwards_median": 9,
+    "files": 23,
+    "files_gb": 0.06
   },
   "implementation": {
     "publish_identity": "bot",
-    "post_structure": "网红写真图/短视频 + 出处标注(抖音/微博创作者);标签为创作者名 #写真 #人像",
-    "delivery": "图片/短视频直发 Telegram;扒取抖音/微博网红内容;夹带少量导流域名(网赚/擦边)",
-    "schedule": "每天 07:00 定时批量",
+    "post_structure": "图片直发为主(271 条 photo + 23 个 mp4,仅 0.06GB),正文中位 0 字——不写来源、不写出处。与 baisi(保留推特作者 ID 作为标签)相比,它连来源标注都没有。",
+    "delivery": "内容源为国内短视频与社交平台:#抖音 48、#微博 17、#视频 6、#写真 4、#人像 3,其余为具体人物代号(不予收录)。外链极少,t.me 28 次为主。自有署名 @meizitu3 71 次。",
+    "schedule": "本轮时间集中度最高的样本:300 条里 294 条(98%)集中在早上 7 点这一小时内发出,间隔中位 1 秒、<10 秒占 74%。模式是前一晚攒好当天的图、早上 7 点用脚本一次性排空队列。选在 7 点有讲究——通勤前刷手机的时段,内容能停留在信息流顶部整个上午。",
     "source": "抖音/微博扒图",
-    "growth": "软色情刚需转发"
+    "growth": "软色情刚需转发",
+    "ad_injection": "有变现动作:机场推广(hongxingdl.com 2、hongxingyun6.vip 2、节点 3、订阅 2、代理 1)。0 条明确报价帖。",
+    "curation": "搬运门槛低、供给充足,零文案。",
+    "note": "跨品类互推网线索:@Summer_Clear_Sky_Bot 在本轮同时出现在 KaiPanshare(10 次,盗版电子书)与 appinnfeed(4 次,正规软件 Feed);互推对象 zhetengsha、ooapps 也同时出现在 appinnfeed 的名单里——说明存在一张把正规软件号、盗版资源号与擦边图集号连在一起的跨品类互推服务网络。"
   },
   "growth": {
-    "strategy": "软色情写真刚需自然转发，定时批量维持更新",
-    "paid_acquisition": "none",
+    "strategy": "高频铺量 + 跨品类互推换量",
+    "paid_acquisition": "exchange",
     "mechanisms": [
       {
-        "name": "刚需转发",
-        "evidence": "转发 8.7/帖",
-        "note": "写真扩散"
+        "name": "高频铺量",
+        "evidence": "8.57 条/天,早 7 点一次性排空",
+        "note": "占据通勤时段信息流"
       },
       {
-        "name": "蹭网红",
-        "evidence": "标注抖音/微博创作者名",
-        "note": "蹭热门网红流量"
+        "name": "跨品类互推网",
+        "evidence": "ruanjianfenxiang77/zhetengsha/dcmpj/ooapps/gongzhutonghao/gezhongxiaoshuo + @Summer_Clear_Sky_Bot",
+        "note": "与盗版资源号、软件号共用同一张网"
+      },
+      {
+        "name": "国内平台内容源",
+        "evidence": "#抖音 48、#微博 17",
+        "note": "搬运门槛低、供给充足"
       }
     ],
     "signals": {
       "subscribers": 49523,
-      "err_pct": 6.4,
+      "err_pct": 6.24,
       "forwards_per_post": 8.7
     },
-    "assessment": "软色情写真号，扒抖音/微博网红。ERR 6.4% 中等，与 botmzt 同模式(定时批量+软色情)。"
+    "assessment": "增长质量一般:ERR 6.24%、反应 58、转发中位 9。互推换来的粉丝贡献订阅数但不贡献互动——与 pixiv_top50 同一诊断,程度轻一些。样本仅 35 天,不足以判定趋势。"
   },
   "cost": {
     "recurring_cny_month": [
       30,
-      200
+      80
     ],
     "onetime_cny": [
       0,
-      0
+      500
     ],
     "items": [
       {
-        "name": "采图/发布 bot + VPS",
-        "cny_month": [
-          30,
-          200
-        ]
+        "name": "【启动】采集/批量发布脚本",
+        "cny_onetime": [
+          0,
+          500
+        ],
+        "note": "需抓抖音/微博"
       },
       {
-        "name": "图片存储",
+        "name": "选图与打标",
         "cny_month": [
           0,
           0
         ],
-        "note": "Telegram 托管"
+        "note": "10-25 小时/月,8.57 条/天但零文案,高度可批处理"
       },
       {
-        "name": "运营时间",
+        "name": "VPS / 脚本托管",
+        "cny_month": [
+          30,
+          80
+        ],
+        "note": "支撑每日 7 点定时排空"
+      },
+      {
+        "name": "存储",
         "cny_month": [
           0,
-          50
+          0
         ],
-        "note": "半自动批量"
+        "note": "0.06GB 由 TG 托管"
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
-      1000,
-      6000
+      500,
+      4500
     ],
-    "model": "广告位 + 导流(网赚/付费写真)",
+    "model": "机场推广 + 少量广告位",
     "streams": [
       {
-        "name": "广告位/导流域名",
-        "evidence": "hongxing 系列域名导流",
+        "name": "机场推广",
+        "evidence": "2 个机场域名各 2 次、节点 3、代理 1",
         "cny_month": [
           500,
           3000
@@ -125,23 +146,36 @@
         "confidence": "low"
       },
       {
-        "name": "导流付费写真/会员",
-        "evidence": "软色情号常见转化",
+        "name": "广告位",
+        "evidence": "0 条明确报价帖",
         "cny_month": [
-          500,
-          3000
+          0,
+          1500
         ],
         "confidence": "low"
+      },
+      {
+        "name": "互推换量",
+        "evidence": "6 个互推对象 + @Summer_Clear_Sky_Bot",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "medium",
+        "note": "换量非现金"
       }
     ],
-    "note": "公开变现动作少，多走导流;软色情受众广告价值中等"
+    "note": "锚点:中位阅读 3,089 × 8.57 条/天 ≈ 26,500 曝光/天(约 80 万/月)。按机场广告常见口径(xiaoshuwu 样本:20 万次月曝光对应 ¥10,000-30,000,但那是满载 4 个坑位的包月),本号仅零星夹带机场链接,估 ¥500-4,500/月。",
+    "est_scope": "本频道可归因"
   },
   "risk": {
     "level": "high",
     "notes": [
-      "软色情/妹子图擦边，在中国大陆有传播低俗内容风险敞口(擦边非露骨，列 high)",
-      "未授权扒取抖音/微博网红写真，侵犯著作权/肖像权",
-      "夹带导流域名(网赚/擦边)增加合规风险"
+      "内容尺度:软色情/擦边性质的网红写真搬运,在大陆处于《治安管理处罚法》与传播淫秽物品相关条款的判定边界上;『擦边』通常落在行政处罚区间,但 4.95 万订阅、日更 8.57 条的持续规模会抬高情节认定",
+      "🔴 肖像权与著作权:内容源自抖音、微博的真实人物写真(#抖音 48、#微博 17)且未标注任何来源(正文中位 0 字),同时侵犯拍摄者著作权与被拍摄者肖像权——后者比二次元图集严重得多,因为涉及可识别的真实自然人,且这些内容被搬运到境外平台的擦边语境中,当事人往往并不知情。这是它风险高于 baisi(二次元 cos 为主)的关键原因",
+      "机场推广:hongxingdl.com / hongxingyun6.vip 等域名,属翻墙服务分销的合规灰区",
+      "接入跨品类互推网(与 KaiPanshare、appinnfeed 共用 @Summer_Clear_Sky_Bot,与 appinnfeed 共享 zhetengsha/ooapps 等对象)——这类网络会把正规号与擦边号的受众打通,是各方共同的连带敞口",
+      "【能力边界】基于聚合指标、标签与外链结构判断,未对图片内容作视觉审查,不收录任何人物标识与图源"
     ]
   }
 }

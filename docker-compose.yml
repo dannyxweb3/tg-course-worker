@@ -19,6 +19,8 @@ services:
       - ./logs:/app/logs
       # prompt 挂出来，改文案风格不用重新 build
       - ./config/prompts:/app/config/prompts:ro
+      # 竞品分析报告(只读):report/ 不进卷的话，新增/改报告要重建镜像才生效
+      - ./report:/app/report:ro
     logging:
       driver: json-file
       options:

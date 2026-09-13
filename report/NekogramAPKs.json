@@ -1,0 +1,117 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "NekogramAPKs",
+  "username": "NekogramAPKs",
+  "url": "https://t.me/NekogramAPKs",
+  "title": "Nekogram APKs",
+  "category": "Telegram第三方客户端APK镜像(工具)",
+  "growth_short": "客户端apk刚需",
+  "one_liner": "4.2万订阅的Nekogram(TG第三方客户端)APK镜像号:每版发apk(291个/15GB),转发273/帖、ERR 131%,纯工具型分发,几乎不变现。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/NekogramAPKs.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-01"
+    ],
+    "note": "0.2条/天,随版本发布"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 41571,
+    "median_views": null,
+    "err_pct": 131.2,
+    "mature_posts": null,
+    "forwards_per_post": 273.3,
+    "er_pct": 0.17,
+    "posts_per_day": 0.2,
+    "views_available": true,
+    "media_mix": {
+      "document": 291
+    },
+    "deleted_pct": 7.1,
+    "activity_note": "ERR 131%+转发273/帖:第三方TG客户端apk刚需,外部大量转发"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "Nekogram 各版apk文件+版本说明,指向github/play",
+    "delivery": "apk直接挂消息(15GB)走TG CDN",
+    "curation": "镜像Nekogram(开源TG客户端)apk",
+    "schedule": "0.2条/天,随版本"
+  },
+  "growth": {
+    "strategy": "第三方客户端apk刚需",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "客户端apk刚需",
+        "evidence": "转发273/帖、ERR 131%",
+        "note": "Nekogram用户装/更新刚需"
+      }
+    ],
+    "signals": {
+      "subscribers": 41571,
+      "err_pct": 131.2,
+      "forwards_per_post": 273.3
+    },
+    "assessment": "Nekogram(开源TG第三方客户端)apk镜像,纯工具型。几乎不变现。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      50
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      1000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "基本无变现",
+    "streams": [
+      {
+        "name": "无",
+        "evidence": "样本内无广告",
+        "cny_month": [
+          0,
+          1000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "工具型,几乎不变现"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "分发开源TG第三方客户端(Nekogram)apk,非盗版",
+      "第三方客户端有隐私/信任考量;整体风险低"
+    ]
+  }
+}

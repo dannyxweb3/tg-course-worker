@@ -1,0 +1,125 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "FoolishTraceWind",
+  "username": "FoolishTraceWind",
+  "url": "https://t.me/FoolishTraceWind",
+  "title": "Foolish TraceWind",
+  "category": "个人梗图/趣闻娱乐号(对照组)",
+  "growth_short": "趣味内容高互动",
+  "one_liner": "1.67万订阅的个人趣图/冷知识号:段子、梗图解析、游戏梗,ER 1.23%(全批次高互动之一)、reactions 6192、零商业化,干净对照组。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/FoolishTraceWind.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-03",
+      "2026-09-13"
+    ],
+    "note": "跨度 40 天、7.4 条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 16655,
+    "median_views": 1703,
+    "mean_views": 1760,
+    "p10_views": 1443,
+    "p90_views": 2066,
+    "err_pct": 10.2,
+    "mature_posts": 243,
+    "reactions_total": 6192,
+    "forwards_total": 3134,
+    "forwards_per_post": 10.4,
+    "forwards_median": 9.0,
+    "er_pct": 1.23,
+    "posts_per_day": 7.4,
+    "views_available": true,
+    "media_mix": {
+      "photo": 267,
+      "document": 31
+    },
+    "deleted_pct": 3.8,
+    "activity_note": "ER 1.23% 是全批次高互动之一,reactions 6192、转发中位9:真实活跃的趣味社群"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "梗图/趣图 + 段子解析/冷知识配文;无外链无标签,纯图文娱乐",
+    "delivery": "媒体直发",
+    "curation": "搜集+原创式吐槽解析(如笑点解析、金价换算段子)",
+    "schedule": "7.4 条/天,集中22点"
+  },
+  "growth": {
+    "strategy": "趣味内容高互动自然扩散",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "趣味刚需",
+        "evidence": "ER 1.23%、转发中位9",
+        "note": "段子/冷知识易转发"
+      }
+    ],
+    "signals": {
+      "subscribers": 16655,
+      "err_pct": 10.2,
+      "forwards_per_post": 10.4
+    },
+    "assessment": "ER 1.23%、reactions 6192,是真实高互动的娱乐社群。零变现动作,纯兴趣号,干净对照组。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      50
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(找图/写解析)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约20-40小时/月"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      1500
+    ],
+    "est_scope": "本频道可归因",
+    "model": "基本无商业化",
+    "streams": [
+      {
+        "name": "潜在广告/无",
+        "evidence": "样本内无任何变现关键词",
+        "cny_month": [
+          0,
+          1500
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "当前不变现;高互动是其潜在价值"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "趣图/段子娱乐,图片来源版权是唯一轻微风险",
+      "无灰产/成人/诱导,风险低"
+    ]
+  }
+}

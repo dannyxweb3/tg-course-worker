@@ -1,0 +1,128 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "abc999222",
+  "username": "abc999222",
+  "url": "https://t.me/abc999222",
+  "title": "树洞频道评论区（8度群组）",
+  "category": "树洞/闲聊社区群(对照组)",
+  "growth_short": "树洞频道导流",
+  "one_liner": "1.48万成员的树洞频道评论区群:高活跃(102条/天)的匿名倾诉与闲聊社区,内容以个人吐槽/情感/社会话题为主,几乎无广告注入,是相对干净的社区群。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/abc999222.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-10",
+      "2026-09-13"
+    ],
+    "note": "跨度 2.9 天、102 条/天;群无 per-message 阅读,tg_recon 不抓 sender_id 故 bot_share 未知"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 14780,
+    "online": 243,
+    "online_pct": 1.64,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无 per-message 阅读,ERR不适用,替代指标 online_pct",
+    "messages_per_day": 102,
+    "reactions_total": 217,
+    "forwards_total": 22,
+    "forwards_per_post": 0.1,
+    "deleted_ratio_pct": 74.8,
+    "activity_note": "1.64% 并发在线(243/14780);74.8% id 缺口是群管清垃圾消息;真人闲聊为主"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "作为『树洞频道』的评论区,成员发匿名/实名倾诉、情感吐槽、社会议题讨论;短消息为主",
+    "ad_injection": "几乎无:变现关键词极少(联系4、博彩1均为讨论语境非广告)",
+    "delivery": "纯社区闲聊,不分发资源",
+    "schedule": "全天候,14/12/19点高峰",
+    "retention": "依附主『树洞频道』导流,评论区留存"
+  },
+  "growth": {
+    "strategy": "树洞频道→评论区群的自然导流",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "树洞频道导流",
+        "evidence": "群名『树洞频道评论区』",
+        "note": "主频道内容带动评论区活跃"
+      },
+      {
+        "name": "匿名倾诉刚需",
+        "evidence": "102条/天真人吐槽",
+        "note": "情感宣泄社区粘性"
+      }
+    ],
+    "signals": {
+      "online_pct": 1.64,
+      "messages_per_day": 102,
+      "forwards_total": 22
+    },
+    "assessment": "真实活跃的闲聊/树洞社区,1.64%在线属正常。几乎无商业注入,是相对干净的社区群对照组;变现(若有)靠主频道而非群内。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理人力/管理bot",
+        "cny_month": [
+          0,
+          150
+        ],
+        "note": "清垃圾消息(74.8%删除)需管理"
+      },
+      {
+        "name": "服务器/bot",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      3000
+    ],
+    "est_scope": "群本体可归因(不含主频道)",
+    "model": "主频道广告/无(群本身几乎不变现)",
+    "streams": [
+      {
+        "name": "主频道广告/群内偶发推广",
+        "evidence": "群内变现关键词极少",
+        "cny_month": [
+          0,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现主要在主『树洞频道』,群作为评论区几乎不直接变现"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "树洞/闲聊社区,成员讨论含被诈骗经历、社会话题等,属正常UGC",
+      "无资源盗版、无灰产广告注入;唯一风险是UGC不可控(偶有敏感话题)",
+      "整体风险低"
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "gebaopiCloud",
+  "username": "gebaopiCloud",
+  "url": "https://t.me/gebaopiCloud",
+  "title": "前女友们用过的机场—始于机场，不止机场",
+  "category": "机场(VPN)测评/分销 + 科技",
+  "growth_short": "机场测评刚需",
+  "one_liner": "10.1万订阅的机场测评/分销号:机场送测+评测+推荐(机场提及344次),兼带苹果/科技,ERR 39.8%、转发80/帖,机场生态头部分销号之一。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/gebaopiCloud.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-03-09",
+      "2026-09-12"
+    ],
+    "note": "跨度552天、0.5条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 101019,
+    "median_views": 40184,
+    "mean_views": 42084,
+    "p10_views": 21271,
+    "p90_views": 63244,
+    "err_pct": 39.8,
+    "mature_posts": 296,
+    "reactions_total": 0,
+    "forwards_total": 24245,
+    "forwards_per_post": 80.8,
+    "forwards_median": 35.5,
+    "er_pct": 0.0,
+    "posts_per_day": 0.5,
+    "views_available": true,
+    "media_mix": {
+      "document": 119,
+      "photo": 103,
+      "empty": 54,
+      "webpage": 23
+    },
+    "deleted_pct": 32.7,
+    "activity_note": "39.8% ERR + 转发80/帖:机场刚需扩散;与 jichangtj/DuyaoSS 同属机场生态"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "机场送测/评测(标签#机场送测 #VikingLinks #CTC #理想国) + 测速截图 + 推荐链接;兼发苹果/科技/emby",
+    "delivery": "指路各家机场(带分销链)与自建榜;截图测速",
+    "curation": "人工测评各家机场,半原创;兼带科技内容拉泛粉",
+    "schedule": "0.5条/天,全天分散"
+  },
+  "growth": {
+    "strategy": "机场测评刚需 + 科技泛粉",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "翻墙刚需",
+        "evidence": "39.8% ERR、转发80/帖",
+        "note": "选机场刚需"
+      },
+      {
+        "name": "机场送测",
+        "evidence": "#机场送测、多家机场",
+        "note": "机场付费送测/推荐"
+      }
+    ],
+    "signals": {
+      "subscribers": 101019,
+      "err_pct": 39.8,
+      "forwards_per_post": 80.8
+    },
+    "assessment": "机场生态头部测评/分销号,39.8%ERR。变现走机场送测费+分销返佣。兼带科技内容扩大受众。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      600
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(实测机场/写评测)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约20-40小时/月"
+      },
+      {
+        "name": "测速探针/服务器",
+        "cny_month": [
+          100,
+          600
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      15000,
+      60000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "机场送测费 + 分销返佣(CPS)",
+    "streams": [
+      {
+        "name": "机场分销返佣/送测",
+        "evidence": "多家机场推荐+送测标签",
+        "cny_month": [
+          12000,
+          50000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "广告位",
+        "evidence": "10万盘",
+        "cny_month": [
+          3000,
+          10000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "机场测评头部变现力强,返佣率不可见"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "机场(翻墙VPN)测评分销在大陆属提供非法互联网接入/帮信引流",
+      "机场送测/分销经营主体明确;未见博彩/诈骗,未标 criminal,属明确灰产"
+    ]
+  }
+}

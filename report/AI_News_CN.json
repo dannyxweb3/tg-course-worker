@@ -1,0 +1,145 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "AI_News_CN",
+  "username": "AI_News_CN",
+  "url": "https://t.me/AI_News_CN",
+  "title": "ChatGPT / AI新闻聚合",
+  "category": "AI/科技新闻聚合(自动化feed+广告)",
+  "growth_short": "高频新闻铺量",
+  "one_liner": "2.17万订阅的AI新闻聚合号:高频(76条/天)自动搬运cnbeta/aibase/推特AI资讯,重度接广告(广告49/合作41/投放13),外链指向xphub生态(ai.xphub.dev 109次)。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/AI_News_CN.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-09",
+      "2026-09-13"
+    ],
+    "note": "跨度 4 天、75.9 条/天,样本内帖多未成熟(mature=0),无法算 ERR"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "subscribers": 21716,
+    "median_views": null,
+    "mean_views": null,
+    "err_pct": null,
+    "mature_posts": 0,
+    "reactions_total": 58,
+    "forwards_total": 224,
+    "forwards_per_post": 0.7,
+    "er_pct": 0.08,
+    "posts_per_day": 75.9,
+    "views_available": true,
+    "views_note": "样本仅4天,帖未成熟(mature=0),ERR 待后续复抓;转发0.7/帖、反应极低,互动偏弱",
+    "media_mix": {
+      "empty": 185,
+      "webpage": 63,
+      "photo": 48
+    },
+    "deleted_pct": 0.0
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "新闻标题 + 摘要 + 来源链接(cnbeta/aibase/x.com/telegra.ph);穿插 ai.xphub.dev 自家产品页",
+    "delivery": "自动化聚合:抓 cnbeta.com.tw(63)、aibase.com(38)、x.com(124)AI 资讯转发;telegra.ph 承载长文",
+    "curation": "机器聚合为主,零原创;ai.xphub.dev 109次是自家 AI 导航/工具站导流",
+    "schedule": "75.9 条/天,机器高频"
+  },
+  "growth": {
+    "strategy": "高频新闻铺量占领AI资讯长尾",
+    "paid_acquisition": "unknown",
+    "mechanisms": [
+      {
+        "name": "高频聚合铺量",
+        "evidence": "76条/天",
+        "note": "用量占AI资讯位"
+      },
+      {
+        "name": "自家产品导流",
+        "evidence": "ai.xphub.dev 109次",
+        "note": "给自家AI导航站引流"
+      }
+    ],
+    "signals": {
+      "subscribers": 21716,
+      "forwards_per_post": 0.7
+    },
+    "assessment": "转发0.7、反应极低说明是自动化聚合的弱互动号;价值在广告位与给 xphub 生态导流,而非受众粘性。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "聚合脚本/服务器",
+        "cny_month": [
+          30,
+          200
+        ],
+        "note": "自动抓取转发"
+      },
+      {
+        "name": "运营时间(维护脚本+接广告)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "高度自动化,人力低"
+      },
+      {
+        "name": "LLM(摘要,可选)",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      10000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "广告位售卖 + 自家产品(xphub)导流",
+    "streams": [
+      {
+        "name": "广告位(投放/合作)",
+        "evidence": "广告49、合作41、投放13、代理13",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "xphub 生态产品导流",
+        "evidence": "ai.xphub.dev 109次",
+        "cny_month": [
+          500,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "重度接广告是主收入;2.17万AI垂直盘广告有价"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "新闻聚合转发存在著作权/来源合规灰区",
+      "重度广告投放,广告主质量不可控(需警惕机场/灰产渗入,样本内以正常科技广告为主)",
+      "整体属信息聚合,风险中等"
+    ]
+  }
+}

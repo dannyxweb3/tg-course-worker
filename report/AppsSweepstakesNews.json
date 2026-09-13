@@ -1,0 +1,141 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "AppsSweepstakesNews",
+  "username": "AppsSweepstakesNews",
+  "url": "https://t.me/AppsSweepstakesNews",
+  "title": "Apps推荐&抽奖&活动",
+  "category": "iOS应用推荐 + 抽奖驱动(含机场aff)",
+  "growth_short": "抽奖驱动涨粉",
+  "one_liner": "8492订阅的应用推荐号:iOS优秀App/限免/TF推荐,核心增长引擎是抽奖(抽奖出现134次),夹带机场/代理aff,ERR 25.5%。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/AppsSweepstakesNews.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2024-12-10",
+      "2026-09-11"
+    ],
+    "note": "跨度 640 天、0.5 条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 8492,
+    "median_views": 2169,
+    "mean_views": 2295,
+    "p10_views": 1539,
+    "p90_views": 3345,
+    "err_pct": 25.5,
+    "mature_posts": 288,
+    "reactions_total": 449,
+    "forwards_total": 1010,
+    "forwards_per_post": 3.4,
+    "forwards_median": 2.0,
+    "er_pct": 0.07,
+    "posts_per_day": 0.5,
+    "views_available": true,
+    "media_mix": {
+      "photo": 183,
+      "empty": 80,
+      "webpage": 31
+    },
+    "deleted_pct": 1.6,
+    "activity_note": "25.5% ERR 不错;抽奖是核心互动/涨粉引擎(134次)"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "优秀App推荐/限免/TF(标签#优秀App推荐 #TF #AS #限免) + apps.apple.com链接;抽奖活动帖(带中奖概率/规则)",
+    "delivery": "指路apps.apple.com(83)、TestFlight;抽奖用bot托管",
+    "curation": "人工推荐iOS应用+代理软件(Pharos等);抽奖是运营主线",
+    "schedule": "0.5 条/天,集中上午9点与22点"
+  },
+  "growth": {
+    "strategy": "抽奖驱动涨粉+留存",
+    "paid_acquisition": "engagement",
+    "mechanisms": [
+      {
+        "name": "抽奖引擎",
+        "evidence": "抽奖134次、含中奖概率/禁退群规则",
+        "note": "抽奖强制关注/留存拉新"
+      },
+      {
+        "name": "应用推荐刚需",
+        "evidence": "apps.apple.com 83次",
+        "note": "iOS用户刚需"
+      }
+    ],
+    "signals": {
+      "subscribers": 8492,
+      "err_pct": 25.5,
+      "forwards_per_post": 3.4
+    },
+    "assessment": "25.5% ERR 说明受众真实;增长主引擎是抽奖(禁退群/无用户名无效等规则拉留存)。夹带机场/代理aff是变现补充。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      10,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(选App/办抽奖)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约15-30小时/月"
+      },
+      {
+        "name": "抽奖bot/服务器 + 奖品",
+        "cny_month": [
+          10,
+          200
+        ],
+        "note": "奖品成本视活动"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      500,
+      4000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "机场/代理aff + 广告 + 抽奖赞助",
+    "streams": [
+      {
+        "name": "机场/代理aff",
+        "evidence": "代理22、节点13、机场1、邀请码6",
+        "cny_month": [
+          300,
+          2000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "广告/抽奖赞助",
+        "evidence": "赞助5、广告2、投放1",
+        "cny_month": [
+          200,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "抽奖既是涨粉也是接赞助的变现位"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "iOS应用推荐本身正规,但夹带机场/代理aff,合规性无保障",
+      "抽奖若涉付费/诱导有活动合规风险;整体风险中等"
+    ]
+  }
+}

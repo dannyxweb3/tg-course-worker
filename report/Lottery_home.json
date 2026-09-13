@@ -1,0 +1,122 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "Lottery_home",
+  "username": "Lottery_home",
+  "url": "https://t.me/Lottery_home",
+  "title": "抽奖之家",
+  "category": "TG抽奖引流 + 机场/擦边导流",
+  "growth_short": "抽奖farm涨粉",
+  "one_liner": "4.2万订阅的抽奖引流号:靠海量TG抽奖(抽奖603次)farm粉丝,夹带机场与成人论坛(色花堂)导流,ERR 10.7%,是抽奖养号+灰产导流模式。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/Lottery_home.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-04"
+    ],
+    "note": "抽奖603次为主;机场95"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 41529,
+    "median_views": null,
+    "err_pct": 10.7,
+    "mature_posts": null,
+    "forwards_per_post": 1.7,
+    "er_pct": 0.21,
+    "posts_per_day": 0.5,
+    "views_available": true,
+    "media_mix": {
+      "empty": 0
+    },
+    "deleted_pct": 17.6,
+    "activity_note": "ERR 10.7%;抽奖farm粉+机场/擦边导流"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "TG抽奖活动(cnLottery_bot托管)为主 + 机场/资源/成人论坛导流",
+    "delivery": "抽奖bot发奖;导流机场(iplc.vip/shadowsocks)与色花堂(sehuatang)",
+    "curation": "抽奖养号 + 灰产导流",
+    "schedule": "0.5条/天"
+  },
+  "growth": {
+    "strategy": "抽奖farm涨粉 + 灰产导流",
+    "paid_acquisition": "engagement",
+    "mechanisms": [
+      {
+        "name": "抽奖farm",
+        "evidence": "抽奖603次、cnLottery_bot",
+        "note": "免费抽奖拉新/留存"
+      },
+      {
+        "name": "机场/擦边导流",
+        "evidence": "机场95、sehuatang",
+        "note": "变现在导流"
+      }
+    ],
+    "signals": {
+      "subscribers": 41529,
+      "err_pct": 10.7,
+      "forwards_per_post": 1.7
+    },
+    "assessment": "抽奖养号模式:海量免费抽奖farm粉,再导流机场与成人论坛变现。抽奖是获客、灰产导流是变现。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      10,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "抽奖bot/服务器+奖品",
+        "cny_month": [
+          10,
+          300
+        ]
+      },
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      10000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "机场分销 + 成人/资源导流",
+    "streams": [
+      {
+        "name": "机场分销/导流",
+        "evidence": "机场95、色花堂",
+        "cny_month": [
+          2000,
+          10000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "抽奖养的粉靠导流变现"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "抽奖farm粉+导流机场(翻墙灰产)与成人论坛(擦边)",
+      "抽奖本身合规,但导流标的涉灰产/擦边;整体中等偏高"
+    ]
+  }
+}

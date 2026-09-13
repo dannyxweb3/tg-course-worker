@@ -1,0 +1,122 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "times001",
+  "username": "times001",
+  "url": "https://t.me/times001",
+  "title": "电报时报",
+  "category": "社会热点/海外华人资讯聚合",
+  "growth_short": "热点铺量",
+  "one_liner": "8.5万订阅的社会热点聚合号:高频(96条/天)搬运推特/YouTube/海外华人媒体的社会热点与国内舆情,ER 0.13%,靠商务广告变现。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/times001.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-10",
+      "2026-09-13"
+    ],
+    "note": "跨度3.1天、95.6条/天,帖未成熟"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "subscribers": 84910,
+    "median_views": null,
+    "mean_views": null,
+    "err_pct": null,
+    "mature_posts": 0,
+    "reactions_total": 458,
+    "forwards_total": 1400,
+    "forwards_per_post": 4.7,
+    "er_pct": 0.13,
+    "posts_per_day": 95.6,
+    "views_available": true,
+    "views_note": "样本3天帖未成熟,ERR待复抓",
+    "media_mix": {
+      "photo": 173,
+      "document": 69,
+      "webpage": 48
+    },
+    "deleted_pct": 4.2
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "社会热点/舆情短图文+视频/语音(标签为事件名),来源推特/x/YouTube/海外华人媒体(creaders/wenxuecity)",
+    "delivery": "聚合社会热点与海外华人资讯;大量twitter(144)/x(33)转发",
+    "curation": "机器/半人工聚合社会热点,零原创;偏国内舆情+海外华人视角",
+    "schedule": "95.6条/天高频,集中16-20点"
+  },
+  "growth": {
+    "strategy": "社会热点高频铺量",
+    "paid_acquisition": "unknown",
+    "mechanisms": [
+      {
+        "name": "热点刚需",
+        "evidence": "96条/天覆盖社会热点",
+        "note": "吃瓜/舆情需求"
+      }
+    ],
+    "signals": {
+      "subscribers": 84910,
+      "forwards_per_post": 4.7
+    },
+    "assessment": "高频社会热点聚合号,偏国内舆情+海外华人视角。变现靠商务广告。@three001为关联群。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "聚合/运营",
+        "cny_month": [
+          0,
+          200
+        ],
+        "note": "半自动+人工筛热点"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          30,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "商务广告",
+    "streams": [
+      {
+        "name": "商务广告位",
+        "evidence": "广告12;8.5万热点盘",
+        "cny_month": [
+          3000,
+          15000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "热点聚合大盘广告价值中上"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "社会热点/舆情聚合搬运,涉来源版权;含敏感社会话题",
+      "无灰产/成人;面向吃瓜受众,整体中等"
+    ]
+  }
+}

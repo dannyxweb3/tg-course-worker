@@ -1,0 +1,128 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "NobyDa",
+  "username": "NobyDa",
+  "url": "https://t.me/NobyDa",
+  "title": "NobyDa 的小屋",
+  "category": "iOS 代理工具脚本(签到/去广告)分享",
+  "growth_short": "脚本刚需口碑",
+  "one_liner": "6.3万订阅的知名iOS脚本作者号:Surge/Loon/QuantumultX 的签到/去广告脚本与组件,ERR 48.2%、转发75/帖,配App推荐与机场广告,属代理工具生态。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/NobyDa.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-12"
+    ],
+    "note": "0.3条/天,低频高质"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 63278,
+    "median_views": null,
+    "err_pct": 48.2,
+    "mature_posts": null,
+    "forwards_per_post": 74.9,
+    "er_pct": 0.08,
+    "posts_per_day": 0.3,
+    "views_available": true,
+    "media_mix": {
+      "empty": 72,
+      "webpage": 64
+    },
+    "deleted_pct": 15.3,
+    "activity_note": "ERR 48.2% + 转发75/帖:代理工具用户忠实,脚本刚需"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "Surge/Loon/QuantumultX 签到脚本/去广告/Scriptable组件 更新日志(标签#签到脚本 #Surge #Loon),指向github raw;穿插App推荐、机场广告",
+    "delivery": "脚本托管github,TG做更新公告;半原创(作者自研脚本)",
+    "curation": "知名iOS自动化脚本作者(NobyDa),原创脚本+工具推荐",
+    "schedule": "0.3条/天,随脚本更新"
+  },
+  "growth": {
+    "strategy": "脚本刚需 + 作者口碑",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "脚本刚需",
+        "evidence": "48.2% ERR、转发75/帖",
+        "note": "签到/去广告脚本是代理工具用户刚需"
+      }
+    ],
+    "signals": {
+      "subscribers": 63278,
+      "err_pct": 48.2,
+      "forwards_per_post": 74.9
+    },
+    "assessment": "知名iOS脚本作者,48%ERR是忠实工具用户。变现走App推荐/机场广告/赞助,克制。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      10,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "开发时间(自研/维护脚本)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "重人力,原创"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          10,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      10000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "App推荐/机场广告 + 赞助",
+    "streams": [
+      {
+        "name": "广告位/App推荐",
+        "evidence": "广告26、机场8",
+        "cny_month": [
+          1500,
+          7000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "赞助/aff",
+        "evidence": "赞助3、aff1",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "脚本作者号变现克制,高ERR支撑广告价值"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "自动化脚本(签到/去广告)与代理工具生态,部分脚本涉薅羊毛/破解灰区",
+      "夹带机场广告;脚本本身多为技术中立,整体中等"
+    ]
+  }
+}

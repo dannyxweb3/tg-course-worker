@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "ddgksf2021",
   "username": "ddgksf2021",
@@ -7,7 +8,7 @@
   "title": "Cuttlefishの自留地",
   "category": "个人资源/App/影视分享（自有站 ddgksf2013.top）",
   "growth_short": "内容质量自然转发",
-  "one_liner": "4.58 万订阅的个人自留地：App/影视/冷门信息分享，自有站 ddgksf2013.top，ERR 42.6%、转发 30/帖，高粘性个人号，夹带少量京东联盟。",
+  "one_liner": "代理工具脚本作者的自留地(QuantumultX/Loon/Surge),ERR 42.63%。转发榜第一不是脚本,而是『关闭微信支付摇一摇营销』的官方链接(335 转发)——纯公益隐私技巧,扩散力超过所有付费破解内容;第二到第四则是 IDM 激活脚本与两个成人站增强插件。",
   "analyzed_at": "2026-09-13T17:15:00Z",
   "source": {
     "method": "telethon",
@@ -27,13 +28,13 @@
     "mean_views": 19510,
     "p10_views": 15257,
     "p90_views": 22949,
-    "err_pct": 42.6,
+    "err_pct": 42.63,
     "mature_posts": 291,
     "reactions_total": 0,
     "forwards_total": 8948,
     "forwards_per_post": 29.8,
     "er_pct": 0.0,
-    "posts_per_day": 1.1,
+    "posts_per_day": 1.12,
     "views_available": true,
     "media_mix": {
       "photo": 176,
@@ -42,113 +43,139 @@
       "poll": 1
     },
     "deleted_pct": 35.6,
-    "activity_note": "ERR 42.6% 高;reactions 关闭，看转发(30/帖)"
+    "activity_note": "反应功能被关闭(反应总数 0),本轮少见——可能为减少互动噪音或避免反应区被广告刷屏,代价是失去判断内容受欢迎程度的一个维度,只能靠转发。删除率 35.6% 且 id 差为 2 出现 79 次(每留 1 条约删 1 条),推测为脚本更新后删旧版。转发中位从 2025-12 的 4 涨到 2026-03/04 的 17-18,之后在 9-16 波动,无明显衰减,是本轮少数稳定的号。",
+    "forwards_median": 12
   },
   "implementation": {
     "publish_identity": "user",
-    "post_structure": "App/影视/冷门信息 + 个人碎碎语 + 指向自有站 ddgksf2013.top(97)/TestFlight/App Store 的链接;标签 #你可能不知道的信息 #碎碎语",
-    "delivery": "自有站为主站，TG 分发;内容含 App 推荐、影视资源、Google 共享文档、少量 apk",
-    "schedule": "约 1.1 条/天，晚 19-22 点 + 上午",
-    "growth": "内容质量 + 自有站互导"
+    "post_structure": "正文中位 62 字/3 行,图文 176 条。开头多为直接的链接(https://ddgk… 16 条、https://apps… 10 条)。",
+    "delivery": "自有站 ddgksf2013.top 80 次为外链之首,托管 js 脚本。变现链路可确认:u.jd.com 11 次(京东联盟带归因短链)、go.18bit.cn 5(短链服务)。",
+    "schedule": "人工无 cron:小时分散(11 点 30、20 点 31、22 点 31),分钟与秒无聚集,<10 秒间隔占 11%。",
+    "growth": "内容质量 + 自有站互导",
+    "ad_injection": "0 条明确报价帖。『广告』137 次中多为『去广告』功能描述(去广告 19)。",
+    "curation": "给 QuantumultX/Loon/Surge/Node.js 用的脚本:自动签到(如 AgentRouter 搭配 BoxJS 填账密)、去广告/伪装 VIP(『养基宝 Pro 伪装VIP会员』31,123 阅读)、App 功能增强。",
+    "note": "多年份备份频道矩阵:ddgksf2023 7、ddgksf2021 5、ddgksf2026 1——按年份命名的防封备份策略,主号被封就启用下一个;自有站域名 ddgksf2013.top 与频道名的年份差说明该 IP 已运营多年、换过多次阵地。另有 crosswall_* 3 个与 @jisoubot(极搜生态)。"
   },
   "growth": {
-    "strategy": "高质量个人策展(App/影视/冷知识)的口碑增长 + 自有站互导",
+    "strategy": "脚本刚需的持续回访 + 公益技巧破圈",
     "paid_acquisition": "none",
     "mechanisms": [
       {
-        "name": "内容质量",
-        "evidence": "ERR 42.6%、转发 30/帖",
-        "note": "实用+冷门信息有粘性"
+        "name": "脚本刚需的持续性",
+        "evidence": "目标 App 更新即失效,需持续回访",
+        "note": "与 Legado 书源同理,最强留存机制"
       },
       {
-        "name": "自有站",
-        "evidence": "ddgksf2013.top 97 链接",
-        "note": "博客+TG 双入口"
+        "name": "公益技巧破圈",
+        "evidence": "『关闭微信支付摇一摇+营销骚扰』335 转发居榜首,用的是微信官方设置页链接",
+        "note": "零门槛 + 切身利益 = 最强扩散,超过所有付费破解内容"
+      },
+      {
+        "name": "成人站增强插件",
+        "evidence": "JAV-JHS 277、番号搜索扩展 228",
+        "note": "转发榜 2 席,重要流量来源"
+      },
+      {
+        "name": "备份频道矩阵",
+        "evidence": "ddgksf2021/2023/2026",
+        "note": "防封而非增长"
       }
     ],
     "signals": {
       "subscribers": 45760,
-      "err_pct": 42.6,
+      "err_pct": 42.63,
       "forwards_per_post": 29.8
     },
-    "assessment": "高粘性个人自留地号，ERR 42.6%。App/影视/冷门信息选题实用，自有站沉淀。变现克制(少量京东联盟)。"
+    "assessment": "在一个以破解脚本为主业的频道里,扩散力最强的却是『帮用户拿回对自己账号的控制权』这类信息——印证了本轮反复出现的规律:触及切身利益、门槛为零的内容传播力最强。"
   },
   "cost": {
     "recurring_cny_month": [
-      0,
-      300
+      50,
+      200
     ],
     "onetime_cny": [
-      0,
-      0
+      300,
+      1500
     ],
     "items": [
       {
-        "name": "自有站 ddgksf2013.top 托管+域名",
-        "cny_month": [
-          0,
-          200
-        ]
+        "name": "【启动】自有站 ddgksf2013.top",
+        "cny_onetime": [
+          300,
+          1500
+        ],
+        "note": "域名 + 主机,托管脚本"
       },
       {
-        "name": "运营时间(策展+写站，约 20-40 小时/月)",
-        "cny_month": [
+        "name": "【启动】多个备份频道",
+        "cny_onetime": [
           0,
           0
         ]
       },
       {
-        "name": "发布工具/VPS",
+        "name": "脚本编写与维护",
         "cny_month": [
           0,
-          100
+          0
+        ],
+        "note": "40-80 小时/月:目标 App 一更新脚本就失效,需持续修"
+      },
+      {
+        "name": "自有站托管",
+        "cny_month": [
+          50,
+          200
         ]
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
-      1000,
-      6000
+      2800,
+      16000
     ],
-    "model": "自有站 + 京东联盟 + 软广",
+    "model": "京东 CPS + 广告位 + 自有站流量",
     "streams": [
       {
-        "name": "自有站广告/流量",
-        "evidence": "ddgksf2013.top 97 链接",
+        "name": "京东 CPS 联盟",
+        "evidence": "u.jd.com 11 次带归因短链",
         "cny_month": [
           500,
-          3000
+          4000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "广告位",
+        "evidence": "合作 4、机场 4、代理 4;0 条明确报价帖",
+        "cny_month": [
+          2000,
+          10000
         ],
         "confidence": "low"
       },
       {
-        "name": "京东联盟 CPS",
-        "evidence": "u.jd.com 14 链接",
+        "name": "自有站流量",
+        "evidence": "ddgksf2013.top 80 次导流",
         "cny_month": [
           300,
           2000
         ],
         "confidence": "low"
-      },
-      {
-        "name": "App/工具软广",
-        "evidence": "apps.apple.com/testflight 链接",
-        "cny_month": [
-          200,
-          1500
-        ],
-        "confidence": "low"
       }
     ],
-    "note": "以个人分享为主，变现克制;高 ERR 使联盟/软广转化好"
+    "note": "锚点:4.58 万订阅、中位阅读 19,506,按 CPM ¥50-150 折算每周 2 条约 ¥5,900-17,600/月。可确认的只有京东 CPS(u.jd.com 归因链接),广告位属推算。",
+    "est_scope": "本频道 + 自有站"
   },
   "risk": {
     "level": "medium",
     "notes": [
-      "个人 App/影视/信息分享 + 自有站，多为合规内容 + 联盟",
-      "含少量影视资源/apk 与 NSFW 标签(1/300)，有轻微侵权/擦边",
-      "整体风险中低"
+      "主业为代理工具的自动化脚本,其中去广告与『伪装 VIP 会员』(养基宝 Pro)属规避软件商业模式;IDM 激活脚本(307 转发)是明确的软件破解,涉《刑法》217 条与《著作权法》53 条第 6 项",
+      "自动签到类脚本属自动化薅羊毛,多为平台服务条款问题而非违法",
+      "两条成人站增强插件(JAV-JHS 277、番号搜索扩展 228,合计 505 转发)不托管淫秽内容,但功能唯一指向获取淫秽物品,与 abskoop 同类内容性质相同",
+      "【正面】转发榜首的『关闭微信支付营销骚扰』用的是官方链接,完全合法且有正面价值;变现侧京东 CPS 是正规联盟营销",
+      "整体 medium 偏高:破解与成人导流虽非主体,但都在扩散榜前列"
     ]
   }
 }

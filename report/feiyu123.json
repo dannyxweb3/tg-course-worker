@@ -1,0 +1,156 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "feiyu123",
+  "username": "feiyu123",
+  "url": "https://t.me/feiyu123",
+  "title": "飞鱼资源分享|冲浪指南|软件工具",
+  "category": "软件/工具/薅羊毛 资源号（含破解与机场分销）",
+  "growth_short": "高转发+互推",
+  "one_liner": "6.2万订阅的软件工具号：以 GitHub 开源+软件教程为主体、夹带破解与薅羊毛，转发中位 37.5/帖(全批次前列)，ERR 13.8%，变现走机场分销+aff邀请码+互推。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/feiyu123.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-02-17",
+      "2026-09-09"
+    ],
+    "note": "跨度 204 天、1.5 条/天；id 缺口 35.5%"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 61750,
+    "median_views": 8509,
+    "mean_views": 8567,
+    "p10_views": 5879,
+    "p90_views": 11036,
+    "err_pct": 13.8,
+    "mature_posts": 295,
+    "reactions_total": 1296,
+    "forwards_total": 12533,
+    "forwards_per_post": 41.8,
+    "forwards_median": 37.5,
+    "er_pct": 0.05,
+    "posts_per_day": 1.5,
+    "views_available": true,
+    "media_mix": {
+      "photo": 267,
+      "text": 30,
+      "webpage": 2
+    },
+    "deleted_pct": 35.5,
+    "activity_note": "转发中位 37.5、总 12533 是全批次最高之一——工具/薅羊毛内容极易被存转"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "配图 + 短评 + 裸链(github 77 次、chrome 商店、apps.apple.com) + 标签(#GitHub #工具 #windows #Android #ai)",
+    "delivery": "以指路为主(github/chrome 商店/steam/epic)，少量 apk 附件；薅羊毛帖含具体操作教程",
+    "curation": "半原创短评式策展，选题=GitHub trending+软件新版+羊毛活动+机场",
+    "schedule": "1.5 条/天，集中在 19-23 点大陆晚间黄金档"
+  },
+  "growth": {
+    "strategy": "高质量工具内容驱动转发 + 互推换量",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "工具/薅羊毛刚需",
+        "evidence": "转发中位 37.5、github 77 次",
+        "note": "值得存转，自然裂变强"
+      },
+      {
+        "name": "互推",
+        "evidence": "互推 5 次",
+        "note": "与同类号交叉导流"
+      },
+      {
+        "name": "机场分销",
+        "evidence": "机场 10、邀请码 7、优惠码/aff",
+        "note": "薅羊毛受众与机场需求重叠"
+      }
+    ],
+    "signals": {
+      "subscribers": 61750,
+      "err_pct": 13.8,
+      "forwards_per_post": 41.8
+    },
+    "assessment": "13.8% ERR + 转发 41.8/帖，是本批次内容质量与扩散力最好的资源号之一。互推带来一定水分，但高转发说明核心内容真被需要。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间投入(选题/写短评/配图，日更约1-2h)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约 30-60 小时/月"
+      },
+      {
+        "name": "服务器/图床/文案LLM",
+        "cny_month": [
+          30,
+          300
+        ],
+        "note": "轻量"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      12000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "机场分销 + aff邀请码 + 广告位 + 互推分成",
+    "streams": [
+      {
+        "name": "机场/VPN 分销",
+        "evidence": "机场 10、邀请码 7",
+        "cny_month": [
+          1500,
+          6000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "aff/薅羊毛返佣(Bitget 等)",
+        "evidence": "aff 4、Bitget 邀请码",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "广告位",
+        "evidence": "广告 40、投放/推广",
+        "cny_month": [
+          1000,
+          4000
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "note": "6.2万大盘+高转发，广告与分销价值可观"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "含破解软件分发(破解 11 次)，侵犯著作权",
+      "薅羊毛/交易所 aff 引流有合规灰区，加密平台在大陆受限",
+      "机场分销合规性无保障；未见境外博彩，未标 criminal"
+    ]
+  }
+}

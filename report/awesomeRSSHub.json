@@ -1,0 +1,116 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "awesomeRSSHub",
+  "username": "awesomeRSSHub",
+  "url": "https://t.me/awesomeRSSHub",
+  "title": "RSSHub News",
+  "category": "RSSHub新路由自动播报(开源项目feed)",
+  "growth_short": "开源项目附属feed",
+  "one_liner": "1.23万订阅的自动化频道:机器播报RSSHub新增路由(全量指向docs.rsshub.app),ERR仅1.7%、零互动,是开源项目的附属通知feed而非内容号。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/awesomeRSSHub.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-04-02",
+      "2026-09-12"
+    ],
+    "note": "跨度 163 天、1.8 条/天,全自动"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 12262,
+    "median_views": 208,
+    "mean_views": 811,
+    "p10_views": 85,
+    "p90_views": 2579,
+    "err_pct": 1.7,
+    "mature_posts": 291,
+    "reactions_total": 12,
+    "forwards_total": 16,
+    "forwards_per_post": 0.1,
+    "er_pct": 0.01,
+    "posts_per_day": 1.8,
+    "views_available": true,
+    "media_mix": {
+      "empty": 300
+    },
+    "deleted_pct": 35.2,
+    "activity_note": "ERR 1.7%、零互动:自动化通知feed,订阅数是历史沉淀,当前几乎无人读"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "固定模板:『RSSHub has new routes』+ 新增路由名 + docs.rsshub.app链接",
+    "delivery": "全量指向 docs.rsshub.app(300次),纯文本",
+    "curation": "零人工:脚本监听RSSHub仓库新路由自动播报",
+    "schedule": "1.8 条/天,集中14点(205条,批量脚本)"
+  },
+  "growth": {
+    "strategy": "开源项目附属,历史沉淀",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "RSSHub项目附属",
+        "evidence": "全量docs.rsshub.app",
+        "note": "随RSSHub项目知名度沉淀订阅"
+      }
+    ],
+    "signals": {
+      "subscribers": 12262,
+      "err_pct": 1.7,
+      "forwards_per_post": 0.1
+    },
+    "assessment": "这不是内容运营号,是RSSHub开源项目的自动化通知feed。1.7% ERR说明订阅是历史沉淀、当前几乎无人读。无变现意图。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      30
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "脚本/服务器",
+        "cny_month": [
+          0,
+          30
+        ],
+        "note": "全自动,近乎零人力"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      0
+    ],
+    "est_scope": "本频道可归因",
+    "model": "无变现",
+    "streams": [
+      {
+        "name": "无",
+        "evidence": "纯项目附属feed,无任何变现",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "high"
+      }
+    ],
+    "note": "非商业,开源项目的附属通知渠道"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "开源项目(RSSHub)新路由播报,完全合规",
+      "无任何灰产/侵权/成人要素;风险低"
+    ]
+  }
+}

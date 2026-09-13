@@ -1,0 +1,142 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "PicACG",
+  "username": "PicACG",
+  "url": "https://t.me/PicACG",
+  "title": "嗶咔漫畫頻道 Picacomic Channel",
+  "category": "成人/里番漫画App(嗶咔)官方频道",
+  "growth_short": "成人漫画App刚需",
+  "one_liner": "19.1万订阅的嗶咔漫畫(Picacomic)官方频道:成人/里番漫画App的版本发布(企业签)、周边与客服,ERR 62.4%、reactions 9万,粘性极高但属成人内容分发。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/PicACG.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2022-01-02",
+      "2026-04-18"
+    ],
+    "note": "跨度1566天;最后更新2026-04-18(约5个月前),偏休眠;成人App,不引用露骨内容"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "subscribers": 191334,
+    "median_views": 119458,
+    "mean_views": 127021,
+    "p10_views": 75412,
+    "p90_views": 177556,
+    "err_pct": 62.4,
+    "mature_posts": 295,
+    "reactions_total": 90921,
+    "forwards_total": 11296,
+    "forwards_per_post": 37.7,
+    "forwards_median": 17.0,
+    "er_pct": 0.24,
+    "posts_per_day": 0.2,
+    "views_available": true,
+    "media_mix": {
+      "photo": 119,
+      "empty": 116,
+      "document": 36,
+      "poll": 21
+    },
+    "deleted_pct": 57.9,
+    "activity_note": "62.4% ERR + reactions 9万:成人漫画App的忠实用户群极粘;但更新已偏休眠"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "App版本发布/线路公告(企业签、已修好) + 周边(淘宝) + 投票 + 客服bot;指向 manhuabika/picacomic 官网",
+    "delivery": "App分发为主(iOS企业签绕过商店审核),内容(漫画)在App内;TG做公告与发货bot",
+    "curation": "嗶咔漫畫官方运营,自有产品(成人漫画App)",
+    "schedule": "0.2条/天,随版本/线路更新"
+  },
+  "growth": {
+    "strategy": "成人漫画App刚需 + 用户高粘性",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "成人内容刚需",
+        "evidence": "62.4% ERR、reactions 9万",
+        "note": "里番/成人漫画稀缺高需求"
+      },
+      {
+        "name": "企业签绕审核",
+        "evidence": "企业签、已修好公告",
+        "note": "iOS 侧靠企业证书持续可装"
+      }
+    ],
+    "signals": {
+      "subscribers": 191334,
+      "err_pct": 62.4,
+      "forwards_per_post": 37.7
+    },
+    "assessment": "嗶咔是知名成人漫画App,62% ERR 说明用户极粘。变现在App内(会员/去广告),TG是官方公告与发货位。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      2000,
+      20000
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "App开发/维护 + 企业签证书(频繁被封需重签)",
+        "cny_month": [
+          1000,
+          10000
+        ],
+        "note": "成人App证书成本高、封得快"
+      },
+      {
+        "name": "内容服务器/CDN(漫画图库)",
+        "cny_month": [
+          1000,
+          10000
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      50000,
+      300000
+    ],
+    "est_scope": "App整体(非仅本频道)",
+    "model": "App会员/订阅 + 去广告 + 周边",
+    "streams": [
+      {
+        "name": "App会员/订阅",
+        "evidence": "知名成人漫画App,19万仅TG侧",
+        "cny_month": [
+          40000,
+          250000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "周边/其他",
+        "evidence": "淘宝周边链接",
+        "cny_month": [
+          2000,
+          20000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "这是App生意,收入口径是整个App而非TG频道;区间极宽、置信度低"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "分发成人/里番漫画,在中国大陆属传播淫秽物品范畴,风险高",
+      "iOS 企业签绕过商店审核,违反苹果协议",
+      "样本内不引用任何露骨内容;若含未成年形象漫画(里番常见红线)则升级 criminal,本报告按成人向暂标 high"
+    ]
+  }
+}

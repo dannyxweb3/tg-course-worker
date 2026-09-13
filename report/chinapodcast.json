@@ -1,0 +1,147 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "chinapodcast",
+  "username": "chinapodcast",
+  "url": "https://t.me/chinapodcast",
+  "title": "精选中文播客🎧",
+  "category": "播客盗录搬运 + 保健品广告(海外华人政论向)",
+  "growth_short": "播客搬运+订阅钩子",
+  "one_liner": "1.9万订阅:批量搬运喜马拉雅/小宇宙/YouTube播客音频(含海外华人政论:方偉時間/老周横眉),每条带🔔订阅钩子,靠保健品affiliate(藍莓優品/扁康丸+优惠码)变现。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/chinapodcast.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-31",
+      "2026-09-13"
+    ],
+    "note": "跨度 12.7 天、23.5 条/天;含政治敏感内容,受众以海外华人为主"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 18989,
+    "median_views": 175,
+    "mean_views": 186,
+    "p10_views": 114,
+    "p90_views": 276,
+    "err_pct": 0.9,
+    "mature_posts": 140,
+    "reactions_total": 18,
+    "forwards_total": 162,
+    "forwards_per_post": 0.5,
+    "er_pct": 0.04,
+    "posts_per_day": 23.5,
+    "views_available": true,
+    "media_mix": {
+      "document": 267,
+      "empty": 33
+    },
+    "files": 266,
+    "files_gb": 6.34,
+    "file_ext": {
+      "m4a": 175,
+      "mp3": 82,
+      "mp4": 9
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "ERR 0.9% 极低:1.9万订阅但阅读百级,搬运号+可能买粉;真实价值在把听众导向保健品广告"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "播客标题 + 标签(#方偉時間 #老周横眉 等栏目) + 音频文件(m4a/mp3) + 🔔订阅钩子 + 来源;文末插保健品广告与优惠码",
+    "delivery": "直接把播客音频文件挂在TG(6.34GB);来源标注喜马拉雅(142)/YouTube(65)/小宇宙(21)/网易云(27)",
+    "curation": "盗录搬运他人播客,零原创;栏目以海外华人政论(方偉時間/老周横眉/RFI)+英文晨读为主",
+    "schedule": "23.5 条/天铺量"
+  },
+  "growth": {
+    "strategy": "播客盗录搬运铺量 + 订阅钩子留存",
+    "paid_acquisition": "subs",
+    "mechanisms": [
+      {
+        "name": "播客刚需(政论)",
+        "evidence": "方偉時間56、老周横眉等",
+        "note": "海外华人政论内容在墙外有稳定需求"
+      },
+      {
+        "name": "🔔订阅钩子",
+        "evidence": "订阅出现317次(每条footer)",
+        "note": "强制留存动作"
+      }
+    ],
+    "signals": {
+      "subscribers": 18989,
+      "err_pct": 0.9,
+      "forwards_per_post": 0.5
+    },
+    "assessment": "0.9% ERR 说明大盘虚高、真实收听少。变现不靠阅读而靠把听众导向保健品广告(藍莓優品/扁康丸)的affiliate优惠码。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      50,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(下载/转码/上传播客)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "可半自动,约30-60小时/月"
+      },
+      {
+        "name": "服务器/存储",
+        "cny_month": [
+          50,
+          300
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      12000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "保健品affiliate + 广告位",
+    "streams": [
+      {
+        "name": "保健品affiliate(优惠码分成)",
+        "evidence": "藍莓優品/扁康丸/玄宝黑蔘 + 优惠码 FANGWEI/JR",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "机场/其他广告",
+        "evidence": "机场12、优惠码8、aff7",
+        "cny_month": [
+          500,
+          4000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "保健品affiliate是主线,面向海外华人中老年听众,转化率可观"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "盗录搬运他人播客音频,侵犯著作权",
+      "保健品广告含疗效暗示(扁康丸等),涉虚假/夸大宣传风险",
+      "内容含海外华人政论,在大陆属敏感/被屏蔽内容(受众本在墙外),不在本报告展开政治评价",
+      "本报告不引用广告联系方式与政论原文"
+    ]
+  }
+}

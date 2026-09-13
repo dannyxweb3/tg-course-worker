@@ -1,0 +1,108 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "dockertutorial",
+  "username": "dockertutorial",
+  "url": "https://t.me/dockertutorial",
+  "title": "Docker",
+  "category": "技术杂谈群(名不副实,低活跃)",
+  "growth_short": "技术标签聚人",
+  "one_liner": "8287成员的『Docker』群:名为Docker技术,实为低活跃技术/出海杂谈群(存活0.5条/天、91%被删),话题从docker漂到海外外包/园区闲聊,无系统变现。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/dockertutorial.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2024-12-18",
+      "2026-08-30"
+    ],
+    "note": "群无per-message阅读;91.5% id缺口;低活跃杂谈"
+  },
+  "metrics": {
+    "confidence": "low",
+    "kind_note": "group",
+    "members": 8287,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读;online未取",
+    "messages_per_day": 0.5,
+    "deleted_ratio_pct": 91.5,
+    "activity_note": "存活0.5条/天+91%删除:低活跃;话题从docker漂到海外外包/园区闲聊,名不副实"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "名义docker技术问答,实际多为海外外包/闲聊(缅甸/园区等),真实技术讨论少",
+    "ad_injection": "无系统广告注入",
+    "delivery": "社区闲聊,不分发内容",
+    "schedule": "低频"
+  },
+  "growth": {
+    "strategy": "技术标签(Docker)聚人",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "技术标签引流",
+        "evidence": "群名Docker",
+        "note": "技术关键词吸初学者,后漂移为杂谈"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 0.5
+    },
+    "assessment": "名为Docker、实为低活跃技术/出海杂谈群。无系统变现,价值是历史沉淀的8千成员。属名不副实的闲置群。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      50
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理bot",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      1000
+    ],
+    "est_scope": "群本体",
+    "model": "基本无变现",
+    "streams": [
+      {
+        "name": "无/偶发推广",
+        "evidence": "无系统广告",
+        "cny_month": [
+          0,
+          1000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "低活跃杂谈群,几乎不变现"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "技术/出海杂谈群,内容为UGC闲聊(含海外外包/园区话题,属讨论非服务)",
+      "无盗版分发、无灰产广告;整体风险低"
+    ]
+  }
+}

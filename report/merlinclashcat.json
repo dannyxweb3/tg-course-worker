@@ -1,0 +1,124 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "merlinclashcat",
+  "username": "merlinclashcat",
+  "url": "https://t.me/merlinclashcat",
+  "title": "梅林/Clash/OpenClash 教程与机场",
+  "category": "翻墙工具教程 + 机场推广",
+  "growth_short": "翻墙教程刚需",
+  "one_liner": "4.8万订阅的翻墙工具号:梅林固件/Clash/OpenClash 配置教程(mcreadme gitbook)+机场推广,ERR 107%(事件驱动)、订阅/推广关键词密集,属翻墙生态灰产。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/merlinclashcat.jsonl",
+    "sample_size": 149,
+    "sample_range": [
+      "—",
+      "2026-07-11"
+    ],
+    "note": "跨度长、0.1条/天,低频;最后更新2026-07-11"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "subscribers": 47610,
+    "median_views": null,
+    "err_pct": 107.0,
+    "mature_posts": null,
+    "forwards_per_post": 28.6,
+    "er_pct": 0.1,
+    "posts_per_day": 0.1,
+    "views_available": true,
+    "media_mix": {
+      "photo": 83,
+      "empty": 56
+    },
+    "deleted_pct": 82.0,
+    "activity_note": "ERR 107%(阅读超订阅,事件驱动);低频但每次教程扩散广;82%删除"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "梅林/Clash/OpenClash 配置教程+截图,指向 mcreadme.gitbook.io 文档;机场推广",
+    "delivery": "翻墙工具教程为主,配机场推广链",
+    "curation": "半原创翻墙配置教程(梅林固件/Clash生态)",
+    "schedule": "0.1条/天,事件驱动"
+  },
+  "growth": {
+    "strategy": "翻墙教程刚需 + 机场推广",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "翻墙配置刚需",
+        "evidence": "ERR 107%、Clash/梅林教程",
+        "note": "折腾路由/翻墙的强需求"
+      },
+      {
+        "name": "机场推广",
+        "evidence": "推广51/订阅75/节点29",
+        "note": "教程引流机场分销"
+      }
+    ],
+    "signals": {
+      "subscribers": 47610,
+      "err_pct": 107.0,
+      "forwards_per_post": 28.6
+    },
+    "assessment": "翻墙工具教程号,ERR 107%说明教程刚需扩散强。变现走机场分销+教程引流。低频但高价值。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      10,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(写教程/维护文档)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约10-20小时/月"
+      },
+      {
+        "name": "文档站/服务器",
+        "cny_month": [
+          10,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "机场分销 + 广告",
+    "streams": [
+      {
+        "name": "机场分销返佣",
+        "evidence": "推广/订阅/节点密集",
+        "cny_month": [
+          3000,
+          15000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "翻墙教程引流机场,变现中上"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "翻墙工具教程+机场推广,在大陆属提供/传播非法互联网接入的引流",
+      "工具/教程本身技术中立,但机场分销明确灰产;未见博彩/诈骗"
+    ]
+  }
+}

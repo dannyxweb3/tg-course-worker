@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "PDFtushuguan",
   "username": "PDFtushuguan",
@@ -7,7 +8,7 @@
   "title": "PDF图书联盟|链接收藏|电子书",
   "category": "电子书/图书精选（豆瓣+阿里云盘，低频高质）",
   "growth_short": "资源刚需自然转发",
-  "one_liner": "电子书策展号：豆瓣书页 + 阿里云盘链接，ERR 52%（2.5 万订阅 / 中位 1.3 万阅读），但已近乎停更（0.1 条/天、末更 2026-06），且 98% 历史消息被滚动删除。",
+  "one_liner": "ERR 52.27% 的高粘性电子书号,但产出方式与其他盗版书号完全不同:它主要不发文件,而是发豆瓣书目卡(book.douban.com 126 次)与阿里云盘链接,本质是『策展书单 + 网盘索引』。文件只有 3 个。最后更新停在 2026-06-27,已偏休眠。",
   "analyzed_at": "2026-09-13T12:45:00Z",
   "source": {
     "method": "telethon",
@@ -27,13 +28,13 @@
     "mean_views": 16436,
     "p10_views": 7145,
     "p90_views": 27977,
-    "err_pct": 52.3,
+    "err_pct": 52.27,
     "mature_posts": 192,
     "reactions_total": 2454,
     "forwards_total": 3429,
     "forwards_per_post": 16.8,
     "er_pct": 0.08,
-    "posts_per_day": 0.1,
+    "posts_per_day": 0.12,
     "views_available": true,
     "media_mix": {
       "photo": 135,
@@ -43,38 +44,57 @@
       "webpage": 4
     },
     "deleted_pct": 98.2,
-    "activity_note": "ERR 52% 极高（老号+忠实读者+滚动删除留下的都是精华）；但更新极稀、近乎停摆"
+    "activity_note": "ERR 52.27% + 0.12 条/天 与 aboutrss、scitech_fans 同形态:低频高质、订阅者每条必看。p90 阅读 27,977 是中位的 2.1 倍。刷量检验:反应≥50 的帖 n=9、CV 中位 1.064([57,18,8,6,4]),幂律。id 缺口 98.2% 需正确解读:相邻 id 差为 1 有 181 次说明抓到的是连续段,中间有一处差 2,528 的巨大跳跃,更可能是早期有过大规模清理或重建而非常规逐条删除。",
+    "forwards_median": 8,
+    "sample_size": 204
   },
   "implementation": {
     "publish_identity": "user",
-    "post_structure": "书封/说明 + 豆瓣书页链接(book.douban.com 126) + 阿里云盘下载链接;标签 #epub #电子书 #图书联盟 #周读",
-    "delivery": "阿里云盘链接投递为主，豆瓣页做书目背书;不长期自托管",
-    "schedule": "约 0.1 条/天，上午 9 点与晚 20-21 点",
+    "post_structure": "图文 135 条、纯文本 56 条,正文中位 144 字/9 行。固定编目格式:『· #epub #图书联盟 #电子书 · 📚书名 · 👤作者 · 🏷ISBN · 📝简介』——带 ISBN、带豆瓣链接、带作者标签,是按图书馆编目规范做的书单。",
+    "delivery": "文件只有 3 个(0.10GB),外链以 book.douban.com 126 次为主、aliyundrive 28、neat-reader 14——处于『索引与导流』而非『直接分发』位置。",
+    "schedule": "纯人工:集中 9 点(42 条)与 20-21 点(50 条),间隔中位 165,174 秒(约 1.9 天),<60 秒仅 8%——一条一条发几乎不批量,分钟与秒无聚集。",
     "retention": "98.2% 历史消息删除——极端滚动删除，只留近期精选",
-    "growth": "电子书刚需 + 联盟互链(@ 少量同类号)"
+    "growth": "电子书刚需 + 联盟互链(@ 少量同类号)",
+    "ad_injection": "0 条报价帖(广告 4、频道主 1、置顶 1)。",
+    "curation": "提供的是『读什么』的判断而非只是『在哪下』,这解释了 52% 的 ERR。转发榜说明受众要的是工具与方法:SnapTik 视频下载工具 260(榜首,甚至不是书)、去中心化电子书下载 liber3.eth 188、电子书阅读器推荐 173;另有『北京大学出版社电子教材 235.5G』阿里云盘(38,528 阅读/109 转发)。",
+    "note": "跨品类联营矩阵:PDFtushuguan 自引用 151、ebookcool 51、DSFYSmovie 49(影视)、tushujiao 25、TG_SSOU 20(搜索)、TGmovieTV 2、TG_xiaobai 2,#互推 4 次;另与本轮的 @Aliyun_4K_Movies、@xhqcankao 各有 1 次互链。"
   },
   "growth": {
-    "strategy": "电子书刚需自然转发 + 老号沉淀，无付费获客",
-    "paid_acquisition": "none",
+    "strategy": "编目式书单建立权威 + 跨品类矩阵互导",
+    "paid_acquisition": "exchange",
     "mechanisms": [
       {
-        "name": "资源刚需转发",
-        "evidence": "转发 16.8/帖、ERR 52%",
-        "note": "电子书是刚需，读者主动转"
+        "name": "编目式书单",
+        "evidence": "ISBN + 豆瓣链接 + 作者标签",
+        "note": "提供『读什么』的判断,区别于文件仓库的核心"
+      },
+      {
+        "name": "工具方法论",
+        "evidence": "转发榜前三全是工具与获取方案",
+        "note": "受众要的是能力而非单本书"
+      },
+      {
+        "name": "跨品类矩阵",
+        "evidence": "电子书+影视+搜索共 7 个号",
+        "note": "互相导流"
+      },
+      {
+        "name": "大部头资源引流",
+        "evidence": "北大出版社教材 235.5G(109 转发)",
+        "note": "稀缺大合集是拉新点"
       }
     ],
     "signals": {
       "subscribers": 25423,
-      "err_pct": 52.3,
-      "forwards_per_post": 16.8,
-      "posts_per_day": 0.1
+      "err_pct": 52.27,
+      "forwards_per_post": 16.8
     },
-    "assessment": "老牌电子书号，ERR 极高但已近乎停更。高 ERR 部分是滚动删除的幸存者偏差——删掉低质、只留精华。增长早已停滞。"
+    "assessment": "已偏休眠:最后更新 2026-06-27,抓取时 2.5 个月无更新。以 0.12 条/天的历史节奏,两个月未发未必等于弃号,但结合 4.8 年跨度与近年低频,大概率已进入维护性存在状态。"
   },
   "cost": {
     "recurring_cny_month": [
-      0,
-      150
+      15,
+      40
     ],
     "onetime_cny": [
       0,
@@ -82,62 +102,80 @@
     ],
     "items": [
       {
-        "name": "阿里云盘会员",
-        "cny_month": [
-          0,
-          30
-        ]
-      },
-      {
-        "name": "运营时间（低频，约 5-10 小时/月）",
-        "cny_month": [
+        "name": "【启动】频道 + 矩阵号创建",
+        "cny_onetime": [
           0,
           0
         ]
       },
       {
-        "name": "VPS/工具",
+        "name": "选书 + 编目(查 ISBN、写简介、配豆瓣链接)",
         "cny_month": [
           0,
-          120
-        ]
+          0
+        ],
+        "note": "5-15 小时/月,0.12 条/天但每条要做编目"
+      },
+      {
+        "name": "阿里云盘会员",
+        "cny_month": [
+          15,
+          40
+        ],
+        "note": "承载大部头资源"
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
-      500,
-      4000
+      200,
+      5000
     ],
-    "model": "网盘拉新/合作 + 电子书阅读器软广",
+    "model": "网盘拉新 + 少量广告,变现克制",
     "streams": [
       {
-        "name": "阿里云盘拉新/合作",
-        "evidence": "aliyundrive 链接 29",
+        "name": "阿里云盘拉新",
+        "evidence": "aliyundrive.com 28 次",
         "cny_month": [
-          300,
-          2000
+          200,
+          1500
         ],
         "confidence": "low"
       },
       {
-        "name": "阅读器/工具软广",
-        "evidence": "neat-reader.cn 链接 14",
+        "name": "广告位",
+        "evidence": "广告 4、频道主 1、置顶 1;0 条报价帖",
         "cny_month": [
-          200,
-          2000
+          0,
+          3000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "抽奖/邀请码",
+        "evidence": "抽奖 4、邀请码 2",
+        "cny_month": [
+          0,
+          500
         ],
         "confidence": "low"
       }
     ],
-    "note": "更新停滞使变现随之衰减；高 ERR 存量仍有残余广告价值，但已无增量"
+    "note": "变现非常克制。2.5 万订阅、13,288 中位阅读、ERR 52% 的高质受众,按 CPM ¥50-150 折算潜在广告价值约 ¥2,000-6,000/月(低频导致总量有限)。它是本轮现金成本最低的几个之一——不托管文件,只做索引。",
+    "est_scope": "本频道可归因",
+    "potential_ad_value_cny_month": [
+      2000,
+      6000
+    ]
   },
   "risk": {
     "level": "high",
     "notes": [
-      "通过阿里云盘系统性分发电子书，侵犯著作权",
-      "豆瓣仅作书目背书，侵权在网盘环节",
-      "无成人/博彩/诈骗要素，属侵犯知识产权类，且活跃度极低、影响面收窄"
+      "分发盗版电子书与大体量教材资源(如『北京大学出版社电子教材 235.5G』),涉《刑法》217 条与《著作权法》53 条;大学出版社教材的批量分发情节较重,权利人明确、损失可量化",
+      "【减轻】责任形态轻于同类:文件只有 3 个,主要提供豆瓣书目卡与阿里云盘链接,处于『索引与导流』而非『直接分发』位置;且完整标注 ISBN、作者与豆瓣页,客观上也在为正版页面导流",
+      "边缘项:推荐『去中心化电子书下载』(基于 ENS 的抗审查方案,188 转发),是明确的规避封禁技术方案传播",
+      "矩阵内含影视号(DSFYSmovie、TGmovieTV),存在连带敞口",
+      "【无】无成人、无博彩、无诈骗、无翻墙分销"
     ]
   }
 }

@@ -1,0 +1,124 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "programmerjokes",
+  "username": "programmerjokes",
+  "url": "https://t.me/programmerjokes",
+  "title": "Programmer Jokes",
+  "category": "程序员梗图(英文,国际)",
+  "growth_short": "梗图超高转发",
+  "one_liner": "10.7万订阅的英文程序员梗图号:每日一图,ERR 50.4%、转发中位209/帖(全样本前列),纯流量号、零变现,是国际化的高扩散梗图账号。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/programmerjokes.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-08-08",
+      "2026-09-11"
+    ],
+    "note": "跨度399天、0.8条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 107152,
+    "median_views": 54038,
+    "mean_views": 54890,
+    "p10_views": 48036,
+    "p90_views": 64247,
+    "err_pct": 50.4,
+    "mature_posts": 297,
+    "reactions_total": 0,
+    "forwards_total": 65892,
+    "forwards_per_post": 219.6,
+    "forwards_median": 209.0,
+    "er_pct": 0.0,
+    "posts_per_day": 0.8,
+    "views_available": true,
+    "media_mix": {
+      "photo": 299
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "50.4% ERR + 转发中位209/帖:程序员梗图国际化高扩散;reactions关闭"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "程序员主题梗图(英文),一图一帖,几乎无文案无外链",
+    "delivery": "图片直发,纯梗图",
+    "curation": "搜集程序员梗图(xkcd风),零原创",
+    "schedule": "0.8条/天,集中凌晨2-3点(欧美时段/定时)"
+  },
+  "growth": {
+    "strategy": "程序员梗图国际化扩散",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "程序员梗图刚需",
+        "evidence": "转发中位209、ERR 50%",
+        "note": "全球程序员受众爱转"
+      }
+    ],
+    "signals": {
+      "subscribers": 107152,
+      "err_pct": 50.4,
+      "forwards_per_post": 219.6
+    },
+    "assessment": "英文程序员梗图,50%ERR+209转发是国际化高扩散。零变现,纯流量/兴趣号。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      50
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(找图,低频)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约5-15小时/月"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      2000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "基本无商业化",
+    "streams": [
+      {
+        "name": "潜在广告/无",
+        "evidence": "样本内无任何变现",
+        "cny_month": [
+          0,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "纯兴趣号;高转发大盘若接技术类广告有潜在价值"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "程序员梗图,图片来源版权是唯一轻微风险",
+      "无灰产/成人/诱导;风险低"
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "ShadowrocketNews",
+  "username": "ShadowrocketNews",
+  "url": "https://t.me/ShadowrocketNews",
+  "title": "Shadowrocket News",
+  "category": "翻墙App(小火箭)资讯/官方号",
+  "growth_short": "翻墙App用户",
+  "one_liner": "4.7万订阅的 Shadowrocket(小火箭)资讯号:发布这款知名翻墙App的更新/公告/使用信息,ERR 13.4%,是翻墙工具生态的官方向资讯号。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/ShadowrocketNews.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-10"
+    ],
+    "note": "1.5条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 46671,
+    "median_views": null,
+    "err_pct": 13.4,
+    "mature_posts": null,
+    "forwards_per_post": 2.3,
+    "er_pct": 0.11,
+    "posts_per_day": 1.5,
+    "views_available": true,
+    "media_mix": {
+      "empty": 285,
+      "photo": 15
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "ERR 13.4%;@ShadowrocketApp署名,官方向资讯"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "Shadowrocket 更新/公告/使用提示,几乎每条署名@ShadowrocketApp;纯文本",
+    "delivery": "翻墙App官方向资讯发布",
+    "curation": "围绕 Shadowrocket(小火箭)这款翻墙App的官方/半官方资讯",
+    "schedule": "1.5条/天"
+  },
+  "growth": {
+    "strategy": "翻墙App用户基本盘",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "App用户刚需",
+        "evidence": "@ShadowrocketApp署名298",
+        "note": "小火箭是头部翻墙App,用户关注更新"
+      }
+    ],
+    "signals": {
+      "subscribers": 46671,
+      "err_pct": 13.4,
+      "forwards_per_post": 2.3
+    },
+    "assessment": "围绕小火箭这款翻墙App的资讯号。变现不显(App本身付费买断)。属翻墙工具生态。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      3000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "App导流(付费买断)/无直接变现",
+    "streams": [
+      {
+        "name": "App导流/无",
+        "evidence": "样本内变现动作少",
+        "cny_month": [
+          0,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "资讯号本身变现少,价值在为付费App导流"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "Shadowrocket(小火箭)为翻墙工具,其资讯/导流在大陆属传播翻墙工具灰区",
+      "App本身在海外App Store合规;面向大陆用户的翻墙用途受限,整体中等"
+    ]
+  }
+}

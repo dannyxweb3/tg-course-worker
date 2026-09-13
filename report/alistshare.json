@@ -1,0 +1,132 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "alistshare",
+  "username": "alistshare",
+  "url": "https://t.me/alistshare",
+  "title": "Alist资源频道",
+  "category": "Alist/WebDav 网盘挂载资源分享",
+  "growth_short": "高质量资源口碑",
+  "one_liner": "2.27万订阅的 Alist/WebDav 资源号:分享公开网盘挂载账号与 Alist 教程,ERR 高达 74.7%(全批次前列),但已自 2026-04 停更,呈休眠态。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/alistshare.jsonl",
+    "sample_size": 293,
+    "sample_range": [
+      "2022-04-04",
+      "2026-04-17"
+    ],
+    "note": "跨度 1474 天;最后更新 2026-04-17(抓取时已约5个月未更),接近半年停更线,标注休眠"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 22709,
+    "median_views": 16960,
+    "mean_views": 19653,
+    "p10_views": 10392,
+    "p90_views": 36991,
+    "err_pct": 74.7,
+    "mature_posts": 290,
+    "reactions_total": 5035,
+    "forwards_total": 8440,
+    "forwards_per_post": 28.8,
+    "forwards_median": 11.0,
+    "er_pct": 0.09,
+    "posts_per_day": 0.2,
+    "views_available": true,
+    "media_mix": {
+      "photo": 168,
+      "empty": 54,
+      "webpage": 48,
+      "document": 23
+    },
+    "deleted_pct": 10.1,
+    "activity_note": "74.7% ERR 极高,是资源刚需+忠实受众;但已休眠(2026-04 后无更新),历史高粘性不代表当前活跃"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "配图 + 资源介绍 + Alist/WebDav 挂载信息或教程 + 标签(#分享 #资源 #教程 #webdav)",
+    "delivery": "指路为主:分享公开 WebDav 挂载账号汇总、Alist 部署教程、美化;外链 github/pity.eu.org/bilibili",
+    "curation": "围绕 Alist 生态的人工策展,窄而实用",
+    "schedule": "0.2 条/天,已停更"
+  },
+  "growth": {
+    "strategy": "Alist 生态刚需内容口碑增长",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "网盘挂载刚需",
+        "evidence": "WebDav 账号汇总、Alist 教程",
+        "note": "实用资源自然传播"
+      },
+      {
+        "name": "高转发",
+        "evidence": "转发中位 11、总 8440",
+        "note": "值得存转"
+      }
+    ],
+    "signals": {
+      "subscribers": 22709,
+      "err_pct": 74.7,
+      "forwards_per_post": 28.8
+    },
+    "assessment": "74.7% ERR 说明历史上是极高粘性的实用资源号,无买粉痕迹。但 2026-04 后停更,呈休眠;若不恢复更新,粉丝价值会随之衰减。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(整理资源/写教程,低频)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约 5-15 小时/月"
+      },
+      {
+        "name": "服务器/图床",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      2000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "基本无商业化(可能少量广告/赞助)",
+    "streams": [
+      {
+        "name": "广告/赞助",
+        "evidence": "广告动作极少(邀请码1、aff1)",
+        "cny_month": [
+          0,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现克制,高 ERR 说明若接广告价值不低,但已休眠"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "分享他人公开 WebDav 挂载账号,涉资源来源合规灰区(部分挂载内容可能侵权)",
+      "Alist 部署/网盘教程本身属技术中立;整体风险中等偏低"
+    ]
+  }
+}

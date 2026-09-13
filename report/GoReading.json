@@ -1,0 +1,127 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "GoReading",
+  "username": "GoReading",
+  "url": "https://t.me/GoReading",
+  "title": "Λ-Reading ♡",
+  "category": "newsletter/prompt/工具 高质量策展(对照组)",
+  "growth_short": "高质量策展口碑",
+  "one_liner": "1.52万订阅的高质量策展号:围绕newsletter、AI prompt、效率工具的人工精选,ERR 53.3%(全批次前列)、几乎不变现,是典型『小而美』对照组。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/GoReading.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2023-10-10",
+      "2026-07-29"
+    ],
+    "note": "跨度 1023 天、0.3 条/天,低频高质;最后更新 2026-07-29"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 15219,
+    "median_views": 8114,
+    "mean_views": 8698,
+    "p10_views": 6300,
+    "p90_views": 11825,
+    "err_pct": 53.3,
+    "mature_posts": 298,
+    "reactions_total": 5553,
+    "forwards_total": 7259,
+    "forwards_per_post": 24.2,
+    "forwards_median": 11.0,
+    "er_pct": 0.21,
+    "posts_per_day": 0.3,
+    "views_available": true,
+    "media_mix": {
+      "empty": 142,
+      "photo": 96,
+      "document": 31,
+      "webpage": 31
+    },
+    "deleted_pct": 13.5,
+    "activity_note": "53.3% ERR + 转发24.2/帖:高质量策展的忠实受众,与 aboutrss/GoReading 同属对照组顶层"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "newsletter/prompt/工具推荐 + 点评 + 外链(notion 54、mailbrew、economist、newyorker);标签#newsletter #Prompt #Tools",
+    "delivery": "指路为主:指向 newsletter、notion 文档、优质长文;prompt 直接给全文",
+    "curation": "人工精选,围绕阅读/newsletter/AI工具,选题窄而精",
+    "schedule": "0.3 条/天,集中上午10-13点,随缘更新"
+  },
+  "growth": {
+    "strategy": "高质量策展口碑自然增长",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "高质量策展",
+        "evidence": "ERR 53.3%、转发24.2/帖",
+        "note": "内容好到值得转发"
+      }
+    ],
+    "signals": {
+      "subscribers": 15219,
+      "err_pct": 53.3,
+      "forwards_per_post": 24.2
+    },
+    "assessment": "53.3% ERR 是极忠实受众的产物,无买粉/互推。低频不影响粘性,每条有价值。典型『小而美』对照组。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(阅读+策展+点评,低频)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约10-20小时/月"
+      },
+      {
+        "name": "服务器/工具",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      1000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "基本无商业化(可能少量赞助)",
+    "streams": [
+      {
+        "name": "赞助/无",
+        "evidence": "订阅39为footer,变现动作极少",
+        "cny_month": [
+          0,
+          1000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "纯兴趣策展,高ERR说明商业潜力未兑现"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "newsletter/工具/prompt推荐,属正常信息策展,无灰产无侵权要素",
+      "外链指向公开内容,合规;风险低"
+    ]
+  }
+}

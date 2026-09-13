@@ -1,0 +1,129 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "ShortcutsCN",
+  "username": "ShortcutsCN",
+  "url": "https://t.me/ShortcutsCN",
+  "title": "树洞🌳群友问❓有点意思🗳",
+  "category": "树洞/群友问答转载(原快捷指令号转型)",
+  "growth_short": "树洞话题+互链",
+  "one_liner": "9万订阅:用户名原为快捷指令(ShortcutsCN)、现转型为『树洞/群友问』话题转载号,ERR 3.8%,内容多为社群话题转发,夹带少量机场/客服广告。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/ShortcutsCN.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-19",
+      "2026-09-13"
+    ],
+    "note": "跨度25天、11.9条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 89519,
+    "median_views": 3400,
+    "mean_views": 3442,
+    "p10_views": 2927,
+    "p90_views": 4074,
+    "err_pct": 3.8,
+    "mature_posts": 227,
+    "reactions_total": 1914,
+    "forwards_total": 757,
+    "forwards_per_post": 2.5,
+    "er_pct": 0.2,
+    "posts_per_day": 11.9,
+    "views_available": true,
+    "media_mix": {
+      "empty": 263,
+      "photo": 36
+    },
+    "deleted_pct": 0.7,
+    "activity_note": "ERR 3.8%;内容多为t.me话题转发(570),树洞/群友问答形态"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "树洞/群友问答话题转发(大量t.me链接),配少量图;夹带机场/客服广告",
+    "delivery": "转发社群话题/问答,指向其他群/频道",
+    "curation": "聚合树洞/群友问话题,原创少;疑由原快捷指令号转型",
+    "schedule": "11.9条/天"
+  },
+  "growth": {
+    "strategy": "树洞话题聚合 + 互链",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "树洞话题刚需",
+        "evidence": "群友问答形态、reactions 1914",
+        "note": "社群话题吸引围观"
+      },
+      {
+        "name": "互链转发",
+        "evidence": "570 t.me链接",
+        "note": "与其他群/频道互导"
+      }
+    ],
+    "signals": {
+      "subscribers": 89519,
+      "err_pct": 3.8,
+      "forwards_per_post": 2.5
+    },
+    "assessment": "从快捷指令号转型为树洞/群友问话题号,靠社群话题聚合与互链维持。变现走机场/客服等广告,量不大。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      10,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(聚合话题)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约15-30小时/月"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          10,
+          150
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      1000,
+      6000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "机场/客服等广告 + 互推",
+    "streams": [
+      {
+        "name": "广告位",
+        "evidence": "机场5、客服11、广告8",
+        "cny_month": [
+          1000,
+          6000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "话题聚合号广告变现,量中等"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "树洞/群友问话题转载,含少量机场/破解广告,合规灰区",
+      "内容以社群话题为主,无系统性灰产;整体中等"
+    ]
+  }
+}

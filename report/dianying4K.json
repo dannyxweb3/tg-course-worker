@@ -1,0 +1,146 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "dianying4K",
+  "username": "dianying4K",
+  "url": "https://t.me/dianying4K",
+  "title": "4K影视屋(分屋)-蓝光无损电影",
+  "category": "盗版4K影视网盘 + 体育/电竞博彩注入",
+  "growth_short": "影视刚需+博彩注入",
+  "one_liner": "8.7万订阅的盗版4K影视网盘号:多网盘(夸克/迅雷/百度/115)蓝光电影,但夹带182体育/6G世界杯投注与电竞博彩广告,与 inside1024 等同属体育博彩品牌网络,判为 criminal。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/dianying4K.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-06-24",
+      "2026-09-12"
+    ],
+    "note": "跨度80天、3.8条/天;博彩落地域名不收录"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 87026,
+    "median_views": 4134,
+    "mean_views": 4228,
+    "p10_views": 2571,
+    "p90_views": 5893,
+    "err_pct": 4.8,
+    "mature_posts": 274,
+    "reactions_total": 465,
+    "forwards_total": 1105,
+    "forwards_per_post": 3.7,
+    "forwards_median": 2.0,
+    "er_pct": 0.04,
+    "posts_per_day": 3.8,
+    "views_available": true,
+    "media_mix": {
+      "photo": 160,
+      "document": 135
+    },
+    "files": 135,
+    "files_gb": 0.92,
+    "file_ext": {
+      "mp4": 134
+    },
+    "deleted_pct": 28.1,
+    "activity_note": "ERR 4.8%;影视为内容主体,博彩广告注入其间(返水16/首充12/彩金6)"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "4K/蓝光电影海报+介绍(标签#4K #高码率 #HDR)+多网盘链接(夸克117/迅雷73/百度69/115) + 预览mp4;夹带体育/电竞博彩广告块",
+    "ad_injection": "体育博彩(182体育 1820592.com『2026世界杯投注平台』、6G)与电竞博彩(竞博/竞币),互链@AA6G/@KF6G/@S182TY/@JY182Svip",
+    "delivery": "网盘指路为主,配 @pinuo_bot 发货;预览片段mp4",
+    "curation": "批量搬运4K影视 + 注入体育博彩广告",
+    "schedule": "3.8条/天,集中20-22点"
+  },
+  "growth": {
+    "strategy": "4K影视刚需 + 博彩品牌互链",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "4K蓝光刚需",
+        "evidence": "多网盘、高码率标签",
+        "note": "高清影视刚需"
+      },
+      {
+        "name": "博彩品牌互链",
+        "evidence": "@AA6G/@S182TY 等 182/6G 体育博彩号",
+        "note": "与体育博彩品牌网络互导"
+      }
+    ],
+    "signals": {
+      "subscribers": 87026,
+      "err_pct": 4.8,
+      "forwards_per_post": 3.7
+    },
+    "assessment": "盗版4K影视做流量、体育/电竞博彩做变现内核。182/6G 品牌与 inside1024(8G/182体育)属同类体育博彩网络。影视是钩子,博彩是钱。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      50,
+      400
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(搬运影视/建盘)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约30-50小时/月"
+      },
+      {
+        "name": "网盘会员/bot/服务器",
+        "cny_month": [
+          50,
+          400
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      10000,
+      50000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "体育/电竞博彩导流分成 + 网盘拉新",
+    "streams": [
+      {
+        "name": "博彩导流分成",
+        "evidence": "182/6G世界杯投注、竞博电竞博彩",
+        "cny_month": [
+          8000,
+          40000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "网盘拉新返利",
+        "evidence": "多网盘发货",
+        "cny_month": [
+          2000,
+          10000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "影视引流盘,主收入在博彩导流"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "夹带境外体育(世界杯投注)与电竞博彩广告,属开设赌场罪/帮信罪引流环节",
+      "182体育/6G 品牌与 inside1024(8G/182体育)同属体育博彩品牌网络",
+      "同时盗版分发4K影视(侵犯著作权);博彩落地域名与联系方式不收录"
+    ]
+  }
+}

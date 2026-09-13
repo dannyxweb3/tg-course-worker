@@ -1,0 +1,131 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "beautifultgtheme",
+  "username": "beautifultgtheme",
+  "url": "https://t.me/beautifultgtheme",
+  "title": "那些好看的Tg主题",
+  "category": "Telegram主题分享(对照组)",
+  "growth_short": "主题互推网络",
+  "one_liner": "1.29万订阅的TG主题分享号:发.attheme主题文件、大量互链缅甸主题制作圈,ERR 68.6%(全批次最高之一)、几乎零变现,是低风险兴趣号。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/beautifultgtheme.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2023-04-20",
+      "2026-09-12"
+    ],
+    "note": "跨度 1241 天、0.2 条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 12881,
+    "median_views": 8834,
+    "mean_views": 8961,
+    "p10_views": 6667,
+    "p90_views": 11361,
+    "err_pct": 68.6,
+    "mature_posts": 293,
+    "reactions_total": 1296,
+    "forwards_total": 4530,
+    "forwards_per_post": 15.1,
+    "forwards_median": 13.0,
+    "er_pct": 0.05,
+    "posts_per_day": 0.2,
+    "views_available": true,
+    "media_mix": {
+      "photo": 249,
+      "webpage": 38,
+      "document": 5
+    },
+    "deleted_pct": 25.9,
+    "activity_note": "68.6% ERR 是全批次最高之一:主题是即取即用的刚需,预览图+一键应用,转发中位13"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "主题预览图 + 一键『APPLY THEME』深链 + 主题名;大量缅甸文(缅甸主题制作者社群)",
+    "delivery": "指向 t.me 主题深链(457次);.attheme文件;跨号互链其他主题频道",
+    "curation": "搜集/转载好看的TG主题,跨频道互推(@ThemesWall等)",
+    "schedule": "0.2 条/天,集中深夜21-0点"
+  },
+  "growth": {
+    "strategy": "主题互推网络 + 即取刚需",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "主题刚需",
+        "evidence": "ERR 68.6%、一键应用深链",
+        "note": "美化刚需即取即用"
+      },
+      {
+        "name": "主题圈互推",
+        "evidence": "@ThemesWall/@MeowThemes等多号互链",
+        "note": "缅甸/国际主题制作圈交叉导流"
+      }
+    ],
+    "signals": {
+      "subscribers": 12881,
+      "err_pct": 68.6,
+      "forwards_per_post": 15.1
+    },
+    "assessment": "68.6% ERR 说明主题是极高即取需求,受众粘。属主题制作圈互推网络的一环,几乎不商业化,低风险兴趣号。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      50
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(找/转主题)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约5-15小时/月"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      800
+    ],
+    "est_scope": "本频道可归因",
+    "model": "基本无商业化",
+    "streams": [
+      {
+        "name": "潜在广告/无",
+        "evidence": "变现关键词几乎为零(aff1)",
+        "cny_month": [
+          0,
+          800
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "纯兴趣号,高ERR是其唯一资产"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "TG主题分享,内容中立无害",
+      "无灰产无侵权无成人;风险低"
+    ]
+  }
+}

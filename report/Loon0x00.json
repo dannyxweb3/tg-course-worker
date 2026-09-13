@@ -1,0 +1,108 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "Loon0x00",
+  "username": "Loon0x00",
+  "url": "https://t.me/Loon0x00",
+  "title": "Loon 交流群",
+  "category": "翻墙代理工具(Loon)交流群",
+  "growth_short": "代理工具社区",
+  "one_liner": "3.9万成员的Loon(iOS代理工具)交流群:配置/脚本/规则讨论,群极活跃(508条/天),夹带机场广告,属翻墙工具社区。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/Loon0x00.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "2026-09-13|"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 39587,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读",
+    "messages_per_day": 508.5,
+    "deleted_ratio_pct": 44.5,
+    "activity_note": "508条/天极高活跃真人技术讨论"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "Loon配置/脚本/规则讨论,贴代码互助;夹带机场广告",
+    "ad_injection": "少量机场/代理广告",
+    "delivery": "技术问答社区",
+    "schedule": "全天候极活跃"
+  },
+  "growth": {
+    "strategy": "Loon工具刚需社区",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "Loon工具刚需",
+        "evidence": "508条/天",
+        "note": "Loon用户配置刚需"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 508.5
+    },
+    "assessment": "Loon(翻墙代理工具)交流群,极高活跃技术社区。变现走机场广告。翻墙工具生态。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理/反spam bot",
+        "cny_month": [
+          0,
+          150
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      4000
+    ],
+    "est_scope": "群本体",
+    "model": "机场广告",
+    "streams": [
+      {
+        "name": "机场广告",
+        "evidence": "机场4、代理14",
+        "cny_month": [
+          0,
+          4000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "工具社区群变现有限"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "翻墙代理工具(Loon)交流+机场广告,属翻墙生态灰区",
+      "技术讨论为主,工具中立;整体中等"
+    ]
+  }
+}

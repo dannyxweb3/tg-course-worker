@@ -1,0 +1,118 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "solidot",
+  "username": "solidot",
+  "url": "https://t.me/solidot",
+  "title": "奇客Solidot",
+  "category": "科技/科学资讯(自有媒体,对照组)",
+  "growth_short": "老牌科技媒体",
+  "one_liner": "4.7万订阅的『奇客Solidot』官方频道:老牌中文科技/科学新闻站的TG分发,ER 1.33%、ERR 7.3%,内容正规、来源自有站,是科技媒体对照组。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/solidot.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "8.8条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 47314,
+    "median_views": null,
+    "err_pct": 7.3,
+    "mature_posts": null,
+    "forwards_per_post": 22.2,
+    "er_pct": 1.33,
+    "posts_per_day": 8.8,
+    "views_available": true,
+    "media_mix": {
+      "empty": 300
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "ER 1.33%高互动;来源solidot.org(自有站),科技/科学资讯"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "科技/科学新闻摘要(标签#科学 #商业 #人工智能 #太空 #医学)+ solidot.org链接",
+    "delivery": "自有站(solidot.org)内容的TG分发;来源含arstechnica/eurekalert等",
+    "curation": "奇客Solidot老牌科技媒体自有编辑内容,原创/编译",
+    "schedule": "8.8条/天"
+  },
+  "growth": {
+    "strategy": "老牌科技媒体品牌",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "科技资讯口碑",
+        "evidence": "ER 1.33%、自有站",
+        "note": "二十年科技媒体品牌沉淀"
+      }
+    ],
+    "signals": {
+      "subscribers": 47314,
+      "err_pct": 7.3,
+      "forwards_per_post": 22.2
+    },
+    "assessment": "奇客Solidot(老牌中文科技媒体)的TG分发,内容正规、自有编辑。变现在自有站(广告),TG是分发位。对照组。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "编辑/运营(自有媒体)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "媒体成本在主站"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      500,
+      5000
+    ],
+    "est_scope": "含主站的品牌整体",
+    "model": "自有站广告 + 少量频道广告",
+    "streams": [
+      {
+        "name": "站点/频道广告",
+        "evidence": "广告29、合作20;自有站",
+        "cny_month": [
+          500,
+          5000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现主要在solidot.org主站"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "老牌正规科技/科学媒体,自有编辑内容,合规",
+      "无灰产/成人/侵权;科技媒体对照组"
+    ]
+  }
+}

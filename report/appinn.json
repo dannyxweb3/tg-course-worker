@@ -1,0 +1,124 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "appinn",
+  "username": "appinn",
+  "url": "https://t.me/appinn",
+  "title": "Appinn Talk 💧 小众软件",
+  "category": "小众软件社区群(对照组)",
+  "growth_short": "小众软件品牌导流",
+  "one_liner": "8337成员的『小众软件』(appinn.com)官方交流群:真实软件/科技讨论社区,并发在线3.38%(全批次群最高),几乎无广告注入,是干净的社区对照组。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/appinn.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-09",
+      "2026-09-13"
+    ],
+    "note": "跨度 4.2 天、71.6 条/天;群无 per-message 阅读,不抓 sender_id"
+  },
+  "metrics": {
+    "confidence": "high",
+    "kind_note": "group",
+    "members": 8337,
+    "online": 282,
+    "online_pct": 3.38,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无 per-message 阅读,ERR不适用,替代指标 online_pct(3.38%全批次群最高)",
+    "messages_per_day": 72,
+    "reactions_total": 10,
+    "forwards_total": 2,
+    "deleted_ratio_pct": 1.3,
+    "activity_note": "3.38% 并发在线是全批次群最高,删除率仅1.3%(不靠删消息防举报):真实健康社区"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "小众软件老站appinn.com的官方Talk群:成员讨论软件、科技、时事;真人对话为主",
+    "ad_injection": "几乎无:变现关键词极少(广告5、会员5多为讨论语境)",
+    "delivery": "纯社区讨论,不分发资源;外链appinn.com(12)、github、wiki",
+    "schedule": "全天候,14-16点高峰",
+    "retention": "依附appinn.com品牌与主频道导流"
+  },
+  "growth": {
+    "strategy": "小众软件品牌(appinn.com)自然导流",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "品牌导流",
+        "evidence": "appinn.com老站+主频道",
+        "note": "十余年软件推荐品牌沉淀社区"
+      },
+      {
+        "name": "高质量讨论",
+        "evidence": "3.38%在线、删除率1.3%",
+        "note": "真实讨论粘性,无需刷"
+      }
+    ],
+    "signals": {
+      "online_pct": 3.38,
+      "messages_per_day": 72
+    },
+    "assessment": "3.38%在线+1.3%删除率是全批次群里最健康的:真实软件爱好者社区,几乎无商业注入,是干净对照组。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理(志愿/品牌方)",
+        "cny_month": [
+          0,
+          50
+        ]
+      },
+      {
+        "name": "服务器/bot",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      2000
+    ],
+    "est_scope": "群本体(不含appinn.com主站)",
+    "model": "主站广告/无(群本身几乎不变现)",
+    "streams": [
+      {
+        "name": "主站/品牌广告",
+        "evidence": "变现在appinn.com主站,群内极少",
+        "cny_month": [
+          0,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现主要在appinn.com主站(流量主/广告),群作为社区几乎不直接变现"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "小众软件品牌的正规交流社区,讨论软件/科技",
+      "无盗版分发主业、无灰产广告注入;风险低,顶级社区对照组"
+    ]
+  }
+}

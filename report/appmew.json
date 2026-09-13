@@ -1,0 +1,141 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "appmew",
+  "username": "appmew",
+  "url": "https://t.me/appmew",
+  "title": "APP喵 - 资源",
+  "category": "软件/源码/限免 资源号(自有站+网盘)",
+  "growth_short": "资源刚需+高转发",
+  "one_liner": "16.6万订阅的软件资源号:软件/源码/AI/限免,配自有站 appmiao.com 与夸克网盘,转发37.8/帖,id缺口80%(资源链接自毁),含破解与源码分发。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/appmew.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-05-05",
+      "2026-09-13"
+    ],
+    "note": "跨度131天、2.3条/天;id缺口80%"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 166058,
+    "median_views": 7036,
+    "mean_views": 8747,
+    "p10_views": 4367,
+    "p90_views": 11810,
+    "err_pct": 4.2,
+    "mature_posts": 257,
+    "reactions_total": 1820,
+    "forwards_total": 11333,
+    "forwards_per_post": 37.8,
+    "forwards_median": 27.5,
+    "er_pct": 0.08,
+    "posts_per_day": 2.3,
+    "views_available": true,
+    "media_mix": {
+      "photo": 265,
+      "webpage": 18,
+      "empty": 10,
+      "document": 7
+    },
+    "deleted_pct": 79.8,
+    "activity_note": "ERR 4.2% 偏低(大盘或有水分),但转发37.8/帖说明资源真被存转;80%删除是资源/广告自毁"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "配图 + 软件/源码/网站介绍 + 标签(#网站 #源码 #AI #windows #限免) + 链接(github/自有站/夸克)",
+    "delivery": "指路为主:github 87、自有站 appmiao/appmiu、夸克网盘;少量apk/pdf/epub附件",
+    "curation": "半原创短评式资源策展,含破解软件、源码、AI工具、限免",
+    "schedule": "2.3条/天,集中9-14点"
+  },
+  "growth": {
+    "strategy": "资源刚需 + 高转发 + 自有站沉淀",
+    "paid_acquisition": "unknown",
+    "mechanisms": [
+      {
+        "name": "资源刚需",
+        "evidence": "转发37.8/帖、github 87",
+        "note": "软件/源码/限免值得存转"
+      },
+      {
+        "name": "自有站导流",
+        "evidence": "appmiao.com 61、appmiu.com 24",
+        "note": "TG↔自有站互导"
+      }
+    ],
+    "signals": {
+      "subscribers": 166058,
+      "err_pct": 4.2,
+      "forwards_per_post": 37.8
+    },
+    "assessment": "16万资源号,ERR 4.2% 偏低(或有换量水分)但转发高说明核心资源真被需要。变现走自有站广告+网盘拉新+广告位(80%删除疑广告自毁)。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      50,
+      400
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(选题/短评,日更)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约30-60小时/月"
+      },
+      {
+        "name": "自有站服务器/域名/网盘",
+        "cny_month": [
+          50,
+          400
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "est_scope": "本频道+自有站",
+    "model": "自有站广告 + 网盘拉新 + 广告位",
+    "streams": [
+      {
+        "name": "广告位(疑自毁)",
+        "evidence": "80%id缺口、16万盘",
+        "cny_month": [
+          2000,
+          10000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "自有站广告/网盘拉新",
+        "evidence": "appmiao.com、夸克",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "资源号变现组合拳,区间宽"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "含破解软件与源码分发,涉著作权侵权",
+      "网盘拉新/限免薅羊毛合规灰区;未见博彩/诈骗,未标 criminal"
+    ]
+  }
+}

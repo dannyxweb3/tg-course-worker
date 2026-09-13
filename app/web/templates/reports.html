@@ -31,6 +31,11 @@
           {{ RISK_LABEL.get(c.risk_level, c.risk_level) }}
         </span>
       {% endif %}
+      {# 深度标记：brief = 只有五维骨架，待按深度标准重做 #}
+      <span class="badge {{ 'ok' if c.get('depth') == 'deep' else '' }}"
+            title="deep=已做数据推断/异常挖掘/黑话解码/成本拆解/收益锚点/逐罪名分析；brief=五维骨架待重做">
+        {{ '深度' if c.get('depth') == 'deep' else '简版' }}
+      </span>
     </h3>
     <div class="small muted" style="margin-bottom:10px">
       {% if c.url %}<a href="{{ c.url }}" target="_blank" rel="noopener nofollow">@{{ c.username }} ↗</a>{% else %}@{{ c.username }}{% endif %}

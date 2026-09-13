@@ -1,0 +1,126 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "woshadiao",
+  "username": "woshadiao",
+  "url": "https://t.me/woshadiao",
+  "title": "每日沙雕墙",
+  "category": "梗图/沙雕图娱乐号(含少量NSFW)",
+  "growth_short": "沙雕图自然扩散",
+  "one_liner": "11.5万订阅的沙雕梗图号:每日搞笑图/短视频,ER 1.69%、reactions 1.88万,高互动娱乐号,含少量NSFW梗,几乎零商业化。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/woshadiao.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-06",
+      "2026-09-13"
+    ],
+    "note": "跨度7.2天、41.9条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 115373,
+    "median_views": 4012,
+    "mean_views": 4053,
+    "p10_views": 3937,
+    "p90_views": 4303,
+    "err_pct": 3.5,
+    "mature_posts": 13,
+    "reactions_total": 18800,
+    "forwards_total": 3671,
+    "forwards_per_post": 12.2,
+    "forwards_median": 11.0,
+    "er_pct": 1.69,
+    "posts_per_day": 41.9,
+    "views_available": true,
+    "media_mix": {
+      "photo": 241,
+      "document": 37,
+      "empty": 22
+    },
+    "deleted_pct": 1.6,
+    "activity_note": "ER 1.69% + reactions 1.88万:高互动娱乐社群;样本多为新帖未成熟,ERR偏低但ER真实"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "沙雕/搞笑图+短视频,极简配文;标签#NSFW(少量);来源煎蛋/B站/推",
+    "delivery": "媒体直发,纯图娱乐",
+    "curation": "搜集网络沙雕图轻加工,含少量NSFW梗",
+    "schedule": "41.9条/天高频,深夜(22-2点)活跃"
+  },
+  "growth": {
+    "strategy": "沙雕图娱乐自然扩散",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "梗图刚需",
+        "evidence": "ER 1.69%、转发12.2/帖",
+        "note": "娱乐易转发"
+      }
+    ],
+    "signals": {
+      "subscribers": 115373,
+      "err_pct": 3.5,
+      "forwards_per_post": 12.2
+    },
+    "assessment": "高互动娱乐号,11.5万盘、reactions近1.9万。几乎零变现,纯流量号。含少量NSFW梗但非成人主业。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(找图配文,高频)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约20-40小时/月,可众包投稿"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      3000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "基本无商业化(潜在广告)",
+    "streams": [
+      {
+        "name": "潜在广告位/无",
+        "evidence": "变现关键词仅广告1",
+        "cny_month": [
+          0,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "11万高互动盘若接广告有价,目前几乎不变现"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "沙雕图娱乐,图片来源版权是主要轻微风险",
+      "含少量NSFW梗(擦边),量小非主业;整体风险低"
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "miaowu",
   "username": "miaowu",
@@ -7,7 +8,7 @@
   "title": "每日无数猫",
   "category": "猫/趣味动物内容（搬运社媒）",
   "growth_short": "趣味内容自然扩散",
-  "one_liner": "2 万订阅的趣味猫咪内容号：从 x/煎蛋/小红书搬运猫视频与图，ER 0.62%（互动率本批最高之一），日更约 14 条，基本无害的娱乐号。",
+  "one_liner": "猫咪/沙雕内容的二次聚合号——几乎不生产内容,而是从 7-8 个源频道批量转搬,正文明写 `from 平壤卫视 via Pika喵` 的双层出处。ERR 仅 2.8%,是本轮 low 风险组里最低:2 万订阅只有 575 人看。",
   "analyzed_at": "2026-09-13T14:45:00Z",
   "source": {
     "method": "telethon",
@@ -23,7 +24,7 @@
   "metrics": {
     "confidence": "high",
     "subscribers": 19923,
-    "median_views": 562,
+    "median_views": 575,
     "mean_views": 572,
     "p10_views": 453,
     "p90_views": 691,
@@ -42,94 +43,134 @@
       "text": 4
     },
     "deleted_pct": 0.0,
-    "activity_note": "ER 0.62% 本批最高之一——趣味内容互动率高，但绝对阅读小(ERR 2.8%)"
+    "activity_note": "ERR 2.8% 明显低于同为娱乐类的 goworkbitch(5.1%)与 FoolishTraceWind(10.2%)。按帖龄分桶(0-7天 504、7-14天 538、14-21天 572、21-28天 595)显示阅读几乎不随时间增长,不是未长熟就是这个水位。两个不互斥的原因:高频铺量(13.6 条/天)稀释单条注意力;订阅数含较多非活跃账号。无买粉直接证据,但 2 万订阅/575 阅读的比例值得存疑。",
+    "forwards_median": 5,
+    "files": 144,
+    "files_gb": 0.48
   },
   "implementation": {
     "publish_identity": "bot",
-    "post_structure": "猫视频/图 + 一句吐槽文案;搬运自 x.com/煎蛋(jandan.net)/小红书/B站",
-    "delivery": "视频直传 Telegram + 部分社媒链接;标签多为玩梗(#猫猫 #会说话的猫 等)",
-    "schedule": "约 14 条/天，白天分散",
+    "post_structure": "正文中位 34 字/3 行,以视频为主(144 个文件 0.48GB,mp4 86)。模板:『from 🔮 奇闻异录 与 沙雕时刻』22 条、煎蛋无聊图的投票数据原样保留(『Q_Z: jandan.net/t/… OO: 128 XX: 12』)12 条。",
+    "delivery": "多源二次聚合,t.me 引用:wtmsd 79、pikameow 77、jandan_pic 54、pingrangTV 48、Angy_omion 22、onlycatssssss 12、goworkbitch 5;外链 jandan.net 47、fixupx.com 21。『from X via Y』是双层出处——内容原发在平壤卫视、经 Pika喵 转手、再到这里,它是聚合链条的第三层。",
+    "schedule": "半自动:<10 秒间隔占 40%、<60 秒占 48%(大量批量连转),但小时分布分散(16 点 42、14 点 31、5 点 28)、分钟与秒无聚集——脚本批量搬运 + 人工挑时段触发。",
     "source": "搬运社媒趣味猫内容",
-    "growth": "趣味内容自然扩散"
+    "growth": "趣味内容自然扩散",
+    "ad_injection": "无。变现关键词几乎全为零(仅『开车』2 次且为口语语境)。",
+    "curation": "300 条里只有 19 条带 fwd_from(Telegram 原生转发),其余都是重新发布(复制内容 + 手写 from 出处)。这是刻意的:原生转发会带原频道跳转入口把流量送走,重新发布则把流量留在自己这里,只在文字上标注来源。",
+    "note": "goworkbitch 也在本轮样本内(每日沙雕墙),两个梗图号互相取材,构成小型沙雕内容聚合圈。"
   },
   "growth": {
-    "strategy": "趣味/萌宠内容自然扩散，高频铺量",
-    "paid_acquisition": "none",
+    "strategy": "低成本占住泛题材:高频铺量 + 多源聚合",
+    "paid_acquisition": "unknown",
     "mechanisms": [
       {
-        "name": "趣味内容",
-        "evidence": "ER 0.62%、转发 5.2/帖",
-        "note": "萌宠内容互动率高"
+        "name": "高频铺量",
+        "evidence": "13.6 条/天",
+        "note": "用量占据信息流"
+      },
+      {
+        "name": "多源聚合",
+        "evidence": "7-8 个源频道共 300+ 次引用",
+        "note": "内容供给不依赖自产"
+      },
+      {
+        "name": "猫咪题材",
+        "evidence": "标签 #猫猫 #会说话的猫 等",
+        "note": "泛人群、无门槛"
+      },
+      {
+        "name": "沙雕圈互取材",
+        "evidence": "与 goworkbitch 互引",
+        "note": "小型内容圈层"
       }
     ],
     "signals": {
       "subscribers": 19923,
       "err_pct": 2.8,
-      "er_pct": 0.62,
       "forwards_per_post": 5.2
     },
-    "assessment": "娱乐向萌宠号，互动率高但绝对量小。靠高频趣味内容维持，变现意图弱。"
+    "assessment": "增长逻辑是用最低成本占住一个泛题材,但 ERR 2.8% 说明留存效果一般——猫咪内容门槛低、可替代性也高,用户没有理由固定看某一个号。"
   },
   "cost": {
     "recurring_cny_month": [
-      30,
-      200
+      0,
+      50
     ],
     "onetime_cny": [
       0,
-      0
+      300
     ],
     "items": [
       {
-        "name": "发布 bot + VPS",
-        "cny_month": [
-          30,
-          150
+        "name": "【启动】频道创建",
+        "cny_onetime": [
+          0,
+          0
         ]
       },
       {
-        "name": "内容搬运",
-        "cny_month": [
+        "name": "【启动】转搬脚本/工具",
+        "cny_onetime": [
           0,
-          0
-        ],
-        "note": "扒社媒，Telegram 直传"
+          300
+        ]
       },
       {
         "name": "运营时间",
         "cny_month": [
           0,
-          50
+          0
         ],
-        "note": "半自动"
+        "note": "10-25 小时/月:选内容 + 批量转,半自动"
+      },
+      {
+        "name": "VPS/脚本托管",
+        "cny_month": [
+          0,
+          50
+        ]
+      },
+      {
+        "name": "存储",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "144 个文件 0.48GB 由 TG 托管"
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
       0,
-      2000
+      0
     ],
-    "model": "变现弱（偶有软广/导流）",
+    "model": "当前零变现",
     "streams": [
       {
-        "name": "软广/导流 或 无",
-        "evidence": "样本内无明显广告位/联盟",
+        "name": "无",
+        "evidence": "广告/联盟/aff/网盘/打赏 全部为 0",
         "cny_month": [
           0,
-          2000
+          0
         ],
-        "confidence": "low"
+        "confidence": "high"
       }
     ],
-    "note": "以娱乐内容为主，变现意图弱;萌宠受众广告价值一般"
+    "note": "潜在价值有限:2 万订阅听起来不小,但中位阅读只有 575——按实际曝光计价,每天 13.6 条 × 575 ≈ 7,800 次/天,按娱乐类 CPM ¥30-80 折算约 ¥700-1,900/月。这是它与 goworkbitch(2.47 万订阅、1,264 阅读)的差距:订阅数相近,可售曝光差一倍以上。趋势:阅读 08 月 575 → 09 月 518、转发稳定 5,但样本仅 22 天不足以判定。",
+    "est_scope": "本频道",
+    "potential_ad_value_cny_month": [
+      700,
+      1900
+    ]
   },
   "risk": {
     "level": "low",
     "notes": [
-      "趣味猫咪内容搬运，基本无害",
-      "偶有 #NSFW 标签，占比极低(2/300)",
-      "搬运社媒内容有轻微版权/ToS 争议，属民事范畴，无灰黑产"
+      "猫咪与沙雕梗图的二次聚合,内容无害",
+      "常规瑕疵是转搬他人内容的著作权问题:以『重新发布+文字标注来源』取代 Telegram 原生转发(300 条里只有 19 条带 fwd_from),客观上把源频道流量截留在自己这里,社区规范上有争议但不构成违法",
+      "样本内 #NSFW 标签 2 次,量极小、非主业",
+      "无灰产要素,UI 上不应与灰产样本同框标红"
     ]
   }
 }

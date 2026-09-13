@@ -1,0 +1,126 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "CE_Observe",
+  "username": "CE_Observe",
+  "url": "https://t.me/CE_Observe",
+  "title": "每日消费电子观察",
+  "category": "消费电子/科技资讯(高互动)",
+  "growth_short": "科技资讯高互动",
+  "one_liner": "7.5万订阅的消费电子资讯号:聚合蓝点网/IT之家/HKEPC等科技新闻,ERR 10.7%、ER 1.4%、reactions 3.2万,是高互动的垂直科技资讯号。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/CE_Observe.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-03",
+      "2026-09-13"
+    ],
+    "note": "跨度41天、7.3条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 74575,
+    "median_views": 7944,
+    "mean_views": 7954,
+    "p10_views": 6283,
+    "p90_views": 9440,
+    "err_pct": 10.7,
+    "mature_posts": 235,
+    "reactions_total": 31681,
+    "forwards_total": 6613,
+    "forwards_per_post": 22.0,
+    "forwards_median": 18.0,
+    "er_pct": 1.4,
+    "posts_per_day": 7.3,
+    "views_available": true,
+    "media_mix": {
+      "webpage": 210,
+      "empty": 81,
+      "photo": 7
+    },
+    "deleted_pct": 1.6,
+    "activity_note": "ER 1.4% + reactions 3.2万:垂直科技受众高互动"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "消费电子/科技新闻短讯+来源链接(蓝点网landian/IT之家ithome/HKEPC/凤凰科技);网页预览为主",
+    "delivery": "聚合科技媒体新闻转发,来源标注",
+    "curation": "聚合消费电子/科技资讯,选题垂直,零原创",
+    "schedule": "7.3条/天,集中9-18点(工作时段)"
+  },
+  "growth": {
+    "strategy": "垂直科技资讯 + 高互动",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "科技资讯刚需",
+        "evidence": "ER 1.4%、reactions 3.2万",
+        "note": "数码爱好者高频看"
+      }
+    ],
+    "signals": {
+      "subscribers": 74575,
+      "err_pct": 10.7,
+      "forwards_per_post": 22.0
+    },
+    "assessment": "垂直消费电子资讯号,ER 1.4% 高互动、受众真实。变现靠科技/数码商务广告。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      10,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "聚合/运营时间",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约20-40小时/月"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          10,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "科技/数码商务广告",
+    "streams": [
+      {
+        "name": "商务广告位",
+        "evidence": "广告14、合作5;7.5万高互动科技盘",
+        "cny_month": [
+          3000,
+          15000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "垂直科技受众广告价值中上"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "科技新闻聚合转发,涉来源版权/合规灰区",
+      "内容中立,无灰产;整体中等偏低"
+    ]
+  }
+}

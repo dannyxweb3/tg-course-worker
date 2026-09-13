@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "aboutrss",
   "username": "aboutrss",
@@ -7,7 +8,7 @@
   "title": "ALL About RSS",
   "category": "RSS / 开源工具 精选推荐（高质量个人策展号）",
   "growth_short": "技术圈口碑自然增长",
-  "one_liner": "围绕 RSS 与开源工具的精选策展号：9.5k 订阅却有 53.8% ERR，是全样本粘性最高的号之一，纯内容驱动、几乎无商业化。",
+  "one_liner": "中文 RSS 圈的事实枢纽:ERR 53.76% 与转发 24.7/帖 两项都在本轮顶部,RSSHub 作者会亲自到这里首发新产品。但产量已从 2022-2024 的每月 8-17 条萎缩到 2026 的每月 1-3 条,靠存量声誉维持阅读。",
   "analyzed_at": "2026-09-13T12:30:00Z",
   "source": {
     "method": "telethon",
@@ -27,7 +28,7 @@
     "mean_views": 5210,
     "p10_views": 4055,
     "p90_views": 6249,
-    "err_pct": 53.8,
+    "err_pct": 53.76,
     "mature_posts": 298,
     "reactions_total": 3130,
     "forwards_total": 7408,
@@ -41,42 +42,54 @@
       "text": 1
     },
     "deleted_pct": 0.7,
-    "activity_note": "53.8% ERR 是极小盘+极忠实读者的产物；转发 24.7/帖、reactions 3130 都说明是真实高质量受众"
+    "activity_note": "ERR 与转发同时在顶部,本轮少见:每条推荐一个具体可用工具,单条即完整信息,既被稳定消费又值得转给别人。产量从峰值 17 条/月掉到 1-3 条/月(降幅>85%),但阅读几乎未跟跌(2024-08 仅 1 条却 8,199 阅读;2025-12 仅 1 条转发中位达 55,为该指标全样本峰值)——留住订阅者的是圈内地位而非更新频率。刷量检验:反应数≥50 的帖 n=8、CV 中位 1.213(如 [59,14,6,5]),服从幂律,无刷量痕迹。",
+    "forwards_median": 20
   },
   "implementation": {
     "publish_identity": "user",
-    "post_structure": "配图 + 一段点评/心得 + 指向 RSS 源、开源项目、博客文章的链接。标签体系 #开源 #心得 #观点 #教程 #工具",
-    "delivery": "纯指路：外链指向 github/twitter/medium/v2ex/sspai/HackerNews/openrss 等，不托管资源",
-    "curation": "人工策展，围绕 RSS 生态与开源工具，选题窄而精",
-    "schedule": "约 0.2 条/天，集中在上午 9 点，随缘更新，人工手发",
-    "note": "内容是真人读过、有观点的推荐，非模板搬运"
+    "post_structure": "297/300 带图,正文中位 264 字/10 行,是有实质点评的长文案。固定栏目:『RSS #玩家 #心得 分享：第 N 期』29 次、『与 RSS 有关的 Coding』27 次、『最近发现的一些 Feed #源 分享』11 次。标签 #开源 109、#观点 28、#教程 28。",
+    "delivery": "信息源跨中英文、跨社区:github 112、twitter+x 121、medium 31、dev.to 21、v2ex 19、sspai 17、HN 15、openrss 13、mastodon 13——需持续泡在圈子里才能产出的选题结构,与纯搬运号(单一来源占 90%+)截然不同。",
+    "curation": "真人策展 + 投稿机制(样本内有『感谢投稿,向我们推荐了…』),供给侧自我扩张。它已是中文 RSS 圈的默认集散地:最长帖为 RSSHub 作者第一人称发布新阅读器 Follow。",
+    "schedule": "发布集中 9 点(148/300)与 20-21 点(63),分钟聚集在 :00(96)与 :01(81),是整点发布的人工习惯而非 cron(秒数分散)。",
+    "note": "矩阵:aboutrss 自引用 251、配套群 allaboutrss 34、blogrsslist 10、FindBlog 6、rsshub 6、NewlearnerChannel 2、appinnfeed 2、AppDoDo 2。FindBlog/appinnfeed/AppDoDo 均在本轮样本内,构成一个因内容相关而互相引用的正规策展小圈子,与灰产『互推换量』性质不同。",
+    "ad_injection": "无招商帖。『广告』6 次均为讨论 RSS 阅读器去广告等语境。"
   },
   "growth": {
-    "strategy": "技术圈口碑自然增长，不做付费获客",
+    "strategy": "生态枢纽地位驱动,内容相关性互引,无任何付费获客",
     "paid_acquisition": "none",
     "mechanisms": [
       {
-        "name": "高质量策展",
-        "evidence": "ERR 53.8%、转发 24.7/帖",
-        "note": "内容好到值得转发"
+        "name": "生态枢纽地位",
+        "evidence": "RSSHub 作者首发新品、有投稿机制",
+        "note": "最强护城河——不可复制、不可购买"
       },
       {
-        "name": "技术社区渗透",
-        "evidence": "外链 v2ex/sspai/HN/github",
-        "note": "在开发者/RSS 爱好者圈层传播"
+        "name": "单条完整可转",
+        "evidence": "转发 24.7/帖、最高 115",
+        "note": "每条推荐一个可用工具,值得转给具体的人"
+      },
+      {
+        "name": "正规圈层互引",
+        "evidence": "FindBlog/appinnfeed/AppDoDo/rsshub 互链",
+        "note": "内容相关性驱动,非换量"
+      },
+      {
+        "name": "配套群沉淀",
+        "evidence": "allaboutrss 34 次",
+        "note": "讨论沉到群里"
       }
     ],
     "signals": {
       "subscribers": 9519,
-      "err_pct": 53.8,
+      "err_pct": 53.76,
       "forwards_per_post": 24.7
     },
-    "assessment": "典型『小而美』：9.5k 订阅但 53.8% ERR，靠内容质量沉淀极忠实的技术受众。低频更新不影响粘性，因为每条都有价值。增长慢但健康，无买粉/互推痕迹。"
+    "assessment": "增长已停滞但未衰退:产量掉 85% 而阅读维持,现在靠存量。这个号的价值在于它是『中文 RSS 圈唯一的那个号』,而非它多勤奋。存量声誉不可再生,若彻底停更衰减会在几个月内显现。"
   },
   "cost": {
     "recurring_cny_month": [
       0,
-      100
+      50
     ],
     "onetime_cny": [
       0,
@@ -84,48 +97,78 @@
     ],
     "items": [
       {
-        "name": "运营时间投入（人工阅读+策展+写点评，低频）",
+        "name": "【启动】频道 + 配套群创建",
+        "cny_onetime": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "策展时间(核心)",
         "cny_month": [
           0,
           0
         ],
-        "note": "约 5-15 小时/月，唯一实质投入是作者时间"
+        "note": "按当前 1-3 条/月约 5-15 小时/月;峰值期(17 条/月)约 20-40 小时/月。产量下滑最可能的原因就在这里:纯个人时间投入、无现金收入支撑"
       },
       {
-        "name": "服务器/工具",
+        "name": "图床/服务器",
         "cny_month": [
           0,
-          100
+          50
         ],
-        "note": "可能纯手发，近乎为零"
+        "note": "配图可能用 TG 自带"
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
       0,
-      500
+      300
     ],
-    "model": "基本无商业化（可能有少量赞赏）",
+    "model": "几乎零变现(仅可能有少量打赏)",
     "streams": [
       {
-        "name": "读者赞赏/无",
-        "evidence": "样本内无广告位、无联盟码、无网盘 CPA",
+        "name": "打赏",
+        "evidence": "『打赏』4 次",
         "cny_month": [
           0,
-          500
+          300
         ],
-        "confidence": "medium"
+        "confidence": "low"
+      },
+      {
+        "name": "广告位",
+        "evidence": "0 条招商帖;『广告』6 次均为去广告语境、『赞助』1 次",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "high"
+      },
+      {
+        "name": "联盟/邀请码",
+        "evidence": "『邀请码』3 次均为 Follow 内测码赠送(社区行为,非返佣)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "high"
       }
     ],
-    "note": "是纯兴趣驱动的策展号，几乎不变现；高 ERR 说明若想接广告价值不低，但目前未见变现动作"
+    "note": "重要:『订阅』出现 169 次是 RSS 语境(订阅源/订阅列表),不是付费订阅——这是自动词频统计最易误判处,必须回上下文核对。潜在价值:9,519 订阅、5,118 中位阅读、ERR 53.8% 的开发者受众属优质小盘,按技术类 CPM ¥80-200 折算每月 4 条赞助位约 ¥1,600-4,100/月,同样放弃了。",
+    "est_scope": "本频道",
+    "potential_ad_value_cny_month": [
+      1600,
+      4100
+    ]
   },
   "risk": {
     "level": "low",
     "notes": [
-      "RSS 源与开源项目推荐，属正常信息聚合与技术分享，无灰产、无侵权要素",
-      "外链指向公开项目/文章，合规",
-      "唯一敏感点是偶有翻墙/RSS 工具推荐，属技术中立内容"
+      "RSS 生态的开源项目与工具策展,外链指向 GitHub、Mastodon、HN、少数派等公开来源,内容为技术推荐与使用心得,无盗版、无成人、无博彩、无侵权分发,几乎零商业化",
+      "唯一边缘项是偶有涉及给无 RSS 网页生成 Feed 的抓取工具,属技术中立范畴",
+      "UI 上不应与灰产样本同框标红"
     ]
   }
 }

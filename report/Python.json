@@ -1,0 +1,110 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "Python",
+  "username": "Python",
+  "url": "https://t.me/Python",
+  "title": "Python",
+  "category": "Python 编程社区群(国际,对照组)",
+  "growth_short": "编程刚需社区",
+  "one_liner": "9.6万成员的 Python 编程交流群:英文为主的代码求助/讨论社区(flask/typing/login等),真实技术问答,几乎无商业注入,是国际化的开源社区对照组。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/Python.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-29",
+      "2026-09-13"
+    ],
+    "note": "群无per-message阅读;online未取(会话占用)"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 96150,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读,ERR不适用",
+    "messages_per_day": 20.6,
+    "reactions_total": 156,
+    "deleted_ratio_pct": 85.4,
+    "activity_note": "20.6条/天真人技术问答;85%删除是反spam清理;英文为主的国际社区"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "Python 代码求助/讨论(flask/typing/login_manager等),英文为主;贴代码/报错互助",
+    "ad_injection": "几乎无(变现关键词仅aff1)",
+    "delivery": "纯技术问答社区,不分发资源",
+    "schedule": "全天候,21点与凌晨(欧美时段)高峰"
+  },
+  "growth": {
+    "strategy": "编程刚需自然聚集",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "Python学习刚需",
+        "evidence": "通用用户名@Python、9.6万成员",
+        "note": "极通用的技术关键词自然聚人"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 20.6
+    },
+    "assessment": "英文为主的 Python 编程社区,真实技术问答。占据@Python 黄金用户名,自然聚集全球学习者。几乎无商业化,开源社区对照组。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理/反spam bot",
+        "cny_month": [
+          0,
+          100
+        ],
+        "note": "85%删除需管理"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      2000
+    ],
+    "est_scope": "群本体",
+    "model": "基本无变现(潜在招聘/课程广告)",
+    "streams": [
+      {
+        "name": "潜在招聘/课程广告/无",
+        "evidence": "样本内几乎无变现",
+        "cny_month": [
+          0,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "技术社区,变现克制"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "编程技术问答社区,完全合规",
+      "无灰产/成人/侵权;国际开源社区对照组"
+    ]
+  }
+}

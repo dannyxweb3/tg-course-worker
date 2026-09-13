@@ -1,0 +1,108 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "bigdongdongGroup",
+  "username": "bigdongdongGroup",
+  "url": "https://t.me/bigdongdongGroup",
+  "title": "大东东交流群",
+  "category": "机场/翻墙 资源交流群",
+  "growth_short": "机场社区",
+  "one_liner": "4万成员的『大东东』交流群:围绕机场/翻墙与资源的讨论(5.2条/天存活),96%消息被删,配 gitbook 文档,属机场/翻墙社区。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/bigdongdongGroup.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "2026-09-13|"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 40166,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读",
+    "messages_per_day": 5.2,
+    "deleted_ratio_pct": 96.1,
+    "activity_note": "存活5.2条/天+96%删除:高删除的机场/资源社区"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "机场/翻墙/资源讨论,配 bigdongdong.gitbook 文档;taobao链接",
+    "ad_injection": "机场广告(机场41)",
+    "delivery": "机场/翻墙资源交流",
+    "schedule": "全天候,高删除"
+  },
+  "growth": {
+    "strategy": "机场/翻墙资源社区",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "机场/翻墙刚需",
+        "evidence": "机场41、gitbook文档",
+        "note": "翻墙资源需求"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 5.2
+    },
+    "assessment": "机场/翻墙资源交流群,96%删除(防举报/清spam)。变现走机场广告。翻墙生态社区。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理bot/文档站",
+        "cny_month": [
+          0,
+          150
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      4000
+    ],
+    "est_scope": "群本体",
+    "model": "机场广告/分销",
+    "streams": [
+      {
+        "name": "机场广告/分销",
+        "evidence": "机场41",
+        "cny_month": [
+          0,
+          4000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "机场社区变现"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "机场/翻墙资源社区+机场广告,属提供非法互联网接入引流",
+      "96%删除疑防举报;未见博彩,取其机场分销标 high(偏中)"
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "appfans",
+  "username": "appfans",
+  "url": "https://t.me/appfans",
+  "title": "Price Tag",
+  "category": "iOS应用限免/降价日报(对照组,已休眠)",
+  "growth_short": "应用日报口碑",
+  "one_liner": "1.51万订阅的『Price Tag』应用日报:每日播报iOS限免/降价/推荐,导流微信公众号,ERR 15.3%;但已自2026-04停更,呈休眠态。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/appfans.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2024-12-24",
+      "2026-04-17"
+    ],
+    "note": "跨度 479 天、0.6 条/天;最后更新 2026-04-17(约5个月未更),标注休眠"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 15145,
+    "median_views": 2320,
+    "mean_views": 2405,
+    "p10_views": 1938,
+    "p90_views": 2945,
+    "err_pct": 15.3,
+    "mature_posts": 300,
+    "reactions_total": 0,
+    "forwards_total": 122,
+    "forwards_per_post": 0.4,
+    "er_pct": 0.0,
+    "posts_per_day": 0.6,
+    "views_available": true,
+    "media_mix": {
+      "webpage": 269,
+      "empty": 31
+    },
+    "deleted_pct": 0.3,
+    "activity_note": "15.3% ERR 稳定;但阅读全导向微信文,TG侧无反应(reactions 0),是导流中转站;已休眠"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "每日『应用日报』:限免/降价/推荐/资讯四栏 + 微信公众号文章链接(mp.weixin 261次)",
+    "delivery": "TG做预告+导流,正文在微信公众号;tinyurl短链38次",
+    "curation": "人工整理iOS应用限免/降价,『Price Tag』是知名应用推荐品牌",
+    "schedule": "0.6 条/天,集中18-19点(日报固定档);已停更"
+  },
+  "growth": {
+    "strategy": "应用日报品牌口碑 + 微信生态导流",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "限免刚需",
+        "evidence": "每日限免/降价播报",
+        "note": "薅羊毛式刚需"
+      },
+      {
+        "name": "微信导流",
+        "evidence": "mp.weixin 261次",
+        "note": "TG引流到微信主阵地"
+      }
+    ],
+    "signals": {
+      "subscribers": 15145,
+      "err_pct": 15.3,
+      "forwards_per_post": 0.4
+    },
+    "assessment": "15.3% ERR 稳定,是靠限免刚需的应用推荐号(Price Tag品牌)。TG侧作为导流中转,主变现在微信侧。已休眠(2026-04停更)。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(整理应用日报)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约20-40小时/月"
+      },
+      {
+        "name": "服务器/公众号",
+        "cny_month": [
+          0,
+          150
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      500,
+      4000
+    ],
+    "est_scope": "含微信侧的品牌整体(粗略)",
+    "model": "应用aff(限免联盟) + 微信广告/流量主",
+    "streams": [
+      {
+        "name": "应用推广aff/广告",
+        "evidence": "aff7、广告7、投放2",
+        "cny_month": [
+          300,
+          2000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "微信流量主/广告",
+        "evidence": "mp.weixin主阵地",
+        "cny_month": [
+          200,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "主变现在微信侧,TG仅导流;已休眠使当前收入趋零"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "iOS应用限免/降价推荐,内容正规(Price Tag知名品牌)",
+      "应用aff属正常联盟,无灰产无侵权;风险低"
+    ]
+  }
+}

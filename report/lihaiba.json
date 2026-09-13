@@ -1,0 +1,123 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "lihaiba",
+  "username": "lihaiba",
+  "url": "https://t.me/lihaiba",
+  "title": "厉害吧",
+  "category": "软件/网站/AI 资源合集(含破解)+ 机场",
+  "growth_short": "资源合集高转发",
+  "one_liner": "3.9万订阅的资源合集号:软件/网站/AI/B站合集,网盘分发,ERR 42.9%、转发69.8/帖,含破解与机场广告,互推活跃。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/lihaiba.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-09"
+    ],
+    "note": "0.4条/天;id缺口15%"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 39066,
+    "median_views": null,
+    "err_pct": 42.9,
+    "mature_posts": null,
+    "forwards_per_post": 69.8,
+    "er_pct": 0.08,
+    "posts_per_day": 0.4,
+    "views_available": true,
+    "media_mix": {
+      "document": 13,
+      "empty": 0
+    },
+    "deleted_pct": 15.0,
+    "activity_note": "ERR 42.9%+转发69.8/帖:资源合集刚需扩散强"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "软件/网站/AI/合集介绍(标签#软件 #网站 #AI #合集 #B站)+网盘/外链(github/apps.apple/京东u.jd)",
+    "delivery": "指路+网盘;含破解软件与AI资源",
+    "curation": "半原创资源合集策展,含破解",
+    "schedule": "0.4条/天"
+  },
+  "growth": {
+    "strategy": "资源合集刚需+互推",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "资源合集刚需",
+        "evidence": "ERR 42.9%、转发69.8/帖",
+        "note": "合集值得存转"
+      },
+      {
+        "name": "互推",
+        "evidence": "互推4、合作121",
+        "note": "与同类号互导"
+      }
+    ],
+    "signals": {
+      "subscribers": 39066,
+      "err_pct": 42.9,
+      "forwards_per_post": 69.8
+    },
+    "assessment": "资源合集号,42.9%高ERR。变现走广告/机场/网盘拉新+互推。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(合集策展)",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "服务器/网盘",
+        "cny_month": [
+          30,
+          300
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "广告 + 机场/aff + 京东CPS",
+    "streams": [
+      {
+        "name": "广告/机场/CPS",
+        "evidence": "广告11、机场9、京东u.jd",
+        "cny_month": [
+          3000,
+          15000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "资源合集号组合变现"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "含破解软件分发(破解16),侵犯著作权",
+      "夹带机场广告;京东CPS属正常联盟;取其破解标 high"
+    ]
+  }
+}

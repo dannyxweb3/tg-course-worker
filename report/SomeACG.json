@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "SomeACG",
   "username": "SomeACG",
@@ -7,7 +8,7 @@
   "title": "SomeACG | 每日少女壁纸",
   "category": "ACG/二次元壁纸搬运（pixiv/twitter，带出处，SFW）",
   "growth_short": "ACG 壁纸刚需自然转发",
-  "one_liner": "3.68 万订阅的二次元壁纸号：从 pixiv/twitter 搬运高质量 ACG 插画（带画师出处），SFW 向，ERR 13.8%、转发 12/帖，选题围绕碧蓝档案/东方/明日方舟等热门 IP。",
+  "one_liner": "二次元壁纸号,但做了这个品类里几乎没人做的事:每条都完整标注原作链接与画师名(pixiv 188 次、推特 81 次),部分注明『此原图经过处理』,还帮画师带同人志预售。变现关键词命中数为 0,是本轮除 scitech_fans 外唯一完全为零的样本。",
   "analyzed_at": "2026-09-13T17:45:00Z",
   "source": {
     "method": "telethon",
@@ -33,7 +34,7 @@
     "forwards_total": 3553,
     "forwards_per_post": 11.8,
     "er_pct": 0.09,
-    "posts_per_day": 2.3,
+    "posts_per_day": 2.32,
     "views_available": true,
     "media_mix": {
       "document": 149,
@@ -48,29 +49,45 @@
       "png": 46,
       "jpeg": 15
     },
-    "activity_note": "ERR 13.8%;带画师出处的 ACG 壁纸，SFW"
+    "activity_note": "转发最高仅 31、中位 11,分布异常平坦无爆款——壁纸是『看完即用』的消费品,用户自己存图就够了,不像工具/资源那样值得转给别人。这是内容形态决定的传播上限。",
+    "forwards_median": 11,
+    "files": 149,
+    "files_gb": 1.01
   },
   "implementation": {
     "publish_identity": "bot",
-    "post_structure": "高质量 ACG 插画/壁纸(原图 jpg/png 直传) + 画师出处链接(pixiv/twitter);标签为 IP/主题(#碧蓝档案 #东方Project #明日方舟 #初音未来 #风景)",
-    "delivery": "原图直传 Telegram(免费 CDN) + 标注 pixiv/twitter 画师主页;SFW 向少女壁纸",
+    "post_structure": "正文中位 9 字/1 行,只有画名与来源。固定格式『来源: https://www.pixiv.net/artworks/… 画师: xxx』(43 条以『来源:』开头),另有 23 条标注『* 此原图经过处理』。",
+    "delivery": "图文双轨:MessageMediaDocument 149(jpg 88/png 46/jpeg 15,共 1.01GB)+ MessageMediaPhoto 147,同一张图既发压缩预览又发原图文件(TG 的 photo 会压缩,document 才是无损原图)。外链 pixiv.net 188、twitter 42、x.com 39、bilibili 17。",
     "source": "搬运 pixiv/twitter ACG 画师作品(带出处)",
-    "schedule": "约 2.3 条/天，午后到晚间",
-    "growth": "ACG 壁纸刚需 + 热门 IP"
+    "schedule": "攒一批发一批:间隔中位 28 秒,<10 秒占 50%、<60 秒占 55%;小时集中 12-14 点(107 条)与 18-20 点(85 条)。每次发若干组(预览+原图各一条),所以间隔极短。",
+    "growth": "ACG 壁纸刚需 + 热门 IP",
+    "ad_injection": "无。变现词频统计结果为空字典——广告/投放/机场/网盘/会员/付费全部零命中。",
+    "curation": "严格署名:在壁纸/图集品类里绝大多数号是无署名搬运,它每条都给原作链接与画师名,甚至标注图片是否被处理过——这是同人圈礼仪而非法律要求。还会转发画师的同人志预售(melonbooks 3、fanbox 2、booth 2),把流量导回画师的正规销售渠道而非截留。",
+    "note": "完全没有商业设施:t.me 引用 0 次、bot 0 个、@提及仅 3 个画师账号。"
   },
   "growth": {
-    "strategy": "热门 IP 的 ACG 壁纸刚需自然转发",
+    "strategy": "日更质量 + 署名建立的圈内口碑",
     "paid_acquisition": "none",
     "mechanisms": [
       {
-        "name": "壁纸刚需",
-        "evidence": "转发 12/帖、原图直传",
-        "note": "高质量壁纸是 ACG 用户刚需"
+        "name": "稳定日更",
+        "evidence": "2.32 条/天、ERR 13.8%",
+        "note": "壁纸是消耗品需持续供给"
       },
       {
-        "name": "热门 IP",
-        "evidence": "碧蓝档案/东方/明日方舟 标签",
-        "note": "蹭热门二次元 IP 流量"
+        "name": "署名建立口碑",
+        "evidence": "pixiv/推特链接 188+81 次",
+        "note": "在同人圈署名是获得认可的前提"
+      },
+      {
+        "name": "主流 IP 覆盖",
+        "evidence": "#碧蓝档案 23、#东方Project 21、#明日方舟 14",
+        "note": "跟着热门游戏的受众走"
+      },
+      {
+        "name": "无任何外部手段",
+        "evidence": "0 个 t.me、0 个 bot、0 次互推",
+        "note": "完全自然"
       }
     ],
     "signals": {
@@ -78,12 +95,12 @@
       "err_pct": 13.8,
       "forwards_per_post": 11.8
     },
-    "assessment": "ACG 壁纸搬运号，SFW 向、带画师出处。选题围绕热门二次元 IP，ERR 13.8% 健康。相对同类做了出处标注，尊重来源程度略高。"
+    "assessment": "转发中位 11、最高 31 的平坦分布说明不会爆发式增长——壁纸内容的传播上限就在这里,3.68 万是靠日更慢慢积累的。"
   },
   "cost": {
     "recurring_cny_month": [
       0,
-      150
+      0
     ],
     "onetime_cny": [
       0,
@@ -91,55 +108,62 @@
     ],
     "items": [
       {
-        "name": "抓取 pixiv + 发布 bot + VPS",
-        "cny_month": [
+        "name": "【启动】频道创建",
+        "cny_onetime": [
           0,
-          120
+          0
         ]
       },
       {
-        "name": "图片存储",
+        "name": "选图与标注",
         "cny_month": [
           0,
           0
         ],
-        "note": "Telegram 直传"
+        "note": "15-35 小时/月:每条需找原作链接、记画师名。『查出处』这一步恰恰是多数搬运号省掉的"
       },
       {
-        "name": "运营时间",
+        "name": "存储",
         "cny_month": [
           0,
-          50
+          0
         ],
-        "note": "半自动抓取"
+        "note": "1.01GB 由 TG 托管"
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
       0,
-      3000
+      0
     ],
-    "model": "变现弱（可能捐赠/API/软广）",
+    "model": "完全不变现",
     "streams": [
       {
-        "name": "捐赠/API/软广",
-        "evidence": "fanbox/booth 链接;无明显广告位",
+        "name": "无",
+        "evidence": "变现词频统计为空字典,广告/联盟/网盘/机场/打赏全部零命中",
         "cny_month": [
           0,
-          3000
+          0
         ],
-        "confidence": "low"
+        "confidence": "high"
       }
     ],
-    "note": "更像 ACG 爱好项目，变现意图弱;SomeACG/SomeImages 系有开放图片 API"
+    "note": "3.68 万订阅、5,082 中位阅读的 ACG 受众,按图集类 CPM ¥30-80 折算每天一条广告约 ¥3,500-9,400/月,一分没取。这与它的署名行为是同一套逻辑:一个坚持给画师署名、还帮画师带货的号,接广告会破坏它在同人圈的立场——内容伦理与商业化在这里同样冲突(与 aboutrss/scitech_fans/fakeye 结论一致)。",
+    "est_scope": "本频道",
+    "potential_ad_value_cny_month": [
+      3500,
+      9400
+    ]
   },
   "risk": {
     "level": "medium",
     "notes": [
-      "搬运 pixiv/twitter 画师 ACG 作品，未获授权即分发，涉著作权(尽管标注了出处)",
-      "SFW 向少女壁纸，个别 #萝莉 标签需注意但样本为非露骨插画",
-      "相较无出处的搬运号，尊重来源程度略高，风险中等"
+      "未经授权转载他人插画,即使标注作者与来源,在著作权法上仍属未获许可的复制与信息网络传播(署名只能满足署名权,不能替代许可)",
+      "但实际情形明显轻于同类:完整保留原作链接与画师名、标注图片是否经过处理、并把流量导向画师的正规销售渠道(melonbooks/fanbox/booth),这些行为在实践中大幅降低权利人的追诉动机,同人圈对『署名转载』的容忍度也普遍较高",
+      "需单独标注 #萝莉 8 与 #裸足 6:在日本同人语境中是画风与题材描述,样本内可见内容以全年龄向主流游戏同人插画为主;但在中国大陆语境下涉未成年人形象的二次元内容有监管敏感性,若出现露骨表现即触及红线",
+      "【能力边界】本报告基于可观测的标签与文字信息判断其主体为全年龄向,未对图片内容本身作视觉审查",
+      "无盗版软件、无成人站导流、无博彩、无诈骗、零商业变现"
     ]
   }
 }

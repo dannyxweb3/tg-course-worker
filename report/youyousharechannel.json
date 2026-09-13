@@ -1,14 +1,15 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "youyousharechannel",
   "username": "youyousharechannel",
   "url": "https://t.me/youyousharechannel",
   "title": "油油の科技软件资源分享",
-  "category": "科技软件资源/破解分享（网盘投递）",
-  "growth_short": "互推 + 滚动更新",
-  "one_liner": "8.99 万订阅的软件资源号：图文帖 + 夸克网盘投递，覆盖 Mac/Windows 破解与 AI 编程工具（Codex/ClaudeCode），约 45% 消息滚动删除。",
-  "analyzed_at": "2026-09-13T12:30:00Z",
+  "category": "开源/免费软件策展（主体合法）+ 少量破解与成人内容，双频道风险隔离",
+  "growth_short": "内容质量自然增长",
+  "one_liner": "9 万订阅的高质量开源软件策展号:正文里『破解』仅出现 1 次、GitHub 外链 72 次,但简介用『影-视/磁-力/-破-解』(插分隔符规避审查)做检索诱饵,并把集成注册码的成品安装包挪到独立频道 @yy_app(被引用 53 次)——主频道保持干净。9 万盘、ERR 8.4%,却在 153 天里一条广告都没接。",
+  "analyzed_at": "2026-09-13T20:30:00Z",
   "source": {
     "method": "telethon",
     "script": "scripts/tg_recon.py",
@@ -18,20 +19,21 @@
       "2026-04-12",
       "2026-09-12"
     ],
-    "note": "deleted 44.9% 为滚动删除/失效清理"
+    "note": "跨度 153 天、2.0 条/天。简介经 t.me 公开预览页取得。@yy_app / @yysgchat / @youyoushare_bot 未单独抓取,相关判断仅基于主频道内的引用。"
   },
   "metrics": {
     "confidence": "high",
-    "subscribers": 89915,
-    "median_views": 7586,
-    "mean_views": 7887,
-    "p10_views": 6291,
+    "subscribers": 89954,
+    "median_views": 7583,
+    "mean_views": 7874,
+    "p10_views": 6220,
     "p90_views": 9620,
     "err_pct": 8.4,
-    "mature_posts": 288,
+    "mature_posts": 289,
     "reactions_total": 1071,
     "forwards_total": 10015,
     "forwards_per_post": 33.4,
+    "forwards_median": 28,
     "er_pct": 0.05,
     "posts_per_day": 2.0,
     "views_available": true,
@@ -39,127 +41,193 @@
       "photo": 282,
       "document": 8,
       "webpage": 3,
-      "text": 6,
+      "empty": 6,
       "poll": 1
     },
     "deleted_pct": 44.9,
-    "activity_note": "ERR 8.4% 对搬运号偏高，说明选品（Mac/AI 编程工具）质量不错，真实读者较多"
+    "views_trend_by_month": {
+      "2026-04": 8786,
+      "2026-05": 7234,
+      "2026-06": 7582,
+      "2026-07": 8061,
+      "2026-08": 6796,
+      "2026-09": 3487
+    },
+    "forwards_trend_by_month": {
+      "2026-04": 36,
+      "2026-05": 27,
+      "2026-06": 29,
+      "2026-07": 33,
+      "2026-08": 21,
+      "2026-09": 21
+    },
+    "activity_note": "4→8 月中位阅读 -23%、中位转发 -42%,而发帖量未减:粉丝在增、读者在减的降温信号(9 月列未长熟需打折)。删除 44.9% 呈簇状(连删 3-7 条),排除『每帖广告 24h 自毁』模式,更符合版本迭代后批量清理过期帖。"
   },
   "implementation": {
-    "publish_identity": "bot",
-    "post_structure": "封面图 + 软件名/简介 + 网盘链接;选品偏 Mac/Windows 实用与破解、AI 编程工具（Codex/Claude Code/Skill）",
-    "delivery": "夸克网盘转存链接投递 + 少量 mp4 直传;不长期自托管",
-    "schedule": "约 2 条/天，集中在下午 17-19 点",
-    "retention": "约 45% 消息已删——滚动删除/失效链接清理，降低下架面并保持存量清爽",
-    "growth": "快讯栏目 + 互推"
+    "publish_identity": "channel",
+    "post_structure": "标签(#Mac 21/#Codex 10/#Windows 8 等人工细分) + 软件名与一句定位 + 100-300 字真人使用评价 + 官网/GitHub releases 直链。句式不重复、含个性化判断,非模板生成。",
+    "ad_injection": "无。全样本『广告』31 次中 17 次是『无广告』作为软件卖点、1 次『去广告』;153 天内零招商/投放/报价帖。",
+    "delivery": "双频道风险隔离:主频道只放介绍与官网/GitHub 链接(github.com 外链 72 次);『集成注册码』的成品安装包放独立频道 @yy_app(正文引用 53 次)。配套 @yysgchat(群)、@youyoushare_bot(私信)、twitter.com/ishare365(墙外备份)。",
+    "curation": "人工策展。作者本人在用 Codex/ClaudeCode 等工具(标签紧跟前沿),每条需找软件、试用、写评价,2.0 条/天的低频与该成本相符。",
+    "schedule": "晚间批量投放:17 点 65 条 / 18 点 112 条 / 19 点 39 条,三小时占 72%;相邻间隔 <60 秒占 41%、<10 秒占 15%,属白天攒稿、傍晚用发布队列连续排空,非整点 cron。",
+    "note": "简介用分隔符规避关键词识别:『影-视』『磁-力』『软-件』『脚-本』『-破-解』『音.乐』——既躲开审查扫描,又保留这些高需求词作为 TG 站内搜索与第三方搜索 bot 的检索诱饵。"
   },
   "growth": {
-    "strategy": "稳定日更 + 互推换量 + 滚动删除保持活跃观感",
-    "paid_acquisition": "exchange",
+    "strategy": "内容质量驱动的自然增长 + 灰色内容制造流量峰值 + 简介关键词 SEO + 矩阵内互导",
+    "paid_acquisition": "none",
     "mechanisms": [
       {
-        "name": "选品质量",
-        "evidence": "ERR 8.4%、转发 33/帖",
-        "note": "Mac/AI 编程工具选品比爽文号留存好"
+        "name": "内容质量驱动",
+        "evidence": "ERR 8.4%、转发中位 28(9 万盘)",
+        "note": "未见买粉/互推;ERR 与转发分布符合自然增长形态"
       },
       {
-        "name": "互推",
-        "evidence": "含快讯/互推类内容",
-        "note": "与同类软件号换量"
+        "name": "灰色内容破圈",
+        "evidence": "成人识图 272 转发、JetBrains 激活 152、破除 AI 限制 105;正规工具类均值仅 31.6",
+        "note": "正规内容负责稳态(中位 27),灰色内容贡献全部头部爆款——均值差 1.5 倍全部来自头部"
+      },
+      {
+        "name": "简介关键词诱饵",
+        "evidence": "『影-视/磁-力/-破-解/福利』带规避分隔符",
+        "note": "面向站内搜索与搜索 bot 的 SEO,非给人读"
+      },
+      {
+        "name": "矩阵漏斗",
+        "evidence": "@yy_app 53 次、@yysgchat、@youyoushare_bot、twitter/ishare365",
+        "note": "策展位→分发位→社区位→私信位,外加墙外备份"
       }
     ],
     "signals": {
-      "subscribers": 89915,
+      "subscribers": 89954,
       "err_pct": 8.4,
-      "forwards_per_post": 33.4
+      "forwards_per_post": 33.4,
+      "er_pct": 0.05
     },
-    "assessment": "8.99 万订阅、8.4% ERR、转发 33/帖，是运营较成熟的软件搬运号。选品偏开发者/效率工具，受众质量高于纯爽文号。"
+    "assessment": "自然增长且质量真实,但正在降温(4→8 月阅读 -23%、转发 -42%)。天花板是作者单人产能(2 条/天);在不加大产出或不破圈的情况下,存量粉丝注意力持续流失。"
   },
   "cost": {
     "recurring_cny_month": [
-      150,
-      700
+      55,
+      210
     ],
     "onetime_cny": [
       0,
-      0
+      700
     ],
     "items": [
       {
-        "name": "网盘 SVIP（夸克，转存+高速）",
+        "name": "【启动】频道/分发频道/群/bot 创建",
+        "cny_onetime": [
+          0,
+          0
+        ],
+        "note": "TG 免费"
+      },
+      {
+        "name": "【启动】@youyoushare_bot 开发",
+        "cny_onetime": [
+          0,
+          500
+        ],
+        "note": "开源框架自建为 ¥0"
+      },
+      {
+        "name": "【启动】图床/发布队列工具",
+        "cny_onetime": [
+          0,
+          200
+        ]
+      },
+      {
+        "name": "【启动】粉丝积累",
+        "cny_onetime": [
+          0,
+          0
+        ],
+        "note": "ERR 8.4%+转发中位 28 是自然增长特征,未见买粉痕迹"
+      },
+      {
+        "name": "运营时间(核心成本)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "30-60 小时/月:每条需找软件、试用、写评价、配图。若按 ¥50/小时计,机会成本 ¥1,500-3,000/月——这是本号真实的大头"
+      },
+      {
+        "name": "网盘会员(夸克/阿里,托管安装包)",
         "cny_month": [
           25,
           60
         ]
       },
       {
-        "name": "运营时间（找源+转存+发布，约 2 条/天）",
+        "name": "VPS / bot 托管",
         "cny_month": [
-          0,
-          0
-        ],
-        "note": "约 20-40 小时/月人力"
-      },
-      {
-        "name": "VPS/发布 bot",
-        "cny_month": [
-          50,
-          150
+          30,
+          100
         ]
       },
       {
-        "name": "软件来源",
+        "name": "图床/CDN",
         "cny_month": [
           0,
-          0
-        ],
-        "note": "搬运破解站/同行"
+          50
+        ]
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
-      2000,
-      12000
+      0,
+      3500
     ],
-    "model": "网盘拉新 CPA + 合作软广 + 互推",
+    "est_scope": "仅主频道可归因(不含 @yy_app 与 @youyoushare_bot 私信)",
+    "model": "当前几乎未变现;潜在为广告位与网盘 CPA",
     "streams": [
       {
-        "name": "夸克网盘拉新 CPA",
-        "evidence": "网盘转存链接投递",
+        "name": "广告位",
+        "evidence": "153 天 300 条样本内 0 条广告(广告帖有极强文本特征,全样本零命中)",
         "cny_month": [
-          1000,
-          7000
+          0,
+          0
         ],
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
-        "name": "合作软广/荐位",
-        "evidence": "科技软件号常规变现",
+        "name": "网盘拉新 CPA",
+        "evidence": "夸克链接 4 次,无推广参数",
         "cny_month": [
-          500,
-          3000
+          0,
+          500
         ],
         "confidence": "low"
       },
       {
-        "name": "互推邀请奖励",
-        "evidence": "互推内容",
+        "name": "@youyoushare_bot 私信变现",
+        "evidence": "bot 存在,内容不可观测",
         "cny_month": [
-          200,
-          2000
+          0,
+          3000
         ],
         "confidence": "low"
       }
     ],
-    "note": "8.99 万订阅 × 中位 7.6k 阅读，变现盘子中等；开发者向选品的广告单价可能略高"
+    "potential_ad_value_cny_month": [
+      11000,
+      34000
+    ],
+    "note": "潜在广告位测算:中位阅读 7,583 × 每天 1 条 × 30 天 ≈ 22.7 万次曝光/月;按中文 TG 科技类 CPM ¥50-150(本项目 xiaoshuwu 样本区间)或 $17-37(telega.io 同类榜单)折算 ≈ ¥11,000-34,000/月。最硬的锚点是反证:一个 9 万订阅、ERR 8.4% 的号在 153 天里一条广告都没接,处于『高资产、零变现』状态,与 aboutrss/GoReading 同型。趋势预警:阅读 -23%、转发 -42% 意味着广告位潜在价值正在贬值,若继续不变现且下滑延续,一年后可能腰斩。区间宽的根源:@yy_app 与 @youyoushare_bot 均在本次抓取范围外,两者都可能承载未观测到的变现。"
   },
   "risk": {
-    "level": "high",
+    "level": "medium",
     "notes": [
-      "系统性分发破解/去付费软件，侵犯著作权，以拉新/广告牟利可涉侵犯著作权罪",
-      "网盘转存件存在挂马/失效风险",
-      "无成人/博彩/诈骗要素，属侵犯知识产权类，风险低于 criminal 档"
+      "【不适用/主体合法】300 条里 269 条是 GitHub 开源项目、免费软件与官网直链的正常推荐(github 外链 72 次),正文『破解』仅出现 1 次。准确画像是高质量开源策展号掺入少量高扩散的侵权与成人内容,不宜整体标为『盗版资源号』",
+      "分发集成注册码的商业软件(本号最重的一项):『集成注册码』成品安装包(Beyond Compare)与『一键激活 JetBrains 全家桶』,涉《刑法》217 条、《著作权法》53 条第 6 项;权利人为跨境主体、维权能力强",
+      "成人内容检索工具与个别影视资源:AVScan(转发 272)唯一用途是反查 AV 番号,标签 #NSFW #AV 系运营方自打;另有个别 1080p 影视压制资源",
+      "主动规避审查构成主观明知(加重情节):简介以『影-视』『磁-力』『-破-解』『音.乐』插分隔符规避关键词识别,属加重因素而非中性技术选择",
+      "『破除 AI 内容安全限制』一类新型行为定性不清晰:违反服务条款明确,是否落入《刑法》285 条第 3 款尚无成熟判例",
+      "双频道结构降低主频道下架概率但不构成抗辩:实际侵权文件在 @yy_app,主频道只留介绍与官网链接;引导并提供获取途径同样落入『发行』评价范围"
     ]
   }
 }

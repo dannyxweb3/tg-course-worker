@@ -1,0 +1,125 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "xhqcankao",
+  "username": "xhqcankao",
+  "url": "https://t.me/xhqcankao",
+  "title": "风向旗参考快讯",
+  "category": "财经/科技快讯聚合(付费源搬运)",
+  "growth_short": "财经快讯高互动",
+  "one_liner": "16.3万订阅的财经科技快讯号:高频(17条/天)聚合Bloomberg/财联社/WSJ/日经/TechCrunch,ER 1.27%、reactions 3.8万,是高互动的付费源快讯聚合。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/xhqcankao.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-27",
+      "2026-09-13"
+    ],
+    "note": "跨度17.3天、17条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 162854,
+    "median_views": 9912,
+    "mean_views": 10419,
+    "p10_views": 8664,
+    "p90_views": 12915,
+    "err_pct": 6.1,
+    "mature_posts": 180,
+    "reactions_total": 38436,
+    "forwards_total": 8989,
+    "forwards_per_post": 30.0,
+    "forwards_median": 25.0,
+    "er_pct": 1.27,
+    "posts_per_day": 17.3,
+    "views_available": true,
+    "media_mix": {
+      "empty": 294,
+      "photo": 3,
+      "webpage": 2
+    },
+    "deleted_pct": 0.3,
+    "activity_note": "ER 1.27% + reactions 3.8万:快讯号里罕见的高互动,受众真实活跃"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "财经/科技快讯短条 + 来源链接(bloomberg/cls/ifeng/techcrunch/theverge/wsj/nikkei)",
+    "delivery": "聚合中外财经科技快讯,含付费源(bloomberg/wsj/nikkei);纯文本",
+    "curation": "机器聚合,零原创;选题财经+科技热点",
+    "schedule": "17条/天全天铺"
+  },
+  "growth": {
+    "strategy": "财经科技快讯刚需 + 高互动",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "快讯刚需",
+        "evidence": "ER 1.27%、reactions 3.8万",
+        "note": "投资者/科技人群高频看"
+      }
+    ],
+    "signals": {
+      "subscribers": 162854,
+      "err_pct": 6.1,
+      "forwards_per_post": 30.0
+    },
+    "assessment": "16万财经科技快讯,ER 1.27% 在快讯号里罕见的高,受众真实。变现靠商务广告(券商/交易/科技)。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "聚合脚本/服务器",
+        "cny_month": [
+          30,
+          200
+        ]
+      },
+      {
+        "name": "付费源订阅(取材)",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      8000,
+      30000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "商务广告(券商/交易/科技)",
+    "streams": [
+      {
+        "name": "商务广告位",
+        "evidence": "16万高互动财经盘,广告价值高",
+        "cny_month": [
+          8000,
+          30000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "财经受众商业价值高,单价不可见"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "聚合含 Bloomberg/WSJ/日经 等付费源,著作权/不正当竞争灰区",
+      "财经快讯本身中立;若接交易平台/荐股广告风险上升,暂标 medium"
+    ]
+  }
+}

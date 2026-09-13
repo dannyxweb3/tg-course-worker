@@ -62,16 +62,40 @@ ORDER = [
     "wenan888", "aigc1024", "https1024", "knowledge1024", "qing_03", "AI_Pintura",
     # 影视/成人搜索群（criminal）
     "soutv",
+    # ==== 2026-09-13 批次二（tg-nav 导航站，人数>8000）====
+    # 正规内容 / 开源社区 / 个人策展（对照组，low）
+    "archlinuxcn", "beautifultgtheme", "GoReading", "FindBlog", "appfans",
+    "goworkbitch", "FoolishTraceWind", "awesomeRSSHub",
+    # 正规社区群（对照组，low）
+    "appinn", "abc999222",
+    # 财经 / 资讯聚合（medium）
+    "FinanceNewsDaily", "eco_cn", "AI_News_CN",
+    # 应用推荐 / 游戏媒体 / 云工具（medium）
+    "AppsSweepstakesNews", "blindgamer", "agentONE_R",
+    # 金融灰区：币圈喊单 / 盗版付费财经+荐股（medium→high）
+    "biquan321", "clsvip",
+    # 资源盗版：软件/影视/Galgame/网盘（high；alistshare 已休眠标 medium）
+    "gitbig", "feiyu123", "Galgamer_Channel", "alyp_1", "alistshare",
+    # 播客盗录 + 保健品广告（medium）
+    "chinapodcast",
+    # 博彩矩阵关联前台（high）
+    "AwesomeChatGPT",
+    # 成人擦边社区群（high）
+    "cosplaysharegroup",
+    # 软件资源群夹带机场+户籍查询/社工库引流（criminal）
+    "blacktechsharing",
 ]
 
 HEADLINE = (
-    "六十余个样本，谱系从正规到犯罪：一端是 cdtchinesefeed（正规新闻媒体）、scitech_fans/aboutrss/fakeye"
-    "（高质量个人策展，ERR 30-50%）等对照组，另一端是 dajian910（犯罪软件外包）、syfhhbd（招嫖）、"
+    "近百个样本，谱系从正规到犯罪：一端是 cdtchinesefeed（正规新闻媒体）、archlinuxcn（开源社区，ERR 81%）、"
+    "scitech_fans/aboutrss/fakeye（高质量个人策展，ERR 30-50%）等对照组，另一端是 dajian910（犯罪软件外包）、"
+    "syfhhbd（招嫖）、blacktechsharing（软件群夹带户籍查询/社工库引流）、"
     "博彩导流矩阵（wenan888/aigc1024/https1024 等以内容外壳夹带博彩）等直接犯罪服务；中间是内容/机场/搜索三类灰产。"
-    "内容号看 ERR，真内容(个人策展、开源社区)ERR 常达 30-100%，纯搬运/买粉/博彩壳则 ERR 低且互动塌陷。"
+    "内容号看 ERR，真内容(个人策展、开源社区)ERR 常达 30-115%，纯搬运/买粉/博彩壳则 ERR 低且互动塌陷。"
     "搜索平台不生产内容、只卖结果页广告位，毛利最好；机场生态是完整产业链；犯罪服务类已非灰色地带。"
     "反直觉的点：扩散力最强的永远是刚需内容——免费翻墙节点 jichangdl（均值约 790 转发/帖）、"
-    "安卓破解 App xyxyspace（ERR 112%，转发超订阅数）、开源阅读 Legado（ERR 68.6%）居前，都与合法性无关。"
+    "Oracle 抢机工具 agentONE_R（ERR 115%，事件驱动）、TG 主题 beautifultgtheme（ERR 68.6%）、"
+    "安卓破解 App xyxyspace（ERR 112%）、开源阅读 Legado（ERR 68.6%）居前，都与合法性无关。"
 )
 
 SCHEMA_NOTES = {
@@ -123,6 +147,13 @@ CONTENT_WARNING = (
     "2026-09-13 批次另发现一个博彩导流矩阵——wenan888/aigc1024/https1024/knowledge1024/qing_03/AI_Pintura"
     "以文案/AI资源/冷知识/音乐等内容为外壳、夹带体育与棋牌博彩广告(共享 8G/8K/182体育/球速 品牌与 meiriyishu 互链)，"
     "soutv 为影视/成人搜索群且注入赌博/成人广告;这些博彩落地域名与成人内容不收录、不展示。"
+    "2026-09-13 批次二(tg-nav 导航站)另有几个重点:blacktechsharing 表面软件资源群、实则注入机场广告并夹带"
+    "『全国户籍查询机器人』(社工库/开盒,宣称可生成身份证/律师盖章版)——属侵犯公民个人信息罪引流,风险定 criminal,其户籍广告落地不收录;"
+    "AwesomeChatGPT 内容为正常 AI prompt/资讯,但高频互链 aigc1024(博彩矩阵成员),疑为矩阵『干净前台』,标 high;"
+    "cosplaysharegroup 名义 cosplay 群、实为成人向男娘擦边社区,露骨原文不引用;"
+    "clsvip 盗版财联社付费内容并导流收费荐股圈子(非法证券咨询),chinapodcast 盗录播客并夹带保健品疗效广告(含海外华人政论,受众在墙外)。"
+    "同批 archlinuxcn/appinn/GoReading/FindBlog/appfans/goworkbitch/FoolishTraceWind/beautifultgtheme/awesomeRSSHub/abc999222/eco_cn "
+    "为正规开源社区/个人策展/娱乐/社区群(对照组),UI 不应与灰产/犯罪样本同框标红。"
 )
 
 COMPARISON_COLUMNS = [
@@ -198,6 +229,10 @@ def main() -> None:
         m = d["metrics"]
         channels.append({
             "slug": d["slug"], "kind": kind, "username": d.get("username"),
+            # deep = 已按深度标准重做（数据延伸推断/异常挖掘/黑话解码/成本拆解/
+            # bot 与自动化程度/收益锚点/矩阵与互引流/逐罪名法律分析）；
+            # brief = 只有五维骨架，待重做。
+            "depth": d.get("depth", "brief"),
             "url": d["url"], "title": d["title"], "category": d.get("category"),
             "one_liner": d.get("one_liner"),
             "subscribers": m.get("subscribers"), "members": m.get("members"),

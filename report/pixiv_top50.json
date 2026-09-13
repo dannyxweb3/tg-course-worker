@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "pixiv_top50",
   "username": "pixiv_top50",
@@ -7,7 +8,7 @@
   "title": "PIXIV站每日 Top50搬运｜ACG｜二次元",
   "category": "Pixiv 每日榜图搬运（ACG/二次元，SFW 向）",
   "growth_short": "ACG 刚需 + 互推",
-  "one_liner": "9 万订阅的 Pixiv 每日 Top50 搬运号：每天扒 P 站排行榜图 + 原图 zip 包（2.48GB/样本），ERR 2.5%，靠 ACG 刚需与互推(Hu_Tuibot)增长，未授权搬运画师作品。",
+  "one_liner": "9 万订阅但 ERR 只有 2.46%——最讽刺的是阅读量前三名全不是图,是同一条机场广告(『¥2元/月 128G大流量』)。它靠 @Hu_Tuibot 挂在一张成人向 ACG 互推网里,81% 的消息在 10 秒内连发、正文中位 0 字,是本轮自动化程度最高、内容附加值最低的搬运号之一。",
   "analyzed_at": "2026-09-13T15:15:00Z",
   "source": {
     "method": "telethon",
@@ -23,17 +24,17 @@
   "metrics": {
     "confidence": "high",
     "subscribers": 90301,
-    "median_views": 2219,
+    "median_views": 2218,
     "mean_views": 2153,
     "p10_views": 1610,
     "p90_views": 2638,
-    "err_pct": 2.5,
+    "err_pct": 2.46,
     "mature_posts": 208,
     "reactions_total": 145,
     "forwards_total": 827,
     "forwards_per_post": 2.8,
     "er_pct": 0.03,
-    "posts_per_day": 13.7,
+    "posts_per_day": 13.66,
     "views_available": true,
     "media_mix": {
       "photo": 267,
@@ -46,70 +47,88 @@
     "file_ext": {
       "zip": 24
     },
-    "activity_note": "ERR 2.5% 偏低(订阅大但真实活跃一般);日更 13.7 条铺量"
+    "activity_note": "9 万订阅只有 2,218 中位阅读。对照同为 ACG 图集的 SomeACG(3.68 万订阅/5,082 阅读,ERR 13.8%)——后者订阅只有它的 41%,实际阅读却是它的 2.3 倍。订阅数含大量非活跃账号是最合理解释,与它靠互推换量的增长方式一致。",
+    "forwards_median": 2,
+    "files": 24
   },
   "implementation": {
     "publish_identity": "bot",
-    "post_structure": "P 站每日排行榜图(缩略) + 原图 zip 包直传(2.48GB/样本);少量网盘(nekocloud/pikpak)链接",
-    "delivery": "缩略图 + 原图 zip 直传 Telegram(免费 CDN);扒取 pixiv 每日 Top50 榜",
-    "schedule": "日更约 14 条，晚 15-18 点为主",
+    "post_structure": "零加工:正文中位 0 字,不写画名、不写画师、不给原作链接;267 条图片 + 24 个 zip 打包(2.48GB)。与 SomeACG(每条标注 pixiv 原链与画师名 188 次)形成鲜明对照——同样搬 Pixiv,一个做署名策展,一个做无源倾倒。",
+    "delivery": "telegram.me 57 + t.me 52 的互推链接为主。",
+    "schedule": "批量到极致:间隔中位 0 秒(超过一半消息同秒发出,相册多图组)、<10 秒占 81%、<60 秒占 87%;小时集中 15-18 点(216 条),分钟聚集 :29(45)/:26(32)/:49(28)。",
     "source": "未授权搬运 Pixiv 画师作品",
-    "growth": "ACG 刚需 + 互推"
+    "growth": "ACG 刚需 + 互推",
+    "ad_injection": "机场广告是主要变现:同一条机场广告多次投放并占据阅读榜前三(3,123/2,905/2,852),而内容帖中位仅 2,218。nekocloud.host 7 次、URL 参数 code(优惠码)7 次。",
+    "curation": "脚本抓 Pixiv Top50 榜单后一次性倾倒,人工介入趋近于零。",
+    "note": "广告帖阅读高于内容帖本身就是诊断结果:说明订阅者对图片内容并不感兴趣,反而带醒目 emoji 与价格数字的纯文本广告更容易在信息流里被停留。对一个『每日搬运 Pixiv Top50』的号,这是内容失效的直接证据。"
   },
   "growth": {
-    "strategy": "P 站排行榜刚需搬运 + 互推换量",
+    "strategy": "成人向 ACG 互推网换量 + 高频铺量",
     "paid_acquisition": "exchange",
     "mechanisms": [
       {
-        "name": "排行榜刚需",
-        "evidence": "每日 Top50 榜图",
-        "note": "ACG 用户追榜刚需"
+        "name": "成人向 ACG 互推网",
+        "evidence": "@Hu_Tuibot 7 次、#互推 7 次;互推对象 njsh1b 6、tentacle_dish 6、AR18MMD 6、H_dailysese 4、MoreACG 4、nippleplaysetu 2、asmr_collections 2",
+        "note": "订阅数的主要来源;互推帖直接以『涩图』『色色推荐』『同人音声』为卖点"
       },
       {
-        "name": "互推",
-        "evidence": "#互推 标签 + @Hu_Tuibot",
-        "note": "与 ACG 号互推换量"
+        "name": "高频铺量",
+        "evidence": "13.66 条/天",
+        "note": "占据信息流"
+      },
+      {
+        "name": "频道名即关键词",
+        "evidence": "PIXIV/动漫/ACG/二次元/P站",
+        "note": "被搜索命中"
       }
     ],
     "signals": {
       "subscribers": 90301,
-      "err_pct": 2.5,
+      "err_pct": 2.46,
       "forwards_per_post": 2.8
     },
-    "assessment": "P 站榜图搬运号，9 万订阅但 ERR 2.5% 偏低——互推堆量为主，真实活跃一般。原图 zip 直传是留存点。"
+    "assessment": "增长质量是本轮最差的之一:9 万订阅、ERR 2.46%、转发中位 2、反应 145。互推换来的是数字不是读者,与 syrjfx_sl(互推换死粉、ERR 0.5%)同一诊断。"
   },
   "cost": {
     "recurring_cny_month": [
       30,
-      250
+      80
     ],
     "onetime_cny": [
       0,
-      0
+      500
     ],
     "items": [
       {
-        "name": "抓取 pixiv + 打包 + 发布 bot + VPS",
-        "cny_month": [
-          30,
-          200
+        "name": "【启动】Pixiv 榜单抓取脚本",
+        "cny_onetime": [
+          0,
+          500
         ]
       },
       {
-        "name": "图片/zip 存储",
+        "name": "脚本托管",
+        "cny_month": [
+          30,
+          80
+        ],
+        "note": "需能访问 Pixiv(境外或代理)"
+      },
+      {
+        "name": "人力",
         "cny_month": [
           0,
           0
         ],
-        "note": "Telegram 直传"
+        "note": "全自动,正文中位 0 字"
       },
       {
-        "name": "运营时间",
+        "name": "存储",
         "cny_month": [
           0,
-          50
+          0
         ],
-        "note": "全自动抓取打包"
+        "note": "2.48GB 由 TG 托管"
       }
     ]
   },
@@ -118,35 +137,38 @@
       1000,
       6000
     ],
-    "model": "互推 + 网盘/图包会员 + 广告",
+    "model": "机场广告位",
     "streams": [
       {
-        "name": "网盘/图包会员导流",
-        "evidence": "nekocloud/pikpak 链接",
+        "name": "机场广告位",
+        "evidence": "同一条机场广告多次投放占据阅读榜前三;nekocloud.host 7、优惠码参数 7",
         "cny_month": [
-          500,
-          3000
+          1000,
+          6000
         ],
-        "confidence": "low"
+        "confidence": "medium"
       },
       {
-        "name": "ACG 广告/互推奖励",
-        "evidence": "#互推 + Hu_Tuibot",
+        "name": "互推换量",
+        "evidence": "#互推 7、@Hu_Tuibot",
         "cny_month": [
-          500,
-          3000
+          0,
+          0
         ],
-        "confidence": "low"
+        "confidence": "medium",
+        "note": "换量非现金"
       }
     ],
-    "note": "变现走网盘/图包 + 广告;ERR 低使广告价值受限"
+    "note": "锚点必须用实际曝光:中位阅读 2,218 × 13.66 条/天 ≈ 30,300 曝光/天(约 90 万/月),但广告帖单条阅读(约 2,900)高于内容帖,说明广告位实际曝光质量还行。按机场广告常见包月价折算估 ¥1,000-6,000/月。若按 9 万订阅估会严重高估——这是本轮第三个必须用 ERR 修正的样本(前两个是 dajiajia、Aliyun_4K_Movies)。",
+    "est_scope": "本频道可归因"
   },
   "risk": {
     "level": "high",
     "notes": [
-      "未经授权系统性搬运 Pixiv 画师作品，侵犯著作权",
-      "原图 zip 打包分发进一步侵权",
-      "本号偏 SFW，但同系存在 R18 版；ACG 搬运整体属侵犯知识产权类"
+      "未署名搬运 Pixiv 作品是主业:与 SomeACG 相比不标注任何原作链接与画师名,属彻底的未授权复制与信息网络传播,且剥夺作者署名权;24 个 zip(2.48GB)说明存在批量图集分发",
+      "🔴 所处的互推网络:@Hu_Tuibot 连接的频道中多个从名称即可判断为成人向(AR18MMD、H_dailysese、nippleplaysetu、asmr_collections),互推帖直接以『涩图』『色色推荐』为卖点。主动为成人内容频道导流,在大陆属传播淫秽物品的帮助范畴;即便本频道自身以全年龄向搬运为主,这层互推关系构成实质连带敞口",
+      "变现侧机场广告(nekocloud.host、『¥2元/月 128G』)属翻墙服务分销,合规性无保障",
+      "本报告不收录任何具体互推频道深链与机场落地域名"
     ]
   }
 }

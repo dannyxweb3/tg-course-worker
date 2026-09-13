@@ -125,6 +125,10 @@ templates.env.globals["RISK_LABEL"] = {
 templates.env.globals["CONF_LABEL"] = {
     "high": "证据充分", "medium": "抽样推断", "low": "推测",
 }
+templates.env.globals["PAID_LABEL"] = {
+    "none": "无", "subs": "买粉", "engagement": "刷互动",
+    "exchange": "互推换量", "mixed": "混合", "unknown": "未知",
+}
 
 
 def redirect(path: str, msg: str = "", err: str = "") -> RedirectResponse:

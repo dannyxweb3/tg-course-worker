@@ -1,0 +1,146 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "blacktechsharing",
+  "username": "blacktechsharing",
+  "url": "https://t.me/blacktechsharing",
+  "title": "黑科技软件资源分享交流群",
+  "category": "软件资源群 + 机场/户籍查询广告注入",
+  "growth_short": "资源刚需+搜索bot",
+  "one_liner": "2.16万成员的黑科技软件资源群:表面软件/工具分享,实则高频注入机场(星空联盟等)广告与偶发『全国户籍查询』社工库广告;删除率92.9%,靠搜索/管理bot运转。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/blacktechsharing.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-03",
+      "2026-09-13"
+    ],
+    "note": "跨度 10 天、30 条/天;群无 per-message 阅读,不抓 sender_id"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 21575,
+    "online": 256,
+    "online_pct": 1.19,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无 per-message 阅读;少数被转发的频道消息带views(mature=13,中位6163),仅供参考",
+    "messages_per_day": 30,
+    "reactions_total": 304,
+    "forwards_total": 1278,
+    "deleted_ratio_pct": 92.9,
+    "activity_note": "92.9% id 缺口(极高):广告发出后定期删除+管理bot清消息,与jisou771同类的防举报机制;1.19%在线"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "chat_type": "megagroup",
+    "post_structure": "软件/工具/破解资源分享(标签#Windows #macOS #Linux #开源工具)与成员讨论;顶部/间隙注入广告",
+    "ad_injection": "高频机场广告(星空联盟-Staralliance等,带优惠码)+偶发『全国户籍查询机器人』(社工库/开盒,宣称白底律师盖章版身份证)+代理返利(代理7、返利)",
+    "delivery": "资源以外链为主(github31、y2b视频下载站、机场站);少量文件",
+    "schedule": "30条/天,集中15点",
+    "retention": "92.9%删除防举报;搜索/管理bot运转"
+  },
+  "growth": {
+    "strategy": "软件资源刚需 + 代理返利拉新",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "软件破解刚需",
+        "evidence": "破解12、软件资源分享",
+        "note": "黑科技/破解吸引泛技术粉"
+      },
+      {
+        "name": "代理返利",
+        "evidence": "代理7、返利、邀请返利10%",
+        "note": "发展下线代理拉新"
+      }
+    ],
+    "signals": {
+      "online_pct": 1.19,
+      "messages_per_day": 30,
+      "forwards_total": 1278
+    },
+    "assessment": "表面是软件资源群,实则广告注入平台:机场广告为主,夹带户籍查询(社工库)广告。92.9%删除率是防举报设计。1.19%在线,大盘偏虚。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      200,
+      800
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "搜索/管理bot + 服务器",
+        "cny_month": [
+          200,
+          600
+        ],
+        "note": "多bot运转"
+      },
+      {
+        "name": "群管理人力",
+        "cny_month": [
+          0,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "est_scope": "本群可归因",
+    "model": "机场广告位 + 户籍查询/社工库引流分成 + 代理返利",
+    "streams": [
+      {
+        "name": "机场/VPN广告位",
+        "evidence": "机场6、星空联盟带优惠码",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "户籍查询(社工库)引流分成",
+        "evidence": "全国户籍机器人广告、邀请返利10%",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "代理返利/其他广告",
+        "evidence": "代理7、商务32",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "广告注入是主收入;户籍查询引流是最严重且最赚的灰产环节之一"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "注入『全国户籍查询机器人』(社工库/开盒)广告,宣称可生成身份证复印件/律师盖章版——属侵犯公民个人信息罪的引流环节,与jisou771/sesecctv同类",
+      "高频机场广告合规性无保障;含破解软件分发",
+      "户籍查询广告的落地与联系方式不收录、不展示;92.9%删除率是防举报设计",
+      "因承载社工库/开盒引流,风险定为criminal(尽管群表面是软件分享)"
+    ]
+  }
+}

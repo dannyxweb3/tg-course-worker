@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "fakeye",
   "username": "fakeye",
@@ -7,7 +8,7 @@
   "title": "不求甚解",
   "category": "个人科技/生活周刊博客（自有博客导流）",
   "growth_short": "内容质量口碑",
-  "one_liner": "个人科技周刊号：作者把自己博客(blog.solazy.me)的 Web/App/GitHub/生活精选同步到 TG，ERR 31.6%（1.9 万订阅/中位 6k 阅读），纯内容驱动、近乎无商业化。",
+  "one_liner": "个人博客 blog.solazy.me 的 TG 分发位,做工具/生活/美食混合策展。2025-07 后断崖减产(65 条/月 → 1-15 条/月,2025-08~10 三个月空白),最后一条停在 2026-06-30;但减产后单条阅读反升至峰值 11,546、转发中位达 66。",
   "analyzed_at": "2026-09-13T13:15:00Z",
   "source": {
     "method": "telethon",
@@ -23,7 +24,7 @@
   "metrics": {
     "confidence": "high",
     "subscribers": 19213,
-    "median_views": 6071,
+    "median_views": 6070,
     "mean_views": 6782,
     "p10_views": 4833,
     "p90_views": 10174,
@@ -33,7 +34,7 @@
     "forwards_total": 8507,
     "forwards_per_post": 28.4,
     "er_pct": 0.13,
-    "posts_per_day": 0.6,
+    "posts_per_day": 0.62,
     "views_available": true,
     "media_mix": {
       "photo": 263,
@@ -41,29 +42,54 @@
       "poll": 18
     },
     "deleted_pct": 2.3,
-    "activity_note": "ERR 31.6% 极高，是高质量个人周刊的忠实受众"
+    "activity_note": "两个反直觉事实:(1)停更三个月(2025-08~10)后回归,2025-11 阅读中位 11,546 为全样本峰值,接近断更前的两倍;(2)减产后转发率上升——2026-02 仅发 2 条转发中位却达 66,而高产期(2025-03,60 条)只有 20。解释是稀缺性+择优发布,与 aboutrss 同型。但 2026-06-30 后彻底无更新,存量声誉撑不了无限期。分析限制:263/300 条为图片、正文中位 0 字,实质内容在图中无法读取,故内容质量判断主要依据标签、外链与互动结构。",
+    "forwards_median": 17,
+    "views_trend_by_month": {
+      "2025-03": 5069,
+      "2025-04": 5878,
+      "2025-05": 6492,
+      "2025-06": 5916,
+      "2025-07": 6401,
+      "2025-11": 11546,
+      "2026-01": 8096,
+      "2026-02": 9013,
+      "2026-03": 8222,
+      "2026-04": 8188,
+      "2026-06": 6144
+    }
   },
   "implementation": {
     "publish_identity": "user",
-    "post_structure": "配图 + 一段点评 + 指向自有博客(blog.solazy.me 183 链接)/GitHub/App Store 的链接;标签 #Web #Life #App #GitHub #Weekly #Mac #Food #AI",
-    "delivery": "以自有博客为内容主站，TG 做分发;不搬运不托管盗版",
-    "curation": "人工策展 Web/App/开源/生活好物，周刊化",
-    "schedule": "约 0.6 条/天，上午 9-11 点",
-    "growth": "内容质量 + 博客/TG 双向导流"
+    "post_structure": "263/300 为图片,正文中位 0 字(内容在图里)。标签体系 #Web 43、#Life 36、#App 29、#GitHub 28、#Mac 20、#Food 20、#AI 12,另有自有周刊栏目 #Fakeye #Weekly 21+23。",
+    "delivery": "外链 183 次指向自有博客 blog.solazy.me(占绝对多数),其次 t.me 自引用 124、github 39、apps.apple.com 8、Chrome 商店 6。TG 是渠道不是内容最终载体。",
+    "curation": "个人化的『工具+生活』混合策展,#Food 20 与 #Life 36 是它区别于纯垂直科技号的地方——受众关注的是『这个人推荐什么』,这解释了 31.6% 的 ERR。",
+    "schedule": "人工上午批量:10 点 149 条、11 点 71、9 点 47,三小时占 89%;分钟聚集在 :02(52)/:03(48)/:00(29)/:04(28),整点后几分钟内连发;间隔<10 秒占 44%(大量相册批量)。秒数分散,非 cron。自动化程度低。",
+    "growth": "内容质量 + 博客/TG 双向导流",
+    "ad_injection": "无招商帖。『广告』10 次多为『无广告/去广告』的软件描述语境。"
   },
   "growth": {
-    "strategy": "高质量个人策展的口碑增长，不做付费获客",
+    "strategy": "个人品牌驱动的自然增长",
     "paid_acquisition": "none",
     "mechanisms": [
       {
-        "name": "内容质量",
-        "evidence": "ERR 31.6%、转发 28/帖",
-        "note": "值得转发的精选"
+        "name": "个人品牌",
+        "evidence": "183 次导向自有博客、频道名即作者标识",
+        "note": "受众买的是这个人的品味"
       },
       {
-        "name": "博客-TG 双向导流",
-        "evidence": "183 条指向自有 blog.solazy.me",
-        "note": "自有主站沉淀"
+        "name": "单条完整可转",
+        "evidence": "转发 28.4/帖、最高 289",
+        "note": "每条推荐一个具体工具/去处"
+      },
+      {
+        "name": "生活内容拉宽受众",
+        "evidence": "#Life 36、#Food 20",
+        "note": "不局限于技术人群"
+      },
+      {
+        "name": "无买粉无互推",
+        "evidence": "t.me 以自引用为主,无互推标签、无换量痕迹",
+        "note": "自然增长"
       }
     ],
     "signals": {
@@ -71,65 +97,89 @@
       "err_pct": 31.6,
       "forwards_per_post": 28.4
     },
-    "assessment": "典型高质量个人周刊号，ERR 31.6%。靠内容质量沉淀忠实受众，有自有博客做内容主站。近期更新转稀。"
+    "assessment": "当前状态是停更。19,213 订阅与 31.6% ERR 是过去积累的资产,若不恢复更新将按存量声誉规律缓慢衰减。"
   },
   "cost": {
     "recurring_cny_month": [
-      0,
-      150
+      10,
+      60
     ],
     "onetime_cny": [
       0,
-      0
+      500
     ],
     "items": [
       {
-        "name": "运营时间（人工策展+写博客+周刊，约 15-30 小时/月）",
-        "cny_month": [
+        "name": "【启动】自有博客搭建",
+        "cny_onetime": [
+          0,
+          500
+        ],
+        "note": "静态博客(Hugo/Hexo 类)+ 域名"
+      },
+      {
+        "name": "【启动】频道创建",
+        "cny_onetime": [
           0,
           0
         ]
       },
       {
-        "name": "博客托管 + 域名",
+        "name": "策展与写作时间",
         "cny_month": [
           0,
-          100
-        ]
+          0
+        ],
+        "note": "高产期 40-80 小时/月;当前 <5 小时/月。减产最可能的原因就是时间成本——无现金收入支撑,全靠个人投入"
       },
       {
-        "name": "发布工具",
+        "name": "博客托管 + 域名",
         "cny_month": [
-          0,
-          50
-        ]
+          10,
+          60
+        ],
+        "note": "静态托管可近乎免费"
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
       0,
-      2000
+      200
     ],
-    "model": "基本无商业化（偶有 App/工具软广或赞赏）",
+    "model": "几乎零变现",
     "streams": [
       {
-        "name": "App/工具软广 或 赞赏",
-        "evidence": "apps.apple.com/chromewebstore 少量链接",
+        "name": "联盟/aff",
+        "evidence": "URL 参数中 ref 仅 2 次",
         "cny_month": [
           0,
-          2000
+          200
         ],
         "confidence": "low"
+      },
+      {
+        "name": "广告位",
+        "evidence": "0 条招商帖",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "high"
       }
     ],
-    "note": "以个人分享为主，变现意图弱；高 ERR 有广告价值但未积极商业化"
+    "note": "1.9 万订阅、ERR 31.6%、转发 28.4/帖,按 CPM ¥50-150 折算潜在广告价值 ¥2,700-8,200/月,未兑现。与 aboutrss/scitech_fans 构成一组共同特征:本轮高 ERR 个人策展号无一例外都不变现——不接广告正是它们维持内容纯度与读者信任的方式,而这份信任又是高 ERR 的来源。商业化与粘性在这个品类里直接冲突。",
+    "est_scope": "TG 频道(博客侧变现不在抓取范围)",
+    "potential_ad_value_cny_month": [
+      2700,
+      8200
+    ]
   },
   "risk": {
     "level": "low",
     "notes": [
-      "个人科技/生活策展 + 自有博客导流，属正常内容创作与信息分享，无灰产、无侵权",
-      "偶有翻墙/工具类推荐属技术中立内容"
+      "个人博客的工具与生活策展,外链以自有博客、GitHub、App Store、Chrome 商店等公开来源为主,无盗版分发、无成人、无博彩、无诈骗,几乎零商业化",
+      "分析局限需标注:263/300 条实质内容在图片中,本次抓取无法读取图像文本,不能完全排除图中含未被识别的敏感内容;基于可观测的标签、外链与互动结构判为低风险"
     ]
   }
 }

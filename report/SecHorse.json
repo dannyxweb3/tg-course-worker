@@ -1,0 +1,108 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "SecHorse",
+  "username": "SecHorse",
+  "url": "https://t.me/SecHorse",
+  "title": "电子产品交易群(数码闲置)",
+  "category": "二手电子产品交易群",
+  "growth_short": "二手交易刚需",
+  "one_liner": "3.8万成员的二手电子产品交易群:数码闲置出售/求购/自刀(68条/天),类闲鱼的社群化交易,链接指向淘宝/闲鱼,属C2C二手交易。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/SecHorse.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "—"
+    ],
+    "note": "群无per-message阅读;online未取(会话占用)"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 37586,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读,ERR不适用",
+    "messages_per_day": 68.4,
+    "deleted_ratio_pct": 1.6,
+    "activity_note": "68条/天真人交易帖;出售/求购/自刀"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "电子产品出售/求购/自刀帖(标签#电子产品 #出售 #自刀 #电子垃圾),链接淘宝/闲鱼(m.tb.cn/goofish)",
+    "ad_injection": "无系统广告,成员自主交易",
+    "delivery": "C2C二手电子交易撮合",
+    "schedule": "全天候"
+  },
+  "growth": {
+    "strategy": "二手交易刚需社区",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "二手交易刚需",
+        "evidence": "68条/天出售求购",
+        "note": "数码闲置交易需求"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 68.4
+    },
+    "assessment": "类闲鱼的社群化二手电子交易群,真人C2C。群本身几乎不变现(无抽成),价值是活跃交易社区。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理bot",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      2000
+    ],
+    "est_scope": "群本体",
+    "model": "基本无变现(潜在担保/广告)",
+    "streams": [
+      {
+        "name": "潜在担保/广告",
+        "evidence": "无系统抽成",
+        "cny_month": [
+          0,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "C2C交易群本身变现少"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "二手电子产品C2C交易,内容为个人闲置买卖",
+      "无盗版/灰产;风险主要是C2C交易纠纷/骗子(UGC不可控),整体低"
+    ]
+  }
+}

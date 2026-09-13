@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "bookusefor4",
   "username": "bookusefor4",
@@ -15,13 +16,19 @@
     "script": "scripts/tg_recon.py",
     "dump": "data/recon/bookusefor4.jsonl",
     "sample_size": 300,
-    "sample_range": ["2021-04-02", "2024-08-07"],
+    "sample_range": [
+      "2021-04-02",
+      "2024-08-07"
+    ],
     "note": "300 条覆盖 1,224 天。另单独枚举了附件文件名与体积"
   },
   "metrics": {
     "confidence": "high",
     "subscribers": 13733,
-    "members": null, "online": null, "online_pct": null, "bot_share_pct": null,
+    "members": null,
+    "online": null,
+    "online_pct": null,
+    "bot_share_pct": null,
     "views_available": true,
     "median_views": 4545,
     "mean_views": 12440,
@@ -38,7 +45,10 @@
     "forwards_per_post": 6.0,
     "forwards_median": 4,
     "forwards_max": 35,
-    "id_span_sampled": [40942, 41241],
+    "id_span_sampled": [
+      40942,
+      41241
+    ],
     "surviving_messages": 300,
     "documents_uploaded": 289,
     "sampled_files": 50,
@@ -53,17 +63,39 @@
     "channel_matrix": {
       "note": "简介里公开了完整矩阵，五个频道按品类分仓",
       "channels": [
-        {"handle": "@bookusefor2", "scope": "计算机与部分其他种类书籍资源"},
-        {"handle": "@bookusefor3", "scope": "计算机类书籍"},
-        {"handle": "@bookusefor4", "scope": "普通休闲书籍资源（本号）"},
-        {"handle": "@bookusefor5", "scope": "漫画书籍资源整合（2024-08-07 最后一条帖公告新建）"},
-        {"handle": "@jumpto22222", "scope": "目录频道"}
+        {
+          "handle": "@bookusefor2",
+          "scope": "计算机与部分其他种类书籍资源"
+        },
+        {
+          "handle": "@bookusefor3",
+          "scope": "计算机类书籍"
+        },
+        {
+          "handle": "@bookusefor4",
+          "scope": "普通休闲书籍资源（本号）"
+        },
+        {
+          "handle": "@bookusefor5",
+          "scope": "漫画书籍资源整合（2024-08-07 最后一条帖公告新建）"
+        },
+        {
+          "handle": "@jumpto22222",
+          "scope": "目录频道"
+        }
       ],
       "assessment": "分仓 + 独立目录频道，是把「检索」做成结构而不是做成功能——没有搜索 bot，用频道划分代替"
     },
     "source_disclosure": {
       "note": "简介直接列出了资源来源，这在本样本集中很罕见——大多数号会隐藏来源",
-      "sources": ["我的小书屋", "文叔叔_文学历史类", "文叔叔_社会科学类", "1500本当当网电子书合集", "小师弟图书馆", "机械工业出版社4513本"],
+      "sources": [
+        "我的小书屋",
+        "文叔叔_文学历史类",
+        "文叔叔_社会科学类",
+        "1500本当当网电子书合集",
+        "小师弟图书馆",
+        "机械工业出版社4513本"
+      ],
       "assessment": "「1500本当当网电子书合集」与「机械工业出版社4513本」是两个指向明确的商业侵权源——后者是一家出版社的整个书目"
     },
     "content_sample": "抽样文件为中文社科与科普书籍：《跨国公司导论》《孔子与现代管理》《科学与近代世界》《克拉维约东使记》《可口可乐争霸传》等。单个 0.3-0.9 MB，是扫描或转换质量较低的 PDF",
@@ -75,32 +107,114 @@
     "strategy": "频道矩阵互导 + 文件名检索命中。没有任何主动推广，增长完全来自被搜到",
     "paid_acquisition": "none",
     "mechanisms": [
-      {"name": "五频道矩阵按品类分仓", "evidence": "@bookusefor2/3/4/5 + @jumpto22222 目录频道，简介互相列出", "note": "用户进任一个都能看到全部，相当于内部导流网络"},
-      {"name": "独立目录频道", "evidence": "@jumpto22222 专做索引", "note": "把检索做成结构而非功能，替代搜索 bot"},
-      {"name": "文件名即检索入口", "evidence": "289/300 条无正文纯文件，靠 Telegram 文件名搜索被命中", "note": "长尾分布印证了这条：p90 33,821、最高 95,589，少数书被长期反复搜到"},
-      {"name": "新频道公告导流", "evidence": "最后一条帖（2024-08-07，24,434 阅读）专门公告 @bookusefor5 新建", "note": "矩阵扩张时用存量频道给新频道导流"}
+      {
+        "name": "五频道矩阵按品类分仓",
+        "evidence": "@bookusefor2/3/4/5 + @jumpto22222 目录频道，简介互相列出",
+        "note": "用户进任一个都能看到全部，相当于内部导流网络"
+      },
+      {
+        "name": "独立目录频道",
+        "evidence": "@jumpto22222 专做索引",
+        "note": "把检索做成结构而非功能，替代搜索 bot"
+      },
+      {
+        "name": "文件名即检索入口",
+        "evidence": "289/300 条无正文纯文件，靠 Telegram 文件名搜索被命中",
+        "note": "长尾分布印证了这条：p90 33,821、最高 95,589，少数书被长期反复搜到"
+      },
+      {
+        "name": "新频道公告导流",
+        "evidence": "最后一条帖（2024-08-07，24,434 阅读）专门公告 @bookusefor5 新建",
+        "note": "矩阵扩张时用存量频道给新频道导流"
+      }
     ],
-    "signals": {"err_pct": 33.1, "forwards_per_post": 6.0, "forwards_median": 4, "views_p90": 33821, "views_max": 95589, "dormant_days": 767},
+    "signals": {
+      "err_pct": 33.1,
+      "forwards_per_post": 6.0,
+      "forwards_median": 4,
+      "views_p90": 33821,
+      "views_max": 95589,
+      "dormant_days": 767
+    },
     "assessment": "转发中位只有 4 次，说明它不靠社交扩散；但 p90 达 33,821、最高 95,589，说明靠检索长尾。这是「被搜到」型增长的标准形态——单条内容的曝光与发布时间无关，只与是否有人在找它有关。代价是完全被动：停更 767 天后，13,733 订阅和全部长尾流量仍在，但没有新增。"
   },
   "cost": {
-    "recurring_cny_month": [0, 50],
-    "onetime_cny": [0, 0],
+    "recurring_cny_month": [
+      0,
+      50
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
     "items": [
-      {"name": "Telegram 文件托管", "cny_month": [0, 0], "note": "免费。且文件极小（单个 0.3-0.9 MB），完全无压力"},
-      {"name": "资源采集", "cny_month": [0, 0], "note": "简介列出的六个来源全是现成的公开盗版合集，直接搬运"},
-      {"name": "发布自动化", "cny_month": [0, 50], "note": "289 条无正文纯文件，明显是脚本批量上传"},
-      {"name": "内容生产", "cny_month": [0, 0], "note": "不写文案，书名即文件名"},
-      {"name": "买量", "cny_month": [0, 0]}
+      {
+        "name": "Telegram 文件托管",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "免费。且文件极小（单个 0.3-0.9 MB），完全无压力"
+      },
+      {
+        "name": "资源采集",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "简介列出的六个来源全是现成的公开盗版合集，直接搬运"
+      },
+      {
+        "name": "发布自动化",
+        "cny_month": [
+          0,
+          50
+        ],
+        "note": "289 条无正文纯文件，明显是脚本批量上传"
+      },
+      {
+        "name": "内容生产",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "不写文案，书名即文件名"
+      },
+      {
+        "name": "买量",
+        "cny_month": [
+          0,
+          0
+        ]
+      }
     ],
     "structure_note": "成本接近绝对零。它不采集、不加工、不写文案、不推广——把别人整理好的盗版合集拆包倒进 Telegram 而已。"
   },
   "revenue": {
-    "est_cny_month": [0, 0],
+    "est_cny_month": [
+      0,
+      0
+    ],
     "model": "无可观测收入",
     "streams": [
-      {"name": "广告", "evidence": "样本 300 条内零广告帖，外链仅 2 条且其一为阅读器推荐（无推广参数）", "cny_month": [0, 0], "confidence": "high"},
-      {"name": "导流变现", "evidence": "矩阵内部互导，但终点仍是同类免费频道，无变现终点", "cny_month": [0, 0], "confidence": "high"}
+      {
+        "name": "广告",
+        "evidence": "样本 300 条内零广告帖，外链仅 2 条且其一为阅读器推荐（无推广参数）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "high"
+      },
+      {
+        "name": "导流变现",
+        "evidence": "矩阵内部互导，但终点仍是同类免费频道，无变现终点",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "high"
+      }
     ],
     "note": "全部 20 个样本里唯一一个收入估算上下限都是 0 的。它既没有变现，也没有在攒粉待变现的迹象——停更 767 天，13,733 订阅就那么放着。最合理的解释是它从一开始就不是生意。"
   },
@@ -110,31 +224,43 @@
     "legal": [
       {
         "issue": "未授权分发受版权保护的图书",
-        "statutes": ["《著作权法》第十条、第五十三条", "《信息网络传播权保护条例》", "《刑法》第二百一十七条 侵犯著作权罪"],
+        "statutes": [
+          "《著作权法》第十条、第五十三条",
+          "《信息网络传播权保护条例》",
+          "《刑法》第二百一十七条 侵犯著作权罪"
+        ],
         "analysis": "289 个文件向 13,733 名订阅者提供下载，构成信息网络传播权侵权。刑法 217 条需考察「以营利为目的」——本号无任何变现迹象（收入估算上下限均为 0），这会实质性削弱刑事定性，更可能落在民事侵权与行政处罚范围。但司法解释对「其他严重情节」的认定不完全依赖营利，传播数量本身是要件之一。",
         "severity": "high"
       },
       {
         "issue": "简介公开列明侵权来源",
-        "statutes": ["司法实践中的主观明知认定"],
+        "statutes": [
+          "司法实践中的主观明知认定"
+        ],
         "analysis": "简介直接写出「1500本当当网电子书合集」「机械工业出版社4513本」等来源。这类表述使主观明知的认定几乎没有争议空间——发布者清楚知道这些是商业出版物的成套盗版集合。与其他隐藏来源的号相比，这是自我加重。",
         "severity": "high"
       },
       {
         "issue": "整社书目级别的侵权规模",
-        "statutes": ["《著作权法》第五十四条（惩罚性赔偿）"],
+        "statutes": [
+          "《著作权法》第五十四条（惩罚性赔偿）"
+        ],
         "analysis": "「机械工业出版社4513本」指向单一权利人的整个书目。对该出版社而言，这是权利人明确、损害可量化、取证极其容易的案件类型，主动维权的成本收益比很好。",
         "severity": "high"
       },
       {
         "issue": "频道矩阵扩大了责任范围",
-        "statutes": ["《民法典》第一千一百六十八条（共同侵权）"],
+        "statutes": [
+          "《民法典》第一千一百六十八条（共同侵权）"
+        ],
         "analysis": "五个频道由同一运营方维护并在简介中互相声明关联。追责时不会按单个频道切分，而会按矩阵整体的传播规模计算。本号只是其中的「普通休闲书籍」分仓。",
         "severity": "medium"
       },
       {
         "issue": "休眠不消除侵权",
-        "statutes": ["《著作权法》第五十三条"],
+        "statutes": [
+          "《著作权法》第五十三条"
+        ],
         "analysis": "已停更 767 天，但 289 个文件仍在频道内可被随时下载，侵权状态持续。",
         "severity": "medium"
       }

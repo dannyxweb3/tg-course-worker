@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "bcuhz",
   "username": "bcuhz",
@@ -11,17 +12,65 @@
   "analysis_scope": "按要求只做深入分析（实现技术思路、成本、收益、增长策略、法律风险），不含可迁移/可复制方法。本报告不描述、不引用、不复现任何画面、剧情或露骨内容，仅在类目层面做结构分析。",
   "analyzed_at": "2026-09-13T15:00:00Z",
   "content_warning": "本频道为 AI 生成成人内容，且标签中出现未成年人关联词。原始 data/recon/bcuhz.jsonl 含成人视频与图片，UI 一律不得读取或展示其原文与媒体。",
-  "source": {"method": "telethon", "script": "scripts/tg_recon.py", "dump": "data/recon/bcuhz.jsonl", "sample_size": 300, "sample_range": ["2026-08-24", "2026-09-12"], "note": "300 条覆盖 20 天，即该频道近乎全部历史。另枚举了视频规格（时长/大小）以判断是完整片还是预告"},
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/bcuhz.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-24",
+      "2026-09-12"
+    ],
+    "note": "300 条覆盖 20 天，即该频道近乎全部历史。另枚举了视频规格（时长/大小）以判断是完整片还是预告"
+  },
   "metrics": {
-    "confidence": "high", "subscribers": 6060, "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
-    "views_available": true, "median_views": 31, "mean_views": 47, "p10_views": 17, "p90_views": 107, "max_views": 840,
-    "err_pct": 0.5, "err_note": "中位 31 阅读 / 6,060 订阅 = 0.5%。但要区分：这是新号（20 天），不是灌水死号——月度看 2026-08 中位 28 → 2026-09 中位 102，阅读在涨，只是基数极低",
-    "mature_posts": 239, "total_posts": 300, "posts_per_day": 15.4,
-    "reactions_total": 5, "forwards_total": 117, "forwards_per_post": 0.4, "forwards_max": 16,
-    "video_count": 149, "preview_photo_count": 149, "posts_without_text": 149,
-    "video_spec": {"median_seconds": 276, "min_seconds": 115, "max_seconds": 1176, "median_mb": 275.6, "max_mb": 1800.7, "note": "中位 4.6 分钟、276MB，是完整成片而非预告片——免费直投完整内容"},
-    "minor_risk_tag_hits": {"学生": 7, "嫩": 3, "少女": 2, "童": 2, "高中": 1},
-    "id_span_sampled": [115, 442], "surviving_messages": 300, "deleted_ratio_pct": 8.3, "noforwards": false, "channel_age_days": 20
+    "confidence": "high",
+    "subscribers": 6060,
+    "members": null,
+    "online": 0,
+    "online_pct": null,
+    "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 31,
+    "mean_views": 47,
+    "p10_views": 17,
+    "p90_views": 107,
+    "max_views": 840,
+    "err_pct": 0.5,
+    "err_note": "中位 31 阅读 / 6,060 订阅 = 0.5%。但要区分：这是新号（20 天），不是灌水死号——月度看 2026-08 中位 28 → 2026-09 中位 102，阅读在涨，只是基数极低",
+    "mature_posts": 239,
+    "total_posts": 300,
+    "posts_per_day": 15.4,
+    "reactions_total": 5,
+    "forwards_total": 117,
+    "forwards_per_post": 0.4,
+    "forwards_max": 16,
+    "video_count": 149,
+    "preview_photo_count": 149,
+    "posts_without_text": 149,
+    "video_spec": {
+      "median_seconds": 276,
+      "min_seconds": 115,
+      "max_seconds": 1176,
+      "median_mb": 275.6,
+      "max_mb": 1800.7,
+      "note": "中位 4.6 分钟、276MB，是完整成片而非预告片——免费直投完整内容"
+    },
+    "minor_risk_tag_hits": {
+      "学生": 7,
+      "嫩": 3,
+      "少女": 2,
+      "童": 2,
+      "高中": 1
+    },
+    "id_span_sampled": [
+      115,
+      442
+    ],
+    "surviving_messages": 300,
+    "deleted_ratio_pct": 8.3,
+    "noforwards": false,
+    "channel_age_days": 20
   },
   "implementation": {
     "publish_identity": "channel",
@@ -42,7 +91,15 @@
     },
     "theme_taxonomy": {
       "note": "标签即选题矩阵，仅作类目统计，不展开",
-      "top_neutral_themes": {"ai成人短剧": 147, "巨乳": 22, "穿越": 20, "黄果短剧": 15, "古风": 11, "修仙": 9, "都市": 9},
+      "top_neutral_themes": {
+        "ai成人短剧": 147,
+        "巨乳": 22,
+        "穿越": 20,
+        "黄果短剧": 15,
+        "古风": 11,
+        "修仙": 9,
+        "都市": 9
+      },
       "aggravating_theme_flags": "标签中出现涉非自愿（强制/催眠）、涉血亲（恋母）、NTR/绿帽等题材——这些在淫秽物品的情节认定上属加重方向",
       "minor_associated_flags": "标签与文案中出现『学生』『高中』『少女』『嫩』『童』等未成年人关联词——这是本号最严重的风险信号，详见法律风险"
     },
@@ -53,29 +110,111 @@
     "strategy": "纯内容铺量的早期号，几乎没有主动增长手段。20 天里靠 AI 产能堆库存，但没有把库存转化为增长的机制",
     "paid_acquisition": "none",
     "mechanisms": [
-      {"name": "IP 寄生自带热度", "evidence": "改编知名动漫角色", "note": "唯一有效的获客点——蹭 IP 的既有搜索与认知，但成人化改编无法在正规平台露出，只能在 TG 内被搜到"},
-      {"name": "剧集化追更", "evidence": "EP/第X集 连续更新", "note": "留存机制，但需要先有观众"},
-      {"name": "题材标签冲检索", "evidence": "网文母题 + 成人标签矩阵", "note": "被 TG 搜索命中，但成人内容的检索面窄"}
+      {
+        "name": "IP 寄生自带热度",
+        "evidence": "改编知名动漫角色",
+        "note": "唯一有效的获客点——蹭 IP 的既有搜索与认知，但成人化改编无法在正规平台露出，只能在 TG 内被搜到"
+      },
+      {
+        "name": "剧集化追更",
+        "evidence": "EP/第X集 连续更新",
+        "note": "留存机制，但需要先有观众"
+      },
+      {
+        "name": "题材标签冲检索",
+        "evidence": "网文母题 + 成人标签矩阵",
+        "note": "被 TG 搜索命中，但成人内容的检索面窄"
+      }
     ],
-    "signals": {"err_pct": 0.5, "forwards_per_post": 0.4, "reactions_total": 5, "channel_age_days": 20, "monthly_views_trend": "2026-08 中位 28 → 2026-09 中位 102", "subscribers": 6060},
+    "signals": {
+      "err_pct": 0.5,
+      "forwards_per_post": 0.4,
+      "reactions_total": 5,
+      "channel_age_days": 20,
+      "monthly_views_trend": "2026-08 中位 28 → 2026-09 中位 102",
+      "subscribers": 6060
+    },
     "assessment": "增长很弱且没有杠杆。转发 0.4 次/帖、反应总计 5——内容没有引发扩散。它犯了 vomfx 同样的错误但方向相反：vomfx 有站点没经营 TG，它有 TG 库存却没有任何漏斗（不互推、不买粉、不导私域、不设付费墙）。阅读从月中位 28 涨到 102 说明有微弱自然增长，但基数太低。对比同为成人 AI 相关的变现（lps999 挂 DZMM 成人 AI 联盟月入上万），本号把最该变现的完整内容全部免费送出，是典型的『有货没有生意』。它要么很新还没搭变现，要么运营者根本没想清楚模式。"
   },
   "cost": {
-    "recurring_cny_month": [200, 3000], "onetime_cny": [0, 0],
+    "recurring_cny_month": [
+      200,
+      3000
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
     "items": [
-      {"name": "AI 视频生成算力/服务", "cny_month": [200, 2500], "note": "唯一实质成本。20 天约 149 部完整片的产能，对应可观的生成算力或第三方生成服务订阅。这是它区别于零成本搬运号的地方——它在生产，不是搬运"},
-      {"name": "Telegram 托管", "cny_month": [0, 0], "note": "完整视频直传，免费。单片最大 1.8GB 也无压力"},
-      {"name": "剧本/选题", "cny_month": [0, 100], "note": "寄生现有 IP，选题成本极低"},
-      {"name": "发布自动化", "cny_month": [0, 200], "note": "149 条无正文纯视频 + 固定模板文案，脚本化发布"},
-      {"name": "买量/推广", "cny_month": [0, 0], "note": "未发现任何痕迹"}
+      {
+        "name": "AI 视频生成算力/服务",
+        "cny_month": [
+          200,
+          2500
+        ],
+        "note": "唯一实质成本。20 天约 149 部完整片的产能，对应可观的生成算力或第三方生成服务订阅。这是它区别于零成本搬运号的地方——它在生产，不是搬运"
+      },
+      {
+        "name": "Telegram 托管",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "完整视频直传，免费。单片最大 1.8GB 也无压力"
+      },
+      {
+        "name": "剧本/选题",
+        "cny_month": [
+          0,
+          100
+        ],
+        "note": "寄生现有 IP，选题成本极低"
+      },
+      {
+        "name": "发布自动化",
+        "cny_month": [
+          0,
+          200
+        ],
+        "note": "149 条无正文纯视频 + 固定模板文案，脚本化发布"
+      },
+      {
+        "name": "买量/推广",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "未发现任何痕迹"
+      }
     ],
     "structure_note": "成本结构在本样本集里独特：唯一的成本是 AI 生成算力。它既不是零成本搬运（有真实生产投入），也不是重资产（无带宽/无人力实拍）。生产端是它唯一烧钱的地方，而它把产出全免费送掉了。"
   },
   "revenue": {
-    "est_cny_month": [0, 2000], "model": "当前基本未变现（疑似铺量待转化）",
+    "est_cny_month": [
+      0,
+      2000
+    ],
+    "model": "当前基本未变现（疑似铺量待转化）",
     "streams": [
-      {"name": "合集/会员付费", "evidence": "正文零星出现『合集』4、『会员』1，但无明确付费入口或价格", "cny_month": [0, 1500], "confidence": "low", "note": "最可能的规划变现路径：免费频道做钩子，完整合集或去广告/抢先看在私域或付费墙后收费。但样本内看不到已落地的漏斗"},
-      {"name": "导流至私域/付费频道", "evidence": "无可观测证据", "cny_month": [0, 500], "confidence": "low"}
+      {
+        "name": "合集/会员付费",
+        "evidence": "正文零星出现『合集』4、『会员』1，但无明确付费入口或价格",
+        "cny_month": [
+          0,
+          1500
+        ],
+        "confidence": "low",
+        "note": "最可能的规划变现路径：免费频道做钩子，完整合集或去广告/抢先看在私域或付费墙后收费。但样本内看不到已落地的漏斗"
+      },
+      {
+        "name": "导流至私域/付费频道",
+        "evidence": "无可观测证据",
+        "cny_month": [
+          0,
+          500
+        ],
+        "confidence": "low"
+      }
     ],
     "note": "这是收益估算最低的号之一，且与其成本结构矛盾——它是全样本里少数几个有真实生产成本的号，却几乎没有变现。三种可能：(1) 极早期，变现还没搭；(2) 变现完全在站外私域，本频道只是引流橱窗但连引流链接都还没放；(3) 运营者是技术驱动的爱好者/练手，尚无商业规划。无论哪种，当前的经济性是负的——在烧算力免费送内容。"
   },
@@ -96,25 +235,39 @@
       },
       {
         "issue": "制作、传播淫秽物品",
-        "statutes": ["《刑法》第三百六十三条 制作、复制、出版、贩卖、传播淫秽物品牟利罪", "《刑法》第三百六十四条 传播淫秽物品罪", "《关于办理利用互联网……传播淫秽电子信息刑事案件……的解释》"],
+        "statutes": [
+          "《刑法》第三百六十三条 制作、复制、出版、贩卖、传播淫秽物品牟利罪",
+          "《刑法》第三百六十四条 传播淫秽物品罪",
+          "《关于办理利用互联网……传播淫秽电子信息刑事案件……的解释》"
+        ],
         "analysis": "与前面的搬运型成人号（pixiv/bookMiao）不同，本号是『制作』方——AI 生成即制作行为，性质重于单纯传播。149 部完整成片、剧集化投放，在数量标准上已远超入罪线。含强制、催眠、恋母、NTR 等题材属情节加重。是否『牟利』取决于站外变现是否落地：若合集/会员变现成立则适用 363 条，否则 364 条，但制作环节的存在使定性整体偏重。",
         "severity": "critical"
       },
       {
         "issue": "违反生成式 AI 与深度合成监管",
-        "statutes": ["《生成式人工智能服务管理暂行办法》第四条（禁止生成淫秽色情内容）", "《互联网信息服务深度合成管理规定》（标识义务、内容红线）", "《网络安全法》"],
+        "statutes": [
+          "《生成式人工智能服务管理暂行办法》第四条（禁止生成淫秽色情内容）",
+          "《互联网信息服务深度合成管理规定》（标识义务、内容红线）",
+          "《网络安全法》"
+        ],
         "analysis": "中国对生成式 AI 与深度合成有专门规制：明令禁止利用 AI 生成淫秽色情内容，并要求深度合成内容显著标识。本号既生成违禁内容，又无任何合规标识，是对这一新兴监管框架的正面违反。这是它作为『AI 生成』号独有的、搬运号不具备的额外违法层。",
         "severity": "high"
       },
       {
         "issue": "盗用现有 IP 的著作权与角色侵权",
-        "statutes": ["《著作权法》第十条、第五十三条", "《刑法》第二百一十七条 侵犯著作权罪", "《商标法》（角色/作品名商标）"],
+        "statutes": [
+          "《著作权法》第十条、第五十三条",
+          "《刑法》第二百一十七条 侵犯著作权罪",
+          "《商标法》（角色/作品名商标）"
+        ],
         "analysis": "以知名动漫角色做成人化改编，未经授权使用他人作品元素与角色形象，构成著作权侵权；成人化改编还涉及对原作品的歪曲、篡改，侵犯保护作品完整权。相关 IP 的权利人（日本出版社/制作方及其中国授权方）维权能力强。这一层独立于内容违法而单独成立。",
         "severity": "high"
       },
       {
         "issue": "题材本身的情节加重因素",
-        "statutes": ["上述淫秽物品司法解释关于情节严重的认定"],
+        "statutes": [
+          "上述淫秽物品司法解释关于情节严重的认定"
+        ],
         "analysis": "标签显示大量涉非自愿（强制/催眠）、血亲（恋母）、NTR 等题材。这些在淫秽物品的情节与社会危害认定上均属加重方向，不能与一般成人内容同等评价。",
         "severity": "medium"
       }

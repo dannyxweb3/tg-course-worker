@@ -1,0 +1,117 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "TestFlightX",
+  "username": "TestFlightX",
+  "url": "https://t.me/TestFlightX",
+  "title": "TestFlight 分享",
+  "category": "TestFlight 名额分享",
+  "growth_short": "TF名额刚需",
+  "one_liner": "4.5万订阅的TestFlight名额分享号:发各类App的TestFlight公开测试链接(全量testflight.apple.com),ERR 7.6%,是iOS尝鲜/绕区下载的工具型号,已偏低频。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/TestFlightX.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-06-10"
+    ],
+    "note": "4.2条/天;最后更新2026-06-10(约3个月前),偏低频"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 44665,
+    "median_views": null,
+    "err_pct": 7.6,
+    "mature_posts": null,
+    "forwards_per_post": 1.7,
+    "er_pct": 0.02,
+    "posts_per_day": 4.2,
+    "views_available": true,
+    "media_mix": {
+      "webpage": 299
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "ERR 7.6%;全量testflight链接;更新偏低频(6月后减少)"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "App名+TestFlight公开测试链接(全量testflight.apple.com 299),标签为App名",
+    "delivery": "纯TF名额指路,不托管App",
+    "curation": "搜集各App的TestFlight公开链接(含绕区/尝鲜)",
+    "schedule": "4.2条/天,近期减少"
+  },
+  "growth": {
+    "strategy": "TF名额刚需",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "TF尝鲜刚需",
+        "evidence": "全量TF链接",
+        "note": "iOS用户尝鲜/绕区/免费用付费App"
+      }
+    ],
+    "signals": {
+      "subscribers": 44665,
+      "err_pct": 7.6,
+      "forwards_per_post": 1.7
+    },
+    "assessment": "TestFlight名额分享工具号,4.5万盘。变现不显(可能广告位)。属iOS尝鲜生态,近期更新减少。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(搜集TF链接)",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      4000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "广告位/无",
+    "streams": [
+      {
+        "name": "广告位",
+        "evidence": "4.5万盘;样本内变现少",
+        "cny_month": [
+          0,
+          4000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "工具型号变现有限"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "分享TestFlight公开测试链接,部分涉绕区/让付费App免费试用,违反苹果协议灰区",
+      "TF链接为苹果官方渠道,内容本身非盗版;整体中等偏低"
+    ]
+  }
+}

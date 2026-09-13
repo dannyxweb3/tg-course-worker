@@ -1,0 +1,123 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "hezu2",
+  "username": "hezu2",
+  "url": "https://t.me/hezu2",
+  "title": "合租通知 Netflix|YouTube|Spotify|office365 等",
+  "category": "流媒体/软件账号合租分销",
+  "growth_short": "合租刚需铺量",
+  "one_liner": "10万订阅的账号合租号:发 Netflix/YouTube/Spotify/office365/ChatGPT 等合租名额通知,15.6条/天,ERR 5.1%,靠合租差价与拉新变现,属账号共享灰产。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/hezu2.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-25",
+      "2026-09-13"
+    ],
+    "note": "跨度19.2天、15.6条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 100408,
+    "median_views": 5144,
+    "mean_views": 5244,
+    "p10_views": 4653,
+    "p90_views": 6080,
+    "err_pct": 5.1,
+    "mature_posts": 192,
+    "reactions_total": 0,
+    "forwards_total": 167,
+    "forwards_per_post": 0.6,
+    "er_pct": 0.0,
+    "posts_per_day": 15.6,
+    "views_available": true,
+    "media_mix": {
+      "empty": 300
+    },
+    "deleted_pct": 1.3,
+    "activity_note": "ERR 5.1%、转发0.6/帖:工具型通知,用户来买合租不社交"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "合租名额通知(标签#Netflix #Apple #联合会员 #Spotify #YouTube #HBO #ChatGPT)+ 价格/车位;纯文本",
+    "delivery": "发合租车位通知,成交走客服/bot;不含内容,只卖账号位",
+    "curation": "自营合租业务:批量买高级订阅再拆位转租",
+    "schedule": "15.6条/天,集中20-22点"
+  },
+  "growth": {
+    "strategy": "合租差价刚需铺量",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "合租刚需",
+        "evidence": "Netflix/联合会员等热门合租",
+        "note": "省钱刚需"
+      }
+    ],
+    "signals": {
+      "subscribers": 100408,
+      "err_pct": 5.1,
+      "forwards_per_post": 0.6
+    },
+    "assessment": "自营流媒体/软件账号合租,10万盘。变现是合租差价(整租拆位赚差)+拉新。属账号共享灰产(违反平台ToS,存在盗号/退款风险)。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      3000,
+      20000
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "账号进货(批量买各平台会员)",
+        "cny_month": [
+          3000,
+          18000
+        ],
+        "note": "合租的主要成本是账号本身"
+      },
+      {
+        "name": "客服/bot/服务器",
+        "cny_month": [
+          100,
+          800
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      5000,
+      30000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "合租差价 + 拉新",
+    "streams": [
+      {
+        "name": "合租车位差价",
+        "evidence": "高频车位通知、多平台",
+        "cny_month": [
+          5000,
+          30000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "合租是薄利多单生意,10万盘走量;净利受账号成本与退单率影响"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "账号合租违反 Netflix/Spotify 等平台服务条款,可能涉盗号/共享欺诈",
+      "跨境订阅+代付有支付合规灰区;无博彩/无成人,整体中等"
+    ]
+  }
+}

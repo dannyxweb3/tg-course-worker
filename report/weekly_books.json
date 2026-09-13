@@ -1,0 +1,127 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "weekly_books",
+  "username": "weekly_books",
+  "url": "https://t.me/weekly_books",
+  "title": "每周一书",
+  "category": "书单/工具策展 + 跨境金融开户导流",
+  "growth_short": "书单策展",
+  "one_liner": "3.8万订阅的书单/工具策展号:每周一书+互联网观察+AI,ERR 23.7%、转发55/帖,但广告主打跨境金融开户(香港银行卡/Wise/富途/盈立证券),属金融开户导流。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/weekly_books.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-12"
+    ],
+    "note": "0.9条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 38116,
+    "median_views": null,
+    "err_pct": 23.7,
+    "mature_posts": null,
+    "forwards_per_post": 55.0,
+    "er_pct": 0.25,
+    "posts_per_day": 0.9,
+    "views_available": true,
+    "media_mix": {
+      "empty": 0,
+      "document": 8
+    },
+    "deleted_pct": 6.8,
+    "activity_note": "ERR 23.7%+转发55/帖:书单策展受众忠实;广告主打跨境金融开户"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "每周一书/工具/互联网观察(标签#每周一书 #人工智能)+外链(github/微信/x);广告为跨境金融开户教程",
+    "delivery": "书单/工具策展 + 跨境开户aff导流",
+    "curation": "半原创书单/工具策展;变现侧转向跨境金融开户",
+    "schedule": "0.9条/天"
+  },
+  "growth": {
+    "strategy": "书单策展口碑",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "书单/工具刚需",
+        "evidence": "ERR 23.7%、转发55/帖",
+        "note": "高质书单值得存转"
+      }
+    ],
+    "signals": {
+      "subscribers": 38116,
+      "err_pct": 23.7,
+      "forwards_per_post": 55.0
+    },
+    "assessment": "书单/工具策展号,内容质量不错(23.7%ERR)。但变现侧主打跨境金融开户(香港银行/Wise/富途/盈立)aff,属金融开户导流。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      10,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(书单策展)",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          10,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "跨境金融开户aff + 广告",
+    "streams": [
+      {
+        "name": "跨境开户aff",
+        "evidence": "开户19、ZA Bank/Wise/富途/盈立",
+        "cny_month": [
+          2000,
+          10000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "广告位",
+        "evidence": "广告4、合作2",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "跨境开户aff客单价较高"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "书单策展内容合规,但变现侧主打跨境金融开户(香港银行/券商)导流",
+      "协助大陆用户绕境开户/跨境收付有外汇/合规灰区;整体中等"
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "gephusers",
+  "username": "gephusers",
+  "url": "https://t.me/gephusers",
+  "title": "Geph 用户群",
+  "category": "翻墙工具(Geph)官方用户群",
+  "growth_short": "翻墙工具社区",
+  "one_liner": "3.7万成员的Geph(迷雾通)翻墙工具官方用户群:围绕这款开源翻墙软件的使用/问答(126条/天),作者@nullchinchilla在群,属翻墙工具社区。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/gephusers.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "2026-09-13|"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 36768,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读",
+    "messages_per_day": 126.6,
+    "deleted_ratio_pct": 60.2,
+    "activity_note": "126条/天真人问答;Geph作者在群"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "Geph(迷雾通)使用/连接/付费问答,指向community.geph.io/github",
+    "ad_injection": "几乎无(自家付费Geph Plus)",
+    "delivery": "翻墙软件官方用户支持社区",
+    "schedule": "全天候"
+  },
+  "growth": {
+    "strategy": "Geph工具官方社区",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "翻墙工具刚需",
+        "evidence": "126条/天、作者在群",
+        "note": "Geph用户支持"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 126.6
+    },
+    "assessment": "Geph(迷雾通)开源翻墙软件的官方用户群。变现在Geph Plus付费订阅(软件自身),群是支持社区。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理bot",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      2000
+    ],
+    "est_scope": "群本体(不含Geph软件收入)",
+    "model": "Geph Plus订阅导流",
+    "streams": [
+      {
+        "name": "付费订阅导流",
+        "evidence": "Geph Plus",
+        "cny_month": [
+          0,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现在Geph软件付费,群是支持位"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "Geph为翻墙软件,在大陆属提供非法互联网接入;群为其官方用户支持社区",
+      "软件海外合规;面向大陆的翻墙用途受限,整体中等"
+    ]
+  }
+}

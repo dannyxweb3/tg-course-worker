@@ -1,0 +1,129 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "TAndroidAPK",
+  "username": "TAndroidAPK",
+  "url": "https://t.me/TAndroidAPK",
+  "title": "Telegram APKs for Android",
+  "category": "Telegram 官方 APK 镜像分发(工具型)",
+  "growth_short": "官方APK刚需",
+  "one_liner": "25.7万订阅的 Telegram 官方 APK 镜像号:每个新版把官方 apk 直接挂在频道(样本300个apk/21GB),转发中位1207/帖、ERR 144%,是极致刚需的工具型分发号,几乎不变现。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/TAndroidAPK.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2023-02-26",
+      "2026-08-25"
+    ],
+    "note": "跨度1276天、0.2条/天(随官方版本发布)"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 257305,
+    "median_views": 370272,
+    "mean_views": 369483,
+    "p10_views": 280547,
+    "p90_views": 471863,
+    "err_pct": 143.9,
+    "mature_posts": 300,
+    "reactions_total": 0,
+    "forwards_total": 448049,
+    "forwards_per_post": 1493.5,
+    "forwards_median": 1207.0,
+    "er_pct": 0.0,
+    "posts_per_day": 0.2,
+    "views_available": true,
+    "media_mix": {
+      "document": 300
+    },
+    "files": 300,
+    "files_gb": 20.95,
+    "file_ext": {
+      "apk": 300
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "ERR 144%、转发中位1207/帖:阅读与转发都远超订阅,因为apk被大量外部分享;纯工具刚需"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "每个 Telegram 新版发布 apk 文件 + 版本号 + telegram.org 链接",
+    "delivery": "官方 apk 直接挂消息(21GB),走 TG CDN;全量指向 telegram.org",
+    "curation": "零内容:镜像官方 Telegram apk,随官方版本更新",
+    "schedule": "0.2条/天,随官方发版"
+  },
+  "growth": {
+    "strategy": "官方APK刚需 + 超高转发裂变",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "官方apk刚需",
+        "evidence": "转发中位1207、ERR 144%",
+        "note": "无法从商店装TG的用户刚需"
+      }
+    ],
+    "signals": {
+      "subscribers": 257305,
+      "err_pct": 143.9,
+      "forwards_per_post": 1493.5
+    },
+    "assessment": "纯工具型:镜像官方 Telegram apk,转发1493/帖是全样本最高。几乎不变现,是服务性质的分发号。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      50
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(随官方发版传apk)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "极少"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      1000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "基本无变现(潜在广告)",
+    "streams": [
+      {
+        "name": "潜在广告/无",
+        "evidence": "样本内无广告/aff",
+        "cny_month": [
+          0,
+          1000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "服务型工具号,25万大盘若接广告有价但未见变现"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "分发的是官方 Telegram apk(telegram.org),非盗版、非破解",
+      "唯一风险是第三方镜像的信任问题;整体风险低"
+    ]
+  }
+}

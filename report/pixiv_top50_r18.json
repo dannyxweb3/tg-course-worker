@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "pixiv_top50_r18",
   "username": "pixiv_top50_r18",
@@ -15,13 +16,19 @@
     "script": "scripts/tg_recon.py",
     "dump": "data/recon/pixiv_top50_r18.jsonl",
     "sample_size": 300,
-    "sample_range": ["2026-08-31", "2026-09-12"],
+    "sample_range": [
+      "2026-08-31",
+      "2026-09-12"
+    ],
     "note": "300 条覆盖 12 天。本报告不描述、不引用任何图像内容"
   },
   "metrics": {
     "confidence": "high",
     "subscribers": 160753,
-    "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
+    "members": null,
+    "online": 0,
+    "online_pct": null,
+    "bot_share_pct": null,
     "views_available": true,
     "median_views": 3828,
     "mean_views": 4002,
@@ -37,7 +44,10 @@
     "forwards_per_post": 13.2,
     "forwards_median": 11,
     "forwards_max": 40,
-    "id_span_sampled": [55194, 55505],
+    "id_span_sampled": [
+      55194,
+      55505
+    ],
     "surviving_messages": 300,
     "photos": 282,
     "documents": 14,
@@ -71,34 +81,133 @@
     "strategy": "自动化供给 + 互推换量。内容本身有自然转发力，但 16 万订阅与 2.4% 的 ERR 之间的落差需要用互推解释",
     "paid_acquisition": "exchange",
     "mechanisms": [
-      {"name": "内容自带转发力", "evidence": "转发中位 11 次/帖、合计 3,951 次，且 259 条无任何文案", "note": "纯图无文案还能有 13.2 次/帖转发，说明扩散完全由内容本身驱动"},
-      {"name": "互推换量", "evidence": "#互推 标签 4 次；互推帖列出同类伙伴频道（涩图、3D 动漫、本子、黄油等品类），附 t.me 链接", "note": "同品类换量，比 bookMiao 那种跨品类互推精准，但仍是用量换量"},
-      {"name": "日更 + 打包 zip 提高回访", "evidence": "24.8 条/天；每日一个 zip 附件", "note": "排行榜是天然的日更题材，用户为看「今天的」而回访"},
-      {"name": "频道自署名回链", "evidence": "39 个指向自身的 telegram.me 链接", "note": "内容被二次分发到站外时仍带回链"}
+      {
+        "name": "内容自带转发力",
+        "evidence": "转发中位 11 次/帖、合计 3,951 次，且 259 条无任何文案",
+        "note": "纯图无文案还能有 13.2 次/帖转发，说明扩散完全由内容本身驱动"
+      },
+      {
+        "name": "互推换量",
+        "evidence": "#互推 标签 4 次；互推帖列出同类伙伴频道（涩图、3D 动漫、本子、黄油等品类），附 t.me 链接",
+        "note": "同品类换量，比 bookMiao 那种跨品类互推精准，但仍是用量换量"
+      },
+      {
+        "name": "日更 + 打包 zip 提高回访",
+        "evidence": "24.8 条/天；每日一个 zip 附件",
+        "note": "排行榜是天然的日更题材，用户为看「今天的」而回访"
+      },
+      {
+        "name": "频道自署名回链",
+        "evidence": "39 个指向自身的 telegram.me 链接",
+        "note": "内容被二次分发到站外时仍带回链"
+      }
     ],
-    "signals": {"err_pct": 2.4, "forwards_per_post": 13.2, "forwards_total": 3951, "reactions_total": 159, "posts_per_day": 24.8, "subscribers": 160753},
+    "signals": {
+      "err_pct": 2.4,
+      "forwards_per_post": 13.2,
+      "forwards_total": 3951,
+      "reactions_total": 159,
+      "posts_per_day": 24.8,
+      "subscribers": 160753
+    },
     "assessment": "阅读分布极紧（p10 3,205 / p90 5,138）说明这 3,800 左右的阅读是真实的；但 16 万订阅对应 2.4% 的 ERR，意味着绝大多数订阅者早已不看。转发 13.2 次/帖证明内容本身有扩散力——这一点强于 syrjfx_sl（0.7）和 bookMiao（0.09）。所以它的问题不是「买了死粉」，而是「靠互推堆了订阅数之后真实活跃没跟上」。反应仅 159 个也印证：用户来看图就走，不互动。"
   },
   "cost": {
-    "recurring_cny_month": [100, 600],
-    "onetime_cny": [0, 0],
+    "recurring_cny_month": [
+      100,
+      600
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
     "items": [
-      {"name": "爬虫与打包机器", "cny_month": [50, 300], "note": "唯一真成本。日抓排行榜、下载图像、打包上传，一台小 VPS 够用"},
-      {"name": "代理/绕过 Pixiv 访问限制", "cny_month": [50, 300], "note": "Pixiv 对批量抓取有频率与地区限制，需代理池"},
-      {"name": "Telegram 文件托管", "cny_month": [0, 0], "note": "免费。日包 48-96 MB，全年不足 30 GB，毫无压力"},
-      {"name": "内容生产", "cny_month": [0, 0], "note": "259/300 条无正文，零编辑成本"},
-      {"name": "LLM", "cny_month": [0, 0], "note": "不需要"},
-      {"name": "互推", "cny_month": [0, 0], "note": "以推换推"}
+      {
+        "name": "爬虫与打包机器",
+        "cny_month": [
+          50,
+          300
+        ],
+        "note": "唯一真成本。日抓排行榜、下载图像、打包上传，一台小 VPS 够用"
+      },
+      {
+        "name": "代理/绕过 Pixiv 访问限制",
+        "cny_month": [
+          50,
+          300
+        ],
+        "note": "Pixiv 对批量抓取有频率与地区限制，需代理池"
+      },
+      {
+        "name": "Telegram 文件托管",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "免费。日包 48-96 MB，全年不足 30 GB，毫无压力"
+      },
+      {
+        "name": "内容生产",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "259/300 条无正文，零编辑成本"
+      },
+      {
+        "name": "LLM",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "不需要"
+      },
+      {
+        "name": "互推",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "以推换推"
+      }
     ],
     "structure_note": "成本结构与 go4sharing 同型：全自动、零内容成本、零托管成本，唯一支出是抓取机器。区别在于它抓的是受版权保护的作品而非节点。"
   },
   "revenue": {
-    "est_cny_month": [2000, 12000],
+    "est_cny_month": [
+      2000,
+      12000
+    ],
     "model": "机场联盟返利 + 互推",
     "streams": [
-      {"name": "机场联盟返利", "evidence": "mofacga.com/register?code=omi4gb9j（魔法喵机场，宣称月付低至 9.9、1T 流量），带推广码", "cny_month": [1500, 8000], "confidence": "medium", "note": "16 万订阅的成人向频道，受众与翻墙需求高度重合，是机场投放的优质位"},
-      {"name": "同品类互推邀请奖励", "evidence": "#互推 4 条", "cny_month": [200, 1500], "confidence": "low"},
-      {"name": "关联讨论组导流", "evidence": "linked_chat_id 2632895615", "cny_month": [300, 2500], "confidence": "low"}
+      {
+        "name": "机场联盟返利",
+        "evidence": "mofacga.com/register?code=omi4gb9j（魔法喵机场，宣称月付低至 9.9、1T 流量），带推广码",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "confidence": "medium",
+        "note": "16 万订阅的成人向频道，受众与翻墙需求高度重合，是机场投放的优质位"
+      },
+      {
+        "name": "同品类互推邀请奖励",
+        "evidence": "#互推 4 条",
+        "cny_month": [
+          200,
+          1500
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "关联讨论组导流",
+        "evidence": "linked_chat_id 2632895615",
+        "cny_month": [
+          300,
+          2500
+        ],
+        "confidence": "low"
+      }
     ],
     "note": "变现密度很低——300 条里只有 2 条机场广告。以 16 万订阅的体量，这个广告负载远低于同量级的号（对比 xiaoshuwu 的「满载广告位包月」）。可能是刻意压低广告以保内容体验，也可能是尚未系统性招商。"
   },
@@ -129,25 +238,36 @@
       },
       {
         "issue": "打包 zip 加重传播情节",
-        "statutes": ["上述司法解释关于「复制品数量」的认定"],
+        "statutes": [
+          "上述司法解释关于「复制品数量」的认定"
+        ],
         "analysis": "除逐条推送外，另打包当日全量为 zip 供整包下载。这使单次传播行为覆盖的作品数量从 1 件变为 50 件，在复制品数量的认定上是显著的加重因素，也便利了下游的二次分发。",
         "severity": "high"
       },
       {
         "issue": "违反平台服务条款与绕过访问限制",
-        "statutes": ["Pixiv 利用規約", "《反不正当竞争法》第十二条", "《著作权法》第四十九条（规避技术措施）"],
+        "statutes": [
+          "Pixiv 利用規約",
+          "《反不正当竞争法》第十二条",
+          "《著作权法》第四十九条（规避技术措施）"
+        ],
         "analysis": "Pixiv 对 R-18 内容设有年龄门与登录限制，对批量抓取设有频率与地区限制。系统性绕过这些限制进行日更规模的抓取，既违反平台条款，也可能触及规避技术措施的规定。",
         "severity": "medium"
       },
       {
         "issue": "未成年人准入无任何限制",
-        "statutes": ["《未成年人保护法》第八十条", "《网络安全法》第十三条"],
+        "statutes": [
+          "《未成年人保护法》第八十条",
+          "《网络安全法》第十三条"
+        ],
         "analysis": "频道对未成年人没有任何准入门槛，简介为空、无任何年龄提示。Pixiv 原站至少设有年龄门，搬运后这道门被完全移除——这是搬运行为独立造成的额外危害，不能以「原站也有」抗辩。",
         "severity": "high"
       },
       {
         "issue": "为无证跨境代理服务导流",
-        "statutes": ["《刑法》第二百八十七条之二 帮助信息网络犯罪活动罪"],
+        "statutes": [
+          "《刑法》第二百八十七条之二 帮助信息网络犯罪活动罪"
+        ],
         "analysis": "挂带推广码的机场注册链接，与 ffqchannel、jcplnanmin 同类风险，但规模较小（样本内仅 2 条）。",
         "severity": "medium"
       }

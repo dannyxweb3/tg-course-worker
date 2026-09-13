@@ -1,0 +1,118 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "QuanXNews",
+  "username": "QuanXNews",
+  "url": "https://t.me/QuanXNews",
+  "title": "QuantumultX 资讯",
+  "category": "翻墙代理工具(QX)资讯/教程",
+  "growth_short": "代理工具刚需",
+  "one_liner": "4.1万订阅的QuantumultX资讯号(QuanXApp配套):代理工具配置/脚本/TestFlight/Tips,ERR 74.8%、转发84.6/帖,属翻墙工具生态资讯号。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/QuanXNews.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "0.1条/天,事件驱动"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 40970,
+    "median_views": null,
+    "err_pct": 74.8,
+    "mature_posts": null,
+    "forwards_per_post": 84.6,
+    "er_pct": 0.12,
+    "posts_per_day": 0.1,
+    "views_available": true,
+    "media_mix": {
+      "empty": 0,
+      "document": 3
+    },
+    "deleted_pct": 25.2,
+    "activity_note": "ERR 74.8%+转发84.6/帖:代理工具刚需扩散"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "QuantumultX 配置/脚本/解析器/TestFlight/Tips(标签#Tips #TestFlight #Surge),指向github raw/apps.apple;配套@QuanXApp群",
+    "delivery": "翻墙代理工具资讯与脚本指路",
+    "curation": "围绕QuantumultX的工具资讯,半原创",
+    "schedule": "0.1条/天,事件驱动"
+  },
+  "growth": {
+    "strategy": "代理工具刚需",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "QX工具刚需",
+        "evidence": "ERR 74.8%、脚本/Tips",
+        "note": "QX用户配置刚需"
+      }
+    ],
+    "signals": {
+      "subscribers": 40970,
+      "err_pct": 74.8,
+      "forwards_per_post": 84.6
+    },
+    "assessment": "QuantumultX资讯号,74.8%高ERR。变现走机场广告,较轻。属翻墙工具生态。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          150
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      1000,
+      6000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "机场广告",
+    "streams": [
+      {
+        "name": "机场广告",
+        "evidence": "机场12、节点99",
+        "cny_month": [
+          1000,
+          6000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "工具资讯号变现较轻"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "翻墙代理工具资讯+机场广告,属翻墙生态灰区",
+      "工具/脚本技术中立;整体中等"
+    ]
+  }
+}

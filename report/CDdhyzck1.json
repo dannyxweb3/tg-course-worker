@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "CDdhyzck1",
   "username": "CDdhyzck1",
@@ -10,14 +11,46 @@
   "one_liner": "成都区域的招嫖列表频道，与上一批的『成都师范大学老师车库』同类同城：按区打标签、以『已验证』做背书、自聊/代聊两种联系路径，7.1 万订阅。",
   "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。本报告不记录任何人物信息、照片、价格、预约方式、联系方式或具体条目。",
   "analyzed_at": "2026-09-13T13:55:00Z",
-  "source": {"method": "telethon", "script": "scripts/tg_recon.py", "dump": "data/recon/CDdhyzck1.jsonl", "sample_size": 300, "sample_range": ["2026-08-18", "2026-09-12"], "note": "300 条覆盖 25 天。『修车/车库/X车』为招嫖黑话，与 chengdu_normal_university 同城同类"},
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/CDdhyzck1.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-18",
+      "2026-09-12"
+    ],
+    "note": "300 条覆盖 25 天。『修车/车库/X车』为招嫖黑话，与 chengdu_normal_university 同城同类"
+  },
   "metrics": {
-    "confidence": "high", "subscribers": 71332, "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
-    "views_available": true, "median_views": 8289, "mean_views": 8418, "p10_views": 7354, "p90_views": 9698, "max_views": 11331,
-    "err_pct": 11.6, "err_note": "阅读分布极紧，是稳定真实受众", "mature_posts": 199, "total_posts": 300, "posts_per_day": 12.1,
-    "reactions_total": 2966, "forwards_total": 3530, "forwards_per_post": 11.8, "forwards_max": 42,
-    "posts_without_text": 221, "photos": 279,
-    "id_span_sampled": [11112, 11419], "surviving_messages": 300
+    "confidence": "high",
+    "subscribers": 71332,
+    "members": null,
+    "online": 0,
+    "online_pct": null,
+    "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 8289,
+    "mean_views": 8418,
+    "p10_views": 7354,
+    "p90_views": 9698,
+    "max_views": 11331,
+    "err_pct": 11.6,
+    "err_note": "阅读分布极紧，是稳定真实受众",
+    "mature_posts": 199,
+    "total_posts": 300,
+    "posts_per_day": 12.1,
+    "reactions_total": 2966,
+    "forwards_total": 3530,
+    "forwards_per_post": 11.8,
+    "forwards_max": 42,
+    "posts_without_text": 221,
+    "photos": 279,
+    "id_span_sampled": [
+      11112,
+      11419
+    ],
+    "surviving_messages": 300
   },
   "implementation": {
     "publish_identity": "channel",
@@ -35,28 +68,104 @@
     "strategy": "验证列表 + 分区SEO + 多频道网络互导。与同城同类号共享流量池",
     "paid_acquisition": "none",
     "mechanisms": [
-      {"name": "『已验证』背书", "evidence": "频道名即『已验证车库』", "note": "降低嫖客对照骗/跑路的顾虑"},
-      {"name": "分区 + 分类标签SEO", "evidence": "武侯区/成华区 + 态度车/颜值车/身材车等", "note": "按区+按类型双维度检索命中"},
-      {"name": "自聊/代聊双路径扩大供给", "evidence": "自聊 27、代聊 23", "note": "同时容纳独立从业者与中介，货源更广"},
-      {"name": "多频道网络互导", "evidence": "转发源含多个成都招嫖频道", "note": "同城生态互相引流，抗封"}
+      {
+        "name": "『已验证』背书",
+        "evidence": "频道名即『已验证车库』",
+        "note": "降低嫖客对照骗/跑路的顾虑"
+      },
+      {
+        "name": "分区 + 分类标签SEO",
+        "evidence": "武侯区/成华区 + 态度车/颜值车/身材车等",
+        "note": "按区+按类型双维度检索命中"
+      },
+      {
+        "name": "自聊/代聊双路径扩大供给",
+        "evidence": "自聊 27、代聊 23",
+        "note": "同时容纳独立从业者与中介，货源更广"
+      },
+      {
+        "name": "多频道网络互导",
+        "evidence": "转发源含多个成都招嫖频道",
+        "note": "同城生态互相引流，抗封"
+      }
     ],
-    "signals": {"err_pct": 11.6, "forwards_per_post": 11.8, "reactions_total": 2966, "posts_per_day": 12.1, "subscribers": 71332},
+    "signals": {
+      "err_pct": 11.6,
+      "forwards_per_post": 11.8,
+      "reactions_total": 2966,
+      "posts_per_day": 12.1,
+      "subscribers": 71332
+    },
     "assessment": "7.1 万订阅、ERR 11.6%，是真实活跃受众。它与 chengdu_normal_university 同城同类，共同构成成都招嫖的多站点网络——同一批买家可能同时关注多个平行频道。列表模式的互动（11.8 次/帖）明显低于 guonrsgc 的 UGC 点评模式（104.9 次/帖），但订阅体量更大。"
   },
   "cost": {
-    "recurring_cny_month": [300, 2000], "onetime_cny": [0, 0],
+    "recurring_cny_month": [
+      300,
+      2000
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
     "items": [
-      {"name": "验证系统与条目 bot 后端", "cny_month": [200, 1200], "note": "start=win_ 条目系统 + 核验"},
-      {"name": "采集/核验人力", "cny_month": [100, 600]},
-      {"name": "多频道与图床", "cny_month": [0, 200]},
-      {"name": "文件托管", "cny_month": [0, 0]}
+      {
+        "name": "验证系统与条目 bot 后端",
+        "cny_month": [
+          200,
+          1200
+        ],
+        "note": "start=win_ 条目系统 + 核验"
+      },
+      {
+        "name": "采集/核验人力",
+        "cny_month": [
+          100,
+          600
+        ]
+      },
+      {
+        "name": "多频道与图床",
+        "cny_month": [
+          0,
+          200
+        ]
+      },
+      {
+        "name": "文件托管",
+        "cny_month": [
+          0,
+          0
+        ]
+      }
     ]
   },
   "revenue": {
-    "est_cny_month": [30000, 120000], "model": "上榜/验证/置顶费 + 代聊中介抽成",
+    "est_cny_month": [
+      30000,
+      120000
+    ],
+    "model": "上榜/验证/置顶费 + 代聊中介抽成",
     "streams": [
-      {"name": "上榜与验证费", "evidence": "『已验证车库』分层", "cny_month": [20000, 80000], "confidence": "low", "note": "71K 活跃受众使上榜位价值高"},
-      {"name": "代聊中介抽成", "evidence": "『代聊』路径", "cny_month": [10000, 40000], "confidence": "low", "note": "中介模式意味着平台可能参与交易撮合并抽成"}
+      {
+        "name": "上榜与验证费",
+        "evidence": "『已验证车库』分层",
+        "cny_month": [
+          20000,
+          80000
+        ],
+        "confidence": "low",
+        "note": "71K 活跃受众使上榜位价值高"
+      },
+      {
+        "name": "代聊中介抽成",
+        "evidence": "『代聊』路径",
+        "cny_month": [
+          10000,
+          40000
+        ],
+        "confidence": "low",
+        "note": "中介模式意味着平台可能参与交易撮合并抽成"
+      }
     ],
     "note": "规模是本样本集招嫖号里最大的（71K 订阅），变现相应最高。『代聊』路径若涉平台抽成，则从『介绍』升级为『组织』，性质更重。所有金额私下结算。"
   },
@@ -64,11 +173,51 @@
     "level": "criminal",
     "summary": "介绍/组织卖淫的列表平台，『代聊』中介与『已验证』核验指向组织化程度较高，叠加『嫩妹』框架的未成年人风险。",
     "legal": [
-      {"issue": "组织、介绍、协助卖淫", "statutes": ["《刑法》第三百五十八条", "《刑法》第三百五十九条", "《治安管理处罚法》第六十七条"], "analysis": "按区索引、验证核验、条目化列表 + 撮合，是介绍卖淫的规模化形态；『代聊』中介与核验管理指向对卖淫活动的组织与控制，可能升级为组织卖淫罪。", "severity": "critical"},
-      {"issue": "『嫩妹』框架的未成年人红线", "statutes": ["《刑法》第三百五十九条第二款 引诱幼女卖淫罪", "《未成年人保护法》"], "analysis": "标签含『嫩妹』等年轻化营销词，一旦涉及未成年人即从重并构成独立重罪。", "severity": "critical"},
-      {"issue": "被列出人员个人信息与潜在胁迫/拐卖", "statutes": ["《刑法》第二百五十三条之一", "《刑法》第三百五十八条第一款", "《刑法》第二百四十条"], "analysis": "照片信息若非自愿即侵权；『代聊』中介结构下更可能存在对从业者的控制与强迫。", "severity": "critical"},
-      {"issue": "传播淫秽信息与规避封禁", "statutes": ["《刑法》第三百六十三条、第三百六十四条", "司法实践中的主观明知认定"], "analysis": "图片展示涉传播淫秽信息；黑话伪装 + 多频道网络是规避监管与主观明知的证据。", "severity": "high"}
+      {
+        "issue": "组织、介绍、协助卖淫",
+        "statutes": [
+          "《刑法》第三百五十八条",
+          "《刑法》第三百五十九条",
+          "《治安管理处罚法》第六十七条"
+        ],
+        "analysis": "按区索引、验证核验、条目化列表 + 撮合，是介绍卖淫的规模化形态；『代聊』中介与核验管理指向对卖淫活动的组织与控制，可能升级为组织卖淫罪。",
+        "severity": "critical"
+      },
+      {
+        "issue": "『嫩妹』框架的未成年人红线",
+        "statutes": [
+          "《刑法》第三百五十九条第二款 引诱幼女卖淫罪",
+          "《未成年人保护法》"
+        ],
+        "analysis": "标签含『嫩妹』等年轻化营销词，一旦涉及未成年人即从重并构成独立重罪。",
+        "severity": "critical"
+      },
+      {
+        "issue": "被列出人员个人信息与潜在胁迫/拐卖",
+        "statutes": [
+          "《刑法》第二百五十三条之一",
+          "《刑法》第三百五十八条第一款",
+          "《刑法》第二百四十条"
+        ],
+        "analysis": "照片信息若非自愿即侵权；『代聊』中介结构下更可能存在对从业者的控制与强迫。",
+        "severity": "critical"
+      },
+      {
+        "issue": "传播淫秽信息与规避封禁",
+        "statutes": [
+          "《刑法》第三百六十三条、第三百六十四条",
+          "司法实践中的主观明知认定"
+        ],
+        "analysis": "图片展示涉传播淫秽信息；黑话伪装 + 多频道网络是规避监管与主观明知的证据。",
+        "severity": "high"
+      }
     ],
-    "notes": ["列表型招嫖平台，『代聊』中介使组织化程度高于纯列表号", "『嫩妹』框架带来未成年人红线风险", "成都招嫖多频道网络的一部分（与 chengdu_normal_university 同城同类）", "本报告不记录任何人物信息、照片、价格或联系方式", "本报告为外部法律风险识别，不构成法律意见"]
+    "notes": [
+      "列表型招嫖平台，『代聊』中介使组织化程度高于纯列表号",
+      "『嫩妹』框架带来未成年人红线风险",
+      "成都招嫖多频道网络的一部分（与 chengdu_normal_university 同城同类）",
+      "本报告不记录任何人物信息、照片、价格或联系方式",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
   }
 }

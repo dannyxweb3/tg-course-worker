@@ -1,0 +1,108 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "QuanXApp",
+  "username": "QuanXApp",
+  "url": "https://t.me/QuanXApp",
+  "title": "QuantumultX 交流群",
+  "category": "翻墙代理工具(QuantumultX)交流群",
+  "growth_short": "代理工具社区",
+  "one_liner": "5.4万成员的 QuantumultX 交流群:围绕这款iOS代理工具的配置/脚本/机场讨论,群活跃高(276条/天),夹带少量机场广告,属翻墙工具社区。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/QuanXApp.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "群无per-message阅读;online未取"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 53608,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读",
+    "messages_per_day": 276.6,
+    "deleted_ratio_pct": 50.6,
+    "activity_note": "276条/天高活跃真人技术讨论;50%删除是反spam"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "QuantumultX 配置/脚本/规则/机场讨论,贴代码/截图互助;夹带少量机场广告",
+    "ad_injection": "少量机场/代理广告",
+    "delivery": "技术问答社区,脚本指向github",
+    "schedule": "全天候高活跃"
+  },
+  "growth": {
+    "strategy": "代理工具刚需社区",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "QX工具刚需",
+        "evidence": "276条/天配置讨论",
+        "note": "QuantumultX用户配置/脚本刚需"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 276.6
+    },
+    "assessment": "QuantumultX(翻墙代理工具)交流群,高活跃真人技术社区。变现走少量机场广告。属翻墙工具生态。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理/反spam bot",
+        "cny_month": [
+          0,
+          150
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      4000
+    ],
+    "est_scope": "群本体",
+    "model": "机场广告",
+    "streams": [
+      {
+        "name": "机场广告位",
+        "evidence": "机场4、代理1",
+        "cny_month": [
+          0,
+          4000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "工具社区群变现有限"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "翻墙代理工具(QuantumultX)交流+机场广告,属翻墙生态灰区",
+      "以技术讨论为主,工具中立;夹带机场广告,整体中等"
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "NewlearnerChannel",
+  "username": "NewlearnerChannel",
+  "url": "https://t.me/NewlearnerChannel",
+  "title": "Newlearner’s Channel",
+  "category": "科技/资讯/GitHub情报 策展",
+  "growth_short": "科技策展口碑",
+  "one_liner": "6.7万订阅的科技资讯策展号:News/GitHub情报/AI/App/影视,ERR 6.8%、转发16.7/帖,聚合微博/GitHub/YouTube,配套群与bot,变现走广告与机场。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/NewlearnerChannel.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "3.6条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 67245,
+    "median_views": null,
+    "err_pct": 6.8,
+    "mature_posts": null,
+    "forwards_per_post": 16.7,
+    "er_pct": 0.17,
+    "posts_per_day": 3.6,
+    "views_available": true,
+    "media_mix": {
+      "photo": 296
+    },
+    "deleted_pct": 1.6,
+    "activity_note": "ERR 6.8% + 转发16.7/帖:科技策展受众真实"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "News/GitHub情报/AI/App/影视 短图文(标签#News #GitHub情报 #AI),聚合微博/github/youtube/微信;配套@NewlearnerGroup与bot",
+    "delivery": "指路+图文策展;外链github105/微博123/微信164",
+    "curation": "半原创科技资讯策展,选题面广",
+    "schedule": "3.6条/天"
+  },
+  "growth": {
+    "strategy": "科技策展口碑 + 配套群/bot",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "科技情报刚需",
+        "evidence": "转发16.7/帖、GitHub情报36",
+        "note": "开发者/极客受众"
+      },
+      {
+        "name": "配套群/bot",
+        "evidence": "@NewlearnerGroup、newlearner_pm_bot",
+        "note": "矩阵沉淀"
+      }
+    ],
+    "signals": {
+      "subscribers": 67245,
+      "err_pct": 6.8,
+      "forwards_per_post": 16.7
+    },
+    "assessment": "科技资讯策展号,6.8%ERR受众真实。变现走广告(广告22/合作35)与机场,较克制。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(策展)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约30-50小时/月"
+      },
+      {
+        "name": "服务器/bot",
+        "cny_month": [
+          30,
+          300
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "广告 + 机场/aff",
+    "streams": [
+      {
+        "name": "广告位",
+        "evidence": "广告22、合作35",
+        "cny_month": [
+          2000,
+          10000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "机场/aff",
+        "evidence": "机场4、aff3",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "科技策展号常规变现"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "科技资讯策展含聚合搬运,来源版权灰区;夹带机场广告",
+      "内容以科技情报为主,无重灰产;整体中等偏低"
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "vip115hot",
+  "username": "vip115hot",
+  "url": "https://t.me/vip115hot",
+  "title": "4K影视资源",
+  "category": "盗版4K影视网盘 + 电竞/体育博彩注入",
+  "growth_short": "影视刚需+博彩注入",
+  "one_liner": "5.2万订阅的盗版4K影视网盘号:多网盘蓝光电影,夹带竞博电竞博彩(TI15/竞币)与6G体育博彩,与 dianying4K 共用 @pinuo_bot 发货与6G品牌(疑同一运营),criminal。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/vip115hot.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08",
+      "2026-09-13"
+    ],
+    "note": "博彩落地域名不收录"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 52104,
+    "median_views": null,
+    "err_pct": 4.1,
+    "mature_posts": null,
+    "forwards_per_post": 9.8,
+    "er_pct": 0.05,
+    "posts_per_day": 8.6,
+    "views_available": true,
+    "media_mix": {
+      "photo": 294
+    },
+    "deleted_pct": 2.9,
+    "activity_note": "ERR 4.1%;影视为主体,电竞/体育博彩广告注入其间"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "4K/蓝光电影海报+介绍(标签#4K #高码率 #犯罪)+多网盘(夸克275/迅雷169/百度142/115) + @pinuo_bot发货;夹带电竞/体育博彩",
+    "ad_injection": "竞博电竞博彩(TI15预测/竞币/PP电玩)与6G体育博彩,互链@AA6G/@KF6G",
+    "delivery": "网盘指路为主",
+    "curation": "批量搬运4K影视 + 注入电竞/体育博彩",
+    "schedule": "8.6条/天"
+  },
+  "growth": {
+    "strategy": "4K影视刚需 + 博彩互链",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "4K蓝光刚需",
+        "evidence": "多网盘、高码率",
+        "note": "高清影视刚需"
+      },
+      {
+        "name": "博彩品牌互链",
+        "evidence": "@AA6G/@KF6G;与dianying4K同@pinuo_bot",
+        "note": "疑与dianying4K同一运营的影视+博彩组合"
+      }
+    ],
+    "signals": {
+      "subscribers": 52104,
+      "err_pct": 4.1,
+      "forwards_per_post": 9.8
+    },
+    "assessment": "与dianying4K高度同源(同@pinuo_bot发货、同6G品牌):盗版影视做流量、电竞/体育博彩做变现。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      50,
+      400
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "搬运影视/建盘",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "网盘会员/bot/服务器",
+        "cny_month": [
+          50,
+          400
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      8000,
+      40000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "电竞/体育博彩导流分成 + 网盘拉新",
+    "streams": [
+      {
+        "name": "博彩导流分成",
+        "evidence": "竞博电竞、6G体育博彩",
+        "cny_month": [
+          6000,
+          32000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "网盘拉新",
+        "evidence": "多网盘发货",
+        "cny_month": [
+          2000,
+          8000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "影视引流盘,主收入在博彩"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "夹带竞博电竞博彩与6G体育博彩广告,属开设赌场罪/帮信罪引流环节",
+      "与 dianying4K 共用 @pinuo_bot 与6G品牌,疑同一运营的『影视+博彩』矩阵",
+      "同时盗版分发4K影视;博彩落地域名不收录"
+    ]
+  }
+}

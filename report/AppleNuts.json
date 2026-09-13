@@ -1,0 +1,118 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "AppleNuts",
+  "username": "AppleNuts",
+  "url": "https://t.me/AppleNuts",
+  "title": "Apple 果仁",
+  "category": "苹果资讯/优惠/技巧",
+  "growth_short": "苹果垂直高互动",
+  "one_liner": "3.7万订阅的苹果垂直号:苹果资讯/优惠/技巧/音乐,ERR 46.7%、转发25/帖,高互动苹果爱好者社群,变现走苹果周边/服务广告。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/AppleNuts.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-12"
+    ],
+    "note": "0.5条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 36959,
+    "median_views": null,
+    "err_pct": 46.7,
+    "mature_posts": null,
+    "forwards_per_post": 25.4,
+    "er_pct": 0.41,
+    "posts_per_day": 0.5,
+    "views_available": true,
+    "media_mix": {
+      "webpage": 0,
+      "photo": 0
+    },
+    "deleted_pct": 7.7,
+    "activity_note": "ERR 46.7%+ER 0.41%:苹果垂直受众高粘"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "苹果资讯/优惠/技巧/Apple Music(标签#ios),外链apple.com.cn/music.apple/youtube",
+    "delivery": "苹果相关资讯图文",
+    "curation": "苹果生态垂直策展,半原创",
+    "schedule": "0.5条/天"
+  },
+  "growth": {
+    "strategy": "苹果垂直高互动",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "苹果生态刚需",
+        "evidence": "ERR 46.7%、转发25/帖",
+        "note": "苹果用户高粘"
+      }
+    ],
+    "signals": {
+      "subscribers": 36959,
+      "err_pct": 46.7,
+      "forwards_per_post": 25.4
+    },
+    "assessment": "苹果垂直号,46.7%高ERR。变现走苹果周边/服务/App广告,较克制。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          150
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      1000,
+      6000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "苹果周边/服务/App广告",
+    "streams": [
+      {
+        "name": "广告位",
+        "evidence": "广告8;高ERR垂直盘",
+        "cny_month": [
+          1000,
+          6000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "苹果垂直受众广告有价"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "苹果资讯/优惠策展,含少量破解/技巧灰区",
+      "内容以苹果生态为主,整体中等偏低"
+    ]
+  }
+}

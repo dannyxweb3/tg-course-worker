@@ -1,0 +1,127 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "tginfo",
+  "username": "tginfo",
+  "url": "https://t.me/tginfo",
+  "title": "Telegram Info",
+  "category": "Telegram 生态资讯(第三方,多语)",
+  "growth_short": "TG资讯高互动",
+  "one_liner": "8.3万订阅的第三方Telegram资讯号(tginfo.me):报道TG更新/故障/封锁/Premium,ERR 45.9%、reactions 21.7万、转发258/帖,是TG生态里极高互动的信息号。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/tginfo.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2024-08-31",
+      "2026-08-23"
+    ],
+    "note": "跨度722天、0.4条/天,低频高质;多语(含俄英)"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 83089,
+    "median_views": 38135,
+    "mean_views": 44699,
+    "p10_views": 26294,
+    "p90_views": 60806,
+    "err_pct": 45.9,
+    "mature_posts": 298,
+    "reactions_total": 217644,
+    "forwards_total": 77304,
+    "forwards_per_post": 257.7,
+    "forwards_median": 174.5,
+    "er_pct": 1.63,
+    "posts_per_day": 0.4,
+    "views_available": true,
+    "media_mix": {
+      "photo": 244,
+      "webpage": 20,
+      "empty": 19,
+      "poll": 10
+    },
+    "deleted_pct": 9.1,
+    "activity_note": "45.9% ERR + reactions 21.7万 + 转发258/帖:TG生态刚需资讯的极致互动"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "Telegram 更新/故障/封锁/Premium/礼物 资讯(多语,含俄英中),配图+投票;指向 telegram.org/tginfo.me/fragment",
+    "delivery": "TG官方动态的第三方权威转述与解读",
+    "curation": "专注Telegram生态的第三方资讯站(tginfo.me),半原创解读",
+    "schedule": "0.4条/天,随TG动态"
+  },
+  "growth": {
+    "strategy": "TG生态刚需资讯 + 超高互动",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "TG资讯刚需",
+        "evidence": "45.9% ERR、reactions 21.7万",
+        "note": "TG用户关心更新/故障/封锁"
+      }
+    ],
+    "signals": {
+      "subscribers": 83089,
+      "err_pct": 45.9,
+      "forwards_per_post": 257.7
+    },
+    "assessment": "第三方TG资讯权威号(非官方),45.9%ERR是TG生态刚需的极致。变现可能走TG广告平台/Premium/加密相关,样本内不显。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(跟踪TG动态/写解读)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约15-30小时/月"
+      },
+      {
+        "name": "站点/服务器",
+        "cny_month": [
+          0,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      15000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "TG广告平台/赞助(推测)",
+    "streams": [
+      {
+        "name": "广告/赞助",
+        "evidence": "高互动大盘;样本内变现动作少",
+        "cny_month": [
+          2000,
+          15000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "高互动TG资讯号广告有价,具体路径样本内不显"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "报道Telegram生态动态,内容合规、无灰产",
+      "第三方非官方身份;整体风险低"
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "alyp_1",
+  "username": "alyp_1",
+  "url": "https://t.me/alyp_1",
+  "title": "网盘(高品质)影视",
+  "category": "盗版影视网盘分发(夸克)",
+  "growth_short": "影视刚需+低质堆量",
+  "one_liner": "1.1万订阅的盗版影视网盘号:300条全是夸克网盘剧集链接,ERR仅0.9%,是典型『量大质低』的网盘搬运号,靠夸克拉新返利变现。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/alyp_1.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-29",
+      "2026-09-13"
+    ],
+    "note": "跨度 14.9 天、20.2 条/天;id 缺口 1%"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 11161,
+    "median_views": 98,
+    "mean_views": 99,
+    "p10_views": 83,
+    "p90_views": 115,
+    "err_pct": 0.9,
+    "mature_posts": 156,
+    "reactions_total": 6,
+    "forwards_total": 498,
+    "forwards_per_post": 1.7,
+    "forwards_median": 2.0,
+    "er_pct": 0.02,
+    "posts_per_day": 20.2,
+    "views_available": true,
+    "media_mix": {
+      "photo": 300
+    },
+    "deleted_pct": 1.0,
+    "activity_note": "ERR 0.9%、阅读中位仅 98:1.1万订阅但几乎没人看,是买粉/僵尸盘;转发 1.7/帖略高于阅读比,靠夸克分享机制"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "海报图 + `名称/描述/标签(#剧情+剧名)` + 夸克网盘链接(pan.quark.cn 300次)",
+    "delivery": "纯夸克网盘指路,自己不存文件;剧集为主(内封简繁字幕的搬运资源)",
+    "curation": "批量搬运影视资源到夸克,机器化,零原创",
+    "schedule": "20.2 条/天全天铺量"
+  },
+  "growth": {
+    "strategy": "影视刚需铺量 + 夸克分享裂变",
+    "paid_acquisition": "subs",
+    "mechanisms": [
+      {
+        "name": "影视刚需铺量",
+        "evidence": "20.2 条/天全是新剧网盘",
+        "note": "用量覆盖长尾搜索"
+      },
+      {
+        "name": "夸克转存裂变",
+        "evidence": "转发 1.7/帖 > 阅读占比",
+        "note": "夸克分享链自带拉新"
+      }
+    ],
+    "signals": {
+      "subscribers": 11161,
+      "err_pct": 0.9,
+      "forwards_per_post": 1.7
+    },
+    "assessment": "0.9% ERR 是全批次最低之一:大盘靠买粉/换量堆,内容几乎无人真读。价值不在阅读而在夸克转存拉新返利。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(搬运+建夸克分享,可脚本化)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "高度自动化,约 10-30 小时/月"
+      },
+      {
+        "name": "夸克会员/服务器",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      500,
+      4000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "夸克网盘拉新返利 + 广告",
+    "streams": [
+      {
+        "name": "夸克网盘拉新/转存返利",
+        "evidence": "全量夸克链接",
+        "cny_month": [
+          300,
+          3000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "广告/换量",
+        "evidence": "低",
+        "cny_month": [
+          100,
+          1000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "网盘返利按拉新/转存计,量大但单价低"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "盗版影视分发,侵犯著作权(内封字幕的压制资源)",
+      "夸克网盘拉新返利合规灰区;未见博彩/诈骗,未标 criminal"
+    ]
+  }
+}

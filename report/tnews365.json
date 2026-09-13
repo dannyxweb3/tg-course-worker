@@ -1,0 +1,127 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "tnews365",
+  "username": "tnews365",
+  "url": "https://t.me/tnews365",
+  "title": "竹新社",
+  "category": "国际新闻聚合(AP/Reuters/新华/CNN 搬运)",
+  "growth_short": "新闻聚合铺量",
+  "one_liner": "16.4万订阅的国际新闻聚合号:高频搬运美联社/路透/新华/CNN/NHK,转发61.5/帖、ERR 14.9%,中立时讯铺量,靠商务广告变现。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/tnews365.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-06-23",
+      "2026-09-13"
+    ],
+    "note": "跨度81天、3.7条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 163913,
+    "median_views": 24382,
+    "mean_views": 24606,
+    "p10_views": 19875,
+    "p90_views": 28934,
+    "err_pct": 14.9,
+    "mature_posts": 278,
+    "reactions_total": 0,
+    "forwards_total": 18460,
+    "forwards_per_post": 61.5,
+    "forwards_median": 41.0,
+    "er_pct": 0.0,
+    "posts_per_day": 3.7,
+    "views_available": true,
+    "media_mix": {
+      "empty": 185,
+      "photo": 103,
+      "document": 6,
+      "webpage": 6
+    },
+    "deleted_pct": 0.7,
+    "activity_note": "ERR 14.9%、转发61.5/帖:新闻聚合被大量转发;reactions关闭(0)"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "新闻短讯 + 来源链接(apnews/news.cn/reuters/cnn/nhk/cna);图文",
+    "delivery": "聚合中外新闻源转发;来源标注清晰",
+    "curation": "机器/半人工聚合国际新闻,中英源混合,零原创",
+    "schedule": "3.7条/天,集中22-23点"
+  },
+  "growth": {
+    "strategy": "国际新闻聚合铺量",
+    "paid_acquisition": "unknown",
+    "mechanisms": [
+      {
+        "name": "时讯刚需",
+        "evidence": "转发61.5/帖",
+        "note": "墙外中文用户看国际新闻刚需"
+      }
+    ],
+    "signals": {
+      "subscribers": 163913,
+      "err_pct": 14.9,
+      "forwards_per_post": 61.5
+    },
+    "assessment": "16万国际新闻聚合号,ERR 14.9% 说明受众真实。中立时讯,变现靠商务广告。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "聚合脚本/服务器",
+        "cny_month": [
+          30,
+          200
+        ]
+      },
+      {
+        "name": "运营(维护+接商务)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "半自动"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      5000,
+      25000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "商务广告",
+    "streams": [
+      {
+        "name": "商务广告位",
+        "evidence": "16万高转发盘广告价值高",
+        "cny_month": [
+          5000,
+          25000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "新闻聚合大盘广告价值可观,单价不可见"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "搬运 AP/Reuters/CNN/新华 等新闻,著作权/来源合规灰区",
+      "中立时讯,无灰产;面向墙外中文用户,整体中等"
+    ]
+  }
+}

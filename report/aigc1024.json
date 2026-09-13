@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "brief",
   "kind": "channel",
   "slug": "aigc1024",
   "username": "aigc1024",

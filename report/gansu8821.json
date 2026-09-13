@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "gansu8821",
   "username": "gansu8821",
@@ -10,15 +11,49 @@
   "one_liner": "兰州区域的招嫖榜，用『学生会/老师』做伪装，靠『已验证』标记和双向机器人做上榜与查找；9,451 订阅、ERR 39.6%，是三个招嫖号里最小但触达最集中的。",
   "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。本报告不记录任何人物信息、照片、价格、预约方式、联系方式或具体条目。",
   "analyzed_at": "2026-09-13T11:50:00Z",
-  "source": {"method": "telethon", "script": "scripts/tg_recon.py", "dump": "data/recon/gansu8821.jsonl", "sample_size": 300, "sample_range": ["2025-09-13", "2026-09-09"], "note": "300 条覆盖 361 天。频道名的『学生会/老师』是行业伪装。开启 noforwards"},
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/gansu8821.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-09-13",
+      "2026-09-09"
+    ],
+    "note": "300 条覆盖 361 天。频道名的『学生会/老师』是行业伪装。开启 noforwards"
+  },
   "metrics": {
-    "confidence": "high", "subscribers": 9451, "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
-    "views_available": true, "median_views": 3745, "mean_views": 4663, "p10_views": 2595, "p90_views": 9074, "max_views": 12769,
-    "err_pct": 39.6, "err_note": "ERR 39.6% 偏高，含转发带来的非订阅者阅读；小号但触达集中",
-    "mature_posts": 268, "total_posts": 300, "posts_per_day": 0.8,
-    "reactions_total": 280, "forwards_total": 302, "forwards_per_post": 1.0, "forwards_max": 15,
-    "posts_without_text": 207, "photos": 237, "documents": 52,
-    "id_span_sampled": [19, 718], "surviving_messages": 300, "linked_chat_id": 2324335273, "noforwards": true
+    "confidence": "high",
+    "subscribers": 9451,
+    "members": null,
+    "online": 0,
+    "online_pct": null,
+    "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 3745,
+    "mean_views": 4663,
+    "p10_views": 2595,
+    "p90_views": 9074,
+    "max_views": 12769,
+    "err_pct": 39.6,
+    "err_note": "ERR 39.6% 偏高，含转发带来的非订阅者阅读；小号但触达集中",
+    "mature_posts": 268,
+    "total_posts": 300,
+    "posts_per_day": 0.8,
+    "reactions_total": 280,
+    "forwards_total": 302,
+    "forwards_per_post": 1.0,
+    "forwards_max": 15,
+    "posts_without_text": 207,
+    "photos": 237,
+    "documents": 52,
+    "id_span_sampled": [
+      19,
+      718
+    ],
+    "surviving_messages": 300,
+    "linked_chat_id": 2324335273,
+    "noforwards": true
   },
   "implementation": {
     "publish_identity": "channel",
@@ -37,28 +72,103 @@
     "strategy": "验证 bot + 上榜合作 + 地名SEO。小号慢频但触达集中，未见买粉",
     "paid_acquisition": "none",
     "mechanisms": [
-      {"name": "双向 bot 自动撮合", "evidence": "简介『双向机器人』；『上榜合作联系』", "note": "供给侧自助上榜，需求侧自助检索，运营方只维护规则"},
-      {"name": "『已验证』信任背书", "evidence": "标签『已验证』15 次为最高频", "note": "核验是这类榜单的核心卖点"},
-      {"name": "地名SEO", "evidence": "兰州 + 七里河等区域词", "note": "本地检索命中"},
-      {"name": "安全提示营造正规观感", "evidence": "『防骗和盗号风险提示』", "note": "降低嫖客戒心，提高转化"}
+      {
+        "name": "双向 bot 自动撮合",
+        "evidence": "简介『双向机器人』；『上榜合作联系』",
+        "note": "供给侧自助上榜，需求侧自助检索，运营方只维护规则"
+      },
+      {
+        "name": "『已验证』信任背书",
+        "evidence": "标签『已验证』15 次为最高频",
+        "note": "核验是这类榜单的核心卖点"
+      },
+      {
+        "name": "地名SEO",
+        "evidence": "兰州 + 七里河等区域词",
+        "note": "本地检索命中"
+      },
+      {
+        "name": "安全提示营造正规观感",
+        "evidence": "『防骗和盗号风险提示』",
+        "note": "降低嫖客戒心，提高转化"
+      }
     ],
-    "signals": {"err_pct": 39.6, "forwards_per_post": 1.0, "reactions_total": 280, "posts_per_day": 0.8, "subscribers": 9451},
+    "signals": {
+      "err_pct": 39.6,
+      "forwards_per_post": 1.0,
+      "reactions_total": 280,
+      "posts_per_day": 0.8,
+      "subscribers": 9451
+    },
     "assessment": "9,451 订阅是三个招嫖号里最小的，但 ERR 39.6% 和慢频精投说明受众集中、粘性高。它不追求规模，靠『验证 + 双向 bot + 本地SEO』服务一个稳定的本地买家池。反应 280（相对其体量偏高）也印证真实活跃。"
   },
   "cost": {
-    "recurring_cny_month": [100, 800], "onetime_cny": [0, 0],
+    "recurring_cny_month": [
+      100,
+      800
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
     "items": [
-      {"name": "双向 bot 与后端", "cny_month": [50, 400]},
-      {"name": "核验人力", "cny_month": [50, 300], "note": "『已验证』需人工"},
-      {"name": "频道与图床", "cny_month": [0, 100]},
-      {"name": "文件托管", "cny_month": [0, 0]}
+      {
+        "name": "双向 bot 与后端",
+        "cny_month": [
+          50,
+          400
+        ]
+      },
+      {
+        "name": "核验人力",
+        "cny_month": [
+          50,
+          300
+        ],
+        "note": "『已验证』需人工"
+      },
+      {
+        "name": "频道与图床",
+        "cny_month": [
+          0,
+          100
+        ]
+      },
+      {
+        "name": "文件托管",
+        "cny_month": [
+          0,
+          0
+        ]
+      }
     ]
   },
   "revenue": {
-    "est_cny_month": [5000, 30000], "model": "上榜/验证费（向服务提供方收费）",
+    "est_cny_month": [
+      5000,
+      30000
+    ],
+    "model": "上榜/验证费（向服务提供方收费）",
     "streams": [
-      {"name": "上榜与验证费", "evidence": "『上榜合作联系』『已验证』", "cny_month": [4000, 25000], "confidence": "low", "note": "向被列出方收费"},
-      {"name": "置顶/加急", "evidence": "榜单结构常见的加价位", "cny_month": [1000, 5000], "confidence": "low"}
+      {
+        "name": "上榜与验证费",
+        "evidence": "『上榜合作联系』『已验证』",
+        "cny_month": [
+          4000,
+          25000
+        ],
+        "confidence": "low",
+        "note": "向被列出方收费"
+      },
+      {
+        "name": "置顶/加急",
+        "evidence": "榜单结构常见的加价位",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      }
     ],
     "note": "规模最小，变现相应最低。所有金额私下结算，外部不可观测。"
   },
@@ -66,11 +176,51 @@
     "level": "criminal",
     "summary": "与另外两个招嫖号同类：介绍/协助卖淫的平台化经营，叠加『学生』框架的未成年人风险与被列出人员的个人信息问题。",
     "legal": [
-      {"issue": "组织、介绍、协助卖淫", "statutes": ["《刑法》第三百五十八条", "《刑法》第三百五十九条", "《治安管理处罚法》第六十七条"], "analysis": "双向 bot 撮合 + 验证 + 上榜收费，是介绍卖淫的自动化平台形态；对上榜方有管理与收费则触及组织/协助组织卖淫。", "severity": "critical"},
-      {"issue": "『学生会/老师』框架的未成年人红线", "statutes": ["《刑法》第三百五十九条第二款 引诱幼女卖淫罪", "《未成年人保护法》"], "analysis": "以『学生会』『老师』组织招嫖内容，存在未成年人风险信号。一旦涉及未成年人即从重并构成独立重罪。", "severity": "critical"},
-      {"issue": "被列出人员个人信息与潜在胁迫/拐卖", "statutes": ["《刑法》第二百五十三条之一", "《刑法》第三百五十八条第一款", "《刑法》第二百四十条"], "analysis": "展示照片与信息若非自愿即侵权；强迫或拐卖情形一旦查实性质升级。", "severity": "critical"},
-      {"issue": "传播淫秽信息与规避封禁", "statutes": ["《刑法》第三百六十三条、第三百六十四条", "司法实践中的主观明知认定"], "analysis": "图片展示涉传播淫秽信息；黑话伪装 + noforwards 是规避监管与主观明知的证据。", "severity": "high"}
+      {
+        "issue": "组织、介绍、协助卖淫",
+        "statutes": [
+          "《刑法》第三百五十八条",
+          "《刑法》第三百五十九条",
+          "《治安管理处罚法》第六十七条"
+        ],
+        "analysis": "双向 bot 撮合 + 验证 + 上榜收费，是介绍卖淫的自动化平台形态；对上榜方有管理与收费则触及组织/协助组织卖淫。",
+        "severity": "critical"
+      },
+      {
+        "issue": "『学生会/老师』框架的未成年人红线",
+        "statutes": [
+          "《刑法》第三百五十九条第二款 引诱幼女卖淫罪",
+          "《未成年人保护法》"
+        ],
+        "analysis": "以『学生会』『老师』组织招嫖内容，存在未成年人风险信号。一旦涉及未成年人即从重并构成独立重罪。",
+        "severity": "critical"
+      },
+      {
+        "issue": "被列出人员个人信息与潜在胁迫/拐卖",
+        "statutes": [
+          "《刑法》第二百五十三条之一",
+          "《刑法》第三百五十八条第一款",
+          "《刑法》第二百四十条"
+        ],
+        "analysis": "展示照片与信息若非自愿即侵权；强迫或拐卖情形一旦查实性质升级。",
+        "severity": "critical"
+      },
+      {
+        "issue": "传播淫秽信息与规避封禁",
+        "statutes": [
+          "《刑法》第三百六十三条、第三百六十四条",
+          "司法实践中的主观明知认定"
+        ],
+        "analysis": "图片展示涉传播淫秽信息；黑话伪装 + noforwards 是规避监管与主观明知的证据。",
+        "severity": "high"
+      }
     ],
-    "notes": ["介绍/协助卖淫的自动化平台", "『学生会/老师』框架带来未成年人红线风险", "被列出人员可能非自愿或为胁迫/拐卖受害者", "本报告不记录任何人物信息、照片、价格或联系方式", "本报告为外部法律风险识别，不构成法律意见"]
+    "notes": [
+      "介绍/协助卖淫的自动化平台",
+      "『学生会/老师』框架带来未成年人红线风险",
+      "被列出人员可能非自愿或为胁迫/拐卖受害者",
+      "本报告不记录任何人物信息、照片、价格或联系方式",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
   }
 }

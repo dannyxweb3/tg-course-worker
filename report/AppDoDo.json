@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "AppDoDo",
   "username": "AppDoDo",
@@ -7,7 +8,7 @@
   "title": "APPDO 数字生活指南",
   "category": "数字生活/App/互联网观察（自有站 appdo.xyz）",
   "growth_short": "内容质量 + 转推",
-  "one_liner": "4 万订阅的数字生活号：App 推荐/互联网观察/AI，大量转推 twitter 观点，自有站 appdo.xyz，ERR 13.4%、ER 0.3%，夹带证券/虚拟货币/羊毛等财经导流。",
+  "one_liner": "正文中位 523 字/15 行——本轮写得最长最扎实的策展号,#互联网观察 一个标签占 191/300。信息源是推特(x.com 225 次)。变现是本轮证据最完整的:既有 #AD 明确标注,还有一条完整的广告主招募帖(『海外注册的正规 VPN,根据 PV 报价,直接和广告主对接,无抽成』)。",
   "analyzed_at": "2026-09-13T16:45:00Z",
   "source": {
     "method": "telethon",
@@ -27,13 +28,13 @@
     "mean_views": 6364,
     "p10_views": 4583,
     "p90_views": 9382,
-    "err_pct": 13.4,
+    "err_pct": 13.43,
     "mature_posts": 275,
     "reactions_total": 5268,
     "forwards_total": 8292,
     "forwards_per_post": 27.6,
     "er_pct": 0.3,
-    "posts_per_day": 1.1,
+    "posts_per_day": 1.11,
     "views_available": true,
     "media_mix": {
       "photo": 264,
@@ -43,65 +44,80 @@
       "poll": 1
     },
     "deleted_pct": 3.2,
-    "activity_note": "ER 0.3% 较高;#互联网观察 191 是主内容线"
+    "activity_note": "正文中位 523 字是本轮最长(对照 aboutrss 264、geekshare 163、xyxyspace 67、Legado 0),定位是资讯解读而非资源分发。转发中位从 2025-12 的 25 缓降到 2026-09 的 10,呈温和下滑。",
+    "forwards_median": 17
   },
   "implementation": {
     "publish_identity": "user",
-    "post_structure": "互联网观察/App 推荐/AI 资讯，大量转推 twitter(x.com 225) + 自有站 appdo.xyz;标签 #互联网观察 #AI #证券 #虚拟货币 #羊毛 #AD",
-    "delivery": "以观点/资讯 + App 推荐为主，自有站 appdo.xyz 沉淀;夹带证券/虚拟货币/羊毛导流(#AD 标注)",
-    "schedule": "约 1.1 条/天，晚 20-21 点 + 上午",
-    "growth": "内容质量 + 转推热点 + 自有站"
+    "post_structure": "正文中位 523 字/15 行的完整短文 + 配图(264/300)。标签 #互联网观察 191(占 64%)、#AI 14、#开源 10、#证券 8、#虚拟货币 5、#AD 5、#羊毛 3、#金融 3。",
+    "delivery": "信息源高度集中在推特:x.com 225 次为绝对主源,其余 github 11、微信 6、sspai 5、theverge/reuters 各 3。工作方式是盯推特动态 → 写成 500 字中文解读 → 配图发布。落地域名 lizhi.shop 5、pay.360doc.com 4、user.tuitui.me 3;URL 参数 utm_source 6、cid 5、ref 2,联盟链路完整可见。",
+    "schedule": "人工:小时分散(20 点 28、21 点 26、10 点 25),分钟与秒无聚集,<10 秒间隔占 10%。",
+    "growth": "内容质量 + 转推热点 + 自有站",
+    "ad_injection": "本轮证据最完整:#AD 标签 5 次做诚实标注(可见『#证券 #AD ▎复星…』组合);另有一条完整的广告主招募帖——『广告类型:海外注册的正规VPN;广告需求:独立站合作;广告报价:根据PV报价,直接和广告主对接,无抽成;带月PV截图私信 @appdo_bot』,即它还为 VPN 广告主与独立站主做撮合。",
+    "curation": "原创写作。转发前五中三条是跨境基础设施(Saily 美国 eSIM 189、FreeGFW 一键部署代理节点 187、Ready Card 全球取现 U 卡 166),与 #证券/#虚拟货币 标签互证——受众画像是『需要出海工具的中文用户』而非普通极客。",
+    "note": "署名水印 @AppDoDo 出现 235 次,与 GodlyNews1(236 次)几乎相同的防搬运策略。矩阵:AppDoDo 14、appdopic 13(图片号)、appdododo 5、appdoin 3、appdo_bot(撮合/客服)、tuitui_channel 2。"
   },
   "growth": {
-    "strategy": "互联网观察/App 内容 + 热点转推的口碑增长",
+    "strategy": "长文解读的稀缺性 + 出海工具刚需",
     "paid_acquisition": "none",
     "mechanisms": [
       {
-        "name": "内容质量",
-        "evidence": "ER 0.3%、转发 27.6/帖",
-        "note": "观点/推荐有粘性"
+        "name": "长文解读稀缺",
+        "evidence": "正文中位 523 字,本轮最长",
+        "note": "深度内容在信息流里反而稀缺"
       },
       {
-        "name": "热点转推",
-        "evidence": "x.com 225 转推",
-        "note": "蹭 twitter 热点观点"
+        "name": "出海工具刚需",
+        "evidence": "转发前五中三条为 eSIM/代理/U 卡",
+        "note": "受众有明确付费能力与需求"
+      },
+      {
+        "name": "署名水印",
+        "evidence": "@AppDoDo 235 次",
+        "note": "被搬运即免费曝光"
+      },
+      {
+        "name": "图片号分流",
+        "evidence": "appdopic 13 次",
+        "note": "图文分开承载"
       }
     ],
     "signals": {
       "subscribers": 40330,
-      "err_pct": 13.4,
+      "err_pct": 13.43,
       "forwards_per_post": 27.6
     },
-    "assessment": "数字生活/科技观察号，内容质量不错(ER 0.3%)。夹带证券/虚拟货币/羊毛等财经导流(#AD 标注)，变现比纯内容号积极。"
+    "assessment": "受众质量比阅读量更值钱:中位阅读只有 5,416,但金融/加密/出海类推广的 CPA 通常在几十到几百元/单,这解释了它的收入量级。"
   },
   "cost": {
     "recurring_cny_month": [
-      0,
-      300
+      30,
+      100
     ],
     "onetime_cny": [
       0,
-      0
+      500
     ],
     "items": [
       {
-        "name": "自有站 appdo.xyz 托管+域名",
-        "cny_month": [
+        "name": "【启动】频道+图片号+备份+bot",
+        "cny_onetime": [
           0,
-          200
+          500
         ]
       },
       {
-        "name": "运营时间(策展+转推+写站，约 20-40 小时/月)",
+        "name": "写作(核心)",
         "cny_month": [
           0,
           0
-        ]
+        ],
+        "note": "60-120 小时/月:1.11 条/天 × 523 字解读 + 配图 + 盯推特源"
       },
       {
-        "name": "发布工具/VPS",
+        "name": "bot / 服务器",
         "cny_month": [
-          0,
+          30,
           100
         ]
       }
@@ -109,47 +125,50 @@
   },
   "revenue": {
     "est_cny_month": [
-      2000,
-      10000
+      10000,
+      50000
     ],
-    "model": "软广(#AD) + 证券/虚拟货币/羊毛导流 + 自有站",
+    "model": "广告位(#AD 标注) + 联盟邀请码返佣 + 金融/加密类推广",
     "streams": [
       {
-        "name": "软广/荐位(#AD)",
-        "evidence": "#AD 标注的广告帖",
+        "name": "广告位(含 #AD 标注)",
+        "evidence": "#AD 5 次、合作 52、广告 20、完整的广告主招募帖",
         "cny_month": [
-          1000,
-          5000
+          5000,
+          20000
         ],
         "confidence": "medium"
       },
       {
-        "name": "证券/虚拟货币/羊毛 CPS",
-        "evidence": "fotechwealth/证券/虚拟货币 标签与链接",
+        "name": "联盟/邀请码返佣",
+        "evidence": "邀请码 26、优惠码 13、佣金 7;URL 参数 utm_source/cid/ref",
         "cny_month": [
-          500,
-          4000
+          3000,
+          15000
         ],
-        "confidence": "low"
+        "confidence": "medium"
       },
       {
-        "name": "App/工具联盟",
-        "evidence": "appdo.xyz + apps.apple.com",
+        "name": "金融/加密类推广(U卡、eSIM、券商)",
+        "evidence": "USDT 12、收款 15、#证券/#虚拟货币 标签",
         "cny_month": [
-          500,
-          3000
+          2000,
+          15000
         ],
         "confidence": "low"
       }
     ],
-    "note": "变现比纯内容号积极，含财经/证券导流;区间取决于 #AD 广告与 CPS"
+    "note": "本轮变现证据最扎实的样本之一:不是靠『应该能赚多少』推算,而是有 #AD 标注、有招募帖、有 26 次邀请码、有完整 utm 参数链路。金融类推广单价远高于工具类(U卡/券商/eSIM 的 CPA 常在几十到几百元/单),这解释了为什么中位阅读仅 5,416 的号能有这个量级收入。",
+    "est_scope": "本频道可归因"
   },
   "risk": {
     "level": "medium",
     "notes": [
-      "数字生活/科技内容为主，多为合规内容 + 联盟营销",
-      "夹带证券/虚拟货币导流有金融合规风险(荐股/荐币在中国大陆有监管敏感)",
-      "整体风险中等，非灰黑产但触及财经推广红线"
+      "主体是科技/金融资讯解读,以推特公开信息为源、写作原创,无盗版分发、无成人、无博彩",
+      "代理/翻墙工具:『FreeGFW 一键部署属于自己的代理节点』(187 转发)是明确的翻墙工具教程;广告招募帖直言接『海外注册的正规VPN』广告,在大陆语境下属传播翻墙工具与为其引流",
+      "金融与加密类推广:U 卡(Ready Card 全球取现+返现)、境外券商、USDT 12 次、收款 15 次。协助大陆用户开立境外金融账户、使用加密支付卡,涉外汇管理与非法集资防范的合规边界;加密货币相关业务在大陆受禁",
+      "eSIM 推广明示『支持大陆申请』,涉境内电信业务准入问题",
+      "它对广告做 #AD 标注、不分发任何盗版文件,运营方式相对透明,故不判 high"
     ]
   }
 }

@@ -1,0 +1,139 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "biquan321",
+  "username": "biquan321",
+  "url": "https://t.me/biquan321",
+  "title": "币圈动态",
+  "category": "加密行情资讯 + 交易喊单",
+  "growth_short": "币圈刚需内容",
+  "one_liner": "1.15万订阅的币圈号:混合加密行情资讯、地缘新闻与个人建仓喊单(ETH/SOL),ERR 46%(高粘性),但加密交易在大陆受限、喊单涉合规红线。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/biquan321.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-04-20",
+      "2026-09-11"
+    ],
+    "note": "跨度 144 天、2.1 条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 11526,
+    "median_views": 5299,
+    "mean_views": 4522,
+    "p10_views": 1780,
+    "p90_views": 6271,
+    "err_pct": 46.0,
+    "mature_posts": 290,
+    "reactions_total": 88,
+    "forwards_total": 409,
+    "forwards_per_post": 1.4,
+    "er_pct": 0.01,
+    "posts_per_day": 2.1,
+    "views_available": true,
+    "media_mix": {
+      "photo": 203,
+      "empty": 95
+    },
+    "deleted_pct": 3.8,
+    "activity_note": "46% ERR 高:币圈受众忠实、每条必看;但转发1.4、反应少,是看行情不社交"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "行情分析/建仓判断(第一人称)、地缘政治新闻、币价图;文本为主+配图",
+    "delivery": "自产观点+新闻转述;外链少(gate.com/polymarket零星)",
+    "curation": "半原创:个人交易判断(建仓ETH/SOL话术)+ 宏观地缘新闻搬运",
+    "schedule": "2.1 条/天,集中21-24点"
+  },
+  "growth": {
+    "strategy": "币圈行情刚需 + 个人观点粘性",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "行情刚需",
+        "evidence": "46% ERR、每条必看",
+        "note": "币圈受众高频看盘"
+      },
+      {
+        "name": "个人喊单人格化",
+        "evidence": "第一人称建仓判断",
+        "note": "KOL式信任"
+      }
+    ],
+    "signals": {
+      "subscribers": 11526,
+      "err_pct": 46.0,
+      "forwards_per_post": 1.4
+    },
+    "assessment": "46% ERR 说明忠实币圈受众,靠个人交易观点建立KOL信任。无明显买粉。变现路径(交易所aff/付费群)样本内不显,但币圈号通用套路清晰。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      10,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(写分析/盯盘)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约30-60小时/月"
+      },
+      {
+        "name": "服务器/行情数据",
+        "cny_month": [
+          10,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      15000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "交易所返佣aff + 付费社群/带单(推测)",
+    "streams": [
+      {
+        "name": "交易所返佣(aff)",
+        "evidence": "USDT4、gate.com;币圈号通用",
+        "cny_month": [
+          1000,
+          8000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "付费群/带单",
+        "evidence": "KOL喊单模式常见",
+        "cny_month": [
+          1000,
+          7000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "46%高ERR的币圈KOL变现力强,但具体路径样本内不显,置信度低"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "加密货币交易/兑换在中国大陆受禁,面向大陆用户的币圈喊单有合规红线",
+      "个人建仓喊单涉诱导交易/未持牌投资建议风险",
+      "未见明确诈骗/博彩,暂标 medium(偏高)"
+    ]
+  }
+}

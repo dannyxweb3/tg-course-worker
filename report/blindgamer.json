@@ -1,0 +1,146 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "blindgamer",
+  "username": "blindgamer",
+  "url": "https://t.me/blindgamer",
+  "title": "瞎玩菌 #SFW",
+  "category": "游戏资讯/资源媒体号",
+  "growth_short": "游戏资讯高频",
+  "one_liner": "1.08万订阅的游戏媒体号『瞎玩菌』:游戏资讯摘要+预告片/实机视频(9.27GB mp4),ERR 17.2%互动健康;标题#SFW暗示有NSFW姊妹号。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/blindgamer.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-12-22",
+      "2026-09-13"
+    ],
+    "note": "跨度 265 天、1.1 条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 10755,
+    "median_views": 1847,
+    "mean_views": 1994,
+    "p10_views": 1339,
+    "p90_views": 2703,
+    "err_pct": 17.2,
+    "mature_posts": 292,
+    "reactions_total": 775,
+    "forwards_total": 1180,
+    "forwards_per_post": 3.9,
+    "forwards_median": 3.0,
+    "er_pct": 0.13,
+    "posts_per_day": 1.1,
+    "views_available": true,
+    "media_mix": {
+      "document": 235,
+      "photo": 49,
+      "webpage": 14
+    },
+    "files": 242,
+    "files_gb": 9.27,
+    "file_ext": {
+      "mp4": 242
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "17.2% ERR + 转发3.9/帖:游戏受众健康互动;242个mp4是预告/实机视频"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "游戏资讯摘要(标签#Player #Rumor #Review #Steam等) + 预告/实机mp4 + 来源链接(bilibili/steam/3dmgame)",
+    "delivery": "资讯图文 + 视频直发;@BlindGamer署名274次(自有品牌)",
+    "curation": "半原创:游戏新闻编译摘要 + 搬运预告片;非纯搬运",
+    "schedule": "1.1 条/天,集中15点(198条,批量)"
+  },
+  "growth": {
+    "strategy": "游戏资讯刚需 + 品牌人格化",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "游戏资讯刚需",
+        "evidence": "17.2% ERR、每日游戏新闻",
+        "note": "玩家追新闻/预告"
+      },
+      {
+        "name": "品牌署名",
+        "evidence": "@BlindGamer 274次",
+        "note": "人格化媒体品牌"
+      }
+    ],
+    "signals": {
+      "subscribers": 10755,
+      "err_pct": 17.2,
+      "forwards_per_post": 3.9
+    },
+    "assessment": "17.2% ERR 是健康的游戏媒体号,半原创编译+预告片。#SFW标签暗示存在NSFW姊妹号(分流成人向)。变现样本内不显。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      10,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(编译新闻/剪预告)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约30-50小时/月"
+      },
+      {
+        "name": "服务器/存储(9.27GB视频)",
+        "cny_month": [
+          10,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      500,
+      4000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "游戏推广/广告 + 会员/NSFW姊妹号(推测)",
+    "streams": [
+      {
+        "name": "游戏/Steam推广广告",
+        "evidence": "合作6、广告3",
+        "cny_month": [
+          300,
+          2000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "会员/姊妹号导流",
+        "evidence": "#SFW暗示NSFW分号",
+        "cny_month": [
+          200,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现路径样本内不明确;游戏媒体广告价值中等"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "游戏预告/实机视频搬运有轻微版权风险",
+      "#SFW标签暗示存在NSFW(成人向)姊妹号,成人内容在大陆有风险敞口(本号SFW部分风险中等)",
+      "无博彩/诈骗;暂标 medium"
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "shareAliyun",
+  "username": "shareAliyun",
+  "url": "https://t.me/shareAliyun",
+  "title": "阿里云盘发布频道",
+  "category": "盗版影视网盘分发(阿里云盘)",
+  "growth_short": "影视刚需+网盘拉新",
+  "one_liner": "20.2万订阅的阿里云盘影视资源号:发海报+剧集介绍+阿里云盘(alipan)链接,ERR 4.6%,id缺口99%(链接被删/失效),是头部盗版网盘影视号。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/shareAliyun.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2024-09-28",
+      "2026-09-13"
+    ],
+    "note": "跨度715天;id缺口99%,阿里云盘链接大量失效/被删"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "subscribers": 202079,
+    "median_views": 9236,
+    "mean_views": 19257,
+    "p10_views": 7079,
+    "p90_views": 25694,
+    "err_pct": 4.6,
+    "mature_posts": 121,
+    "reactions_total": 754,
+    "forwards_total": 2847,
+    "forwards_per_post": 9.5,
+    "forwards_median": 4.0,
+    "er_pct": 0.03,
+    "posts_per_day": 0.4,
+    "views_available": true,
+    "media_mix": {
+      "photo": 293
+    },
+    "deleted_pct": 99.0,
+    "activity_note": "ERR 4.6% 偏低;99% id 缺口是盗版网盘链接被举报/失效后删除的典型;mean远高于median是爆款拉动"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "海报图 + 剧名/标签(#ali #剧情 #4K #动画) + 阿里云盘(alipan.com)链接;配 @aliyun_share_bot 发货",
+    "delivery": "阿里云盘指路(alipan.com 291);自己不存,靠网盘转存",
+    "curation": "批量搬运影视到阿里云盘,机器化",
+    "schedule": "0.4条/天(存活),集中19-22点"
+  },
+  "growth": {
+    "strategy": "影视刚需 + 阿里云盘转存拉新",
+    "paid_acquisition": "subs",
+    "mechanisms": [
+      {
+        "name": "影视刚需",
+        "evidence": "20万盘、4K/剧集",
+        "note": "新剧网盘刚需"
+      },
+      {
+        "name": "网盘拉新/bot发货",
+        "evidence": "@aliyun_share_bot、alipan链接",
+        "note": "转存+bot 沉淀用户"
+      }
+    ],
+    "signals": {
+      "subscribers": 202079,
+      "err_pct": 4.6,
+      "forwards_per_post": 9.5
+    },
+    "assessment": "头部盗版网盘影视号,99%删除率是链接失效/防举报的常态。变现走阿里云盘拉新返利+bot导流。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      50,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(搬运+建盘,可脚本化)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约20-40小时/月"
+      },
+      {
+        "name": "阿里云盘会员/bot/服务器",
+        "cny_month": [
+          50,
+          300
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "阿里云盘拉新返利 + 广告",
+    "streams": [
+      {
+        "name": "阿里云盘拉新/转存返利",
+        "evidence": "全量alipan链接+发货bot",
+        "cny_month": [
+          2000,
+          10000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "广告/换量",
+        "evidence": "20万盘广告位",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "20万盘的网盘影视号变现力可观,但返利单价与入群率不可见"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "盗版影视分发(压制资源),侵犯著作权",
+      "阿里云盘拉新返利合规灰区;未见博彩/诈骗,未标 criminal"
+    ]
+  }
+}

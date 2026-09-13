@@ -1,0 +1,108 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "googlevoice",
+  "username": "googlevoice",
+  "url": "https://t.me/googlevoice",
+  "title": "Google Voice 交流群",
+  "category": "Google Voice 号码交易群(接码/打粉灰产)",
+  "growth_short": "GV号刚需",
+  "one_liner": "1.34万成员的Google Voice交流群:实为GV号码买卖群,近期消息几乎是重复刷屏的卖号广告(1/7美号价格)与『打粉』黑话,GV号常用于接码注册/引流,属灰产。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/googlevoice.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2023-03-08",
+      "2026-09-13"
+    ],
+    "note": "群无per-message阅读;99.9% id缺口;近期内容为重复卖号刷屏,分析价值有限"
+  },
+  "metrics": {
+    "confidence": "low",
+    "kind_note": "group",
+    "members": 13395,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读;online未取",
+    "messages_per_day": 0.2,
+    "deleted_ratio_pct": 99.9,
+    "activity_note": "99.9%删除+存活多为重复卖号刷屏:真实交流极少,是号商刷屏的交易/引流位"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "GV号码买卖刷屏(如『1/7/p·m·僅·5·K』美号报价)、『打粉』(拉粉/引流)黑话;真实交流少",
+    "ad_injection": "号商重复刷屏卖号即广告",
+    "delivery": "号码交易撮合,走私聊/客服",
+    "schedule": "全天候刷屏"
+  },
+  "growth": {
+    "strategy": "GV号刚需聚人",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "GV号刚需",
+        "evidence": "接码/注册/引流需求",
+        "note": "GV号用于注册各平台、接码"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 0.2
+    },
+    "assessment": "名为交流群、实为GV号商的交易/刷屏位。GV号常被用于批量注册、接码、引流(打粉),处于账号黑灰产上游。真实社区交流极少。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理bot",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      5000
+    ],
+    "est_scope": "群本体(号商可归因难)",
+    "model": "GV号码买卖差价",
+    "streams": [
+      {
+        "name": "GV号买卖",
+        "evidence": "重复卖号刷屏",
+        "cny_month": [
+          0,
+          5000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "号商各自成交,群本体难归因;置信度低"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "GV号码买卖用于批量注册/接码/引流(打粉),是账号黑灰产上游,可能助力电诈/垃圾营销",
+      "违反Google Voice服务条款;近期内容为重复卖号刷屏,分析价值有限,暂标 medium(偏高)"
+    ]
+  }
+}

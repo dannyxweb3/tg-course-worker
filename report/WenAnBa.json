@@ -1,0 +1,126 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "WenAnBa",
+  "username": "WenAnBa",
+  "url": "https://t.me/WenAnBa",
+  "title": "文案吧",
+  "category": "博彩导流(文案/头像内容外壳)",
+  "growth_short": "内容外壳泛粉",
+  "one_liner": "6.6万订阅:以『文案/头像/壁纸』为内容外壳、夹带大量博彩广告(铂莱娱乐/贵宾会750.cc/开元棋牌/六合彩加拿大28),返利106次、博彩12次,与 wenan888/inside1024 同套路,criminal。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/WenAnBa.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-11",
+      "2026-09-13"
+    ],
+    "note": "跨度短、59.5条/天;博彩落地域名不收录"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 66112,
+    "median_views": null,
+    "err_pct": null,
+    "mature_posts": 0,
+    "reactions_total": null,
+    "forwards_total": null,
+    "forwards_per_post": 0.3,
+    "er_pct": 0.06,
+    "posts_per_day": 59.5,
+    "views_available": true,
+    "views_note": "帖未成熟;转发0.3、ER0.06%极低,泛粉外壳",
+    "media_mix": {
+      "photo": 233,
+      "document": 63
+    },
+    "deleted_pct": 0.0
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "『头像/文案/壁纸』图文外壳(标签#头像84) 夹带博彩广告块;返利/彩金/返水话术",
+    "ad_injection": "高频博彩(返利106/彩金24/返水18/博彩12):铂莱娱乐、贵宾会750.cc、开元棋牌、六合彩/加拿大28;usdt06.ag,互链@kk888/@kk999/@bolaidaili/@bolaiylc_bot(博来代理)",
+    "delivery": "内容做泛粉钩子,博彩导流是核心",
+    "curation": "头像/文案素材拼凑外壳 + 博彩广告",
+    "schedule": "59.5条/天高频"
+  },
+  "growth": {
+    "strategy": "文案/头像外壳泛粉 + 博彩代理互链",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "文案/头像外壳",
+        "evidence": "标签#头像84",
+        "note": "素材钩子拉泛粉"
+      },
+      {
+        "name": "博彩代理网络",
+        "evidence": "@bolaidaili博来代理、铂莱/贵宾会品牌",
+        "note": "与 wenan888/inside1024 同类博彩品牌网络"
+      }
+    ],
+    "signals": {
+      "subscribers": 66112,
+      "forwards_per_post": 0.3
+    },
+    "assessment": "文案/头像内容外壳 + 博彩内核,与2026-09-13博彩矩阵同构(铂莱/贵宾会品牌、代理互链)。ER 0.06%说明泛粉无互动,价值全在博彩导流。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      600
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "素材拼凑/发帖(可脚本化)",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "服务器/多号托管",
+        "cny_month": [
+          100,
+          600
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      8000,
+      40000
+    ],
+    "est_scope": "本号可归因",
+    "model": "博彩导流分成(代理佣金/流水抽成)",
+    "streams": [
+      {
+        "name": "博彩导流分成",
+        "evidence": "铂莱/贵宾会/开元多博彩品牌+博来代理",
+        "cny_month": [
+          8000,
+          40000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "泛粉盘博彩导流,按代理佣金/流水抽成"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "文案/头像外壳夹带境外博彩(棋牌/彩票/六合彩)广告,属开设赌场罪/帮信罪引流环节",
+      "铂莱娱乐/贵宾会品牌与 inside1024 同属体育/棋牌博彩网络;博来代理(@bolaidaili)是代理层",
+      "博彩落地域名与联系方式不收录、不展示"
+    ]
+  }
+}

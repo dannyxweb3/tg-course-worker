@@ -1,0 +1,113 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "three001",
+  "username": "three001",
+  "url": "https://t.me/three001",
+  "title": "电报时报交流群",
+  "category": "社会热点/吃瓜 讨论群",
+  "growth_short": "热点吃瓜",
+  "one_liner": "5.1万成员的社会热点讨论群(电报时报times001的配套群):围绕微博/知乎热点与舆情吃瓜讨论(326条/天),UGC为主,几乎无系统变现。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/three001.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "群无per-message阅读;online未取;times001配套群"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 51359,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读",
+    "messages_per_day": 326.1,
+    "deleted_ratio_pct": 12.8,
+    "activity_note": "326条/天高活跃真人讨论;删除率仅12.8%,真实社区"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "围绕社会热点/舆情(微博/知乎热搜、时事)的吃瓜讨论;真人发言为主",
+    "ad_injection": "几乎无(合作4/节点3少量)",
+    "delivery": "纯讨论社区,配套主频道times001",
+    "schedule": "全天候高活跃"
+  },
+  "growth": {
+    "strategy": "主频道(times001)导流 + 热点吃瓜",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "热点吃瓜刚需",
+        "evidence": "326条/天、微博知乎热点",
+        "note": "吃瓜/时事讨论粘性"
+      },
+      {
+        "name": "主频道导流",
+        "evidence": "times001配套群",
+        "note": "频道→群导流"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 326.1
+    },
+    "assessment": "times001的配套讨论群,高活跃真人吃瓜社区。几乎无系统变现,变现在主频道。相对干净的讨论群。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理bot",
+        "cny_month": [
+          0,
+          150
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      3000
+    ],
+    "est_scope": "群本体",
+    "model": "主频道广告/无",
+    "streams": [
+      {
+        "name": "主频道广告/群内偶发",
+        "evidence": "群内变现少",
+        "cny_month": [
+          0,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现在主频道times001,群本体几乎不直接变现"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "社会热点/舆情吃瓜讨论,UGC含敏感社会话题",
+      "无盗版/灰产广告;UGC不可控是主要风险,整体中等偏低"
+    ]
+  }
+}

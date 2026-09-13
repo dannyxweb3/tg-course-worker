@@ -1,0 +1,142 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "jichangtj",
+  "username": "jichangtj",
+  "url": "https://t.me/jichangtj",
+  "title": "科学上网观察与机场测速",
+  "category": "机场(VPN)测评/推荐分销号",
+  "growth_short": "机场测评刚需",
+  "one_liner": "13.4万订阅的机场测评号:测速+推荐各家机场、配自有站 jichangtuijian.com 与短链,ERR 50%、转发152/帖,是机场生态里的头部导流/分销号。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/jichangtj.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2023-12-21",
+      "2026-09-13"
+    ],
+    "note": "跨度997天、0.3条/天,低频高质"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 134072,
+    "median_views": 67048,
+    "mean_views": 74021,
+    "p10_views": 29056,
+    "p90_views": 133494,
+    "err_pct": 50.0,
+    "mature_posts": 297,
+    "reactions_total": 0,
+    "forwards_total": 45728,
+    "forwards_per_post": 152.4,
+    "forwards_median": 68.5,
+    "er_pct": 0.0,
+    "posts_per_day": 0.3,
+    "views_available": true,
+    "media_mix": {
+      "photo": 200,
+      "empty": 53,
+      "webpage": 30,
+      "document": 17
+    },
+    "deleted_pct": 17.6,
+    "activity_note": "50% ERR + 转发152/帖:翻墙刚需的极致扩散,与 jichangdl/DuyaoSS 同属机场生态头部"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "机场测速图/评测 + 各家机场介绍(标签#奶昔#青森云#海獭#Nexitally等) + 短链(reurl/bit.ly/suo.st)与自有站 jichangtuijian.com",
+    "delivery": "指路各家机场(带分销/aff短链);自有站承载推荐榜",
+    "curation": "人工测速+评测各家机场,半原创",
+    "schedule": "0.3条/天,集中20-23点"
+  },
+  "growth": {
+    "strategy": "机场测评刚需 + 超高转发",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "翻墙刚需",
+        "evidence": "50% ERR、转发152/帖",
+        "note": "选机场是墙内用户强需求"
+      },
+      {
+        "name": "自有测评站",
+        "evidence": "jichangtuijian.com 34",
+        "note": "权威测评榜沉淀信任"
+      }
+    ],
+    "signals": {
+      "subscribers": 134072,
+      "err_pct": 50.0,
+      "forwards_per_post": 152.4
+    },
+    "assessment": "50% ERR、转发152/帖是机场生态头部。变现走机场分销返佣(短链带aff)——推荐一家转化一单抽成。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      800
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(实测各家机场/写评测)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约20-40小时/月"
+      },
+      {
+        "name": "自有站+测速服务器/多地节点",
+        "cny_month": [
+          100,
+          800
+        ],
+        "note": "测速需多地探针"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      20000,
+      80000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "机场分销返佣(CPS) + 广告位",
+    "streams": [
+      {
+        "name": "机场分销返佣",
+        "evidence": "aff短链、各家机场推荐、自有榜",
+        "cny_month": [
+          15000,
+          60000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "机场置顶广告位",
+        "evidence": "测评榜可售位",
+        "cny_month": [
+          5000,
+          20000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "头部机场测评号变现力强,50%ERR+152转发带来高转化;返佣率不可见故区间宽"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "机场(翻墙VPN)推荐分销在中国大陆属提供非法互联网接入/帮信范畴的引流",
+      "自有测评站+aff分销使经营主体明确;未见博彩/诈骗,未标 criminal 但属明确灰产"
+    ]
+  }
+}

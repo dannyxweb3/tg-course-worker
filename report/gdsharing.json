@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "gdsharing",
   "username": "gdsharing",
@@ -7,7 +8,7 @@
   "title": "Google Drive 资源 | New @gdurl",
   "category": "网盘影视/软件资源搬运（夸克/百度/Terabox 转存）",
   "growth_short": "资源刚需自然转发",
-  "one_liner": "12.4 万订阅的大型网盘资源号：每帖固定 #求转存，把影视/4K/破解软件做成夸克·百度·Terabox 多网盘转存目录，reactions 关闭、纯转存导流。",
+  "one_liner": "多人投稿制的超大型盗版资源分发号:300 条来自至少 8 个投稿人,每条都以 #求转存 开头(300/300)、每条都指向同一个 @DriveShareBot(393 次带 ?start= 深链)。资源以 TB 计(单条 1.4TB 的 B 站付费课程合集),阅读榜前五里三条是 FC2 成人内容。",
   "analyzed_at": "2026-09-13T12:30:00Z",
   "source": {
     "method": "telethon",
@@ -23,141 +24,186 @@
   "metrics": {
     "confidence": "high",
     "subscribers": 124510,
-    "median_views": 7019,
+    "median_views": 7235,
     "mean_views": 7351,
     "p10_views": 5198,
     "p90_views": 10110,
-    "err_pct": 5.6,
+    "err_pct": 5.8,
     "mature_posts": 293,
     "reactions_total": 0,
     "forwards_total": 4724,
-    "forwards_per_post": 15.7,
+    "forwards_per_post": 20,
     "er_pct": 0.0,
-    "posts_per_day": 1.3,
+    "posts_per_day": null,
     "views_available": true,
     "media_mix": {
       "photo": 283,
       "text": 17
     },
     "deleted_pct": 0.0,
-    "activity_note": "reactions 关闭；ERR 5.6% 属中等；#求转存 是网盘拉新的核心动作"
+    "activity_note": "间隔中位 18 秒、<60 秒占 63%、<10 秒占 23%,批量脚本投放;小时双峰 10 点(71 条)与 22 点(58 条)。正文中位 297 字/10 行,有详细资源说明。"
   },
   "implementation": {
     "publish_identity": "bot",
-    "post_structure": "封面图 + 资源名 + 多网盘链接（夸克/百度/Terabox），每帖固定 #求转存 #Quark #Baidu #Terabox 标签",
-    "delivery": "网盘转存链接为主（影视/4K/剧集 + 解锁会员软件 .zip）;多网盘并列对冲失效",
+    "post_structure": "格式统一为『投稿人: Name: 资源名 Size: 体积』+ 详细说明。开头模板即投稿人署名:浮光絮语 56、Noah 26、gixjj 17、Qili 17,另有 ada/Fat/9527/Patrick 等——至少 8 个投稿人的有组织供稿体系,这解释了它为何能同时覆盖成人、影视、课程、游戏、电子书等完全不同的品类。",
+    "delivery": "所有流量收口到单一 bot:t.me/DriveShareBot 393 次、URL 参数 start 392 次——频道正文里没有任何真实下载链接,用户必须点进 bot 才能拿资源。三重作用:(1)规避 DMCA(正文无可投诉的 Drive 链接);(2)?start= 携带资源 ID 可做归因统计;(3)把用户收口进私聊建立后续变现通道。",
     "selection": "影视为主 + 破解软件",
     "schedule": "约 1.3 条/天，上午 10 点与晚 22 点两档",
     "retention": "几乎不删（deleted 0%），存量作为可搜索资产沉淀",
-    "growth": "资源刚需 + @gdurl 备用域"
+    "growth": "资源刚需 + @gdurl 备用域",
+    "ad_injection": "0 条明确报价帖(『广告』仅 6 次)。",
+    "curation": "#求转存 出现 300/300 次,是运营指令而非礼貌用语:Google Drive 分享链接受配额限制,热门文件被大量下载后会触发『下载配额超限』失效,让用户先转存再下载可以制造更多副本——把每个用户变成一个分发节点。这是 Drive 资源号特有的、与百度/夸克号完全不同的扩散机制。配套 #Quark 209、#Baidu 70、#Terabox 30。",
+    "note": "资源体量以 TB 计(1.4TB B 站付费课程、283GB 电工课程、243GB 游戏合集),这是 Google Drive 相比其他网盘的优势——早期无限容量教育版账号能承载这种量级。"
   },
   "growth": {
-    "strategy": "影视/网盘资源刚需 → 自然转发 + 备用频道 @gdurl 防走丢",
-    "paid_acquisition": "none",
+    "strategy": "#求转存 把用户变成分发副本 + 多人投稿供给 + bot 收口",
+    "paid_acquisition": "unknown",
     "mechanisms": [
       {
-        "name": "资源刚需转发",
-        "evidence": "转发 15.7/帖",
-        "note": "影视/4K 是刚需，用户转存转发"
+        "name": "#求转存 机制",
+        "evidence": "300/300 条",
+        "note": "Drive 号特有的扩散设计:转存越多副本越多,资源越不会死"
       },
       {
-        "name": "#求转存 拉新动作",
-        "evidence": "300/300 带 #求转存",
-        "note": "引导用户到网盘转存=网盘拉新"
+        "name": "多人投稿供给",
+        "evidence": "至少 8 个署名投稿人",
+        "note": "品类覆盖广,供给不依赖单人"
+      },
+      {
+        "name": "成人内容拉阅读",
+        "evidence": "#R18 28、#FC2 28,阅读榜前五占三",
+        "note": "流量入口"
+      },
+      {
+        "name": "大体量课程/游戏拉转发",
+        "evidence": "1.4TB/283GB/243GB 合集分列转发榜前四",
+        "note": "扩散入口——用户自己看完就走的成人内容不转发,值得分享给同事的课程才转发"
+      },
+      {
+        "name": "bot 收口",
+        "evidence": "393 次 ?start=",
+        "note": "把频道流量沉淀为可反复触达的私聊用户"
       }
     ],
     "signals": {
       "subscribers": 124510,
-      "err_pct": 5.6,
-      "forwards_per_post": 15.7
+      "err_pct": 5.8,
+      "forwards_per_post": 20
     },
-    "assessment": "12.4 万订阅的成熟网盘搬运号。#求转存 是把内容分发和网盘拉新绑定的核心设计——每次转存都是一次网盘新增。reactions 关闭说明只做单向分发+导流，不追求社区互动。"
+    "assessment": "ERR 约 5.8% 属正常,无明显买粉证据。分工清晰:成人内容带来最高阅读,盗版课程与游戏合集带来最高转发。"
   },
   "cost": {
     "recurring_cny_month": [
-      100,
-      600
+      410,
+      4350
     ],
     "onetime_cny": [
-      0,
-      0
+      1000,
+      10000
     ],
     "items": [
       {
-        "name": "网盘 SVIP（夸克/百度/Terabox 多家）",
-        "cny_month": [
-          50,
-          200
-        ]
-      },
-      {
-        "name": "运营时间（找源+转存+发布）",
-        "cny_month": [
-          0,
-          0
+        "name": "【启动】@DriveShareBot 开发",
+        "cny_onetime": [
+          500,
+          3000
         ],
-        "note": "约 20-40 小时/月人力"
+        "note": "需支持 ?start= 资源映射、分发、统计"
       },
       {
-        "name": "VPS/发布 bot",
+        "name": "【启动】Google Drive 账号池",
+        "cny_onetime": [
+          500,
+          5000
+        ],
+        "note": "无限容量/教育版账号是核心资产,需采购"
+      },
+      {
+        "name": "【启动】投稿人招募与激励",
+        "cny_onetime": [
+          0,
+          2000
+        ]
+      },
+      {
+        "name": "Google Drive 账号补充",
+        "cny_month": [
+          300,
+          3000
+        ],
+        "note": "最特殊的成本项:违规文件会被标识与封号(正文自述『谷歌在标识违规文件』),账号是消耗品——存的东西越违规死得越快"
+      },
+      {
+        "name": "bot / VPS 托管",
         "cny_month": [
           50,
           200
         ]
       },
       {
-        "name": "备用域/频道",
+        "name": "三网盘会员(Quark/Baidu/Terabox)",
+        "cny_month": [
+          60,
+          150
+        ]
+      },
+      {
+        "name": "运营人力",
         "cny_month": [
           0,
-          100
-        ]
+          1000
+        ],
+        "note": "高度自动化"
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
-      5000,
-      25000
+      6000,
+      39500
     ],
-    "model": "网盘拉新 CPA（多网盘）+ 广告位",
+    "model": "bot 侧变现为主 + 网盘拉新",
     "streams": [
       {
-        "name": "网盘拉新 CPA（夸克/百度/Terabox）",
-        "evidence": "每帖多网盘链接 + #求转存",
+        "name": "bot 侧变现(会员/广告/引流)",
+        "evidence": "393 次 ?start= 深链全部收口到 bot;bot 内容不可观测",
         "cny_month": [
-          3000,
-          15000
-        ],
-        "confidence": "medium"
-      },
-      {
-        "name": "影视/软件广告位",
-        "evidence": "12.4 万订阅的曝光位",
-        "cny_month": [
-          1500,
-          8000
+          5000,
+          30000
         ],
         "confidence": "low"
       },
       {
-        "name": "合集/会员导流",
-        "evidence": "合集标签",
+        "name": "网盘拉新 CPA",
+        "evidence": "#Quark 209、#Baidu 70、#Terabox 30",
         "cny_month": [
-          500,
+          1000,
+          6000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "频道广告位",
+        "evidence": "『广告』仅 6 次,0 条报价帖",
+        "cny_month": [
+          0,
           3000
         ],
         "confidence": "low"
       }
     ],
-    "note": "12.4 万订阅 + 影视刚需，网盘 CPA 规模化，是本批盗版搬运号里盘子较大的一个"
+    "note": "最大不确定性在 bot:所有 393 次转化都进了 @DriveShareBot,而 bot 内部的会员墙、广告、二次引流完全不可观测——这是本报告最大的盲区。以 12.45 万订阅、每条 7,235 阅读的量级,bot 侧变现能力很可能显著高于频道本身。锚点:中位阅读 7,235 × 高频投放,按资源类 CPM ¥30-80 折算频道位曝光价值约 ¥5,000-20,000/月,与区间同量级。",
+    "est_scope": "本频道 + bot(bot 内部不可观测)"
   },
   "risk": {
     "level": "high",
     "notes": [
-      "系统性分发盗版影视与破解软件，侵犯著作权，营利目的下可涉侵犯著作权罪",
-      "网盘转存件存在挂马/失效风险",
-      "以 #求转存 驱动网盘拉新，属灰色营销",
-      "无成人/博彩/诈骗要素，属侵犯知识产权类"
+      "本轮盗版分发中链条最完整、品类最全的一个,风险叠加三层",
+      "🔴 成人内容的规模化直接分发:#R18 28、#FC2 28,阅读榜前五中三条是 FC2 内容,有单条 52GB 的『日本有码精选』合集。这不是导流(如 abskoop 推荐 JavDB)而是直接提供文件,在大陆属《刑法》364 条传播淫秽物品罪的直接构成要件,比导流重一个层级;运营方自述『谷歌在标识违规文件』说明主观明知",
+      "盗版课程与软件的大规模分发:1.4TB B 站 UP 主付费课程合集、283GB 电工课程、剪映破解版合集,涉《刑法》217 条,且付费课程权利人明确、损失可量化",
+      "盗版影视与游戏:常规著作权侵权",
+      "加重情节:#求转存 主动号召用户参与分发,客观上扩大传播范围;?start= 深链把真实资源藏在 bot 里,是规避投诉与取证的设计",
+      "暂不判 criminal 是因为样本内未见博彩、诈骗、社工库等直接犯罪服务要素;但成人内容的直接文件分发已触及刑事红线,若规模与牟利证据充分,定性可上移。本报告不收录任何具体资源标识与 bot 深链"
     ]
   }
 }

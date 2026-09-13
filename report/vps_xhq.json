@@ -1,0 +1,118 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "vps_xhq",
+  "username": "vps_xhq",
+  "url": "https://t.me/vps_xhq",
+  "title": "风向旗VPS/主机优惠",
+  "category": "VPS/主机优惠aff分销",
+  "growth_short": "主机优惠aff",
+  "one_liner": "5万订阅的VPS/主机优惠号:推DMIT/搬瓦工/NetCup等主机与域名优惠,aff关键词191次、优惠码67次,ERR 51%、转发87/帖,是重度aff分销的主机推荐号。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/vps_xhq.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-02"
+    ],
+    "note": "0.3条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 49587,
+    "median_views": null,
+    "err_pct": 51.0,
+    "mature_posts": null,
+    "forwards_per_post": 86.7,
+    "er_pct": 0.57,
+    "posts_per_day": 0.3,
+    "views_available": true,
+    "media_mix": {
+      "empty": 299
+    },
+    "deleted_pct": 0.3,
+    "activity_note": "ERR 51% + 转发87/帖:主机优惠是折腾党刚需,扩散强"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "VPS/主机/域名优惠资讯+aff链接(dmit/搬瓦工bwh/NetCup),兼发海外银行开户/薅羊毛资讯",
+    "delivery": "主机优惠指路(带aff);来源nodeseek/hostloc社区",
+    "curation": "聚合VPS优惠+自荐aff,半原创",
+    "schedule": "0.3条/天"
+  },
+  "growth": {
+    "strategy": "主机优惠刚需 + aff",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "VPS优惠刚需",
+        "evidence": "ERR 51%、转发87/帖",
+        "note": "折腾党/建站/翻墙自建刚需"
+      }
+    ],
+    "signals": {
+      "subscribers": 49587,
+      "err_pct": 51.0,
+      "forwards_per_post": 86.7
+    },
+    "assessment": "主机优惠aff号,51%ERR说明VPS优惠是刚需。变现走主机/域名aff返佣(191次aff)。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      10,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(跟踪优惠)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约15-30小时/月"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          10,
+          150
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      5000,
+      25000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "VPS/主机/域名aff返佣",
+    "streams": [
+      {
+        "name": "主机aff返佣",
+        "evidence": "aff 191、优惠码67、dmit/bwh",
+        "cny_month": [
+          5000,
+          25000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "主机aff按成交返佣,高ERR带来高转化"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "VPS/主机/域名优惠aff,属正常联盟营销,内容合规",
+      "部分主机用于自建翻墙,但推荐主机本身中立;整体风险低"
+    ]
+  }
+}

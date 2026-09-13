@@ -1,0 +1,124 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "english_learning_discuss",
+  "username": "english_learning_discuss",
+  "url": "https://t.me/english_learning_discuss",
+  "title": "英文学习桌",
+  "category": "社会议题图文转载(名不副实,已停更)",
+  "growth_short": "标签引流已停更",
+  "one_liner": "1.12万订阅的『英文学习桌』:名为英语学习、实为转载Tumblr/社媒的中文社会议题图文(女权/跨性别/残障等),ERR约1.8%、已于2026-05停更,呈休眠。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/english_learning_discuss.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-03-31",
+      "2026-05-08"
+    ],
+    "note": "跨度38天;最后更新2026-05-08,已停更约4个月,休眠"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "subscribers": 11217,
+    "median_views": 206,
+    "mean_views": 320,
+    "p10_views": 140,
+    "p90_views": 343,
+    "err_pct": 1.8,
+    "mature_posts": 300,
+    "reactions_total": 0,
+    "forwards_total": 99,
+    "forwards_per_post": 0.3,
+    "er_pct": 0.0,
+    "posts_per_day": 7.8,
+    "views_available": true,
+    "media_mix": {
+      "photo": 289,
+      "document": 8
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "ERR 1.8% 低;名为英语学习实为社会议题图文转载;已停更,休眠"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "配图 + 中文社会议题短文(女权/跨性别/残障/劳工等),多标source;来源tumblr/facebook",
+    "delivery": "转载翻译社媒图文,零原创",
+    "curation": "搬运Tumblr/facebook社会议题内容,与频道名(英语学习)不符",
+    "schedule": "曾7.8条/天,2026-05后停更"
+  },
+  "growth": {
+    "strategy": "『英语学习』标签引流(名不副实)",
+    "paid_acquisition": "unknown",
+    "mechanisms": [
+      {
+        "name": "学习标签引流",
+        "evidence": "频道名英文学习",
+        "note": "用学习名吸粉,内容实为社会议题"
+      }
+    ],
+    "signals": {
+      "subscribers": 11217,
+      "err_pct": 1.8,
+      "forwards_per_post": 0.3
+    },
+    "assessment": "名不副实:挂英语学习之名、发社会议题图文。ERR 1.8%低、已停更4个月,呈休眠。无明显变现。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      50
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(翻译转载)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约10-20小时/月,已停"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      500
+    ],
+    "est_scope": "本频道可归因",
+    "model": "基本无变现",
+    "streams": [
+      {
+        "name": "无",
+        "evidence": "样本内无变现动作",
+        "cny_month": [
+          0,
+          500
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "兴趣/议题驱动,已停更,几乎不变现"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "转载社媒社会议题图文,涉来源版权;内容为社会议题讨论",
+      "无灰产/成人/诈骗;已停更;整体风险低"
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "StickerGroup",
+  "username": "StickerGroup",
+  "url": "https://t.me/StickerGroup",
+  "title": "贴纸交流群",
+  "category": "Telegram 贴纸分享/求制作群",
+  "growth_short": "贴纸刚需",
+  "one_liner": "3.9万成员的Telegram贴纸交流群:贴纸分享/求制作/LINE转TG(25条/天),兴趣型社区,几乎无变现,风险低。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/StickerGroup.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "—"
+    ],
+    "note": "群无per-message阅读;online未取(会话占用)"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 39614,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读,ERR不适用",
+    "messages_per_day": 25.1,
+    "deleted_ratio_pct": 24.6,
+    "activity_note": "25条/天;贴纸分享/詢問/求制作"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "贴纸分享/詢問/求制作,LINE贴纸转TG(line2tgsbot),配贴纸制作bot",
+    "ad_injection": "无",
+    "delivery": "贴纸分享与求助社区",
+    "schedule": "全天候"
+  },
+  "growth": {
+    "strategy": "贴纸兴趣社区",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "贴纸刚需",
+        "evidence": "25条/天、詢問20",
+        "note": "TG贴纸爱好者/求制作"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 25.1
+    },
+    "assessment": "TG贴纸交流兴趣群,真人分享/求制作。几乎无变现,纯兴趣社区。低风险。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      50
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理bot",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      500
+    ],
+    "est_scope": "群本体",
+    "model": "基本无变现",
+    "streams": [
+      {
+        "name": "无",
+        "evidence": "无广告",
+        "cny_month": [
+          0,
+          500
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "兴趣社区,不变现"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "TG贴纸分享兴趣社区,内容中立",
+      "LINE贴纸转TG有轻微版权灰区;无灰产,风险低"
+    ]
+  }
+}

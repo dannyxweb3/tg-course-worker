@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "geekshare",
   "username": "geekshare",
@@ -7,7 +8,7 @@
   "title": "极客分享",
   "category": "极客/开源/AI 工具 精选（自有站 + 联盟）",
   "growth_short": "内容质量自然转发",
-  "one_liner": "6.45 万订阅的极客工具策展号：开源/AI/在线工具精选，自有站 geekshare.org，ERR 17.5%、转发 76/帖（本批内容号最高之一），夹带 VPS/warp 等联盟链。",
+  "one_liner": "本轮转发力最强的正规工具号:中位转发 70/帖,是 aboutrss 的 3.5 倍。但阅读从 2026-02 峰值 18,671 跌到 08 月 8,514(腰斩),转发率却纹丝不动(66-84 横盘)——流失的是泛读者,核心极客几乎没走。",
   "analyzed_at": "2026-09-13T13:45:00Z",
   "source": {
     "method": "telethon",
@@ -27,13 +28,13 @@
     "mean_views": 12286,
     "p10_views": 8090,
     "p90_views": 18078,
-    "err_pct": 17.5,
+    "err_pct": 17.54,
     "mature_posts": 289,
     "reactions_total": 5169,
     "forwards_total": 22888,
     "forwards_per_post": 76.3,
     "er_pct": 0.14,
-    "posts_per_day": 1.0,
+    "posts_per_day": 0.99,
     "views_available": true,
     "media_mix": {
       "photo": 260,
@@ -42,91 +43,150 @@
       "document": 1
     },
     "deleted_pct": 45.9,
-    "activity_note": "ERR 17.5%、转发 76/帖，高质量工具策展的忠实受众，扩散强"
+    "activity_note": "阅读 -54% 而转发中位横盘 66-84,是关键组合:内容质量下降会先反映在转发(主动行为,对质量最敏感);被限流则两者同跌;只有阅读跌而转发不跌,说明流失的是随手滑过的泛读者。2026-02 的异常峰值(18,671)+样本内一条 25,040 阅读的自述帖『怎么突然迎来了泼天流量?哪个小可爱曝光了我』,印证年初有一波外部流量涌入但未留存。刷量检验:反应≥50 的帖 n=10、CV 中位 1.189([102,28,13,9,8]),标准幂律,无刷量。",
+    "forwards_median": 70,
+    "views_trend_by_month": {
+      "2025-11": 11997,
+      "2025-12": 12027,
+      "2026-01": 13935,
+      "2026-02": 18671,
+      "2026-03": 17458,
+      "2026-04": 13410,
+      "2026-05": 10031,
+      "2026-06": 9071,
+      "2026-07": 8230,
+      "2026-08": 8514
+    },
+    "forwards_median_by_month": {
+      "2025-11": 80,
+      "2026-02": 82,
+      "2026-05": 84,
+      "2026-06": 42,
+      "2026-07": 76,
+      "2026-08": 67
+    }
   },
   "implementation": {
     "publish_identity": "user",
-    "post_structure": "配图 + 点评 + 指向开源项目/在线工具/自有站(geekshare.org 126)的链接;标签 #开源 #工具 #AI #在线工具 #建站",
-    "delivery": "指路为主(github/自有站);少量 VPS/warp 联盟链",
-    "curation": "人工策展开源与 AI 工具、趣站、建站资源",
-    "schedule": "约 1 条/天，晚 21-22 点",
+    "post_structure": "图文 260/300,正文中位 163 字/9 行。标签 #开源 42、#工具 37、#AI 29、#在线工具 19、#建站 16、#趣站 14。",
+    "delivery": "github 外链 228 次为最大来源,自有站 geekshare.org 126 次。三 bot 矩阵:几乎每条同时挂 igeekshare(228)与 Geekshare_bot(227),另有 GeeksoBot(117),是标准的『频道+备份频道+bot』三件套,用于防封与承接转化。",
+    "curation": "人工策展+实测。爆款分三类:猎奇(爱泼斯坦邮箱 70,736 阅读/302 转发,为中位 6.3 倍)、灰色资源(Collect-IPTV 261 转发、Shadowrocket 改 iOS 定位 235 转发)、实用工具(WindowsClear 248、OtterHub 232)。另有『白嫖』11 次的羊毛帖(白嫖一年 Manus Pro 36,105 阅读)。",
+    "schedule": "晚间人工批量:21 点 65 条、22 点 55、20 点 26,三小时占 49%;<10 秒间隔占 27% 说明大量成组连发;分钟与秒无固定聚集,非 cron。",
     "retention": "约 46% 滚动删除",
-    "growth": "内容质量 + 自有站互导"
+    "growth": "内容质量 + 自有站互导",
+    "ad_injection": "0 条明确报价帖,但『频道主』出现 8 次说明存在广告洽谈语境。",
+    "note": "删除率 45.9%,id 差为 3 出现 63 次(每留 1 条删 2 条),推测为『正文+图+补充』三条一组只留其一,或过期资源链接批量清理。"
   },
   "growth": {
-    "strategy": "高质量工具策展的口碑增长 + 自有站互导",
-    "paid_acquisition": "none",
+    "strategy": "高转发工具内容驱动 + 偶发猎奇破圈 + 白嫖羊毛钩子",
+    "paid_acquisition": "unknown",
     "mechanisms": [
       {
-        "name": "内容质量",
-        "evidence": "ERR 17.5%、转发 76/帖",
-        "note": "值得转发的工具精选"
+        "name": "高转发内容",
+        "evidence": "中位 70/帖、最高 302",
+        "note": "核心增长引擎——工具内容天然值得转给同事朋友"
       },
       {
-        "name": "自有站 geekshare.org",
-        "evidence": "126 链接指向自有站",
-        "note": "内容主站沉淀"
+        "name": "猎奇破圈",
+        "evidence": "爱泼斯坦邮箱 70,736 阅读",
+        "note": "偶发爆款带来泛流量但留存差"
+      },
+      {
+        "name": "白嫖羊毛",
+        "evidence": "『白嫖』11 次",
+        "note": "刚需钩子"
+      },
+      {
+        "name": "三件套矩阵",
+        "evidence": "频道 + igeekshare + 2 个 bot",
+        "note": "防封与转化承接"
       }
     ],
     "signals": {
       "subscribers": 64501,
-      "err_pct": 17.5,
+      "err_pct": 17.54,
       "forwards_per_post": 76.3
     },
-    "assessment": "6.45 万订阅、17.5% ERR、转发 76/帖，是运营良好的极客工具号。靠内容质量自然扩散，有自有站做主站。"
+    "assessment": "无买粉直接证据,但 2026-02 异常峰值来源不明,故标 unknown。转发力是它最强的资产,也是它在阅读腰斩后仍能维持核心受众的原因。"
   },
   "cost": {
     "recurring_cny_month": [
-      50,
-      400
+      80,
+      300
     ],
     "onetime_cny": [
-      0,
-      0
+      300,
+      2500
     ],
     "items": [
       {
-        "name": "自有站 geekshare.org 托管+域名",
-        "cny_month": [
-          30,
-          200
+        "name": "【启动】自有站 geekshare.org",
+        "cny_onetime": [
+          300,
+          1500
+        ],
+        "note": "域名 + 主机"
+      },
+      {
+        "name": "【启动】3 个 bot 开发",
+        "cny_onetime": [
+          0,
+          1000
         ]
       },
       {
-        "name": "运营时间（策展+写点评，约 20-40 小时/月）",
+        "name": "选题与写作",
         "cny_month": [
           0,
           0
+        ],
+        "note": "40-80 小时/月:0.99 条/天但每条 163 字 + 配图 + 实测"
+      },
+      {
+        "name": "自有站托管",
+        "cny_month": [
+          50,
+          200
         ]
       },
       {
-        "name": "发布工具/VPS",
+        "name": "3 个 bot 托管",
         "cny_month": [
-          20,
-          200
+          30,
+          100
         ]
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
-      1000,
-      6000
+      4500,
+      24000
     ],
-    "model": "联盟(VPS/工具) + 软广 + 自有站流量",
+    "model": "VPS/服务联盟返佣 + 广告位 + 自有站广告",
     "streams": [
       {
-        "name": "VPS/工具联盟",
-        "evidence": "racknerd/warp 等联盟链",
+        "name": "VPS/服务联盟返佣",
+        "evidence": "URL 参数 aff 5、pid 5、ref 2;外链 my.racknerd.com 5 次",
         "cny_month": [
-          500,
-          3000
+          1000,
+          6000
+        ],
+        "confidence": "medium",
+        "note": "本轮少数能在 URL 参数层直接确认联盟返佣的样本"
+      },
+      {
+        "name": "广告位",
+        "evidence": "广告 12、频道主 8、商务 1、置顶 1;0 条明确报价帖",
+        "cny_month": [
+          3000,
+          15000
         ],
         "confidence": "low"
       },
       {
-        "name": "App/工具软广",
-        "evidence": "apps.apple.com/chromewebstore 链接",
+        "name": "自有站广告",
+        "evidence": "geekshare.org 126 次导流",
         "cny_month": [
           500,
           3000
@@ -134,14 +194,16 @@
         "confidence": "low"
       }
     ],
-    "note": "以内容为主，变现克制;高 ERR 使联盟/软广转化好于平均"
+    "note": "锚点:6.45 万订阅、中位阅读 11,313、转发 70/帖的极客受众,按 CPM ¥50-150、每周 2 条广告折算约 ¥5,400-16,300/月,与估算区间吻合。趋势预警:阅读腰斩会直接压低广告报价——若按曝光计价,其广告位价值在 10 个月里已缩水约一半,这是本号最需关注的经营风险。",
+    "est_scope": "本频道 + 自有站(bot 侧不可观测)"
   },
   "risk": {
-    "level": "low",
+    "level": "medium",
     "notes": [
-      "开源与工具推荐 + 自有站导流，属正常技术内容分享，无灰产、无盗版分发",
-      "含 VPS/warp 等联盟推广属正常联盟营销",
-      "偶有翻墙工具推荐属技术中立内容"
+      "主体为开源工具与在线服务策展(GitHub 外链 228 次),这部分完全合法且质量高",
+      "但外壳下掺入几类灰色内容:IPTV 直播源仓库(转发 261,涉电视信号版权)、软件激活与破解(激活 9、破解 5)、『仅需 Shadowrocket 实现 iOS 定位修改』(转发 235,翻墙工具的规避用法),以及外链中出现成人站 javdb.com(3 次)",
+      "变现侧的 VPS 联盟返佣(aff/pid 参数、racknerd)本身是正规联盟营销,无问题",
+      "整体判 medium 偏高:它不是灰产号,但灰色内容的占比与扩散力(IPTV 261 转发、定位修改 235 转发)已不容忽略——恰恰是这些内容贡献了它的高转发"
     ]
   }
 }

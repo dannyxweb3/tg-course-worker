@@ -1,0 +1,117 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "sspai",
+  "username": "sspai",
+  "url": "https://t.me/sspai",
+  "title": "少数派 sspai",
+  "category": "效率/数码 优质媒体(对照组)",
+  "growth_short": "老牌数码媒体",
+  "one_liner": "3.8万订阅的『少数派』官方频道:老牌效率/数码/App媒体的TG分发,全量sspai.com,ERR 6.5%,内容正规原创,是数码媒体对照组。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/sspai.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "3.4条/天,全量sspai.com"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 38159,
+    "median_views": null,
+    "err_pct": 6.5,
+    "mature_posts": null,
+    "forwards_per_post": 4.1,
+    "er_pct": 0.03,
+    "posts_per_day": 3.4,
+    "views_available": true,
+    "media_mix": {
+      "empty": 300
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "ERR 6.5%;来源自有站sspai.com,正规原创媒体"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "少数派文章标题+摘要+sspai.com链接",
+    "delivery": "自有站(sspai.com)内容TG分发",
+    "curation": "少数派老牌数码/效率媒体自有原创内容",
+    "schedule": "3.4条/天"
+  },
+  "growth": {
+    "strategy": "老牌数码媒体品牌",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "数码内容口碑",
+        "evidence": "自有站、正规媒体",
+        "note": "十余年数码媒体品牌"
+      }
+    ],
+    "signals": {
+      "subscribers": 38159,
+      "err_pct": 6.5,
+      "forwards_per_post": 4.1
+    },
+    "assessment": "少数派官方TG分发,内容正规原创。变现在主站(会员/广告/电商),TG是分发位。对照组。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "媒体成本在主站",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      3000
+    ],
+    "est_scope": "含主站的品牌整体",
+    "model": "主站会员/广告/电商",
+    "streams": [
+      {
+        "name": "主站变现",
+        "evidence": "sspai会员/Prime/派商店",
+        "cny_month": [
+          0,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现主要在sspai.com主站"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "老牌正规数码/效率媒体,自有原创内容,合规",
+      "无灰产/成人/侵权;数码媒体对照组"
+    ]
+  }
+}

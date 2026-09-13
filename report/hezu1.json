@@ -1,0 +1,116 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "hezu1",
+  "username": "hezu1",
+  "url": "https://t.me/hezu1",
+  "title": "合租通知群",
+  "category": "流媒体/软件账号合租(群)",
+  "growth_short": "合租刚需",
+  "one_liner": "6.9万成员的账号合租群:Netflix/联合会员等合租车位撮合(240条/天),与 hezu2 同类,属账号共享灰产。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/hezu1.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "群无per-message阅读;online未取"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 69276,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读",
+    "messages_per_day": 240.8,
+    "deleted_ratio_pct": 62.2,
+    "activity_note": "240条/天高活跃;合租车位撮合;hezu.wiki为配套"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "合租车位通知/撮合(Netflix/联合会员/非审核车),成交走客服bot;配 hezu.wiki",
+    "ad_injection": "合租车位即广告,少量机场",
+    "delivery": "账号合租撮合",
+    "schedule": "全天候高活跃"
+  },
+  "growth": {
+    "strategy": "合租省钱刚需",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "合租刚需",
+        "evidence": "240条/天车位撮合",
+        "note": "省钱刚需聚人"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 240.8
+    },
+    "assessment": "与hezu2同类的账号合租群,6.9万成员高活跃。变现是合租差价+拉新。账号共享灰产。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      3000,
+      20000
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "账号进货",
+        "cny_month": [
+          3000,
+          18000
+        ],
+        "note": "批量买各平台会员"
+      },
+      {
+        "name": "客服bot/服务器/wiki",
+        "cny_month": [
+          100,
+          800
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      5000,
+      30000
+    ],
+    "est_scope": "群本体",
+    "model": "合租差价 + 拉新",
+    "streams": [
+      {
+        "name": "合租车位差价",
+        "evidence": "高频车位撮合",
+        "cny_month": [
+          5000,
+          30000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "薄利多单,受账号成本与退单影响"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "账号合租违反流媒体平台ToS,涉盗号/共享欺诈灰区",
+      "跨境订阅代付有支付合规灰区;无博彩/成人,整体中等"
+    ]
+  }
+}

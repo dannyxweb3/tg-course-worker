@@ -1,0 +1,140 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "TestFlightCN",
+  "username": "TestFlightCN",
+  "url": "https://t.me/TestFlightCN",
+  "title": "在花🎗️科技圈",
+  "category": "科技/苹果资讯 + TestFlight 分享(头部)",
+  "growth_short": "科技资讯高互动",
+  "one_liner": "28.2万订阅的头部科技资讯号:苹果/AI/科技新闻+TestFlight名额分享,reactions 12.6万、ER 1.8%、转发63/帖,是全批次互动最强的内容号之一。",
+  "analyzed_at": "2026-09-13T14:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/TestFlightCN.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-29",
+      "2026-09-13"
+    ],
+    "note": "跨度14.9天、20条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 281975,
+    "median_views": 24344,
+    "mean_views": 24893,
+    "p10_views": 23045,
+    "p90_views": 27128,
+    "err_pct": 8.6,
+    "mature_posts": 151,
+    "reactions_total": 126423,
+    "forwards_total": 19008,
+    "forwards_per_post": 63.4,
+    "forwards_median": 51.0,
+    "er_pct": 1.8,
+    "posts_per_day": 20.1,
+    "views_available": true,
+    "media_mix": {
+      "photo": 161,
+      "empty": 129,
+      "document": 7
+    },
+    "deleted_pct": 3.5,
+    "activity_note": "ER 1.8% + reactions 12.6万 是全批次互动天花板级;转发63/帖,真实头部科技受众"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "科技/苹果/AI 资讯短讯 + 图 + 外链(x/微博/微信/苹果/bloomberg/macrumors/reuters);穿插 TestFlight 名额",
+    "delivery": "资讯图文为主,少量视频;外链指向各大科技媒体与官方",
+    "curation": "半原创编译+搬运科技新闻,选题紧跟苹果/AI 热点;TestFlight 分享是特色钩子",
+    "schedule": "20条/天,全天铺(10-15点、21点高峰)"
+  },
+  "growth": {
+    "strategy": "科技资讯刚需 + 高互动裂变",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "科技热点刚需",
+        "evidence": "ER 1.8%、reactions 12.6万",
+        "note": "苹果/AI 热点受众广"
+      },
+      {
+        "name": "TestFlight 名额钩子",
+        "evidence": "TF 分享",
+        "note": "稀缺名额拉互动"
+      }
+    ],
+    "signals": {
+      "subscribers": 281975,
+      "err_pct": 8.6,
+      "forwards_per_post": 63.4
+    },
+    "assessment": "28万大盘仍有 8.6% ERR + 极高 reactions,是真实头部科技媒体号。无买粉痕迹,靠内容质量与热点时效。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      800
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(编译资讯,高频)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约60-120小时/月,可能多人"
+      },
+      {
+        "name": "服务器/工具/LLM",
+        "cny_month": [
+          100,
+          800
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      15000,
+      60000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "商务广告(科技/App/硬件)",
+    "streams": [
+      {
+        "name": "商务广告位",
+        "evidence": "合作/商务;28万高互动盘广告单价高",
+        "cny_month": [
+          12000,
+          50000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "App/TF/硬件推广",
+        "evidence": "TF 分享+科技受众",
+        "cny_month": [
+          3000,
+          15000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "头部科技号广告价值高,区间宽因单价不可见"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "科技新闻编译/搬运有著作权/来源合规灰区",
+      "TestFlight 名额分享涉苹果 ToS 灰区;无灰产/无成人,整体中等偏低"
+    ]
+  }
+}

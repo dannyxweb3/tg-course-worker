@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "cnbeta_com",
   "username": "cnbeta_com",
@@ -7,7 +8,7 @@
   "title": "cnBeta.COM 中文业界资讯站 - 总频道",
   "category": "科技资讯 RSS 分发（新闻站导流）",
   "growth_short": "新闻站自然流量",
-  "one_liner": "cnBeta 科技资讯站的 Telegram 分发频道：每帖一条精选新闻 + 指向 cnbeta.com.tw，2.75 万订阅、ERR 6.4%，是把新闻站内容同步到墙外读者的机构 feed。",
+  "one_liner": "老牌中文科技站 cnBeta 的 TG 分发总频道。历史消息号已到 479,920——按当前 3.67 条/天要跑 358 年,说明曾以数量级更高的速率运行过。真正结构是五频道矩阵:每条正文底部固定挂 4 个分品类子频道,300 条累计 1,115 次 t.me 引用全部是自家的。",
   "analyzed_at": "2026-09-13T14:45:00Z",
   "source": {
     "method": "telethon",
@@ -27,101 +28,140 @@
     "mean_views": 1610,
     "p10_views": 490,
     "p90_views": 2360,
-    "err_pct": 6.4,
+    "err_pct": 6.43,
     "mature_posts": 275,
     "reactions_total": 1272,
     "forwards_total": 1252,
     "forwards_per_post": 4.2,
     "er_pct": 0.27,
-    "posts_per_day": 3.7,
+    "posts_per_day": 3.67,
     "views_available": true,
     "media_mix": {
       "webpage": 300
     },
     "deleted_pct": 0.7,
-    "activity_note": "ER 0.27% 对新闻 feed 属正常；内容是新闻导流而非资源分发"
+    "activity_note": "历史消息号 479,920 按当前速率需 358 年,不成立——合理解释是频道(或前身)曾以极高频率全量同步 cnBeta 新闻,后收敛为现在的『总频道(精选新闻)』模式。趋势:阅读中位 07 月 2,034 → 08 月 1,835 → 09 月 1,390 连续两月下滑,转发从 5 降到 3,呈温和衰减。",
+    "forwards_median": 3,
+    "historical_message_id": 479920
   },
   "implementation": {
     "publish_identity": "bot",
-    "post_structure": "新闻标题 + 导语 link preview 卡片，指向 cnbeta.com.tw 文章",
-    "delivery": "内容主站是 cnbeta.com.tw，TG 做分发导流;不托管资源",
-    "schedule": "约 3.7 条/天，白天上班时段为主",
-    "growth": "新闻时效 + 老牌资讯站品牌"
+    "post_structure": "300/300 全部为链接预览卡,正文中位 70 字/3 行 = 标题 + 导航 footer。footer 固定为『[精选新闻] · [软硬件技术] · [互动娱乐] · [商业产业] · [趣闻八卦]』。",
+    "delivery": "五频道分品类矩阵:cnbeta_com / cnbeta_com_tech / cnbeta_com_media / cnbeta_com_business / cnbeta_com_buzz 各被引用 223 次,t.me 累计 1,115 次全部指向自家。外链 www.cnbeta.com.tw 300 次全部导回母站——注意域名为 .com.tw,运营主体已迁至台湾域名。",
+    "schedule": "半自动跟随母站发稿:小时覆盖全天,8 点 55 条为高峰,其次 15-16 点 47 条;分钟与秒无固定聚集,间隔中位 7,264 秒,<60 秒仅占 6%,是一条一条推而非批量。",
+    "growth": "新闻时效 + 老牌资讯站品牌",
+    "ad_injection": "无。0 条招商帖,『广告』仅 1 次且出现在新闻正文中。",
+    "curation": "纯管道无编辑加工。总频道只发精选(3.67 条/天)避免刷屏,想看某品类全量的用户被导流到子频道。代价是转发率低(4.2/帖):每条带一长串导航 footer,转发出去显得像广告。"
   },
   "growth": {
-    "strategy": "老牌科技资讯站的品牌自然流量，TG 做墙外分发",
+    "strategy": "母站品牌自然沉淀 + 五频道矩阵分流,只做留存不做增长",
     "paid_acquisition": "none",
     "mechanisms": [
       {
-        "name": "新闻时效",
-        "evidence": "日更精选新闻",
-        "note": "资讯刚需"
+        "name": "母站品牌",
+        "evidence": "二十余年老牌资讯站",
+        "note": "频道靠品牌自然沉淀"
       },
       {
-        "name": "品牌沉淀",
-        "evidence": "cnBeta 老牌资讯站",
-        "note": "存量读者"
+        "name": "五频道矩阵分流",
+        "evidence": "每条挂 4 个子频道,累计 1,115 次引用",
+        "note": "用分品类承接不同兴趣,降低总频道刷屏感"
+      },
+      {
+        "name": "精选策略",
+        "evidence": "总频道仅 3.67 条/天",
+        "note": "克制推送以保留订阅"
+      },
+      {
+        "name": "零外部依赖",
+        "evidence": "无互推、无买粉、无 bot、无 @提及",
+        "note": "完全自然"
       }
     ],
     "signals": {
       "subscribers": 27502,
-      "err_pct": 6.4,
+      "err_pct": 6.43,
       "forwards_per_post": 4.2
     },
-    "assessment": "机构新闻 feed，靠品牌与时效维持读者。TG 频道是网站流量的墙外补充渠道，本身不独立变现。"
+    "assessment": "它不做增长只做留存。五频道矩阵的设计目的明确:让高频用户去子频道、让低频用户在总频道不被打扰——资讯站在 IM 渠道上的标准分发解法。转发榜前三全是『用户被企业坑』的消费者权益新闻(远程锁车 34、蔚来闪退 21、批量劝退 25),印证触及切身利益的内容扩散最快。"
   },
   "cost": {
     "recurring_cny_month": [
-      0,
-      200
+      20,
+      60
     ],
     "onetime_cny": [
       0,
-      0
+      500
     ],
     "items": [
       {
-        "name": "自动 RSS→TG 分发",
-        "cny_month": [
+        "name": "【启动】5 个频道创建",
+        "cny_onetime": [
           0,
-          100
-        ],
-        "note": "网站采编成本不在 TG 侧"
+          0
+        ]
       },
       {
-        "name": "VPS/bot",
+        "name": "【启动】母站→TG 同步脚本",
+        "cny_onetime": [
+          0,
+          500
+        ],
+        "note": "需按品类分流"
+      },
+      {
+        "name": "同步脚本托管",
+        "cny_month": [
+          20,
+          60
+        ]
+      },
+      {
+        "name": "TG 端人力",
         "cny_month": [
           0,
-          100
-        ]
+          0
+        ],
+        "note": "自动同步,仅需维护"
+      },
+      {
+        "name": "母站编辑团队与服务器",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "不计入本频道口径,属运行二十余年的资讯站机构成本"
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
       0,
-      3000
+      0
     ],
-    "model": "导流至新闻站（站内广告变现），TG 侧近乎不直接变现",
+    "model": "TG 不直接变现,价值是给母站导流",
     "streams": [
       {
-        "name": "网站广告(经由 TG 导流)",
-        "evidence": "300/300 指向 cnbeta.com.tw",
+        "name": "无(TG 端)",
+        "evidence": "0 条招商帖、0 联盟码",
         "cny_month": [
           0,
-          3000
+          0
         ],
-        "confidence": "low"
+        "confidence": "high"
       }
     ],
-    "note": "真实变现在新闻网站的广告，TG 频道是导流层，单独估值意义不大"
+    "note": "导流价值折算:每天 3.67 条 × 1,769 阅读 ≈ 6,500 次曝光,若 10-25% 点击进入母站 → 日均 650-1,600 PV,按中文资讯站 CPM ¥10-30 约合 ¥200-1,400/月的母站广告收入。对 cnBeta 这个体量的站点,TG 渠道更多是品牌存在感与用户触达,而非收入来源。",
+    "est_scope": "TG 端(母站广告收入不计入)"
   },
   "risk": {
-    "level": "low",
+    "level": "medium",
     "notes": [
-      "科技新闻聚合与分发，属正常资讯业务",
-      "历史上新闻聚合有轻微版权争议，属民事范畴",
-      "无灰产、无盗版资源、无成人/博彩要素"
+      "老牌中文科技资讯站的 TG 分发渠道,内容为业界新闻,全部外链回母站,无盗版、无成人、无博彩、无诈骗、零商业变现",
+      "常规项一:新闻聚合与编译的来源著作权边界",
+      "常规项二:内容涉及国内互联网监管、企业争议与社会案件,在大陆语境下属敏感度较高的报道范围,这也是其域名迁至 cnbeta.com.tw 的可能背景",
+      "无灰产要素,UI 上不应与灰产样本同框标红"
     ]
   }
 }

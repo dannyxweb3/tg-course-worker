@@ -1,0 +1,116 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "theblockbeats",
+  "username": "theblockbeats",
+  "url": "https://t.me/theblockbeats",
+  "title": "律动 BlockBeats",
+  "category": "区块链/加密 财经媒体",
+  "growth_short": "加密媒体高频",
+  "one_liner": "3.7万订阅的『律动BlockBeats』官方频道:高频(129条/天)发布区块链/加密行情与资讯,全量自有站,是头部中文加密媒体,面向大陆有合规风险。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/theblockbeats.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "129条/天高频;来源自有站theblockbeats.info"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 37449,
+    "median_views": null,
+    "err_pct": null,
+    "mature_posts": null,
+    "forwards_per_post": 5.9,
+    "er_pct": 0.09,
+    "posts_per_day": 129.5,
+    "views_available": true,
+    "media_mix": {
+      "empty": 300
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "帖未成熟无ERR;高频加密资讯"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "区块链/加密行情+资讯短讯+theblockbeats.info链接;含binance/gmgn等",
+    "delivery": "自有站(律动)内容TG高频分发",
+    "curation": "律动BlockBeats头部中文加密媒体自有内容",
+    "schedule": "129条/天高频"
+  },
+  "growth": {
+    "strategy": "加密媒体品牌+高频",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "加密资讯刚需",
+        "evidence": "129条/天、自有站",
+        "note": "币圈受众高频看行情"
+      }
+    ],
+    "signals": {
+      "subscribers": 37449,
+      "forwards_per_post": 5.9
+    },
+    "assessment": "头部中文加密媒体律动的TG分发。变现在主站(广告/项目合作/研究)。加密媒体面向大陆有合规风险。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "媒体成本在主站(编辑团队)",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          300
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      5000,
+      30000
+    ],
+    "est_scope": "含主站的品牌整体",
+    "model": "项目合作广告/研究/会议",
+    "streams": [
+      {
+        "name": "项目广告/合作",
+        "evidence": "加密项目合作、USDT 20",
+        "cny_month": [
+          5000,
+          30000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "加密媒体广告/项目合作单价高"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "加密/区块链媒体,在中国大陆加密交易受禁,相关资讯/项目推广有合规红线",
+      "内容为行情资讯(非直接荐币),媒体属性;整体中等"
+    ]
+  }
+}

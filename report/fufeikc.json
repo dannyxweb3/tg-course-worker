@@ -1,0 +1,118 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "fufeikc",
+  "username": "fufeikc",
+  "url": "https://t.me/fufeikc",
+  "title": "付费课(资源分享)",
+  "category": "盗版付费课程/资源网盘 + 机场",
+  "growth_short": "网盘资源刚需",
+  "one_liner": "4万订阅的盗版付费课程/资源号:编程/设计/代理等付费课经网盘(百度/夸克/阿里)分享,ERR 24.1%、转发29.8/帖,夹带机场,属盗版课程分发。",
+  "analyzed_at": "2026-09-13T16:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/fufeikc.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-10"
+    ],
+    "note": "0.3条/天;id缺口48%"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 40726,
+    "median_views": null,
+    "err_pct": 24.1,
+    "mature_posts": null,
+    "forwards_per_post": 29.8,
+    "er_pct": 0.04,
+    "posts_per_day": 0.3,
+    "views_available": true,
+    "media_mix": {
+      "document": 5,
+      "empty": 0
+    },
+    "deleted_pct": 47.6,
+    "activity_note": "ERR 24.1%+转发29.8/帖:付费课白嫖刚需"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "付费课/资源介绍+网盘链接(百度194/夸克56/阿里37),标签#编程资源 #设计 #代理",
+    "delivery": "网盘指路,配发货bot;资源为盗版付费课/软件",
+    "curation": "批量搬运盗版付费课程与资源",
+    "schedule": "0.3条/天"
+  },
+  "growth": {
+    "strategy": "盗版付费课刚需",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "付费课白嫖",
+        "evidence": "网盘194、转发29.8/帖",
+        "note": "付费课程白嫖刚需"
+      }
+    ],
+    "signals": {
+      "subscribers": 40726,
+      "err_pct": 24.1,
+      "forwards_per_post": 29.8
+    },
+    "assessment": "盗版付费课/资源网盘号,变现走网盘拉新+机场广告。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(搬运/建盘)",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "网盘/服务器",
+        "cny_month": [
+          30,
+          300
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      10000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "网盘拉新 + 机场广告",
+    "streams": [
+      {
+        "name": "网盘拉新/机场广告",
+        "evidence": "网盘发货、代理72/节点72",
+        "cny_month": [
+          2000,
+          10000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "盗版课引流盘"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "盗版分发付费课程与软件,侵犯著作权",
+      "夹带机场广告;未见博彩,标 high"
+    ]
+  }
+}

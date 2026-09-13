@@ -1,125 +1,222 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "group",
   "slug": "dajiajia",
   "username": "dajiajia",
   "url": "https://t.me/dajiajia",
   "title": "好棒 🌈 羊毛超级搜",
-  "category": "淘客/羊毛返利群（电商 CPS 联盟）",
-  "growth_short": "返利刚需",
-  "one_liner": "9.3 千成员的淘客返利群：自动播报淘宝/京东/拼多多的优惠券与返利链接（CPS 联盟），匿名单向发布、日更约 277 条，靠电商佣金变现。",
-  "analyzed_at": "2026-09-13T14:15:00Z",
+  "category": "淘客 CPS 商品索引库（gigagroup）+ 私域/自有站/Apple ID 矩阵",
+  "growth_short": "买粉铺底+简介导流",
+  "one_liner": "9,324 成员但每条只有 13 人阅读(ERR 0.14%,全样本最低):它不是社群,而是被机器灌入 67 万条商品的检索库;文案用 186 次『亓』替换『元』规避平台风控,真实生意在导出去的 QQ/微信私域、自有站与 Apple ID 买卖。",
+  "analyzed_at": "2026-09-13T20:30:00Z",
   "source": {
     "method": "telethon",
     "script": "scripts/tg_recon.py",
     "dump": "data/recon/dajiajia.jsonl",
     "sample_size": 300,
     "sample_range": [
-      "2026-09-12",
-      "2026-09-13"
+      "2026-09-12T10:14:39+08:00",
+      "2026-09-13T12:17:08+08:00"
     ],
-    "note": "消息均为匿名管理员/机器人单向发布，无普通成员发言样本"
+    "note": "样本仅覆盖 26 小时(276.5 条/天)。实体为 gigagroup(广播群):显示成员/在线数,但消息带 per-message 阅读量,故 ERR 可算且是本号最关键的指标。成员/在线数经 t.me 公开预览页核实。"
   },
   "metrics": {
     "confidence": "high",
-    "members": 9328,
-    "online": 125,
-    "online_pct": 1.3,
+    "members": 9324,
+    "online": 166,
+    "online_pct": 1.8,
     "subscribers": null,
-    "median_views": null,
-    "err_pct": null,
-    "views_available": false,
-    "views_note": "群无 per-message 阅读量",
-    "messages_per_day": 277,
-    "bot_share_pct": null,
+    "median_views": 13,
+    "mean_views": 13,
+    "p10_views": 1,
+    "p90_views": 28,
+    "err_pct": 0.14,
+    "views_available": true,
+    "views_note": "gigagroup 具备 per-message 阅读量。中位阅读 13 / 成员 9,324 = ERR 0.14%,为全部样本最低。按帖龄分桶验证:阅读在 8-12h 见顶后不再增长,排除『未长熟』解释。",
+    "messages_per_day": 276.5,
     "reactions_total": 1,
     "forwards_total": 0,
     "forwards_per_post": 0.0,
+    "replies_total": 0,
+    "deleted_ratio_pct": 0.3,
     "id_span_sampled": [
       674591,
       674891
     ],
-    "deleted_ratio_pct": 0.3,
-    "activity_note": "在线 1.3%，几乎全为匿名单向播报，互动近乎为零——是自动化返利播报群而非社区"
+    "historical_message_id": 674891,
+    "median_post_interval_sec": 206,
+    "activity_note": "反应 1、转发 0、回复 0 的组合在 150+ 样本中绝无仅有;在线 166 与每条 13 阅读严重背离,指向挂机/僵尸成员或全员静音。活跃度指标对本号失效,真正的量级指标是历史消息号 674,891(按当前速率需 6.7 年)。"
   },
   "implementation": {
-    "publish_identity": "bot_anonymous",
-    "chat_type": "megagroup",
-    "post_structure": "商品图 + 券后价/返利说明 + 淘宝/京东/拼多多联盟短链(s.click.taobao.com 139、u.jd.com 100、p.pinduoduo.com)",
-    "delivery": "CPS 联盟深链(阿里妈妈/京东联盟/多多进宝)，用户点击下单产生佣金",
-    "automation": "匿名单向自动播报，无真人互动",
-    "schedule": "日更约 277 条，白天 10-16 点为主",
-    "growth": "羊毛/优惠刚需"
+    "publish_identity": "bot",
+    "chat_type": "gigagroup",
+    "post_structure": "商品主图(219/300) + 3-7 行短文案:品名/卖点/到手价 + 联盟深链或淘口令。文案含系统性同音形近字替换:亓=元(186次)、虹=红(30)、饭=返(14)、锁=撸(4);链接域名做大小写混淆(s.click.Taobao.com)。",
+    "ad_injection": "群内不投广告。全部导流写在群简介里(金数据表单收 QQ/微信、@yangwangpindao、tb.applebl.com、wohaobang.cn、@haobangdada)——简介即广告位。",
+    "delivery": "官方联盟深链:u.jd.com(74)、s.click.taobao.com(62)、p.pinduoduo.com(6);271/300 条带同一渠道码 `/ Cb79`,另有 270 次括号淘口令。全部成交归集到单一淘客账号。",
+    "curation": "机器选品:上游采集+转链+配图+模板文案,零人工。4 条正文漏出 `[消息降级]` `[img]` 等上游系统状态标记,是自动化流水线的直接证据。",
+    "schedule": "非固定 cron:发布间隔中位 206 秒、p25 77 秒、最短 2 秒,秒数与分钟个位数均匀分布,属『选品系统出货即推』的连续流。24 小时运行(0 点 18 条),10-16 点为货源高峰。",
+    "retention": "缺口仅 0.3%,几乎不删——与灰产号 80-99% 的删除率相反,因为它需要保留全部历史供检索。",
+    "note": "群名『羊毛超级搜』、简介『羊毛超级自助搜』、自有站『福利超级搜网站』三处呼应,与 67 万条历史消息互为印证:这是供搜索调用的商品数据库,TG 群是存储层与索引层,不是展示层。"
   },
   "growth": {
-    "strategy": "薅羊毛/优惠券刚需，自动播报聚流量",
-    "paid_acquisition": "unknown",
+    "strategy": "买粉铺底 + 简介矩阵导流 + 靠被检索获得流量(而非推送涨粉)",
+    "paid_acquisition": "subs",
     "mechanisms": [
       {
-        "name": "返利刚需",
-        "evidence": "淘宝/京东/拼多多券后价播报",
-        "note": "省钱刚需吸引价格敏感用户"
+        "name": "成员数与阅读极端背离",
+        "evidence": "9,324 成员 / 中位阅读 13,ERR 0.14%",
+        "note": "成员基本非自然增长;按中文 TG 买粉市价 ¥0.1-0.5/个,铺底成本约 ¥900-4,700"
+      },
+      {
+        "name": "简介即广告位",
+        "evidence": "简介固定挂 2 个自有站 + 2 个 TG 位 + 1 个表单",
+        "note": "群内正文不发广告,全部导流集中在简介"
+      },
+      {
+        "name": "私域抽取",
+        "evidence": "jinshuju.net 表单『捡漏线报QQ微信群』",
+        "note": "把 TG 流量转成可反复触达的 QQ/微信私域资产"
+      },
+      {
+        "name": "检索承接",
+        "evidence": "『超级搜』命名 + 674,891 条历史库存",
+        "note": "不靠推送,靠被搜索命中历史消息"
       }
     ],
     "signals": {
-      "members": 9328,
-      "online_pct": 1.3,
-      "messages_per_day": 277
+      "members": 9324,
+      "err_pct": 0.14,
+      "forwards_per_post": 0.0,
+      "reactions_total": 1
     },
-    "assessment": "自动化淘客返利群，在线率 1.3%、几乎零互动，是单向 CPS 播报工具。规模不大，靠佣金走量。"
+    "assessment": "本号的『增长』不指涨粉,而指扩充可被检索的商品库存。社交属性被 gigagroup 形态从设计上关闭(成员不能发言),反应/转发/回复三项归零。以成员数衡量其价值会高估一个数量级。"
   },
   "cost": {
     "recurring_cny_month": [
-      50,
-      300
+      40,
+      620
     ],
     "onetime_cny": [
-      0,
-      0
+      1100,
+      6300
     ],
     "items": [
       {
-        "name": "淘客采集/转链 bot + VPS",
+        "name": "【启动】阿里妈妈/京东联盟/多多进宝账号",
+        "cny_onetime": [
+          0,
+          0
+        ],
+        "note": "个人实名即可注册,免费"
+      },
+      {
+        "name": "【启动】淘客采集转链系统",
+        "cny_onetime": [
+          0,
+          600
+        ],
+        "note": "开源方案 ¥0;成品淘客机器人一次性 ¥200-600"
+      },
+      {
+        "name": "【启动】自有站建站(tb.applebl.com、wohaobang.cn)",
+        "cny_onetime": [
+          200,
+          1000
+        ],
+        "note": "2 个域名 ¥120-200/年 + 模板/开发"
+      },
+      {
+        "name": "【启动】成员铺底(买粉)",
+        "cny_onetime": [
+          900,
+          4700
+        ],
+        "note": "9,324 成员 × ¥0.1-0.5/个;13 阅读与 9,324 成员的极端背离使买粉成为最可能解释"
+      },
+      {
+        "name": "VPS(采集/转链/投递)",
         "cny_month": [
-          50,
-          300
+          30,
+          100
+        ],
+        "note": "单机足够"
+      },
+      {
+        "name": "第三方淘客 API(大淘客/好单库一类)",
+        "cny_month": [
+          0,
+          500
+        ],
+        "note": "免费额度可覆盖小规模"
+      },
+      {
+        "name": "域名续费摊销(2 个)",
+        "cny_month": [
+          10,
+          20
         ]
       },
       {
-        "name": "运营时间",
+        "name": "TG 群侧人力",
         "cny_month": [
           0,
           0
         ],
-        "note": "全自动转链播报"
+        "note": "全自动,边际运营时间≈0,这正是它能灌 67 万条的原因"
+      },
+      {
+        "name": "私域(QQ/微信)真人运营",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "真人成本在群外,不计入本群口径"
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
-      1000,
-      8000
+      100,
+      1000
     ],
-    "model": "电商 CPS 佣金（淘宝/京东/拼多多联盟）",
+    "est_scope": "仅本群可归因的 CPS 佣金(不含私域/自有站/Apple ID 生意)",
+    "model": "电商 CPS 佣金(淘宝客/京东联盟/多多进宝),全部归集到渠道码 Cb79",
     "streams": [
       {
-        "name": "淘宝/京东/拼多多 CPS 佣金",
-        "evidence": "s.click.taobao.com/u.jd.com/p.pinduoduo.com 联盟深链",
+        "name": "电商 CPS 佣金",
+        "evidence": "271/300 条带同一渠道码 `/ Cb79`;联盟深链 u.jd.com 74 / s.click.taobao.com 62",
         "cny_month": [
-          1000,
-          8000
+          100,
+          1000
         ],
         "confidence": "medium"
+      },
+      {
+        "name": "QQ/微信私域转化",
+        "evidence": "jinshuju 表单导流",
+        "cny_month": null,
+        "confidence": "low",
+        "note": "不可观测,不计入本群口径"
+      },
+      {
+        "name": "Apple ID 买卖(wohaobang.cn)",
+        "evidence": "简介明示『小火箭共享ID 独享ID 兑换码』",
+        "cny_month": null,
+        "confidence": "low",
+        "note": "独立第二门生意,风险高于主业,未抓取站内容"
       }
     ],
-    "note": "合法联盟营销(阿里妈妈/京东联盟)，收入随成交量;9.3k 群规模决定盘子有限"
+    "note": "锚点推算(用实测曝光而非成员数):13 阅读 × 276.5 条/天 ≈ 3,600 曝光/天 → 点击率 1-5% → 36-180 点击 → 转化 2-5% → 1-9 单/天 × 客单均值 35 元 × 佣金 10% ≈ ¥3.5-31/天 ≈ ¥100-950/月。成员数在本号完全失真,按 9,324 成员推算会高估约一个数量级。区间宽的根源:CPS 的点击率/转化率/佣金率三层均在联盟后台,外部不可见;私域与自有站成交完全不可观测。样本仅 26 小时,无法给出收入趋势;但 67 万条存量说明系统已稳定运行多年。"
   },
   "risk": {
-    "level": "low",
+    "level": "medium",
     "notes": [
-      "淘客/CPS 返利是合法的电商联盟营销(阿里妈妈、京东联盟、多多进宝官方计划)",
-      "风险点仅在自动化刷屏/群发合规与平台规则，非灰黑产",
-      "无盗版、无成人、无博彩、无诈骗要素"
+      "【不适用】电商 CPS 联盟营销本身合法:链接全部为淘宝客/京东联盟/多多进宝官方深链,无仿冒、无钓鱼、无私自截流。这是它与灰产号的实质区别,也是整体不判 high 的原因",
+      "诱导补贴套利 + 主动规避平台监测(中等):『0亓速锁』『无券叠限时礼金』『按步骤去拍』诱导套利,并以 186 次字符替换规避平台关键词爬虫(规避行为本身即明知违规的证据),触及《反不正当竞争法》第十二条与各平台推广者协议;后果多为封停推广账号、扣回佣金、拉黑渠道码,属协议/民事层面。若升级为利用漏洞、虚构交易、批量小号套补并致平台重大损失,已有按诈骗罪(《刑法》266 条)定罪判例,但本样本未见组织化批量下单证据",
+      "🔴 简介导流的第二门生意 wohaobang.cn(『小火箭共享ID 独享ID 兑换码』)风险显著高于淘客主业:涉账号买卖、规避付费 App 的著作权问题、以及翻墙工具(Shadowrocket)分发,与本群同属运营方 @haobangdada",
+      "个人信息收集(中等偏低):经金数据表单收集 QQ/微信导入私域,若无合规告知同意机制存在《个人信息保护法》瑕疵",
+      "【无】样本内无博彩、无成人、无盗版影视、无诈骗话术、无资金盘"
     ]
   }
 }

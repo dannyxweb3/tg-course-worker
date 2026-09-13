@@ -1,0 +1,119 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "archlinuxcn",
+  "username": "archlinuxcn",
+  "url": "https://t.me/archlinuxcn",
+  "title": "Arch Linux Chinese Messages",
+  "category": "开源社区官方公告(对照组)",
+  "growth_short": "开源社区自然沉淀",
+  "one_liner": "1.12万订阅的Arch Linux中文社区官方公告频道:发布软件源变更、内核漏洞、社区动态,ERR 81.2%、reactions 1.8万,是纯开源社区的顶级对照组。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/archlinuxcn.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2018-12-29",
+      "2026-09-13"
+    ],
+    "note": "跨度 2815 天(近8年)、0.1 条/天,极低频"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 11165,
+    "median_views": 9064,
+    "mean_views": 8869,
+    "p10_views": 1257,
+    "p90_views": 17111,
+    "err_pct": 81.2,
+    "mature_posts": 295,
+    "reactions_total": 18037,
+    "forwards_total": 5846,
+    "forwards_per_post": 19.5,
+    "forwards_median": 11.0,
+    "er_pct": 0.69,
+    "posts_per_day": 0.1,
+    "views_available": true,
+    "media_mix": {
+      "empty": 223,
+      "webpage": 76,
+      "photo": 1
+    },
+    "deleted_pct": 3.8,
+    "activity_note": "81.2% ERR + reactions 1.8万:纯开源社区的极致粘性,近8年沉淀,是对照组天花板"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "社区公告:软件源/base元包变更、内核提权漏洞汇总、arch-conf等;技术文本+官方外链",
+    "delivery": "指向 archlinuxcn.org/wiki.archlinux.org/gitlab等官方资源",
+    "curation": "社区维护者发布,纯技术公告,零商业",
+    "schedule": "0.1 条/天,随社区事件,工作时段"
+  },
+  "growth": {
+    "strategy": "开源社区自然沉淀",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "社区刚需公告",
+        "evidence": "ERR 81.2%、reactions 1.8万",
+        "note": "Arch用户必看的源变更/漏洞公告"
+      }
+    ],
+    "signals": {
+      "subscribers": 11165,
+      "err_pct": 81.2,
+      "forwards_per_post": 19.5
+    },
+    "assessment": "81.2% ERR 是全样本天花板级,纯开源社区近8年沉淀的极致粘性。零商业化,是对照组标杆。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      0
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "维护者时间(志愿)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "社区志愿维护,无现金成本"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      0
+    ],
+    "est_scope": "本频道",
+    "model": "无变现(社区非营利)",
+    "streams": [
+      {
+        "name": "无",
+        "evidence": "社区公告,无广告无变现",
+        "cny_month": [
+          0,
+          0
+        ],
+        "confidence": "high"
+      }
+    ],
+    "note": "非营利开源社区,不变现"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "开源社区官方公告,完全合规",
+      "无任何灰产/侵权/成人;顶级对照组"
+    ]
+  }
+}

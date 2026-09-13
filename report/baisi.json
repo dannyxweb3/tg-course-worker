@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "baisi",
   "username": "baisi",
@@ -7,7 +8,7 @@
   "title": "白丝即正义",
   "category": "Cosplay/写真 软色情图集搬运（转载 twitter/weibo 创作者）",
   "growth_short": "软色情刚需自然转发",
-  "one_liner": "16.5 万订阅的白丝/cosplay 写真搬运号：从 twitter/微博 cosplayer 扒图（BlueArchive/NIKKE 等二次元角色），ERR 20%、转发 67/帖，软色情擦边 + 未授权转载。",
+  "one_liner": "16.5 万订阅、中位阅读 3.35 万、转发中位 63——本轮软色情图集品类里数据最健康的一个,ERR 20.38% 甚至高过多数正规资源号。但最反常的是:变现关键词命中几乎为零,没有机场、没有网盘、没有 bot、没有互推。一个 16 万人的擦边号跑了快一年,什么都没卖。",
   "analyzed_at": "2026-09-13T12:45:00Z",
   "source": {
     "method": "telethon",
@@ -23,59 +24,74 @@
   "metrics": {
     "confidence": "high",
     "subscribers": 164529,
-    "median_views": 33527,
+    "median_views": 33526,
     "mean_views": 34111,
     "p10_views": 16061,
     "p90_views": 51516,
-    "err_pct": 20.4,
+    "err_pct": 20.38,
     "mature_posts": 300,
     "reactions_total": 6680,
     "forwards_total": 20226,
     "forwards_per_post": 67.4,
     "er_pct": 0.07,
-    "posts_per_day": 1.0,
+    "posts_per_day": 0.98,
     "views_available": true,
     "media_mix": {
       "photo": 284,
       "document": 16
     },
     "deleted_pct": 0.7,
-    "activity_note": "ERR 20%、转发 67/帖，软色情/写真是高粘性刚需内容，扩散强"
+    "activity_note": "转发均值 67.4 与中位 63 几乎相等、最高仅 203,分布很平——稳定的日常消费型内容,无异常爆款(对照 jichangdl 均值 791/中位 4 的买量特征,这里完全正常)。删除率 0.7% 值得注意:软色情号通常定期清理以降低举报面,而它保留全部历史,说明运营方认为自己的尺度在平台容忍范围内。",
+    "forwards_median": 63,
+    "files": 16,
+    "files_gb": 0.58
   },
   "implementation": {
     "publish_identity": "bot",
-    "post_structure": "cosplay/写真图集(白丝、二次元角色扮演) + 出处标注(twitter/微博创作者 handle);少量短视频",
-    "delivery": "图片直发 Telegram;附原作者 twitter/t.co/weibo 链接(既是出处也是导流)",
+    "post_structure": "正文中位 115 字,图片 284 条 + 视频 16 个(0.58GB)。标签为推特作者账号 ID 与 ACG 作品名——保留了原作者 ID 作为标签,虽不如 SomeACG 规范(未直接给原链接)。",
+    "delivery": "来源是推特而非国内平台:twitter.com 152 + t.co 71 合计 223 次占绝对主导,其次 bilibili 14、weibo 12、douyin 5。内容属性因此是日本/海外的二次元 cosplay 与同人向摄影,而非国内网红写真。",
     "source": "扒取 twitter/微博 cosplayer 内容(tag: BlueArchive/NIKKE/ゼンゼロ 等)",
-    "schedule": "约 1 条/天，集中在晚 20-23 点",
-    "growth": "软色情刚需转发 + 二次元圈层"
+    "schedule": "晚间批量:20-23 点占 66%(51/62/54/31 条),间隔中位 17 秒、<10 秒占 47%、<60 秒占 60%(一组图多条);分钟与秒无固定聚集,是人工触发的批量而非 cron。",
+    "growth": "软色情刚需转发 + 二次元圈层",
+    "ad_injection": "无。全量变现关键词扫描只有『写真』命中 1 次:广告/投放/商务/频道主/联系/客服、机场/节点/订阅/VIP、网盘/夸克、私聊/加群/定制/接单/返现/代理 全部为 0;t.me 链接 0 个、bot 0 个、互推 0 次。",
+    "curation": "垂直定位清晰:频道名即品类(特定服饰主题的 cosplay/二次元图集)。"
   },
   "growth": {
-    "strategy": "软色情/cosplay 写真刚需 → 强自然转发，二次元圈层扩散",
+    "strategy": "品类刚需驱动的自然增长,无任何外部手段",
     "paid_acquisition": "none",
     "mechanisms": [
       {
-        "name": "刚需转发",
-        "evidence": "转发 67/帖、reactions 6680",
-        "note": "写真/软色情扩散力强"
+        "name": "品类刚需",
+        "evidence": "ERR 20.38%、转发中位 63",
+        "note": "擦边内容的自然需求强"
       },
       {
-        "name": "二次元角色标签",
-        "evidence": "BlueArchive/NIKKE/ブルアカ 等 tag",
-        "note": "蹭热门游戏角色 cos 流量"
+        "name": "转发驱动",
+        "evidence": "转发总 20,226",
+        "note": "内容被转进群与私聊"
+      },
+      {
+        "name": "垂直定位清晰",
+        "evidence": "频道名即品类",
+        "note": "精准而非泛图集"
+      },
+      {
+        "name": "无任何外部手段",
+        "evidence": "0 个 t.me、0 个 bot、0 次互推、不删帖",
+        "note": "完全自然"
       }
     ],
     "signals": {
       "subscribers": 164529,
-      "err_pct": 20.4,
+      "err_pct": 20.38,
       "forwards_per_post": 67.4
     },
-    "assessment": "16.5 万订阅、20% ERR、转发 67/帖，是高粘性的软色情写真号。内容全靠扒 twitter/微博 cosplayer，自身零创作。扩散强因软色情是刚需。"
+    "assessment": "对照 pixiv_top50(9 万订阅但 ERR 2.46%、靠互推堆量):baisi 订阅只多 80%,实际阅读却是它的 15 倍。同为图集号,一个是真实受众,一个是换量数字。"
   },
   "cost": {
     "recurring_cny_month": [
-      50,
-      400
+      10,
+      50
     ],
     "onetime_cny": [
       0,
@@ -83,72 +99,69 @@
     ],
     "items": [
       {
-        "name": "扒图/整理 运营时间（约 15-30 小时/月）",
-        "cny_month": [
+        "name": "【启动】频道创建",
+        "cny_onetime": [
           0,
           0
         ]
       },
       {
-        "name": "发布 bot + VPS",
-        "cny_month": [
-          50,
-          200
-        ]
-      },
-      {
-        "name": "图片存储",
+        "name": "选图与整理",
         "cny_month": [
           0,
           0
         ],
-        "note": "Telegram 托管"
+        "note": "15-30 小时/月,需从推特筛选与打标"
       },
       {
-        "name": "内容采购",
+        "name": "存储",
         "cny_month": [
           0,
-          200
+          0
         ],
-        "note": "多为免费扒取，少量付费写真套图"
+        "note": "0.58GB 由 TG 托管"
+      },
+      {
+        "name": "访问推特所需代理",
+        "cny_month": [
+          10,
+          50
+        ],
+        "note": "若运营者在墙内"
       }
     ]
   },
   "revenue": {
     "est_cny_month": [
-      3000,
-      15000
+      0,
+      0
     ],
-    "model": "引流付费写真/福利号 + 广告位",
+    "model": "零变现",
     "streams": [
       {
-        "name": "导流付费写真/会员",
-        "evidence": "软色情号常见的深度内容付费转化",
+        "name": "无",
+        "evidence": "全部变现路径样本内零命中",
         "cny_month": [
-          1500,
-          8000
+          0,
+          0
         ],
-        "confidence": "low"
-      },
-      {
-        "name": "广告位（成人/游戏/福利广告主）",
-        "evidence": "16.5 万订阅曝光位",
-        "cny_month": [
-          1500,
-          7000
-        ],
-        "confidence": "medium"
+        "confidence": "high"
       }
     ],
-    "note": "变现多走引流付费号/私域，公开频道少留痕；16.5 万高粘性受众广告价值可观"
+    "note": "潜在价值极高且完全未兑现:16.5 万订阅、33,526 中位阅读,即便按图集类偏低的 CPM ¥30-80 折算,每天一条广告价值就有 ¥30,000-80,000/月——这是本轮『潜在价值与实际收入落差最大』的样本,没有之一。作为资产的转手价值同样可观(高 ERR 擦边号 16.5 万订阅的整体转让价通常在数万元量级)。几种可能解释(样本内无法区分):变现在频道外;养号待售;或纯兴趣运营——从不删帖、保留作者 ID 标签、无任何导流设施三点看,第三种可能性不低。",
+    "est_scope": "本频道",
+    "potential_ad_value_cny_month": [
+      30000,
+      80000
+    ]
   },
   "risk": {
     "level": "high",
     "notes": [
-      "未经授权转载 twitter/微博 cosplayer 的写真图集，侵犯著作权与肖像权",
-      "软色情擦边内容（白丝/写真），在中国大陆有传播淫秽/低俗内容的风险敞口；本样本为擦边非露骨，故列 high 而非 criminal",
-      "扒取真人创作者内容，涉及被转载者的权益",
-      "若导流至露骨付费内容则风险升级"
+      "内容为软色情/擦边性质的 cosplay 与二次元图集。在大陆处于《治安管理处罚法》与《刑法》363-367 条(制作、传播淫秽物品)的判定边界上——是否构成『淫秽物品』取决于具体尺度,『擦边』通常落在行政处罚区间,但以 16.5 万订阅、单条 3.35 万阅读的规模持续传播,情节因素会显著上移",
+      "著作权:内容源自推特作者(twitter/t.co 合计 223 次)未获授权转载;虽保留作者 ID 作为标签但未给原作链接,规范性弱于 SomeACG",
+      "【减轻情节】零商业变现(缺少『以牟利为目的』这一在传播淫秽物品罪中显著影响定性的要件)、不删帖(无规避举报的行为设计)",
+      "【能力边界】本报告基于聚合指标、标签与外链结构判断,未对图片内容本身作视觉审查——具体尺度的认定超出本次分析能力。不收录任何图源标识与作者账号"
     ]
   }
 }

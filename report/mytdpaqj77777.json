@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "mytdpaqj77777",
   "username": "mytdpaqj77777",
@@ -10,15 +11,48 @@
   "one_liner": "把公民个人信息买卖做成了一个带标签导航的目录：236,522 订阅但中位阅读仅 306（ERR 0.1%），55% 是业务广告，公开招募公安、银行内部人员合作。",
   "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。本报告不记录任何被交易的数据、查询类目操作细节或联系方式。",
   "analyzed_at": "2026-09-13T11:15:00Z",
-  "source": {"method": "telethon", "script": "scripts/tg_recon.py", "dump": "data/recon/mytdpaqj77777.jsonl", "sample_size": 300, "sample_range": ["2026-07-02", "2026-09-12"], "note": "300 条覆盖 72 天"},
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/mytdpaqj77777.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-07-02",
+      "2026-09-12"
+    ],
+    "note": "300 条覆盖 72 天"
+  },
   "metrics": {
-    "confidence": "high", "subscribers": 236522, "members": null, "online": null, "online_pct": null, "bot_share_pct": null,
-    "views_available": true, "median_views": 314, "mean_views": 389, "p10_views": 133, "p90_views": 790, "max_views": 1498,
-    "err_pct": 0.1, "err_note": "236,522 订阅对中位 314 阅读 = 0.1%，与 xuendj1（0.07%）同属订阅数严重灌水的死号区间。它靠的是订阅数这个数字撑门面，不是真实触达",
-    "mature_posts": 283, "total_posts": 300, "posts_per_day": 4.2,
-    "reactions_total": 57, "forwards_total": 3, "forwards_per_post": 0.01,
-    "ad_posts_pct": 55, "recruit_posts": 166, "posts_with_links_pct": 100, "links_per_message_mean": 3.9,
-    "id_span_sampled": [1008, 1316], "surviving_messages": 300, "deleted_ratio_pct": 2.6
+    "confidence": "high",
+    "subscribers": 236522,
+    "members": null,
+    "online": null,
+    "online_pct": null,
+    "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 314,
+    "mean_views": 389,
+    "p10_views": 133,
+    "p90_views": 790,
+    "max_views": 1498,
+    "err_pct": 0.1,
+    "err_note": "236,522 订阅对中位 314 阅读 = 0.1%，与 xuendj1（0.07%）同属订阅数严重灌水的死号区间。它靠的是订阅数这个数字撑门面，不是真实触达",
+    "mature_posts": 283,
+    "total_posts": 300,
+    "posts_per_day": 4.2,
+    "reactions_total": 57,
+    "forwards_total": 3,
+    "forwards_per_post": 0.01,
+    "ad_posts_pct": 55,
+    "recruit_posts": 166,
+    "posts_with_links_pct": 100,
+    "links_per_message_mean": 3.9,
+    "id_span_sampled": [
+      1008,
+      1316
+    ],
+    "surviving_messages": 300,
+    "deleted_ratio_pct": 2.6
   },
   "implementation": {
     "publish_identity": "channel",
@@ -48,28 +82,100 @@
     "strategy": "买粉撑门面 + 搜索/导航生态导流。236K 订阅与 0.1% ERR 的巨大落差只能用灌水解释",
     "paid_acquisition": "mixed",
     "mechanisms": [
-      {"name": "订阅数灌水", "evidence": "236,522 订阅对中位 306 阅读，ERR 0.1%", "note": "订阅数是给买家看的『实力证明』，不是真实受众"},
-      {"name": "极搜/导航生态导流", "evidence": "每条指向『极搜索引』导航页，start=a_ 分销深链", "note": "依附搜索生态获取精准流量"},
-      {"name": "地域标签冲检索", "evidence": "各省市 + 业务类型标签矩阵，标签命中数以百计", "note": "买家按『城市+业务』搜索时命中"}
+      {
+        "name": "订阅数灌水",
+        "evidence": "236,522 订阅对中位 306 阅读，ERR 0.1%",
+        "note": "订阅数是给买家看的『实力证明』，不是真实受众"
+      },
+      {
+        "name": "极搜/导航生态导流",
+        "evidence": "每条指向『极搜索引』导航页，start=a_ 分销深链",
+        "note": "依附搜索生态获取精准流量"
+      },
+      {
+        "name": "地域标签冲检索",
+        "evidence": "各省市 + 业务类型标签矩阵，标签命中数以百计",
+        "note": "买家按『城市+业务』搜索时命中"
+      }
     ],
-    "signals": {"err_pct": 0.1, "subscribers": 236522, "median_views": 314, "forwards_total": 3, "ad_posts_pct": 55},
+    "signals": {
+      "err_pct": 0.1,
+      "subscribers": 236522,
+      "median_views": 314,
+      "forwards_total": 3,
+      "ad_posts_pct": 55
+    },
     "assessment": "236K 订阅在黑产语境里是招牌——买家倾向相信『大号』更可靠、跑路风险低。但 0.1% 的 ERR 暴露了这是灌水：真正在看的只有几百人。这与 xuendj1 是同一逻辑（订阅数即商品门面），区别在它卖的是公民信息而非盗版资源。"
   },
   "cost": {
-    "recurring_cny_month": [500, 5000], "onetime_cny": [3000, 15000],
+    "recurring_cny_month": [
+      500,
+      5000
+    ],
+    "onetime_cny": [
+      3000,
+      15000
+    ],
     "items": [
-      {"name": "内部人员分成（公安/银行）", "cny_month": [0, 0], "note": "按单结算，计入变现成本而非固定成本；这是它最核心也最不可估的支出"},
-      {"name": "频道与导航站运维", "cny_month": [200, 1000]},
-      {"name": "客服人力（多个私聊客服）", "cny_month": [300, 2000]},
-      {"name": "订阅数灌水", "cny_month": [0, 2000], "note": "236K 买粉铺底，一次性约 ¥3,000-15,000，后续补量"}
+      {
+        "name": "内部人员分成（公安/银行）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "按单结算，计入变现成本而非固定成本；这是它最核心也最不可估的支出"
+      },
+      {
+        "name": "频道与导航站运维",
+        "cny_month": [
+          200,
+          1000
+        ]
+      },
+      {
+        "name": "客服人力（多个私聊客服）",
+        "cny_month": [
+          300,
+          2000
+        ]
+      },
+      {
+        "name": "订阅数灌水",
+        "cny_month": [
+          0,
+          2000
+        ],
+        "note": "236K 买粉铺底，一次性约 ¥3,000-15,000，后续补量"
+      }
     ]
   },
   "revenue": {
-    "est_cny_month": [50000, 500000], "est_scope": "高度不确定，仅作量级判断",
+    "est_cny_month": [
+      50000,
+      500000
+    ],
+    "est_scope": "高度不确定，仅作量级判断",
     "model": "公民信息查询按单收费 + 招商分成",
     "streams": [
-      {"name": "查档/流水/记录按单收费", "evidence": "『费用：私聊』『出单信息：私信发你』；类目覆盖信息、资金、司法记录", "cny_month": [40000, 400000], "confidence": "low", "note": "单条司法/银行记录在黑市单价可达数百至数千元，236K 门面 + 55% 广告密度指向规模化交易"},
-      {"name": "招商与分销", "evidence": "招公安合作类目；start=a_ 分销深链", "cny_month": [10000, 100000], "confidence": "low"}
+      {
+        "name": "查档/流水/记录按单收费",
+        "evidence": "『费用：私聊』『出单信息：私信发你』；类目覆盖信息、资金、司法记录",
+        "cny_month": [
+          40000,
+          400000
+        ],
+        "confidence": "low",
+        "note": "单条司法/银行记录在黑市单价可达数百至数千元，236K 门面 + 55% 广告密度指向规模化交易"
+      },
+      {
+        "name": "招商与分销",
+        "evidence": "招公安合作类目；start=a_ 分销深链",
+        "cny_month": [
+          10000,
+          100000
+        ],
+        "confidence": "low"
+      }
     ],
     "note": "所有交易私聊、外部完全不可观测，收益估算区间跨一个数量级，仅用于说明这是重资金犯罪而非小打小闹。数字不应被当作精确估计。"
   },
@@ -77,11 +183,50 @@
     "level": "criminal",
     "summary": "本样本集中社会危害最重的一个：核心业务是侵犯公民个人信息并建立体制内实时调取通道，直接服务于电诈、洗钱与人身侵害的上游。",
     "legal": [
-      {"issue": "侵犯公民个人信息罪（情节特别严重）", "statutes": ["《刑法》第二百五十三条之一"], "analysis": "出售、提供公民个人信息，且涉及行踪轨迹、征信、财产、司法管控等敏感信息——司法解释对这几类信息的入罪数量标准最低、量刑最重。规模化经营属『情节特别严重』，法定刑三年以上七年以下并处罚金。", "severity": "critical"},
-      {"issue": "国家机关工作人员泄密与滥用职权（招募内部人员）", "statutes": ["《刑法》第三百九十八条 故意泄露国家秘密罪", "《刑法》第三百九十七条 滥用职权罪", "《刑法》第二百五十三条之一第二款（履职中获取信息出售从重）"], "analysis": "公开招募公安、银行内部人员『合作』，是组织体制内人员利用职务权限非法查询并出售数据。对内部人员，从重处罚；对组织方，构成共同犯罪并可能牵头认定。这是本号最恶劣的一环。", "severity": "critical"},
-      {"issue": "为电信网络诈骗、洗钱提供上游支持", "statutes": ["《刑法》第二百八十七条之二 帮信罪", "《反电信网络诈骗法》", "《刑法》第一百九十一条 洗钱罪"], "analysis": "银行流水、账户开立、信息核验是电诈与洗钱的基础设施。本号是这条产业链的上游供货方，牵连范围极广。", "severity": "critical"},
-      {"issue": "反侦查与门面欺诈", "statutes": ["司法实践中的主观明知认定"], "analysis": "全部私聊交易、导航分销结构、订阅数灌水撑门面，构成成体系的经营与反侦查安排，均为主观明知与情节严重的证据。", "severity": "high"}
+      {
+        "issue": "侵犯公民个人信息罪（情节特别严重）",
+        "statutes": [
+          "《刑法》第二百五十三条之一"
+        ],
+        "analysis": "出售、提供公民个人信息，且涉及行踪轨迹、征信、财产、司法管控等敏感信息——司法解释对这几类信息的入罪数量标准最低、量刑最重。规模化经营属『情节特别严重』，法定刑三年以上七年以下并处罚金。",
+        "severity": "critical"
+      },
+      {
+        "issue": "国家机关工作人员泄密与滥用职权（招募内部人员）",
+        "statutes": [
+          "《刑法》第三百九十八条 故意泄露国家秘密罪",
+          "《刑法》第三百九十七条 滥用职权罪",
+          "《刑法》第二百五十三条之一第二款（履职中获取信息出售从重）"
+        ],
+        "analysis": "公开招募公安、银行内部人员『合作』，是组织体制内人员利用职务权限非法查询并出售数据。对内部人员，从重处罚；对组织方，构成共同犯罪并可能牵头认定。这是本号最恶劣的一环。",
+        "severity": "critical"
+      },
+      {
+        "issue": "为电信网络诈骗、洗钱提供上游支持",
+        "statutes": [
+          "《刑法》第二百八十七条之二 帮信罪",
+          "《反电信网络诈骗法》",
+          "《刑法》第一百九十一条 洗钱罪"
+        ],
+        "analysis": "银行流水、账户开立、信息核验是电诈与洗钱的基础设施。本号是这条产业链的上游供货方，牵连范围极广。",
+        "severity": "critical"
+      },
+      {
+        "issue": "反侦查与门面欺诈",
+        "statutes": [
+          "司法实践中的主观明知认定"
+        ],
+        "analysis": "全部私聊交易、导航分销结构、订阅数灌水撑门面，构成成体系的经营与反侦查安排，均为主观明知与情节严重的证据。",
+        "severity": "high"
+      }
     ],
-    "notes": ["核心是侵犯公民个人信息 + 组织内部人员泄密，社会危害在本样本集居首", "招募公安/银行内部人员是最恶劣一环，牵连职务犯罪", "服务于电诈与洗钱上游，牵连面极广", "236K 订阅系灌水门面，不代表真实规模", "本报告不记录任何被交易的数据、查询能力细节或联系方式", "本报告为外部法律风险识别，不构成法律意见"]
+    "notes": [
+      "核心是侵犯公民个人信息 + 组织内部人员泄密，社会危害在本样本集居首",
+      "招募公安/银行内部人员是最恶劣一环，牵连职务犯罪",
+      "服务于电诈与洗钱上游，牵连面极广",
+      "236K 订阅系灌水门面，不代表真实规模",
+      "本报告不记录任何被交易的数据、查询能力细节或联系方式",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
   }
 }

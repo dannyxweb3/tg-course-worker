@@ -1,5 +1,6 @@
 {
   "schema_version": 3,
+  "depth": "deep",
   "kind": "channel",
   "slug": "yuankong238",
   "username": "yuankong238",
@@ -10,14 +11,50 @@
   "one_liner": "恶意软件按月授权销售：远控木马 + 手机监听 + 盗U盗刷盗CVV 工具，SaaS 式「包首月更新、源码不卖、验资」，全靠私聊成交。",
   "analysis_scope": "按要求只分析实现技术思路、增长策略、成本、收益、法律风险；不含可迁移/可复制方法。本报告不记录任何样本、下载地址、功能操作细节或联系方式。",
   "analyzed_at": "2026-09-13T11:00:00Z",
-  "source": {"method": "telethon", "script": "scripts/tg_recon.py", "dump": "data/recon/yuankong238.jsonl", "sample_size": 167, "sample_range": ["2025-03-04", "2026-09-12"], "note": "请求 300 条实得 167 条即全量。开启 noforwards"},
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/yuankong238.jsonl",
+    "sample_size": 167,
+    "sample_range": [
+      "2025-03-04",
+      "2026-09-12"
+    ],
+    "note": "请求 300 条实得 167 条即全量。开启 noforwards"
+  },
   "metrics": {
-    "confidence": "high", "subscribers": 3348, "members": null, "online": 0, "online_pct": null, "bot_share_pct": null,
-    "views_available": true, "median_views": 1030, "mean_views": 2236, "p10_views": 778, "p90_views": 2740, "max_views": 22804,
-    "err_pct": 30.7, "mature_posts": 152, "total_posts": 167, "posts_per_day": 0.3,
-    "reactions_total": 0, "forwards_total": 0, "forwards_per_post": 0.0, "reaction_forward_note": "反应与转发均为 0，功能关闭 + noforwards——黑产号刻意不留可追溯痕迹",
-    "ad_posts_pct": 27, "photos": 106, "documents": 30, "posts_without_text": 57,
-    "id_span_sampled": [1, 299], "surviving_messages": 167, "deleted_ratio_pct": 44.1, "linked_chat_id": 2411856296, "noforwards": true
+    "confidence": "high",
+    "subscribers": 3348,
+    "members": null,
+    "online": 0,
+    "online_pct": null,
+    "bot_share_pct": null,
+    "views_available": true,
+    "median_views": 1030,
+    "mean_views": 2236,
+    "p10_views": 778,
+    "p90_views": 2740,
+    "max_views": 22804,
+    "err_pct": 30.7,
+    "mature_posts": 152,
+    "total_posts": 167,
+    "posts_per_day": 0.3,
+    "reactions_total": 0,
+    "forwards_total": 0,
+    "forwards_per_post": 0.0,
+    "reaction_forward_note": "反应与转发均为 0，功能关闭 + noforwards——黑产号刻意不留可追溯痕迹",
+    "ad_posts_pct": 27,
+    "photos": 106,
+    "documents": 30,
+    "posts_without_text": 57,
+    "id_span_sampled": [
+      1,
+      299
+    ],
+    "surviving_messages": 167,
+    "deleted_ratio_pct": 44.1,
+    "linked_chat_id": 2411856296,
+    "noforwards": true
   },
   "implementation": {
     "publish_identity": "channel",
@@ -35,26 +72,96 @@
     "strategy": "垂类黑产口碑，无公开涨粉手段。买家通过黑产搜索与同行介绍找来，不靠曝光",
     "paid_acquisition": "none",
     "mechanisms": [
-      {"name": "演示截图/视频建立可信度", "evidence": "106 张 photo、30 个 document 演示", "note": "黑产买家最怕收钱跑路，演示是信任凭证"},
-      {"name": "验资门槛反向筛选", "evidence": "简介「测试需验资，没钱的别来」", "note": "既筛支付能力，也挡执法与调研——高门槛本身是一种定位"}
+      {
+        "name": "演示截图/视频建立可信度",
+        "evidence": "106 张 photo、30 个 document 演示",
+        "note": "黑产买家最怕收钱跑路，演示是信任凭证"
+      },
+      {
+        "name": "验资门槛反向筛选",
+        "evidence": "简介「测试需验资，没钱的别来」",
+        "note": "既筛支付能力，也挡执法与调研——高门槛本身是一种定位"
+      }
     ],
-    "signals": {"err_pct": 30.7, "forwards_total": 0, "reactions_total": 0, "subscribers": 3348, "posts_per_day": 0.3},
+    "signals": {
+      "err_pct": 30.7,
+      "forwards_total": 0,
+      "reactions_total": 0,
+      "subscribers": 3348,
+      "posts_per_day": 0.3
+    },
     "assessment": "3,348 订阅、ERR 30.7% 说明是小而精准的真实买家群体，不需要也不能做规模化涨粉——恶意软件的客户越少越安全。转发 0 是刻意的：这类号避免任何扩散痕迹。增长天花板极低且是主动压低的。"
   },
   "cost": {
-    "recurring_cny_month": [200, 2000], "onetime_cny": [0, 0],
+    "recurring_cny_month": [
+      200,
+      2000
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
     "items": [
-      {"name": "免杀开发与维护", "cny_month": [0, 1500], "note": "核心成本。「免杀」需持续对抗杀软更新，「包首月更新」承诺意味着持续投入。以技术劳动计"},
-      {"name": "分发域名（一次性短命域名轮换）", "cny_month": [100, 300], "note": ".mom/.lat/.store 一类廉价 TLD，被封即弃"},
-      {"name": "C2 / 后端服务器", "cny_month": [100, 500], "note": "远控需要控制端服务器"},
-      {"name": "文件托管", "cny_month": [0, 0], "note": "演示直传 Telegram"}
+      {
+        "name": "免杀开发与维护",
+        "cny_month": [
+          0,
+          1500
+        ],
+        "note": "核心成本。「免杀」需持续对抗杀软更新，「包首月更新」承诺意味着持续投入。以技术劳动计"
+      },
+      {
+        "name": "分发域名（一次性短命域名轮换）",
+        "cny_month": [
+          100,
+          300
+        ],
+        "note": ".mom/.lat/.store 一类廉价 TLD，被封即弃"
+      },
+      {
+        "name": "C2 / 后端服务器",
+        "cny_month": [
+          100,
+          500
+        ],
+        "note": "远控需要控制端服务器"
+      },
+      {
+        "name": "文件托管",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "演示直传 Telegram"
+      }
     ]
   },
   "revenue": {
-    "est_cny_month": [3000, 30000], "model": "恶意软件按月授权 + 定制开发",
+    "est_cny_month": [
+      3000,
+      30000
+    ],
+    "model": "恶意软件按月授权 + 定制开发",
     "streams": [
-      {"name": "订阅授权费", "evidence": "简介「价高」「包首月更新」；产品线覆盖远控/监听/盗刷多品类", "cny_month": [2000, 20000], "confidence": "low", "note": "私聊定价，外部不可观测。区间宽"},
-      {"name": "定制开发", "evidence": "「多功能程序可定制」", "cny_month": [1000, 10000], "confidence": "low"}
+      {
+        "name": "订阅授权费",
+        "evidence": "简介「价高」「包首月更新」；产品线覆盖远控/监听/盗刷多品类",
+        "cny_month": [
+          2000,
+          20000
+        ],
+        "confidence": "low",
+        "note": "私聊定价，外部不可观测。区间宽"
+      },
+      {
+        "name": "定制开发",
+        "evidence": "「多功能程序可定制」",
+        "cny_month": [
+          1000,
+          10000
+        ],
+        "confidence": "low"
+      }
     ],
     "note": "盗U/盗刷/盗CVV 工具的单价通常高于普通远控，因为直接对应下游资金收益。但客户基数小（3,348 订阅且非全是买家），总量受限。"
   },
@@ -62,11 +169,49 @@
     "level": "criminal",
     "summary": "这是本样本集中危害链条最直接的一类：出售的工具本身即用于实施犯罪，且明确包含针对资金的盗窃工具。",
     "legal": [
-      {"issue": "提供侵入、非法控制计算机信息系统的程序、工具", "statutes": ["《刑法》第二百八十五条第二款、第三款"], "analysis": "远控木马是「专门用于侵入、非法控制计算机信息系统的程序」的典型。销售此类程序直接构成本罪，不以买家是否实际使用为要件。", "severity": "critical"},
-      {"issue": "为盗窃、诈骗、信用卡犯罪提供工具（共犯/帮助）", "statutes": ["《刑法》第二百六十四条 盗窃罪", "《刑法》第一百九十六条 信用卡诈骗罪", "《刑法》第二百八十七条之二 帮信罪", "《刑法》第一百七十七条之一 妨害信用卡管理罪"], "analysis": "盗U（加密货币盗窃）、盗刷、盗CVV 工具直接指向对资金与信用卡信息的窃取。销售方明知工具用途，可能被认定为下游犯罪的共犯或帮助犯，量刑随下游数额升高。", "severity": "critical"},
-      {"issue": "非法使用窃听、窃照专用器材 / 侵犯公民个人信息", "statutes": ["《刑法》第二百八十四条 非法使用窃听、窃照专用器材罪", "《刑法》第二百五十三条之一 侵犯公民个人信息罪"], "analysis": "「手机监听」「电脑监控」类产品用于秘密获取他人通信与个人信息，触及上述罪名。", "severity": "high"},
-      {"issue": "规避技术措施与反侦查安排", "statutes": ["司法实践中的主观明知认定"], "analysis": "「免杀」是主动规避杀毒软件检测；noforwards + 关闭转发反应 + 短命域名轮换 + 验资门槛，是成体系的反侦查安排。这些都强化主观明知，是从重情节。", "severity": "high"}
+      {
+        "issue": "提供侵入、非法控制计算机信息系统的程序、工具",
+        "statutes": [
+          "《刑法》第二百八十五条第二款、第三款"
+        ],
+        "analysis": "远控木马是「专门用于侵入、非法控制计算机信息系统的程序」的典型。销售此类程序直接构成本罪，不以买家是否实际使用为要件。",
+        "severity": "critical"
+      },
+      {
+        "issue": "为盗窃、诈骗、信用卡犯罪提供工具（共犯/帮助）",
+        "statutes": [
+          "《刑法》第二百六十四条 盗窃罪",
+          "《刑法》第一百九十六条 信用卡诈骗罪",
+          "《刑法》第二百八十七条之二 帮信罪",
+          "《刑法》第一百七十七条之一 妨害信用卡管理罪"
+        ],
+        "analysis": "盗U（加密货币盗窃）、盗刷、盗CVV 工具直接指向对资金与信用卡信息的窃取。销售方明知工具用途，可能被认定为下游犯罪的共犯或帮助犯，量刑随下游数额升高。",
+        "severity": "critical"
+      },
+      {
+        "issue": "非法使用窃听、窃照专用器材 / 侵犯公民个人信息",
+        "statutes": [
+          "《刑法》第二百八十四条 非法使用窃听、窃照专用器材罪",
+          "《刑法》第二百五十三条之一 侵犯公民个人信息罪"
+        ],
+        "analysis": "「手机监听」「电脑监控」类产品用于秘密获取他人通信与个人信息，触及上述罪名。",
+        "severity": "high"
+      },
+      {
+        "issue": "规避技术措施与反侦查安排",
+        "statutes": [
+          "司法实践中的主观明知认定"
+        ],
+        "analysis": "「免杀」是主动规避杀毒软件检测；noforwards + 关闭转发反应 + 短命域名轮换 + 验资门槛，是成体系的反侦查安排。这些都强化主观明知，是从重情节。",
+        "severity": "high"
+      }
     ],
-    "notes": ["工具本身即犯罪工具，危害直接性高于分发型侵权号", "盗U/盗刷/盗CVV 使其牵连下游资金犯罪，量刑随下游数额放大", "免杀 + 反侦查安排是主观明知的强证据", "本报告不记录任何样本、下载地址、功能操作细节或联系方式", "本报告为外部法律风险识别，不构成法律意见"]
+    "notes": [
+      "工具本身即犯罪工具，危害直接性高于分发型侵权号",
+      "盗U/盗刷/盗CVV 使其牵连下游资金犯罪，量刑随下游数额放大",
+      "免杀 + 反侦查安排是主观明知的强证据",
+      "本报告不记录任何样本、下载地址、功能操作细节或联系方式",
+      "本报告为外部法律风险识别，不构成法律意见"
+    ]
   }
 }

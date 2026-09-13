@@ -1,0 +1,125 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "goworkbitch",
+  "username": "goworkbitch",
+  "url": "https://t.me/goworkbitch",
+  "title": "上班划水之无聊图",
+  "category": "梗图/无聊图娱乐号(对照组)",
+  "growth_short": "梗图自然扩散",
+  "one_liner": "2.48万订阅的无聊图/梗图号:纯娱乐图片(292个媒体文件),ER 0.93%(反应活跃)、几乎零商业化,是干净的娱乐对照组。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/goworkbitch.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-05",
+      "2026-09-12"
+    ],
+    "note": "跨度 38 天、7.9 条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 24773,
+    "median_views": 1264,
+    "mean_views": 1301,
+    "p10_views": 1087,
+    "p90_views": 1518,
+    "err_pct": 5.1,
+    "mature_posts": 244,
+    "reactions_total": 3426,
+    "forwards_total": 2172,
+    "forwards_per_post": 7.2,
+    "forwards_median": 6.0,
+    "er_pct": 0.93,
+    "posts_per_day": 7.9,
+    "views_available": true,
+    "media_mix": {
+      "document": 292,
+      "photo": 8
+    },
+    "deleted_pct": 1.3,
+    "activity_note": "ER 0.93% 高(反应/阅读),转发7.2/帖:梗图受众爱互动爱转,是真实活跃的娱乐社群"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "图片/短视频 + 极简配文(一句吐槽);无外链无标签",
+    "delivery": "媒体文件直发,纯图娱乐",
+    "curation": "搜集网络梗图/无聊图,轻加工配文",
+    "schedule": "7.9 条/天,分散全天(含深夜)"
+  },
+  "growth": {
+    "strategy": "梗图娱乐内容自然扩散",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "梗图刚需",
+        "evidence": "转发7.2/帖、reactions 3426",
+        "note": "娱乐内容易转发裂变"
+      }
+    ],
+    "signals": {
+      "subscribers": 24773,
+      "err_pct": 5.1,
+      "forwards_per_post": 7.2
+    },
+    "assessment": "ER 0.93% + 转发7.2 是真实活跃娱乐社群。几乎零变现动作,纯兴趣/流量号,是干净对照组。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      50
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(找图配文)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约15-30小时/月"
+      },
+      {
+        "name": "服务器",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      1500
+    ],
+    "est_scope": "本频道可归因",
+    "model": "基本无商业化(潜在广告位)",
+    "streams": [
+      {
+        "name": "潜在广告位/无",
+        "evidence": "样本内无广告/aff/联盟",
+        "cny_month": [
+          0,
+          1500
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "当前几乎不变现;高互动大盘若接广告有一定价值"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "梗图娱乐内容,唯一风险是图片来源版权(网络搬运),属常见轻微侵权",
+      "无灰产/无成人/无诱导,风险低"
+    ]
+  }
+}

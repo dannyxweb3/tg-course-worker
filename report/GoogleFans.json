@@ -1,0 +1,108 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "group",
+  "slug": "GoogleFans",
+  "username": "GoogleFans",
+  "url": "https://t.me/GoogleFans",
+  "title": "Google Fans 交流群",
+  "category": "安卓/Google 综合交流群",
+  "growth_short": "安卓兴趣社区",
+  "one_liner": "4.5万成员的Google/安卓综合交流群:围绕安卓/Google服务/手机的讨论(288条/天),夹杂出国务工等话题,UGC为主、几乎无系统变现。",
+  "analyzed_at": "2026-09-13T15:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_batch_dump.py",
+    "dump": "data/recon/GoogleFans.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "—",
+      "2026-09-13"
+    ],
+    "note": "群无per-message阅读;online未取"
+  },
+  "metrics": {
+    "confidence": "medium",
+    "kind_note": "group",
+    "members": 45436,
+    "online": null,
+    "online_pct": null,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无per-message阅读",
+    "messages_per_day": 287.9,
+    "deleted_ratio_pct": 23.5,
+    "activity_note": "288条/天高活跃真人讨论;安卓/Google为主,夹杂出国务工等话题"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "chat_type": "megagroup",
+    "post_structure": "安卓/Google服务/手机/科技闲聊,夹杂出国打工等生活话题;真人讨论",
+    "ad_injection": "几乎无(广告3少量)",
+    "delivery": "综合兴趣讨论社区",
+    "schedule": "全天候高活跃"
+  },
+  "growth": {
+    "strategy": "安卓/Google兴趣聚人",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "安卓兴趣",
+        "evidence": "288条/天、Google/安卓话题",
+        "note": "安卓玩机人群"
+      }
+    ],
+    "signals": {
+      "messages_per_day": 287.9
+    },
+    "assessment": "Google/安卓综合交流群,高活跃真人社区。几乎无系统变现。夹杂出国务工话题属UGC闲聊。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "群管理bot",
+        "cny_month": [
+          0,
+          150
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      2000
+    ],
+    "est_scope": "群本体",
+    "model": "基本无变现",
+    "streams": [
+      {
+        "name": "偶发广告/无",
+        "evidence": "广告关键词极少",
+        "cny_month": [
+          0,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "兴趣社区,几乎不变现"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "安卓/Google兴趣讨论社区,UGC为主",
+      "夹杂出国务工等生活话题(属讨论);无系统性灰产,整体风险低"
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": 3,
+  "depth": "brief",
+  "kind": "channel",
+  "slug": "FindBlog",
+  "username": "FindBlog",
+  "url": "https://t.me/FindBlog",
+  "title": "Find Blog👁发现博客",
+  "category": "独立博客发现/策展(轻变现)",
+  "growth_short": "博客圈口碑+抽奖",
+  "one_liner": "1.39万订阅的独立博客发现号:2021年起收录优质博客与建站工具,ERR 45.8%(高粘性),内容优质但用抽奖/赞助/邀请码做轻度变现。",
+  "analyzed_at": "2026-09-13T13:00:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/FindBlog.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2023-09-22",
+      "2026-09-08"
+    ],
+    "note": "跨度 1083 天、0.3 条/天"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 13923,
+    "median_views": 6370,
+    "mean_views": 6781,
+    "p10_views": 4644,
+    "p90_views": 8960,
+    "err_pct": 45.8,
+    "mature_posts": 269,
+    "reactions_total": 2648,
+    "forwards_total": 6450,
+    "forwards_per_post": 21.5,
+    "forwards_median": 14.0,
+    "er_pct": 0.15,
+    "posts_per_day": 0.3,
+    "views_available": true,
+    "media_mix": {
+      "photo": 189,
+      "empty": 91,
+      "webpage": 15
+    },
+    "deleted_pct": 18.7,
+    "activity_note": "45.8% ERR + 转发中位14:博客圈忠实受众;有配套讨论群@FindBlog_Group"
+  },
+  "implementation": {
+    "publish_identity": "channel",
+    "post_structure": "博客/建站工具介绍 + RSS地址 + 点评 + 标签(#Blog #Article #Platform #Tool);含#AD标注的广告帖",
+    "delivery": "指路:指向独立博客、建站程序、主题、文章;外链 github/个人博客域名",
+    "curation": "人工策展,围绕独立博客生态(自2021运营),窄而专;运营者本身是blogger",
+    "schedule": "0.3 条/天,集中20-23点"
+  },
+  "growth": {
+    "strategy": "独立博客圈口碑 + 抽奖拉互动",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "高质量策展",
+        "evidence": "ERR 45.8%、转发中位14",
+        "note": "博客圈稀缺内容"
+      },
+      {
+        "name": "抽奖/配套群",
+        "evidence": "抽奖32、@FindBlog_Group",
+        "note": "抽奖拉互动、群沉淀"
+      }
+    ],
+    "signals": {
+      "subscribers": 13923,
+      "err_pct": 45.8,
+      "forwards_per_post": 21.5
+    },
+    "assessment": "45.8% ERR 说明是独立博客圈的忠实垂直受众,口碑增长。有#AD标注的诚实广告,变现克制透明。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间(收录/点评,低频)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约10-25小时/月"
+      },
+      {
+        "name": "服务器/图床",
+        "cny_month": [
+          0,
+          150
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      500,
+      3000
+    ],
+    "est_scope": "本频道可归因",
+    "model": "广告位(#AD) + 赞助 + 抽奖赞助",
+    "streams": [
+      {
+        "name": "广告位/赞助",
+        "evidence": "#AD标注、赞助10、广告7",
+        "cny_month": [
+          300,
+          2000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "抽奖赞助/邀请码",
+        "evidence": "抽奖32、邀请码10、aff6",
+        "cny_month": [
+          200,
+          1000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "轻度透明变现,45.8%高ERR支撑广告价值"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "独立博客/建站工具策展,内容正规,广告以#AD诚实标注",
+      "少量邀请码/aff属正常联盟,无灰产;风险低"
+    ]
+  }
+}
