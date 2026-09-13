@@ -1,0 +1,165 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "AI_Pintura",
+  "username": "AI_Pintura",
+  "url": "https://t.me/AI_Pintura",
+  "title": "AI绘画｜AI视频｜AI音乐",
+  "category": "AI 工具/APK 分发（混互推/机场/博彩导流）",
+  "growth_short": "AI 热点 + 互推",
+  "one_liner": "3.3 万订阅的 AI 工具号：直传 67GB AI 绘画/视频 APK（89 个），蹭 AI 热点，夹带频道互推、机场推荐与少量博彩导流，ERR 24.8% 但 67% 滚动删除。",
+  "analyzed_at": "2026-09-13T15:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/AI_Pintura.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-04-28",
+      "2026-09-13"
+    ],
+    "note": "deleted 67.2% 滚动删除;含少量博彩导流域名，不收录"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 32762,
+    "median_views": 8127,
+    "mean_views": 7716,
+    "p10_views": 2385,
+    "p90_views": 10641,
+    "err_pct": 24.8,
+    "mature_posts": 297,
+    "reactions_total": 931,
+    "forwards_total": 7573,
+    "forwards_per_post": 25.2,
+    "er_pct": 0.04,
+    "posts_per_day": 0.6,
+    "views_available": true,
+    "media_mix": {
+      "photo": 187,
+      "document": 101,
+      "webpage": 5,
+      "text": 7
+    },
+    "deleted_pct": 67.2,
+    "hosted_files": 100,
+    "hosted_bytes_gb": 67.31,
+    "file_ext": {
+      "apk": 89,
+      "mp4": 10,
+      "gif": 1
+    },
+    "activity_note": "ERR 24.8% 不低;但 67% 滚动删除 + 夹带互推/机场/博彩，是混合灰产"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "AI 绘画/视频/音乐工具介绍 + APK 直传(89 个/67GB) + Google Play/github 链接;夹带 #频道互推 #机场推荐 + 少量博彩导流",
+    "delivery": "AI 工具 APK 直传 Telegram(67GB 免费 CDN);部分导 Google Play/github/aigenprompt",
+    "schedule": "约 0.6 条/天，午间 11-12 点为主",
+    "retention": "约 67% 滚动删除",
+    "growth": "AI 热点 + 频道互推 + 机场/博彩导流"
+  },
+  "growth": {
+    "strategy": "蹭 AI 热点 + APK 刚需 + 互推换量",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "AI 热点 + APK",
+        "evidence": "89 个 AI 工具 APK 直传",
+        "note": "AI 绘画工具刚需"
+      },
+      {
+        "name": "频道互推",
+        "evidence": "#频道互推 #机场推荐 #群组推荐",
+        "note": "互推换量"
+      }
+    ],
+    "signals": {
+      "subscribers": 32762,
+      "err_pct": 24.8,
+      "forwards_per_post": 25.2
+    },
+    "assessment": "AI 工具 APK 号 + 混合灰产导流。ERR 24.8% 说明 AI 内容有真实受众，但夹带互推/机场/博彩，是内容+灰产混合体。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      50,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "发布 bot + VPS",
+        "cny_month": [
+          50,
+          250
+        ]
+      },
+      {
+        "name": "APK 采集",
+        "cny_month": [
+          0,
+          50
+        ],
+        "note": "扒取/搬运，Telegram 直传零带宽"
+      },
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          50
+        ],
+        "note": "半自动"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "model": "互推 + 机场/博彩导流 + APK 网赚",
+    "streams": [
+      {
+        "name": "机场/博彩导流",
+        "evidence": "#机场推荐 + 6g 系博彩域名",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "互推奖励 + AI 工具软广",
+        "evidence": "#频道互推 + aigenprompt",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "APK 网赚/CPA",
+        "evidence": "89 个 APK 分发",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "AI 内容引流，变现走互推/机场/博彩/网赚混合;区间较宽"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "APK 分发可能含破解/盗版 AI 应用，侵犯著作权",
+      "夹带机场(翻墙)与少量博彩导流，涉非法经营/帮信风险",
+      "AI 换脸类工具(insightface 等)存在被用于侵权/伪造的风险",
+      "混合灰产，博彩域名不收录"
+    ]
+  }
+}

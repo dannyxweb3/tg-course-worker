@@ -1,0 +1,146 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "GodlyNews1",
+  "username": "GodlyNews1",
+  "url": "https://t.me/GodlyNews1",
+  "title": "Yummy 😋（科技新闻）",
+  "category": "AI/科技新闻聚合（英媒+社媒转译）",
+  "growth_short": "科技新闻时效 + 高互动",
+  "one_liner": "6.87 万订阅的 AI/科技新闻聚合号：转译 theverge/9to5mac/ithome/twitter 的 AI 与苹果资讯，ER 0.68%（reactions 1.7 万）为本批最高互动之一。",
+  "analyzed_at": "2026-09-13T17:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/GodlyNews1.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-07-17",
+      "2026-09-13"
+    ],
+    "note": "AI/科技资讯聚合，配 GodlyNewsBot"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 68692,
+    "median_views": 8940,
+    "mean_views": 8878,
+    "p10_views": 6626,
+    "p90_views": 10880,
+    "err_pct": 13.0,
+    "mature_posts": 243,
+    "reactions_total": 17058,
+    "forwards_total": 6587,
+    "forwards_per_post": 22.0,
+    "er_pct": 0.68,
+    "posts_per_day": 5.2,
+    "views_available": true,
+    "media_mix": {
+      "photo": 220,
+      "text": 53,
+      "document": 23,
+      "webpage": 4
+    },
+    "deleted_pct": 1.0,
+    "activity_note": "ER 0.68%、reactions 1.7 万，本批互动率最高之一;科技新闻刚需"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "post_structure": "配图 + AI/科技新闻摘要(中文转译) + 来源链接(theverge/9to5mac/ithome/reuters/x);标签 #AI #Apple #OpenAI #Anthropic #ChatGPT #Claude #DeepSeek",
+    "delivery": "聚合英文科技媒体 + 社媒，中文转译摘要;来源链接指向原媒体",
+    "schedule": "约 5.2 条/天，覆盖全天(含深夜，追海外时效)",
+    "growth": "AI/科技新闻时效 + 高互动"
+  },
+  "growth": {
+    "strategy": "AI/科技新闻的时效性 + 中文转译价值",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "新闻时效",
+        "evidence": "5.2 条/天覆盖全天，追海外发布",
+        "note": "AI/苹果资讯刚需"
+      },
+      {
+        "name": "高互动",
+        "evidence": "ER 0.68%、reactions 1.7 万",
+        "note": "话题性内容互动强"
+      }
+    ],
+    "signals": {
+      "subscribers": 68692,
+      "err_pct": 13.0,
+      "forwards_per_post": 22.0,
+      "er_pct": 0.68
+    },
+    "assessment": "AI/科技新闻聚合号，靠时效 + 中文转译 + 话题性维持高互动。正规资讯聚合，受众为科技爱好者。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      50,
+      400
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "新闻聚合/转译(bot + 可能 LLM)",
+        "cny_month": [
+          30,
+          250
+        ]
+      },
+      {
+        "name": "运营时间(筛选+转译+发布，约 30-60 小时/月)",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "VPS/GodlyNewsBot",
+        "cny_month": [
+          20,
+          150
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      500,
+      5000
+    ],
+    "model": "科技软广 + 联盟（变现克制）",
+    "streams": [
+      {
+        "name": "科技/App/AI 软广",
+        "evidence": "6.87 万科技受众广告位",
+        "cny_month": [
+          500,
+          4000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "AI 工具联盟",
+        "evidence": "AI 资讯常带工具推荐",
+        "cny_month": [
+          0,
+          1000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "以新闻聚合为主，变现克制;科技受众广告单价较高"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "AI/科技新闻聚合与中文转译，属正常资讯业务",
+      "转译英媒有轻微版权争议(民事范畴)",
+      "无灰产、无盗版资源、无成人/博彩要素"
+    ]
+  }
+}

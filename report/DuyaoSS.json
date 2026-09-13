@@ -1,0 +1,147 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "DuyaoSS",
+  "username": "DuyaoSS",
+  "url": "https://t.me/DuyaoSS",
+  "title": "Duyao｜SpeedTest｜科技生活｜资讯转发",
+  "category": "机场测速评测 + 科技资讯（评测导流型）",
+  "growth_short": "评测口碑 + 科技圈互链",
+  "one_liner": "知名机场测速号：以 duyaoss.com 的单线程测速图为核心资产，给付费机场做评测背书导流（bit.ly 返利链），夹带苹果/科技资讯，ERR 16.5%。",
+  "analyzed_at": "2026-09-13T12:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/DuyaoSS.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2024-05-07",
+      "2026-09-09"
+    ],
+    "note": "187 张 png 多为测速图表；reactions 关闭"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 67802,
+    "median_views": 11197,
+    "mean_views": 16666,
+    "p10_views": 5084,
+    "p90_views": 37109,
+    "err_pct": 16.5,
+    "mature_posts": 290,
+    "reactions_total": 0,
+    "forwards_total": 3461,
+    "forwards_per_post": 11.5,
+    "er_pct": 0.0,
+    "posts_per_day": 0.4,
+    "views_available": true,
+    "media_mix": {
+      "document": 189,
+      "photo": 90,
+      "text": 17,
+      "webpage": 4
+    },
+    "deleted_pct": 2.0,
+    "activity_note": "ERR 16.5% 健康；测速评测是机场用户的决策刚需，可信度是其护城河"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "post_structure": "机场单线程测速图表(png) + 评测结论 + 机场入口(bit.ly 返利链);夹带苹果/科技资讯转发",
+    "delivery": "测速数据托在 duyaoss.com(核心资产)，频道做分发与导流;bit.ly 短链做返利归因",
+    "asset": "duyaoss.com 的测速方法学与历史数据",
+    "schedule": "约 0.4 条/天，晚 20-23 点 + 凌晨（跨时区/苹果发布会时段）",
+    "growth": "评测口碑 + 与 NewlearnerChannel/AppDoDo 等科技号互链"
+  },
+  "growth": {
+    "strategy": "以测评可信度立口碑，科技圈层互链扩散",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "评测可信度",
+        "evidence": "单线程测速方法学 + 持续数据",
+        "note": "机场用户选购的决策依据"
+      },
+      {
+        "name": "科技号互链",
+        "evidence": "@NewlearnerChannel/@AppDoDo/@ibetame 等互相 @",
+        "note": "科技频道矩阵互推"
+      }
+    ],
+    "signals": {
+      "subscribers": 67802,
+      "err_pct": 16.5,
+      "forwards_per_post": 11.5
+    },
+    "assessment": "评测型号，靠可信度而非产量。ERR 16.5% 说明受众为决策型机场用户。护城河是 duyaoss.com 的测速方法学与口碑。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      600
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "测速网站 duyaoss.com 托管 + 测速节点/探针",
+        "cny_month": [
+          100,
+          400
+        ],
+        "note": "核心成本，要持续跑测速"
+      },
+      {
+        "name": "运营时间（测速+写评测+资讯转发，约 20-40 小时/月）",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "VPS/工具",
+        "cny_month": [
+          0,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "model": "机场评测返利/推广 + 科技软广",
+    "streams": [
+      {
+        "name": "机场返利/推广位",
+        "evidence": "bit.ly 短链 38 条做返利归因",
+        "cny_month": [
+          2000,
+          10000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "科技/App 软广",
+        "evidence": "苹果/科技资讯转发夹带",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "评测导流是机场生态的中游——不担经营者责任，靠隐藏返利关系赚导流费"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "为付费翻墙机场做评测导流并赚返利，在中国大陆涉为非法经营 VPN 引流的帮助环节",
+      "评测本身是信息，但返利导流使其成为机场销售链的一环",
+      "科技资讯转发部分合规;风险集中在机场返利"
+    ]
+  }
+}

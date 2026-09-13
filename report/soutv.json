@@ -1,0 +1,161 @@
+{
+  "schema_version": 3,
+  "kind": "group",
+  "slug": "soutv",
+  "username": "soutv",
+  "url": "https://t.me/soutv",
+  "title": "影视搜索",
+  "category": "影视/成人视频搜索 bot 群（含赌博/成人广告注入）",
+  "growth_short": "影视搜索刚需",
+  "one_liner": "2.34 万成员的影视搜索群：搜韩剧/影视 bot 驱动（@SouHanjuBot 等），bot 消息占 66%、在线仅 0.8%，搜索结果夹带赌博/成人广告域名，管理层含 JavTv 成人号。",
+  "analyzed_at": "2026-09-13T13:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": null,
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "note": "仅留聚合指标；搜索结果夹带赌博/成人广告落地域名，dump 已删、不收录原始链接与域名"
+  },
+  "metrics": {
+    "confidence": "high",
+    "members": 23364,
+    "online": 190,
+    "online_pct": 0.8,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无 per-message 阅读量；改看 online_pct 与 bot_share_pct",
+    "messages_per_day": 568,
+    "bot_share_pct": 66.4,
+    "human_messages": 134,
+    "bot_messages": 265,
+    "distinct_humans_sampled": 77,
+    "reactions_total": 0,
+    "forwards_total": 0,
+    "forwards_per_post": 0.0,
+    "id_span_sampled": [
+      1648888,
+      1649268
+    ],
+    "surviving_messages": 300,
+    "deleted_ratio_pct": 21.3,
+    "activity_note": "在线 0.8%、bot 占 66.4%，机器人驱动的搜索群，真人活跃低"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "chat_type": "megagroup",
+    "post_structure": "用户发影视关键词 → 搜索 bot 回结果块(t.me 链接列表) + 夹带广告",
+    "search_bots": "@SouHanjuBot(搜韩剧)、@zputbot 等;管理层含 @JavTvM_1(成人视频)、客服 @zsousuokefu/@zsousuokf",
+    "delivery": "搜索结果为 t.me 外链指路，群不存资源",
+    "ad_injection": "结果中夹带赌博/成人落地域名(原始域名不收录)",
+    "schedule": "全天候，约 568 条/天",
+    "retention": "约 21% 消息删除(管理 bot 清理)",
+    "growth": "影视搜索刚需"
+  },
+  "growth": {
+    "strategy": "影视/成人视频搜索刚需入口，bot 自动应答",
+    "paid_acquisition": "unknown",
+    "mechanisms": [
+      {
+        "name": "搜索刚需",
+        "evidence": "用户发关键词 bot 回结果，77 个真人/400 条",
+        "note": "人来办事"
+      },
+      {
+        "name": "多搜索 bot",
+        "evidence": "@SouHanjuBot/@zputbot",
+        "note": "韩剧/影视分类搜索"
+      }
+    ],
+    "signals": {
+      "members": 23364,
+      "online_pct": 0.8,
+      "bot_share_pct": 66.4
+    },
+    "assessment": "影视搜索群，与 jisou771/sesecctv 同类但主打影视+成人。在线率 0.8% 极低、bot 占 66%，是机器驱动的工具群，靠搜索刚需维持人流。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      300,
+      2000
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "影视搜索索引 + 爬取（存储+检索）",
+        "cny_month": [
+          200,
+          1200
+        ],
+        "note": "核心技术资产"
+      },
+      {
+        "name": "多 bot 托管 + VPS",
+        "cny_month": [
+          100,
+          500
+        ]
+      },
+      {
+        "name": "群管理人力",
+        "cny_month": [
+          0,
+          300
+        ]
+      },
+      {
+        "name": "LLM",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "关键词匹配，不需要"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      12000
+    ],
+    "model": "搜索结果广告位（赌博/成人）+ 引流",
+    "streams": [
+      {
+        "name": "广告位（赌博/成人域名注入）",
+        "evidence": "结果块夹带赌博/成人落地域名",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "成人视频/会员引流",
+        "evidence": "管理层含 JavTv 成人号",
+        "cny_month": [
+          500,
+          4000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现走广告注入 + 成人引流，公开不留报价;区间为行业惯例估算"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "分发盗版影视，侵犯著作权;牟利可涉侵犯著作权罪",
+      "含成人视频搜索/引流(JavTv 管理员)，涉传播淫秽物品",
+      "搜索结果注入赌博落地域名，涉开设赌场罪/帮信罪引流环节",
+      "广告落地域名与成人内容不适合原样展示，dump 已删、报告只留聚合指标"
+    ]
+  }
+}

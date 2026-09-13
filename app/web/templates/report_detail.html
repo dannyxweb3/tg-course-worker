@@ -29,14 +29,29 @@
 
 {% set m = data.metrics or {} %}
 {% if m %}
+{% if data.kind == 'group' %}
+{# 群：没有 per-message 阅读量，订阅/中位阅读/ERR 对群无意义，一律不展示。
+   改看规模（成员）、活跃（在线、日消息）、构成（bot 占比）这几维。 #}
+<div class="stats" style="margin-bottom:24px">
+  <div class="stat"><b>{{ m.members|num }}</b><span>成员数</span></div>
+  {% if m.online is not none %}
+    <div class="stat"><b>{{ m.online|num }}</b><span>在线数{% if m.online_pct is not none %} · {{ m.online_pct }}%{% endif %}</span></div>
+  {% endif %}
+  {% if m.messages_per_day is not none %}<div class="stat"><b>{{ m.messages_per_day|num }}</b><span>每日消息数</span></div>{% endif %}
+  {% if m.bot_share_pct is not none %}<div class="stat"><b class="{{ 'bad' if m.bot_share_pct >= 50 else '' }}">{{ m.bot_share_pct }}%</b><span>bot 消息占比</span></div>{% endif %}
+  {% if m.links_per_message_mean is not none %}<div class="stat"><b>{{ m.links_per_message_mean }}</b><span>链接 / 条</span></div>{% endif %}
+  {% if m.deleted_ratio_pct %}<div class="stat"><b>{{ m.deleted_ratio_pct }}%</b><span>历史删除率</span></div>{% endif %}
+</div>
+{% else %}
 <div class="stats" style="margin-bottom:24px">
   <div class="stat"><b>{{ m.subscribers|num }}</b><span>订阅数</span></div>
   <div class="stat"><b>{{ m.median_views|num }}</b><span>中位阅读</span></div>
-  <div class="stat"><b class="{{ 'good' if m.err_pct and m.err_pct >= 2 else ('bad' if m.err_pct is not none else '') }}">{{ m.err_pct|pct }}</b><span>ERR</span></div>
+  <div class="stat"><b class="{{ 'good' if m.err_pct and m.err_pct >= 2 else ('bad' if m.err_pct is not none else '') }}">{{ m.err_pct|pct }}</b><span>ERR 互动率</span></div>
   <div class="stat"><b>{{ m.forwards_per_post|dash }}</b><span>转发 / 帖</span></div>
   {% if m.hosted_bytes_gb %}<div class="stat"><b>{{ m.hosted_bytes_gb }} GB</b><span>托管文件</span></div>{% endif %}
   {% if m.deleted_ratio_pct %}<div class="stat"><b>{{ m.deleted_ratio_pct }}%</b><span>历史删除率</span></div>{% endif %}
 </div>
+{% endif %}
 {% endif %}
 
 <div class="grid two" style="margin-bottom:24px">

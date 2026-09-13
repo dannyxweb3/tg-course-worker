@@ -1,0 +1,145 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "SomeACG",
+  "username": "SomeACG",
+  "url": "https://t.me/SomeACG",
+  "title": "SomeACG | 每日少女壁纸",
+  "category": "ACG/二次元壁纸搬运（pixiv/twitter，带出处，SFW）",
+  "growth_short": "ACG 壁纸刚需自然转发",
+  "one_liner": "3.68 万订阅的二次元壁纸号：从 pixiv/twitter 搬运高质量 ACG 插画（带画师出处），SFW 向，ERR 13.8%、转发 12/帖，选题围绕碧蓝档案/东方/明日方舟等热门 IP。",
+  "analyzed_at": "2026-09-13T17:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/SomeACG.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-05-05",
+      "2026-09-11"
+    ],
+    "note": "pixiv.net 195 链接(画师出处标注);SFW 壁纸"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 36829,
+    "median_views": 5082,
+    "mean_views": 5151,
+    "p10_views": 4097,
+    "p90_views": 6317,
+    "err_pct": 13.8,
+    "mature_posts": 282,
+    "reactions_total": 1362,
+    "forwards_total": 3553,
+    "forwards_per_post": 11.8,
+    "er_pct": 0.09,
+    "posts_per_day": 2.3,
+    "views_available": true,
+    "media_mix": {
+      "document": 149,
+      "photo": 147,
+      "text": 4
+    },
+    "deleted_pct": 2.3,
+    "hosted_files": 149,
+    "hosted_bytes_gb": 1.01,
+    "file_ext": {
+      "jpg": 88,
+      "png": 46,
+      "jpeg": 15
+    },
+    "activity_note": "ERR 13.8%;带画师出处的 ACG 壁纸，SFW"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "高质量 ACG 插画/壁纸(原图 jpg/png 直传) + 画师出处链接(pixiv/twitter);标签为 IP/主题(#碧蓝档案 #东方Project #明日方舟 #初音未来 #风景)",
+    "delivery": "原图直传 Telegram(免费 CDN) + 标注 pixiv/twitter 画师主页;SFW 向少女壁纸",
+    "source": "搬运 pixiv/twitter ACG 画师作品(带出处)",
+    "schedule": "约 2.3 条/天，午后到晚间",
+    "growth": "ACG 壁纸刚需 + 热门 IP"
+  },
+  "growth": {
+    "strategy": "热门 IP 的 ACG 壁纸刚需自然转发",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "壁纸刚需",
+        "evidence": "转发 12/帖、原图直传",
+        "note": "高质量壁纸是 ACG 用户刚需"
+      },
+      {
+        "name": "热门 IP",
+        "evidence": "碧蓝档案/东方/明日方舟 标签",
+        "note": "蹭热门二次元 IP 流量"
+      }
+    ],
+    "signals": {
+      "subscribers": 36829,
+      "err_pct": 13.8,
+      "forwards_per_post": 11.8
+    },
+    "assessment": "ACG 壁纸搬运号，SFW 向、带画师出处。选题围绕热门二次元 IP，ERR 13.8% 健康。相对同类做了出处标注，尊重来源程度略高。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "抓取 pixiv + 发布 bot + VPS",
+        "cny_month": [
+          0,
+          120
+        ]
+      },
+      {
+        "name": "图片存储",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "Telegram 直传"
+      },
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          50
+        ],
+        "note": "半自动抓取"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      3000
+    ],
+    "model": "变现弱（可能捐赠/API/软广）",
+    "streams": [
+      {
+        "name": "捐赠/API/软广",
+        "evidence": "fanbox/booth 链接;无明显广告位",
+        "cny_month": [
+          0,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "更像 ACG 爱好项目，变现意图弱;SomeACG/SomeImages 系有开放图片 API"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "搬运 pixiv/twitter 画师 ACG 作品，未获授权即分发，涉著作权(尽管标注了出处)",
+      "SFW 向少女壁纸，个别 #萝莉 标签需注意但样本为非露骨插画",
+      "相较无出处的搬运号，尊重来源程度略高，风险中等"
+    ]
+  }
+}

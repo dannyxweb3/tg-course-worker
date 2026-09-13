@@ -1,0 +1,141 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "botmzt",
+  "username": "botmzt",
+  "url": "https://t.me/botmzt",
+  "title": "快乐星球 | 妹子图 | 收集器",
+  "category": "妹子图/软色情图集（每日批量自动发布）",
+  "growth_short": "软色情刚需自然转发",
+  "one_liner": "5.27 万订阅的妹子图号：每天清晨 06:00 批量喷一天的图，纯图无文无链、reactions 关闭，软色情擦边内容靠转发扩散。",
+  "analyzed_at": "2026-09-13T13:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/botmzt.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-07-09",
+      "2026-09-12"
+    ],
+    "note": "290/300 在 06:00 发出，定时批量"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 52713,
+    "median_views": 3583,
+    "mean_views": 3589,
+    "p10_views": 3267,
+    "p90_views": 3891,
+    "err_pct": 6.8,
+    "mature_posts": 275,
+    "reactions_total": 0,
+    "forwards_total": 5952,
+    "forwards_per_post": 19.8,
+    "er_pct": 0.0,
+    "posts_per_day": 4.6,
+    "views_available": true,
+    "media_mix": {
+      "photo": 291,
+      "document": 9
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "阅读分布极窄（p10 3267/p90 3891），是订阅滚动曝光；reactions 关闭"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "纯图片(妹子图/软色情写真)，无正文、无标签、无链接;少量短视频",
+    "delivery": "图片直发 Telegram(免费托管);内容疑似扒取图站/社媒",
+    "schedule": "每天 06:00 定时批量喷完当日量(约 4-5 张/天集中发)",
+    "source": "图片来源不标注，疑似扒取",
+    "growth": "软色情刚需转发"
+  },
+  "growth": {
+    "strategy": "软色情刚需自然转发，定时批量维持更新",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "刚需转发",
+        "evidence": "转发 19.8/帖",
+        "note": "妹子图扩散力强"
+      }
+    ],
+    "signals": {
+      "subscribers": 52713,
+      "err_pct": 6.8,
+      "forwards_per_post": 19.8
+    },
+    "assessment": "5.27 万订阅的软色情图号，内容零创作、全自动批量发布。ERR 6.8% 中等，靠软色情刚需转发扩散。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "采图/发布 bot + VPS",
+        "cny_month": [
+          30,
+          200
+        ]
+      },
+      {
+        "name": "图片存储",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "Telegram 托管"
+      },
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "全自动，几乎零人力"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      1000,
+      6000
+    ],
+    "model": "引流付费/福利号 + 广告位",
+    "streams": [
+      {
+        "name": "广告位（成人/福利/游戏）",
+        "evidence": "5.27 万订阅曝光",
+        "cny_month": [
+          800,
+          4000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "导流付费写真/会员",
+        "evidence": "软色情号常见转化",
+        "cny_month": [
+          500,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "公开频道未见明显变现动作，多走私域/引流；软色情受众广告价值中等"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "软色情/妹子图擦边内容，在中国大陆有传播低俗内容风险敞口(本样本擦边非露骨，列 high)",
+      "图片疑似未授权扒取，涉著作权/肖像权",
+      "若导流露骨内容则升级"
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "wenan888",
+  "username": "wenan888",
+  "url": "https://t.me/wenan888",
+  "title": "佳佳文案吧｜素材｜壁纸｜头像",
+  "category": "博彩引流号（伪装为文案/头像/壁纸素材）",
+  "growth_short": "素材外壳 + 博彩广告",
+  "one_liner": "6.6 万订阅、日更约 60 条：表面是文案/头像/壁纸素材号，实则大量夹带博彩广告（USDT 棋牌、娱乐城招商、盘口）——素材是流量外壳，博彩引流才是主业。",
+  "analyzed_at": "2026-09-13T14:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/wenan888.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-07",
+      "2026-09-12"
+    ],
+    "note": "含博彩广告落地域名与招商联系方式，报告不收录原始域名"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 66100,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": true,
+    "views_note": "样本全在近 5 天（日更 60 条），阅读未累积",
+    "mature_posts": 0,
+    "reactions_total": 53,
+    "forwards_total": 110,
+    "forwards_per_post": 0.4,
+    "er_pct": 0.05,
+    "posts_per_day": 59.5,
+    "media_mix": {
+      "photo": 233,
+      "document": 63
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "转发 0.4/帖、reactions 极低——真实互动几乎没有，与『素材号』人设不符，佐证是引流壳"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "头像/壁纸/文案图片 + 短视频 为外壳内容;高频夹带博彩广告文案(USDT 棋牌、娱乐城招商、盘口担保)",
+    "delivery": "素材做流量诱饵;博彩广告带落地域名 + 招商/客服 TG 账号(KY33/KYQP 等棋牌品牌、TGYLCzhaoshang 娱乐城招商)",
+    "schedule": "日更约 60 条，集中在 17 点(228/300)一次性喷",
+    "growth": "素材关键词吸粉 + 博彩广告变现"
+  },
+  "growth": {
+    "strategy": "用免费头像/文案素材当钩子吸泛粉，再灌博彩广告",
+    "paid_acquisition": "unknown",
+    "mechanisms": [
+      {
+        "name": "素材吸粉",
+        "evidence": "#头像 #壁纸 高频铺量",
+        "note": "低质泛粉钩子"
+      },
+      {
+        "name": "博彩招商",
+        "evidence": "娱乐城招商/棋牌品牌 @",
+        "note": "变现主体"
+      }
+    ],
+    "signals": {
+      "subscribers": 66100,
+      "forwards_per_post": 0.4,
+      "posts_per_day": 59.5
+    },
+    "assessment": "6.6 万订阅但转发 0.4/帖、互动极低，是典型『素材外壳 + 博彩内核』：素材负责涨泛粉，博彩广告负责变现。真实受众质量差。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      600
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "发布 bot + VPS",
+        "cny_month": [
+          100,
+          400
+        ]
+      },
+      {
+        "name": "素材采集(扒图)",
+        "cny_month": [
+          0,
+          100
+        ]
+      },
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          100
+        ],
+        "note": "半自动批量"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      20000
+    ],
+    "model": "博彩广告位/招商分成",
+    "streams": [
+      {
+        "name": "博彩/棋牌/娱乐城 广告位与招商",
+        "evidence": "USDT 棋牌品牌、娱乐城招商 @、盘口域名",
+        "cny_month": [
+          3000,
+          20000
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "note": "素材不变现，全部收入来自博彩引流/招商;区间为灰产广告惯例估算"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "为境外博彩/棋牌/娱乐城引流并招商，属开设赌场罪/帮信罪的引流环节",
+      "以素材号为掩护规避识别",
+      "博彩落地域名与招商联系方式不适合原样展示，报告不收录"
+    ]
+  }
+}

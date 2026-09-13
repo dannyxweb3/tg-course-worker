@@ -1,0 +1,146 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "Legado_Channels",
+  "username": "Legado_Channels",
+  "url": "https://t.me/Legado_Channels",
+  "title": "Legado｜开源阅读｜频道",
+  "category": "开源阅读 App 社区频道（APK/书源/主题分发）",
+  "growth_short": "开源社区口碑",
+  "one_liner": "9.3 万订阅的开源阅读 App「Legado」社区频道：分发 APK、书源、TTS、主题，ERR 68.6% 为全样本最高——极忠实的工具社区；但书源指向盗版小说站是其灰色地带。",
+  "analyzed_at": "2026-09-13T15:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/Legado_Channels.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2024-07-10",
+      "2026-08-25"
+    ],
+    "note": "开源阅读 App 官方社区频道，APK/书源/主题混合"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 92951,
+    "median_views": 63736,
+    "mean_views": 67439,
+    "p10_views": 24221,
+    "p90_views": 104657,
+    "err_pct": 68.6,
+    "mature_posts": 294,
+    "reactions_total": 10054,
+    "forwards_total": 15074,
+    "forwards_per_post": 50.2,
+    "er_pct": 0.05,
+    "posts_per_day": 0.4,
+    "views_available": true,
+    "media_mix": {
+      "photo": 198,
+      "document": 54,
+      "webpage": 12,
+      "text": 36
+    },
+    "deleted_pct": 7.4,
+    "hosted_files": 48,
+    "file_ext": {
+      "apk": 24,
+      "json": 7,
+      "mp4": 6,
+      "ttf": 4
+    },
+    "activity_note": "ERR 68.6% 全样本最高——开源工具的核心用户社区，粘性极强"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "post_structure": "版本更新公告 + APK 直传 + 书源(json)/主题(ttf)/TTS 资源;标签 #小说 #阅读 #起点 #番茄 #书源 #Legado",
+    "delivery": "APK/书源/主题直传 Telegram;书源指向各小说站(含起点/番茄等付费源的免费读取)",
+    "asset": "Legado 开源阅读 App 生态(app 本身 FOSS，托管在 github)",
+    "schedule": "约 0.4 条/天，版本/资源驱动更新",
+    "growth": "开源社区口碑 + 工具刚需"
+  },
+  "growth": {
+    "strategy": "开源工具的核心用户社区，口碑与刚需驱动",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "工具刚需",
+        "evidence": "APK/书源更新，ERR 68.6%",
+        "note": "用户为工具与书源而来"
+      },
+      {
+        "name": "开源社区",
+        "evidence": "github + 书源分享站互链",
+        "note": "FOSS 生态自然聚集"
+      }
+    ],
+    "signals": {
+      "subscribers": 92951,
+      "err_pct": 68.6,
+      "forwards_per_post": 50.2
+    },
+    "assessment": "开源阅读 App 的官方向社区频道，ERR 68.6% 说明是极忠实的工具用户盘。低频更新(版本/资源驱动)但粘性顶级。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "开发/维护(App 为开源，社区贡献)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "FOSS，主成本是开发者志愿时间"
+      },
+      {
+        "name": "频道运营时间",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "低频，约 5-15 小时/月"
+      },
+      {
+        "name": "资源托管",
+        "cny_month": [
+          0,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      3000
+    ],
+    "model": "开源项目，商业化弱（打折券/TTS 资源联盟或捐赠）",
+    "streams": [
+      {
+        "name": "TTS/打折券 等联盟 或 捐赠",
+        "evidence": "@miaogongzi获取打折券、MultiTTS_resource 等 @",
+        "cny_month": [
+          0,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "开源工具社区，变现意图弱;高 ERR 有潜在广告价值但未积极商业化"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "Legado 阅读 App 本身是合法开源软件(FOSS)",
+      "但『书源』功能指向各小说站、可免费读取起点/番茄等付费小说，构成对小说版权的规避，属侵权灰色地带",
+      "风险在书源生态而非 App 本身;整体低于纯盗版号"
+    ]
+  }
+}

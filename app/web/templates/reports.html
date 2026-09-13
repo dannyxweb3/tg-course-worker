@@ -40,13 +40,13 @@
     <div class="rep-metrics">
       {% if c.kind == 'group' %}
         <div><span>成员</span><b>{{ c.members|num }}</b></div>
-        <div><span>在线率</span><b>{{ c.online_pct|pct }}</b></div>
+        <div><span>在线数</span><b>{{ c.online|num if c.online is not none else '—' }}{% if c.online_pct is not none %} <small class="muted">{{ c.online_pct }}%</small>{% endif %}</b></div>
+        <div><span>每日消息</span><b>{{ c.messages_per_day|num if c.messages_per_day is not none else '—' }}</b></div>
         <div><span>机器人占比</span><b>{{ c.bot_share_pct|pct }}</b></div>
-        <div><span>中位阅读</span><b>{{ c.median_views|num if c.median_views else '—' }}</b></div>
       {% else %}
         <div><span>订阅</span><b>{{ c.subscribers|num }}</b></div>
         <div><span>中位阅读</span><b>{{ c.median_views|num if c.median_views else '—' }}</b></div>
-        <div><span>ERR</span><b class="{{ 'good' if c.err_pct and c.err_pct >= 2 else ('bad' if c.err_pct is not none else '') }}">{{ c.err_pct|pct }}</b></div>
+        <div><span>ERR 互动率</span><b class="{{ 'good' if c.err_pct and c.err_pct >= 2 else ('bad' if c.err_pct is not none else '') }}">{{ c.err_pct|pct }}</b></div>
         <div><span>转发/帖</span><b>{{ c.forwards_per_post|dash }}</b></div>
       {% endif %}
     </div>

@@ -1,0 +1,146 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "xyxyspace",
+  "username": "xyxyspace",
+  "url": "https://t.me/xyxyspace",
+  "title": "乱七八糟的储物箱",
+  "category": "安卓破解/去广告 App 分享（个人策展）",
+  "growth_short": "破解 App 刚需自然转发",
+  "one_liner": "2.8 万订阅的安卓 App 号：直传去广告/破解 APK（215 个/6.9GB，inshot/xplayer 等），配个人碎碎念，ERR 112.7%（转发远超订阅数）——扩散力顶级。",
+  "analyzed_at": "2026-09-13T17:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/xyxyspace.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2023-05-09",
+      "2026-09-11"
+    ],
+    "note": "215 个 apk 直传;ERR>100% 因中位阅读(31601)超过订阅数(28051)，靠大量转发"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 28051,
+    "median_views": 31601,
+    "mean_views": 30615,
+    "p10_views": 17056,
+    "p90_views": 42369,
+    "err_pct": 112.7,
+    "mature_posts": 297,
+    "reactions_total": 16335,
+    "forwards_total": 22372,
+    "forwards_per_post": 74.6,
+    "er_pct": 0.18,
+    "posts_per_day": 0.2,
+    "views_available": true,
+    "media_mix": {
+      "document": 222,
+      "text": 51,
+      "photo": 24,
+      "webpage": 3
+    },
+    "deleted_pct": 5.4,
+    "hosted_files": 221,
+    "hosted_bytes_gb": 6.92,
+    "file_ext": {
+      "apk": 215,
+      "js": 3,
+      "exe": 1,
+      "7z": 1
+    },
+    "activity_note": "ERR 112.7% 全样本最高——中位阅读超过订阅数，靠转发扩散到订阅盘之外"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "post_structure": "去广告/破解安卓 App 介绍 + APK 直传 + 个人碎碎念;标签 #安卓 #tool #social #media #碎碎念 #群友推荐",
+    "delivery": "APK 直传 Telegram(6.9GB 免费 CDN);选品为主流 App 的去广告/破解版(inshot/xplayer/twitter 增强等)",
+    "curation": "人工策展 + 个人风格，含群友推荐",
+    "schedule": "约 0.2 条/天(低频精选)，晚 20-22 点",
+    "growth": "破解 App 刚需 + 个人口碑"
+  },
+  "growth": {
+    "strategy": "去广告/破解 App 刚需 + 个人策展口碑，强自然转发",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "破解 App 刚需",
+        "evidence": "215 个去广告/破解 APK",
+        "note": "主流 App 破解版是刚需"
+      },
+      {
+        "name": "人格化+精选",
+        "evidence": "ERR 112.7%、转发 74.6/帖、碎碎念",
+        "note": "低频精选+个人风格，转发扩散到订阅盘外"
+      }
+    ],
+    "signals": {
+      "subscribers": 28051,
+      "err_pct": 112.7,
+      "forwards_per_post": 74.6
+    },
+    "assessment": "扩散力全样本最强(ERR 112.7%、中位阅读超订阅数)。低频但每条精选破解 App，靠刚需+口碑被大量转发出圈。变现意图弱。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "发布/VPS",
+        "cny_month": [
+          0,
+          100
+        ]
+      },
+      {
+        "name": "APK 破解/去广告(自破或搬运)",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "人力;Telegram 直传零带宽"
+      },
+      {
+        "name": "运营时间(找/测/写，约 10-20 小时/月)",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      500,
+      4000
+    ],
+    "model": "变现克制（网盘/软广/群，弱商业化）",
+    "streams": [
+      {
+        "name": "网盘/软广 或 群导流",
+        "evidence": "huihongcloud 等少量网盘;无明显广告位",
+        "cny_month": [
+          500,
+          4000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "以个人分享为主，变现意图弱;高扩散但未积极商业化"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "系统性分发去广告/破解安卓 App(重打包 APK)，侵犯著作权",
+      "重打包件有夹带恶意代码风险(对用户)",
+      "个人策展框架但内容为破解分发，属侵犯知识产权类"
+    ]
+  }
+}

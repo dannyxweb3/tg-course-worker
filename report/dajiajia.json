@@ -1,0 +1,125 @@
+{
+  "schema_version": 3,
+  "kind": "group",
+  "slug": "dajiajia",
+  "username": "dajiajia",
+  "url": "https://t.me/dajiajia",
+  "title": "好棒 🌈 羊毛超级搜",
+  "category": "淘客/羊毛返利群（电商 CPS 联盟）",
+  "growth_short": "返利刚需",
+  "one_liner": "9.3 千成员的淘客返利群：自动播报淘宝/京东/拼多多的优惠券与返利链接（CPS 联盟），匿名单向发布、日更约 277 条，靠电商佣金变现。",
+  "analyzed_at": "2026-09-13T14:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/dajiajia.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "note": "消息均为匿名管理员/机器人单向发布，无普通成员发言样本"
+  },
+  "metrics": {
+    "confidence": "high",
+    "members": 9328,
+    "online": 125,
+    "online_pct": 1.3,
+    "subscribers": null,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": false,
+    "views_note": "群无 per-message 阅读量",
+    "messages_per_day": 277,
+    "bot_share_pct": null,
+    "reactions_total": 1,
+    "forwards_total": 0,
+    "forwards_per_post": 0.0,
+    "id_span_sampled": [
+      674591,
+      674891
+    ],
+    "deleted_ratio_pct": 0.3,
+    "activity_note": "在线 1.3%，几乎全为匿名单向播报，互动近乎为零——是自动化返利播报群而非社区"
+  },
+  "implementation": {
+    "publish_identity": "bot_anonymous",
+    "chat_type": "megagroup",
+    "post_structure": "商品图 + 券后价/返利说明 + 淘宝/京东/拼多多联盟短链(s.click.taobao.com 139、u.jd.com 100、p.pinduoduo.com)",
+    "delivery": "CPS 联盟深链(阿里妈妈/京东联盟/多多进宝)，用户点击下单产生佣金",
+    "automation": "匿名单向自动播报，无真人互动",
+    "schedule": "日更约 277 条，白天 10-16 点为主",
+    "growth": "羊毛/优惠刚需"
+  },
+  "growth": {
+    "strategy": "薅羊毛/优惠券刚需，自动播报聚流量",
+    "paid_acquisition": "unknown",
+    "mechanisms": [
+      {
+        "name": "返利刚需",
+        "evidence": "淘宝/京东/拼多多券后价播报",
+        "note": "省钱刚需吸引价格敏感用户"
+      }
+    ],
+    "signals": {
+      "members": 9328,
+      "online_pct": 1.3,
+      "messages_per_day": 277
+    },
+    "assessment": "自动化淘客返利群，在线率 1.3%、几乎零互动，是单向 CPS 播报工具。规模不大，靠佣金走量。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      50,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "淘客采集/转链 bot + VPS",
+        "cny_month": [
+          50,
+          300
+        ]
+      },
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "全自动转链播报"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      1000,
+      8000
+    ],
+    "model": "电商 CPS 佣金（淘宝/京东/拼多多联盟）",
+    "streams": [
+      {
+        "name": "淘宝/京东/拼多多 CPS 佣金",
+        "evidence": "s.click.taobao.com/u.jd.com/p.pinduoduo.com 联盟深链",
+        "cny_month": [
+          1000,
+          8000
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "note": "合法联盟营销(阿里妈妈/京东联盟)，收入随成交量;9.3k 群规模决定盘子有限"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "淘客/CPS 返利是合法的电商联盟营销(阿里妈妈、京东联盟、多多进宝官方计划)",
+      "风险点仅在自动化刷屏/群发合规与平台规则，非灰黑产",
+      "无盗版、无成人、无博彩、无诈骗要素"
+    ]
+  }
+}

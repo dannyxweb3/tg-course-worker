@@ -1,0 +1,154 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "ddgksf2021",
+  "username": "ddgksf2021",
+  "url": "https://t.me/ddgksf2021",
+  "title": "Cuttlefishの自留地",
+  "category": "个人资源/App/影视分享（自有站 ddgksf2013.top）",
+  "growth_short": "内容质量自然转发",
+  "one_liner": "4.58 万订阅的个人自留地：App/影视/冷门信息分享，自有站 ddgksf2013.top，ERR 42.6%、转发 30/帖，高粘性个人号，夹带少量京东联盟。",
+  "analyzed_at": "2026-09-13T17:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/ddgksf2021.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-12-18",
+      "2026-09-12"
+    ],
+    "note": "deleted 35.6% 滚动删除;reactions 关闭"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 45760,
+    "median_views": 19506,
+    "mean_views": 19510,
+    "p10_views": 15257,
+    "p90_views": 22949,
+    "err_pct": 42.6,
+    "mature_posts": 291,
+    "reactions_total": 0,
+    "forwards_total": 8948,
+    "forwards_per_post": 29.8,
+    "er_pct": 0.0,
+    "posts_per_day": 1.1,
+    "views_available": true,
+    "media_mix": {
+      "photo": 176,
+      "text": 111,
+      "document": 12,
+      "poll": 1
+    },
+    "deleted_pct": 35.6,
+    "activity_note": "ERR 42.6% 高;reactions 关闭，看转发(30/帖)"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "post_structure": "App/影视/冷门信息 + 个人碎碎语 + 指向自有站 ddgksf2013.top(97)/TestFlight/App Store 的链接;标签 #你可能不知道的信息 #碎碎语",
+    "delivery": "自有站为主站，TG 分发;内容含 App 推荐、影视资源、Google 共享文档、少量 apk",
+    "schedule": "约 1.1 条/天，晚 19-22 点 + 上午",
+    "growth": "内容质量 + 自有站互导"
+  },
+  "growth": {
+    "strategy": "高质量个人策展(App/影视/冷知识)的口碑增长 + 自有站互导",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "内容质量",
+        "evidence": "ERR 42.6%、转发 30/帖",
+        "note": "实用+冷门信息有粘性"
+      },
+      {
+        "name": "自有站",
+        "evidence": "ddgksf2013.top 97 链接",
+        "note": "博客+TG 双入口"
+      }
+    ],
+    "signals": {
+      "subscribers": 45760,
+      "err_pct": 42.6,
+      "forwards_per_post": 29.8
+    },
+    "assessment": "高粘性个人自留地号，ERR 42.6%。App/影视/冷门信息选题实用，自有站沉淀。变现克制(少量京东联盟)。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "自有站 ddgksf2013.top 托管+域名",
+        "cny_month": [
+          0,
+          200
+        ]
+      },
+      {
+        "name": "运营时间(策展+写站，约 20-40 小时/月)",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "发布工具/VPS",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      1000,
+      6000
+    ],
+    "model": "自有站 + 京东联盟 + 软广",
+    "streams": [
+      {
+        "name": "自有站广告/流量",
+        "evidence": "ddgksf2013.top 97 链接",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "京东联盟 CPS",
+        "evidence": "u.jd.com 14 链接",
+        "cny_month": [
+          300,
+          2000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "App/工具软广",
+        "evidence": "apps.apple.com/testflight 链接",
+        "cny_month": [
+          200,
+          1500
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "以个人分享为主，变现克制;高 ERR 使联盟/软广转化好"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "个人 App/影视/信息分享 + 自有站，多为合规内容 + 联盟",
+      "含少量影视资源/apk 与 NSFW 标签(1/300)，有轻微侵权/擦边",
+      "整体风险中低"
+    ]
+  }
+}

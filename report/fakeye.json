@@ -1,0 +1,135 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "fakeye",
+  "username": "fakeye",
+  "url": "https://t.me/fakeye",
+  "title": "不求甚解",
+  "category": "个人科技/生活周刊博客（自有博客导流）",
+  "growth_short": "内容质量口碑",
+  "one_liner": "个人科技周刊号：作者把自己博客(blog.solazy.me)的 Web/App/GitHub/生活精选同步到 TG，ERR 31.6%（1.9 万订阅/中位 6k 阅读），纯内容驱动、近乎无商业化。",
+  "analyzed_at": "2026-09-13T13:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/fakeye.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-03-05",
+      "2026-06-30"
+    ],
+    "note": "末更 2026-06-30，更新转稀但仍在 6 个月内"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 19213,
+    "median_views": 6071,
+    "mean_views": 6782,
+    "p10_views": 4833,
+    "p90_views": 10174,
+    "err_pct": 31.6,
+    "mature_posts": 300,
+    "reactions_total": 2695,
+    "forwards_total": 8507,
+    "forwards_per_post": 28.4,
+    "er_pct": 0.13,
+    "posts_per_day": 0.6,
+    "views_available": true,
+    "media_mix": {
+      "photo": 263,
+      "document": 19,
+      "poll": 18
+    },
+    "deleted_pct": 2.3,
+    "activity_note": "ERR 31.6% 极高，是高质量个人周刊的忠实受众"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "post_structure": "配图 + 一段点评 + 指向自有博客(blog.solazy.me 183 链接)/GitHub/App Store 的链接;标签 #Web #Life #App #GitHub #Weekly #Mac #Food #AI",
+    "delivery": "以自有博客为内容主站，TG 做分发;不搬运不托管盗版",
+    "curation": "人工策展 Web/App/开源/生活好物，周刊化",
+    "schedule": "约 0.6 条/天，上午 9-11 点",
+    "growth": "内容质量 + 博客/TG 双向导流"
+  },
+  "growth": {
+    "strategy": "高质量个人策展的口碑增长，不做付费获客",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "内容质量",
+        "evidence": "ERR 31.6%、转发 28/帖",
+        "note": "值得转发的精选"
+      },
+      {
+        "name": "博客-TG 双向导流",
+        "evidence": "183 条指向自有 blog.solazy.me",
+        "note": "自有主站沉淀"
+      }
+    ],
+    "signals": {
+      "subscribers": 19213,
+      "err_pct": 31.6,
+      "forwards_per_post": 28.4
+    },
+    "assessment": "典型高质量个人周刊号，ERR 31.6%。靠内容质量沉淀忠实受众，有自有博客做内容主站。近期更新转稀。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间（人工策展+写博客+周刊，约 15-30 小时/月）",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "博客托管 + 域名",
+        "cny_month": [
+          0,
+          100
+        ]
+      },
+      {
+        "name": "发布工具",
+        "cny_month": [
+          0,
+          50
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      2000
+    ],
+    "model": "基本无商业化（偶有 App/工具软广或赞赏）",
+    "streams": [
+      {
+        "name": "App/工具软广 或 赞赏",
+        "evidence": "apps.apple.com/chromewebstore 少量链接",
+        "cny_month": [
+          0,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "以个人分享为主，变现意图弱；高 ERR 有广告价值但未积极商业化"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "个人科技/生活策展 + 自有博客导流，属正常内容创作与信息分享，无灰产、无侵权",
+      "偶有翻墙/工具类推荐属技术中立内容"
+    ]
+  }
+}

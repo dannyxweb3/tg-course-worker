@@ -1,0 +1,152 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "pixiv_top50",
+  "username": "pixiv_top50",
+  "url": "https://t.me/pixiv_top50",
+  "title": "PIXIV站每日 Top50搬运｜ACG｜二次元",
+  "category": "Pixiv 每日榜图搬运（ACG/二次元，SFW 向）",
+  "growth_short": "ACG 刚需 + 互推",
+  "one_liner": "9 万订阅的 Pixiv 每日 Top50 搬运号：每天扒 P 站排行榜图 + 原图 zip 包（2.48GB/样本），ERR 2.5%，靠 ACG 刚需与互推(Hu_Tuibot)增长，未授权搬运画师作品。",
+  "analyzed_at": "2026-09-13T15:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/pixiv_top50.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-21",
+      "2026-09-12"
+    ],
+    "note": "与已分析的 pixiv_top50_r18 是同系不同号(本号偏 SFW)"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 90301,
+    "median_views": 2219,
+    "mean_views": 2153,
+    "p10_views": 1610,
+    "p90_views": 2638,
+    "err_pct": 2.5,
+    "mature_posts": 208,
+    "reactions_total": 145,
+    "forwards_total": 827,
+    "forwards_per_post": 2.8,
+    "er_pct": 0.03,
+    "posts_per_day": 13.7,
+    "views_available": true,
+    "media_mix": {
+      "photo": 267,
+      "document": 24,
+      "text": 9
+    },
+    "deleted_pct": 0.7,
+    "hosted_files": 24,
+    "files_gb": 2.48,
+    "file_ext": {
+      "zip": 24
+    },
+    "activity_note": "ERR 2.5% 偏低(订阅大但真实活跃一般);日更 13.7 条铺量"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "P 站每日排行榜图(缩略) + 原图 zip 包直传(2.48GB/样本);少量网盘(nekocloud/pikpak)链接",
+    "delivery": "缩略图 + 原图 zip 直传 Telegram(免费 CDN);扒取 pixiv 每日 Top50 榜",
+    "schedule": "日更约 14 条，晚 15-18 点为主",
+    "source": "未授权搬运 Pixiv 画师作品",
+    "growth": "ACG 刚需 + 互推"
+  },
+  "growth": {
+    "strategy": "P 站排行榜刚需搬运 + 互推换量",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "排行榜刚需",
+        "evidence": "每日 Top50 榜图",
+        "note": "ACG 用户追榜刚需"
+      },
+      {
+        "name": "互推",
+        "evidence": "#互推 标签 + @Hu_Tuibot",
+        "note": "与 ACG 号互推换量"
+      }
+    ],
+    "signals": {
+      "subscribers": 90301,
+      "err_pct": 2.5,
+      "forwards_per_post": 2.8
+    },
+    "assessment": "P 站榜图搬运号，9 万订阅但 ERR 2.5% 偏低——互推堆量为主，真实活跃一般。原图 zip 直传是留存点。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      250
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "抓取 pixiv + 打包 + 发布 bot + VPS",
+        "cny_month": [
+          30,
+          200
+        ]
+      },
+      {
+        "name": "图片/zip 存储",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "Telegram 直传"
+      },
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          50
+        ],
+        "note": "全自动抓取打包"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      1000,
+      6000
+    ],
+    "model": "互推 + 网盘/图包会员 + 广告",
+    "streams": [
+      {
+        "name": "网盘/图包会员导流",
+        "evidence": "nekocloud/pikpak 链接",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "ACG 广告/互推奖励",
+        "evidence": "#互推 + Hu_Tuibot",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现走网盘/图包 + 广告;ERR 低使广告价值受限"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "未经授权系统性搬运 Pixiv 画师作品，侵犯著作权",
+      "原图 zip 打包分发进一步侵权",
+      "本号偏 SFW，但同系存在 R18 版；ACG 搬运整体属侵犯知识产权类"
+    ]
+  }
+}

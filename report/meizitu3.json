@@ -1,0 +1,147 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "meizitu3",
+  "username": "meizitu3",
+  "url": "https://t.me/meizitu3",
+  "title": "朱颜别镜 | 妹子图 | 美女图",
+  "category": "妹子图/软色情写真（抖音/微博扒图，每日批量）",
+  "growth_short": "软色情刚需转发",
+  "one_liner": "4.95 万订阅的妹子图号：每天 07:00 批量喷抖音/微博网红写真，ERR 6.4%、转发 8.7/帖，软色情擦边 + 未授权扒图，夹带少量导流域名。",
+  "analyzed_at": "2026-09-13T15:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/meizitu3.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-08",
+      "2026-09-12"
+    ],
+    "note": "294/300 在 07:00 批量发布"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 49523,
+    "median_views": 3181,
+    "mean_views": 3223,
+    "p10_views": 2814,
+    "p90_views": 3672,
+    "err_pct": 6.4,
+    "mature_posts": 248,
+    "reactions_total": 58,
+    "forwards_total": 2618,
+    "forwards_per_post": 8.7,
+    "er_pct": 0.01,
+    "posts_per_day": 8.6,
+    "views_available": true,
+    "media_mix": {
+      "photo": 271,
+      "document": 23,
+      "text": 6
+    },
+    "deleted_pct": 4.5,
+    "activity_note": "reactions 极低、转发 8.7/帖，与 botmzt 同类软色情图号"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "网红写真图/短视频 + 出处标注(抖音/微博创作者);标签为创作者名 #写真 #人像",
+    "delivery": "图片/短视频直发 Telegram;扒取抖音/微博网红内容;夹带少量导流域名(网赚/擦边)",
+    "schedule": "每天 07:00 定时批量",
+    "source": "抖音/微博扒图",
+    "growth": "软色情刚需转发"
+  },
+  "growth": {
+    "strategy": "软色情写真刚需自然转发，定时批量维持更新",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "刚需转发",
+        "evidence": "转发 8.7/帖",
+        "note": "写真扩散"
+      },
+      {
+        "name": "蹭网红",
+        "evidence": "标注抖音/微博创作者名",
+        "note": "蹭热门网红流量"
+      }
+    ],
+    "signals": {
+      "subscribers": 49523,
+      "err_pct": 6.4,
+      "forwards_per_post": 8.7
+    },
+    "assessment": "软色情写真号，扒抖音/微博网红。ERR 6.4% 中等，与 botmzt 同模式(定时批量+软色情)。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "采图/发布 bot + VPS",
+        "cny_month": [
+          30,
+          200
+        ]
+      },
+      {
+        "name": "图片存储",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "Telegram 托管"
+      },
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          50
+        ],
+        "note": "半自动批量"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      1000,
+      6000
+    ],
+    "model": "广告位 + 导流(网赚/付费写真)",
+    "streams": [
+      {
+        "name": "广告位/导流域名",
+        "evidence": "hongxing 系列域名导流",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "导流付费写真/会员",
+        "evidence": "软色情号常见转化",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "公开变现动作少，多走导流;软色情受众广告价值中等"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "软色情/妹子图擦边，在中国大陆有传播低俗内容风险敞口(擦边非露骨，列 high)",
+      "未授权扒取抖音/微博网红写真，侵犯著作权/肖像权",
+      "夹带导流域名(网赚/擦边)增加合规风险"
+    ]
+  }
+}

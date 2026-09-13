@@ -1,0 +1,154 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "baisi",
+  "username": "baisi",
+  "url": "https://t.me/baisi",
+  "title": "白丝即正义",
+  "category": "Cosplay/写真 软色情图集搬运（转载 twitter/weibo 创作者）",
+  "growth_short": "软色情刚需自然转发",
+  "one_liner": "16.5 万订阅的白丝/cosplay 写真搬运号：从 twitter/微博 cosplayer 扒图（BlueArchive/NIKKE 等二次元角色），ERR 20%、转发 67/帖，软色情擦边 + 未授权转载。",
+  "analyzed_at": "2026-09-13T12:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/baisi.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-10-31",
+      "2026-09-03"
+    ],
+    "note": "图集为主，内容为软色情擦边（非露骨），未删/未大量存储视频"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 164529,
+    "median_views": 33527,
+    "mean_views": 34111,
+    "p10_views": 16061,
+    "p90_views": 51516,
+    "err_pct": 20.4,
+    "mature_posts": 300,
+    "reactions_total": 6680,
+    "forwards_total": 20226,
+    "forwards_per_post": 67.4,
+    "er_pct": 0.07,
+    "posts_per_day": 1.0,
+    "views_available": true,
+    "media_mix": {
+      "photo": 284,
+      "document": 16
+    },
+    "deleted_pct": 0.7,
+    "activity_note": "ERR 20%、转发 67/帖，软色情/写真是高粘性刚需内容，扩散强"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "cosplay/写真图集(白丝、二次元角色扮演) + 出处标注(twitter/微博创作者 handle);少量短视频",
+    "delivery": "图片直发 Telegram;附原作者 twitter/t.co/weibo 链接(既是出处也是导流)",
+    "source": "扒取 twitter/微博 cosplayer 内容(tag: BlueArchive/NIKKE/ゼンゼロ 等)",
+    "schedule": "约 1 条/天，集中在晚 20-23 点",
+    "growth": "软色情刚需转发 + 二次元圈层"
+  },
+  "growth": {
+    "strategy": "软色情/cosplay 写真刚需 → 强自然转发，二次元圈层扩散",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "刚需转发",
+        "evidence": "转发 67/帖、reactions 6680",
+        "note": "写真/软色情扩散力强"
+      },
+      {
+        "name": "二次元角色标签",
+        "evidence": "BlueArchive/NIKKE/ブルアカ 等 tag",
+        "note": "蹭热门游戏角色 cos 流量"
+      }
+    ],
+    "signals": {
+      "subscribers": 164529,
+      "err_pct": 20.4,
+      "forwards_per_post": 67.4
+    },
+    "assessment": "16.5 万订阅、20% ERR、转发 67/帖，是高粘性的软色情写真号。内容全靠扒 twitter/微博 cosplayer，自身零创作。扩散强因软色情是刚需。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      50,
+      400
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "扒图/整理 运营时间（约 15-30 小时/月）",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "发布 bot + VPS",
+        "cny_month": [
+          50,
+          200
+        ]
+      },
+      {
+        "name": "图片存储",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "Telegram 托管"
+      },
+      {
+        "name": "内容采购",
+        "cny_month": [
+          0,
+          200
+        ],
+        "note": "多为免费扒取，少量付费写真套图"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "model": "引流付费写真/福利号 + 广告位",
+    "streams": [
+      {
+        "name": "导流付费写真/会员",
+        "evidence": "软色情号常见的深度内容付费转化",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "广告位（成人/游戏/福利广告主）",
+        "evidence": "16.5 万订阅曝光位",
+        "cny_month": [
+          1500,
+          7000
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "note": "变现多走引流付费号/私域，公开频道少留痕；16.5 万高粘性受众广告价值可观"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "未经授权转载 twitter/微博 cosplayer 的写真图集，侵犯著作权与肖像权",
+      "软色情擦边内容（白丝/写真），在中国大陆有传播淫秽/低俗内容的风险敞口；本样本为擦边非露骨，故列 high 而非 criminal",
+      "扒取真人创作者内容，涉及被转载者的权益",
+      "若导流至露骨付费内容则风险升级"
+    ]
+  }
+}

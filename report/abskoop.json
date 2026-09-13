@@ -1,0 +1,152 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "abskoop",
+  "username": "abskoop",
+  "url": "https://t.me/abskoop",
+  "title": "ahhhhfs｜A姐分享",
+  "category": "资源导航/工具分享（自有站 ahhhhfs.com）",
+  "growth_short": "内容质量自然转发",
+  "one_liner": "30.7 万订阅的头部资源导航号：A姐分享(ahhhhfs.com)的 TG 分发，开源/AI 工具/网站/福利资源精选，ERR 7.7%、转发 73/帖，自有站沉淀。",
+  "analyzed_at": "2026-09-13T14:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/abskoop.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-03-27",
+      "2026-09-09"
+    ],
+    "note": "自有站 ahhhhfs.com 为内容主站"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 306740,
+    "median_views": 23497,
+    "mean_views": 25845,
+    "p10_views": 20244,
+    "p90_views": 36238,
+    "err_pct": 7.7,
+    "mature_posts": 297,
+    "reactions_total": 3583,
+    "forwards_total": 21778,
+    "forwards_per_post": 72.6,
+    "er_pct": 0.05,
+    "posts_per_day": 1.8,
+    "views_available": true,
+    "media_mix": {
+      "photo": 300
+    },
+    "deleted_pct": 0.3,
+    "activity_note": "30.7 万订阅、中位阅读 2.3 万、转发 73/帖——头部资源号，扩散强"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "post_structure": "配图 + 资源介绍 + 指向自有站 ahhhhfs.com 的深链;标签 #资源 #开源工具 #AI工具 #网站 #创意工具 #开发者项目",
+    "delivery": "以自有站 ahhhhfs.com 为内容主站(136 链接)，TG 做分发引流;涵盖开源/AI 工具、网站、软件、部分影视/课程资源",
+    "schedule": "约 1.8 条/天，晚 17-23 点",
+    "growth": "内容质量 + 自有站 SEO/互导"
+  },
+  "growth": {
+    "strategy": "高质量资源策展的口碑增长 + 自有站(SEO)双向导流",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "内容质量",
+        "evidence": "转发 73/帖、reactions 3583",
+        "note": "资源精选值得转发"
+      },
+      {
+        "name": "自有站 ahhhhfs.com",
+        "evidence": "136 链接指向自有站",
+        "note": "网站+TG 双入口，SEO 沉淀"
+      }
+    ],
+    "signals": {
+      "subscribers": 306740,
+      "err_pct": 7.7,
+      "forwards_per_post": 72.6
+    },
+    "assessment": "头部资源导航号(30.7 万订阅)。靠内容质量自然扩散 + 自有站 SEO 双轮驱动，是资源类里做得最大的一档。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      200,
+      1500
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "自有站 ahhhhfs.com 托管+CDN+域名",
+        "cny_month": [
+          150,
+          1000
+        ],
+        "note": "大流量站，成本主要在这"
+      },
+      {
+        "name": "运营时间（策展+写站+发布，约 40-80 小时/月）",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TG 发布/工具",
+        "cny_month": [
+          50,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      8000,
+      40000
+    ],
+    "model": "自有站广告/联盟 + 资源导流 + 软广",
+    "streams": [
+      {
+        "name": "自有站广告位/联盟(大流量)",
+        "evidence": "136 链接把 30.7 万 TG 流量导向 ahhhhfs.com",
+        "cny_month": [
+          5000,
+          25000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "软广/荐位",
+        "evidence": "头部资源号的常规广告位",
+        "cny_month": [
+          2000,
+          10000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "网盘/课程/工具联盟",
+        "evidence": "资源导流带联盟",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "30.7 万订阅 + 自有大流量站，变现盘子是资源类头部水平;真实数字取决于站内广告与联盟"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "资源导航以开源/工具/网站为主，多为合规内容 + 联盟营销",
+      "但也索引部分影视/破解/课程资源，存在侵犯著作权的灰色地带",
+      "整体风险低于纯盗版搬运号，高于纯原创号，居中"
+    ]
+  }
+}

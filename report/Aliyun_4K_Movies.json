@@ -1,0 +1,150 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "Aliyun_4K_Movies",
+  "username": "Aliyun_4K_Movies",
+  "url": "https://t.me/Aliyun_4K_Movies",
+  "title": "阿里、夸克、百度网盘4K影视资源",
+  "category": "网盘4K影视/短剧资源搬运（阿里/夸克/百度三网盘）",
+  "growth_short": "影视刚需 + 姊妹号矩阵",
+  "one_liner": "21.6 万订阅的大型网盘影视号：日更约 45 条，每帖三网盘（阿里/夸克/百度）转存链接，覆盖电影/剧集/短剧/擦边短剧/AI 短剧，姊妹号 @Netdisk_Movies 矩阵。",
+  "analyzed_at": "2026-09-13T13:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/Aliyun_4K_Movies.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-06",
+      "2026-09-13"
+    ],
+    "note": "300 条仅覆盖近 6.7 天（日更 45 条），阅读未累积，无法算成熟 ERR"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 215867,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": true,
+    "views_note": "样本全在近 7 天，阅读未收敛，成熟 ERR 无法计算",
+    "mature_posts": 0,
+    "reactions_total": 151,
+    "forwards_total": 609,
+    "forwards_per_post": 2.0,
+    "er_pct": 0.04,
+    "posts_per_day": 44.9,
+    "media_mix": {
+      "photo": 300
+    },
+    "deleted_pct": 1.0,
+    "activity_note": "日更约 45 条、21.6 万订阅，是本批盘子最大的网盘影视号之一"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "封面图 + 片名/简介 + 三网盘链接(阿里 alipan/夸克/百度);标签 #剧情 #短剧 #擦边短剧 #Ai短剧 #合集",
+    "delivery": "三网盘转存链接并列对冲失效;不自托管",
+    "selection": "电影/剧集/动漫 + 短剧(含擦边短剧/AI 短剧)",
+    "schedule": "日更约 45 条，晚 19-22 点为高峰",
+    "matrix": "姊妹号 @Netdisk_Movies(每帖互链 292 次)",
+    "growth": "影视刚需 + 矩阵互链"
+  },
+  "growth": {
+    "strategy": "影视/短剧刚需 + 姊妹号矩阵互相导流 + 高频覆盖",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "影视刚需",
+        "evidence": "日更 45 条覆盖热门影视/短剧",
+        "note": "高频铺量抓搜索/刚需"
+      },
+      {
+        "name": "姊妹号矩阵",
+        "evidence": "@Netdisk_Movies 每帖互链",
+        "note": "双号导流"
+      }
+    ],
+    "signals": {
+      "subscribers": 215867,
+      "posts_per_day": 44.9
+    },
+    "assessment": "21.6 万订阅的高频网盘影视号。靠高频铺量 + 三网盘覆盖 + 姊妹号矩阵做大。含擦边/AI 短剧内容。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      200,
+      1000
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "多网盘 SVIP（阿里/夸克/百度）",
+        "cny_month": [
+          100,
+          300
+        ]
+      },
+      {
+        "name": "运营时间（找源+转存+高频发布，约 40-80 小时/月）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "或半自动脚本"
+      },
+      {
+        "name": "VPS/发布 bot",
+        "cny_month": [
+          100,
+          300
+        ]
+      },
+      {
+        "name": "备用/姊妹号",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      5000,
+      30000
+    ],
+    "model": "多网盘拉新 CPA + 广告位",
+    "streams": [
+      {
+        "name": "网盘拉新 CPA（阿里/夸克/百度）",
+        "evidence": "每帖三网盘链接",
+        "cny_month": [
+          3000,
+          18000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "影视/短剧广告位",
+        "evidence": "21.6 万订阅曝光",
+        "cny_month": [
+          2000,
+          10000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "21.6 万订阅 + 影视高频，网盘 CPA 规模化，是盗版搬运号里盘子最大的一档"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "系统性分发盗版影视/短剧，侵犯著作权，营利可涉侵犯著作权罪",
+      "含擦边短剧/AI 短剧，有传播低俗内容风险敞口",
+      "网盘转存件挂马/失效风险",
+      "以网盘转存驱动拉新，属灰色营销"
+    ]
+  }
+}

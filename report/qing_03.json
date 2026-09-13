@@ -1,0 +1,156 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "qing_03",
+  "username": "qing_03",
+  "url": "https://t.me/qing_03",
+  "title": "精选音乐收藏馆",
+  "category": "无损音乐盗版分发（网易云 FLAC）+ 博彩导流",
+  "growth_short": "无损音乐刚需 + 互推",
+  "one_liner": "1.44 万订阅的无损音乐号：经 Music163bot 直传网易云 FLAC/mp3（8.6GB/样本、229 个 flac），夹带体育/棋牌博彩导流，87% 消息滚动删除。",
+  "analyzed_at": "2026-09-13T16:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/qing_03.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-12-16",
+      "2026-09-13"
+    ],
+    "note": "deleted 87.4% 滚动删除;夹带博彩导流(与 8G/182 矩阵同网)，域名不收录"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 14359,
+    "median_views": 1699,
+    "mean_views": 1811,
+    "p10_views": 833,
+    "p90_views": 2757,
+    "err_pct": 11.8,
+    "mature_posts": 289,
+    "reactions_total": 633,
+    "forwards_total": 834,
+    "forwards_per_post": 2.8,
+    "er_pct": 0.12,
+    "posts_per_day": 1.1,
+    "views_available": true,
+    "media_mix": {
+      "document": 291,
+      "text": 9
+    },
+    "deleted_pct": 87.4,
+    "hosted_files": 291,
+    "hosted_bytes_gb": 8.62,
+    "file_ext": {
+      "flac": 229,
+      "mp3": 47,
+      "mp4": 9,
+      "m4a": 6
+    },
+    "activity_note": "ERR 11.8%;无损音乐直传是主体，博彩为夹带"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "歌曲封面/信息 + 音频文件直传(FLAC/mp3);经 @Music163bot 从网易云取无损;夹带体育/棋牌博彩导流",
+    "delivery": "音频文件直传 Telegram(8.6GB/样本，免费 CDN);网易云 FLAC 无损盗版",
+    "schedule": "约 1.1 条/天，上午 9 点(263/300)批量",
+    "retention": "约 87% 滚动删除(版权规避)",
+    "network": "夹带 8G/182 博彩矩阵导流",
+    "growth": "无损音乐刚需 + 互推"
+  },
+  "growth": {
+    "strategy": "无损音乐刚需(网易云 FLAC 白嫖)自然转发 + 互推 + 博彩变现",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "无损音乐刚需",
+        "evidence": "229 个 FLAC 直传、Music163bot",
+        "note": "白嫖网易云无损是刚需"
+      },
+      {
+        "name": "互推/博彩",
+        "evidence": "#频道互推 #群组推荐 + 博彩 bot",
+        "note": "换量 + 变现"
+      }
+    ],
+    "signals": {
+      "subscribers": 14359,
+      "err_pct": 11.8,
+      "forwards_per_post": 2.8
+    },
+    "assessment": "无损音乐盗版号 + 博彩夹带。核心是网易云 FLAC 白嫖(经 Music163bot)，87% 滚动删除规避版权，同时夹带博彩导流。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      250
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "Music163bot/取歌 + 发布 bot + VPS",
+        "cny_month": [
+          30,
+          200
+        ]
+      },
+      {
+        "name": "音频存储",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "Telegram 直传"
+      },
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          50
+        ],
+        "note": "半自动取歌"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      12000
+    ],
+    "model": "博彩导流 + 音乐会员/互推",
+    "streams": [
+      {
+        "name": "体育/棋牌博彩导流",
+        "evidence": "球速/182体育、Svip182ty 系 bot、无风控免实名话术",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "音乐会员/互推奖励",
+        "evidence": "#频道互推 + 无损音乐钩子",
+        "cny_month": [
+          500,
+          4000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "无损音乐做钩子涨粉，博彩导流变现;区间较宽"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "经 bot 白嫖网易云 FLAC 无损音乐并分发，侵犯著作权(音乐版权)",
+      "夹带体育/棋牌博彩导流(无风控/免实名话术)，属开设赌场罪/帮信罪引流环节，性质最重",
+      "87% 滚动删除为版权/举报规避",
+      "博彩域名与 bot 不收录"
+    ]
+  }
+}

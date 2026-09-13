@@ -45,15 +45,33 @@ ORDER = [
     "chengdu_normal_university", "CDdhyzck1", "szflwbd", "gansu8821", "guonrsgc",
     # AI 生成违禁内容（制作方，非搬运）
     "bcuhz",
+    # ==== 2026-09-13 批次 ====
+    # 正规内容 / 个人策展（对照组，low risk）
+    "scitech_fans", "aboutrss", "fakeye", "GodlyNews1", "cnbeta_com", "appinnfeed",
+    "geekshare", "ruyoblog", "miaowu", "dajiajia",
+    # 个人 / 高质量分享（medium，含少量侵权/擦边）
+    "xyxyspace", "AWAvenue", "abskoop", "ddgksf2021", "Legado_Channels", "AppDoDo", "SomeACG",
+    # 资源搬运 / 盗版（high：影视/电子书/软件/ACG）
+    "Aliyun_4K_Movies", "gdsharing", "youyousharechannel", "TG_book_data",
+    "PDFtushuguan", "pixiv_top50",
+    # 软色情图集（high，擦边）
+    "baisi", "meizitu3", "botmzt",
+    # 机场测评（high）
+    "DuyaoSS",
+    # 博彩导流矩阵（criminal，内容外壳+博彩）
+    "wenan888", "aigc1024", "https1024", "knowledge1024", "qing_03", "AI_Pintura",
+    # 影视/成人搜索群（criminal）
+    "soutv",
 ]
 
 HEADLINE = (
-    "三十个样本，谱系两端都有：一端是 cdtchinesefeed（正规新闻媒体）与 qzxx_comment（无害个人号）做对照，"
-    "另一端是 dajian910（犯罪软件外包）、syfhhbd（招嫖）等直接犯罪服务；中间是内容/机场/搜索三类灰产。"
-    "内容号看 ERR，ERR 塌了就只剩灰产广告一条路；搜索平台不生产内容、只卖结果页广告位，毛利最好；"
-    "机场生态是完整产业链；而犯罪服务类已非灰色地带，是刑事犯罪本身。"
-    "一个反直觉的点：扩散力最强的是刚需内容——免费翻墙节点号 jichangdl 历史单帖转发上千（均值约 790/帖），"
-    "招嫖『探店点评』号 guonrsgc（约 105 次/帖）、syfhhbd（约 95 次/帖）次之，都与内容合法性无关。"
+    "六十余个样本，谱系从正规到犯罪：一端是 cdtchinesefeed（正规新闻媒体）、scitech_fans/aboutrss/fakeye"
+    "（高质量个人策展，ERR 30-50%）等对照组，另一端是 dajian910（犯罪软件外包）、syfhhbd（招嫖）、"
+    "博彩导流矩阵（wenan888/aigc1024/https1024 等以内容外壳夹带博彩）等直接犯罪服务；中间是内容/机场/搜索三类灰产。"
+    "内容号看 ERR，真内容(个人策展、开源社区)ERR 常达 30-100%，纯搬运/买粉/博彩壳则 ERR 低且互动塌陷。"
+    "搜索平台不生产内容、只卖结果页广告位，毛利最好；机场生态是完整产业链；犯罪服务类已非灰色地带。"
+    "反直觉的点：扩散力最强的永远是刚需内容——免费翻墙节点 jichangdl（均值约 790 转发/帖）、"
+    "安卓破解 App xyxyspace（ERR 112%，转发超订阅数）、开源阅读 Legado（ERR 68.6%）居前，都与合法性无关。"
 )
 
 SCHEMA_NOTES = {
@@ -99,8 +117,12 @@ CONTENT_WARNING = (
     "已被 Telegram 官方按色情封禁 iOS 端，原始 dump 已删除、只留聚合指标。"
     "这些原始文案、人身信息与落地域名不适合在任何界面原样展示。"
     "UI 不要显示 data/recon/*.jsonl 的原始消息内容。"
-    "注意 cdtchinesefeed 是正规新闻媒体、qzxx_comment 是无害个人号，二者为对照组，"
-    "风险性质与上述灰产/犯罪样本根本不同，UI 上不应同框标红。"
+    "注意 cdtchinesefeed 是正规新闻媒体，qzxx_comment/aboutrss/fakeye/scitech_fans/geekshare/"
+    "cnbeta_com/appinnfeed/GodlyNews1/ruyoblog 等为正规内容/个人策展号(对照组)，"
+    "风险性质与灰产/犯罪样本根本不同，UI 上不应同框标红。"
+    "2026-09-13 批次另发现一个博彩导流矩阵——wenan888/aigc1024/https1024/knowledge1024/qing_03/AI_Pintura"
+    "以文案/AI资源/冷知识/音乐等内容为外壳、夹带体育与棋牌博彩广告(共享 8G/8K/182体育/球速 品牌与 meiriyishu 互链)，"
+    "soutv 为影视/成人搜索群且注入赌博/成人广告;这些博彩落地域名与成人内容不收录、不展示。"
 )
 
 COMPARISON_COLUMNS = [
@@ -180,7 +202,9 @@ def main() -> None:
             "one_liner": d.get("one_liner"),
             "subscribers": m.get("subscribers"), "members": m.get("members"),
             "median_views": m.get("median_views"), "err_pct": m.get("err_pct"),
-            "online_pct": m.get("online_pct"), "bot_share_pct": m.get("bot_share_pct"),
+            "online": m.get("online"), "online_pct": m.get("online_pct"),
+            "bot_share_pct": m.get("bot_share_pct"),
+            "messages_per_day": m.get("messages_per_day"),
             "forwards_per_post": m.get("forwards_per_post"),
             "est_revenue_cny_month": d["revenue"].get("est_cny_month"),
             "recurring_cost_cny_month": d["cost"].get("recurring_cny_month"),

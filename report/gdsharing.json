@@ -1,0 +1,163 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "gdsharing",
+  "username": "gdsharing",
+  "url": "https://t.me/gdsharing",
+  "title": "Google Drive 资源 | New @gdurl",
+  "category": "网盘影视/软件资源搬运（夸克/百度/Terabox 转存）",
+  "growth_short": "资源刚需自然转发",
+  "one_liner": "12.4 万订阅的大型网盘资源号：每帖固定 #求转存，把影视/4K/破解软件做成夸克·百度·Terabox 多网盘转存目录，reactions 关闭、纯转存导流。",
+  "analyzed_at": "2026-09-13T12:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/gdsharing.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-01-31",
+      "2026-09-10"
+    ],
+    "note": "每帖均带 #求转存 标签（300/300）"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 124510,
+    "median_views": 7019,
+    "mean_views": 7351,
+    "p10_views": 5198,
+    "p90_views": 10110,
+    "err_pct": 5.6,
+    "mature_posts": 293,
+    "reactions_total": 0,
+    "forwards_total": 4724,
+    "forwards_per_post": 15.7,
+    "er_pct": 0.0,
+    "posts_per_day": 1.3,
+    "views_available": true,
+    "media_mix": {
+      "photo": 283,
+      "text": 17
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "reactions 关闭；ERR 5.6% 属中等；#求转存 是网盘拉新的核心动作"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "封面图 + 资源名 + 多网盘链接（夸克/百度/Terabox），每帖固定 #求转存 #Quark #Baidu #Terabox 标签",
+    "delivery": "网盘转存链接为主（影视/4K/剧集 + 解锁会员软件 .zip）;多网盘并列对冲失效",
+    "selection": "影视为主 + 破解软件",
+    "schedule": "约 1.3 条/天，上午 10 点与晚 22 点两档",
+    "retention": "几乎不删（deleted 0%），存量作为可搜索资产沉淀",
+    "growth": "资源刚需 + @gdurl 备用域"
+  },
+  "growth": {
+    "strategy": "影视/网盘资源刚需 → 自然转发 + 备用频道 @gdurl 防走丢",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "资源刚需转发",
+        "evidence": "转发 15.7/帖",
+        "note": "影视/4K 是刚需，用户转存转发"
+      },
+      {
+        "name": "#求转存 拉新动作",
+        "evidence": "300/300 带 #求转存",
+        "note": "引导用户到网盘转存=网盘拉新"
+      }
+    ],
+    "signals": {
+      "subscribers": 124510,
+      "err_pct": 5.6,
+      "forwards_per_post": 15.7
+    },
+    "assessment": "12.4 万订阅的成熟网盘搬运号。#求转存 是把内容分发和网盘拉新绑定的核心设计——每次转存都是一次网盘新增。reactions 关闭说明只做单向分发+导流，不追求社区互动。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      600
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "网盘 SVIP（夸克/百度/Terabox 多家）",
+        "cny_month": [
+          50,
+          200
+        ]
+      },
+      {
+        "name": "运营时间（找源+转存+发布）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约 20-40 小时/月人力"
+      },
+      {
+        "name": "VPS/发布 bot",
+        "cny_month": [
+          50,
+          200
+        ]
+      },
+      {
+        "name": "备用域/频道",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      5000,
+      25000
+    ],
+    "model": "网盘拉新 CPA（多网盘）+ 广告位",
+    "streams": [
+      {
+        "name": "网盘拉新 CPA（夸克/百度/Terabox）",
+        "evidence": "每帖多网盘链接 + #求转存",
+        "cny_month": [
+          3000,
+          15000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "影视/软件广告位",
+        "evidence": "12.4 万订阅的曝光位",
+        "cny_month": [
+          1500,
+          8000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "合集/会员导流",
+        "evidence": "合集标签",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "12.4 万订阅 + 影视刚需，网盘 CPA 规模化，是本批盗版搬运号里盘子较大的一个"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "系统性分发盗版影视与破解软件，侵犯著作权，营利目的下可涉侵犯著作权罪",
+      "网盘转存件存在挂马/失效风险",
+      "以 #求转存 驱动网盘拉新，属灰色营销",
+      "无成人/博彩/诈骗要素，属侵犯知识产权类"
+    ]
+  }
+}

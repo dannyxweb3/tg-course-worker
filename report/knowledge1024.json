@@ -1,0 +1,148 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "knowledge1024",
+  "username": "knowledge1024",
+  "url": "https://t.me/knowledge1024",
+  "title": "你不知道的冷知识",
+  "category": "博彩引流号（内容外壳 + 体育/棋牌博彩广告）",
+  "growth_short": "内容外壳 + 互推",
+  "one_liner": "1.94 万订阅、日更约 44 条：冷知识内容做外壳，高频夹带体育/棋牌博彩广告，属博彩导流矩阵成员。",
+  "analyzed_at": "2026-09-13T16:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/knowledge1024.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-06",
+      "2026-09-13"
+    ],
+    "note": "与 wenan888/aigc1024/https1024/qing_03 共享同一博彩品牌矩阵(8G/8K/182体育/球速 + meiriyishu 互链);博彩域名不收录"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 19380,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": true,
+    "views_note": "样本全在近 7 天，阅读未累积",
+    "mature_posts": 0,
+    "forwards_per_post": 1.6,
+    "posts_per_day": 43.7,
+    "media_mix": {
+      "photo": 164,
+      "document": 73,
+      "text": 61,
+      "webpage": 2
+    },
+    "deleted_pct": 1.0,
+    "activity_note": "内容外壳日更铺量 + 博彩广告注入，真实互动低"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "冷知识图文/短视频 为外壳 + 高频夹带体育/棋牌博彩广告(球速体育/182体育/8K 棋牌，带落地域名与客服 bot)",
+    "delivery": "外壳内容做流量诱饵;博彩走落地域名 + 客服 bot(8G/8K 系列)",
+    "schedule": "日更约 43.7 条，全天分散",
+    "network": "博彩导流矩阵成员(与 wenan888/aigc1024/https1024/qing_03 同网，meiriyishu 互链)",
+    "growth": "内容外壳吸粉 + 频道互推 + 博彩变现"
+  },
+  "growth": {
+    "strategy": "用内容外壳吸泛粉，互推换量，博彩广告变现",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "内容外壳",
+        "evidence": "冷知识图文/短视频",
+        "note": "泛粉钩子"
+      },
+      {
+        "name": "频道互推",
+        "evidence": "#频道互推 + meiriyishu 矩阵互链",
+        "note": "换量"
+      },
+      {
+        "name": "博彩招商",
+        "evidence": "8K/8G 棋牌、球速/182体育 品牌与域名",
+        "note": "变现主体"
+      }
+    ],
+    "signals": {
+      "subscribers": 19380,
+      "forwards_per_post": 1.6,
+      "posts_per_day": 43.7
+    },
+    "assessment": "内容外壳 + 博彩内核。外壳负责涨泛粉、互推扩量，博彩广告负责变现。属协同博彩导流矩阵。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      600
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "发布 bot + VPS",
+        "cny_month": [
+          100,
+          400
+        ]
+      },
+      {
+        "name": "外壳内容采集",
+        "cny_month": [
+          0,
+          150
+        ]
+      },
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          50
+        ],
+        "note": "半自动矩阵化运营"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "model": "体育/棋牌博彩广告 + 招商分成",
+    "streams": [
+      {
+        "name": "体育/棋牌博彩广告与招商",
+        "evidence": "8K/8G 棋牌、球速/182体育 品牌与域名",
+        "cny_month": [
+          2500,
+          12000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "网盘资源 CPA",
+        "evidence": "夸克链接 + 财商书籍",
+        "cny_month": [
+          300,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "外壳不变现，收入来自博彩引流/招商;矩阵化运营摊薄成本"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "为体育/棋牌博彩引流并招商，属开设赌场罪/帮信罪引流环节",
+      "以内容外壳为掩护规避识别",
+      "属协同博彩导流矩阵(多号同网)",
+      "博彩域名与招商联系方式不收录"
+    ]
+  }
+}

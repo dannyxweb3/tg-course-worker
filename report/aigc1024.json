@@ -1,0 +1,148 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "aigc1024",
+  "username": "aigc1024",
+  "url": "https://t.me/aigc1024",
+  "title": "AI探索指南",
+  "category": "AI 资源外壳 + 博彩广告引流",
+  "growth_short": "AI资源外壳 + 互推",
+  "one_liner": "3.7 万订阅、日更约 49 条：AI 工具/资源(github/夸克)做内容外壳，夹带体育博彩/8K 棋牌广告——内容+博彩混合引流号。",
+  "analyzed_at": "2026-09-13T14:15:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/aigc1024.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-09-07",
+      "2026-09-13"
+    ],
+    "note": "含体育博彩/棋牌广告域名，报告不收录"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 36962,
+    "median_views": null,
+    "err_pct": null,
+    "views_available": true,
+    "views_note": "样本全在近 6 天，阅读未累积",
+    "mature_posts": 0,
+    "reactions_total": 180,
+    "forwards_total": 2439,
+    "forwards_per_post": 8.1,
+    "er_pct": 0.1,
+    "posts_per_day": 48.9,
+    "media_mix": {
+      "photo": 175,
+      "text": 79,
+      "document": 44
+    },
+    "deleted_pct": 2.6,
+    "activity_note": "转发 8/帖，AI 资源部分有真实扩散，但混入博彩广告"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "AI 工具/资源(github/夸克网盘/教程)为外壳 + 夹带体育博彩/棋牌广告(球速体育/182体育/8K 棋牌)",
+    "delivery": "AI 资源走 github/夸克;博彩走落地域名 + 客服 bot(8K 系列)",
+    "schedule": "日更约 49 条，全天分散",
+    "growth": "AI 资源吸粉 + #频道互推 + 博彩变现"
+  },
+  "growth": {
+    "strategy": "AI 资源当内容钩子涨粉，互推换量，博彩广告变现",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "AI 资源钩子",
+        "evidence": "github/夸克 AI 工具",
+        "note": "蹭 AI 热度吸粉"
+      },
+      {
+        "name": "频道互推",
+        "evidence": "#频道互推 标签",
+        "note": "换量"
+      },
+      {
+        "name": "博彩招商",
+        "evidence": "体育/棋牌品牌 @ 与域名",
+        "note": "变现"
+      }
+    ],
+    "signals": {
+      "subscribers": 36962,
+      "forwards_per_post": 8.1,
+      "posts_per_day": 48.9
+    },
+    "assessment": "AI 资源 + 博彩混合号。AI 内容有一定真实扩散(转发 8/帖)，但博彩广告是变现主体。比纯素材壳(wenan888)内容质量略高，性质相同。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      100,
+      600
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "发布 bot + VPS",
+        "cny_month": [
+          100,
+          400
+        ]
+      },
+      {
+        "name": "AI 资源采集/网盘",
+        "cny_month": [
+          0,
+          150
+        ]
+      },
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          50
+        ],
+        "note": "半自动"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      3000,
+      15000
+    ],
+    "model": "博彩广告 + AI 资源网盘 CPA",
+    "streams": [
+      {
+        "name": "体育/棋牌博彩广告",
+        "evidence": "球速/182体育、8K 棋牌品牌与域名",
+        "cny_month": [
+          2500,
+          12000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "AI 资源网盘 CPA/软广",
+        "evidence": "夸克链接 + AI 教程",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "AI 资源引流，博彩变现为主;区间为灰产惯例估算"
+  },
+  "risk": {
+    "level": "criminal",
+    "notes": [
+      "为体育博彩/棋牌引流，属开设赌场罪/帮信罪引流环节",
+      "AI 资源部分夹带网盘盗版可涉侵权",
+      "以 AI 热点为掩护;博彩域名不收录"
+    ]
+  }
+}

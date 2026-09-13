@@ -1,0 +1,131 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "aboutrss",
+  "username": "aboutrss",
+  "url": "https://t.me/aboutrss",
+  "title": "ALL About RSS",
+  "category": "RSS / 开源工具 精选推荐（高质量个人策展号）",
+  "growth_short": "技术圈口碑自然增长",
+  "one_liner": "围绕 RSS 与开源工具的精选策展号：9.5k 订阅却有 53.8% ERR，是全样本粘性最高的号之一，纯内容驱动、几乎无商业化。",
+  "analyzed_at": "2026-09-13T12:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/aboutrss.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2022-07-23",
+      "2026-09-12"
+    ],
+    "note": "跨度 4 年、0.2 条/天，低频高质"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 9519,
+    "median_views": 5118,
+    "mean_views": 5210,
+    "p10_views": 4055,
+    "p90_views": 6249,
+    "err_pct": 53.8,
+    "mature_posts": 298,
+    "reactions_total": 3130,
+    "forwards_total": 7408,
+    "forwards_per_post": 24.7,
+    "er_pct": 0.2,
+    "posts_per_day": 0.2,
+    "views_available": true,
+    "media_mix": {
+      "photo": 297,
+      "webpage": 2,
+      "text": 1
+    },
+    "deleted_pct": 0.7,
+    "activity_note": "53.8% ERR 是极小盘+极忠实读者的产物；转发 24.7/帖、reactions 3130 都说明是真实高质量受众"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "post_structure": "配图 + 一段点评/心得 + 指向 RSS 源、开源项目、博客文章的链接。标签体系 #开源 #心得 #观点 #教程 #工具",
+    "delivery": "纯指路：外链指向 github/twitter/medium/v2ex/sspai/HackerNews/openrss 等，不托管资源",
+    "curation": "人工策展，围绕 RSS 生态与开源工具，选题窄而精",
+    "schedule": "约 0.2 条/天，集中在上午 9 点，随缘更新，人工手发",
+    "note": "内容是真人读过、有观点的推荐，非模板搬运"
+  },
+  "growth": {
+    "strategy": "技术圈口碑自然增长，不做付费获客",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "高质量策展",
+        "evidence": "ERR 53.8%、转发 24.7/帖",
+        "note": "内容好到值得转发"
+      },
+      {
+        "name": "技术社区渗透",
+        "evidence": "外链 v2ex/sspai/HN/github",
+        "note": "在开发者/RSS 爱好者圈层传播"
+      }
+    ],
+    "signals": {
+      "subscribers": 9519,
+      "err_pct": 53.8,
+      "forwards_per_post": 24.7
+    },
+    "assessment": "典型『小而美』：9.5k 订阅但 53.8% ERR，靠内容质量沉淀极忠实的技术受众。低频更新不影响粘性，因为每条都有价值。增长慢但健康，无买粉/互推痕迹。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "运营时间投入（人工阅读+策展+写点评，低频）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约 5-15 小时/月，唯一实质投入是作者时间"
+      },
+      {
+        "name": "服务器/工具",
+        "cny_month": [
+          0,
+          100
+        ],
+        "note": "可能纯手发，近乎为零"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      500
+    ],
+    "model": "基本无商业化（可能有少量赞赏）",
+    "streams": [
+      {
+        "name": "读者赞赏/无",
+        "evidence": "样本内无广告位、无联盟码、无网盘 CPA",
+        "cny_month": [
+          0,
+          500
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "note": "是纯兴趣驱动的策展号，几乎不变现；高 ERR 说明若想接广告价值不低，但目前未见变现动作"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "RSS 源与开源项目推荐，属正常信息聚合与技术分享，无灰产、无侵权要素",
+      "外链指向公开项目/文章，合规",
+      "唯一敏感点是偶有翻墙/RSS 工具推荐，属技术中立内容"
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "scitech_fans",
+  "username": "scitech_fans",
+  "url": "https://t.me/scitech_fans",
+  "title": "科技爱好者周刊",
+  "category": "技术周刊（阮一峰《科技爱好者周刊》分发）",
+  "growth_short": "周刊品牌自然增长",
+  "one_liner": "《科技爱好者周刊》的 Telegram 分发频道：每期正文托 telegra.ph，1.45 万订阅、ERR 49.8%，是老牌高质量技术周刊的忠实读者盘。",
+  "analyzed_at": "2026-09-13T15:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/scitech_fans.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2020-01-31",
+      "2026-09-04"
+    ],
+    "note": "telegra.ph 300/300，周刊分期正文;老牌技术周刊"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 14495,
+    "median_views": 7220,
+    "mean_views": 6211,
+    "p10_views": 1198,
+    "p90_views": 9307,
+    "err_pct": 49.8,
+    "mature_posts": 300,
+    "reactions_total": 1348,
+    "forwards_total": 1732,
+    "forwards_per_post": 5.8,
+    "er_pct": 0.07,
+    "posts_per_day": 0.1,
+    "views_available": true,
+    "media_mix": {
+      "webpage": 295,
+      "text": 4,
+      "photo": 1
+    },
+    "deleted_pct": 3.8,
+    "activity_note": "ERR 49.8% 极高，老牌周刊的高忠诚读者;周更节奏(0.1/天)"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "post_structure": "每期周刊正文托 telegra.ph(300/300)，TG 发一条导语 + 链接;分期归档 #周刊正文 #第X期",
+    "delivery": "正文在 telegra.ph/官网，TG 做分发;纯原创周刊，不搬运不托管盗版",
+    "schedule": "周更节奏，上午 9-12 点",
+    "growth": "周刊品牌 + 长期连载"
+  },
+  "growth": {
+    "strategy": "老牌技术周刊的品牌与内容质量自然增长",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "周刊品牌",
+        "evidence": "长期连载分期归档、ERR 49.8%",
+        "note": "高质量原创周刊的口碑"
+      }
+    ],
+    "signals": {
+      "subscribers": 14495,
+      "err_pct": 49.8,
+      "forwards_per_post": 5.8
+    },
+    "assessment": "高质量原创技术周刊的分发频道，ERR 49.8% 是忠实读者的体现。周更、纯内容驱动，是正规内容号。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      100
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "周刊采编（原创写作，主投入）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "作者时间;周刊本身是内容主体"
+      },
+      {
+        "name": "telegra.ph/官网托管 + TG 分发",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      5000
+    ],
+    "model": "周刊赞助商位（主要在官网/周刊内），TG 侧不直接变现",
+    "streams": [
+      {
+        "name": "周刊赞助商",
+        "evidence": "该类技术周刊常设付费赞助位(体现在周刊正文，非 TG)",
+        "cny_month": [
+          0,
+          5000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现主要是周刊本身的赞助，TG 频道是分发渠道;数字取决于周刊赞助行情"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "原创技术周刊，正常内容创作与分享，无灰产、无盗版",
+      "内容合规，风险极低"
+    ]
+  }
+}

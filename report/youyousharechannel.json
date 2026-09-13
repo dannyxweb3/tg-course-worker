@@ -1,0 +1,165 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "youyousharechannel",
+  "username": "youyousharechannel",
+  "url": "https://t.me/youyousharechannel",
+  "title": "油油の科技软件资源分享",
+  "category": "科技软件资源/破解分享（网盘投递）",
+  "growth_short": "互推 + 滚动更新",
+  "one_liner": "8.99 万订阅的软件资源号：图文帖 + 夸克网盘投递，覆盖 Mac/Windows 破解与 AI 编程工具（Codex/ClaudeCode），约 45% 消息滚动删除。",
+  "analyzed_at": "2026-09-13T12:30:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/youyousharechannel.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-04-12",
+      "2026-09-12"
+    ],
+    "note": "deleted 44.9% 为滚动删除/失效清理"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 89915,
+    "median_views": 7586,
+    "mean_views": 7887,
+    "p10_views": 6291,
+    "p90_views": 9620,
+    "err_pct": 8.4,
+    "mature_posts": 288,
+    "reactions_total": 1071,
+    "forwards_total": 10015,
+    "forwards_per_post": 33.4,
+    "er_pct": 0.05,
+    "posts_per_day": 2.0,
+    "views_available": true,
+    "media_mix": {
+      "photo": 282,
+      "document": 8,
+      "webpage": 3,
+      "text": 6,
+      "poll": 1
+    },
+    "deleted_pct": 44.9,
+    "activity_note": "ERR 8.4% 对搬运号偏高，说明选品（Mac/AI 编程工具）质量不错，真实读者较多"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "封面图 + 软件名/简介 + 网盘链接;选品偏 Mac/Windows 实用与破解、AI 编程工具（Codex/Claude Code/Skill）",
+    "delivery": "夸克网盘转存链接投递 + 少量 mp4 直传;不长期自托管",
+    "schedule": "约 2 条/天，集中在下午 17-19 点",
+    "retention": "约 45% 消息已删——滚动删除/失效链接清理，降低下架面并保持存量清爽",
+    "growth": "快讯栏目 + 互推"
+  },
+  "growth": {
+    "strategy": "稳定日更 + 互推换量 + 滚动删除保持活跃观感",
+    "paid_acquisition": "exchange",
+    "mechanisms": [
+      {
+        "name": "选品质量",
+        "evidence": "ERR 8.4%、转发 33/帖",
+        "note": "Mac/AI 编程工具选品比爽文号留存好"
+      },
+      {
+        "name": "互推",
+        "evidence": "含快讯/互推类内容",
+        "note": "与同类软件号换量"
+      }
+    ],
+    "signals": {
+      "subscribers": 89915,
+      "err_pct": 8.4,
+      "forwards_per_post": 33.4
+    },
+    "assessment": "8.99 万订阅、8.4% ERR、转发 33/帖，是运营较成熟的软件搬运号。选品偏开发者/效率工具，受众质量高于纯爽文号。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      150,
+      700
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "网盘 SVIP（夸克，转存+高速）",
+        "cny_month": [
+          25,
+          60
+        ]
+      },
+      {
+        "name": "运营时间（找源+转存+发布，约 2 条/天）",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "约 20-40 小时/月人力"
+      },
+      {
+        "name": "VPS/发布 bot",
+        "cny_month": [
+          50,
+          150
+        ]
+      },
+      {
+        "name": "软件来源",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "搬运破解站/同行"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      12000
+    ],
+    "model": "网盘拉新 CPA + 合作软广 + 互推",
+    "streams": [
+      {
+        "name": "夸克网盘拉新 CPA",
+        "evidence": "网盘转存链接投递",
+        "cny_month": [
+          1000,
+          7000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "合作软广/荐位",
+        "evidence": "科技软件号常规变现",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "互推邀请奖励",
+        "evidence": "互推内容",
+        "cny_month": [
+          200,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "8.99 万订阅 × 中位 7.6k 阅读，变现盘子中等；开发者向选品的广告单价可能略高"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "系统性分发破解/去付费软件，侵犯著作权，以拉新/广告牟利可涉侵犯著作权罪",
+      "网盘转存件存在挂马/失效风险",
+      "无成人/博彩/诈骗要素，属侵犯知识产权类，风险低于 criminal 档"
+    ]
+  }
+}

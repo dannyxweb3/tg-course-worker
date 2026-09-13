@@ -1,0 +1,135 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "miaowu",
+  "username": "miaowu",
+  "url": "https://t.me/miaowu",
+  "title": "每日无数猫",
+  "category": "猫/趣味动物内容（搬运社媒）",
+  "growth_short": "趣味内容自然扩散",
+  "one_liner": "2 万订阅的趣味猫咪内容号：从 x/煎蛋/小红书搬运猫视频与图，ER 0.62%（互动率本批最高之一），日更约 14 条，基本无害的娱乐号。",
+  "analyzed_at": "2026-09-13T14:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/miaowu.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-21",
+      "2026-09-12"
+    ],
+    "note": "偶有 #NSFW 标签(2/300)"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 19923,
+    "median_views": 562,
+    "mean_views": 572,
+    "p10_views": 453,
+    "p90_views": 691,
+    "err_pct": 2.8,
+    "mature_posts": 231,
+    "reactions_total": 1031,
+    "forwards_total": 1557,
+    "forwards_per_post": 5.2,
+    "er_pct": 0.62,
+    "posts_per_day": 13.6,
+    "views_available": true,
+    "media_mix": {
+      "photo": 134,
+      "document": 133,
+      "webpage": 29,
+      "text": 4
+    },
+    "deleted_pct": 0.0,
+    "activity_note": "ER 0.62% 本批最高之一——趣味内容互动率高，但绝对阅读小(ERR 2.8%)"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "猫视频/图 + 一句吐槽文案;搬运自 x.com/煎蛋(jandan.net)/小红书/B站",
+    "delivery": "视频直传 Telegram + 部分社媒链接;标签多为玩梗(#猫猫 #会说话的猫 等)",
+    "schedule": "约 14 条/天，白天分散",
+    "source": "搬运社媒趣味猫内容",
+    "growth": "趣味内容自然扩散"
+  },
+  "growth": {
+    "strategy": "趣味/萌宠内容自然扩散，高频铺量",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "趣味内容",
+        "evidence": "ER 0.62%、转发 5.2/帖",
+        "note": "萌宠内容互动率高"
+      }
+    ],
+    "signals": {
+      "subscribers": 19923,
+      "err_pct": 2.8,
+      "er_pct": 0.62,
+      "forwards_per_post": 5.2
+    },
+    "assessment": "娱乐向萌宠号，互动率高但绝对量小。靠高频趣味内容维持，变现意图弱。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "发布 bot + VPS",
+        "cny_month": [
+          30,
+          150
+        ]
+      },
+      {
+        "name": "内容搬运",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "扒社媒，Telegram 直传"
+      },
+      {
+        "name": "运营时间",
+        "cny_month": [
+          0,
+          50
+        ],
+        "note": "半自动"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      2000
+    ],
+    "model": "变现弱（偶有软广/导流）",
+    "streams": [
+      {
+        "name": "软广/导流 或 无",
+        "evidence": "样本内无明显广告位/联盟",
+        "cny_month": [
+          0,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "以娱乐内容为主，变现意图弱;萌宠受众广告价值一般"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "趣味猫咪内容搬运，基本无害",
+      "偶有 #NSFW 标签，占比极低(2/300)",
+      "搬运社媒内容有轻微版权/ToS 争议，属民事范畴，无灰黑产"
+    ]
+  }
+}

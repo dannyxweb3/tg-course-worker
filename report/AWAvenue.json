@@ -1,0 +1,156 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "AWAvenue",
+  "username": "AWAvenue",
+  "url": "https://t.me/AWAvenue",
+  "title": "秋风のとおり道",
+  "category": "PC 软件/游戏分享 + 个人吐槽（自有站 awavenue.top）",
+  "growth_short": "高质量分享自然转发",
+  "one_liner": "2.6 万订阅的 PC 软件/游戏分享号：直传 30GB 软件/游戏（apk/exe/zip），配个人吐槽与观点，ERR 59.9%、转发 153/帖（本批内容号最高之一）。",
+  "analyzed_at": "2026-09-13T16:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/AWAvenue.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2024-11-06",
+      "2026-09-10"
+    ],
+    "note": "142 个文件 30GB;含 Steam/Epic 免费游戏链接 + 软件直传"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 25980,
+    "median_views": 15560,
+    "mean_views": 16240,
+    "p10_views": 10746,
+    "p90_views": 21828,
+    "err_pct": 59.9,
+    "mature_posts": 296,
+    "reactions_total": 16162,
+    "forwards_total": 45937,
+    "forwards_per_post": 153.1,
+    "er_pct": 0.34,
+    "posts_per_day": 0.4,
+    "views_available": true,
+    "media_mix": {
+      "document": 152,
+      "photo": 112,
+      "text": 31,
+      "webpage": 5
+    },
+    "deleted_pct": 12.0,
+    "hosted_files": 142,
+    "hosted_bytes_gb": 30.13,
+    "file_ext": {
+      "apk": 38,
+      "exe": 32,
+      "zip": 26,
+      "7z": 13,
+      "rar": 7
+    },
+    "activity_note": "ERR 59.9% + 转发 153/帖 是本批内容号最高之一——高质量 + 强粘性"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "post_structure": "软件/游戏介绍 + 个人吐槽/观点 + 文件直传(apk/exe/zip)或 Steam/Epic/自有站链接;标签 #PC #Windows #下载工具 #乐子 #吐槽 #观点",
+    "delivery": "PC 软件/游戏文件直传 Telegram(30GB 免费 CDN) + 部分导 Steam/Epic 免费游戏/自有站 awavenue.top",
+    "schedule": "约 0.4 条/天，白天分散",
+    "curation": "人工策展 + 个人吐槽风格，选品含实用工具/游戏/乐子小玩意",
+    "growth": "高质量分享 + 个人风格"
+  },
+  "growth": {
+    "strategy": "高质量软件/游戏分享 + 强个人风格(吐槽/观点)的口碑增长",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "高质量+人格化",
+        "evidence": "ERR 59.9%、转发 153/帖、reactions 16162",
+        "note": "内容好+有个人观点，值得转发"
+      },
+      {
+        "name": "刚需软件/游戏",
+        "evidence": "30GB 软件游戏直传",
+        "note": "下载刚需"
+      }
+    ],
+    "signals": {
+      "subscribers": 25980,
+      "err_pct": 59.9,
+      "forwards_per_post": 153.1
+    },
+    "assessment": "高质量 PC 软件/游戏分享号，ERR 59.9%、转发 153/帖——个人风格 + 刚需资源带来极强粘性与扩散。是内容类里粘性最高的一档。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      30,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "自有站 awavenue.top + VPS",
+        "cny_month": [
+          30,
+          200
+        ]
+      },
+      {
+        "name": "运营时间(找软件+测试+写吐槽，约 20-40 小时/月)",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "文件存储",
+        "cny_month": [
+          0,
+          0
+        ],
+        "note": "Telegram 直传"
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      10000
+    ],
+    "model": "自有站/网盘 + 软广 + 联盟",
+    "streams": [
+      {
+        "name": "自有站广告/网盘(xtyun)",
+        "evidence": "awavenue.top + xtyun.co 链接",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "软广/游戏联盟",
+        "evidence": "高粘性受众广告位",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "高 ERR + 强粘性使广告/联盟价值高于同规模号;变现相对克制"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "分发 PC 软件/游戏(apk/exe/zip)，部分可能为破解/盗版，涉侵犯著作权",
+      "但也含 Steam/Epic 免费游戏等合规链接 + 个人原创吐槽，非纯盗版工厂",
+      "整体风险中等，介于原创号与盗版搬运号之间"
+    ]
+  }
+}

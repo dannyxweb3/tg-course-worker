@@ -1,0 +1,143 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "PDFtushuguan",
+  "username": "PDFtushuguan",
+  "url": "https://t.me/PDFtushuguan",
+  "title": "PDF图书联盟|链接收藏|电子书",
+  "category": "电子书/图书精选（豆瓣+阿里云盘，低频高质）",
+  "growth_short": "资源刚需自然转发",
+  "one_liner": "电子书策展号：豆瓣书页 + 阿里云盘链接，ERR 52%（2.5 万订阅 / 中位 1.3 万阅读），但已近乎停更（0.1 条/天、末更 2026-06），且 98% 历史消息被滚动删除。",
+  "analyzed_at": "2026-09-13T12:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/PDFtushuguan.jsonl",
+    "sample_size": 204,
+    "sample_range": [
+      "2021-09-20",
+      "2026-06-27"
+    ],
+    "note": "现存仅 204 条，98.2% 历史消息已删；末更 2026-06-27，接近停更边缘但仍在 6 个月内"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 25423,
+    "median_views": 13288,
+    "mean_views": 16436,
+    "p10_views": 7145,
+    "p90_views": 27977,
+    "err_pct": 52.3,
+    "mature_posts": 192,
+    "reactions_total": 2454,
+    "forwards_total": 3429,
+    "forwards_per_post": 16.8,
+    "er_pct": 0.08,
+    "posts_per_day": 0.1,
+    "views_available": true,
+    "media_mix": {
+      "photo": 135,
+      "text": 56,
+      "document": 5,
+      "poll": 4,
+      "webpage": 4
+    },
+    "deleted_pct": 98.2,
+    "activity_note": "ERR 52% 极高（老号+忠实读者+滚动删除留下的都是精华）；但更新极稀、近乎停摆"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "post_structure": "书封/说明 + 豆瓣书页链接(book.douban.com 126) + 阿里云盘下载链接;标签 #epub #电子书 #图书联盟 #周读",
+    "delivery": "阿里云盘链接投递为主，豆瓣页做书目背书;不长期自托管",
+    "schedule": "约 0.1 条/天，上午 9 点与晚 20-21 点",
+    "retention": "98.2% 历史消息删除——极端滚动删除，只留近期精选",
+    "growth": "电子书刚需 + 联盟互链(@ 少量同类号)"
+  },
+  "growth": {
+    "strategy": "电子书刚需自然转发 + 老号沉淀，无付费获客",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "资源刚需转发",
+        "evidence": "转发 16.8/帖、ERR 52%",
+        "note": "电子书是刚需，读者主动转"
+      }
+    ],
+    "signals": {
+      "subscribers": 25423,
+      "err_pct": 52.3,
+      "forwards_per_post": 16.8,
+      "posts_per_day": 0.1
+    },
+    "assessment": "老牌电子书号，ERR 极高但已近乎停更。高 ERR 部分是滚动删除的幸存者偏差——删掉低质、只留精华。增长早已停滞。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      150
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "阿里云盘会员",
+        "cny_month": [
+          0,
+          30
+        ]
+      },
+      {
+        "name": "运营时间（低频，约 5-10 小时/月）",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "VPS/工具",
+        "cny_month": [
+          0,
+          120
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      500,
+      4000
+    ],
+    "model": "网盘拉新/合作 + 电子书阅读器软广",
+    "streams": [
+      {
+        "name": "阿里云盘拉新/合作",
+        "evidence": "aliyundrive 链接 29",
+        "cny_month": [
+          300,
+          2000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "阅读器/工具软广",
+        "evidence": "neat-reader.cn 链接 14",
+        "cny_month": [
+          200,
+          2000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "更新停滞使变现随之衰减；高 ERR 存量仍有残余广告价值，但已无增量"
+  },
+  "risk": {
+    "level": "high",
+    "notes": [
+      "通过阿里云盘系统性分发电子书，侵犯著作权",
+      "豆瓣仅作书目背书，侵权在网盘环节",
+      "无成人/博彩/诈骗要素，属侵犯知识产权类，且活跃度极低、影响面收窄"
+    ]
+  }
+}

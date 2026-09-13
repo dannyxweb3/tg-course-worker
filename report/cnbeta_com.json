@@ -1,0 +1,127 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "cnbeta_com",
+  "username": "cnbeta_com",
+  "url": "https://t.me/cnbeta_com",
+  "title": "cnBeta.COM 中文业界资讯站 - 总频道",
+  "category": "科技资讯 RSS 分发（新闻站导流）",
+  "growth_short": "新闻站自然流量",
+  "one_liner": "cnBeta 科技资讯站的 Telegram 分发频道：每帖一条精选新闻 + 指向 cnbeta.com.tw，2.75 万订阅、ERR 6.4%，是把新闻站内容同步到墙外读者的机构 feed。",
+  "analyzed_at": "2026-09-13T14:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/cnbeta_com.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-06-22",
+      "2026-09-12"
+    ],
+    "note": "300/300 为链接卡片，全部指向 cnbeta.com.tw"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 27502,
+    "median_views": 1769,
+    "mean_views": 1610,
+    "p10_views": 490,
+    "p90_views": 2360,
+    "err_pct": 6.4,
+    "mature_posts": 275,
+    "reactions_total": 1272,
+    "forwards_total": 1252,
+    "forwards_per_post": 4.2,
+    "er_pct": 0.27,
+    "posts_per_day": 3.7,
+    "views_available": true,
+    "media_mix": {
+      "webpage": 300
+    },
+    "deleted_pct": 0.7,
+    "activity_note": "ER 0.27% 对新闻 feed 属正常；内容是新闻导流而非资源分发"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "新闻标题 + 导语 link preview 卡片，指向 cnbeta.com.tw 文章",
+    "delivery": "内容主站是 cnbeta.com.tw，TG 做分发导流;不托管资源",
+    "schedule": "约 3.7 条/天，白天上班时段为主",
+    "growth": "新闻时效 + 老牌资讯站品牌"
+  },
+  "growth": {
+    "strategy": "老牌科技资讯站的品牌自然流量，TG 做墙外分发",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "新闻时效",
+        "evidence": "日更精选新闻",
+        "note": "资讯刚需"
+      },
+      {
+        "name": "品牌沉淀",
+        "evidence": "cnBeta 老牌资讯站",
+        "note": "存量读者"
+      }
+    ],
+    "signals": {
+      "subscribers": 27502,
+      "err_pct": 6.4,
+      "forwards_per_post": 4.2
+    },
+    "assessment": "机构新闻 feed，靠品牌与时效维持读者。TG 频道是网站流量的墙外补充渠道，本身不独立变现。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "自动 RSS→TG 分发",
+        "cny_month": [
+          0,
+          100
+        ],
+        "note": "网站采编成本不在 TG 侧"
+      },
+      {
+        "name": "VPS/bot",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      3000
+    ],
+    "model": "导流至新闻站（站内广告变现），TG 侧近乎不直接变现",
+    "streams": [
+      {
+        "name": "网站广告(经由 TG 导流)",
+        "evidence": "300/300 指向 cnbeta.com.tw",
+        "cny_month": [
+          0,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "真实变现在新闻网站的广告，TG 频道是导流层，单独估值意义不大"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "科技新闻聚合与分发，属正常资讯业务",
+      "历史上新闻聚合有轻微版权争议，属民事范畴",
+      "无灰产、无盗版资源、无成人/博彩要素"
+    ]
+  }
+}

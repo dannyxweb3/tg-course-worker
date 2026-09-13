@@ -1,0 +1,155 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "AppDoDo",
+  "username": "AppDoDo",
+  "url": "https://t.me/AppDoDo",
+  "title": "APPDO 数字生活指南",
+  "category": "数字生活/App/互联网观察（自有站 appdo.xyz）",
+  "growth_short": "内容质量 + 转推",
+  "one_liner": "4 万订阅的数字生活号：App 推荐/互联网观察/AI，大量转推 twitter 观点，自有站 appdo.xyz，ERR 13.4%、ER 0.3%，夹带证券/虚拟货币/羊毛等财经导流。",
+  "analyzed_at": "2026-09-13T16:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/AppDoDo.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2025-12-17",
+      "2026-09-12"
+    ],
+    "note": "x.com 225 链接(转推为主) + 自有站 appdo.xyz"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 40330,
+    "median_views": 5416,
+    "mean_views": 6364,
+    "p10_views": 4583,
+    "p90_views": 9382,
+    "err_pct": 13.4,
+    "mature_posts": 275,
+    "reactions_total": 5268,
+    "forwards_total": 8292,
+    "forwards_per_post": 27.6,
+    "er_pct": 0.3,
+    "posts_per_day": 1.1,
+    "views_available": true,
+    "media_mix": {
+      "photo": 264,
+      "text": 25,
+      "document": 9,
+      "webpage": 1,
+      "poll": 1
+    },
+    "deleted_pct": 3.2,
+    "activity_note": "ER 0.3% 较高;#互联网观察 191 是主内容线"
+  },
+  "implementation": {
+    "publish_identity": "user",
+    "post_structure": "互联网观察/App 推荐/AI 资讯，大量转推 twitter(x.com 225) + 自有站 appdo.xyz;标签 #互联网观察 #AI #证券 #虚拟货币 #羊毛 #AD",
+    "delivery": "以观点/资讯 + App 推荐为主，自有站 appdo.xyz 沉淀;夹带证券/虚拟货币/羊毛导流(#AD 标注)",
+    "schedule": "约 1.1 条/天，晚 20-21 点 + 上午",
+    "growth": "内容质量 + 转推热点 + 自有站"
+  },
+  "growth": {
+    "strategy": "互联网观察/App 内容 + 热点转推的口碑增长",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "内容质量",
+        "evidence": "ER 0.3%、转发 27.6/帖",
+        "note": "观点/推荐有粘性"
+      },
+      {
+        "name": "热点转推",
+        "evidence": "x.com 225 转推",
+        "note": "蹭 twitter 热点观点"
+      }
+    ],
+    "signals": {
+      "subscribers": 40330,
+      "err_pct": 13.4,
+      "forwards_per_post": 27.6
+    },
+    "assessment": "数字生活/科技观察号，内容质量不错(ER 0.3%)。夹带证券/虚拟货币/羊毛等财经导流(#AD 标注)，变现比纯内容号积极。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      300
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "自有站 appdo.xyz 托管+域名",
+        "cny_month": [
+          0,
+          200
+        ]
+      },
+      {
+        "name": "运营时间(策展+转推+写站，约 20-40 小时/月)",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "发布工具/VPS",
+        "cny_month": [
+          0,
+          100
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      2000,
+      10000
+    ],
+    "model": "软广(#AD) + 证券/虚拟货币/羊毛导流 + 自有站",
+    "streams": [
+      {
+        "name": "软广/荐位(#AD)",
+        "evidence": "#AD 标注的广告帖",
+        "cny_month": [
+          1000,
+          5000
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "证券/虚拟货币/羊毛 CPS",
+        "evidence": "fotechwealth/证券/虚拟货币 标签与链接",
+        "cny_month": [
+          500,
+          4000
+        ],
+        "confidence": "low"
+      },
+      {
+        "name": "App/工具联盟",
+        "evidence": "appdo.xyz + apps.apple.com",
+        "cny_month": [
+          500,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "变现比纯内容号积极，含财经/证券导流;区间取决于 #AD 广告与 CPS"
+  },
+  "risk": {
+    "level": "medium",
+    "notes": [
+      "数字生活/科技内容为主，多为合规内容 + 联盟营销",
+      "夹带证券/虚拟货币导流有金融合规风险(荐股/荐币在中国大陆有监管敏感)",
+      "整体风险中等，非灰黑产但触及财经推广红线"
+    ]
+  }
+}

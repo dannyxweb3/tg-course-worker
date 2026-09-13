@@ -1,0 +1,128 @@
+{
+  "schema_version": 3,
+  "kind": "channel",
+  "slug": "appinnfeed",
+  "username": "appinnfeed",
+  "url": "https://t.me/appinnfeed",
+  "title": "Appinn Feed｜小众软件",
+  "category": "小众软件社区 feed（Appinn 论坛自动分发）",
+  "growth_short": "社区论坛自然流量",
+  "one_liner": "3.3 万订阅的 Appinn（小众软件）社区 feed：自动分发 meta.appinn.net 论坛的新帖与软件发现，ERR 4.6%，是老牌软件推荐社区的 TG 分发层。",
+  "analyzed_at": "2026-09-13T15:45:00Z",
+  "source": {
+    "method": "telethon",
+    "script": "scripts/tg_recon.py",
+    "dump": "data/recon/appinnfeed.jsonl",
+    "sample_size": 300,
+    "sample_range": [
+      "2026-08-15",
+      "2026-09-13"
+    ],
+    "note": "266/300 为论坛链接卡片，指向 meta.appinn.net/appinn.com"
+  },
+  "metrics": {
+    "confidence": "high",
+    "subscribers": 33269,
+    "median_views": 1542,
+    "mean_views": 1695,
+    "p10_views": 1325,
+    "p90_views": 2676,
+    "err_pct": 4.6,
+    "mature_posts": 215,
+    "reactions_total": 214,
+    "forwards_total": 2061,
+    "forwards_per_post": 6.9,
+    "er_pct": 0.05,
+    "posts_per_day": 10.6,
+    "views_available": true,
+    "media_mix": {
+      "webpage": 266,
+      "photo": 21,
+      "text": 11,
+      "document": 2
+    },
+    "deleted_pct": 2.6,
+    "activity_note": "自动 feed，ERR 4.6% 正常;内容是软件发现/论坛帖"
+  },
+  "implementation": {
+    "publish_identity": "bot",
+    "post_structure": "论坛新帖/软件发现的 link preview 卡片，指向 meta.appinn.net(209)/appinn.com(59);标签 #发现频道 #小众软件 #问题求助",
+    "delivery": "内容主站是 Appinn 论坛/博客，TG 做自动分发;不托管盗版",
+    "schedule": "约 10.6 条/天，白天分散(跟随论坛发帖)",
+    "growth": "老牌软件社区品牌 + 论坛内容驱动"
+  },
+  "growth": {
+    "strategy": "老牌小众软件社区的品牌 + 论坛内容自动 feed",
+    "paid_acquisition": "none",
+    "mechanisms": [
+      {
+        "name": "社区内容",
+        "evidence": "论坛新帖自动分发",
+        "note": "UGC + 编辑内容驱动"
+      },
+      {
+        "name": "品牌沉淀",
+        "evidence": "Appinn 老牌软件推荐站",
+        "note": "存量读者"
+      }
+    ],
+    "signals": {
+      "subscribers": 33269,
+      "err_pct": 4.6,
+      "forwards_per_post": 6.9
+    },
+    "assessment": "Appinn 社区论坛的 TG 分发层，靠论坛 UGC + 品牌自然增长。正规软件推荐社区。"
+  },
+  "cost": {
+    "recurring_cny_month": [
+      0,
+      200
+    ],
+    "onetime_cny": [
+      0,
+      0
+    ],
+    "items": [
+      {
+        "name": "论坛/网站运营(主站成本，不在 TG 侧)",
+        "cny_month": [
+          0,
+          0
+        ]
+      },
+      {
+        "name": "RSS→TG 自动分发 + VPS",
+        "cny_month": [
+          0,
+          200
+        ]
+      }
+    ]
+  },
+  "revenue": {
+    "est_cny_month": [
+      0,
+      3000
+    ],
+    "model": "导流至 Appinn 站（站内广告/软件推广），TG 侧近乎不直接变现",
+    "streams": [
+      {
+        "name": "网站广告/软件推广(经 TG 导流)",
+        "evidence": "266/300 指向 appinn 站",
+        "cny_month": [
+          0,
+          3000
+        ],
+        "confidence": "low"
+      }
+    ],
+    "note": "真实变现在 Appinn 网站的广告与软件推广，TG 是导流层"
+  },
+  "risk": {
+    "level": "low",
+    "notes": [
+      "小众软件推荐与社区论坛分发，正规内容业务，无灰产、无盗版分发",
+      "偶有软件推荐属正常评测/推广，风险极低"
+    ]
+  }
+}
